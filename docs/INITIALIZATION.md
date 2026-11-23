@@ -28,7 +28,7 @@ policy.start=2015-01-01 与第一交易日 2015-01-05 含义不同；保留原�
 
 ## 本地干净环境工程验证
 
-在隔离副本中排除 data/stocks.csv、data/etf.csv 和生成 HTML，模拟新克隆。实际环境 Python **3.12.14**、Node **24.22.3**；GitHub 配置的 Python 3.11 与 Windows 结果以对应提交的 Actions 运行为准。
+在隔离副本中排除 data/stocks.csv、data/etf.csv 和生成 HTML，模拟新克隆。实际环境 Python **3.12.14**、Node **24.22.3**。随后源码提交 [92c1af0](https://github.com/yuan2go/ashare-leader-rotation/commit/92c1af0f605fa012702dab3097bbee708ade0963) 的 GitHub Actions 也已实际完成：Python 3.11 / Node 24、Ubuntu 与 Windows 两个平台的全部步骤均成功，见 [运行记录](https://github.com/yuan2go/ashare-leader-rotation/actions/runs/45116874098)。
 
 | 实际命令 | 退出码 | 核验内容 |
 | --- | --- | --- |
@@ -72,7 +72,8 @@ policy.start=2015-01-01 与第一交易日 2015-01-05 含义不同；保留原�
 
 ## 状态边界与后续
 
-- 工程初始化与必要本地验证已完成；远端以本次提交的 [GitHub Actions](https://github.com/yuan2go/ashare-leader-rotation/actions) 实际结果为准。
-- 原包审计与报告保留在 results/，对应初始化版本。v4.0.0 为源程序和工程基线标签，后续重跑不得覆盖这一历史身份。
+- 源码与工程初始化已提交到 main，必要本地验证和源码基线的 Windows / Ubuntu 远端 CI 已完成。
+- 原包审计与报告保留在 results/，对应源码提交 92c1af0；后续重跑须保留这一历史身份。
+- 计划的 v4.0.0 远端标签尚未创建：本次终端没有 GitHub 推送凭据，已连接接口不提供标签写入，网页标签入口尝试后也未生效。源码已通过 GitHub 接口完整写入；没有发布额外 Release。缺少标签不影响克隆、运行与开发。
 - 联网行情 SDK 安装、行情服务可达性、其余 15 只股票补数、完整股票轮动结果、ETF 连续日份额和自然前瞻表现未在本次初始化完成。
 - 下一阶段保持既有规则，先补数据和处理真实异常，再完成四窗与实际执行诊断；扩池安排见 [ROADMAP](ROADMAP.md)。

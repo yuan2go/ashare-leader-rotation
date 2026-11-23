@@ -128,4 +128,4 @@ python run.py --confirm-seeds
 - [初始化与验证记录](docs/INITIALIZATION.md)
 - [统一工程与量化规范](AGENTS.md)
 
-`v4.0.0` 用于标识本次源程序与工程初始化基线，研究结论以明确版本、真实输入和运行证据为准。
+计划用 `v4.0.0` 标记本次源程序与工程初始化基线。当前远端标签尚未创建，代码基线已固定在 [92c1af0](https://github.com/yuan2go/ashare-leader-rotation/commit/92c1af0f605fa012702dab3097bbee708ade0963)，该提交的 Windows / Ubuntu [CI 已通过](https://github.com/yuan2go/ashare-leader-rotation/actions/runs/45116874098)。研究结论仍须对应真实输入和运行证据。
