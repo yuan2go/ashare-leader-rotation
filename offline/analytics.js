@@ -37,6 +37,46 @@ function correlated(x,y,d){
  const scale=Math.sqrt(sum(a.map(v=>(v-xa)**2))*sum(b.map(v=>(v-ya)**2)));
  return {r:scale?sum(a.map((v,i)=>(v-xa)*(b[i]-ya)))/scale:null,n:a.length};
 }
+function stockSeries(d,s,code,length=d.days.length){
+ const start=Math.max(0,d.days.length-length);
+ return d.days.slice(start).map((date,offset)=>{
+  const i=start+offset;
+  const q=d.stocks[code]?.[date],state=s.states[i][code];
+  const price=key=>q.opened?q[key]*state.factor:null;
+  return q&&state?{date,open:price('open'),high:price('high'),low:price('low'),close:price('close'),
+   weekClose:state.week_close,weekMA:state.week_ma,gate:state.gate}:null;
+ }).filter(Boolean);
+}
+function lotBand(mark){
+ return !Number.isFinite(mark)?'pending':mark<=112.43?'low':mark<=224.90?'mid':'high';
+}
+const MACRO={
+ '红利避险盾':'#3b82f6','上游能源化工':'#f97316','贵金属有色':'#eab308','农业与必选消费':'#22c55e',
+ '硬科技半导体':'#a855f7','AI算力数字基建':'#06b6d4','高端制造出海':'#ec4899','医药军工顺周期金融':'#6366f1'
+};
+function macro(meta){
+ const {bucket,subsector=''}=meta;
+ if(Object.hasOwn(MACRO,bucket))return bucket;
+ if(bucket==='红利')return '红利避险盾';
+ if(bucket==='资源')return /黄金|有色|铜|稀土|金属/.test(subsector)?'贵金属有色':'上游能源化工';
+ if(bucket==='农业'||/必选消费/.test(bucket))return '农业与必选消费';
+ if(bucket==='科技成长')return /半导体/.test(subsector)?'硬科技半导体':'AI算力数字基建';
+ if(bucket==='航运'||bucket==='制造'&&!/军工/.test(subsector))return '高端制造出海';
+ if(/医药|军工|金融/.test(bucket)||/军工/.test(subsector))return '医药军工顺周期金融';
+ return bucket;
+}
+function macroColor(name){return MACRO[name]??'#64748b';}
+function clusterStocks(d,rows){
+ const sorted=[...rows].sort((a,b)=>macro(d.universe[a.code]).localeCompare(macro(d.universe[b.code]),'zh-CN')||
+  a.code.localeCompare(b.code));
+ const matrix=sorted.map(()=>[]),pairs=[];
+ for(let i=0;i<sorted.length;i++)for(let j=0;j<=i;j++){
+  const pair=correlated(sorted[i].returns,sorted[j].returns,d.days);
+  matrix[i][j]=matrix[j][i]=pair;
+  if(i!==j&&pair.r>=.65)pairs.push({a:sorted[j].code,b:sorted[i].code,...pair});
+ }
+ return {codes:sorted.map(x=>x.code),matrix,pairs:pairs.sort((a,b)=>b.r-a.r)};
+}
 function radar(d,s){
  const {days:dates,groups,etf:funds}=d;
  const schedule=dates.map(()=>({})),out=[];
@@ -49,13 +89,14 @@ function radar(d,s){
   for(let i=1;i<dates.length;i++){
    const now=series[dates[i]],before=series[dates[i-1]];
    if(!(now&&before))continue;
-   const pos=lower(dates,now[0]>before[0]?now[0]:before[0]);
+   const pos=lower(dates,[dates[i],now[0],before[0]].sort().at(-1));
    if(pos<dates.length)schedule[pos][code]=(now[1]-before[1]*now[4])*now[2];
   }
  }
  const ordered=Object.keys(groups).sort();
  const members={blue:ordered.filter(k=>groups[k]==='蓝筹'),growth:ordered.filter(k=>groups[k]==='成长')};
  const states={};
+ let previousPulse=null;
  dates.forEach((day,i)=>{
   const r={date:day,funds:day>='2016-01-01'?schedule[i]:{}},coverage={};
   out.push(r);
@@ -75,14 +116,22 @@ function radar(d,s){
   }
   r.coverage=coverage;
   r.bias20=r.blue20!==null&&r.growth20!==null?r.blue20-r.growth20:null;
-  const span=i>=20&&day>='2016-01-01'?dates.slice(i-20,i+1):[];
-  const blue=members.blue.filter(k=>span.length&&span.every(x=>funds[k][x]));
+  let span=[],blue=[],observation=null;
+  for(const j of [i,i-1]){
+   if(j<20||dates[j]<'2016-01-01')continue;
+   span=dates.slice(j-20,j+1);
+   blue=members.blue.filter(k=>span.every(x=>funds[k][x]?.[0]<=day));
+   if(blue.length){observation=dates[j];break;}
+  }
   coverage.pulse21=blue;
   const turnover=blue.length?span.map(x=>sum(blue.map(k=>funds[k][x][3]))):[];
   r.turnover=turnover.at(-1)??null;
-  const prev=i?d.benchmark[dates[i-1]]:null,current=d.benchmark[day];
+  r.turnover_date=observation;
+  const prev=observation?d.benchmark[span.at(-2)]:null,current=d.benchmark[observation];
   const prior=turnover.slice(0,-1);
-  r.pulse=Boolean(turnover.length&&current&&prev&&mean(prior)>0&&r.turnover>=3*mean(prior)&&current[1]<prev[1]);
+  r.pulse=Boolean(turnover.length&&current&&prev&&mean(prior)>0&&r.turnover>=3*mean(prior)&&
+   current[1]<prev[1]&&observation!==previousPulse);
+  if(r.pulse)previousPulse=observation;
   if(r.date>='2020-01-01'){
    const active=[];
    if(r.total20!==null&&r.total20!==0)active.push(r.total20>0?'托底':'降温');

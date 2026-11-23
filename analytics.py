@@ -76,7 +76,7 @@ def radar(d,s):
             now,before=series.get(day),series.get(previous)
             if not now or not before:
                 continue
-            position=bisect_left(dates,max(now[0],before[0]))
+            position=bisect_left(dates,max(day,now[0],before[0]))
             if position<len(dates):
                 # If several releases arrive together, only the latest consecutive observation
                 # represents that session. Never revise a prior decision after a late release.
@@ -84,6 +84,7 @@ def radar(d,s):
     labels={'blue':'蓝筹','growth':'成长'}
     members={key:sorted(k for k,v in groups.items() if v==label) for key,label in labels.items()}
     conditions={}
+    previous_pulse=None
     for i,day in enumerate(dates):
         item=schedule[i] if day>='2016-01-01' else {}
         r=dict(date=day,funds=item)
@@ -102,15 +103,28 @@ def radar(d,s):
             r['total'+(str(h) if h>1 else '')]=sum(p['funds'][k] for p in seq for k in combined) if combined else None
         r['coverage']=coverage
         r['bias20']=r['blue20']-r['growth20'] if r['blue20'] is not None and r['growth20'] is not None else None
-        span=dates[i-20:i+1] if i>=20 and day>='2016-01-01' else []
-        blue=[k for k in members['blue'] if span and all(x in funds[k] for x in span)]
+        blue=[]
+        span=[]
+        observation=None
+        for j in (i,i-1):
+            if j<20 or dates[j]<'2016-01-01':
+                continue
+            span=dates[j-20:j+1]
+            blue=[k for k in members['blue'] if all(x in funds[k] and funds[k][x][0]<=day for x in span)]
+            if blue:
+                observation=dates[j]
+                break
         coverage['pulse21']=blue
         turnover=[sum(funds[k][x][3] for k in blue) for x in span] if blue else []
         r['turnover']=turnover[-1] if turnover else None
-        current=d['benchmark'].get(day)
-        prev=d['benchmark'].get(dates[i-1]) if i else None
+        r['turnover_date']=observation
+        current=d['benchmark'].get(observation)
+        prev=d['benchmark'].get(span[-2]) if observation else None
         r['pulse']=bool(turnover and current and prev and mean(turnover[:-1])>0 and
-                        turnover[-1]>=3*mean(turnover[:-1]) and current[1]<prev[1])
+                        turnover[-1]>=3*mean(turnover[:-1]) and current[1]<prev[1] and
+                        observation!=previous_pulse)
+        if r['pulse']:
+            previous_pulse=observation
         if r['date']>='2020-01-01':
             states=[]
             if r['total20'] is not None and r['total20']!=0:

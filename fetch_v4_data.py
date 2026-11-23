@@ -1,6 +1,7 @@
 """Populate v4.0 market data from auditable downloads and verified local exports."""
 from argparse import ArgumentParser
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta, datetime
 from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
 from html.parser import HTMLParser
@@ -10,12 +11,15 @@ import importlib
 import json
 from pathlib import Path
 import socket
+from threading import Lock
 from time import monotonic, sleep
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
+from zipfile import BadZipFile
 from zoneinfo import ZoneInfo
 
-from inputs import MARKET_HOSTS, SCHEMAS, load, prepare, trusted
+from inputs import (ETF_LIVE, ETF_T1, MARKET_HOSTS, REF_COLUMNS, SCHEMAS, load, next_market_days,
+                    official_etf_history, prepare, read_table, trusted)
 
 ROOT=Path(__file__).resolve().parent
 DATA=ROOT/'data'
@@ -24,8 +28,8 @@ BS='https://www.baostock.com/baostock/index.php/Python_API'
 EM='https://push2his.eastmoney.com/api/qt/stock/kline/get'
 SINA_DIVIDENDS='https://vip.stock.finance.sina.com.cn/corp/go.php/vISSUE_ShareBonus/stockid/'
 SINA_DETAIL='https://vip.stock.finance.sina.com.cn/corp/view/vISSUE_ShareBonusDetail.php'
-SSE='https://www.sse.com.cn/assortment/fund/etf/list/scale/'
-SZSE='https://www.szse.cn/market/fund/volume/etf/index.html'
+SSE='https://query.sse.com.cn/commonQuery.do'
+SZSE='https://www.szse.cn/api/report/ShowReport'
 DAY_FIELDS=('date','code','open','high','low','close','preclose','volume','tradestatus','isST','adjustflag')
 KEYS={'calendar':('date',),'instruments':('code',),'stocks':('code','date'),
       'actions':('code','ex_date'),'index':('date',),'etf':('code','date')}
@@ -118,6 +122,7 @@ class Provider:
         self.pause=pause
         self.available=network
         self.previous=0.
+        self.throttle=Lock()
         self.cache=DATA/'fetch_cache'
         self.cache.mkdir(exist_ok=True)
         self.receipts={}
@@ -132,7 +137,7 @@ class Provider:
         key=hashlib.sha256(identity.encode()).hexdigest()
         path=self.cache/(key+'.json')
         if path.exists():
-            cached=json.loads(path.read_text())
+            cached=json.loads(path.read_text(encoding='utf-8'))
             self.receipts[identity]=dict(source=source,cache_sha=sha(path),retrieved=cached['retrieved'])
             return cached['data']
         host=urlsplit(source).hostname
@@ -142,8 +147,9 @@ class Provider:
             raise ConnectionError(f'{host} 本轮访问不可用')
         last=None
         for attempt in range(3):
-            sleep(max(self.pause-(monotonic()-self.previous),.15*attempt,0))
-            self.previous=monotonic()
+            with self.throttle:
+                sleep(max(self.pause-(monotonic()-self.previous),.15*attempt,0))
+                self.previous=monotonic()
             try:
                 rows=load()
                 frame=dict(source=source,retrieved=datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),data=rows)
@@ -153,9 +159,10 @@ class Provider:
                     tmp.replace(path)
                     self.receipts[identity]=dict(source=source,cache_sha=sha(path),retrieved=frame['retrieved'])
                 return rows
-            except (OSError, RuntimeError, ValueError, KeyError) as error:
+            except (OSError, RuntimeError, ValueError, KeyError, BadZipFile) as error:
                 last=error
-        if isinstance(last,OSError) or str(last).startswith('缺 '):
+        if (isinstance(last,OSError) and host not in (urlsplit(SSE).hostname,urlsplit(SZSE).hostname) or
+                str(last).startswith('缺 ') or str(last).startswith('BaoStock ')):
             self.unreachable.add(host)
         raise ConnectionError(f'{identity} 三次失败：{last}')
 
@@ -205,8 +212,9 @@ class Provider:
 
 def east_kline(provider,code,start,finish,exchange=None):
     secid=('1' if (exchange or venue(code))=='sh' else '0')+'.'+code
-    url=url_for(EM,secid=secid,klt=101,fqt=0,beg=start.replace('-',''),end=finish.replace('-',''),
+    params=dict(secid=secid,klt=101,fqt=0,beg=start.replace('-',''),end=finish.replace('-',''),
                 lmt=100000,fields1='f1,f2,f3,f4,f5,f6',fields2='f51,f52,f53,f54,f55,f56,f57')
+    url=EM+'?'+urlencode(params,safe=',')
     def get():
         req=Request(url,headers={'User-Agent':'Mozilla/5.0','Referer':'https://quote.eastmoney.com/'})
         with urlopen(req,timeout=4) as stream:
@@ -284,7 +292,7 @@ def reference_anomalies(rows,actions):
             ref=dec(ref)
             action=actions.get(day)
             if action:
-                computed=(previous-dec(action['cash_per_share']))/(1+dec(action['bonus_per_share']))
+                computed=action_reference(previous,action)
                 if abs(ref-computed)>Decimal('.015'):
                     result[day]=(previous,ref)
             elif abs(ref-previous)>Decimal('.005'):
@@ -293,6 +301,12 @@ def reference_anomalies(rows,actions):
         if close:
             previous=dec(close)
     return result
+
+
+def action_reference(previous,action):
+    cash=dec(action.get(REF_COLUMNS[0]) or action['cash_per_share'])
+    bonus=dec(action.get(REF_COLUMNS[1]) or action['bonus_per_share'])
+    return (previous-cash)/(1+bonus)
 
 
 def reconcile_sina(provider,code,anomalies,log):
@@ -498,7 +512,7 @@ def compare_backup(code,observations,old,warn):
         if different:
             conflicts.append(current['date'])
     if conflicts:
-        warn(f'{code} BaoStock 与 v3.1 价格、股数、参考价或停牌分歧共 {len(conflicts)} 日，日期: {",".join(conflicts)}')
+        warn(f'{code} BaoStock 与归档口径不同共 {len(conflicts)} 日，首批 {conflicts[:6]}；历史沿用归档，逐日差异在回执')
     return set(conflicts)
 
 
@@ -526,68 +540,125 @@ def windows(source,start,end):
         cursor=right+timedelta(days=1)
 
 
-def collect_etf(provider,codes,meta,start,end,days,verified,warn):
+def sse_etf_shares(provider,day,codes):
+    url=url_for(SSE,sqlId='COMMON_SSE_ZQPZ_ETFZL_XXPL_ETFGM_SEARCH_L',STAT_DATE=day,
+                isPagination='true',**{'pageHelp.pageSize':10000,'pageHelp.pageNo':1,
+                'pageHelp.beginPage':1,'pageHelp.endPage':1,'pageHelp.cacheSize':1})
+    def online():
+        req=Request(url,headers={'User-Agent':'Mozilla/5.0','Referer':'https://www.sse.com.cn/'})
+        with urlopen(req,timeout=10) as stream:
+            reply=json.load(stream)
+        if reply.get('actionErrors') or not isinstance(reply.get('result'),list):
+            raise RuntimeError('规模接口无有效结果')
+        rows=[r for r in reply['result'] if r['SEC_CODE'] in codes]
+        if any(r['STAT_DATE']!=day for r in rows):
+            raise ValueError('返回日期与查询统计日不符')
+        return rows
+    identity=f'sse-etf:{day}:{",".join(sorted(codes))}'
+    rows=provider.request(identity,url,online)
+    obtained=provider.receipts[identity]['retrieved'][:10] if rows else None
+    return rows,url,obtained
+
+
+def collect_etf(provider,codes,start,end,days,next_days,verified,warn,fixes):
     active=set(codes)
     sh_codes=[k for k in active if venue(k)=='sh']
     sz_codes=[k for k in active if venue(k)=='sz']
     prices={}
     known={}
+    adjacent=set(zip(days,days[1:]))
+    market_days=set(days)
+    official_shares=defaultdict(set)
+    suspended=defaultdict(set)
     # Verified overrides are date-specific snapshots, including actual publication and splits.
     overrides=verified/'etf.csv'
-    local=csv_rows(overrides) if overrides.exists() else []
+    local=read_table(overrides,'etf') if overrides.exists() else []
     scales_file=verified/'etf_scales.csv'
     scales={(r['code'],r['date']):r for r in csv_rows(scales_file)} if scales_file.exists() else {}
     local_end={r['code']:max((x['date'] for x in local if x['code']==r['code']),default='') for r in local}
-    funds_start=max(start,'2016-01-01')
+    funds_start=max(start,'2020-01-01')
     for k in codes:
+        full=venue(k)+'.'+k
+        fields='date,code,close,amount,tradestatus,adjustflag'
+        args=dict(fields=fields,start_date=start,end_date=end,frequency='d',adjustflag='3',code=full)
+        quote_source=baourl('query_history_k_data_plus',**args)
         try:
-            curve,source=east_kline(provider,k,funds_start,end)
+            tape=provider.bao('query_history_k_data_plus',source=quote_source,**args)
+            prices.update({(k,r['date']):(r['close'],r['amount'],quote_source) for r in tape
+                           if r['code']==full and r['tradestatus']=='1' and r['adjustflag']=='3'})
+            suspended[k].update(r['date'] for r in tape if r['code']==full and r['tradestatus']=='0')
+            if any(code==k for code,_ in prices):
+                continue
+        except ConnectionError as e:
+            warn(f'{k} BaoStock ETF 日线：{e}')
+        try:
+            curve,source=east_kline(provider,k,start,end)
             prices.update({(k,r[0]):(r[2],r[6],source) for r in curve})
         except (ConnectionError,ValueError,IndexError) as e:
             warn(f'{k} ETF 日线：{e}')
     if prices:
-        # A six-month exchange endpoint can include older observation dates but need not prove
-        # they were available then. Use first witnessed retrieval unless a release field exists.
+        # Recovery of a historical report leaves its retrieval time in the cache receipt.
+        # The designated official reports use the separate T+1 research convention.
         def load_sz():
             if not sz_codes:
                 return
-            for a,b in windows(28,funds_start,end):
+            for a,b in reversed(list(windows(28,funds_start,end))):
+                url=url_for(SZSE,SHOWTYPE='xlsx',CATALOGID='scsj_fund_jjgm',TABKEY='tab1',
+                            txtStart=a,txtEnd=b,jjlb='ETF')
                 try:
-                    part,obtained=provider.ak('fund_scale_daily_szse',SZSE,start_date=a.replace('-',''),
+                    part,obtained=provider.ak('fund_scale_daily_szse',url,start_date=a.replace('-',''),
                                      end_date=b.replace('-',''),symbol='ETF')
                 except ConnectionError as e:
                     warn(f'深交所 ETF 日份额 {a}～{b}：{e}')
-                    break
-                for row in part:
-                    k=row.get('基金代码','').zfill(6)
-                    if k in active:
-                        yield k,row,SZSE,Decimal(1),obtained
-        def load_sh():
-            for d in days:
-                if d<funds_start or not any(venue(k)=='sh' and (k,d) in prices for k in sh_codes):
+                    if urlsplit(SZSE).hostname in provider.unreachable:
+                        break
                     continue
-                try:
-                    part,obtained=provider.ak('fund_etf_scale_sse',SSE,date=d.replace('-',''))
-                except ConnectionError as e:
-                    warn(f'上交所 ETF 日份额 {d}：{e}')
-                    break
                 for row in part:
                     k=row.get('基金代码','').zfill(6)
                     if k in active:
-                        yield k,row,SSE,Decimal(10000),obtained
-        for iterable in (load_sz(),load_sh()):
+                        yield k,row,url,Decimal(1),obtained
+        def load_sh():
+            eligible=[d for d in reversed(days) if d>=funds_start and any((k,d) in prices for k in sh_codes)]
+            def collect(d):
+                try:
+                    return sse_etf_shares(provider,d,sh_codes)
+                except ConnectionError as e:
+                    return d,str(e),None
+            with ThreadPoolExecutor(max_workers=4) as executor:
+                for part,url,obtained in executor.map(collect,eligible):
+                    if isinstance(part,str):
+                        warn(f'上交所 ETF 日份额 {part}：{url}')
+                        continue
+                    for row in part:
+                        fields={'统计日期':row['STAT_DATE'],'基金份额':row['TOT_VOL'],
+                                '发布日期':row.get('PUBLISH_DATE')}
+                        yield row['SEC_CODE'],fields,url,Decimal(10000),obtained
+        for iterable in (load_sh(),load_sz()):
             for k,r,source,unit,obtained in iterable:
                 try:
                     observed=iso(r.get('日期') or r.get('统计日期'))
-                    published=iso(r.get('发布日期') or r.get('公告日期')) or obtained
                     share=dec(r.get('基金份额') or r.get('总份额') or r.get('总份额(万份)') or r.get('基金规模') or '')
-                    if not observed or not published or (k,observed) not in prices:
+                    if observed not in market_days or not obtained or not official_etf_history(source,observed) or share<=0:
+                        raise ValueError('官方份额日期、来源或数值缺证')
+                    official_shares[k].add(observed)
+                    if (k,observed) not in prices:
+                        continue
+                    published=next_days.get(observed)
+                    if not published:
+                        warn(f'{k} ETF {observed} 缺已核验的下一交易日；保留原始份额回执')
                         continue
                     price,amount,quote_source=prices[k,observed]
-                    factor=scales.get((k,observed),{}).get('share_scale','1')
+                    scale=scales.get((k,observed))
+                    if scale:
+                        if not trusted(scale['source'],MARKET_HOSTS,False) or dec(scale['share_scale'])<=0:
+                            raise ValueError('折算公告来源或系数未核实')
+                        fixes.append(dict(code=k,date=observed,kind='基金份额折算公告',source=scale['source']))
+                    factor=scale['share_scale'] if scale else '1'
+                    if dec(price)<=0 or dec(amount)<=0:
+                        raise ValueError('有成交的日线缺证')
                     known[k,observed]=dict(date=observed,code=k,published=published,
                         shares=str(share*unit),price=price,amount=amount,share_scale=factor,
-                        shares_source=source,source=quote_source)
+                        shares_source=source,source=quote_source,published_basis=ETF_T1,published_at='')
                 except (ValueError,InvalidOperation):
                     warn(f'{k} ETF 字段格式或单位未核实')
     # A suspected discontinuity has to be reconciled to a split notice, not assigned a factor.
@@ -595,7 +666,7 @@ def collect_etf(provider,codes,meta,start,end,days,verified,warn):
         previous=None
         for key in sorted(key for key in known if key[0]==k):
             row=known[key]
-            if previous and key not in scales:
+            if previous and key not in scales and (previous['date'],key[1]) in adjacent:
                 sr=dec(row['shares'])/dec(previous['shares'])
                 pr=dec(row['price'])/dec(previous['price'])
                 if (sr>=Decimal('1.4') or sr<=Decimal('.7')) and abs(sr*pr-1)<Decimal('.17'):
@@ -606,14 +677,41 @@ def collect_etf(provider,codes,meta,start,end,days,verified,warn):
             previous=row
         if not any(key[0]==k for key in known) and not local_end.get(k):
             warn(f'{k} 无可核验的日份额/行情交集')
-    known.update({(r['code'],r['date']):r for r in local if r['code'] in active and r['date']<=end})
-    return list(known.values())
+    for r in local:
+        key=(r['code'],r['date'])
+        if r['code'] not in active or r['date']>end:
+            continue
+        online=known.get(key)
+        if online is None:
+            known[key]=r
+        elif dec(online['shares'])==dec(r['shares']):
+            if r['published_basis']==ETF_LIVE and r['published']<=online['published']:
+                known[key]=dict(online,**{k:r[k] for k in ('published','published_basis','published_at','shares_source')})
+            if online['price']!=r['price'] or online['amount']!=r['amount']:
+                fixes.append(dict(code=r['code'],date=r['date'],kind='份额与归档一致，采用场内收盘与成交额',
+                                  source=online['source']))
+        else:
+            known.pop(key)
+            warn(f'{r["code"]} {r["date"]} 交易所与归档的总份额不一致，已隔离')
+    price_coverage={}
+    for k in codes:
+        dates=sorted(d for code,d in prices if code==k and d<=end)
+        raw_dates=sorted(official_shares[k])
+        unmatched=sorted(d for d in raw_dates if (k,d) not in prices)
+        price_coverage[k]=dict(rows=len(dates),first=dates[0] if dates else None,last=dates[-1] if dates else None,
+                               source=prices[k,dates[-1]][2] if dates else None,
+                               exchange_share_rows=len(raw_dates),exchange_share_first=min(raw_dates,default=None),
+                               exchange_share_last=max(raw_dates,default=None),
+                               share_dates_without_market_quote=unmatched,
+                               share_dates_suspended=sorted(set(unmatched)&suspended[k]))
+    return list(known.values()),price_coverage
 
 
 def main():
     parser=ArgumentParser(description=__doc__)
     parser.add_argument('--through',help='最后一个已收盘交易日，默认 policy.freeze')
     parser.add_argument('--offline',action='store_true',help='仅落地本地证据与缓存，不发起网络探测')
+    parser.add_argument('--stocks-only',action='store_true',help='仅补股票和指数，保留现有 ETF 表')
     args=parser.parse_args()
     raw=load(ROOT)
     policy=raw['policy']
@@ -663,7 +761,7 @@ def main():
             ('actions',verified/'actions.csv'),
             ('actions',DATA/'verified_actions_override.csv')):
         if path.exists():
-            for r in csv_rows(path):
+            for r in read_table(path,k):
                 if not trusted(r['source'],MARKET_HOSTS,False):
                     blockers.append(f'{r["code"]} 核验覆盖文件来源不合规 {path.name}')
                     continue
@@ -675,8 +773,9 @@ def main():
                     if key in protected_actions:
                         continue
                     reviewed_actions[key]=r
-                    if r!=stage[k].get(key):
-                        fixes.append(dict(code=r['code'],date=r['ex_date'],kind='公告核验权益覆盖',source=r['source']))
+                    fixes.append(dict(code=r['code'],date=r['ex_date'],kind='公告核验权益覆盖',
+                                      source=r['source'],announce_date=r['announce_date'],
+                                      cash_per_share=r['cash_per_share'],bonus_per_share=r['bonus_per_share']))
                 add(k,[r])
     days=[r['date'] for r in calendar]
     overrides=advisory_limits(verified/'stock_limits.csv')
@@ -684,7 +783,7 @@ def main():
     for row in tables['universe']+tables['funds']:
         code=row['code']
         full=venue(code)+'.'+code
-        if dates or args.offline:
+        if (code,) not in stage['instruments'] and (dates or args.offline):
             try:
                 base=source.bao('query_stock_basic',code=full)
                 named=next((x for x in base if x.get('code')==full and x.get('ipoDate')),None)
@@ -709,11 +808,26 @@ def main():
         rights_url=baourl('query_dividend_data',code=full,yearType='operate')
         all_actions=[]
         provider_data=[]
-        if dates or args.offline:
+        market_start=x0
+        if backup:
+            past=dict(fields=','.join(DAY_FIELDS),start_date=x0,end_date=freeze,
+                      frequency='d',adjustflag='3',code=full)
+            # A prior retrieval is useful evidence, but the approved development tape
+            # is always rebuilt from the exact original rather than replaced by it.
+            cache=Provider(False)
+            try:
+                comparison=cache.bao('query_history_k_data_plus',**past)
+                compared=compare_backup(code,comparison,backup,log)
+                receipt.update(compared_days=len(comparison),rejected_days=sorted(compared),
+                               comparison=next(iter(cache.receipts.values()),{}))
+            except ConnectionError:
+                pass
+            market_start=max(x0,(date.fromisoformat(freeze)+timedelta(days=1)).isoformat())
+        if market_start<=finish and (dates or args.offline):
             try:
                 provider_data=source.bao('query_history_k_data_plus',fields=','.join(DAY_FIELDS),
-                    start_date=x0,end_date=finish,frequency='d',adjustflag='3',code=full)
-                for year in range(int(x0[:4]),int(finish[:4])+1):
+                    start_date=market_start,end_date=finish,frequency='d',adjustflag='3',code=full)
+                for year in range(int(market_start[:4]),int(finish[:4])+1):
                     try:
                         all_actions+=source.bao('query_dividend_data',code=full,year=str(year),yearType='operate')
                     except ConnectionError as e:
@@ -727,25 +841,25 @@ def main():
             rights={}
             conflicts=[]
             log(f'{code} 除权字段不能识别：{e}')
-        if conflicts:
-            log(f'{code} 除权派发日/股份日或同日事件冲突 {",".join(conflicts)}')
+        unreviewed=[d for d in conflicts if (code,d) not in reviewed_actions]
+        if unreviewed:
+            log(f'{code} 除权派发日/股份日或同日事件冲突 {",".join(unreviewed)}')
         for ex,x in rights.items():
-            if (code,ex) not in stage['actions']:
+            if (code,ex) not in reviewed_actions and (code,ex) not in protected_actions and (
+                    not backup or ex>freeze):
                 add('actions',[x])
         per_code={d:r for (k,d),r in stage['actions'].items() if k==code}
-        excluded=compare_backup(code,provider_data,backup,log) if provider_data and backup else set()
-        if excluded:
-            blockers.append(f'{code} 冻结股票底稿交叉校验不一致，待核 {len(excluded)} 日')
-        dual=[([r for r in backup if r['date'] not in excluded],'archive:v3.1:002714:quotes',
-               'archive:v3.1:002714:actions')] if backup else []
+        dual=[(backup,'archive:v3.1:002714:quotes','archive:v3.1:002714:actions',min(finish,freeze))] if backup else []
         if provider_data:
             dual.append(([r for r in provider_data if (code,r['date']) not in protected_stock],
-                         source_url,rights_url))
-        for tape,quote_src,rights_src in dual:
+                         source_url,rights_url,finish))
+        for tape,quote_src,rights_src,through in dual:
             substitute,second_url=repair_open_ohlc(source,code,tape,log) if quote_src==source_url else ({},'')
             if substitute:
                 tape=[substitute.get(r['date'],r) for r in tape]
-            normalized=normalize_stock(code,stock,days,tape,per_code,overrides,quote_src,rights_src,log)
+            quote_days=[d for d in days if (market_start if backup and quote_src==source_url else start)<=d<=through]
+            normalized=normalize_stock(code,stock,quote_days,tape,per_code,
+                                       {} if quote_src!=source_url else overrides,quote_src,rights_src,log)
             for r in normalized:
                 rule=overrides.get((code,r['date']))
                 if rule and r['status']=='open' and (code,r['date']) not in protected_stock:
@@ -753,7 +867,8 @@ def main():
                         blockers.append(f'{code} {r["date"]} 价格例外来源不合规')
                     else:
                         fixes.append(dict(code=code,date=r['date'],kind='已核验参考价或价格边界',
-                                          source=rule['source']))
+                                          source=rule['source'],announce_date=rule.get('announce_date',''),
+                                          reason=rule.get('reason','')))
             if quote_src==source_url:
                 for r in normalized:
                     if r['date'] in substitute:
@@ -765,7 +880,7 @@ def main():
                 for dd,new in reconcile_sina(source,code,unresolved,log).items():
                     add('actions',[new])
                     fixes.append(dict(code=code,date=dd,kind='新浪公告表与参考价交叉对平',source=new['source']))
-            add('stocks',(r for r in normalized if (r['code'],r['date']) not in protected_stock))
+            add('stocks',normalized)
         if not dual:
             log(f'{code} 无经核验的未复权日线/停牌状态')
     for key,row in manual.items():
@@ -776,14 +891,24 @@ def main():
         if row!=stage['stocks'].get(key):
             fixes.append(dict(code=key[0],date=key[1],kind='官方证据逐日覆盖',source=row['source']))
         add('stocks',[row])
-    for row in market_index(source,DATA,workspace,start,finish,log):
+    index_gaps=[d for d in days if (d,) not in stage['index']]
+    for row in market_index(source,DATA,workspace,min(index_gaps),finish,log) if index_gaps else []:
         previous=protected_index.get((row['date'],))
         if not previous:
             add('index',[row])
         elif any(dec(row[key])!=dec(previous[key]) for key in ('open','close')):
             blockers.append(f'{row["date"]} 沪深300比对有差异，保留冻结底稿')
-    add('etf',collect_etf(source,[x['code'] for x in tables['funds']],stage['instruments'],
-                          start,finish,days,verified,log))
+    etf_prices={}
+    lookahead=[r for r in raw['calendar_lookahead'] if r['date']>finish]
+    if dates:
+        next_date=next((d for d in dates if d>finish),None)
+        if next_date:
+            lookahead=[dict(date=next_date,source=baourl('query_trade_dates',start_date=start,
+                end_date=(date.fromisoformat(finish)+timedelta(days=8)).isoformat()))]
+    if not args.stocks_only:
+        etf,etf_prices=collect_etf(source,[x['code'] for x in tables['funds']],start,finish,
+                                   days,next_market_days(calendar,lookahead),verified,log,fixes)
+        add('etf',etf)
     source.close()
     audit_tables={**tables}
     output_rows={}
@@ -795,7 +920,25 @@ def main():
         audit_tables[k]=normalized_rows(output_rows[k],columns)
     # Validate staged content before touching the prior CSVs. Coverage gaps may be
     # persisted for diagnosis; malformed values raising an exception leave all CSVs intact.
-    audited=prepare({**raw,'tables':audit_tables},finish)
+    audited=prepare({**raw,'tables':audit_tables,'calendar_lookahead':lookahead},finish)
+    quote_tapes=defaultdict(list)
+    action_tapes=defaultdict(dict)
+    for row in output_rows['stocks']:
+        quote_tapes[row['code']].append(row)
+    for row in output_rows['actions']:
+        action_tapes[row['code']][row['ex_date']]=row
+    reference_conflicts=[]
+    for code,tape in quote_tapes.items():
+        actions=action_tapes[code]
+        for day,(previous,reference_price) in reference_anomalies(tape,actions).items():
+            action=actions.get(day)
+            if action:
+                cash=dec(action['cash_per_share'])
+                bonus=dec(action['bonus_per_share'])
+                implied=action_reference(previous,action)
+                reference_conflicts.append(dict(code=code,date=day,previous=str(previous),cash=str(cash),
+                    bonus=str(bonus),implied=f'{implied:.8f}',reference=str(reference_price),
+                    delta=f'{abs(implied-reference_price):.8f}',source=action['source']))
     for k,rows in output_rows.items():
         publish(DATA/(k+'.csv'),rows,SCHEMAS[k].split(','))
     audited['errors'].extend(blockers)
@@ -803,7 +946,8 @@ def main():
     (DATA/'fetch_warnings.log').write_text('\n'.join(dict.fromkeys(log_lines))+'\n',encoding='utf-8')
     (DATA/'fetch_provenance.json').write_text(json.dumps(dict(target=finish,dates=len(days),archive=archives,
         network_attempted=not args.offline,receipts=source.receipts,blockers=blockers,
-        fixes=fixes),ensure_ascii=False,indent=2),encoding='utf-8')
+        fixes=fixes,reference_conflicts=reference_conflicts,etf_prices=etf_prices,calendar_lookahead=lookahead),
+        ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(dict(stock_issues=len(audited['errors']),etf_issues=len(audited['etf_errors']),
                           days=len(days),stock_rows=sum(x['rows'] for x in audited['coverage']),
                           index_missing=len(audited['index_missing']),

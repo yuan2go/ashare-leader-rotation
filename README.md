@@ -2,9 +2,11 @@
 
 A 股跨行业龙头周频趋势轮动研究台 v4.0，包含独立的宽基 ETF 资金雷达。通过可追溯输入、固定规则和 Python / 离线 JavaScript 对账，研究信号如何转化为实际可执行的扣费账户表现。
 
-**当前为原始 v4.0 源码与工程基线的初始化版本。16 只股票的真实全池回测仍受数据缺口阻断；CI 通过不代表策略盈利或真实数据齐备。**
+**v4.0 联网采集覆盖固定池全部上市日。差异化权益支持公告折算校验，正式回放状态见 [最新数据验收](results/rotation_v4_0_validation.md)。**
 
-## 当前基线
+**v4.1 离线前端**沿用文件名 `rotation_quant_lab_v4_0_offline.html`。五个页面共用冻结引擎，股票矩阵按 `universe.csv` 扩展。宏观展示桶用于筛选和配色，跨桶策略按配置中的原桶执行。[参考原型](docs/ui/rotation_quant_lab_v4_1_ui_prototype.html)中的数据为演示数据。
+
+## 原包导入基线
 
 2026-11-23 从 `rotation_v4_0_python_backend.zip` 导入，原策略、配置与研究结果保留；两份冻结引擎的字节哈希与初始化蓝图一致。详见 [初始化与验证记录](docs/INITIALIZATION.md)。
 
@@ -20,7 +22,7 @@ A 股跨行业龙头周频趋势轮动研究台 v4.0，包含独立的宽基 ETF
 | 正式全池回放 | production_replay = false |
 | 已验证范围 | 冻结字节、干净环境工程测试、合成双端/前缀/UI验证；本次另重跑原生牧原 T1 / 沪深 300 独立对照 |
 
-上述覆盖是导入基线及本次从保留底稿离线重建的结果，没有重新向市场数据服务联网补齐。`results/` 中保留原包审计与报告；新克隆生成的空行情表头不是该快照。后续本地运行会更新结果，判断时须对应同一版本和输入哈希。
+上表记录导入时的状态。`results/` 记录最近一次本地验收。原包结果可以从仓库历史中查看，本地采集前的底稿和结果也保存在 `data/fetch_cache/baseline-2026-11-23/`。新克隆时可用的行情取决于本地缓存和数据服务，验收须核对同一次运行的输入哈希。
 
 ## 策略与实现范围
 
@@ -34,6 +36,8 @@ A 股跨行业龙头周频趋势轮动研究台 v4.0，包含独立的宽基 ETF
 ## 本地开始
 
 原程序要求 Python 3.10+。本仓库 CI 使用 **Python 3.11、Node.js 24**，同时验证 Windows / Ubuntu。Python 与 Node 都必须能从命令行运行；离线页面与工程测试无 npm 依赖。
+
+真实全池双端对账以同一套 CI 运行时复现。Python 3.12 改用不同的浮点求和算法，在本池真实行情的均线临界值上会改变严格大于判断。使用 Python 3.11 可以保留冻结引擎及原对账断言。
 
 ### Windows PowerShell
 
@@ -70,6 +74,20 @@ python tests/test_fetch.py
 
 `test_engine.py` 已串联 Node parity 与 UI，涵盖合成成交、逐分账本、前缀因果和 50 标的配置测试。`test_fetch.py` 使用无网样例校验采集适配器。它们只需 Python / Node 标准库，因此 CI 不安装行情 SDK，不访问行情服务。
 
+### 个股专项研究
+
+已有通过验收的开发期行情时，可刷新中远海特的两项独立实验。
+
+```powershell
+python research/exp_600428_earnings.py
+python research/exp_600428_flow_reversion.py
+python run.py --confirm-seeds
+```
+
+两项研究的逐笔结果、样本口径和来源保存在 [600428 专项结果](results/research/600428.json)，原始观测留在 `data/research/`。财报采用上交所披露索引时间，09:25 前可用当日开盘。大单采用东方财富历史日终口径，首次披露时间未独立核验。追加日终观测用 `--through YYYY-MM-DD`，已存观测保留首次采集值，冻结期研究统计始终截止 2026-11-20。两项脚本均支持 `--offline` 复算现有证据。
+
+构建器将 `results/research/<六位代码>.json` 中版本为 1、代码吻合且 `asof` 等于冻结日的插件注入 `RAW.research`。插件的 `experiments` 按 `earnings_event_study` / `price_down_flow_in` 协议渲染。资金、轮动选股与撮合读取原输入表和冻结规则。
+
 ### 联网补齐真实数据与回放
 
 准备文件后，安装原包声明的采集依赖，再分别检查采集与正式回放的退出状态。以下使用已激活环境中的 `python`；Windows 未激活时用 `.\.venv\Scripts\python.exe` 替换：
@@ -80,7 +98,9 @@ python fetch_v4_data.py
 python run.py --confirm-seeds
 ```
 
-采集使用 BaoStock、公开行情接口及 AKShare 所连接的基金数据源，受网络、服务接口和真实数据覆盖约束。缺日、异常价格或权益事实不足时保留审计原因，不能为得到成功状态放宽原校验。本次初始化未验证联网采集依赖安装和外部数据服务可达性。
+采集使用 BaoStock、公开行情接口、上交所日份额接口和 AKShare 所连接的深交所日规模报表。`--stocks-only` 可复核股票和权益并保留现有 ETF 表。差异化分派可在 `data/verified_actions_override.csv` 录入公告折算值。两端以该底稿逐条匹配折算字段，并按原 ¥0.015 容差验算参考价。账本仍按普通股东实际权益入账。
+
+交易所历史日规模表标记 `exchange_t1_convention`，统计日之后的首个真实交易日为逻辑可见日，源回执保留实际下载时间。`verified_live` 要求可核验的北京时间发布时刻，15:00 后披露从后续交易日生效。历史数据的 T+1 是研究假设。冻结日统计的份额要到下一交易日才进入雷达。停牌无价的日期保留原始份额回执，联合计算使用覆盖整个窗口的固定成员。
 
 也可先从仓库保留的核验底稿重建当前部分数据，无需行情 SDK 或联网：
 
@@ -89,7 +109,7 @@ python fetch_v4_data.py --offline
 python run.py --confirm-seeds
 ```
 
-**当前基线中这两条命令会分别退出 1**：股票数据仍缺失，正式全池未通过；它们仍会保留可用数据、缺口诊断与合格的独立对照。普通 `python run.py` 可在数据不足时构建诊断页并退出 0，不能作为正式验收通过的依据。
+没有本地缓存的新克隆仍会报告股票缺口。有联网底稿时，正式验收继续检查公告、参考价和两端因果回放。普通 `python run.py` 可在数据不足时构建诊断页并退出 0，正式验收应使用 `--confirm-seeds` 并检查审计字段。
 
 正式回放的判断需同时满足：命令实际成功、`results/data_audit.json` 中 `stock_issues == 0`、`production_replay == true`，且对应真实数据前缀/双端对账通过。ETF 另看有效时点覆盖，不能只看 `etf_issues`。
 
@@ -121,7 +141,7 @@ python run.py --confirm-seeds
 
 ## 下一阶段
 
-当前优先工作是补齐固定 16 只池的真实股票数据、解决权益/价格异常并完成原生四窗回放。其后根据诊断决定是否扩容；八桶与 50 只目标尚属规划，不能把合成 50 标的测试写成真实扩池已完成。
+四窗全池回放结果用于评估是否扩容。八桶与 50 只目标仍处于研究规划。
 
 - [研究与交付路线](docs/ROADMAP.md)
 - [逐桶扩容研究模板](docs/ai-prompts/bucket-expansion.md)

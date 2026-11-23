@@ -3,9 +3,9 @@ import csv
 import json
 import re
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime, timedelta, time
 from math import isfinite
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 SCHEMAS={
     'universe':'code,name,bucket,subsector',
@@ -13,10 +13,15 @@ SCHEMAS={
     'instruments':'code,listing,delisting,source',
     'calendar':'date,week_end,source',
     'stocks':'date,code,status,open,high,low,close,volume,reference,limit,upper,lower,actions_source,source',
-    'actions':'code,ex_date,announce_date,pay_date,share_date,cash_per_share,bonus_per_share,source',
+    'actions':'code,ex_date,announce_date,pay_date,share_date,cash_per_share,bonus_per_share,source,ref_cash_per_share,ref_bonus_per_share,diff_note',
     'index':'date,open,close,source',
-    'etf':'date,code,published,shares,price,amount,share_scale,shares_source,source',
+    'etf':'date,code,published,shares,price,amount,share_scale,shares_source,source,published_basis,published_at',
 }
+OPTIONAL_COLUMNS={'actions':('ref_cash_per_share','ref_bonus_per_share','diff_note'),
+                  'etf':('published_basis','published_at')}
+REF_COLUMNS=OPTIONAL_COLUMNS['actions'][:2]
+ETF_T1='exchange_t1_convention'
+ETF_LIVE='verified_live'
 EXCHANGES=('sse.com.cn','szse.cn')
 PUBLIC=('baostock.com','eastmoney.com','sina.com.cn','gtimg.cn','akshare.akfamily.xyz','cninfo.com.cn','cngold.org','dfcfw.com','stock.sohu.com')
 MARKET_HOSTS=EXCHANGES+PUBLIC
@@ -58,19 +63,70 @@ def trusted(url,hosts,test,archive=()):
         return False
 
 
+def read_table(path,name):
+    header=SCHEMAS[name].split(',')
+    optional=OPTIONAL_COLUMNS.get(name,())
+    required=header[:len(header)-len(optional)]
+    with path.open(encoding='utf-8-sig',newline='') as stream:
+        reader=csv.DictReader(stream)
+        actual=reader.fieldnames or []
+        if actual[:len(required)]!=required or actual[len(required):]!=[k for k in optional if k in actual]:
+            raise ValueError(f'{path.name} 表头应为 {SCHEMAS[name]}')
+        out=[]
+        for row in reader:
+            if None in row or None in row.values():
+                raise ValueError(f'{path.name} 第 {reader.line_num} 行列数不匹配')
+            out.append({k:row.get(k,'').strip() for k in header})
+        return out
+
+
 def load(root):
     root=Path(root)
     tables={}
-    for name,header in SCHEMAS.items():
+    for name in SCHEMAS:
         folder=root if name in ('universe','funds') else root/'data'
-        with (folder/(name+'.csv')).open(encoding='utf-8-sig',newline='') as stream:
-            reader=csv.DictReader(stream)
-            if reader.fieldnames!=header.split(','):
-                raise ValueError(f'{name}.csv 表头应为 {header}')
-            tables[name]=[{k:v.strip() for k,v in row.items()} for row in reader]
+        tables[name]=read_table(folder/(name+'.csv'),name)
     crosscheck=root/'historical_calendar_crosscheck.json'
+    review=root/'data'/'verified_actions_override.csv'
+    lookahead=root/'data'/'verified'/'calendar_lookahead.csv'
+    next_sessions=[]
+    if lookahead.exists():
+        with lookahead.open(encoding='utf-8-sig',newline='') as stream:
+            next_sessions=list(csv.DictReader(stream))
+    receipt=root/'data'/'fetch_provenance.json'
+    if receipt.exists():
+        next_sessions.extend(json.loads(receipt.read_text(encoding='utf8')).get('calendar_lookahead',[]))
     return dict(policy=json.loads((root/'policy.json').read_text()),tables=tables,
-                crosscheck=json.loads(crosscheck.read_text()) if crosscheck.is_file() else [])
+                crosscheck=json.loads(crosscheck.read_text()) if crosscheck.is_file() else [],
+                verified_ref_actions=[r for r in read_table(review,'actions') if any(r[k] for k in REF_COLUMNS)]
+                if review.exists() else [],calendar_lookahead=next_sessions)
+
+
+def next_market_days(calendar,lookahead=()):
+    dates=sorted({r['date'] for r in (*calendar,*lookahead)})
+    return dict(zip(dates,dates[1:]))
+
+
+def official_etf_history(url,observed):
+    if not trusted(url,EXCHANGES,False):
+        return False
+    p=urlsplit(url)
+    query=parse_qs(p.query)
+    if p.hostname=='query.sse.com.cn' and p.path=='/commonQuery.do':
+        return (query.get('sqlId')==['COMMON_SSE_ZQPZ_ETFZL_XXPL_ETFGM_SEARCH_L'] and
+                query.get('STAT_DATE')==[observed])
+    if p.hostname=='www.szse.cn' and p.path=='/api/report/ShowReport':
+        start,finish=query.get('txtStart',['']),query.get('txtEnd',[''])
+        return (query.get('CATALOGID')==['scsj_fund_jjgm'] and query.get('jjlb')==['ETF'] and
+                len(start)==len(finish)==1 and start[0]<=observed<=finish[0])
+    return False
+
+
+def verified_live_day(stamp):
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?\+08:00',stamp):
+        raise ValueError('ETF 实时发布时间须为北京时间完整时间戳')
+    clock=datetime.fromisoformat(stamp)
+    return (clock.date()+timedelta(days=clock.time()>time(15))).isoformat()
 
 
 def prepare(raw,end=None,*,test=False):
@@ -118,6 +174,17 @@ def prepare(raw,end=None,*,test=False):
         require(bool(expected) and [d for d in days if d<=policy['freeze']]==expected,
                 '历史市场日历与 v3.1 同日索引不匹配，需复核交易所原表')
     dayset=set(days)
+    all_calendar=t['calendar']
+    last_market=max((r['date'] for r in all_calendar),default='')
+    lookahead=[]
+    for r in raw.get('calendar_lookahead',[]) if not test else []:
+        try:
+            date_value=day(r['date'])
+            if date_value>last_market and date.fromisoformat(date_value).weekday()<5 and trusted(r['source'],MARKET_HOSTS,False):
+                lookahead.append(r)
+        except (KeyError,ValueError,TypeError):
+            continue
+    next_session=next_market_days(all_calendar,lookahead)
     require(bool(days) and days[0][:4]==policy['start'][:4] and days[-1]==end,'交易日历首尾未覆盖要求')
     week_ends=set()
     for i,r in enumerate(calendar):
@@ -131,6 +198,8 @@ def prepare(raw,end=None,*,test=False):
             week_ends.add(r['date'])
     by_code={k[0]:{} for k in uv}
     act={}
+    reference_terms={}
+    reference_checks=[]
     quote_rows=[r for r in t['stocks'] if r['date']<=end]
     unique(quote_rows,('code','date'),'行情')
     for r in quote_rows:
@@ -165,6 +234,8 @@ def prepare(raw,end=None,*,test=False):
         by_code[k][d]=dict(q,ref=ref)
     relevant=[r for r in t['actions'] if r['ex_date']<=end]
     unique(relevant,('code','ex_date'),'当日合并权益事件')
+    audited_terms=unique(raw.get('verified_ref_actions',[]),('code','ex_date'),'差异化权益核验底稿')
+    evidence_fields=SCHEMAS['actions'].split(',')[:-1]
     for r in relevant:
         k,d=r['code'],day(r['ex_date'])
         announce=day(r['announce_date'])
@@ -178,7 +249,19 @@ def prepare(raw,end=None,*,test=False):
         if bonus:
             require(day(r['share_date'])>=d,f'{k} {d} 新增股份上市日有误')
         act[k,d]=dict(div=div,bonus=bonus,pay=r['pay_date'],share=r['share_date'])
-    for k,quotes in by_code.items():
+        if any(r.get(key) for key in REF_COLUMNS):
+            reviewed=audited_terms.get((k,d))
+            if not (reviewed and trusted(r['source'],MARKET_HOSTS,test) and
+                    all(r.get(key,'')==reviewed.get(key,'') for key in evidence_fields)):
+                errors.append(f'{k} {d} 差异化折算缺少一致的公告核验底稿')
+                continue
+            try:
+                ref_div=number(r['ref_cash_per_share'],0) if r.get('ref_cash_per_share') else div
+                ref_bonus=number(r['ref_bonus_per_share'],0) if r.get('ref_bonus_per_share') else bonus
+                reference_terms[k,d]=(ref_div,ref_bonus,r)
+            except ValueError as e:
+                errors.append(f'{k} {d} 差异化折算 {e}')
+    for k,quotes in sorted(by_code.items()):
         previous=None
         for d,q in sorted(quotes.items()):
             if q['opened']:
@@ -187,8 +270,17 @@ def prepare(raw,end=None,*,test=False):
                 require((k,d) in act,f'{k} {d} 参考价变动缺已核实的权益事件')
             action=act.get((k,d))
             if previous is not None and q['ref'] is not None and action:
-                provisional=(previous-action['div'])/(1+action['bonus'])
-                require(abs(provisional-q['ref'])<=.015,f'{k} {d} 权益记录与交易所参考价不符')
+                ref_div,ref_bonus,evidence=reference_terms.get((k,d),(action['div'],action['bonus'],None))
+                provisional=(previous-ref_div)/(1+ref_bonus)
+                error=abs(provisional-q['ref'])
+                require(error<=.015,f'{k} {d} 权益记录与交易所参考价不符')
+                if evidence:
+                    reference_checks.append(dict(code=k,date=d,announce_date=evidence['announce_date'],
+                        cash=action['div'],bonus=action['bonus'],ref_cash=ref_div,ref_bonus=ref_bonus,
+                        previous=previous,reference=q['ref'],implied=provisional,error=error,
+                        passed=error<=.015,source=evidence['source'],note=evidence.get('diff_note','')))
+            elif (k,d) in reference_terms:
+                require(False,f'{k} {d} 差异化折算缺少可核验前收')
             if q['opened']:
                 previous=q['close']
             elif q['ref'] is not None:
@@ -236,6 +328,7 @@ def prepare(raw,end=None,*,test=False):
         key=(r['code'],r['date'])
         frequencies[key]=frequencies.get(key,0)+1
     fund_sources={k:set() for k in tape}
+    fund_bases={k:{} for k in tape}
     for r in quotes:
         code,d=r['code'],r['date']
         try:
@@ -255,8 +348,20 @@ def prepare(raw,end=None,*,test=False):
                 raise ValueError('ETF 来源或发布时点缺失') from e
             if published<d or not all(trusted(r[k],FUND_HOSTS,test) for k in ('source','shares_source')):
                 raise ValueError('ETF 来源或发布时点缺失')
+            basis=r.get('published_basis','')
+            stamp=r.get('published_at','')
+            exchange=official_etf_history(r['shares_source'],d)
+            if basis==ETF_T1:
+                if not (exchange or test and r['shares_source']=='fixture') or published!=next_session.get(d) or stamp:
+                    raise ValueError('ETF T+1 需官方历史报表及下一交易日，实时时间戳须留空')
+            elif basis==ETF_LIVE:
+                if exchange or verified_live_day(stamp)!=published or stamp[:10]<d:
+                    raise ValueError('ETF 实时发布时间与统计日或可见日有误')
+            elif basis or stamp or exchange and (d not in next_session or published<next_session[d]):
+                raise ValueError('ETF 披露口径或历史可见日有误')
             tape[code][d]=[published,number(r['shares'],.01),number(r['price'],.001),
                            number(r['amount'],0),number(r['share_scale'],.0001)]
+            fund_bases[code][d]=basis or 'legacy_date_only'
             fund_sources[code].update((r['source'],r['shares_source']))
         except (ValueError,TypeError) as e:
             etf_require(False,f'{code} {d} {e}')
@@ -270,6 +375,9 @@ def prepare(raw,end=None,*,test=False):
         prefix=[d for d in days if meta and max(meta['listing'],'2016-01-01')<=d<=end_live and (not first or d<first)]
         etf_coverage.append(dict(code=key,listing=meta['listing'] if meta else None,first=first,last=last,
                                  rows=len(history),usable=sum(q[0]<=end for q in history.values()),
+                                 published_basis={b:sum(v==b for v in fund_bases[key].values())
+                                                  for b in sorted(set(fund_bases[key].values()))},
+                                 last_usable_observation=max((d for d,q in history.items() if q[0]<=end),default=None),
                                  missing=len(missing) if first else None,missing_days=missing,
                                  precoverage=len(prefix) if meta and days else None,
                                  precoverage_days=prefix,
@@ -279,6 +387,7 @@ def prepare(raw,end=None,*,test=False):
                 benchmark=benchmark,etf=tape,listings={k[0]:v['listing'] for k,v in ins.items()},
                 coverage=coverage,etf_coverage=etf_coverage,
                 errors=errors,etf_errors=etf_errors,index_missing=index_missing,
+                reference_checks=reference_checks,next_session=next_session.get(end),
                 index_sources=sorted({r['source'] for r in ix.values()}),
                 calendar_sources=sorted({r['source'] for r in calendar}))
 

@@ -8,7 +8,7 @@ import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from fetch_v4_data import (build_actions, compare_backup, market_calendar, normalize_stock,
                            pair_limits, reference_anomalies, sina_action_detail)
-from inputs import trusted, MARKET_HOSTS, FUND_HOSTS
+from inputs import trusted, MARKET_HOSTS, FUND_HOSTS, official_etf_history, verified_live_day
 
 
 class Collector(unittest.TestCase):
@@ -27,6 +27,17 @@ class Collector(unittest.TestCase):
         self.assertFalse(trusted('https://user@www.baostock.com/',MARKET_HOSTS,False))
         self.assertFalse(trusted('archive:v3.1:002714:quotes',MARKET_HOSTS,False))
         self.assertTrue(trusted('archive:v3.1:002714:quotes',MARKET_HOSTS,False,('archive:v3.1:002714:quotes',)))
+
+    def test_etf_release_basis_uses_exact_official_date_and_live_clock(self):
+        sse=('https://query.sse.com.cn/commonQuery.do?'
+             'sqlId=COMMON_SSE_ZQPZ_ETFZL_XXPL_ETFGM_SEARCH_L&STAT_DATE=2026-11-20')
+        self.assertTrue(official_etf_history(sse,'2026-11-20'))
+        self.assertFalse(official_etf_history(sse,'2026-11-19'))
+        self.assertFalse(official_etf_history(sse.replace('query.sse.com.cn','sse.com.cn.invalid'),'2026-11-20'))
+        self.assertEqual(verified_live_day('2026-11-20T14:56:19+08:00'),'2026-11-20')
+        self.assertEqual(verified_live_day('2026-11-20T15:00:00.001+08:00'),'2026-11-21')
+        with self.assertRaises(ValueError):
+            verified_live_day('2026-11-20')
 
     def test_limit_rollover_and_explicit_suspension(self):
         self.assertEqual(pair_limits('300750','2018-06-11','2020-08-21',None,Decimal(10),'0'),('bounded','11.00','9.00'))

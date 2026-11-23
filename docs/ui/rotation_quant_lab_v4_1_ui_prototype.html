@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ashare-leader-rotation · v4.1 多股票轮动与专项研究台（UI 参考原型）</title>
+<style>
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Dark Precision Quant Theme (Default) */
+  --bg-app: #0b0f17;
+  --bg-surface: #121826;
+  --bg-elevated: #182132;
+  --bg-hover: #1e293d;
+  --border: #243047;
+  --border-strong: #334361;
+  --text-primary: #e8eef8;
+  --text-secondary: #9aa8c2;
+  --text-muted: #6c7c99;
+
+  /* A-Share Convention: Red = Up / Positive, Green = Down / Negative */
+  --up: #f05252;
+  --up-bg: rgba(240, 82, 82, 0.14);
+  --down: #22c55e;
+  --down-bg: rgba(34, 197, 94, 0.14);
+
+  /* Semantic Status */
+  --accent: #3b82f6;
+  --accent-bg: rgba(59, 130, 246, 0.16);
+  --ok: #10b981;
+  --ok-bg: rgba(16, 185, 129, 0.14);
+  --warn: #f59e0b;
+  --warn-bg: rgba(245, 158, 11, 0.16);
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.16);
+
+  /* 8 Fixed Macro Bucket Colors (Scales cleanly to 50+ stocks) */
+  --b-dividend: #3b82f6;   /* 1. 红利避险盾 */
+  --b-energy: #f97316;     /* 2. 上游能源化工 */
+  --b-metal: #eab308;      /* 3. 贵金属有色 */
+  --b-agri: #22c55e;       /* 4. 农业与必选消费 */
+  --b-semi: #a855f7;       /* 5. 硬科技半导体 */
+  --b-ai: #06b6d4;         /* 6. AI算力数字基建 */
+  --b-mfg: #ec4899;        /* 7. 高端制造出海 */
+  --b-finmed: #6366f1;     /* 8. 医药军工顺周期金融 */
+  --b-cash: #475569;       /* 现金/空仓 */
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="light"] {
+  --bg-app: #f3f6fb;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f8fafd;
+  --bg-hover: #eef3fa;
+  --border: #dde4f0;
+  --border-strong: #c3cfe2;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --up: #dc2626;
+  --up-bg: rgba(220, 38, 38, 0.10);
+  --down: #15803d;
+  --down-bg: rgba(21, 128, 61, 0.10);
+  --accent: #2563eb;
+  --accent-bg: rgba(37, 99, 235, 0.10);
+  --ok: #059669;
+  --ok-bg: rgba(5, 150, 105, 0.10);
+  --warn: #d97706;
+  --warn-bg: rgba(217, 119, 6, 0.12);
+  --danger: #dc2626;
+  --danger-bg: rgba(220, 38, 38, 0.10);
+  --shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sticky Global Header */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.topbar-row {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+}
+.brand-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.segmented {
+  display: inline-flex;
+  background: var(--bg-app);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px;
+}
+.segmented button {
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.segmented button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.pill.ok { border-color: rgba(16,185,129,0.35); background: var(--ok-bg); color: var(--ok); }
+.pill.warn { border-color: rgba(245,158,11,0.35); background: var(--warn-bg); color: var(--warn); }
+.pill.up { border-color: rgba(240,82,82,0.35); background: var(--up-bg); color: var(--up); }
+.pill.accent { border-color: rgba(59,130,246,0.35); background: var(--accent-bg); color: var(--accent); }
+
+.btn {
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  padding: 5px 11px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.btn:hover { background: var(--bg-hover); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.sm { padding: 3px 8px; font-size: 11.5px; }
+
+/* Navigation Tabs */
+.nav-bar {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  gap: 4px;
+  border-top: 1px solid var(--border);
+  overflow-x: auto;
+}
+.nav-tab {
+  position: relative;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.nav-tab:hover { color: var(--text-primary); }
+.nav-tab.active { color: var(--accent); }
+.nav-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 2.5px;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+}
+.nav-badge {
+  font-size: 10.5px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.nav-tab.active .nav-badge {
+  background: var(--accent-bg);
+  border-color: rgba(59,130,246,0.35);
+  color: var(--accent);
+}
+
+/* Main Container */
+.main {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 16px 18px 40px;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.prototype-banner {
+  margin-bottom: 14px;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-strong);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Grid System */
+.grid { display: grid; gap: 14px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid-aside { grid-template-columns: minmax(0, 1.55fr) minmax(320px, 1fr); }
+.grid-aside-rev { grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.55fr); }
+
+@media (max-width: 1120px) {
+  .grid-4, .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-aside, .grid-aside-rev, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Cards */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* KPI Tiles */
+.kpi {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+}
+.kpi-label {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.kpi-val {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+.kpi-meta {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Semantic Text Colors */
+.t-up { color: var(--up); }
+.t-down { color: var(--down); }
+.t-muted { color: var(--text-muted); }
+.t-warn { color: var(--warn); }
+.t-ok { color: var(--ok); }
+.t-accent { color: var(--accent); }
+
+/* Tags & Badges */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tag-ok { background: var(--ok-bg); color: var(--ok); border-color: rgba(16,185,129,0.28); }
+.tag-warn { background: var(--warn-bg); color: var(--warn); border-color: rgba(245,158,11,0.28); }
+.tag-danger { background: var(--danger-bg); color: var(--danger); border-color: rgba(239,68,68,0.28); }
+.tag-neutral { background: var(--bg-elevated); color: var(--text-secondary); border-color: var(--border); }
+.tag-accent { background: var(--accent-bg); color: var(--accent); border-color: rgba(59,130,246,0.28); }
+
+/* Tables */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+th, td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+  white-space: nowrap;
+}
+th:first-child, td:first-child,
+th.left, td.left { text-align: left; }
+thead th {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 11.5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+tbody tr:hover { background: var(--bg-hover); }
+tbody tr.clickable { cursor: pointer; }
+tbody tr.buffer-line td {
+  border-bottom: 2px dashed var(--ok);
+}
+tbody tr:last-child td { border-bottom: 0; }
+
+/* Slot Execution Cards */
+.slot-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slot-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.slot-code { font-size: 15px; font-weight: 700; }
+.slot-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.slot-m-label { font-size: 10.5px; color: var(--text-muted); }
+.slot-m-val { font-size: 13px; font-weight: 700; }
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.input, .select {
+  background: var(--bg-app);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  outline: none;
+}
+.input:focus, .select:focus { border-color: var(--accent); }
+.chip-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.chip.active {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Canvas Wrappers */
+.canvas-box {
+  position: relative;
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.canvas-box canvas { display: block; width: 100%; height: 100%; }
+.canvas-tooltip {
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  background: rgba(11, 15, 23, 0.94);
+  color: #f8fafc;
+  border: 1px solid #334361;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  max-width: 260px;
+}
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+.legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.legend-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+/* Plugin Banner & Research Layout */
+.plugin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 1180px) { .plugin-grid { grid-template-columns: 1fr; } }
+.sub-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+.callout {
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  color: var(--text-primary);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.callout.warn {
+  border-left-color: var(--warn);
+  background: var(--warn-bg);
+}
+
+textarea.code-area {
+  width: 100%;
+  min-height: 150px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  padding: 10px;
+  resize: vertical;
+}
+.scroll-table { max-height: 440px; overflow-y: auto; }
+.section-gap { margin-top: 14px; }
+</style>
+</head>
+<body>
+
+<!-- ==================== GLOBAL STICKY TOPBAR ==================== -->
+<header class="topbar">
+  <div class="topbar-row">
+    <div class="brand">
+      <div class="brand-logo">ALR</div>
+      <div>
+        <div class="brand-title">ashare-leader-rotation · 跨行业龙头趋势轮动研究台</div>
+        <div class="brand-sub mono">v4.1 UI 原型 · 冻结开发期 2015-01-05 ~ 2026-11-20 · A股红涨绿跌口径</div>
+      </div>
+    </div>
+
+    <div class="topbar-controls">
+      <div class="segmented" id="modeSwitcher" title="切换主策略口径">
+        <button data-mode="R2" class="active">R2 等权双槽</button>
+        <button data-mode="R2_Bucket">R2 跨桶分散</button>
+        <button data-mode="R1">R1 全仓单票</button>
+      </div>
+      <span class="pill accent mono">资金 ¥450,000 · 单槽 <span id="slotBudgetPill">¥225,000</span></span>
+      <span class="pill ok mono"><span class="dot" style="background:var(--ok)"></span>T1=1: <span id="t1BreadthText">7 / 13</span> (池 16→50)</span>
+      <span class="pill up mono"><span class="dot" style="background:var(--up)"></span>汪汪队: 托底 +1,527.9亿(5D)</span>
+      <span class="pill" title="engine.py & offline/engine.js SHA-256 锁定">🔒 Engine 冻结</span>
+      <button class="btn" id="themeToggle">浅色模式</button>
+    </div>
+  </div>
+
+  <nav class="nav-bar" id="navTabs">
+    <button class="nav-tab active" data-tab="desk">1. 实盘驾驶舱 <span class="nav-badge">Action</span></button>
+    <button class="nav-tab" data-tab="universe">2. 50股矩阵与体检 <span class="nav-badge" id="navPoolCount">16 只</span></button>
+    <button class="nav-tab" data-tab="radar">3. 汪汪队 ETF 雷达 <span class="nav-badge">7 只宽基</span></button>
+    <button class="nav-tab" data-tab="research">4. 个股专项研究台 <span class="nav-badge">600428 插件</span></button>
+    <button class="nav-tab" data-tab="audit">5. 样本外录入与审计 <span class="nav-badge">OOS / PIT</span></button>
+  </nav>
+</header>
+
+<main class="main">
+  <div class="prototype-banner">
+    <div>
+      <strong>UI 参考原型说明（供 Codex 落地 `offline/` 改版参考）：</strong>
+      当前展示结合已核验真实数据（牧原单票、13 只已验单票 W1/W5 指标、冻结日 Top 7 分数、7 只 ETF 5D/20D 净申赎）及待 Step A 解阻的 3 只差异化分红股与 `600428` 专项插件演示数据；正式版由 `run.py` 注入 `RAW` 与 `RAW.research` 驱动，<strong>严禁修改 `offline/engine.js`</strong>。
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="btn sm" id="toggle50Btn">模拟扩容至 50 股视图（测试密度）</button>
+    </div>
+  </div>
+
+  <!-- ==================== TAB 1: ACTION DESK ==================== -->
+  <section class="tab-panel active" id="tab-desk">
+    <!-- Execution Order Cards -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">下周一（2026-11-23 开盘）理论调仓指令 · <span id="deskModeLabel" class="t-accent">R2 等权双槽</span></div>
+          <div class="card-sub">按 2026-11-20 收盘信号、100 股整手、2bp 滑点与 0.025% 佣金试算（Step A 解阻 3 股后自动切换为全 16 股正式指令）</div>
+        </div>
+        <div class="chip-group">
+          <span class="tag tag-ok">整手闲置 ≤ 5%（优）</span>
+          <span class="tag tag-warn">5% ~ 10%（注意）</span>
+          <span class="tag tag-danger">&gt; 10%（高价磨损）</span>
+        </div>
+      </div>
+      <div class="grid grid-3" id="executionSlots"></div>
+    </div>
+
+    <!-- Top 10 Ranked + 4-Window Summary -->
+    <div class="grid grid-aside section-gap">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">入围趋势质量榜（Top 10 精简视图 · 点击行跳转专项研究）</div>
+            <div class="card-sub">绿色虚线为换仓护城河缓冲区（R2 前 5 / R1 前 3）；扩至 50 股时首屏仅展开前 10 名</div>
+          </div>
+          <span class="tag tag-neutral mono" id="bufferTag">换仓缓冲：Top 5</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th class="left">股票</th>
+                <th class="left">宏观风格桶</th>
+                <th>趋势质量分</th>
+                <th>收盘价</th>
+                <th>单槽整手</th>
+                <th>闲置率</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody id="top10Body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">四窗绩效与压力测试对照</div>
+            <div class="card-sub">Step A 清零 4 笔差异化权益后，R1/R2/等权列自动填充真数据</div>
+          </div>
+          <select class="select" id="scenarioSelect">
+            <option value="base">场景：2bp 滑点（基准）</option>
+            <option value="cash">场景：含现金 1.8% 复利</option>
+            <option value="slip7">压测：7bp 滑点</option>
+            <option value="t2">压测：T+2 延迟一日</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="left">窗口</th>
+                <th class="left">方案</th>
+                <th>净收益</th>
+                <th>最大回撤</th>
+                <th>收益/回撤</th>
+                <th>平均仓位</th>
+              </tr>
+            </thead>
+            <tbody id="fourWindowBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Equity Curve + 8-Bucket Gantt Chart -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div>
+          <div class="card-title">净值曲线与 8 大宏观桶持仓甘特图（2016-01 ~ 2026-11）</div>
+          <div class="card-sub">50 股扩容架构核心设计：甘特图统一按 8 个宏观风格桶着色，悬停显示具体持仓代码与仓位，避免 50 种颜色花屏</div>
+        </div>
+        <div class="segmented" id="equityRange">
+          <button data-range="W1" class="active">W1 全周期</button>
+          <button data-range="W5">W5 近五年</button>
+          <button data-range="2026">2026 风格切换</button>
+        </div>
+      </div>
+      <div class="canvas-box" style="height: 310px;">
+        <canvas id="equityGanttCanvas"></canvas>
+        <div class="canvas-tooltip" id="equityTooltip"></div>
+      </div>
+      <div class="legend-row" id="bucketLegend"></div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 2: 50-STOCK UNIVERSE MATRIX ==================== -->
+  <section class="tab-panel" id="tab-universe">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">多股票全景筛选与单票 `T1` 体检矩阵</div>
+          <div class="card-sub">适配 16 只种子池平滑扩容至 50+ 只耐抗龙头 · 支持按宏观桶、T1 状态、¥45 万整手价格红线实时筛选</div>
+        </div>
+        <div class="mono t-muted" id="screenerCountText">显示 16 / 16 只</div>
+      </div>
+
+      <div class="filter-bar">
+        <input class="input" id="searchInput" placeholder="搜索代码或简称（如 600428 / 牧原）" style="width:220px;" />
+        <select class="select" id="t1Filter">
+          <option value="all">T1 门禁：全部</option>
+          <option value="1">仅 T1 = 1（入围）</option>
+          <option value="0">仅 T1 = 0（观望）</option>
+          <option value="blocked">待 Step A 解阻</option>
+        </select>
+        <select class="select" id="priceTierFilter">
+          <option value="all">股价整手档位：全部</option>
+          <option value="opt">≤ ¥112.43（≤5% 闲置最优）</option>
+          <option value="good">¥112.44 ~ ¥224.90（≤10% 良好）</option>
+          <option value="high">&gt; ¥224.90（高价警示）</option>
+        </select>
+        <select class="select" id="sortSelect">
+          <option value="w5_rr">排序：W5 收益回撤比 ↓</option>
+          <option value="score">排序：最新趋势质量分 ↓</option>
+          <option value="w1_ret">排序：W1 十年净收益 ↓</option>
+          <option value="idle">排序：R2 整手闲置率 ↑</option>
+        </select>
+      </div>
+      <div class="chip-group" id="bucketChips" style="margin-bottom:12px;"></div>
+
+      <div class="table-wrap scroll-table">
+        <table>
+          <thead>
+            <tr>
+              <th class="left">代码 / 简称</th>
+              <th class="left">宏观桶 · 细分</th>
+              <th>T1</th>
+              <th>趋势分</th>
+              <th>收盘价</th>
+              <th>R2 闲置</th>
+              <th>60D 走势</th>
+              <th>W1 收益 / 回撤</th>
+              <th>W5 收益 / 回撤</th>
+              <th>W5 RR</th>
+              <th>W5 多/空命中</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="screenerBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Correlation Heatmap + Redundancy & Price Thresholds -->
+    <div class="grid grid-aside section-gap">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">按宏观桶聚类相关性热力图（Canvas 高密度渲染）</div>
+            <div class="card-sub">支持 16×16 无缝扩展至 50×50；鼠标悬停十字准星显示精确相关系数 r 与配对交易日数 n</div>
+          </div>
+          <span class="tag tag-ok">当前已验 13 股：0 对 r ≥ 0.65</span>
+        </div>
+        <div class="canvas-box" style="height: 360px;">
+          <canvas id="corrCanvas"></canvas>
+          <div class="canvas-tooltip" id="corrTooltip"></div>
+        </div>
+      </div>
+
+      <div class="grid" style="align-content:start;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">高相关冗余扫描（阈值 r ≥ 0.65）</div>
+            <span class="card-sub">扩容 50 股防同质化门禁</span>
+          </div>
+          <div class="callout">
+            当前已通过校验的 13 只种子股中 <strong>无一对触发 r ≥ 0.65 冗余警报</strong>。最高相关对为 <strong>600428 中远海特 × 601919 中远海控（r = 0.5961，n = 2,591）</strong>。
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="left">最高相关组合（Top 4 监控）</th>
+                  <th>相关系数 r</th>
+                  <th>样本 n</th>
+                  <th>判定</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="left">600428 中远海特 × 601919 中远海控</td><td class="mono">0.5961</td><td class="mono">2,591</td><td><span class="tag tag-warn">接近警戒</span></td></tr>
+                <tr><td class="left">601398 工商银行 × 600036 招商银行</td><td class="mono">0.5410</td><td class="mono">2,886</td><td><span class="tag tag-ok">通过</span></td></tr>
+                <tr><td class="left">601088 中国神华 × 600938 中国海油</td><td class="mono">0.4820</td><td class="mono">1,111</td><td><span class="tag tag-ok">通过</span></td></tr>
+                <tr><td class="left">002371 北方华创 × 600760 中航沈飞</td><td class="mono">0.3715</td><td class="mono">2,886</td><td><span class="tag tag-ok">通过</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">¥45 万资金整手红线体检（R2 单槽 ¥225,000）</div>
+          </div>
+          <div class="grid grid-2" style="margin-bottom:10px;">
+            <div class="kpi">
+              <div class="kpi-label"><span>5% 最坏闲置价格红线</span><span class="tag tag-ok">最优</span></div>
+              <div class="kpi-val mono">¥112.43</div>
+              <div class="kpi-meta">50 强日常扩池优先区间</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label"><span>10% 最坏闲置价格上限</span><span class="tag tag-warn">容忍</span></div>
+              <div class="kpi-val mono">¥224.90</div>
+              <div class="kpi-meta">超过则单槽闲置 &gt; ¥2.25万</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th class="left">超百元标的</th><th>收盘</th><th>R2 股数</th><th>余现金</th><th>闲置率</th></tr></thead>
+              <tbody>
+                <tr><td class="left">002371 北方华创</td><td class="mono">¥579.00</td><td class="mono">300</td><td class="mono">¥51,220.57</td><td class="mono t-up">22.76%</td></tr>
+                <tr><td class="left">300308 中际旭创</td><td class="mono">¥393.20</td><td class="mono">500</td><td class="mono">¥28,310.84</td><td class="mono t-up">12.58%</td></tr>
+                <tr><td class="left">300750 宁德时代</td><td class="mono">¥227.78</td><td class="mono">900</td><td class="mono">¥19,901.74</td><td class="mono t-warn">8.85%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 3: MACRO ETF RADAR ==================== -->
+  <section class="tab-panel" id="tab-radar">
+    <div class="grid grid-4">
+      <div class="kpi">
+        <div class="kpi-label"><span>7 只宽基 5D 净申赎估算</span><span class="tag tag-danger">托底蓄水</span></div>
+        <div class="kpi-val mono t-up">+1,527.90 亿</div>
+        <div class="kpi-meta">蓝筹 +1,145.62亿（75.0%）· 成长 +382.28亿</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label"><span>7 只宽基 20D 净申赎估算</span><span class="tag tag-danger">强托底</span></div>
+        <div class="kpi-val mono t-up">+3,001.31 亿</div>
+        <div class="kpi-meta">蓝筹 +1,968.08亿（65.6%）· 成长 +1,033.23亿</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label"><span>风格偏向差 Bias20（蓝筹−成长）</span><span class="tag tag-accent">蓝筹主导</span></div>
+        <div class="kpi-val mono">+934.85 亿</div>
+        <div class="kpi-meta">蓝筹护盘为主，成长同步左侧承接</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label"><span>历史份额覆盖（2020–2026）</span><span class="tag tag-ok">11,466 配对</span></div>
+        <div class="kpi-val mono">99.99%</div>
+        <div class="kpi-meta">Step A 启用 T+1 盘前披露惯例后点亮前瞻表</div>
+      </div>
+    </div>
+
+    <div class="card section-gap">
+      <div class="card-header">
+        <div>
+          <div class="card-title">蓝筹托底组 vs 成长承接组 · 20D 滚动净申赎与护盘脉冲</div>
+          <div class="card-sub">严格只读宏观雷达，完全独立于轮动撮合；红色柱为蓝筹组、青色柱为成长组、黄色虚线为 Bias20、顶部三角为 3× 放量护盘脉冲</div>
+        </div>
+      </div>
+      <div class="canvas-box" style="height: 270px;">
+        <canvas id="etfRadarCanvas"></canvas>
+        <div class="canvas-tooltip" id="etfTooltip"></div>
+      </div>
+    </div>
+
+    <div class="grid grid-2 section-gap">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">7 只核心宽基 ETF 净申赎明细（截至 2026-11-20 真实统计）</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="left">代码 / 基金</th>
+                <th class="left">分组</th>
+                <th>5D 净申赎(亿)</th>
+                <th>20D 净申赎(亿)</th>
+                <th>配对覆盖</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="left mono">510300 华泰柏瑞300</td><td class="left"><span class="tag tag-accent">蓝筹</span></td><td class="mono t-up">+386.32</td><td class="mono t-up">+812.60</td><td class="mono">1,668 / 100%</td></tr>
+              <tr><td class="left mono">159919 嘉实300</td><td class="left"><span class="tag tag-accent">蓝筹</span></td><td class="mono t-up">+336.58</td><td class="mono t-up">+489.92</td><td class="mono">1,668 / 100%</td></tr>
+              <tr><td class="left mono">510050 华夏上证50</td><td class="left"><span class="tag tag-accent">蓝筹</span></td><td class="mono t-up">+230.05</td><td class="mono t-up">+322.49</td><td class="mono">1,668 / 100%</td></tr>
+              <tr><td class="left mono">510330 华夏300</td><td class="left"><span class="tag tag-accent">蓝筹</span></td><td class="mono t-up">+192.67</td><td class="mono t-up">+343.07</td><td class="mono">1,668 / 100%</td></tr>
+              <tr><td class="left mono">510500 南方中证500</td><td class="left"><span class="tag tag-ok">成长</span></td><td class="mono t-up">+197.43</td><td class="mono t-up">+302.59</td><td class="mono">1,668 / 100%</td></tr>
+              <tr><td class="left mono">159915 易方达创业板</td><td class="left"><span class="tag tag-ok">成长</span></td><td class="mono t-up">+182.20</td><td class="mono t-up">+465.07</td><td class="mono">1,667 / 99.94%</td></tr>
+              <tr><td class="left mono">588000 华夏科创50</td><td class="left"><span class="tag tag-ok">成长</span></td><td class="mono t-up">+2.65</td><td class="mono t-up">+265.57</td><td class="mono">1,459 / 100%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">条件前瞻统计矩阵（2020–2026 非重叠独立样本）</div>
+          <span class="tag tag-warn">待 Step A T+1 披露口径点亮</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="left">汪汪队状态</th>
+                <th class="left">对照风格桶</th>
+                <th>20D 均收益</th>
+                <th>20D 独立胜率</th>
+                <th>60D 均收益</th>
+                <th>60D 独立 N</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="left"><span class="tag tag-danger">托底 (20D&gt;0)</span></td><td class="left">红利避险盾</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td></tr>
+              <tr><td class="left"><span class="tag tag-danger">托底 (20D&gt;0)</span></td><td class="left">科技成长桶</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td></tr>
+              <tr><td class="left"><span class="tag tag-warn">护盘脉冲 (≥3×)</span></td><td class="left">红利避险盾</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td></tr>
+              <tr><td class="left"><span class="tag tag-warn">护盘脉冲 (≥3×)</span></td><td class="left">科技成长桶</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td></tr>
+              <tr><td class="left"><span class="tag tag-ok">降温 (20D&lt;0)</span></td><td class="left">红利避险盾</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td></tr>
+              <tr><td class="left"><span class="tag tag-ok">降温 (20D&lt;0)</span></td><td class="left">科技成长桶</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td><td class="mono t-muted">待运行</td><td class="mono t-muted">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 4: STOCK RESEARCH LAB ==================== -->
+  <section class="tab-panel" id="tab-research">
+    <div class="card">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <div class="card-title">个股专项研究台（通用 K 线体检 + 插件化单票实验）</div>
+          <select class="select mono" id="researchStockSelect" style="min-width:230px;"></select>
+          <span id="researchPluginBadge"></span>
+        </div>
+        <div class="card-sub">独立于 `engine.py`，按 `RAW.research[code]` 协议动态渲染，未来任意股票均可零改代码挂载插件</div>
+      </div>
+
+      <!-- Universal Single-Stock KPI Strip -->
+      <div class="grid grid-5" id="stockKpiStrip" style="margin-bottom:12px;"></div>
+
+      <!-- Universal K-Line + 20W MA + T1 Shading -->
+      <div class="canvas-box" style="height: 290px;">
+        <canvas id="stockChartCanvas"></canvas>
+        <div class="canvas-tooltip" id="stockChartTooltip"></div>
+      </div>
+      <div class="legend-row">
+        <span class="legend-item"><span class="legend-swatch" style="background:var(--accent)"></span>因果复权收盘</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#f59e0b"></span>因果 20 周均线</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:rgba(240,82,82,0.18)"></span>T1 = 1 多头区间</span>
+        <span class="legend-item"><span class="legend-swatch" style="background:#a855f7"></span>财报 PIT 公告节点（插件标定）</span>
+      </div>
+    </div>
+
+    <!-- Lower Zone: Dynamic Plugin Area -->
+    <div id="pluginContainer" class="section-gap"></div>
+  </section>
+
+  <!-- ==================== TAB 5: OOS & DATA AUDIT ==================== -->
+  <section class="tab-panel" id="tab-audit">
+    <div class="grid grid-aside-rev">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">样本外周度录入与调仓试算（2026-11-23 起）</div>
+            <div class="card-sub">沿用 v4.0 IndexedDB 本地存储与 JSON 导出协议，粘贴收盘 CSV 自动重算最新排名</div>
+          </div>
+        </div>
+        <textarea class="code-area" id="oosCsvInput">date,code,status,open,high,low,close,volume,reference,limit,upper,lower
+2026-11-23,002714,open,45.00,45.60,44.70,45.35,38201100,44.85,bounded,49.34,40.37
+2026-11-23,600428,open,11.35,11.62,11.20,11.55,29410200,11.33,bounded,12.46,10.20</textarea>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+          <button class="btn primary" id="oosSimulateBtn">运行样本外增量试算</button>
+          <button class="btn">导出工作区 JSON</button>
+          <span class="t-muted mono" id="oosStatusMsg" style="align-self:center;font-size:11.5px;">等待导入新交易日...</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">数据完整性与差异化权益审计（PIT 透明台账）</div>
+            <div class="card-sub">直接绑定 `results/data_audit.json` 与 `data/verified_actions_override.csv`</div>
+          </div>
+          <span class="tag tag-warn mono">Step A 待清零：stock_issues = 4</span>
+        </div>
+        <div class="grid grid-3" style="margin-bottom:12px;">
+          <div class="kpi">
+            <div class="kpi-label"><span>engine.py SHA-256</span><span class="tag tag-ok">MATCH</span></div>
+            <div class="mono" style="font-size:11px;word-break:break-all;color:var(--text-secondary);">090dc7f92ca6f90f...54d38bda80</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label"><span>offline/engine.js SHA-256</span><span class="tag tag-ok">MATCH</span></div>
+            <div class="mono" style="font-size:11px;word-break:break-all;color:var(--text-secondary);">26094e36ba5c79a2...bc05ef945</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label"><span>日线 / ETF 底稿规模</span><span class="tag tag-ok">零缺口</span></div>
+            <div class="mono" style="font-size:13px;font-weight:700;">43,580 股行 · 11,466 ETF</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="left">差异化权益阻断项（4 笔）</th>
+                <th>实际分派</th>
+                <th>公告折算(ref)</th>
+                <th>行情参考价</th>
+                <th>原校验差</th>
+                <th class="left">Step A 解决方案</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="left">600900 长江电力 · 2016-07-19</td><td class="mono">¥0.4000 / 0</td><td class="mono">≈¥0.3600</td><td class="mono">¥12.77</td><td class="mono t-up">¥0.0400</td><td class="left">新增 `ref_cash_per_share` 列</td></tr>
+              <tr><td class="left">600900 长江电力 · 2023-07-21</td><td class="mono">¥0.8533 / 0</td><td class="mono">≈¥0.8200</td><td class="mono">¥21.58</td><td class="mono t-up">¥0.0333</td><td class="left">新增 `ref_cash_per_share` 列</td></tr>
+              <tr><td class="left">300308 中际旭创 · 2024-06-06</td><td class="mono">¥0.45 / 0.4股</td><td class="mono">≈97.96% 折算</td><td class="mono">¥119.64</td><td class="mono t-up">¥0.7043</td><td class="left">新增 `ref_cash/bonus` 列</td></tr>
+              <tr><td class="left">300750 宁德时代 · 2026-04-22</td><td class="mono">¥6.9570 / 0</td><td class="mono">≈¥6.9100</td><td class="mono">¥440.69</td><td class="mono t-up">¥0.0470</td><td class="left">新增 `ref_cash_per_share` 列</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ==================== DATA MODEL (Prototype Seed + 50-Stock Stress Sim) ==================== */
+const BUCKETS = [
+  { id: '红利避险盾', color: '#3b82f6' },
+  { id: '上游能源化工', color: '#f97316' },
+  { id: '贵金属有色', color: '#eab308' },
+  { id: '农业与必选消费', color: '#22c55e' },
+  { id: '硬科技半导体', color: '#a855f7' },
+  { id: 'AI算力数字基建', color: '#06b6d4' },
+  { id: '高端制造出海', color: '#ec4899' },
+  { id: '医药军工顺周期金融', color: '#6366f1' },
+];
+const BUCKET_COLOR = Object.fromEntries(BUCKETS.map(b => [b.id, b.color]));
+
+const SEED_16 = [
+  { code:'600066', name:'宇通客车', bucket:'高端制造出海', sub:'新能源客车出海', t1:1, score:0.746745, close:32.81, w1Ret:92.90, w1DD:-41.05, w5Ret:122.47, w5DD:-35.10, w5Long:55.88, w5Short:44.44, status:'ok' },
+  { code:'002714', name:'牧原股份', bucket:'农业与必选消费', sub:'生猪养殖龙头', t1:1, score:0.692881, close:44.85, w1Ret:421.18, w1DD:-37.40, w5Ret:27.75, w5DD:-24.21, w5Long:55.00, w5Short:52.17, status:'ok' },
+  { code:'601398', name:'工商银行', bucket:'红利避险盾', sub:'国有大行类债', t1:1, score:0.493789, close:9.40, w1Ret:81.55, w1DD:-44.44, w5Ret:68.60, w5DD:-16.86, w5Long:64.29, w5Short:37.04, status:'ok' },
+  { code:'600036', name:'招商银行', bucket:'医药军工顺周期金融', sub:'零售银行核心', t1:1, score:0.184357, close:44.00, w1Ret:105.03, w1DD:-36.35, w5Ret:1.87, w5DD:-29.12, w5Long:48.00, w5Short:42.86, status:'ok' },
+  { code:'601088', name:'中国神华', bucket:'红利避险盾', sub:'煤电一体红利', t1:1, score:0.163697, close:52.00, w1Ret:141.42, w1DD:-32.58, w5Ret:86.74, w5DD:-23.30, w5Long:52.38, w5Short:30.77, status:'ok' },
+  { code:'601919', name:'中远海控', bucket:'高端制造出海', sub:'全球集运周期', t1:1, score:0.100915, close:17.73, w1Ret:173.64, w1DD:-42.83, w5Ret:2.16, w5DD:-40.33, w5Long:48.48, w5Short:50.00, status:'ok' },
+  { code:'600760', name:'中航沈飞', bucket:'医药军工顺周期金融', sub:'航空总装军工', t1:1, score:-0.175729, close:48.20, w1Ret:-34.43, w1DD:-71.67, w5Ret:-18.06, w5DD:-36.49, w5Long:38.10, w5Short:52.38, status:'ok' },
+  { code:'600938', name:'中国海油', bucket:'上游能源化工', sub:'上游油气开采', t1:0, score:null, close:30.29, w1Ret:79.33, w1DD:-27.12, w5Ret:79.33, w5DD:-27.12, w5Long:60.71, w5Short:47.62, status:'ok' },
+  { code:'002371', name:'北方华创', bucket:'硬科技半导体', sub:'半导体平台设备', t1:0, score:null, close:579.00, w1Ret:346.04, w1DD:-47.84, w5Ret:75.22, w5DD:-36.36, w5Long:46.88, w5Short:48.48, status:'ok' },
+  { code:'600428', name:'中远海特', bucket:'高端制造出海', sub:'特种船工业出海', t1:0, score:null, close:11.33, w1Ret:-19.75, w1DD:-63.05, w5Ret:58.79, w5DD:-43.96, w5Long:53.33, w5Short:44.44, status:'ok', hasPlugins:true },
+  { code:'601899', name:'紫金矿业', bucket:'贵金属有色', sub:'全球金铜资源', t1:0, score:null, close:19.85, w1Ret:77.92, w1DD:-70.44, w5Ret:29.17, w5DD:-43.24, w5Long:51.43, w5Short:33.33, status:'ok' },
+  { code:'600111', name:'北方稀土', bucket:'贵金属有色', sub:'稀土配额周期', t1:0, score:null, close:31.91, w1Ret:189.06, w1DD:-54.86, w5Ret:21.49, w5DD:-35.64, w5Long:61.11, w5Short:59.57, status:'ok' },
+  { code:'600276', name:'恒瑞医药', bucket:'医药军工顺周期金融', sub:'创新药商业化', t1:0, score:null, close:51.40, w1Ret:121.09, w1DD:-57.73, w5Ret:-31.75, w5DD:-49.61, w5Long:48.15, w5Short:48.78, status:'ok' },
+  { code:'600900', name:'长江电力', bucket:'红利避险盾', sub:'水电永续现金流', t1:null, score:null, close:31.62, w1Ret:null, w1DD:null, w5Ret:null, w5DD:null, w5Long:null, w5Short:null, status:'blocked' },
+  { code:'300308', name:'中际旭创', bucket:'AI算力数字基建', sub:'全球光模块算力', t1:null, score:null, close:393.20, w1Ret:null, w1DD:null, w5Ret:null, w5DD:null, w5Long:null, w5Short:null, status:'blocked' },
+  { code:'300750', name:'宁德时代', bucket:'高端制造出海', sub:'动力电池与储能', t1:null, score:null, close:227.78, w1Ret:null, w1DD:null, w5Ret:null, w5DD:null, w5Long:null, w5Short:null, status:'blocked' },
+];
+
+/* Mock additional 34 stocks for 50-stock density testing */
+const EXTRA_34 = Array.from({ length: 34 }, (_, i) => {
+  const b = BUCKETS[i % BUCKETS.length];
+  const code = String(600500 + i * 7);
+  const close = Number((12 + ((i * 37) % 165) + 0.35).toFixed(2));
+  const t1 = i % 3 === 0 ? 1 : 0;
+  return {
+    code,
+    name: `扩容候选${String(i + 1).padStart(2, '0')}`,
+    bucket: b.id,
+    sub: '50强预演占位',
+    t1,
+    score: t1 ? Number((0.42 - i * 0.011).toFixed(6)) : null,
+    close,
+    w1Ret: Number((40 + ((i * 29) % 180)).toFixed(2)),
+    w1DD: Number((-25 - ((i * 13) % 32)).toFixed(2)),
+    w5Ret: Number((-10 + ((i * 19) % 95)).toFixed(2)),
+    w5DD: Number((-18 - ((i * 11) % 24)).toFixed(2)),
+    w5Long: Number((46 + (i % 16)).toFixed(2)),
+    w5Short: Number((40 + (i % 14)).toFixed(2)),
+    status: 'ok'
+  };
+});
+
+/* RAW.research["600428"] Plugin Schema Preview */
+const RESEARCH_PLUGINS = {
+  '600428': {
+    updated_at: '2026-11-23',
+    note: '当前为 UI 协议参考演示数据，由 research/exp_600428_*.py 独立生成真实 PIT 结果后自动替换',
+    earnings: {
+      summary: {
+        all:    { d3:{ret:0.012, ex:0.010, win:0.57, n:21}, d5:{ret:0.021, ex:0.017, win:0.62, n:21}, d10:{ret:0.031, ex:0.024, win:0.57, n:21}, d20:{ret:0.044, ex:0.032, win:0.60, n:20} },
+        t1_on:  { d3:{ret:0.024, ex:0.020, win:0.73, n:11}, d5:{ret:0.043, ex:0.036, win:0.82, n:11}, d10:{ret:0.068, ex:0.055, win:0.73, n:11}, d20:{ret:0.095, ex:0.078, win:0.80, n:10} },
+        t1_off: { d3:{ret:-0.001, ex:-0.001, win:0.40, n:10}, d5:{ret:-0.003, ex:-0.004, win:0.40, n:10}, d10:{ret:-0.010, ex:-0.010, win:0.40, n:10}, d20:{ret:-0.007, ex:-0.014, win:0.40, n:10} },
+      },
+      events: [
+        { date:'2026-03-27', timing:'盘后(T+1开盘)', type:'正式年报', t1:1, r3:0.028, r5:0.049, r10:0.072, r20:0.114, ex5:0.042 },
+        { date:'2026-01-22', timing:'盘后(T+1开盘)', type:'业绩预告', t1:1, r3:0.036, r5:0.061, r10:0.088, r20:0.105, ex5:0.051 },
+        { date:'2025-03-28', timing:'盘后(T+1开盘)', type:'正式年报', t1:1, r3:0.019, r5:0.041, r10:0.055, r20:0.082, ex5:0.036 },
+        { date:'2025-01-20', timing:'盘后(T+1开盘)', type:'业绩快报', t1:1, r3:0.022, r5:0.038, r10:0.049, r20:0.064, ex5:0.029 },
+        { date:'2024-03-29', timing:'盘后(T+1开盘)', type:'正式年报', t1:0, r3:-0.014, r5:-0.022, r10:-0.031, r20:-0.019, ex5:-0.018 },
+        { date:'2023-03-31', timing:'盘后(T+1开盘)', type:'正式年报', t1:0, r3:0.008, r5:-0.009, r10:-0.025, r20:-0.042, ex5:-0.015 },
+      ]
+    },
+    flow: {
+      real120: {
+        window: '近 120 交易日 + 每日 PIT 落盘',
+        triggers: 14,
+        gross2d: 0.0068,
+        gross3d: 0.0092,
+        win2d: 0.571,
+        win3d: 0.643,
+        annTradesEst: 29,
+      },
+      proxy10y: {
+        days: 2887,
+        def: '收跌(<0%) + 量比>1.2 + 收盘位于日振幅上半区(长下影承接)',
+        t1_on:  { n: 108, gross2d: 0.0064, net2d_14: 0.0050, gross3d: 0.0089, net3d_14: 0.0075, win3d: 0.583 },
+        t1_off: { n: 142, gross2d: -0.0012, net2d_14: -0.0026, gross3d: -0.0028, net3d_14: -0.0042, win3d: 0.444 },
+      }
+    }
+  }
+};
+
+/* ==================== STATE ==================== */
+const state = {
+  mode: 'R2',
+  tab: 'desk',
+  simulate50: false,
+  bucketFilter: 'ALL',
+  t1Filter: 'all',
+  priceTier: 'all',
+  sortBy: 'w5_rr',
+  search: '',
+  scenario: 'base',
+  equityRange: 'W1',
+  selectedStock: '600428',
+  earningsRegime: 'all',
+  earningsType: 'ALL',
+  flowFrictionBps: 14,
+};
+
+function getPool() {
+  return state.simulate50 ? [...SEED_16, ...EXTRA_34] : SEED_16;
+}
+
+function calcLotInfo(close, budget) {
+  const buy = Math.floor(close * 100 * 1.0002 + 0.5) / 100;
+  let lots = Math.floor(budget / (buy * 100));
+  while (lots > 0) {
+    const gross = lots * 100 * buy;
+    const comm = Math.max(5, Math.round(gross * 0.00025 * 100) / 100);
+    if (gross + comm <= budget) break;
+    lots -= 1;
+  }
+  const shares = lots * 100;
+  const gross = shares * buy;
+  const comm = shares ? Math.max(5, Math.round(gross * 0.00025 * 100) / 100) : 0;
+  const rem = budget - gross - comm;
+  const idle = rem / budget;
+  return { buy, shares, comm, rem, idle };
+}
+
+function fmtPct(v, digits = 2) {
+  if (v === null || v === undefined || Number.isNaN(v)) return '—';
+  return (v > 0 ? '+' : '') + v.toFixed(digits) + '%';
+}
+function clsSign(v) {
+  if (v === null || v === undefined) return 't-muted';
+  return v > 0 ? 't-up' : v < 0 ? 't-down' : '';
+}
+function idleTag(idle) {
+  const pct = (idle * 100).toFixed(2) + '%';
+  if (idle <= 0.05) return `<span class="tag tag-ok mono">${pct}</span>`;
+  if (idle <= 0.10) return `<span class="tag tag-warn mono">${pct}</span>`;
+  return `<span class="tag tag-danger mono">${pct}</span>`;
+}
+function bucketTag(b) {
+  const c = BUCKET_COLOR[b] || '#64748b';
+  return `<span class="tag tag-neutral"><span class="tag-dot" style="background:${c}"></span>${b}</span>`;
+}
+
+/* ==================== RENDERERS ==================== */
+function renderHeader() {
+  const pool = getPool();
+  const budget = state.mode === 'R1' ? 450000 : 225000;
+  document.getElementById('slotBudgetPill').textContent = '¥' + budget.toLocaleString();
+  const t1Count = pool.filter(x => x.t1 === 1).length;
+  const verifiedCount = pool.filter(x => x.status === 'ok').length;
+  document.getElementById('t1BreadthText').textContent = `${t1Count} / ${verifiedCount}`;
+  document.getElementById('navPoolCount').textContent = `${pool.length} 只`;
+  document.getElementById('deskModeLabel').textContent =
+    state.mode === 'R2' ? 'R2 等权双槽' : state.mode === 'R2_Bucket' ? 'R2 跨桶分散' : 'R1 全仓单票';
+  document.getElementById('bufferTag').textContent =
+    state.mode === 'R1' ? '换仓缓冲：Top 3' : '换仓缓冲：Top 5';
+}
+
+function renderDesk() {
+  const pool = getPool();
+  const ranked = pool.filter(x => x.t1 === 1 && x.score !== null).sort((a, b) => b.score - a.score);
+  const slotBudget = state.mode === 'R1' ? 450000 : 225000;
+  const slots = state.mode === 'R1' ? 1 : 2;
+  const chosen = [];
+  const usedBuckets = new Set();
+  for (const s of ranked) {
+    if (chosen.length >= slots) break;
+    if (state.mode === 'R2_Bucket' && usedBuckets.has(s.bucket)) continue;
+    chosen.push(s);
+    usedBuckets.add(s.bucket);
+  }
+
+  let totalUsed = 0;
+  const slotCards = chosen.map((s, idx) => {
+    const lot = calcLotInfo(s.close, slotBudget);
+    totalUsed += lot.shares * lot.buy + lot.comm;
+    return `
+      <div class="slot-card">
+        <div class="slot-top">
+          <div>
+            <div class="t-muted" style="font-size:11px;">槽位 #${idx + 1} · 预算 ¥${slotBudget.toLocaleString()}</div>
+            <div class="slot-code">${s.code} ${s.name}</div>
+          </div>
+          ${bucketTag(s.bucket)}
+        </div>
+        <div class="slot-metrics">
+          <div><div class="slot-m-label">趋势质量分</div><div class="slot-m-val mono t-accent">${s.score.toFixed(4)}</div></div>
+          <div><div class="slot-m-label">目标整手股数</div><div class="slot-m-val mono">${lot.shares.toLocaleString()} 股</div></div>
+          <div><div class="slot-m-label">槽位闲置率</div><div class="slot-m-val">${idleTag(lot.idle)}</div></div>
+        </div>
+        <div class="t-muted mono" style="font-size:11px;display:flex;justify-content:space-between;">
+          <span>参考买价 ¥${lot.buy.toFixed(2)}</span>
+          <span>槽位余现 ¥${lot.rem.toFixed(2)}</span>
+        </div>
+      </div>`;
+  });
+
+  const cashRem = 450000 - totalUsed;
+  slotCards.push(`
+    <div class="slot-card" style="border-style:dashed;">
+      <div class="slot-top">
+        <div>
+          <div class="t-muted" style="font-size:11px;">组合现金安全垫 / 货币基金</div>
+          <div class="slot-code mono">¥${cashRem.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div>
+        </div>
+        <span class="tag tag-ok">资金利用率 ${((totalUsed/450000)*100).toFixed(2)}%</span>
+      </div>
+      <div class="t-muted" style="font-size:11.5px;margin-top:4px;">
+        严格槽位制：仅 1 只标的达标时保留 50% 现金防极端熊市；全池 T1=0 自动 100% 切回现金。
+      </div>
+      <div class="mono t-muted" style="font-size:11px;">含息基准：现金按自然日 1.8% 年化复利</div>
+    </div>
+  `);
+  document.getElementById('executionSlots').innerHTML = slotCards.join('');
+
+  /* Top 10 Ranked Table */
+  const bufferCut = state.mode === 'R1' ? 3 : 5;
+  const top10 = ranked.slice(0, 10);
+  document.getElementById('top10Body').innerHTML = top10.map((s, idx) => {
+    const lot = calcLotInfo(s.close, slotBudget);
+    const isChosen = chosen.some(c => c.code === s.code);
+    const rowCls = ['clickable', idx + 1 === bufferCut ? 'buffer-line' : ''].join(' ');
+    return `
+      <tr class="${rowCls}" onclick="openResearch('${s.code}')">
+        <td class="mono" style="text-align:center;">#${idx + 1}</td>
+        <td class="left"><strong>${s.code}</strong> ${s.name}</td>
+        <td class="left">${bucketTag(s.bucket)}</td>
+        <td class="mono ${clsSign(s.score)}">${s.score.toFixed(6)}</td>
+        <td class="mono">¥${s.close.toFixed(2)}</td>
+        <td class="mono">${lot.shares.toLocaleString()}</td>
+        <td>${idleTag(lot.idle)}</td>
+        <td>${isChosen ? '<span class="tag tag-accent">入选持仓</span>' : (idx + 1 <= bufferCut ? '<span class="tag tag-ok">缓冲保留区</span>' : '<span class="tag tag-neutral">候补</span>')}</td>
+      </tr>`;
+  }).join('');
+
+  /* Four Window Table */
+  const myData = {
+    base:  { W1:['+421.18%','-37.40%','11.26','40.19%'], W_Bear:['-29.09%','-33.93%','-0.86','20.61%'], W5:['+27.75%','-24.21%','1.15','27.66%'], '2026':['-2.04%','-13.14%','-0.15','17.30%'] },
+    cash:  { W1:['+485.14%','-37.40%','12.97','40.19%'], W_Bear:['-26.12%','-33.93%','-0.77','20.61%'], W5:['+35.94%','-24.21%','1.48','27.66%'], '2026':['-0.81%','-13.14%','-0.06','17.30%'] },
+    slip7: { W1:['+410.47%','-37.68%','10.89','40.17%'], W_Bear:['-29.54%','-34.04%','-0.87','20.46%'], W5:['+26.69%','-24.33%','1.10','27.61%'], '2026':['-2.16%','-13.27%','-0.16','17.32%'] },
+    t2:    { W1:['+391.52%','-44.53%','8.79','40.14%'],  W_Bear:['-40.72%','-40.72%','-1.00','20.44%'], W5:['+23.75%','-22.12%','1.07','27.53%'], '2026':['+3.86%','-7.93%','0.49','16.86%'] },
+  }[state.scenario];
+  const csi = { W1:['+6.14%','-45.60%','0.13','100%'], W_Bear:['-33.79%','-36.28%','-0.93','100%'], W5:['-20.24%','-36.28%','-0.56','100%'], '2026':['-15.17%','-21.84%','-0.69','100%'] };
+  const rows = [];
+  for (const w of ['W1', 'W_Bear', 'W5', '2026']) {
+    rows.push(`<tr><td class="left mono"><strong>${w}</strong></td><td class="left">R2 / R2_Bucket / R1</td><td class="mono t-muted" colspan="4" style="text-align:center;">Step A 清零 4 笔差异化权益后自动填充正式真业绩</td></tr>`);
+    rows.push(`<tr><td class="left mono t-muted">${w}</td><td class="left">牧原单票 T1（真数据）</td><td class="mono ${myData[w][0].startsWith('+')?'t-up':'t-down'}">${myData[w][0]}</td><td class="mono t-down">${myData[w][1]}</td><td class="mono">${myData[w][2]}</td><td class="mono">${myData[w][3]}</td></tr>`);
+    rows.push(`<tr><td class="left mono t-muted">${w}</td><td class="left">沪深 300 基准</td><td class="mono ${csi[w][0].startsWith('+')?'t-up':'t-down'}">${csi[w][0]}</td><td class="mono t-down">${csi[w][1]}</td><td class="mono">${csi[w][2]}</td><td class="mono">${csi[w][3]}</td></tr>`);
+  }
+  document.getElementById('fourWindowBody').innerHTML = rows.join('');
+
+  /* Bucket Legend */
+  document.getElementById('bucketLegend').innerHTML =
+    BUCKETS.map(b => `<span class="legend-item"><span class="legend-swatch" style="background:${b.color}"></span>${b.id}</span>`).join('') +
+    `<span class="legend-item"><span class="legend-swatch" style="background:var(--b-cash)"></span>空仓现金</span>`;
+
+  drawEquityGantt();
+}
+
+function drawSparklineSVG(seed, positive) {
+  const pts = [];
+  let y = 14;
+  for (let i = 0; i < 16; i++) {
+    const step = Math.sin(seed * 1.7 + i * 0.7) * 3.2 + (positive ? -0.45 : 0.35);
+    y = Math.max(3, Math.min(21, y + step));
+    pts.push(`${(i * 4.4).toFixed(1)},${y.toFixed(1)}`);
+  }
+  const color = positive ? 'var(--up)' : 'var(--down)';
+  return `<svg width="68" height="24" viewBox="0 0 68 24"><polyline fill="none" stroke="${color}" stroke-width="1.6" points="${pts.join(' ')}"/></svg>`;
+}
+
+function renderUniverse() {
+  const pool = getPool();
+  /* Bucket Filter Chips */
+  const counts = {};
+  pool.forEach(s => counts[s.bucket] = (counts[s.bucket] || 0) + 1);
+  const chipsHtml = [
+    `<button class="chip ${state.bucketFilter === 'ALL' ? 'active' : ''}" onclick="setBucket('ALL')">全部 (${pool.length})</button>`,
+    ...BUCKETS.map(b => `<button class="chip ${state.bucketFilter === b.id ? 'active' : ''}" onclick="setBucket('${b.id}')"><span class="tag-dot" style="background:${b.color}"></span>${b.id} (${counts[b.id] || 0})</button>`)
+  ];
+  document.getElementById('bucketChips').innerHTML = chipsHtml.join('');
+
+  let filtered = pool.filter(s => {
+    if (state.bucketFilter !== 'ALL' && s.bucket !== state.bucketFilter) return false;
+    if (state.t1Filter === '1' && s.t1 !== 1) return false;
+    if (state.t1Filter === '0' && s.t1 !== 0) return false;
+    if (state.t1Filter === 'blocked' && s.status !== 'blocked') return false;
+    if (state.priceTier === 'opt' && s.close > 112.43) return false;
+    if (state.priceTier === 'good' && (s.close <= 112.43 || s.close > 224.90)) return false;
+    if (state.priceTier === 'high' && s.close <= 224.90) return false;
+    if (state.search && !(`${s.code}${s.name}${s.sub}`).toLowerCase().includes(state.search.toLowerCase())) return false;
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    if (state.sortBy === 'w5_rr') {
+      const ra = a.w5Ret !== null ? a.w5Ret / Math.abs(a.w5DD) : -999;
+      const rb = b.w5Ret !== null ? b.w5Ret / Math.abs(b.w5DD) : -999;
+      return rb - ra;
+    }
+    if (state.sortBy === 'score') return (b.score ?? -999) - (a.score ?? -999);
+    if (state.sortBy === 'w1_ret') return (b.w1Ret ?? -999) - (a.w1Ret ?? -999);
+    if (state.sortBy === 'idle') return calcLotInfo(a.close, 225000).idle - calcLotInfo(b.close, 225000).idle;
+    return 0;
+  });
+
+  document.getElementById('screenerCountText').textContent = `显示 ${filtered.length} / ${pool.length} 只`;
+  document.getElementById('screenerBody').innerHTML = filtered.map((s, idx) => {
+    const lot = calcLotInfo(s.close, 225000);
+    const rr = s.w5Ret !== null ? (s.w5Ret / Math.abs(s.w5DD)).toFixed(2) : '—';
+    const t1Badge = s.status === 'blocked'
+      ? '<span class="tag tag-warn">权益阻断</span>'
+      : (s.t1 === 1 ? '<span class="tag tag-danger">T1=1</span>' : '<span class="tag tag-neutral">T1=0</span>');
+    return `
+      <tr class="clickable" onclick="openResearch('${s.code}')">
+        <td class="left">
+          <strong class="mono">${s.code}</strong> ${s.name}
+          ${s.hasPlugins ? '<span class="tag tag-accent" style="margin-left:4px;">专项插件</span>' : ''}
+        </td>
+        <td class="left">${bucketTag(s.bucket)} <span class="t-muted" style="font-size:11px;">${s.sub}</span></td>
+        <td>${t1Badge}</td>
+        <td class="mono">${s.score !== null ? s.score.toFixed(4) : '—'}</td>
+        <td class="mono">¥${s.close.toFixed(2)}</td>
+        <td>${idleTag(lot.idle)}</td>
+        <td>${drawSparklineSVG(Number(s.code) % 97 + idx, (s.w5Ret ?? 1) >= 0)}</td>
+        <td class="mono">${s.w1Ret !== null ? `<span class="${clsSign(s.w1Ret)}">${fmtPct(s.w1Ret)}</span> / <span class="t-down">${s.w1DD.toFixed(1)}%</span>` : '<span class="t-muted">待解阻</span>'}</td>
+        <td class="mono">${s.w5Ret !== null ? `<span class="${clsSign(s.w5Ret)}">${fmtPct(s.w5Ret)}</span> / <span class="t-down">${s.w5DD.toFixed(1)}%</span>` : '<span class="t-muted">待解阻</span>'}</td>
+        <td class="mono"><strong>${rr}</strong></td>
+        <td class="mono">${s.w5Long !== null ? `${s.w5Long.toFixed(1)}% / ${s.w5Short.toFixed(1)}%` : '—'}</td>
+        <td><button class="btn sm" onclick="event.stopPropagation();openResearch('${s.code}')">研究 →</button></td>
+      </tr>`;
+  }).join('');
+
+  drawCorrHeatmap();
+}
+
+function renderResearch() {
+  const pool = getPool();
+  const sel = document.getElementById('researchStockSelect');
+  sel.innerHTML = pool.map(s => `<option value="${s.code}" ${s.code === state.selectedStock ? 'selected' : ''}>${s.code} ${s.name}（${s.bucket}）${s.hasPlugins ? ' ★专项' : ''}</option>`).join('');
+
+  const s = pool.find(x => x.code === state.selectedStock) || pool[0];
+  const plugin = RESEARCH_PLUGINS[s.code];
+  document.getElementById('researchPluginBadge').innerHTML = plugin
+    ? '<span class="tag tag-accent">已挂载 2 项专项插件（年报事件 + 跌价大单背离）</span>'
+    : '<span class="tag tag-neutral">仅通用 T1 体检视图</span>';
+
+  const lot = calcLotInfo(s.close, 225000);
+  const w5rr = s.w5Ret !== null ? (s.w5Ret / Math.abs(s.w5DD)).toFixed(2) : '—';
+  document.getElementById('stockKpiStrip').innerHTML = `
+    <div class="kpi"><div class="kpi-label"><span>当前门禁与趋势分</span>${bucketTag(s.bucket)}</div><div class="kpi-val mono">${s.t1 === 1 ? 'T1 = 1' : s.t1 === 0 ? 'T1 = 0' : '待解阻'}</div><div class="kpi-meta mono">Score: ${s.score !== null ? s.score.toFixed(4) : '—'}</div></div>
+    <div class="kpi"><div class="kpi-label"><span>W1 十年净收益 / 回撤</span></div><div class="kpi-val mono ${clsSign(s.w1Ret)}">${fmtPct(s.w1Ret)}</div><div class="kpi-meta mono">最大回撤 ${s.w1DD !== null ? s.w1DD.toFixed(2)+'%' : '—'}</div></div>
+    <div class="kpi"><div class="kpi-label"><span>W5 近五年收益 / 回撤</span></div><div class="kpi-val mono ${clsSign(s.w5Ret)}">${fmtPct(s.w5Ret)}</div><div class="kpi-meta mono">收益回撤比 ${w5rr} · 回撤 ${s.w5DD !== null ? s.w5DD.toFixed(2)+'%' : '—'}</div></div>
+    <div class="kpi"><div class="kpi-label"><span>W5 20D 独立命中率</span></div><div class="kpi-val mono">${s.w5Long !== null ? s.w5Long.toFixed(1)+'%' : '—'}</div><div class="kpi-meta mono">空头回避命中 ${s.w5Short !== null ? s.w5Short.toFixed(1)+'%' : '—'}</div></div>
+    <div class="kpi"><div class="kpi-label"><span>R2 单槽整手效率</span></div><div class="kpi-val mono">${lot.shares.toLocaleString()} 股</div><div class="kpi-meta">收盘 ¥${s.close.toFixed(2)} · 闲置 ${idleTag(lot.idle)}</div></div>
+  `;
+
+  drawStockKLine(s, Boolean(plugin));
+
+  const container = document.getElementById('pluginContainer');
+  if (!plugin) {
+    container.innerHTML = `
+      <div class="card" style="text-align:center;padding:28px;">
+        <div style="font-size:14px;font-weight:700;margin-bottom:6px;">${s.code} ${s.name} 当前未挂载专属实验插件</div>
+        <div class="t-muted" style="max-width:560px;margin:0 auto;">
+          如需针对该股新增独立事件或价量因子研究，请在仓库 <span class="mono">research/</span> 下运行实验脚本并导出
+          <span class="mono">results/research/${s.code}.json</span>，<span class="mono">run.py</span> 将自动打包至 <span class="mono">RAW.research</span> 并在本区渲染，无需改动 <span class="mono">engine.py</span>。
+        </div>
+        <div style="margin-top:12px;">
+          <button class="btn primary" onclick="openResearch('600428')">查看示范插件：600428 中远海特 →</button>
+        </div>
+      </div>`;
+    return;
+  }
+
+  /* Render 600428 2 Custom Plugin Cards */
+  const eSum = plugin.earnings.summary[state.earningsRegime];
+  const filteredEvents = plugin.earnings.events.filter(ev => {
+    if (state.earningsRegime === 't1_on' && ev.t1 !== 1) return false;
+    if (state.earningsRegime === 't1_off' && ev.t1 !== 0) return false;
+    if (state.earningsType !== 'ALL' && ev.type !== state.earningsType) return false;
+    return true;
+  });
+
+  const fricPct = state.flowFrictionBps / 10000;
+  const rf = plugin.flow.real120;
+  const net2 = rf.gross2d - fricPct;
+  const net3 = rf.gross3d - fricPct;
+  const annDrag = (1 - Math.pow(1 - fricPct, rf.annTradesEst)) * 100;
+  const p10 = plugin.flow.proxy10y;
+
+  container.innerHTML = `
+    <div class="callout warn">
+      <strong>研究隔离声明：</strong>${plugin.note}。以下两张实验卡仅作独立假设验真，<strong>不参与 v4.0 冻结轮动引擎自动撮合</strong>。
+    </div>
+    <div class="plugin-grid">
+      <!-- Plugin A: Earnings Event Study -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">实验插件 A · 财报发布事件驱动（预告 / 快报 / 正式年报）</div>
+            <div class="card-sub">按 PIT 公告时点区分盘前/盘后，次一可交易开盘买入；拆解上升周期 vs 下行周期差异</div>
+          </div>
+          <div class="segmented">
+            <button class="${state.earningsRegime==='all'?'active':''}" onclick="setEarningsRegime('all')">全部</button>
+            <button class="${state.earningsRegime==='t1_on'?'active':''}" onclick="setEarningsRegime('t1_on')">T1=1 上升期</button>
+            <button class="${state.earningsRegime==='t1_off'?'active':''}" onclick="setEarningsRegime('t1_off')">T1=0 下行期</button>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-bottom:10px;">
+          <table>
+            <thead><tr><th class="left">持有窗口</th><th>绝对均收益</th><th>超额(vs 沪深300)</th><th>胜率</th><th>独立样本 N</th></tr></thead>
+            <tbody>
+              ${[['3D','d3'],['5D','d5'],['10D','d10'],['20D','d20']].map(([lbl,k]) => `
+                <tr>
+                  <td class="left mono"><strong>公告后 ${lbl}</strong></td>
+                  <td class="mono ${clsSign(eSum[k].ret)}">${fmtPct(eSum[k].ret*100)}</td>
+                  <td class="mono ${clsSign(eSum[k].ex)}">${fmtPct(eSum[k].ex*100)}</td>
+                  <td class="mono">${(eSum[k].win*100).toFixed(1)}%</td>
+                  <td class="mono">${eSum[k].n}</td>
+                </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="filter-bar" style="margin-bottom:8px;">
+          <span class="t-muted" style="font-size:11.5px;">筛选公告类型：</span>
+          ${['ALL','业绩预告','业绩快报','正式年报'].map(t => `<button class="chip ${state.earningsType===t?'active':''}" onclick="setEarningsType('${t}')">${t==='ALL'?'全部':t}</button>`).join('')}
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th class="left">公告日</th><th class="left">类型</th><th>T1</th><th>3D</th><th>5D</th><th>5D 超额</th><th>20D</th></tr></thead>
+            <tbody>
+              ${filteredEvents.map(ev => `
+                <tr>
+                  <td class="left mono">${ev.date}</td>
+                  <td class="left">${ev.type}</td>
+                  <td>${ev.t1 ? '<span class="tag tag-danger">1</span>' : '<span class="tag tag-neutral">0</span>'}</td>
+                  <td class="mono ${clsSign(ev.r3)}">${fmtPct(ev.r3*100)}</td>
+                  <td class="mono ${clsSign(ev.r5)}">${fmtPct(ev.r5*100)}</td>
+                  <td class="mono ${clsSign(ev.ex5)}">${fmtPct(ev.ex5*100)}</td>
+                  <td class="mono ${clsSign(ev.r20)}">${fmtPct(ev.r20*100)}</td>
+                </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Plugin B: Price Down + Large Order Inflow -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">实验插件 B · 跌价 + 大单净量为正（2~3 日价量背离）</div>
+            <div class="card-sub">严格 T+1 开盘入场 · 双轨对照：近期真大单（左） vs 10 年 OHLCV 放量下影代理（右）</div>
+          </div>
+          <div class="segmented">
+            <button class="${state.flowFrictionBps===14?'active':''}" onclick="setFlowFriction(14)">摩擦 0.14%(2bp)</button>
+            <button class="${state.flowFrictionBps===24?'active':''}" onclick="setFlowFriction(24)">压测 0.24%(7bp)</button>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-bottom:10px;">
+          <div class="sub-card">
+            <div style="font-weight:700;margin-bottom:6px;">轨道 1：真实大单净量（${rf.window}）</div>
+            <div class="t-muted" style="font-size:11px;margin-bottom:8px;">触发 ${rf.triggers} 次 · 折算年化约 ${rf.annTradesEst} 次，年摩擦拖累 <strong class="t-warn">−${annDrag.toFixed(2)}%</strong></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th class="left">周期</th><th>毛收益</th><th>扣费净收益</th><th>胜率</th></tr></thead>
+                <tbody>
+                  <tr><td class="left mono">持 2D</td><td class="mono t-up">${fmtPct(rf.gross2d*100)}</td><td class="mono ${clsSign(net2)}">${fmtPct(net2*100)}</td><td class="mono">${(rf.win2d*100).toFixed(1)}%</td></tr>
+                  <tr><td class="left mono">持 3D</td><td class="mono t-up">${fmtPct(rf.gross3d*100)}</td><td class="mono ${clsSign(net3)}">${fmtPct(net3*100)}</td><td class="mono">${(rf.win3d*100).toFixed(1)}%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="sub-card">
+            <div style="font-weight:700;margin-bottom:6px;">轨道 2：10 年 OHLCV 承接代理（${p10.days} 日）</div>
+            <div class="t-muted" style="font-size:11px;margin-bottom:8px;">${p10.def}</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th class="left">趋势状态</th><th>样本 N</th><th>3D 扣费净</th><th>3D 胜率</th></tr></thead>
+                <tbody>
+                  <tr><td class="left"><span class="tag tag-danger">T1=1 上升</span></td><td class="mono">${p10.t1_on.n}</td><td class="mono t-up">${fmtPct((p10.t1_on.gross3d-fricPct)*100)}</td><td class="mono">${(p10.t1_on.win3d*100).toFixed(1)}%</td></tr>
+                  <tr><td class="left"><span class="tag tag-neutral">T1=0 下行</span></td><td class="mono">${p10.t1_off.n}</td><td class="mono t-down">${fmtPct((p10.t1_off.gross3d-fricPct)*100)}</td><td class="mono">${(p10.t1_off.win3d*100).toFixed(1)}%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-bottom:0;">
+          <strong>验证结论判读规则：</strong>若仅在 <strong>T1=1 上升趋势</strong> 下扣费净收益为正且胜率 &gt; 55%，而在 T1=0 下为负，说明该信号本质是<strong>“主升浪回调低吸择时器”</strong>，绝不可在下降通道中单独用来抄底接飞刀。
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ==================== CANVAS CHARTS ==================== */
+function setupCanvas(id) {
+  const canvas = document.getElementById(id);
+  if (!canvas) return null;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = Math.max(300, Math.floor(rect.width * dpr));
+  canvas.height = Math.max(200, Math.floor(rect.height * dpr));
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  return { canvas, ctx, w: rect.width, h: rect.height };
+}
+
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+function drawEquityGantt() {
+  const obj = setupCanvas('equityGanttCanvas');
+  if (!obj) return;
+  const { canvas, ctx, w, h } = obj;
+  const padL = 52, padR = 16, padT = 18, padB = 64;
+  const plotW = w - padL - padR;
+  const plotH = h - padT - padB;
+
+  const n = state.equityRange === '2026' ? 46 : state.equityRange === 'W5' ? 120 : 220;
+  const r2 = [], csi = [], segs = [];
+  let v1 = 1, v2 = 1;
+  for (let i = 0; i < n; i++) {
+    const wave = Math.sin(i * 0.14) * 0.022 + Math.cos(i * 0.05) * 0.015;
+    v1 *= (1 + 0.0085 + wave * 0.7);
+    v2 *= (1 + 0.0005 + wave * 1.1);
+    r2.push(v1);
+    csi.push(v2);
+    const bIdx = Math.floor(i / 14) % (BUCKETS.length + 1);
+    segs.push(bIdx === BUCKETS.length ? { bucket: '空仓现金', color: cssVar('--b-cash'), ticker: '现金 100%' }
+      : { bucket: BUCKETS[bIdx].id, color: BUCKETS[bIdx].color, ticker: SEED_16[bIdx % SEED_16.length].code + ' ' + SEED_16[bIdx % SEED_16.length].name });
+  }
+
+  const maxV = Math.max(...r2, ...csi) * 1.06;
+  const minV = Math.min(...r2, ...csi) * 0.94;
+  const yOf = v => padT + plotH - ((v - minV) / (maxV - minV)) * plotH;
+  const xOf = i => padL + (i / (n - 1)) * plotW;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.strokeStyle = cssVar('--border');
+  ctx.lineWidth = 1;
+  for (let g = 0; g <= 4; g++) {
+    const y = padT + (plotH / 4) * g;
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(w - padR, y); ctx.stroke();
+    const val = maxV - ((maxV - minV) / 4) * g;
+    ctx.fillStyle = cssVar('--text-muted');
+    ctx.font = '11px ui-monospace, monospace';
+    ctx.fillText(val.toFixed(2) + 'x', 6, y + 4);
+  }
+
+  /* Benchmark Line */
+  ctx.strokeStyle = cssVar('--text-muted');
+  ctx.lineWidth = 1.4;
+  ctx.setLineDash([4, 3]);
+  ctx.beginPath();
+  csi.forEach((v, i) => i ? ctx.lineTo(xOf(i), yOf(v)) : ctx.moveTo(xOf(i), yOf(v)));
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  /* R2 Curve */
+  ctx.strokeStyle = cssVar('--accent');
+  ctx.lineWidth = 2.2;
+  ctx.beginPath();
+  r2.forEach((v, i) => i ? ctx.lineTo(xOf(i), yOf(v)) : ctx.moveTo(xOf(i), yOf(v)));
+  ctx.stroke();
+
+  /* Gantt Bar below curve (Slot 1 + Slot 2) */
+  const ganttY = padT + plotH + 14;
+  const barH = 14;
+  const stepW = plotW / n;
+  ctx.fillStyle = cssVar('--text-muted');
+  ctx.font = '10.5px sans-serif';
+  ctx.fillText('槽位1', 8, ganttY + 11);
+  ctx.fillText('槽位2', 8, ganttY + 30);
+
+  for (let i = 0; i < n; i++) {
+    ctx.fillStyle = segs[i].color;
+    ctx.fillRect(padL + i * stepW, ganttY, Math.ceil(stepW) + 0.5, barH);
+    const s2 = segs[(i + 5) % n];
+    ctx.fillStyle = s2.color;
+    ctx.fillRect(padL + i * stepW, ganttY + 19, Math.ceil(stepW) + 0.5, barH);
+  }
+
+  const tip = document.getElementById('equityTooltip');
+  canvas.onmousemove = e => {
+    const r = canvas.getBoundingClientRect();
+    const mx = e.clientX - r.left;
+    if (mx < padL || mx > w - padR) { tip.style.display = 'none'; return; }
+    const idx = Math.max(0, Math.min(n - 1, Math.round(((mx - padL) / plotW) * (n - 1))));
+    const s1 = segs[idx], s2 = segs[(idx + 5) % n];
+    tip.style.display = 'block';
+    tip.style.left = Math.min(w - 230, mx + 12) + 'px';
+    tip.style.top = '12px';
+    tip.innerHTML = `<strong>样本周 #${idx + 1} (${state.equityRange} 演示)</strong><br>` +
+      `组合净值：<span class="mono">${r2[idx].toFixed(2)}x</span> · 沪深300：<span class="mono">${csi[idx].toFixed(2)}x</span><br>` +
+      `槽位1：${s1.bucket} (${s1.ticker})<br>槽位2：${s2.bucket} (${s2.ticker})`;
+  };
+  canvas.onmouseleave = () => tip.style.display = 'none';
+}
+
+function drawCorrHeatmap() {
+  const obj = setupCanvas('corrCanvas');
+  if (!obj) return;
+  const { canvas, ctx, w, h } = obj;
+  const pool = [...getPool()].sort((a, b) => a.bucket.localeCompare(b.bucket));
+  const n = pool.length;
+  const padL = n <= 20 ? 54 : 18;
+  const padT = 18;
+  const size = Math.min(w - padL - 20, h - padT - 18);
+  const cell = size / n;
+
+  ctx.clearRect(0, 0, w, h);
+  const mat = [];
+  for (let i = 0; i < n; i++) {
+    mat[i] = [];
+    for (let j = 0; j < n; j++) {
+      if (i === j) mat[i][j] = 1;
+      else if (j < i) mat[i][j] = mat[j][i];
+      else {
+        const sameB = pool[i].bucket === pool[j].bucket;
+        let r = sameB ? 0.42 + ((i * 7 + j * 11) % 18) / 100 : -0.08 + ((i * 13 + j * 5) % 45) / 100;
+        if ((pool[i].code === '600428' && pool[j].code === '601919') || (pool[j].code === '600428' && pool[i].code === '601919')) r = 0.5961;
+        mat[i][j] = r;
+      }
+    }
+  }
+
+  for (let i = 0; i < n; i++) {
+    if (n <= 20) {
+      ctx.fillStyle = cssVar('--text-muted');
+      ctx.font = '10px ui-monospace, monospace';
+      ctx.fillText(pool[i].code, 4, padT + i * cell + cell * 0.72);
+    }
+    for (let j = 0; j < n; j++) {
+      const r = mat[i][j];
+      const alpha = Math.min(0.95, Math.abs(r));
+      ctx.fillStyle = r >= 0.65 ? `rgba(240,82,82,${alpha})`
+        : r >= 0 ? `rgba(59,130,246,${0.12 + alpha * 0.78})`
+        : `rgba(34,197,94,${0.15 + alpha * 0.65})`;
+      ctx.fillRect(padL + j * cell, padT + i * cell, Math.max(1, cell - 0.8), Math.max(1, cell - 0.8));
+    }
+  }
+
+  const tip = document.getElementById('corrTooltip');
+  canvas.onmousemove = e => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left - padL;
+    const y = e.clientY - rect.top - padT;
+    const j = Math.floor(x / cell), i = Math.floor(y / cell);
+    if (i < 0 || j < 0 || i >= n || j >= n) { tip.style.display = 'none'; return; }
+    tip.style.display = 'block';
+    tip.style.left = Math.min(w - 230, e.clientX - rect.left + 12) + 'px';
+    tip.style.top = Math.max(8, e.clientY - rect.top - 52) + 'px';
+    tip.innerHTML = `<strong>${pool[i].code} ${pool[i].name}</strong> × <strong>${pool[j].code} ${pool[j].name}</strong><br>` +
+      `桶：${pool[i].bucket} / ${pool[j].bucket}<br>相关系数 r = <span class="mono">${mat[i][j].toFixed(4)}</span>`;
+  };
+  canvas.onmouseleave = () => tip.style.display = 'none';
+}
+
+function drawEtfRadar() {
+  const obj = setupCanvas('etfRadarCanvas');
+  if (!obj) return;
+  const { canvas, ctx, w, h } = obj;
+  const padL = 52, padR = 16, padT = 22, padB = 26;
+  const plotW = w - padL - padR, plotH = h - padT - padB;
+  const n = 60;
+  const blue = [], growth = [], pulses = [];
+  for (let i = 0; i < n; i++) {
+    const b = i > 45 ? 600 + (i - 45) * 95 : Math.sin(i * 0.22) * 550;
+    const g = i > 45 ? 240 + (i - 45) * 52 : Math.cos(i * 0.19) * 320;
+    blue.push(b); growth.push(g);
+    if (i === 52 || i === 58) pulses.push(i);
+  }
+  const maxAbs = 2400;
+  const midY = padT + plotH * 0.62;
+  const scaleY = (plotH * 0.56) / maxAbs;
+  const bw = (plotW / n) * 0.72;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.strokeStyle = cssVar('--border-strong');
+  ctx.beginPath(); ctx.moveTo(padL, midY); ctx.lineTo(w - padR, midY); ctx.stroke();
+
+  for (let i = 0; i < n; i++) {
+    const x = padL + (i / n) * plotW;
+    ctx.fillStyle = 'rgba(240, 82, 82, 0.75)';
+    ctx.fillRect(x, blue[i] >= 0 ? midY - blue[i] * scaleY : midY, bw, Math.abs(blue[i] * scaleY));
+    ctx.fillStyle = 'rgba(6, 182, 212, 0.75)';
+    const gStart = blue[i] >= 0 && growth[i] >= 0 ? midY - (blue[i] + growth[i]) * scaleY : midY;
+    ctx.fillRect(x, growth[i] >= 0 ? gStart : midY, bw, Math.abs(growth[i] * scaleY));
+    if (pulses.includes(i)) {
+      ctx.fillStyle = '#f59e0b';
+      ctx.beginPath();
+      ctx.moveTo(x + bw / 2, padT + 2);
+      ctx.lineTo(x + bw / 2 - 5, padT + 11);
+      ctx.lineTo(x + bw / 2 + 5, padT + 11);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+  /* Bias20 Line */
+  ctx.strokeStyle = '#f59e0b';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (let i = 0; i < n; i++) {
+    const x = padL + (i / n) * plotW + bw / 2;
+    const y = midY - (blue[i] - growth[i]) * scaleY;
+    i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+  }
+  ctx.stroke();
+
+  ctx.fillStyle = cssVar('--text-muted');
+  ctx.font = '11px ui-monospace, monospace';
+  ctx.fillText('+2000亿', 4, midY - 2000 * scaleY + 4);
+  ctx.fillText('0', 36, midY + 4);
+  ctx.fillText('-1000亿', 4, midY + 1000 * scaleY + 4);
+}
+
+function drawStockKLine(stock, showEvents) {
+  const obj = setupCanvas('stockChartCanvas');
+  if (!obj) return;
+  const { ctx, w, h } = obj;
+  const padL = 52, padR = 16, padT = 18, padB = 26;
+  const plotW = w - padL - padR, plotH = h - padT - padB;
+  const n = 120;
+  const seed = Number(stock.code) % 100;
+  const close = [], ma20w = [], t1 = [];
+  let p = stock.close * 0.78;
+  for (let i = 0; i < n; i++) {
+    p = Math.max(2, p * (1 + Math.sin(i * 0.12 + seed) * 0.018 + 0.0022));
+    close.push(p);
+    const slice = close.slice(Math.max(0, i - 25), i + 1);
+    const ma = slice.reduce((a, b) => a + b, 0) / slice.length;
+    ma20w.push(ma);
+    t1.push(p > ma ? 1 : 0);
+  }
+  const maxV = Math.max(...close, ...ma20w) * 1.05;
+  const minV = Math.min(...close, ...ma20w) * 0.95;
+  const xOf = i => padL + (i / (n - 1)) * plotW;
+  const yOf = v => padT + plotH - ((v - minV) / (maxV - minV)) * plotH;
+
+  ctx.clearRect(0, 0, w, h);
+  for (let i = 0; i < n; i++) {
+    if (t1[i]) {
+      ctx.fillStyle = 'rgba(240, 82, 82, 0.10)';
+      ctx.fillRect(xOf(i), padT, plotW / n + 1, plotH);
+    }
+  }
+  ctx.strokeStyle = cssVar('--border');
+  for (let g = 0; g <= 4; g++) {
+    const y = padT + (plotH / 4) * g;
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(w - padR, y); ctx.stroke();
+    ctx.fillStyle = cssVar('--text-muted');
+    ctx.font = '11px ui-monospace, monospace';
+    ctx.fillText('¥' + (maxV - ((maxV - minV) / 4) * g).toFixed(1), 4, y + 4);
+  }
+  /* MA20W */
+  ctx.strokeStyle = '#f59e0b';
+  ctx.lineWidth = 1.6;
+  ctx.beginPath();
+  ma20w.forEach((v, i) => i ? ctx.lineTo(xOf(i), yOf(v)) : ctx.moveTo(xOf(i), yOf(v)));
+  ctx.stroke();
+  /* Price */
+  ctx.strokeStyle = cssVar('--accent');
+  ctx.lineWidth = 2.1;
+  ctx.beginPath();
+  close.forEach((v, i) => i ? ctx.lineTo(xOf(i), yOf(v)) : ctx.moveTo(xOf(i), yOf(v)));
+  ctx.stroke();
+
+  if (showEvents) {
+    [28, 64, 96, 108].forEach(idx => {
+      ctx.fillStyle = '#a855f7';
+      ctx.beginPath();
+      ctx.arc(xOf(idx), yOf(close[idx]), 4.5, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+}
+
+/* ==================== INTERACTIONS ==================== */
+function switchTab(tabId) {
+  state.tab = tabId;
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tabId));
+  if (tabId === 'desk') renderDesk();
+  if (tabId === 'universe') renderUniverse();
+  if (tabId === 'radar') drawEtfRadar();
+  if (tabId === 'research') renderResearch();
+}
+
+window.openResearch = function(code) {
+  state.selectedStock = code;
+  switchTab('research');
+};
+window.setBucket = function(b) { state.bucketFilter = b; renderUniverse(); };
+window.setEarningsRegime = function(r) { state.earningsRegime = r; renderResearch(); };
+window.setEarningsType = function(t) { state.earningsType = t; renderResearch(); };
+window.setFlowFriction = function(bps) { state.flowFrictionBps = bps; renderResearch(); };
+
+document.getElementById('navTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.nav-tab');
+  if (btn) switchTab(btn.dataset.tab);
+});
+
+document.getElementById('modeSwitcher').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  state.mode = btn.dataset.mode;
+  document.querySelectorAll('#modeSwitcher button').forEach(b => b.classList.toggle('active', b === btn));
+  renderHeader();
+  if (state.tab === 'desk') renderDesk();
+});
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const root = document.documentElement;
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '浅色模式' : '深色模式';
+  switchTab(state.tab);
+});
+
+document.getElementById('toggle50Btn').addEventListener('click', () => {
+  state.simulate50 = !state.simulate50;
+  document.getElementById('toggle50Btn').textContent = state.simulate50
+    ? '切回 16 只种子池视图' : '模拟扩容至 50 股视图（测试密度）';
+  renderHeader();
+  switchTab(state.tab);
+});
+
+document.getElementById('scenarioSelect').addEventListener('change', e => { state.scenario = e.target.value; renderDesk(); });
+document.getElementById('equityRange').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  state.equityRange = btn.dataset.range;
+  document.querySelectorAll('#equityRange button').forEach(b => b.classList.toggle('active', b === btn));
+  drawEquityGantt();
+});
+document.getElementById('searchInput').addEventListener('input', e => { state.search = e.target.value; renderUniverse(); });
+document.getElementById('t1Filter').addEventListener('change', e => { state.t1Filter = e.target.value; renderUniverse(); });
+document.getElementById('priceTierFilter').addEventListener('change', e => { state.priceTier = e.target.value; renderUniverse(); });
+document.getElementById('sortSelect').addEventListener('change', e => { state.sortBy = e.target.value; renderUniverse(); });
+document.getElementById('researchStockSelect').addEventListener('change', e => { state.selectedStock = e.target.value; renderResearch(); });
+document.getElementById('oosSimulateBtn').addEventListener('click', () => {
+  const lines = document.getElementById('oosCsvInput').value.trim().split('\n').length - 1;
+  document.getElementById('oosStatusMsg').textContent = `已解析 ${Math.max(0, lines)} 条增量日线（正式版调用 offline/engine.js 试算）`;
+});
+
+window.addEventListener('resize', () => switchTab(state.tab));
+
+/* Initial Render */
+renderHeader();
+renderDesk();
+</script>
+</body>
+</html>

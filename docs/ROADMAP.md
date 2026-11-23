@@ -13,9 +13,9 @@
 | 研究配置 | `approved`；起始资金 ¥450,000 | [policy.json](../policy.json) |
 | 开发期与前缀 | 配置边界 2015-01-01 至 2026-11-20；前缀截断 2023-01-20 | [policy.json](../policy.json) |
 | 交易日历 | 首个交易日 2015-01-05；冻结期共 2,887 日 | [data/calendar.csv](../data/calendar.csv)、[历史日历核对](../historical_calendar_crosscheck.json) |
-| 原包数据覆盖 | 牧原日线 2,887 行、沪深 300 缺口 0 日；其余 15 只股票共缺 40,693 个交易日记录 | [原交付报告](../results/rotation_v4_0_validation.md) |
-| 原包 ETF 覆盖 | 仅 510300 有 1 条份额记录；报告记载冻结日已知份额数为 0，未形成有效连续诊断 | [原交付报告](../results/rotation_v4_0_validation.md) |
-| 原报告验证范围 | 合成工程数据验证、50 只配置扩容测试，以及牧原 T1 / 沪深 300 独立对照；正式全池前缀与逐笔对账待完整底稿 | [原交付报告](../results/rotation_v4_0_validation.md) |
+| 原包数据覆盖 | 牧原日线 2,887 行、沪深 300 缺口 0 日；其余 15 只股票共缺 40,693 个交易日记录 | [原交付报告](https://github.com/yuan2go/ashare-leader-rotation/blob/92c1af0f605fa012702dab3097bbee708ade0963/results/rotation_v4_0_validation.md) |
+| 原包 ETF 覆盖 | 仅 510300 有 1 条份额记录；报告记载冻结日已知份额数为 0，未形成有效连续诊断 | [原交付报告](https://github.com/yuan2go/ashare-leader-rotation/blob/92c1af0f605fa012702dab3097bbee708ade0963/results/rotation_v4_0_validation.md) |
+| 原报告验证范围 | 合成工程数据验证、50 只配置扩容测试，以及牧原 T1 / 沪深 300 独立对照；正式全池前缀与逐笔对账待完整底稿 | [原交付报告](https://github.com/yuan2go/ashare-leader-rotation/blob/92c1af0f605fa012702dab3097bbee708ade0963/results/rotation_v4_0_validation.md) |
 
 配置起始日与首个市场交易日含义不同，不为统一文字而改动 `policy.json`。原报告中的独立对照不能替代 16 只股票的正式轮动结果。
 
@@ -86,7 +86,7 @@ python run.py --confirm-seeds
 
 ETF 采集可与股票补数并行，股票回放不以七只 ETF 全部齐备为前置条件。
 
-按 `funds.csv` 补充实际日份额、价格或 NAV、成交额、份额折算和披露时点。报告每只基金上市边界、可用区间、覆盖率与窗口分母；不使用月度数据代替日份额，不把后来取得的数据回填成过去已经可知的信号。
+按 `funds.csv` 补充实际日份额、价格或 NAV、成交额、份额折算和披露时点。历史官方日规模报表采用已批准的下一交易日可见假设，单列实际下载时点与带时间戳的实时样本。报告每只基金的上市边界、可用区间、覆盖率与窗口分母。
 
 在足够的实际可得日覆盖下形成 2020 年以来的 5D / 20D 与条件前瞻诊断，说明有效样本及限制。ETF 雷达保持独立观测，份额变化不能识别具体投资者身份，也不自动变成轮动撮合条件。
 
