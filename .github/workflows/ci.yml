@@ -1,0 +1,65 @@
+name: Quant Integrity & Parity CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quant-integrity-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: utf-8
+
+jobs:
+  verify:
+    name: Frozen engines and synthetic parity (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js 24 LTS
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+          package-manager-cache: false
+
+      - name: Verify frozen v4.0 engine SHA-256
+        run: python scripts/check_integrity.py
+
+      # These tests use only Python/Node standard libraries. requirements.txt is
+      # for local online collection; CI never contacts market-data providers.
+      - name: Prepare missing inputs and build the offline test page
+        run: python scripts/prepare_workspace.py
+
+      - name: Test collector normalization without network
+        run: python tests/test_fetch.py
+
+      # test_engine.py invokes parity.cjs and ui.cjs with the same synthetic
+      # fixture, including the 50-code configuration check and prefix checks.
+      # Empty CSV headers and synthetic success do not certify a real replay.
+      - name: Test Python engine, JS parity, prefix causality and offline UI
+        run: python tests/test_engine.py
+
+      - name: Recheck frozen bytes after validation
+        run: python scripts/check_integrity.py

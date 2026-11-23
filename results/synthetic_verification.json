@@ -1,0 +1,14 @@
+{
+  "states": 3098,
+  "paths": 36,
+  "rows": 102132,
+  "orders": 6501,
+  "expansion_test_codes": 50,
+  "prefix": {
+    "date": "2023-01-20",
+    "main": 1840,
+    "total": 2101,
+    "source_rows": 3098
+  },
+  "schema_scope": "synthetic only"
+}

@@ -1,0 +1,31 @@
+# Python / Node local environments and caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+node_modules/
+
+# Local editor, operating system and credential files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Rebuildable market data and provider caches; retain data/verified/ as evidence.
+/data/stocks.csv
+/data/etf.csv
+/data/fetch_cache/
+/data/fetch_warnings.log
+/data/fetch_provenance.json
+
+# Rebuildable research payload and self-contained page.
+# Keep the imported audit, validation report and synthetic proof in results/.
+/results/rotation_research.json
+/rotation_quant_lab_v4_0_offline.html

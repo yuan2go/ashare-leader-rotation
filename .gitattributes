@@ -1,0 +1,10 @@
+# Keep ordinary source and documentation consistent across Windows and Linux.
+* text=auto eol=lf
+
+# Frozen engines and archived evidence are checked by their original bytes.
+engine.py -text
+offline/engine.js -text
+*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+historical_calendar_crosscheck.json -text
+results/** -text
+docs/archive/** -text
