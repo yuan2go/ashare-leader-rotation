@@ -1,0 +1,12 @@
+code,ex_date,announce_date,pay_date,share_date,cash_per_share,bonus_per_share,source,ref_cash_per_share,ref_bonus_per_share,diff_note
+300308,2024-06-06,2024-05-30,2024-06-06,2024-06-06,0.45,0.4,https://static.cninfo.com.cn/finalpage/2024-05-30/1220213405.PDF,0.4408015,0.3918236,回购专户股份不参与现金与转增分派；按总股本折算
+300750,2024-04-30,2024-04-23,2024-04-30,,5.028,0,https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10041363,,,
+300750,2025-01-24,2025-01-17,2025-01-24,,1.23,0,https://disc.static.szse.cn/disc/disk03/finalpage/2025-01-17/9d039b93-fbaf-4777-b017-05a28821c285.PDF,,,
+300750,2026-04-22,2026-04-15,2026-04-22,,6.957,0,https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-15/a033b72d-34e0-4757-9056-3e415ac30fb9.PDF,6.9065252,0,回购专户股份不参与现金分派；采用公告披露的截位折算值
+600900,2016-07-19,2016-07-15,2016-07-19,,0.4,0,https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2580892&stockid=600900,0.3569595454545455,0,补充公告按 7853110000 元除以 22000000000 股折算；实际分派见 2016-07-13 实施公告 https://static.cninfo.com.cn/finalpage/2016-07-13/1202468389.PDF
+600900,2017-07-14,2017-07-10,2017-07-14,,0.725,0,https://static.cninfo.com.cn/finalpage/2017-07-10/1203690729.PDF,,,
+600900,2023-07-21,2023-07-17,2023-07-21,,0.8533,0,https://static.cninfo.com.cn/finalpage/2023-07-17/1217309077.PDF,0.8211,0,重组取得的部分股份不参加分派；采用公告参考价公式中的摊薄值
+600938,2022-07-15,2022-07-08,2022-07-15,,1.00699,0,https://static.cninfo.com.cn/finalpage/2022-07-08/1213984602.PDF,,,
+601088,2017-07-10,2017-07-03,2017-07-10,,2.97,0,https://static.cninfo.com.cn/finalpage/2017-07-03/1203675941.PDF,,,
+601398,2025-01-07,2024-12-31,2025-01-07,,0.1434,0,https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10681422&stockid=601398,,,
+601919,2024-10-10,2024-09-26,2024-10-10,,0.52,0,https://static.cninfo.com.cn/finalpage/2024-09-26/1221290881.PDF,,,

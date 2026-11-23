@@ -17,6 +17,7 @@ from phase2 import lot_price_ceiling,slot_entry
 
 def sample(n=5,n_days=None):
     seed=load(ROOT)
+    seed['verified_ref_actions']=[]
     t=seed['tables']
     for table in t:
         t[table]=[]
@@ -98,8 +99,15 @@ def auction():
 
 def tests(parity_only=False):
     raw=sample()
+    action=raw['tables']['actions'][0]
+    action.update(cash_per_share='.6',ref_cash_per_share='.4',ref_bonus_per_share='.15')
+    assert any('差异化折算缺少一致' in e for e in prepare(raw,test=True)['errors'])
+    raw['verified_ref_actions']=[dict(action)]
     d=prepare(raw,test=True)
     assert not d['errors'] and not d['etf_errors'],(d['errors'][:4],d['etf_errors'])
+    entry=d['actions'][action['code'],action['ex_date']]
+    assert (entry['div'],entry['bonus'])==(.6,.15)
+    assert d['reference_checks'][0]['passed'] and d['reference_checks'][0]['ref_cash']==.4
     s=scan(d)
     for k,history in d['stocks'].items():
         open_days=[day for day,r in history.items() if r['opened']]
@@ -138,10 +146,18 @@ def tests(parity_only=False):
     raw['tables']['etf']=[r for r in x if r['code']==remaining_code or r['date']<'2020-01-01']
     before=next(r for r in reversed(raw['tables']['etf']) if r['code']==remaining_code)
     before['shares']='bad'
+    late_day=d['days'][-25]
+    delayed=next(r for r in raw['tables']['etf'] if r['code']==remaining_code and r['date']==late_day)
+    delayed['published']=d['days'][-24]
+    delayed['published_basis']='exchange_t1_convention'
     changed=prepare(raw,test=True)
     assert not changed['errors'] and len(changed['etf_errors'])==1
     rd=radar(changed,s)
     assert any(x['pulse'] for x in rd['daily'])
+    assert rd['daily'][-25]['turnover_date']==d['days'][-26]
+    assert remaining_code not in rd['daily'][-25]['funds']
+    assert rd['daily'][-24]['turnover_date']==d['days'][-24]
+    assert remaining_code in rd['daily'][-24]['funds']
     assert any(x['coverage']['blue20']==[remaining_code] and x['growth20'] is None for x in rd['daily'][-300:])
     d=changed
     p=prefix(d,s,checks,rd)
@@ -158,7 +174,8 @@ def tests(parity_only=False):
     proof=json.loads(out)
     proof['prefix']=p
     proof['schema_scope']='synthetic only'
-    (ROOT/'results'/'synthetic_verification.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2))
+    (ROOT/'results'/'synthetic_verification.json').write_text(
+        json.dumps(proof,ensure_ascii=False,indent=2),encoding='utf8',newline='\n')
     print(out.strip())
 
 

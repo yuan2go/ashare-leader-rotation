@@ -3,6 +3,7 @@
 from collections import Counter, defaultdict
 from datetime import date
 from itertools import combinations
+from math import prod
 from statistics import mean
 
 from engine import LOT, RULES, can_buy, fee, open_price, rounded
@@ -75,7 +76,8 @@ def lot_price_ceiling(capital, asof, tolerance=.05):
 
 def lot_diagnostics(d,signals,book):
     focus={'002371','300308','300750'} & d['universe'].keys()
-    fills=[r for r in slot_entry(d,signals,book) if r['price']>100 or r['code'] in focus]
+    all_buys=list(slot_entry(d,signals,book))
+    fills=[r for r in all_buys if r['price']>100 or r['code'] in focus]
     by_code=defaultdict(list)
     for entry in fills:
         by_code[entry['code']].append(entry)
@@ -86,6 +88,8 @@ def lot_diagnostics(d,signals,book):
                     cash_short_n=sum(r['cash_short_rate']>0 for r in rows))
     return dict(fills=fills,summary=[summary(k,by_code[k]) for k in sorted(focus|by_code.keys())],
                 aggregate=summary('合计',fills),
+                all_buys=summary('全体 R2 买入',all_buys),
+                high_price=summary('成交价 > ¥100', [r for r in all_buys if r['price']>100]),
                 initial_slot=d['policy']['capital']/RULES['R2'][0],
                 price_ceiling=lot_price_ceiling(d['policy']['capital'],d['policy']['freeze']))
 
@@ -125,19 +129,64 @@ def style_diagnostics(monthly):
     return output
 
 
+def bucket_market_returns(d,signals):
+    """Equal-weight close-to-close changes of warmed seed members with both quotes."""
+    days=d['days']
+    start,end=d['policy']['windows']['2026']
+    buckets={'科技成长':[], '资源':[]}
+    for code,meta in d['universe'].items():
+        if meta['bucket'] in buckets:
+            buckets[meta['bucket']].append(code)
+    output=[]
+    for bucket,codes in buckets.items():
+        halves=defaultdict(list)
+        for i,day in enumerate(days[1:],1):
+            if not start<=day<=end:
+                continue
+            changes=[]
+            for code in codes:
+                old,new=signals['states'][i-1].get(code),signals['states'][i].get(code)
+                tape=d['stocks'][code]
+                if old and new and old['warm'] and tape[days[i-1]]['opened'] and tape[day]['opened']:
+                    changes.append(new['mark']*new['factor']/(old['mark']*old['factor']))
+            if changes:
+                halves['H1' if day[5:7]<='06' else 'H2'].append(mean(changes))
+        output.extend(dict(bucket=bucket,period=period,days=len(moves),net=prod(moves)-1)
+                      for period,moves in halves.items())
+    return output
+
+
 def fund_coverage(d,flows):
     asof=d['policy']['freeze']
     first_late='2020-01-01'
     result=[]
     for r in d['etf_coverage']:
         code=r['code']
-        in_scope=[v for day,v in d['etf'][code].items() if day>=first_late and v[0]<=asof]
+        observations=[v for day,v in d['etf'][code].items() if day>=first_late]
+        in_scope=[v for v in observations if v[0]<=asof]
         begin=max(r['listing'],first_late) if r['listing'] else None
         expected=sum(day>=begin for day in d['days']) if begin else 0
         latest=flows['daily'][-1]['coverage'] if flows and flows['daily'] else {}
         result.append(dict(code=code,observed_start=r['first'],observed_end=r['last'],
+                           observations_2020=len(observations),
+                           observation_coverage_2020=len(observations)/expected if expected else None,
                            visible_2020=len(in_scope),expected_2020=expected,
                            coverage_2020=len(in_scope)/expected if expected else None,
                            ready5=code in latest.get('total5',[]),
                            ready20=code in latest.get('total20',[])))
     return result
+
+
+def etf_observation_flows(d):
+    """Review observed share changes with no claim about historical signal availability."""
+    rows=[]
+    for horizon in (5,20):
+        span=d['days'][-(horizon+1):]
+        for code,series in d['etf'].items():
+            if len(span)!=horizon+1 or any(day not in series for day in span):
+                continue
+            quotes=[series[day] for day in span]
+            flow=sum((new[1]-old[1]*new[4])*new[2] for old,new in zip(quotes,quotes[1:]))
+            rows.append(dict(code=code,group=d['groups'][code],horizon=horizon,start=span[0],
+                             end=span[-1],logical_available_by=max(r[0] for r in quotes),net=flow))
+    return rows

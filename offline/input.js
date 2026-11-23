@@ -4,6 +4,9 @@ const PUBLIC=['baostock.com','eastmoney.com','sina.com.cn','gtimg.cn','akshare.a
 const MARKET_HOSTS=[...EXCHANGES,...PUBLIC];
 const INDEX_HOSTS=[...MARKET_HOSTS,'csindex.com.cn'];
 const FUND_HOSTS=[...MARKET_HOSTS,'huatai-pb.com','chinaamc.com','jsfund.cn','nffund.com','efunds.com.cn'];
+const OPTIONAL_COLUMNS={actions:['ref_cash_per_share','ref_bonus_per_share','diff_note'],
+ etf:['published_basis','published_at']};
+const REF_COLUMNS=OPTIONAL_COLUMNS.actions.slice(0,2);
 function csv(text){
  const lines=[];
  let line=[],cell='',quoted=false;
@@ -28,10 +31,13 @@ function csv(text){
 }
 function parseCsv(text,key){
  const rows=csv(text),heads=RAW.schemas[key].split(',');
- if(rows.shift()?.join(',')!==heads.join(','))throw Error('表头须为 '+heads.join(','));
+ const actual=rows.shift()??[],optional=OPTIONAL_COLUMNS[key]??[];
+ const required=heads.slice(0,heads.length-optional.filter(x=>heads.includes(x)).length);
+ const allowed=[...required,...optional.filter(k=>actual.includes(k)&&heads.includes(k))];
+ if(actual.join(',')!==allowed.join(','))throw Error('表头须为 '+heads.join(','));
  return rows.map((line,i)=>{
-  if(line.length!==heads.length)throw Error('第 '+(i+2)+' 行列数不匹配');
-  return Object.fromEntries(heads.map((k,j)=>[k,line[j]]));
+  if(line.length!==actual.length)throw Error('第 '+(i+2)+' 行列数不匹配');
+  return Object.fromEntries(heads.map(k=>[k,line[actual.indexOf(k)]??'']));
  });
 }
 function isDay(s){
@@ -52,6 +58,22 @@ function prepare(raw,end=raw.policy.freeze,test=false){
   if(archive!==null&&url===archive)return true;
   try{const u=new URL(url);return u.protocol==='https:'&&!u.username&&!u.password&&hosts.some(x=>u.hostname===x||u.hostname.endsWith('.'+x));}
   catch{return false;}
+ }
+ function officialEtfHistory(url,observed){
+  if(test||!source(url,EXCHANGES))return false;
+  const u=new URL(url),q=u.searchParams,one=(k,v)=>q.getAll(k).length===1&&q.get(k)===v;
+  if(u.hostname==='query.sse.com.cn'&&u.pathname==='/commonQuery.do')
+   return one('sqlId','COMMON_SSE_ZQPZ_ETFZL_XXPL_ETFGM_SEARCH_L')&&one('STAT_DATE',observed);
+  if(u.hostname==='www.szse.cn'&&u.pathname==='/api/report/ShowReport')
+   return one('CATALOGID','scsj_fund_jjgm')&&one('jjlb','ETF')&&q.getAll('txtStart').length===1&&
+    q.getAll('txtEnd').length===1&&q.get('txtStart')<=observed&&observed<=q.get('txtEnd');
+  return false;
+ }
+ function verifiedLiveDay(stamp){
+  const m=/^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,6}))?\+08:00$/.exec(stamp);
+  if(!m||!isDay(m[1])||+m[2]>23||+m[3]>59||+m[4]>59)throw Error('ETF 实时发布时间须为北京时间完整时间戳');
+  const late=+m[2]>15||+m[2]===15&&(+m[3]||+m[4]||Number(m[5]??0));
+  return late?new Date(ms(m[1])+86400000).toISOString().slice(0,10):m[1];
  }
  function uniq(rows,keys,box=errors){
   const result={};
@@ -77,6 +99,11 @@ function prepare(raw,end=raw.policy.freeze,test=false){
  const calendar=t.calendar.filter(r=>r.date<=end).slice().sort((a,b)=>a.date.localeCompare(b.date));
  uniq(calendar,['date']);
  const days=calendar.map(r=>r.date),dayset=new Set(days),week_ends=[];
+ const allDays=t.calendar.map(r=>r.date).sort(),lastMarket=allDays.at(-1)??'';
+ const lookahead=test?[]:(raw.calendar_lookahead??[]).filter(r=>isDay(r.date)&&r.date>lastMarket&&
+  dow(r.date)>0&&dow(r.date)<6&&source(r.source,MARKET_HOSTS)).map(r=>r.date);
+ const marketDays=[...new Set([...allDays,...lookahead])].sort();
+ const nextSession=Object.fromEntries(marketDays.slice(1).map((d,i)=>[marketDays[i],d]));
  if(!test){
   const expected=(raw.crosscheck||[]).filter(d=>d<=end&&d<=policy.freeze);
   require(expected.length&&days.filter(d=>d<=policy.freeze).join('|')===expected.join('|'),
@@ -90,7 +117,7 @@ function prepare(raw,end=raw.policy.freeze,test=false){
   require((r.week_end==='1')===exp,d+' 周界不相符');
   if(r.week_end==='1')week_ends.push(d);
  });
- const stocks=Object.fromEntries(Object.keys(universe).map(k=>[k,{}])),actions={};
+ const stocks=Object.fromEntries(Object.keys(universe).map(k=>[k,{}])),actions={},referenceTerms={},referenceChecks=[];
  const orders=t.stocks.filter(r=>r.date<=end);
  uniq(orders,['code','date']);
  for(const r of orders){
@@ -115,12 +142,24 @@ function prepare(raw,end=raw.policy.freeze,test=false){
  }
  const relevant=t.actions.filter(r=>r.ex_date<=end);
  uniq(relevant,['code','ex_date']);
+ const reviewed=uniq(raw.verified_ref_actions??[],['code','ex_date']);
+ const evidenceFields=['code','ex_date','announce_date','pay_date','share_date','cash_per_share','bonus_per_share','source',...REF_COLUMNS];
  for(const r of relevant){
   const k=r.code,d=r.ex_date,div=number(r.cash_per_share,0),bonus=number(r.bonus_per_share,0);
   require(isDay(d)&&isDay(r.announce_date)&&r.announce_date<d&&stocks[k]?.[d]?.ref&&source(r.source,MARKET_HOSTS,k==='002714'?'archive:v3.1:002714:actions':null),k+' '+d+' 除权参考/公告有误');
   require((div||bonus)&&(!div||isDay(r.pay_date)&&r.pay_date>=d)&&
     (!bonus||isDay(r.share_date)&&r.share_date>=d),k+' '+d+' 权益支付日有误');
   actions[k+'|'+d]={div,bonus,pay:r.pay_date,share:r.share_date};
+  if(REF_COLUMNS.some(key=>r[key])){
+   const evidence=reviewed[k+'|'+d];
+   if(!evidence||!source(r.source,MARKET_HOSTS)||!evidenceFields.every(key=>(r[key]??'')===(evidence[key]??''))){
+    errors.push(k+' '+d+' 差异化折算缺少一致的公告核验底稿');continue;
+   }
+   try{
+    referenceTerms[k+'|'+d]={div:r.ref_cash_per_share?number(r.ref_cash_per_share,0):div,
+     bonus:r.ref_bonus_per_share?number(r.ref_bonus_per_share,0):bonus,evidence:r};
+   }catch(e){errors.push(k+' '+d+' 差异化折算 '+e.message);}
+  }
  }
  const coverage=Object.keys(stocks).sort().map(k=>{
   const q=stocks[k];
@@ -131,8 +170,14 @@ function prepare(raw,end=raw.policy.freeze,test=false){
    if(previous!==null&&v.ref!==null&&Math.abs(previous-v.ref)>.005)
     require(actions[k+'|'+d],k+' '+d+' 参考价跳变缺少已验证的权益事件');
    const action=actions[k+'|'+d];
-   if(previous!==null&&v.ref!==null&&action)
-    require(Math.abs((previous-action.div)/(1+action.bonus)-v.ref)<=.015,k+' '+d+' 权益记录与交易所参考价不符');
+   const terms=referenceTerms[k+'|'+d];
+   if(previous!==null&&v.ref!==null&&action){
+    const basis=terms??action,implied=(previous-basis.div)/(1+basis.bonus),error=Math.abs(implied-v.ref);
+    require(error<=.015,k+' '+d+' 权益记录与交易所参考价不符');
+    if(terms)referenceChecks.push({code:k,date:d,announce_date:terms.evidence.announce_date,cash:action.div,
+     bonus:action.bonus,ref_cash:basis.div,ref_bonus:basis.bonus,previous,reference:v.ref,implied,error,
+     passed:error<=.015,source:terms.evidence.source,note:terms.evidence.diff_note??''});
+   }else if(terms)require(false,k+' '+d+' 差异化折算缺少可核验前收');
    if(v.opened)previous=v.close;
    else if(v.ref!==null)previous=v.ref;
   }
@@ -157,6 +202,7 @@ function prepare(raw,end=raw.policy.freeze,test=false){
  require(indexRows.length>0&&!index_missing.length,'缺沪深300官方序列');
  const etf=Object.fromEntries(Object.keys(funds).map(k=>[k,{}])),etfRows=t.etf.filter(r=>r.date<=end);
  const frequencies=new Map(),fundSources=Object.fromEntries(Object.keys(etf).map(k=>[k,new Set()]));
+ const fundBases=Object.fromEntries(Object.keys(etf).map(k=>[k,{}]));
  for(const r of etfRows){const key=r.code+'|'+r.date;frequencies.set(key,(frequencies.get(key)??0)+1);}
  for(const r of etfRows){
   try{
@@ -165,7 +211,17 @@ function prepare(raw,end=raw.policy.freeze,test=false){
    if(m&&(d<m.listing||(m.delisting&&d>m.delisting)))throw Error('ETF 观察日不在上市区间');
    if(!isDay(r.published)||r.published<d||!source(r.source,FUND_HOSTS)||!source(r.shares_source,FUND_HOSTS))
     throw Error('ETF 来源或发布时点缺失');
+   const basis=r.published_basis??'',stamp=r.published_at??'',exchange=officialEtfHistory(r.shares_source,d);
+   if(basis==='exchange_t1_convention'){
+    if(!(exchange||test&&r.shares_source==='fixture')||r.published!==nextSession[d]||stamp)
+     throw Error('ETF T+1 需官方历史报表及下一交易日，实时时间戳须留空');
+   }else if(basis==='verified_live'){
+    if(exchange||verifiedLiveDay(stamp)!==r.published||stamp.slice(0,10)<d)
+     throw Error('ETF 实时发布时间与统计日或可见日有误');
+   }else if(basis||stamp||exchange&&(!nextSession[d]||r.published<nextSession[d]))
+    throw Error('ETF 披露口径或历史可见日有误');
    etf[code][d]=[r.published,number(r.shares,.01),number(r.price,.001),number(r.amount,0),number(r.share_scale,.0001)];
+   fundBases[code][d]=basis||'legacy_date_only';
    fundSources[code].add(r.source);fundSources[code].add(r.shares_source);
   }catch(e){etfErrors.push(r.code+' '+r.date+' '+e.message);}
  }
@@ -175,10 +231,14 @@ function prepare(raw,end=raw.policy.freeze,test=false){
   const missing=first?days.filter(d=>d>=first&&d<=endLive&&!v[d]):[];
   const pre=days.filter(d=>a&&d>=a.listing&&d>='2016-01-01'&&d<=endLive&&(!first||d<first));
   const sources=[...new Set([...fundSources[k],...(a?[a.source]:[])])].sort();
-  return {code:k,listing:a?.listing??null,first,last,rows:observed.length,usable:observed.filter(d=>v[d][0]<=end).length,
+  const usable=observed.filter(d=>v[d][0]<=end),published_basis={};
+  for(const basis of Object.values(fundBases[k]))published_basis[basis]=(published_basis[basis]??0)+1;
+  return {code:k,listing:a?.listing??null,first,last,rows:observed.length,usable:usable.length,published_basis,
+   last_usable_observation:usable.at(-1)??null,
    missing:first?missing.length:null,missing_days:missing,precoverage:a&&days.length?pre.length:null,
    precoverage_days:pre,sources};
  });
  return {policy,days,week_ends,universe,groups,stocks,actions,benchmark,etf,listings,coverage,etf_coverage,errors,etf_errors:etfErrors,index_missing,
+  reference_checks:referenceChecks,next_session:nextSession[end]??null,
   index_sources:[...new Set(indexRows.map(r=>r.source))].sort(),calendar_sources:[...new Set(calendar.map(r=>r.source))].sort()};
 }

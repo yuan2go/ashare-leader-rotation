@@ -10,7 +10,7 @@ function run(code){return vm.runInContext(code,ctx);}
 const html=path.join(root,'rotation_quant_lab_v4_0_offline.html');
 if(fs.existsSync(html)){
  const script=[...fs.readFileSync(html,'utf8').matchAll(/<script>([\s\S]*?)<\/script>/g)];
- assert.equal(script.length,5);
+ assert.equal(script.length,7);
  run(script.slice(1,4).map(x=>x[1]).join('\n'));
 }else run(['engine','input','analytics'].map(n=>fs.readFileSync(path.join(root,'offline',n+'.js'),'utf8')).join('\n'));
 function compare(actual,target,label){
@@ -40,6 +40,11 @@ for(let i=0;i<bundle.paths.length;i++){
 }
 if(bundle.radar)compare(run('radar(d,s)'),bundle.radar,'ETF radar');
 compare(run("leaders(d,s,d.policy.windows.W5)"),bundle.leaders,'stock profiles');
+if(bundle.corr)compare(run(`(() => {
+ const profiles=leaders(d,s,d.policy.windows.W1);
+ return Object.fromEntries(profiles.map(a=>[a.code,Object.fromEntries(profiles.map(b=>
+  [b.code,correlated(a.returns,b.returns,d.days)]))]));
+})()`),bundle.corr,'correlations');
 const short=run(`const cut=bundle.prefix.date; const raw=JSON.parse(JSON.stringify(bundle.raw));
  const short=prepare(raw,cut,bundle.fixture!==false);
  const sub=scan(short);sub`);
