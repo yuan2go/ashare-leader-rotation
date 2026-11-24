@@ -1,5 +1,18 @@
 # ashare-leader-rotation
 
+## 当前工作区与研究边界
+
+v4.0 导入基线含 16 股与 7 只 ETF。当前签发工作区含 50 股，49 股敏感性对照剔除 300308，回放初始资金为 450,000 元。
+两份冻结引擎为 `engine.py` 和 `offline/engine.js`，由 `engine_integrity.json` 固定身份。三份输入协议锁覆盖 `policy.json`、`inputs.py` 和 `offline/input.js`。`core/` 共享研究层复用冻结成交原语，策略实验在研究层运行。
+`core/calendar.py` 分别定义交易月末、已完整自然月的最后周信号与锚定双周信号。`core/metrics.py` 的 `period_oneway_turnover_pct` 为窗口累计成交额除以两倍日均权益的百分数，`ann_oneway_turnover_pct_true` 再乘 242 / 窗口交易日数。历史 P1 列 `ann_oneway_turnover_pct` 是窗口累计值。Calmar 用自然日年化收益率除以最大回撤绝对值，`net_over_dd` 用窗口净收益。恢复日可选严格创新高或回到前高。
+50/50 BASE 的趋势袖子有 2 个槽，防御袖子有 3 个。防御在完整自然月的最后一个已公告周信号日换仓。BIWEEKLY 是趋势袖子对照。W_Bear 按 policy 的 2021-03-01 至 2023-11-19，跨实验比较须核对首末交易日与实际会话数。
+P1 验收表含 11 个容差锚点（收益与回撤各容许 0.05 个百分点）；44 组影子账本逐日逐笔精确对账。离线 HTML 属于旧研究的签发身份，复核历史实验时保留原快照。
+无参 `node tests/parity.cjs` 以 --parity-only 启动 Python 合成回归。指定包文件时，JS 读取该包并核对准备结果、信号、逐日账本和成交。
+CI 在 Python 3.11 / Node 24 上运行全量发现。缺真实行情的干净检出需配置本仓库 Actions 的 `stage2-inputs` 归档，指定仓库变量 `STAGE2_FIXTURE_RUN_ID` 和包 `stage2-inputs.zip` 的 `STAGE2_FIXTURE_SHA256`。包内文件使用仓库相对路径，清单见 CI 的 Restore signed test inputs。缺包、缺文件或摘要不符均使验收失败。
+例行 manifest 只哈希实际消费的文件，完整缓存取证另用 `python -B -X utf8 scripts/cache_forensics.py --full-cache`。历史 600428 插件状态见 `archive/legacy_research/README.md`。
+
+
+
 A 股跨行业龙头周频趋势轮动研究台 v4.0，包含独立的宽基 ETF 资金雷达。通过可追溯输入、固定规则和 Python / 离线 JavaScript 对账，研究信号如何转化为实际可执行的扣费账户表现。
 
 **v4.0 联网采集覆盖固定池全部上市日。差异化权益支持公告折算校验，正式回放状态见 [最新数据验收](results/rotation_v4_0_validation.md)。**
@@ -12,7 +25,7 @@ A 股跨行业龙头周频趋势轮动研究台 v4.0，包含独立的宽基 ETF
 
 | 项目 | 当前状态 |
 | --- | --- |
-| 股票池 / ETF | 16 只种子股，当前 7 个股票桶；7 只宽基 ETF |
+| 股票池 / ETF | 导入时 16 股、7 个股票桶。当前工作区 50 股、7 只宽基 ETF |
 | 起始研究资金 | ¥450,000，默认研究 Top 1 / Top 2 |
 | 开发期 | 配置起日 2015-01-01，首个交易日 2015-01-05；冻结至 2026-11-20，2,887 个交易日 |
 | 前缀因果截断日 | 2023-01-20 |
@@ -86,7 +99,7 @@ python run.py --confirm-seeds
 
 两项研究的逐笔结果、样本口径和来源保存在 [600428 专项结果](results/research/600428.json)，原始观测留在 `data/research/`。财报采用上交所披露索引时间，09:25 前可用当日开盘。大单采用东方财富历史日终口径，首次披露时间未独立核验。追加日终观测用 `--through YYYY-MM-DD`，已存观测保留首次采集值，冻结期研究统计始终截止 2026-11-20。两项脚本均支持 `--offline` 复算现有证据。
 
-构建器将 `results/research/<六位代码>.json` 中版本为 1、代码吻合且 `asof` 等于冻结日的插件注入 `RAW.research`。插件的 `experiments` 按 `earnings_event_study` / `price_down_flow_in` 协议渲染。资金、轮动选股与撮合读取原输入表和冻结规则。
+构建器将 `results/research/<六位代码>.json` 中版本为 1、代码吻合且 `asof` 等于冻结日、且声明的 input_sha256 与本批次输入一致的插件注入 `RAW.research`。插件的 `experiments` 按 `earnings_event_study` / `price_down_flow_in` 协议渲染。资金、轮动选股与撮合读取原输入表和冻结规则。
 
 ### 联网补齐真实数据与回放
 
@@ -98,7 +111,7 @@ python fetch_v4_data.py
 python run.py --confirm-seeds
 ```
 
-采集使用 BaoStock、公开行情接口、上交所日份额接口和 AKShare 所连接的深交所日规模报表。`--stocks-only` 可复核股票和权益并保留现有 ETF 表。差异化分派可在 `data/verified_actions_override.csv` 录入公告折算值。两端以该底稿逐条匹配折算字段，并按原 ¥0.015 容差验算参考价。账本仍按普通股东实际权益入账。
+采集器优先复用哈希匹配的已验收快照。新股票的 Tushare Pro 采集路径在三股校准和正式来源门禁通过后启用。主源传输失败时，采集器可回退 BaoStock。指数和 ETF 仍使用原有数据源。`--stocks-only` 可复核股票和权益并保留现有 ETF 表。差异化分派可在 `data/verified_actions_override.csv` 录入公告折算值。两端以该底稿逐条匹配折算字段，并按原 ¥0.015 容差验算参考价。账本仍按普通股东实际权益入账。
 
 交易所历史日规模表标记 `exchange_t1_convention`，统计日之后的首个真实交易日为逻辑可见日，源回执保留实际下载时间。`verified_live` 要求可核验的北京时间发布时刻，15:00 后披露从后续交易日生效。历史数据的 T+1 是研究假设。冻结日统计的份额要到下一交易日才进入雷达。停牌无价的日期保留原始份额回执，联合计算使用覆盖整个窗口的固定成员。
 
@@ -109,7 +122,7 @@ python fetch_v4_data.py --offline
 python run.py --confirm-seeds
 ```
 
-没有本地缓存的新克隆仍会报告股票缺口。有联网底稿时，正式验收继续检查公告、参考价和两端因果回放。普通 `python run.py` 可在数据不足时构建诊断页并退出 0，正式验收应使用 `--confirm-seeds` 并检查审计字段。
+没有本地缓存的新克隆仍会报告股票缺口。有联网底稿时，正式验收继续检查公告、参考价和两端因果回放。普通 `python run.py` 可在数据不足时构建诊断页并退出 0，冻结文件或采集回执校验失败会以非零状态退出。正式验收使用 `--confirm-seeds`，分别检查 `approved_policy`、`explicit_confirm` 和 `production_replay`。
 
 正式回放的判断需同时满足：命令实际成功、`results/data_audit.json` 中 `stock_issues == 0`、`production_replay == true`，且对应真实数据前缀/双端对账通过。ETF 另看有效时点覆盖，不能只看 `etf_issues`。
 
@@ -141,7 +154,13 @@ python run.py --confirm-seeds
 
 ## 下一阶段
 
-四窗全池回放结果用于评估是否扩容。八桶与 50 只目标仍处于研究规划。
+阶段 3 按八个宏观桶分批筛查。首批已将前四桶的 19 只候选加入正式名单。第二批按独立的八桶配置筛查，名单以 `universe.csv` 为准。原策略桶沿用其 `bucket` 列。
+
+在 Python 3.11 下运行 `python research/screen_50_candidates.py` 生成第二批体检。加 `--batch1` 可复算[首批候选体检](results/research/universe_50_screening.md)。首批扩容保留[原 16 股名单](data/universe_seed16_backup.csv)和[原池与扩容池对照](results/research/batch1_pool_comparison.md)。
+
+第二批使用 Tushare Pro 未复权报价与巨潮公告。将 `TUSHARE_HTTP_URL` 与 `TUSHARE_TOKEN` 设在本地 `.env` 中，或通过环境变量传入。`python research/verify_tushare_baseline.py` 输出[三股口径校准](results/research/tushare_baseline_check.md)。两端输入校验器接受指定接口和证券代码组成的 `tushare_pro:` 脱敏标识。正式池以当前 `universe.csv` 与匹配的验收审计为准。
+
+已有官方历史档案可使用 `data/verified/stocks.csv`、`instruments.csv` 和 `actions.csv`，并用同目录的 `screening_sessions.csv`（`code,date,isST,amount,source`）及 `screening_action_coverage.csv`（`code,start,end,source`）提供冻结日风险状态、成交额和权益档案覆盖证明。正式 50 股双端对账通过后，`python research/exp_50_pool_v5_precheck.py` 运行六组研究方案。
 
 - [研究与交付路线](docs/ROADMAP.md)
 - [逐桶扩容研究模板](docs/ai-prompts/bucket-expansion.md)

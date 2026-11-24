@@ -49,7 +49,7 @@ function dataset(live=false){
  let data;
  try{
   data=prepare(raw,end);
-  data.errors.push(...(RAW.ingest_blockers??[]));
+  data.errors.push(...(Array.isArray(RAW.ingest_blockers) ? RAW.ingest_blockers : ['缺少采集回执 blockers']));
  }
  catch(e){return {universe:Object.fromEntries(raw.tables.universe.map(x=>[x.code,x])),days:[],errors:[e.message],etf_errors:[e.message],
   coverage:[],etf_coverage:[],stocks:{},policy:raw.policy};}

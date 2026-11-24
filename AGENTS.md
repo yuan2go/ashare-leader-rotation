@@ -1,11 +1,21 @@
 # AGENTS.md — ashare-leader-rotation
 
+## 当前工作区与研究边界
+
+v4.0 导入基线含 16 股与 7 只 ETF。当前签发工作区含 50 股，49 股敏感性对照剔除 300308，回放初始资金为 450,000 元。
+两份冻结引擎为 `engine.py` 和 `offline/engine.js`，由 `engine_integrity.json` 固定身份。三份输入协议锁覆盖 `policy.json`、`inputs.py` 和 `offline/input.js`。`core/` 共享研究层复用冻结成交原语，策略实验在研究层运行。
+`core/calendar.py` 分别定义交易月末、已完整自然月的最后周信号与锚定双周信号。`core/metrics.py` 的 `period_oneway_turnover_pct` 为窗口累计成交额除以两倍日均权益的百分数，`ann_oneway_turnover_pct_true` 再乘 242 / 窗口交易日数。历史 P1 列 `ann_oneway_turnover_pct` 是窗口累计值。Calmar 用自然日年化收益率除以最大回撤绝对值，`net_over_dd` 用窗口净收益。恢复日可选严格创新高或回到前高。
+50/50 BASE 的趋势袖子有 2 个槽，防御袖子有 3 个。防御在完整自然月的最后一个已公告周信号日换仓。BIWEEKLY 是趋势袖子对照。W_Bear 按 policy 的 2021-03-01 至 2023-11-19，跨实验比较须核对首末交易日与实际会话数。
+P1 验收表含 11 个容差锚点（收益与回撤各容许 0.05 个百分点）；44 组影子账本逐日逐笔精确对账。离线 HTML 属于旧研究的签发身份，复核历史实验时保留原快照。
+无参 `node tests/parity.cjs` 以 --parity-only 启动 Python 合成回归。指定包文件时，JS 读取该包并核对准备结果、信号、逐日账本和成交。
+
+
 本文件是本仓库统一的工程与量化协作规范。Codex、Claude Code、Cursor 等代理开始工作前先读本文件，再读与任务相关的 README、配置、源码和结果。`CLAUDE.md` 与 `.cursor/rules/` 只引用本文件，不另立一套策略规则。用户在当前任务中明确批准的新决定优先；历史讨论不自动构成调参、扩池或交易授权。
 
 ## 1. 项目目标与基线
 
 - A 股跨行业龙头周频趋势轮动研究台 v4.0，含独立的宽基 ETF 资金雷达。目标是验证扣费后的决策价值，区分工程可用、预测有效、交易有效与实盘可执行。
-- v4.0 导入基线为 16 只种子股、7 只 ETF、初始研究资金 ¥450,000，重点研究 Top 1 / Top 2。标的配置读取 `universe.csv`、`funds.csv`；实际配置与进度记录在 [README](README.md)、[初始化记录](docs/INITIALIZATION.md) 和 [路线图](docs/ROADMAP.md)。16→50 为后续研究计划。
+- v4.0 导入基线为 16 只种子股、7 只 ETF、初始研究资金 ¥450,000，重点研究 Top 1 / Top 2。标的配置读取 `universe.csv`、`funds.csv`；实际配置与进度记录在 [README](README.md)、[初始化记录](docs/INITIALIZATION.md) 和 [路线图](docs/ROADMAP.md)。当前工作区已扩至 50 股，49 股对照排除 300308。
 - `policy.json` 已为 `approved`。配置日历边界为 `2015-01-01`—`2026-11-20`，当前历史索引的首个交易日为 `2015-01-05`，共 2,887 日；前缀截断日为 `2023-01-20`。不得因日期文字差异改动原配置。冻结日之后的数据单独用于前瞻跟踪，不回流开发期统计。
 - 本仓库 `T1` 为牧原 `002714` 的纯价对照，与外部 v3.1、带 A00 的实盘账本各自独立，不将宏观或单票特例写入通用引擎。
 - 当前种子池是事后选定的现存龙头池。历史回测属于有选择偏差的回顾性研究；动态上市资格、前缀一致性和合成测试不能消除该偏差。
@@ -44,7 +54,7 @@
 
 改变输入校验、统计口径或输出协议时，检查对应的 `offline/input.js`、`offline/analytics.js`、`offline/app.js`，保持相关逻辑与协议等价；无关文件无需制造同步改动。资金、权益、现金与成交按分一致，特征浮点值采用既有对账容差。
 
-常用命令（在仓库根目录，Python 3.10+ / Node.js 24；Windows 使用 UTF-8 模式）：
+常用命令（在仓库根目录，Python 3.11 / Node.js 24，Windows 使用 UTF-8 模式）：
 
 ```bash
 python scripts/check_integrity.py
@@ -71,3 +81,4 @@ python run.py --confirm-seeds
 - 涉及数据或回放时报告 `stock_issues`、`etf_issues`、实际覆盖和 `production_replay`，注明原包记载或本次独立运行；未运行的项目明确标注。
 - CI 通过、合成样本通过、真实全池回放完成、样本外有效性、实际成交分别说明。不得用局部对照、压力情景或重复历史证明稳定盈利。
 - 回复默认中文，先给交付结果与剩余关键缺口。仅执行当前任务授权的远端操作，不由研究结果推定交易授权。
+- 正式双端对账锁定 Python 3.11。Python 3.12 的 `sum()` 使用补偿求和，可能使临界均线比较产生 1 位布尔分歧。

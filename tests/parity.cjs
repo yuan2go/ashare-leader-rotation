@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 if(!process.argv[2]){
- require('node:child_process').execFileSync('python',[path.join(__dirname,'test_engine.py'),'--parity-only'],{stdio:'inherit'});
+ require('node:child_process').execFileSync('python',['-B','-X','utf8',path.join(__dirname,'test_engine.py'),'--parity-only'],{stdio:'inherit'});
  process.exit(0);
 }
 const bundle=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));

@@ -17,6 +17,9 @@ Thumbs.db
 !.env.example
 *.pem
 *.key
+*[Tt][Oo][Kk][Ee][Nn]*
+*[Kk][Ee][Yy]*
+*[Ss][Ee][Cc][Rr][Ee][Tt]*
 
 # Rebuildable market data and provider caches; retain data/verified/ as evidence.
 /data/stocks.csv
@@ -29,3 +32,12 @@ Thumbs.db
 # Keep the imported audit, validation report and synthetic proof in results/.
 /results/rotation_research.json
 /rotation_quant_lab_v4_0_offline.html
+
+# Historical batch ledgers and large diagnostic panels are supplied separately.
+/reports/phase2b_*/**/runs/
+/reports/phase2b_p2_diag/daily_regime_panel_*.csv
+/reports/model_reality_audit/placebo_*_mc.csv
+
+# Git ignore rules match paths. These result payloads exceed the 1 MiB staging limit.
+/results/research/pool50_barbell.json
+/results/research/pool50_topk_diag.json

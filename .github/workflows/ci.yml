@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: quant-integrity-${{ github.workflow }}-${{ github.ref }}
@@ -20,9 +21,9 @@ env:
 
 jobs:
   verify:
-    name: Frozen engines and synthetic parity (${{ matrix.os }})
+    name: Integrity, research shadow ledgers and parity (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
@@ -44,22 +45,56 @@ jobs:
           node-version: "24"
           package-manager-cache: false
 
-      - name: Verify frozen v4.0 engine SHA-256
-        run: python scripts/check_integrity.py
+      - name: Verify frozen engines and protocol
+        run: python -B -X utf8 scripts/check_integrity.py
 
-      # These tests use only Python/Node standard libraries. requirements.txt is
-      # for local online collection; CI never contacts market-data providers.
-      - name: Prepare missing inputs and build the offline test page
-        run: python scripts/prepare_workspace.py
+      - name: Install offline evaluation dependencies
+        run: python -m pip install "numpy<3" "pandas<3"
 
-      - name: Test collector normalization without network
-        run: python tests/test_fetch.py
+      # The signed 50-stock tape is intentionally outside Git. Fetch only from
+      # the repository's designated Actions run, then verify the payload digest.
+      - name: Restore signed test inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FIXTURE_RUN_ID: ${{ vars.STAGE2_FIXTURE_RUN_ID }}
+          FIXTURE_SHA256: ${{ vars.STAGE2_FIXTURE_SHA256 }}
+        shell: python
+        run: |
+          import hashlib, os, shutil, subprocess, tempfile, zipfile
+          from itertools import product
+          from pathlib import Path
+          required = {"universe.csv", "funds.csv", "historical_calendar_crosscheck.json",
+                      "data/verified_actions_override.csv", "data/verified/calendar_lookahead.csv",
+                      "data/fetch_provenance.json", "data/research/factors/daily_basic.csv",
+                      "research/universe_50_final_config.json", "results/data_audit.json",
+                      "results/research/universe_50_final_screening.json", "results/research/pool50_barbell.json",
+                      "reports/phase2b_p1_ablation/runs/ablation_manifest.json",
+                      "reports/phase2b_p2_ablation/p2_ablation_manifest.json"}
+          required.update(f"data/{name}.csv" for name in ("instruments","stocks","actions","calendar","etf","index"))
+          for pool, window, scenario in product(("50","49"), ("W1","IS","OOS","W_Bear","W5","2026"), ("2bp","7bp","Tplus2")):
+              for name in ("nav.csv","trades.csv"):
+                  required.add(f"reports/phase2b_p1_ablation/runs/{pool}/{window}/{scenario}/BASE/{name}")
+                  if window in ("W1","IS","OOS","W_Bear") and scenario=="2bp":
+                      required.add(f"reports/phase2b_p2_ablation/runs/{pool}/{window}/2bp/M200_HYST_HALF/{name}")
+          if not all(Path(name).is_file() for name in required):
+              with tempfile.TemporaryDirectory() as tmp:
+                  subprocess.run(["gh","run","download",os.environ["FIXTURE_RUN_ID"],"-n","stage2-inputs","-D",tmp],check=True)
+                  path = Path(tmp)/"stage2-inputs.zip"
+                  with path.open("rb") as stream:
+                      if hashlib.file_digest(stream,"sha256").hexdigest() != os.environ["FIXTURE_SHA256"]:
+                          raise ValueError("Stage 2 fixture SHA-256 mismatch")
+                  with zipfile.ZipFile(path) as archive:
+                      for name in sorted(required):
+                          destination = Path(name)
+                          destination.parent.mkdir(parents=True,exist_ok=True)
+                          with archive.open(name) as source, destination.open("wb") as target:
+                              shutil.copyfileobj(source,target)
 
-      # test_engine.py invokes parity.cjs and ui.cjs with the same synthetic
-      # fixture, including the 50-code configuration check and prefix checks.
-      # Empty CSV headers and synthetic success do not certify a real replay.
-      - name: Test Python engine, JS parity, prefix causality and offline UI
-        run: python tests/test_engine.py
+      - name: Build offline test page
+        run: python -B -X utf8 scripts/prepare_workspace.py
 
-      - name: Recheck frozen bytes after validation
-        run: python scripts/check_integrity.py
+      - name: Run every regression including 36 BASE and 8 winner archives
+        run: python -B -X utf8 -m unittest discover -s tests -v
+
+      - name: Recheck frozen bytes
+        run: python -B -X utf8 scripts/check_integrity.py

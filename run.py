@@ -3,12 +3,18 @@ from argparse import ArgumentParser
 import csv
 from collections import defaultdict
 from copy import deepcopy
-import hashlib
+from uuid import uuid4
 import json
 import subprocess
+import sys
+from html import escape
 from tempfile import TemporaryDirectory
 from pathlib import Path
 
+from core import publication
+from research.common import PLUGIN_INPUTS
+from core.integrity import (EVIDENCE_FILES, IntegrityError, fetch_receipt, require_runtime_guard, sha256_file,
+                            table_hashes, verify_frozen_locks, verify_required_sha_manifest)
 from analytics import correlated, leaders, radar
 from engine import MODELS, SCENARIOS, RULES, can_buy, fee, open_price, pick, replay, scan
 from inputs import SCHEMAS, load, portable, prepare
@@ -39,18 +45,22 @@ def prefix(d,signals,checks,flows=None):
     if cut not in limited['days']:
         raise ValueError('缺前缀边界 '+cut)
     short=scan(limited)
-    assert short['states']==signals['states'][:n]
-    assert short['ranks']==signals['ranks'][:n]
+    if not (short['states']==signals['states'][:n]):
+        raise RuntimeError("prefix failed: short['states']==signals['states'][:n]")
+    if not (short['ranks']==signals['ranks'][:n]):
+        raise RuntimeError("prefix failed: short['ranks']==signals['ranks'][:n]")
     checked_paths=0
     for mode,span,rate,delay,slip,full in checks:
         if span[0]>cut or span[1]<cut:
             continue
         work=replay(limited,short,mode,(span[0],cut),rate,delay,slip)
         for k in ('path','orders'):
-            assert work[k]==[r for r in full[k] if r['date']<=cut],(mode,k,rate,delay,slip)
+            if not (work[k]==[r for r in full[k] if r['date']<=cut]):
+                raise RuntimeError((mode,k,rate,delay,slip))
         checked_paths+=1
     if flows:
-        assert radar(limited,short)['daily']==flows['daily'][:n]
+        if not (radar(limited,short)['daily']==flows['daily'][:n]):
+            raise RuntimeError("prefix failed: radar(limited,short)['daily']==flows['daily'][:n]")
     main=sum(d['policy']['windows']['W1'][0]<=day<=cut for day in d['days'])
     return dict(date=cut,main=main,total=n,source_rows=len(d['days']),paths=checked_paths)
 
@@ -488,7 +498,7 @@ def report(data,result,approved,reference,fetch,funds,independent,etf_posthoc):
     return '\n\n'.join(out)+'\n'
 
 
-def html(payload,path):
+def html(payload,path,input_hashes=None):
     doc=(ROOT/'offline'/'index.html').read_text(encoding='utf8')
     doc=doc.replace('/*CSS*/',(ROOT/'offline'/'style.css').read_text(encoding='utf8'))
     plugins={}
@@ -500,6 +510,14 @@ def html(payload,path):
                 not isinstance(plugin.get('experiments'),dict)):
             raise ValueError(f'专项研究插件协议无效：{file.name}')
         if plugin.get('asof')==payload['policy']['freeze']:
+            if 'input_sha256' in plugin:
+                declared = plugin['input_sha256']
+                keys = set(PLUGIN_INPUTS).union(declared if isinstance(declared, dict) else ())
+                try:
+                    verify_required_sha_manifest(input_hashes, declared, keys, 'stale plugin ' + file.name)
+                except IntegrityError as exc:
+                    print(f'跳过过期插件 {exc}', file=sys.stderr)
+                    continue
             plugins[file.stem]=plugin
     dictionary={}
     tables={}
@@ -524,63 +542,95 @@ def html(payload,path):
                     encoding='utf8',newline='\n')
 
 
+def approval_fields(policy, explicit_confirm):
+    approved_policy = policy['status'] == 'approved'
+    return dict(approved_policy=approved_policy, explicit_confirm=explicit_confirm,
+                approved=approved_policy or explicit_confirm, confirmed=explicit_confirm)
+
+
+def publish_blocked_receipt(reason, explicit_confirm):
+    # load() also reads the receipt. A damaged receipt cannot support coverage statistics.
+    policy = json.loads((ROOT/'policy.json').read_text(encoding='utf8'))
+    status = dict(production_replay=False, asof=policy['freeze'], blockers=[reason],
+                  **approval_fields(policy, explicit_confirm))
+    run_id = uuid4().hex
+    OUTPUT.mkdir(exist_ok=True)
+    with TemporaryDirectory(prefix='.staging_' + run_id + '_', dir=OUTPUT) as temporary:
+        stage = Path(temporary)
+        for name in (publication.AUDIT, publication.RESEARCH):
+            (stage/name).write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding='utf8')
+        (stage/publication.REPORT).write_text('# 正式回放已阻断\n\n' + reason + '\n', encoding='utf8')
+        (stage/publication.PAGE).write_text(
+            '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>正式回放已阻断</title>'
+            '<h1>正式回放已阻断</h1><p>' + escape(reason) + '</p></html>', encoding='utf8')
+        publication.publish(stage, OUTPUT, ROOT/publication.PAGE, run_id)
+    print(json.dumps(status, ensure_ascii=False), file=sys.stderr)
+    return 1
+
+
 def main():
     parser=ArgumentParser(description=__doc__)
     parser.add_argument('--confirm-seeds',action='store_true',help='你已经确认当前 universe.csv 且批准执行')
     args=parser.parse_args()
-    raw=load(ROOT)
-    approved=args.confirm_seeds or raw['policy']['status']=='approved'
+    require_runtime_guard()
+    actual = verify_frozen_locks(ROOT, include_protocol=True)
+    try:
+        fetch_audit = fetch_receipt(ROOT)
+    except IntegrityError as exc:
+        return publish_blocked_receipt(str(exc), args.confirm_seeds)
+    hashes = table_hashes(ROOT, SCHEMAS)
+    evidence_hashes = {name:sha256_file(ROOT / name) for name in EVIDENCE_FILES if (ROOT / name).is_file()}
+    raw = load(ROOT)
+    approval = approval_fields(raw['policy'], args.confirm_seeds)
+    approved = approval['approved']
     if approved:
-        raw['policy']['status']='approved'
-    d=prepare(raw)
-    OUTPUT.mkdir(exist_ok=True)
-    expected=json.loads((ROOT/'engine_integrity.json').read_text())
-    actual={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in expected}
-    if actual!=expected:
-        raise SystemExit('冻结引擎文件哈希不符')
-    fetch=ROOT/'data'/'fetch_provenance.json'
-    fetch_audit=json.loads(fetch.read_text()) if fetch.exists() else {}
-    blockers=fetch_audit.get('blockers',[])
-    d['errors'].extend(blockers)
-    raw['ingest_blockers']=blockers
+        raw['policy']['status'] = 'approved'
+    d = prepare(raw)
+    raw['ingest_blockers'] = fetch_audit['blockers']
     raw['schemas']=SCHEMAS
-    html(raw,ROOT/'rotation_quant_lab_v4_0_offline.html')
     result=reference=None
     independent=None
     if approved and not d['errors']:
         result=verify_replay(raw,d)
     elif approved:
         reference=independently_verified_reference(raw)
-        if not blockers:
-            independent=independent_single_stock_checks(raw)
+        independent=independent_single_stock_checks(raw)
     funds=result['phase2']['funds'] if result else fund_coverage(d,radar(d,dict(
         states=[{} for _ in d['days']])) if d['days'] else None)
     etf_posthoc=etf_observation_flows(d)
-    hashes={name:hashlib.sha256((ROOT/('' if name in ('universe','funds') else 'data')/(name+'.csv')).read_bytes()).hexdigest() for name in SCHEMAS}
-    evidence_hashes={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
-                     for name in ('data/verified_actions_override.csv','data/verified/calendar_lookahead.csv')
-                     if (ROOT/name).is_file()}
-    (OUTPUT/'data_audit.json').write_text(json.dumps(dict(approved=approved,confirmed=approved,coverage=d['coverage'],
-        etf_coverage=[{**row,**detail,'acquisition':fetch_audit.get('etf_prices',{}).get(row['code'])}
-                      for row,detail in zip(d['etf_coverage'],funds)],
-        errors=d['errors'],stock_issues=len(d['errors']),etf_issues=len(d['etf_errors']),
-        reference_checks=d['reference_checks'],next_session=d['next_session'],
-        etf_disclosure_assumption='官方历史日规模按统计日之后首个交易日可见；实际抓取时间保留在回执。',
-        etf_errors=d['etf_errors'],index_sources=d['index_sources'],calendar_sources=d['calendar_sources'],
-        index_missing=d['index_missing'],integrity=actual,fetch=fetch_audit,sha256=hashes,evidence_sha256=evidence_hashes,
-        production_replay=bool(result),reference_replay=reference,
-        independently_validated_stocks=list(independent['corr']) if independent else [],
-        etf_observation_flows=etf_posthoc),
-        ensure_ascii=False,indent=2),encoding='utf8',newline='\n')
-    research={'production_replay':True,'asof':d['policy']['freeze'],**result} if result else dict(
-        production_replay=False,asof=d['policy']['freeze'],stock_issues=len(d['errors']),
-        missing_stock_rows=sum(x['missing'] or 0 for x in d['coverage']),etf_coverage=funds,
-        reference_replay=reference,independent_single_stock=independent)
-    research['etf_observation_flows']=etf_posthoc
-    (OUTPUT/'rotation_research.json').write_text(json.dumps(research,ensure_ascii=False,separators=(',',':')),
-                                                encoding='utf8',newline='\n')
-    (OUTPUT/'rotation_v4_0_validation.md').write_text(
-        report(d,result,approved,reference,fetch_audit,funds,independent,etf_posthoc),encoding='utf8',newline='\n')
+    OUTPUT.mkdir(exist_ok=True)
+    run_id = uuid4().hex
+    with TemporaryDirectory(prefix='.staging_' + run_id + '_', dir=OUTPUT) as temporary:
+        stage = Path(temporary)
+        html(raw, stage / publication.PAGE, hashes)
+        (stage/'data_audit.json').write_text(json.dumps(dict(**approval,coverage=d['coverage'],
+            etf_coverage=[{**row,**detail,'acquisition':fetch_audit.get('etf_prices',{}).get(row['code'])}
+                          for row,detail in zip(d['etf_coverage'],funds)],
+            errors=d['errors'],stock_issues=len(d['errors']),etf_issues=len(d['etf_errors']),
+            reference_checks=d['reference_checks'],next_session=d['next_session'],
+            etf_disclosure_assumption='官方历史日规模按统计日之后首个交易日可见；实际抓取时间保留在回执。',
+            etf_errors=d['etf_errors'],index_sources=d['index_sources'],calendar_sources=d['calendar_sources'],
+            index_missing=d['index_missing'],integrity=actual,fetch=fetch_audit,sha256=hashes,evidence_sha256=evidence_hashes,
+            production_replay=bool(result),reference_replay=reference,
+            independently_validated_stocks=list(independent['corr']) if independent else [],
+            etf_observation_flows=etf_posthoc),
+            ensure_ascii=False,indent=2),encoding='utf8',newline='\n')
+        research={'production_replay':True,'asof':d['policy']['freeze'],**result} if result else dict(
+            production_replay=False,asof=d['policy']['freeze'],stock_issues=len(d['errors']),
+            missing_stock_rows=sum(x['missing'] or 0 for x in d['coverage']),etf_coverage=funds,
+            reference_replay=reference,independent_single_stock=independent)
+        research['etf_observation_flows']=etf_posthoc
+        (stage/'rotation_research.json').write_text(json.dumps(research,ensure_ascii=False,separators=(',',':')),
+                                                    encoding='utf8',newline='\n')
+        (stage/'rotation_v4_0_validation.md').write_text(
+            report(d,result,approved,reference,fetch_audit,funds,independent,etf_posthoc),encoding='utf8',newline='\n')
+        verify_required_sha_manifest(table_hashes(ROOT, SCHEMAS), hashes, SCHEMAS, 'replay inputs changed')
+        if result:
+            verify_required_sha_manifest({name:sha256_file(ROOT / name) for name in EVIDENCE_FILES},
+                                         evidence_hashes, EVIDENCE_FILES, 'replay evidence changed')
+        if fetch_receipt(ROOT) != fetch_audit:
+            raise IntegrityError('Fetch receipt changed during replay')
+        publication.publish(stage, OUTPUT, ROOT / publication.PAGE, run_id)
     print(json.dumps(dict(approved=approved,stock_issues=len(d['errors']),etf_issues=len(d['etf_errors']),
                           production_replay=bool(result),reference_replay=bool(reference)),ensure_ascii=False))
     return int(args.confirm_seeds and not result)

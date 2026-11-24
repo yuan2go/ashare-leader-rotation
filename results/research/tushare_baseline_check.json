@@ -1,0 +1,305 @@
+{
+  "asof": "2026-11-20",
+  "first_day": "2015-01-05",
+  "sessions": 2887,
+  "stocks": [
+    {
+      "code": "600900",
+      "first": "2015-01-05",
+      "asof": "2026-11-20",
+      "historical_listing": "2003-11-18",
+      "provider_listing": "2003-11-18",
+      "risk_flag": "0",
+      "matched_open_days": 2768,
+      "tushare_open": 2768,
+      "frozen_open": 2768,
+      "missing_open": [],
+      "extra_open": [],
+      "frozen_suspended": 119,
+      "tushare_suspended": 119,
+      "missing_suspended": [],
+      "extra_suspended": [],
+      "conflicts": [],
+      "mismatches": {
+        "open": [],
+        "high": [],
+        "low": [],
+        "close": [],
+        "pre_close": [
+          {
+            "date": "2017-07-14",
+            "frozen": "14.49693",
+            "tushare": "14.5",
+            "delta": "0.00307"
+          }
+        ],
+        "volume": [
+          {
+            "date": "2015-11-16",
+            "frozen": "512979392",
+            "tushare": "512979390.0",
+            "delta": "-2.0"
+          }
+        ]
+      },
+      "reference_precision": {
+        "compared": 2768,
+        "exact": 2767,
+        "rounded_matches": 2768,
+        "increment": "0.01",
+        "max_absolute_delta": "0.00307"
+      },
+      "liquidity": {
+        "first": "2025-11-07",
+        "last": "2026-11-20",
+        "observations": 252,
+        "frozen_yuan": null,
+        "tushare_yuan": "2955044024.984126984126984127",
+        "frozen_observations": 0,
+        "yuan_precision": null,
+        "delta_yuan": null,
+        "exact_daily_matches": null,
+        "exact_average": null,
+        "relative_error": null,
+        "basis": "minimum_liquidity",
+        "passed": true
+      },
+      "implemented_distributions": 14,
+      "errors": {},
+      "accepted_ex_date_rounding": [
+        {
+          "date": "2017-07-14",
+          "frozen": "14.49693",
+          "tushare": "14.5",
+          "delta": "0.00307"
+        }
+      ],
+      "dimensions": {
+        "coverage": true,
+        "prices": true,
+        "volume": true,
+        "liquidity": true
+      },
+      "passed": true
+    },
+    {
+      "code": "600989",
+      "first": "2015-01-05",
+      "asof": "2026-11-20",
+      "historical_listing": "2019-05-16",
+      "provider_listing": "2019-05-16",
+      "risk_flag": "0",
+      "matched_open_days": 1825,
+      "tushare_open": 1825,
+      "frozen_open": 1825,
+      "missing_open": [],
+      "extra_open": [],
+      "frozen_suspended": 0,
+      "tushare_suspended": 0,
+      "missing_suspended": [],
+      "extra_suspended": [],
+      "conflicts": [],
+      "mismatches": {
+        "open": [],
+        "high": [],
+        "low": [],
+        "close": [],
+        "pre_close": [],
+        "volume": [
+          {
+            "date": "2019-05-17",
+            "frozen": "313836512",
+            "tushare": "313836514.00",
+            "delta": "2.00"
+          }
+        ]
+      },
+      "reference_precision": {
+        "compared": 1825,
+        "exact": 1825,
+        "rounded_matches": 1825,
+        "increment": "0.01",
+        "max_absolute_delta": "0.0000"
+      },
+      "liquidity": {
+        "first": "2025-11-07",
+        "last": "2026-11-20",
+        "observations": 252,
+        "frozen_yuan": "2062109286.340634920634920635",
+        "tushare_yuan": "2062109286.369047619047619048",
+        "frozen_observations": 252,
+        "yuan_precision": {
+          "compared": 252,
+          "exact": 3,
+          "rounded_matches": 252,
+          "increment": "1",
+          "max_absolute_delta": "0.5000"
+        },
+        "delta_yuan": "0.028412698412698413",
+        "exact_daily_matches": 3,
+        "exact_average": false,
+        "relative_error": "1.377846392570145626811243962E-11",
+        "basis": "frozen_amount",
+        "passed": true
+      },
+      "implemented_distributions": 12,
+      "errors": {},
+      "accepted_ex_date_rounding": [],
+      "dimensions": {
+        "coverage": true,
+        "prices": true,
+        "volume": true,
+        "liquidity": true
+      },
+      "passed": true
+    },
+    {
+      "code": "002371",
+      "first": "2015-01-05",
+      "asof": "2026-11-20",
+      "historical_listing": "2010-03-16",
+      "provider_listing": "2010-03-16",
+      "risk_flag": "0",
+      "matched_open_days": 2816,
+      "tushare_open": 2816,
+      "frozen_open": 2816,
+      "missing_open": [],
+      "extra_open": [],
+      "frozen_suspended": 71,
+      "tushare_suspended": 71,
+      "missing_suspended": [],
+      "extra_suspended": [],
+      "conflicts": [],
+      "mismatches": {
+        "open": [],
+        "high": [],
+        "low": [],
+        "close": [],
+        "pre_close": [],
+        "volume": []
+      },
+      "reference_precision": {
+        "compared": 2816,
+        "exact": 2816,
+        "rounded_matches": 2816,
+        "increment": "0.01",
+        "max_absolute_delta": "0.0000"
+      },
+      "liquidity": {
+        "first": "2025-11-07",
+        "last": "2026-11-20",
+        "observations": 252,
+        "frozen_yuan": null,
+        "tushare_yuan": "5785204722.008293650793650794",
+        "frozen_observations": 0,
+        "yuan_precision": null,
+        "delta_yuan": null,
+        "exact_daily_matches": null,
+        "exact_average": null,
+        "relative_error": null,
+        "basis": "minimum_liquidity",
+        "passed": true
+      },
+      "implemented_distributions": 11,
+      "errors": {},
+      "accepted_ex_date_rounding": [],
+      "dimensions": {
+        "coverage": true,
+        "prices": true,
+        "volume": true,
+        "liquidity": true
+      },
+      "passed": true
+    }
+  ],
+  "slice_sha256": {
+    "calendar": "ec558f5b4c983f7e6f30a1c89b9a4cfb2d72601cca54e8dd1641e90e539f16e8",
+    "stocks": "1c598c9d408b4a30a0957db1b55e52db9ef7839ec20c8cc303c7ef4aaa6e4047",
+    "actions": "488f1b4bafb798482cc848188aa7c1f2450495b98580407d9de55bb86edfc8a1",
+    "instruments": "18b0eabe9482e83e61428e1b381716c180f717b3cb575edc8d6038859a89c95f"
+  },
+  "baseline_sha256": {
+    "stocks": "f86b024ba014d83b6f4a1ada9159a52378a89d80e17fc97b1cf643e2d88fb05c",
+    "actions": "0d34a11921346e0867b3c8927301e9a80b9a6287883eca726a20d6f3a0a69278",
+    "calendar": "d6e8ce1ffd88a6b9a9c1f40ee81dd97cd0d4fbfa874d6ce3f15a5fe4d3e7ad06"
+  },
+  "calibration_passed": true,
+  "frozen_source_accepted": true,
+  "receipts": {
+    "677e5cdfde7da5e5b7001a2338143dd941240f95f9749a2c3ecfccb14f5c7318": {
+      "source": "tushare_pro:daily?ts_code=600900.SH",
+      "retrieved": "2026-11-23T16:22:21.211911+00:00",
+      "cache_sha": "1baa6b5025f7d00ecc1586e18649a6f3c283df259c57d9570b632995209c82b6"
+    },
+    "8a924f43f110574f63239b8814dd79a9806b0e672e40fa6d4026213473b3aea0": {
+      "source": "tushare_pro:suspend_d?ts_code=600900.SH",
+      "retrieved": "2026-11-23T16:22:23.618897+00:00",
+      "cache_sha": "5caef36784cd7ec699f979c00c035a1b719751de19011d86c5cfaa8e43383ae9"
+    },
+    "1bdf125fdbb858ebcb13556691e4545fba1531bdb22773d5fb12c56cbe3400c3": {
+      "source": "tushare_pro:stock_basic?ts_code=600900.SH",
+      "retrieved": "2026-11-23T16:22:24.934803+00:00",
+      "cache_sha": "0a645a54f2c8714d0559806165894d4f6025997858c0415ab1b4121bdcf05a0d"
+    },
+    "93cd4f197fb1957e81843b1d4c6fc06c41e57bd1a64dea00d570da4b46c5d454": {
+      "source": "tushare_pro:namechange?ts_code=600900.SH",
+      "retrieved": "2026-11-23T16:22:26.641738+00:00",
+      "cache_sha": "58b589aacb30cb41ac13ac8f2b607e32e24a64a9afd81cd5c7237c81591854f9"
+    },
+    "47d22f041f7db149c2840537e4d00a23dd6956a45d2aca8a1b15bb16247bafa2": {
+      "source": "tushare_pro:dividend?ts_code=600900.SH",
+      "retrieved": "2026-11-23T16:22:28.289506+00:00",
+      "cache_sha": "e993b2738bd9c11a3c6d1aee7e61926f53d0e744ab30719eec2fbf420a5c4bfe"
+    },
+    "ba336c4ec47d02224c2f78306955fa7bf240432d552ef9cc8aa1ee56a9755c16": {
+      "source": "tushare_pro:daily?ts_code=600989.SH",
+      "retrieved": "2026-11-23T16:24:33.231556+00:00",
+      "cache_sha": "4134ae94e00e9e1cafb7bfd35e751b810ceeadffaec27aefaa954a27188c82ee"
+    },
+    "f89fac72c6f6826aada8c09b780f437463dfcb9c893f9981c161e897de97d801": {
+      "source": "tushare_pro:suspend_d?ts_code=600989.SH",
+      "retrieved": "2026-11-23T16:24:35.109339+00:00",
+      "cache_sha": "59730806a06dd33c248caa98c4a1299a05baaba529ea0c2ed2be92baa57e3893"
+    },
+    "2bd27a79673d23e396ee4354dfe93e36a31b4539c7ae90c0800edce8a8f6a67d": {
+      "source": "tushare_pro:stock_basic?ts_code=600989.SH",
+      "retrieved": "2026-11-23T16:24:36.074487+00:00",
+      "cache_sha": "c6c264c81318024f7f50264388059e55f7fbe57c1fe92b17ece7d58c85091bf5"
+    },
+    "360c593be58fe7e3fe05cf9a9003ca41b19dfd96076c81e73720b443fd37f137": {
+      "source": "tushare_pro:namechange?ts_code=600989.SH",
+      "retrieved": "2026-11-23T16:24:37.096811+00:00",
+      "cache_sha": "16add593a125283aaf0eb8de3ea0374f3d1900eb95a3c30ce307b8b31ceb9fb9"
+    },
+    "7f1892de9b960288a81e52cafe5eb107bdbbdb3bc80f329ff9071d484dc4efdd": {
+      "source": "tushare_pro:dividend?ts_code=600989.SH",
+      "retrieved": "2026-11-23T16:24:38.779701+00:00",
+      "cache_sha": "d4e390fb1b712c3073b190ba5241f9bc67545ea38b73657792430f4f046dd537"
+    },
+    "2376df563cd4ebc4ef16ab14b397c69601671096314904ccd68b4b187b4244a7": {
+      "source": "tushare_pro:daily?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T16:22:14.848222+00:00",
+      "cache_sha": "ddeda114b87cab6c737e018933ceae2fcd1a548ac70e7e0ccc32da93184805da"
+    },
+    "4bc08888b9ea24db4b84069dca3174981e1e945bc970f223ab42aa9daf632869": {
+      "source": "tushare_pro:suspend_d?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T16:24:41.005961+00:00",
+      "cache_sha": "d085e11c356408cf899d5760accbf8a3c3926edc9bdce7ad061a9d4c05e15880"
+    },
+    "fb30b420ad7065dcf7d1421b1b9630b6b529cc7b89e852ebd51431221163a144": {
+      "source": "tushare_pro:stock_basic?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T16:24:41.875804+00:00",
+      "cache_sha": "298bf6aa9b93b103736331f5c1f5c06ff864b8d0415b9a401a3b066bbe3fd126"
+    },
+    "daa72867b858fcbc6e961660213b1f6f61b8832eeaf737122f1e85c6c850cb89": {
+      "source": "tushare_pro:namechange?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T16:24:43.451308+00:00",
+      "cache_sha": "5ea917e140402462f9433b859515cd9ec2d20f10f1cd467fbeaaba59f7353da0"
+    },
+    "782ce04d9e481ae56bd508f6d3a4d1939e285828754b0cedfbca04d078c2ccfa": {
+      "source": "tushare_pro:dividend?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T16:24:44.273372+00:00",
+      "cache_sha": "d42e1e077265a56e0b901e2b6a1fb8a4e662788bdf569b57efb7fdb3c353c107"
+    }
+  }
+}

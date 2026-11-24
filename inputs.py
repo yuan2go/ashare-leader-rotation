@@ -55,6 +55,9 @@ def trusted(url,hosts,test,archive=()):
         return url=='fixture'
     if url in ARCHIVE_SOURCES and url in archive:
         return True
+    if hosts==MARKET_HOSTS and isinstance(url,str) and re.fullmatch(
+            r'tushare_pro:(?:daily|dividend|namechange|stock_basic|suspend_d)\?ts_code=(?:60[0-9]{4}\.SH|(?:00|30)[0-9]{4}\.SZ)',url):
+        return True
     try:
         p=urlsplit(url)
         return p.scheme=='https' and not p.username and not p.password and any(
