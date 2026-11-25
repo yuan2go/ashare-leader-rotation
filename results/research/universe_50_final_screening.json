@@ -1,0 +1,4417 @@
+{
+  "asof": "2026-11-20",
+  "first_day": "2015-01-05",
+  "sessions": 2887,
+  "cut": "2023-01-20",
+  "config_sha256": "c6e25faecde4757838c60ccf0489321433dedabe35429e49094f4f7032f02c47",
+  "baseline_sha256": "69fee59598b3fc5b4b010de53a279794990eaca0f79c44f8eb1aa23935d2d200",
+  "primary": "tushare_pro",
+  "removed": {
+    "600011": "红利避险盾定位错配，W1 与 W5 T1 均深亏",
+    "600760": "W1 与 W5 T1 均亏损，前期 W5 回撤核心拖累"
+  },
+  "seed_codes": [
+    "601398",
+    "600900",
+    "601088",
+    "600938",
+    "002714",
+    "601919",
+    "600428",
+    "600111",
+    "601899",
+    "600066",
+    "600036",
+    "002371",
+    "300308",
+    "600276",
+    "300750",
+    "600941",
+    "601006",
+    "601985",
+    "600674",
+    "600309",
+    "600426",
+    "600989",
+    "002648",
+    "600346",
+    "000975",
+    "601600",
+    "603993",
+    "000408",
+    "600887",
+    "000858",
+    "603288",
+    "002311",
+    "600600"
+  ],
+  "groups": [
+    {
+      "group": 1,
+      "macro_bucket": "红利避险盾",
+      "retained": 7,
+      "target": 8,
+      "selected": [
+        "600028"
+      ],
+      "shortage": 0
+    },
+    {
+      "group": 2,
+      "macro_bucket": "上游能源化工",
+      "retained": 6,
+      "target": 6,
+      "selected": [],
+      "shortage": 0
+    },
+    {
+      "group": 3,
+      "macro_bucket": "贵金属与有色",
+      "retained": 6,
+      "target": 6,
+      "selected": [],
+      "shortage": 0
+    },
+    {
+      "group": 4,
+      "macro_bucket": "农业与必选消费",
+      "retained": 6,
+      "target": 6,
+      "selected": [],
+      "shortage": 0
+    },
+    {
+      "group": 5,
+      "macro_bucket": "硬科技半导体",
+      "retained": 1,
+      "target": 6,
+      "selected": [
+        "603501",
+        "603986",
+        "600584",
+        "002049",
+        "300661"
+      ],
+      "shortage": 0
+    },
+    {
+      "group": 6,
+      "macro_bucket": "AI 算力与数字基建",
+      "retained": 1,
+      "target": 6,
+      "selected": [
+        "601138",
+        "002463",
+        "000063",
+        "002230",
+        "002415"
+      ],
+      "shortage": 0
+    },
+    {
+      "group": 7,
+      "macro_bucket": "高端制造与出海",
+      "retained": 4,
+      "target": 7,
+      "selected": [
+        "000333",
+        "600660",
+        "600031"
+      ],
+      "shortage": 0
+    },
+    {
+      "group": 8,
+      "macro_bucket": "医药军工与顺周期金融",
+      "retained": 2,
+      "target": 5,
+      "selected": [
+        "600150",
+        "300059",
+        "601601"
+      ],
+      "shortage": 0
+    }
+  ],
+  "locked_candidates": {
+    "1": "600028"
+  },
+  "locked_requirements_met": true,
+  "retained_pair_scan": {
+    "pairs": 528,
+    "threshold_conflicts": 0,
+    "missing_pairs": 0,
+    "conflicts": [],
+    "highest": {
+      "a": "601899",
+      "b": "603993",
+      "a_name": "紫金矿业",
+      "b_name": "洛阳钼业",
+      "r": 0.6209774444530668,
+      "n": 2615
+    }
+  },
+  "result_pair_scan": {
+    "pairs": 1225,
+    "threshold_conflicts": 0,
+    "missing_pairs": 0,
+    "conflicts": [],
+    "highest": {
+      "a": "600036",
+      "b": "601601",
+      "a_name": "招商银行",
+      "b_name": "中国太保",
+      "r": 0.6266981965109925,
+      "n": 2643
+    }
+  },
+  "selected": [
+    "600028",
+    "603501",
+    "603986",
+    "600584",
+    "002049",
+    "300661",
+    "601138",
+    "002463",
+    "000063",
+    "002230",
+    "002415",
+    "000333",
+    "600660",
+    "600031",
+    "600150",
+    "300059",
+    "601601"
+  ],
+  "candidates": [
+    {
+      "code": "600028",
+      "name": "中国石化",
+      "bucket": "红利",
+      "subsector": "炼化零售",
+      "batch": "1",
+      "group": "1",
+      "macro_bucket": "红利避险盾",
+      "quota": "1",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.22774434842089536,
+          "t1": {
+            "net": -0.09059848888888888,
+            "dd": -0.5948333091862474,
+            "rr": -0.15230903765767717,
+            "weight": 0.46083951330950024,
+            "flat": 0.5331063185773742,
+            "trades": 61,
+            "commission": 5975.28,
+            "tax": 10555.24,
+            "slippage": 0.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.24146873614557676,
+          "t1": {
+            "net": 0.35701091111111105,
+            "dd": -0.289280739939095,
+            "rr": 1.2341330127483632,
+            "weight": 0.528690741091692,
+            "flat": 0.46277495769881555,
+            "trades": 27,
+            "commission": 3268.52,
+            "tax": 4618.87,
+            "slippage": 0.0
+          }
+        }
+      },
+      "close": 6.03,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1509792531.2103174,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "中国石化",
+      "sessions": 2887,
+      "open_sessions": 2887,
+      "quote_basis": "tushare_pro",
+      "listing": "2001-08-08",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600028.SH",
+          "retrieved": "2026-11-23T16:54:20.007716+00:00",
+          "cache_sha": "c7400789931e7b4d4656c52c10b12fe76aca4edcf1716e3f6ef9aadd55bfe740"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600028.SH",
+          "retrieved": "2026-11-23T16:54:21.780041+00:00",
+          "cache_sha": "7e64ec9621a876148779423261c65c9a4e3b67312112dff0dd61f35a5d1d47e2"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600028.SH",
+          "retrieved": "2026-11-23T16:54:50.150568+00:00",
+          "cache_sha": "6e21034f161513ffc58cc62eed881fee9d2670c40c9ca92899ccaea87a063923"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600028.SH",
+          "retrieved": "2026-11-23T17:00:16.723212+00:00",
+          "cache_sha": "b4cb2be74f5d9976aa14b9e699091b9c47c4692b3ad6b37465b9b066f350a3a9"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600028.SH",
+          "retrieved": "2026-11-23T17:00:18.981514+00:00",
+          "cache_sha": "4077999f97b4436ea2788d373e65f9122ce3f0286baaa7073167219137014973"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "210509067af09d9b3da152b91a74ed7d0fc71f4ea61539c85d7afc411d885b72",
+            "retrieved": "2026-11-23T23:37:11.082401+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "600938",
+        "name": "中国海油",
+        "r": 0.6153885512364546,
+        "n": 1111
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "600938",
+        "name": "中国海油",
+        "r": 0.6153885512364546,
+        "n": 1111
+      }
+    },
+    {
+      "code": "600795",
+      "name": "国电电力",
+      "bucket": "红利",
+      "subsector": "综合电力",
+      "batch": "1",
+      "group": "1",
+      "macro_bucket": "红利避险盾",
+      "quota": "1",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2578,
+          "annual_volatility": 0.2616029489911853,
+          "t1": {
+            "net": 0.3131699555555556,
+            "dd": -0.3791053827071771,
+            "rr": 0.8260762570006811,
+            "weight": 0.4280768859634944,
+            "flat": 0.5701853953840333,
+            "trades": 43,
+            "commission": 5014.57,
+            "tax": 8296.95,
+            "slippage": 0.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.2814698127564433,
+          "t1": {
+            "net": 0.5359574888888889,
+            "dd": -0.2677902413224619,
+            "rr": 2.001407841608056,
+            "weight": 0.4763484464879674,
+            "flat": 0.5219966159052454,
+            "trades": 19,
+            "commission": 2840.12,
+            "tax": 3701.01,
+            "slippage": 0.0
+          }
+        }
+      },
+      "close": 5.57,
+      "price_band": "OPT",
+      "daily_amount_yuan": 887314189.5555556,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "国电电力",
+      "sessions": 2887,
+      "open_sessions": 2823,
+      "quote_basis": "tushare_pro",
+      "listing": "1997-03-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600795.SH",
+          "retrieved": "2026-11-23T16:52:12.215711+00:00",
+          "cache_sha": "9f261b59661aa28c8d6e81ce461509f2862e5fd455031300846256c29da5cfe3"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600795.SH",
+          "retrieved": "2026-11-23T16:52:13.785997+00:00",
+          "cache_sha": "3fb109ff292fde9cd71b75fdc1932f60870edc50121d42aa8ab1342658b85e90"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600795.SH",
+          "retrieved": "2026-11-23T16:54:57.261529+00:00",
+          "cache_sha": "f40e970c6111978b9500aa2080d3f5205c05131afb3fe8b6527a402b4c2a37fc"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600795.SH",
+          "retrieved": "2026-11-23T16:54:59.557237+00:00",
+          "cache_sha": "898572ea95a65faea9b0ee5da4c5b084afb2a467fe502f68ea23e0a31bc03726"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600795.SH",
+          "retrieved": "2026-11-23T16:55:01.103390+00:00",
+          "cache_sha": "b8a3226333fdd6c76703e6f59706615409d499a24f6e981f37aed50460d87aab"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "ed6eec5a2785a9e6b6fb76c898d4b23dc7aff2071a8c4d740a2db2a6221fbc29",
+            "retrieved": "2026-11-23T23:37:11.413536+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.5734295514447364,
+        "n": 2578
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.5734295514447364,
+        "n": 2578
+      }
+    },
+    {
+      "code": "600905",
+      "name": "三峡能源",
+      "bucket": "红利",
+      "subsector": "新能源运营",
+      "batch": "1",
+      "group": "1",
+      "macro_bucket": "红利避险盾",
+      "quota": "1",
+      "substitute_reason": "",
+      "gate_failures": [
+        "REVIEW_DOUBLE_LOSS"
+      ],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 1320,
+          "annual_volatility": 0.27674779727096127,
+          "t1": {
+            "net": -0.26273315555555554,
+            "dd": -0.26273315555555554,
+            "rr": -1.0,
+            "weight": 0.0770524886822022,
+            "flat": 0.9228149829738933,
+            "trades": 18,
+            "commission": 1733.47,
+            "tax": 1703.05,
+            "slippage": 0.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.1910281055861517,
+          "t1": {
+            "net": -0.26273315555555554,
+            "dd": -0.26273315555555554,
+            "rr": -1.0,
+            "weight": 0.17229249372847752,
+            "flat": 0.8274111675126904,
+            "trades": 18,
+            "commission": 1733.47,
+            "tax": 1703.05,
+            "slippage": 0.0
+          }
+        }
+      },
+      "close": 3.28,
+      "price_band": "OPT",
+      "daily_amount_yuan": 579697093.6388888,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "三峡能源",
+      "sessions": 1321,
+      "open_sessions": 1321,
+      "quote_basis": "tushare_pro",
+      "listing": "2021-06-10",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600905.SH",
+          "retrieved": "2026-11-23T16:55:13.934674+00:00",
+          "cache_sha": "dd618a83fc5cc9b07c2ed2ffab15d41646bb1deb9712002ad24fe78ed796e5e2"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600905.SH",
+          "retrieved": "2026-11-23T16:55:15.288315+00:00",
+          "cache_sha": "f10ce89de6b9f64091889729a62b6f08089d4b853fc45f0939b13b651d4edec6"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600905.SH",
+          "retrieved": "2026-11-23T16:55:22.868841+00:00",
+          "cache_sha": "017552a36300f6e43afe08653f300e22f0664b0ccc440bad3c58ea3b66655577"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600905.SH",
+          "retrieved": "2026-11-23T16:55:24.472658+00:00",
+          "cache_sha": "56b476a54ccb1072e8fae7790d898f5c084dbe2d2c81c5f689bab42a49f1c06b"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600905.SH",
+          "retrieved": "2026-11-23T16:55:25.967759+00:00",
+          "cache_sha": "9a478e4cf5e6f3e92b026d9e3a362063552ed1312a7fdc7c480d4d6796026b39"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "e34abc4bceb50241b67d9b526b60c13d0961d9e1b0462efcb537b6db322dfc3b",
+            "retrieved": "2026-11-23T23:37:10.975537+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.37753069791621957,
+        "n": 1320
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "BLOCKED",
+      "highest_in_result_pool": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.37753069791621957,
+        "n": 1320
+      }
+    },
+    {
+      "code": "603501",
+      "name": "豪威集团",
+      "bucket": "科技成长",
+      "subsector": "半导体图像传感器",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2143,
+          "annual_volatility": 0.5156926430081413,
+          "t1": {
+            "net": 0.01752431111111119,
+            "dd": -0.7465247596476904,
+            "rr": 0.02347452095143032,
+            "weight": 0.30729721955264355,
+            "flat": 0.6905032160423761,
+            "trades": 37,
+            "commission": 6676.82,
+            "tax": 11400.44,
+            "slippage": 5446.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.39683522614451516,
+          "t1": {
+            "net": -0.5539453999999999,
+            "dd": -0.5539453999999999,
+            "rr": -1.0,
+            "weight": 0.2782153298025082,
+            "flat": 0.7148900169204738,
+            "trades": 23,
+            "commission": 1459.98,
+            "tax": 1954.25,
+            "slippage": 1208.0
+          }
+        }
+      },
+      "close": 83.91,
+      "price_band": "OPT",
+      "daily_amount_yuan": 2011345670.4087303,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "豪威集团",
+      "sessions": 2320,
+      "open_sessions": 2149,
+      "quote_basis": "tushare_pro",
+      "listing": "2017-05-04",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=603501.SH",
+          "retrieved": "2026-11-23T16:55:27.772977+00:00",
+          "cache_sha": "5e5476a08a602a8562c0ab6f2d8ff65512d97cbdef2b8ee0641b02a621b549d8"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=603501.SH",
+          "retrieved": "2026-11-23T16:55:29.084330+00:00",
+          "cache_sha": "e16a0541178682d36145b051f3136a4e4081be141f5503dbbbb465bc1a60ba27"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=603501.SH",
+          "retrieved": "2026-11-23T16:55:39.931156+00:00",
+          "cache_sha": "c30ceca683c94d79c77844ac3b960905f8844a31daa0db5f5b95d9b7e7e6a3ae"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=603501.SH",
+          "retrieved": "2026-11-23T16:55:41.779145+00:00",
+          "cache_sha": "be6508527a1731d2e147bd4dc19fb1d57e37c5f767b86a042b8cf2401c1426d0"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=603501.SH",
+          "retrieved": "2026-11-23T16:55:43.593048+00:00",
+          "cache_sha": "6c61c1790852a34ed0a749e879c4d9f0722d336339981b320a1c0bdee9262ba9"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "46df776c206289a5d995f8b8b1246f56fb70291105e39184efb988d64283ddfc",
+            "retrieved": "2026-11-23T23:37:11.469861+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002371",
+        "name": "北方华创",
+        "r": 0.5025921129502947,
+        "n": 2143
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.5377936871235635,
+        "n": 2056
+      }
+    },
+    {
+      "code": "603986",
+      "name": "兆易创新",
+      "bucket": "科技成长",
+      "subsector": "半导体存储设计",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2276,
+          "annual_volatility": 0.5886923422771988,
+          "t1": {
+            "net": 0.2932295777777778,
+            "dd": -0.823560533794041,
+            "rr": 0.3560510317643629,
+            "weight": 0.27936950205169286,
+            "flat": 0.7150964812712827,
+            "trades": 38,
+            "commission": 3846.8,
+            "tax": 6679.89,
+            "slippage": 3142.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.552944664153438,
+          "t1": {
+            "net": 0.16547642222222225,
+            "dd": -0.6180870444444444,
+            "rr": 0.26772349252354505,
+            "weight": 0.34917552706349725,
+            "flat": 0.6421319796954315,
+            "trades": 24,
+            "commission": 1843.16,
+            "tax": 2749.45,
+            "slippage": 1484.0
+          }
+        }
+      },
+      "close": 205.88,
+      "price_band": "GOOD",
+      "daily_amount_yuan": 14935301289.265873,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "兆易创新",
+      "sessions": 2489,
+      "open_sessions": 2283,
+      "quote_basis": "tushare_pro",
+      "listing": "2016-08-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=603986.SH",
+          "retrieved": "2026-11-23T16:55:45.392436+00:00",
+          "cache_sha": "4aa8a245513e395ec8a8d22efa0220e60faf2f6d93a3ee7588cd904146c39a6e"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=603986.SH",
+          "retrieved": "2026-11-23T16:55:47.111671+00:00",
+          "cache_sha": "b34d1feed73c5e41d329c48619ebc3f856e062d31a37f4472a4eced5f6baa7da"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=603986.SH",
+          "retrieved": "2026-11-23T16:55:57.189833+00:00",
+          "cache_sha": "e175203694f8dda785dbd68a53b957db35b14f2bae1a54bf56887efe1b6f0fa2"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=603986.SH",
+          "retrieved": "2026-11-23T16:55:59.343294+00:00",
+          "cache_sha": "4a1e319fc4bdd0fa25ca78397f7058d80cf16d1a6fdece3be85c7ec83a8325e6"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=603986.SH",
+          "retrieved": "2026-11-23T16:56:01.205241+00:00",
+          "cache_sha": "ee76ac36ab7e292899d146d4f513147b51a912118428f8ff6ecda5b183687fb1"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "c8a3b31390ed81f478c18d402a28ffbcdb9e7fc3e70a77bf97329ec5eb541249",
+            "retrieved": "2026-11-23T23:37:11.472170+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002371",
+        "name": "北方华创",
+        "r": 0.554876613998364,
+        "n": 2276
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "600584",
+        "name": "长电科技",
+        "r": 0.5878334424763452,
+        "n": 2261
+      }
+    },
+    {
+      "code": "600584",
+      "name": "长电科技",
+      "bucket": "科技成长",
+      "subsector": "半导体封测",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2537,
+          "annual_volatility": 0.4882403890532327,
+          "t1": {
+            "net": -0.4116374222222222,
+            "dd": -0.6912281453196341,
+            "rr": -0.5955160029426682,
+            "weight": 0.3240754516344508,
+            "flat": 0.674233825198638,
+            "trades": 50,
+            "commission": 4192.37,
+            "tax": 7573.47,
+            "slippage": 2874.0
+          }
+        },
+        "W5": {
+          "n": 1176,
+          "annual_volatility": 0.469946906129885,
+          "t1": {
+            "net": -0.29740382222222217,
+            "dd": -0.4147615798333719,
+            "rr": -0.7170476646889581,
+            "weight": 0.3365763103775623,
+            "flat": 0.6615905245346869,
+            "trades": 26,
+            "commission": 2039.11,
+            "tax": 3144.61,
+            "slippage": 2048.0
+          }
+        }
+      },
+      "close": 50.2,
+      "price_band": "OPT",
+      "daily_amount_yuan": 7583941276.865079,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "长电科技",
+      "sessions": 2887,
+      "open_sessions": 2718,
+      "quote_basis": "tushare_pro",
+      "listing": "2003-06-03",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600584.SH",
+          "retrieved": "2026-11-23T16:56:03.229510+00:00",
+          "cache_sha": "37e3ecd4dd7dab95085a3f60b985f3bdc2006c24fe9fdc3c9e630a7b1f1ffa4d"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600584.SH",
+          "retrieved": "2026-11-23T16:56:04.512450+00:00",
+          "cache_sha": "989461150acf684e9647d34fdabf4cb8ad69ffd244d7472e455c10b99e83a192"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600584.SH",
+          "retrieved": "2026-11-23T16:56:13.783206+00:00",
+          "cache_sha": "38f42674cddfeae9e7846b59259b1042b3f1d2729615907c41e0c4a0a6b6efe5"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600584.SH",
+          "retrieved": "2026-11-23T16:56:15.698862+00:00",
+          "cache_sha": "52ebf9be6a5ca600341c53fc7b9c7aec507b4cdd4a073edbbc14ab17f36554b2"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600584.SH",
+          "retrieved": "2026-11-23T16:56:17.446704+00:00",
+          "cache_sha": "e51eaca2354fa3675bd394e2e9d2c170989d64307bbacf3e53bfff44aed70af2"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "46df776c206289a5d995f8b8b1246f56fb70291105e39184efb988d64283ddfc",
+            "retrieved": "2026-11-23T23:37:11.469861+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.5878334424763452,
+        "n": 2261
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.5878334424763452,
+        "n": 2261
+      }
+    },
+    {
+      "code": "002049",
+      "name": "紫光国微",
+      "bucket": "科技成长",
+      "subsector": "半导体安全芯片",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2467,
+          "annual_volatility": 0.4780231168867956,
+          "t1": {
+            "net": 0.5597797555555555,
+            "dd": -0.5789166699462864,
+            "rr": 0.9669435768838605,
+            "weight": 0.32362531918144666,
+            "flat": 0.6746121831252365,
+            "trades": 38,
+            "commission": 8185.05,
+            "tax": 13733.58,
+            "slippage": 6407.97
+          }
+        },
+        "W5": {
+          "n": 1171,
+          "annual_volatility": 0.4143289195346271,
+          "t1": {
+            "net": -0.45054893333333335,
+            "dd": -0.4683193768737234,
+            "rr": -0.9620548616650948,
+            "weight": 0.22813335837513726,
+            "flat": 0.7673434856175972,
+            "trades": 18,
+            "commission": 1580.22,
+            "tax": 2089.13,
+            "slippage": 1211.37
+          }
+        }
+      },
+      "close": 47.88,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1736403937.3833334,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "紫光国微",
+      "sessions": 2887,
+      "open_sessions": 2666,
+      "quote_basis": "tushare_pro",
+      "listing": "2005-06-06",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002049.SZ",
+          "retrieved": "2026-11-23T16:52:15.874888+00:00",
+          "cache_sha": "9c7262185a4d756168efaa941a6ae9488bf80cf992dee59e5d76ae0a851c4858"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002049.SZ",
+          "retrieved": "2026-11-23T16:56:19.629616+00:00",
+          "cache_sha": "eaaa6b6fd7450d106fa8966d246be8b90af87d6fa97d6e43f2c62394de97d800"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002049.SZ",
+          "retrieved": "2026-11-23T16:56:31.247640+00:00",
+          "cache_sha": "4ca7ac8a96e386fa3433c33c3706492bd16e3d3c763f78959e3e8fab368dffa7"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002049.SZ",
+          "retrieved": "2026-11-23T16:56:33.276916+00:00",
+          "cache_sha": "b9ef0bb21d944915f4d6075b00591b552e4e2bdfba705bc8be5e79c6b574c66e"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002049.SZ",
+          "retrieved": "2026-11-23T16:56:35.324267+00:00",
+          "cache_sha": "7dde271e04cf435f2f603070287dde946ad65f56e2d901202a20c8801a3abcea"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "24fb822a51854fcb9dd00fef30cdf7006a3d82dc1718af9ff9598fe05c1cc582",
+            "retrieved": "2026-11-23T23:37:11.729350+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "600584",
+        "name": "长电科技",
+        "r": 0.5632179737988819,
+        "n": 2412
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "600584",
+        "name": "长电科技",
+        "r": 0.5632179737988819,
+        "n": 2412
+      }
+    },
+    {
+      "code": "300661",
+      "name": "圣邦股份",
+      "bucket": "科技成长",
+      "subsector": "半导体模拟芯片",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2287,
+          "annual_volatility": 0.5660672698824231,
+          "t1": {
+            "net": 0.4614583777777779,
+            "dd": -0.7749896066904558,
+            "rr": 0.5954381501300472,
+            "weight": 0.32594776115983576,
+            "flat": 0.6712069617858494,
+            "trades": 50,
+            "commission": 13351.35,
+            "tax": 20160.28,
+            "slippage": 11284.9
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.514928571703709,
+          "t1": {
+            "net": -0.6624934888888889,
+            "dd": -0.7237203322442545,
+            "rr": -0.9153998573378458,
+            "weight": 0.30909114458974396,
+            "flat": 0.682741116751269,
+            "trades": 34,
+            "commission": 1966.54,
+            "tax": 2270.53,
+            "slippage": 1691.0
+          }
+        }
+      },
+      "close": 71.42,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1711963727.6257539,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "圣邦股份",
+      "sessions": 2299,
+      "open_sessions": 2289,
+      "quote_basis": "tushare_pro",
+      "listing": "2017-06-06",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=300661.SZ",
+          "retrieved": "2026-11-23T16:56:37.127645+00:00",
+          "cache_sha": "3d5e0562614715c033943f2f9cc6cffa144dcf6c0e72a6bb9c5dfe7b8f7437e2"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=300661.SZ",
+          "retrieved": "2026-11-23T16:56:38.781977+00:00",
+          "cache_sha": "b88c170933100cd8b776b9a826d3e7e395a6cf25e3d37e642a07863c2c457b5e"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=300661.SZ",
+          "retrieved": "2026-11-23T16:56:48.371829+00:00",
+          "cache_sha": "ae3724f9e806e79ccb5de61e36f69d4546e7e675a82b66c51ab9408edffca70e"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=300661.SZ",
+          "retrieved": "2026-11-23T16:56:49.805464+00:00",
+          "cache_sha": "1232185b27b4e8ca6a4645dfba0d5acf6b559ea7640c014f14db3703741a5a76"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=300661.SZ",
+          "retrieved": "2026-11-23T16:56:51.517387+00:00",
+          "cache_sha": "14cbf5bb92e8462fa4f749cc38a967f164a577339b0cff78de3134b7aaa0cf27"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "75f140ca4eaded2139b2acdf41df68d88cc8060b97aa65fa708809c9e8c0c66b",
+            "retrieved": "2026-11-23T23:37:11.780293+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.5358713145926538,
+        "n": 2192
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.5358713145926538,
+        "n": 2192
+      }
+    },
+    {
+      "code": "300223",
+      "name": "北京君正",
+      "bucket": "科技成长",
+      "subsector": "半导体存储及计算",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2416,
+          "annual_volatility": 0.6161561095824232,
+          "t1": {
+            "net": 0.07107622222222232,
+            "dd": -0.6614376030610412,
+            "rr": 0.10745718400842567,
+            "weight": 0.31342103192130827,
+            "flat": 0.684449489216799,
+            "trades": 48,
+            "commission": 5438.4,
+            "tax": 9553.3,
+            "slippage": 4832.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.5958191278092141,
+          "t1": {
+            "net": -0.2636180222222222,
+            "dd": -0.5659005103167867,
+            "rr": -0.46583810655101,
+            "weight": 0.2897309302564899,
+            "flat": 0.7064297800338409,
+            "trades": 20,
+            "commission": 1716.84,
+            "tax": 2453.27,
+            "slippage": 1416.0
+          }
+        }
+      },
+      "close": 86.3,
+      "price_band": "OPT",
+      "daily_amount_yuan": 4568067541.973214,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "君正股份",
+      "sessions": 2887,
+      "open_sessions": 2665,
+      "quote_basis": "tushare_pro",
+      "listing": "2011-05-31",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=300223.SZ",
+          "retrieved": "2026-11-23T16:56:53.408629+00:00",
+          "cache_sha": "a44a709fb6fd7df7d13fa413f6bd90a71134c15d2da9947866e1b72796298429"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=300223.SZ",
+          "retrieved": "2026-11-23T16:56:54.814300+00:00",
+          "cache_sha": "2ba20e389033b32a6b79f8f4d94616fcc1f04f614f0294a007fac2522e889831"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=300223.SZ",
+          "retrieved": "2026-11-23T16:57:03.208543+00:00",
+          "cache_sha": "cd7a2cb92a99a00e4f6225a3af7a3275eff28c7d4f531854068adc32f4291f9e"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=300223.SZ",
+          "retrieved": "2026-11-23T16:57:05.163829+00:00",
+          "cache_sha": "fe9458aa474d926d8f8e67f87a68e6bfdbdaac17cc1c834d61df8380c10f6aaa"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=300223.SZ",
+          "retrieved": "2026-11-23T16:57:06.836559+00:00",
+          "cache_sha": "53e7d89d7b1a8738e09bb658a3ac9a6d87b04cca49e5d9780aa31edea81d8c8f"
+        }
+      ],
+      "rights": {
+        "total": 1,
+        "examined": [
+          {
+            "title": "关于稳定价格行动、稳定价格期结束及超额配股权失效的公告",
+            "published": "2026-09-21",
+            "source": "https://static.cninfo.com.cn/finalpage/2026-09-21/1225573887.PDF"
+          }
+        ],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "a507540ba8b7c747b2800248dfb6c43df1676883d8fa9856f167881f60243780",
+            "retrieved": "2026-11-23T23:37:11.787264+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.6266676199154396,
+        "n": 2217
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "603986",
+        "name": "兆易创新",
+        "r": 0.6266676199154396,
+        "n": 2217
+      }
+    },
+    {
+      "code": "002409",
+      "name": "雅克科技",
+      "bucket": "科技成长",
+      "subsector": "半导体材料",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2460,
+          "annual_volatility": 0.5314769176418995,
+          "t1": {
+            "net": -0.09031337777777781,
+            "dd": -0.6112870666666667,
+            "rr": -0.14774298803711722,
+            "weight": 0.35506646513179374,
+            "flat": 0.6420734014377601,
+            "trades": 48,
+            "commission": 3495.62,
+            "tax": 6123.9,
+            "slippage": 2155.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.5229220982713149,
+          "t1": {
+            "net": 0.03163831111111115,
+            "dd": -0.4822961836421251,
+            "rr": 0.06559933954316235,
+            "weight": 0.39422647261521016,
+            "flat": 0.6006768189509306,
+            "trades": 22,
+            "commission": 1807.24,
+            "tax": 2654.52,
+            "slippage": 1278.0
+          }
+        }
+      },
+      "close": 75.28,
+      "price_band": "OPT",
+      "daily_amount_yuan": 2556228602.769127,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "雅克科技",
+      "sessions": 2887,
+      "open_sessions": 2589,
+      "quote_basis": "tushare_pro",
+      "listing": "2010-05-25",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002409.SZ",
+          "retrieved": "2026-11-23T16:52:20.944884+00:00",
+          "cache_sha": "c9911bba19e0ea3358b49c0419c0fa896073db4db61e47a7cc65762eac20391f"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002409.SZ",
+          "retrieved": "2026-11-23T16:57:08.801028+00:00",
+          "cache_sha": "cd327078c508379e9bf368613e3d60ec26abf422053ebcec7c4fe9acaaac27ed"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002409.SZ",
+          "retrieved": "2026-11-23T16:57:15.056755+00:00",
+          "cache_sha": "c83d8d74fc19bb6d274b0648067738862baeddecdaf4448ea2d6778b5294a306"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002409.SZ",
+          "retrieved": "2026-11-23T16:57:17.394761+00:00",
+          "cache_sha": "6c020354227d818bdc492e0550e84e3d67bc339d0d49c27770a918d33d2e5c37"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002409.SZ",
+          "retrieved": "2026-11-23T16:57:19.101923+00:00",
+          "cache_sha": "4fd39d18d9b7c01af45fca0a41d4a36bba3c99723f5ccaf5c96c48a48721cada"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "467d482c968720b5a71e5447a9ceb69124cc523aef46016c954413a5f25eee64",
+            "retrieved": "2026-11-23T23:37:11.787264+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002371",
+        "name": "北方华创",
+        "r": 0.5905834685631038,
+        "n": 2454
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "002371",
+        "name": "北方华创",
+        "r": 0.5905834685631038,
+        "n": 2454
+      }
+    },
+    {
+      "code": "300782",
+      "name": "卓胜微",
+      "bucket": "科技成长",
+      "subsector": "半导体射频芯片",
+      "batch": "1",
+      "group": "5",
+      "macro_bucket": "硬科技半导体",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 1802,
+          "annual_volatility": 0.5588261840112753,
+          "t1": {
+            "net": 0.05042346666666675,
+            "dd": -0.4487562276210858,
+            "rr": 0.11236271178668204,
+            "weight": 0.20055506582252025,
+            "flat": 0.7937949300037835,
+            "trades": 22,
+            "commission": 2641.22,
+            "tax": 3891.22,
+            "slippage": 2138.8
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.515261062154718,
+          "t1": {
+            "net": -0.14466731111111109,
+            "dd": -0.4306358950246063,
+            "rr": -0.3359388123064959,
+            "weight": 0.29333450793352245,
+            "flat": 0.7038917089678511,
+            "trades": 16,
+            "commission": 1590.35,
+            "tax": 2011.94,
+            "slippage": 1299.0
+          }
+        }
+      },
+      "close": 49.72,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1478866990.5975795,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "卓胜微",
+      "sessions": 1803,
+      "open_sessions": 1803,
+      "quote_basis": "tushare_pro",
+      "listing": "2019-06-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=300782.SZ",
+          "retrieved": "2026-11-23T16:57:21.103090+00:00",
+          "cache_sha": "a62eff97c2ce677444a86c3373d82dee54b7881da11f865d77dff6657eec8e97"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=300782.SZ",
+          "retrieved": "2026-11-23T16:57:22.653169+00:00",
+          "cache_sha": "ef83f198a1f2bb96a2983967c4e4e836fbe49d8c7a4573c376d7f16998bee711"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=300782.SZ",
+          "retrieved": "2026-11-23T16:57:29.926659+00:00",
+          "cache_sha": "1c00d29ef298ed8ae0c604de82e04bef6e6df9a5ec194c5eee9cc56bc21f72a9"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=300782.SZ",
+          "retrieved": "2026-11-23T16:57:32.504294+00:00",
+          "cache_sha": "fc2556dc6cddd6be4f383260b14b22a7194f8f86ee3624cb0ed3f2faf5101c32"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=300782.SZ",
+          "retrieved": "2026-11-23T16:57:33.943412+00:00",
+          "cache_sha": "e3cb686e47e1413b8b33e7043f453d505d93b88834892e20e21a2295ee614616"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "261de8326d2993661369454ad8307e72bada84a2faf1f8dbe2c5bade8e7cb66d",
+            "retrieved": "2026-11-23T23:37:11.886925+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "603501",
+        "name": "豪威集团",
+        "r": 0.5612842963394393,
+        "n": 1802
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "603501",
+        "name": "豪威集团",
+        "r": 0.5612842963394393,
+        "n": 1802
+      }
+    },
+    {
+      "code": "601138",
+      "name": "工业富联",
+      "bucket": "科技成长",
+      "subsector": "云计算设备",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2050,
+          "annual_volatility": 0.4837376902810608,
+          "t1": {
+            "net": 4.486607155555555,
+            "dd": -0.38826367746998347,
+            "rr": 11.555567558601753,
+            "weight": 0.2288673493317829,
+            "flat": 0.7703367385546728,
+            "trades": 26,
+            "commission": 5603.17,
+            "tax": 8570.61,
+            "slippage": 1230.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.5380513921630966,
+          "t1": {
+            "net": 4.648466155555556,
+            "dd": -0.30516093900107055,
+            "rr": 15.232834748680755,
+            "weight": 0.3927848127919388,
+            "flat": 0.6057529610829103,
+            "trades": 16,
+            "commission": 4505.65,
+            "tax": 6302.58,
+            "slippage": 1267.0
+          }
+        }
+      },
+      "close": 37.17,
+      "price_band": "OPT",
+      "daily_amount_yuan": 10152291512.071428,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "工业富联",
+      "sessions": 2051,
+      "open_sessions": 2051,
+      "quote_basis": "tushare_pro",
+      "listing": "2018-06-08",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=601138.SH",
+          "retrieved": "2026-11-23T16:57:35.737064+00:00",
+          "cache_sha": "525bd9604c708e48ef38edef97d435451f4f284e42da2bb78a6e9df2a353553f"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=601138.SH",
+          "retrieved": "2026-11-23T16:57:39.128628+00:00",
+          "cache_sha": "ab579f1d13c7efd7b0bc547063a5656c58a9c0b2d9c46295b7c9fe10a0133a48"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=601138.SH",
+          "retrieved": "2026-11-23T16:57:47.717015+00:00",
+          "cache_sha": "557fbafffe49271dfd59c3ae605381ea31aa2e0e9892c83fa0b171dda3355781"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=601138.SH",
+          "retrieved": "2026-11-23T16:57:49.818056+00:00",
+          "cache_sha": "ea1939a97f3298019c4712487837b026d009877961e875bd517c419850776b41"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=601138.SH",
+          "retrieved": "2026-11-23T16:57:51.469961+00:00",
+          "cache_sha": "a5d731c5e55467ec4c4e0335e5a90f35411f964f277182c426cd426ab36685b1"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "0395e9992a7246ef073fb2e98321f475c6711833cf40a19365d3e54a23aa01d8",
+            "retrieved": "2026-11-23T23:37:12.068310+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "300308",
+        "name": "中际旭创",
+        "r": 0.6088810825199117,
+        "n": 2050
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "300308",
+        "name": "中际旭创",
+        "r": 0.6088810825199117,
+        "n": 2050
+      }
+    },
+    {
+      "code": "002463",
+      "name": "沪电股份",
+      "bucket": "科技成长",
+      "subsector": "算力PCB",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.522556930456568,
+          "t1": {
+            "net": 1.004568311111111,
+            "dd": -0.6792977185233491,
+            "rr": 1.4788336302598395,
+            "weight": 0.396866874367415,
+            "flat": 0.6019674612183126,
+            "trades": 44,
+            "commission": 7699.49,
+            "tax": 12943.77,
+            "slippage": 3245.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.5990782100675537,
+          "t1": {
+            "net": -0.03779033333333337,
+            "dd": -0.5774912760639841,
+            "rr": -0.06543879518129089,
+            "weight": 0.49186353243244196,
+            "flat": 0.5042301184433164,
+            "trades": 24,
+            "commission": 1983.14,
+            "tax": 2672.51,
+            "slippage": 1036.0
+          }
+        }
+      },
+      "close": 80.32,
+      "price_band": "OPT",
+      "daily_amount_yuan": 6916025015.308293,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "沪电股份",
+      "sessions": 2887,
+      "open_sessions": 2887,
+      "quote_basis": "tushare_pro",
+      "listing": "2010-08-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002463.SZ",
+          "retrieved": "2026-11-23T16:57:53.877591+00:00",
+          "cache_sha": "f2556a8dfd5872b40f984a1ccf64346deaf74d89927b61118e318f22566671db"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002463.SZ",
+          "retrieved": "2026-11-23T16:57:55.361656+00:00",
+          "cache_sha": "bd41d3cd45f683a6734adaa2083962781c8c33ec19546bc802168e7bb95e2bf0"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002463.SZ",
+          "retrieved": "2026-11-23T16:58:05.640072+00:00",
+          "cache_sha": "f8d1106d511cf04284b36267bff71abfab7069416b9cd599e7be1aea8a19d2de"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002463.SZ",
+          "retrieved": "2026-11-23T17:02:48.588976+00:00",
+          "cache_sha": "815f270905835c73fbd912adfdea035c4e3d6008c0ba17845b8447d8572d3889"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002463.SZ",
+          "retrieved": "2026-11-23T17:02:50.717747+00:00",
+          "cache_sha": "00616931d410ce511d17815fa585fe8d39055ded7cc26ea3a607a5ebba2785a1"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "1fa571570a4e23deb8b48a0c12851b936c71ea96ab775568e330ab4b7e861c99",
+            "retrieved": "2026-11-23T23:37:12.125225+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "300308",
+        "name": "中际旭创",
+        "r": 0.5946912668781782,
+        "n": 2497
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "300308",
+        "name": "中际旭创",
+        "r": 0.5946912668781782,
+        "n": 2497
+      }
+    },
+    {
+      "code": "000063",
+      "name": "中兴通讯",
+      "bucket": "科技成长",
+      "subsector": "通信设备",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2567,
+          "annual_volatility": 0.44174061999152964,
+          "t1": {
+            "net": 1.7699312666666667,
+            "dd": -0.4486515984183852,
+            "rr": 3.9450015845394057,
+            "weight": 0.3909494313099192,
+            "flat": 0.6083995459704881,
+            "trades": 38,
+            "commission": 8916.72,
+            "tax": 14716.21,
+            "slippage": 8331.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.43157495503717835,
+          "t1": {
+            "net": 0.43748455555555554,
+            "dd": -0.3250069636015279,
+            "rr": 1.346077483102577,
+            "weight": 0.3318987543289928,
+            "flat": 0.6675126903553299,
+            "trades": 18,
+            "commission": 2541.06,
+            "tax": 3354.89,
+            "slippage": 2655.0
+          }
+        }
+      },
+      "close": 26.3,
+      "price_band": "OPT",
+      "daily_amount_yuan": 4768648158.7919445,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "中兴通讯",
+      "sessions": 2887,
+      "open_sessions": 2813,
+      "quote_basis": "tushare_pro",
+      "listing": "1997-11-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=000063.SZ",
+          "retrieved": "2026-11-23T16:58:09.125559+00:00",
+          "cache_sha": "8d9523343eb3b7028a286d243e8658846d75e5c0ad6b7cfe2cf03ff43471f99c"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=000063.SZ",
+          "retrieved": "2026-11-23T16:58:14.511732+00:00",
+          "cache_sha": "2802bd797c9e384a24b1816cb7b1fcf4eb67067c8ee79794d5a295091d1f9613"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=000063.SZ",
+          "retrieved": "2026-11-23T16:58:25.229062+00:00",
+          "cache_sha": "a3650eb9e7d6b97dc69afde598f9446a953037752b06c238d3444d6e7829e327"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=000063.SZ",
+          "retrieved": "2026-11-23T16:58:26.817904+00:00",
+          "cache_sha": "5758efc1e0a10bef73d86716a8ba975102b369678c749beafd485b4c41e5c587"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=000063.SZ",
+          "retrieved": "2026-11-23T16:58:29.141003+00:00",
+          "cache_sha": "8d0125d7ce44ab4132fd0091c3c0510c98f1b1e721341a1d6dae588b92c74252"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "1fa571570a4e23deb8b48a0c12851b936c71ea96ab775568e330ab4b7e861c99",
+            "retrieved": "2026-11-23T23:37:12.125225+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "601138",
+        "name": "工业富联",
+        "r": 0.48028538829072276,
+        "n": 2045
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "601138",
+        "name": "工业富联",
+        "r": 0.48028538829072276,
+        "n": 2045
+      }
+    },
+    {
+      "code": "002230",
+      "name": "科大讯飞",
+      "bucket": "科技成长",
+      "subsector": "AI应用",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2593,
+          "annual_volatility": 0.43242077772397497,
+          "t1": {
+            "net": -0.008576888888888856,
+            "dd": -0.5658864811796034,
+            "rr": -0.015156553786211916,
+            "weight": 0.3261120136857113,
+            "flat": 0.6723420355656451,
+            "trades": 40,
+            "commission": 5110.06,
+            "tax": 8866.54,
+            "slippage": 4740.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.4123115782316152,
+          "t1": {
+            "net": -0.050022577777777744,
+            "dd": -0.5163912939038824,
+            "rr": -0.0968695219464498,
+            "weight": 0.2803526246481183,
+            "flat": 0.7182741116751269,
+            "trades": 12,
+            "commission": 1641.48,
+            "tax": 1976.68,
+            "slippage": 1306.0
+          }
+        }
+      },
+      "close": 34.5,
+      "price_band": "OPT",
+      "daily_amount_yuan": 2196718138.0474205,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "科大讯飞",
+      "sessions": 2887,
+      "open_sessions": 2826,
+      "quote_basis": "tushare_pro",
+      "listing": "2008-05-12",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002230.SZ",
+          "retrieved": "2026-11-23T16:58:32.443072+00:00",
+          "cache_sha": "76ea6f099782015a9a89c718ccfcd7972e83de7645f3167528bb09739cfaf134"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002230.SZ",
+          "retrieved": "2026-11-23T16:58:34.122520+00:00",
+          "cache_sha": "fa2b7337fe3577d5822b70075766eb41e0bed0f66d9aba18cb4c2a1461d2b43a"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002230.SZ",
+          "retrieved": "2026-11-23T16:58:47.405228+00:00",
+          "cache_sha": "84e8abdc18551427b4ea23dd995b9a04720bd7c94eb31f105b1ca77a1fa20614"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002230.SZ",
+          "retrieved": "2026-11-23T16:58:49.923285+00:00",
+          "cache_sha": "c0327f16cd8b2ffb7dcfaa25616f7b5bfdfc717d1f5e82ea838bcb4de019ba91"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002230.SZ",
+          "retrieved": "2026-11-23T16:58:51.621605+00:00",
+          "cache_sha": "ff6fe43cf7dcbb6bb023af51a5ae4b35d9e88e12542003dfc8d19adb2eba1f35"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "b7989287852951767d97d79471753292444168e0fceb9e15988c918eb353fc1e",
+            "retrieved": "2026-11-23T23:37:12.232307+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000063",
+        "name": "中兴通讯",
+        "r": 0.47250210901109013,
+        "n": 2533
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "300059",
+        "name": "东方财富",
+        "r": 0.4927504706321585,
+        "n": 2593
+      }
+    },
+    {
+      "code": "002415",
+      "name": "海康威视",
+      "bucket": "科技成长",
+      "subsector": "智能感知",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2640,
+          "annual_volatility": 0.3481591342760046,
+          "t1": {
+            "net": 0.22938982222222215,
+            "dd": -0.5884983199837224,
+            "rr": 0.38978840624144345,
+            "weight": 0.41622205370949467,
+            "flat": 0.5819144911085887,
+            "trades": 47,
+            "commission": 9008.74,
+            "tax": 14148.84,
+            "slippage": 10114.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.29876448745395745,
+          "t1": {
+            "net": -0.42227171111111106,
+            "dd": -0.5861777213632164,
+            "rr": -0.7203817131246048,
+            "weight": 0.31547635572356025,
+            "flat": 0.682741116751269,
+            "trades": 23,
+            "commission": 2064.31,
+            "tax": 2194.96,
+            "slippage": 2535.0
+          }
+        }
+      },
+      "close": 35.25,
+      "price_band": "OPT",
+      "daily_amount_yuan": 2053716316.4945636,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "海康威视",
+      "sessions": 2887,
+      "open_sessions": 2842,
+      "quote_basis": "tushare_pro",
+      "listing": "2010-05-28",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002415.SZ",
+          "retrieved": "2026-11-23T16:58:54.263806+00:00",
+          "cache_sha": "04e0edb53c11983c15d3269cab64fd1dfd31cf09a8d5e85bd06396aee0aff35d"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002415.SZ",
+          "retrieved": "2026-11-23T16:58:56.176645+00:00",
+          "cache_sha": "725cb79d1260b56fd90d710c0cb6e05c0fe10fba7c921971a3f2a1d7f1a9f054"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002415.SZ",
+          "retrieved": "2026-11-23T16:59:11.389293+00:00",
+          "cache_sha": "1184687f1af61e1c0207aa007cb89815190e461e9a0402b146add1050e008744"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002415.SZ",
+          "retrieved": "2026-11-23T16:59:14.310754+00:00",
+          "cache_sha": "e2bad5f9f07572d1f49905dbbf575e66e053073d1d5109c172f599f014677144"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002415.SZ",
+          "retrieved": "2026-11-23T16:59:16.108743+00:00",
+          "cache_sha": "6ebe29e35971802b6bc99bdc122950d0d958c7b7a1540bffffe9d781274efefd"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "1578e1d254f8a724900e658dddfb0b8695198c5b16cbc2d3d33fbf743888e5ca",
+            "retrieved": "2026-11-23T23:37:12.291269+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000858",
+        "name": "五粮液",
+        "r": 0.46519670646782824,
+        "n": 2640
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "000858",
+        "name": "五粮液",
+        "r": 0.46519670646782824,
+        "n": 2640
+      }
+    },
+    {
+      "code": "000938",
+      "name": "紫光股份",
+      "bucket": "科技成长",
+      "subsector": "数字基础设施",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2606,
+          "annual_volatility": 0.46539202773935756,
+          "t1": {
+            "net": -0.6835738666666666,
+            "dd": -0.7010244138820803,
+            "rr": -0.9751070763444923,
+            "weight": 0.3577768803429229,
+            "flat": 0.6394248959515701,
+            "trades": 46,
+            "commission": 3116.31,
+            "tax": 5272.93,
+            "slippage": 2656.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.4804291260298015,
+          "t1": {
+            "net": -0.46093657777777775,
+            "dd": -0.7027415171086902,
+            "rr": -0.6559119769587863,
+            "weight": 0.3839556063685161,
+            "flat": 0.6150592216582065,
+            "trades": 20,
+            "commission": 2048.29,
+            "tax": 2604.67,
+            "slippage": 1641.0
+          }
+        }
+      },
+      "close": 21.9,
+      "price_band": "OPT",
+      "daily_amount_yuan": 4608310037.902857,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "紫光股份",
+      "sessions": 2887,
+      "open_sessions": 2744,
+      "quote_basis": "tushare_pro",
+      "listing": "1999-11-04",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=000938.SZ",
+          "retrieved": "2026-11-23T16:59:19.607912+00:00",
+          "cache_sha": "d374aed05b6a3260b9817546b8997d8f0e34087705fb580f431df03d801d9371"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=000938.SZ",
+          "retrieved": "2026-11-23T16:59:21.920856+00:00",
+          "cache_sha": "bdd14aa65361677a0e101a69fad1dbaf55334b63e18a90b1146aca8936f431c4"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=000938.SZ",
+          "retrieved": "2026-11-23T16:59:35.005131+00:00",
+          "cache_sha": "091fdd18817ff24ec6bdd207a821eeeefac79a62d586a6a265ea03aca95b1e21"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=000938.SZ",
+          "retrieved": "2026-11-23T16:59:36.932277+00:00",
+          "cache_sha": "8bc9257d581d71af42634f2a3be3c17b9ab5afd74f5ec74fc9f94d6cdfe816d1"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=000938.SZ",
+          "retrieved": "2026-11-23T16:59:39.061618+00:00",
+          "cache_sha": "5eef09a9edff4a63a703b9850714a97dba9c43acc649681126729c39e24cfea7"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "11ea06092f584be49d4e5845c3c963c89a403ba6a440cfa5e91618fe845576cf",
+            "retrieved": "2026-11-23T23:37:12.448726+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000063",
+        "name": "中兴通讯",
+        "r": 0.5885404403347033,
+        "n": 2538
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "000063",
+        "name": "中兴通讯",
+        "r": 0.5885404403347033,
+        "n": 2538
+      }
+    },
+    {
+      "code": "002916",
+      "name": "深南电路",
+      "bucket": "科技成长",
+      "subsector": "高端印制电路板",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [
+        "REJECT_CORRELATION"
+      ],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2164,
+          "annual_volatility": 0.5342510716717319,
+          "t1": {
+            "net": 1.9054594666666667,
+            "dd": -0.5171853936503754,
+            "rr": 3.684287085560626,
+            "weight": 0.3328339364596136,
+            "flat": 0.6643965191070753,
+            "trades": 34,
+            "commission": 7123.21,
+            "tax": 10585.83,
+            "slippage": 5784.2
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.5243341298911449,
+          "t1": {
+            "net": 0.6575219777777779,
+            "dd": -0.3397480758490371,
+            "rr": 1.9353221534356524,
+            "weight": 0.4350977322523129,
+            "flat": 0.5609137055837563,
+            "trades": 20,
+            "commission": 2617.86,
+            "tax": 3064.25,
+            "slippage": 2135.0
+          }
+        }
+      },
+      "close": 210.0,
+      "price_band": "GOOD",
+      "daily_amount_yuan": 3377625616.6170635,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "深南电路",
+      "sessions": 2168,
+      "open_sessions": 2166,
+      "quote_basis": "tushare_pro",
+      "listing": "2017-12-13",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002916.SZ",
+          "retrieved": "2026-11-23T16:59:41.253891+00:00",
+          "cache_sha": "19e09f610cf4b95d7d4c36b5537ebdda76960a017d341d3d2b4f669897e60dbf"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002916.SZ",
+          "retrieved": "2026-11-23T16:59:42.822251+00:00",
+          "cache_sha": "7f646bfba2e9fab20b1255c0beb95d0b8c28a9701498b1848d256e8a26c634ba"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002916.SZ",
+          "retrieved": "2026-11-23T16:59:53.023324+00:00",
+          "cache_sha": "8de89b477d5ce8538f65c46c87a858f770e4c1f7fe7500c303db8a8e48e00d1d"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002916.SZ",
+          "retrieved": "2026-11-23T16:59:55.378732+00:00",
+          "cache_sha": "1ab9e5e99e13f4fbaa3dc7d4718e2908bf4c8dcb414a111174098f00620e090e"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002916.SZ",
+          "retrieved": "2026-11-23T16:59:56.976169+00:00",
+          "cache_sha": "d49c460d53e3b30c2873fe867eb53a46f3e24d128c5febf23bce69539bc1676c"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "63819dec761d4b6fae1a6855929c448628685d31ff78ec41ea0b0a953617d1ef",
+            "retrieved": "2026-11-24T00:47:18.503985+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002463",
+        "name": "沪电股份",
+        "r": 0.6819633372021676,
+        "n": 2164
+      },
+      "correlation_conflicts": [
+        {
+          "code": "002463",
+          "name": "沪电股份",
+          "r": 0.6819633372021676,
+          "n": 2164
+        }
+      ],
+      "missing_pairs": [],
+      "status": "REJECTED",
+      "highest_in_result_pool": {
+        "code": "002463",
+        "name": "沪电股份",
+        "r": 0.6819633372021676,
+        "n": 2164
+      }
+    },
+    {
+      "code": "002384",
+      "name": "东山精密",
+      "bucket": "科技成长",
+      "subsector": "精密电子制造",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2561,
+          "annual_volatility": 0.5552758398554494,
+          "t1": {
+            "net": 1.6347874666666669,
+            "dd": -0.626749243983598,
+            "rr": 2.608359694661952,
+            "weight": 0.4073820517924665,
+            "flat": 0.5913734392735528,
+            "trades": 44,
+            "commission": 4709.61,
+            "tax": 7984.03,
+            "slippage": 2494.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.602897831491777,
+          "t1": {
+            "net": 2.183809666666667,
+            "dd": -0.4281543366751379,
+            "rr": 5.1005197883202396,
+            "weight": 0.47592103047545303,
+            "flat": 0.5228426395939086,
+            "trades": 20,
+            "commission": 2690.79,
+            "tax": 3686.86,
+            "slippage": 2078.0
+          }
+        }
+      },
+      "close": 67.6,
+      "price_band": "OPT",
+      "daily_amount_yuan": 11609016132.980396,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "东山精密",
+      "sessions": 2887,
+      "open_sessions": 2686,
+      "quote_basis": "tushare_pro",
+      "listing": "2010-04-09",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=002384.SZ",
+          "retrieved": "2026-11-23T16:59:59.155789+00:00",
+          "cache_sha": "36727c19de6c3162c105b56f556a226ee545dbe7baad11707c454f4a1c5abf6f"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=002384.SZ",
+          "retrieved": "2026-11-23T17:00:00.543069+00:00",
+          "cache_sha": "e662917a3ba00f43959102558928b9919b20806c70ff25461092663dc3e52888"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=002384.SZ",
+          "retrieved": "2026-11-23T17:00:10.605811+00:00",
+          "cache_sha": "dfefd26136df608a29bbae8c2a99cdba6ebf1e8f49193e04e42c37e98c19276d"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=002384.SZ",
+          "retrieved": "2026-11-23T17:00:12.106590+00:00",
+          "cache_sha": "676b8631a1863858ad14fe38ac875e82c15835a698019eb968edec0d3425d5cf"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=002384.SZ",
+          "retrieved": "2026-11-23T17:00:13.456128+00:00",
+          "cache_sha": "608370d880dc2118e059e798fd83037db812bac26d2d1d5d8db10f61d84a6cc2"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "63819dec761d4b6fae1a6855929c448628685d31ff78ec41ea0b0a953617d1ef",
+            "retrieved": "2026-11-24T00:47:18.503985+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002463",
+        "name": "沪电股份",
+        "r": 0.560030223619127,
+        "n": 2561
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "002463",
+        "name": "沪电股份",
+        "r": 0.560030223619127,
+        "n": 2561
+      }
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "bucket": "科技成长",
+      "subsector": "光模块",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [
+        "REJECT_CORRELATION"
+      ],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2601,
+          "annual_volatility": 0.658482492766829,
+          "t1": {
+            "net": 32.40435262222222,
+            "dd": -0.4789488640220201,
+            "rr": 67.65722826880408,
+            "weight": 0.40066635915283827,
+            "flat": 0.5985622398789254,
+            "trades": 30,
+            "commission": 26031.77,
+            "tax": 35081.15,
+            "slippage": 21004.2
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.7347458967196789,
+          "t1": {
+            "net": 10.616810066666666,
+            "dd": -0.4252812938528474,
+            "rr": 24.964206561928428,
+            "weight": 0.5128124768716869,
+            "flat": 0.4856175972927242,
+            "trades": 16,
+            "commission": 8063.76,
+            "tax": 10084.01,
+            "slippage": 6473.8
+          }
+        }
+      },
+      "close": 165.0,
+      "price_band": "GOOD",
+      "daily_amount_yuan": 19509793701.65845,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "新易盛",
+      "sessions": 2605,
+      "open_sessions": 2603,
+      "quote_basis": "tushare_pro",
+      "listing": "2016-03-03",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=300502.SZ",
+          "retrieved": "2026-11-23T16:52:21.873626+00:00",
+          "cache_sha": "ee7006071fe2e0db31a5c908a39a0aecc01b94530aa62d8783bff1968a9041f7"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=300502.SZ",
+          "retrieved": "2026-11-23T17:00:15.670212+00:00",
+          "cache_sha": "84f0b167b7eb7d7f0cb9c67fb1f1750e3502aac8dcc7af0bd44fedd17de0921c"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=300502.SZ",
+          "retrieved": "2026-11-23T17:00:32.192685+00:00",
+          "cache_sha": "03df37c9c9a9bf57faf921ebf577bb63c706fd6c3c9c0e4b5822d38a8b3f31ba"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=300502.SZ",
+          "retrieved": "2026-11-23T17:00:33.990285+00:00",
+          "cache_sha": "231a426ddb056d76aee8054caf6dfd21514a504fa7edb756e7299c0a9edde0f6"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=300502.SZ",
+          "retrieved": "2026-11-23T17:00:36.281840+00:00",
+          "cache_sha": "98350540371f01ebf572281ab7acba9bc4b0b8a0338e39c5b800317e02439ed7"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "b76fd64ede28da6bfda5d1fe5a7a1db1b7720379552256f28c3ec3e22b5b2063",
+            "retrieved": "2026-11-24T00:47:18.582761+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "300308",
+        "name": "中际旭创",
+        "r": 0.713812593686593,
+        "n": 2458
+      },
+      "correlation_conflicts": [
+        {
+          "code": "300308",
+          "name": "中际旭创",
+          "r": 0.713812593686593,
+          "n": 2458
+        }
+      ],
+      "missing_pairs": [],
+      "status": "REJECTED",
+      "highest_in_result_pool": {
+        "code": "300308",
+        "name": "中际旭创",
+        "r": 0.713812593686593,
+        "n": 2458
+      }
+    },
+    {
+      "code": "000977",
+      "name": "浪潮信息",
+      "bucket": "科技成长",
+      "subsector": "服务器",
+      "batch": "1",
+      "group": "6",
+      "macro_bucket": "AI 算力与数字基建",
+      "quota": "5",
+      "substitute_reason": "",
+      "gate_failures": [
+        "REJECT_PAID_RIGHTS",
+        "PRIMARY_TAPE_UNAVAILABLE"
+      ],
+      "tape_issues": [],
+      "risk": {},
+      "rights": {
+        "error": "cninfo-a-rights:column=szse&isHLtitle=true&pageSize=30&seDate=2015-01-01~2026-11-20&searchkey=%E9%85%8D%E8%82%A1&stock=000977%2Cgssz0000977&tabName=fulltext 三次失败：000977 配股公告数与索引总数不一致",
+        "documented": [
+          {
+            "code": "000977",
+            "ex_date": "2020-03-19",
+            "listing_date": "2020-03-27",
+            "subscription_price": "12.92",
+            "source": "https://static.cninfo.com.cn/finalpage/2020-03-26/1207403957.PDF"
+          }
+        ]
+      },
+      "highest_at_decision": null,
+      "correlation_conflicts": [],
+      "missing_pairs": [
+        "000063",
+        "000408",
+        "000858",
+        "000975",
+        "002049",
+        "002230",
+        "002311",
+        "002371",
+        "002415",
+        "002463",
+        "002648",
+        "002714",
+        "300308",
+        "300661",
+        "300750",
+        "600028",
+        "600036",
+        "600066",
+        "600111",
+        "600276",
+        "600309",
+        "600346",
+        "600426",
+        "600428",
+        "600584",
+        "600600",
+        "600674",
+        "600887",
+        "600900",
+        "600938",
+        "600941",
+        "600989",
+        "601006",
+        "601088",
+        "601138",
+        "601398",
+        "601600",
+        "601899",
+        "601919",
+        "601985",
+        "603288",
+        "603501",
+        "603986",
+        "603993"
+      ],
+      "status": "REJECTED",
+      "highest_in_result_pool": null
+    },
+    {
+      "code": "000333",
+      "name": "美的集团",
+      "bucket": "制造",
+      "subsector": "家电与工业自动化",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2589,
+          "annual_volatility": 0.3054363784086642,
+          "t1": {
+            "net": 2.215529422222222,
+            "dd": -0.3366272429090288,
+            "rr": 6.581551163465857,
+            "weight": 0.5132594831827902,
+            "flat": 0.4801362088535755,
+            "trades": 51,
+            "commission": 15846.93,
+            "tax": 22761.01,
+            "slippage": 12629.5
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.2582982898547076,
+          "t1": {
+            "net": -0.0171953777777778,
+            "dd": -0.2518303922371766,
+            "rr": -0.0682815827947526,
+            "weight": 0.46548967289000426,
+            "flat": 0.5262267343485617,
+            "trades": 31,
+            "commission": 3323.65,
+            "tax": 3790.27,
+            "slippage": 2525.0
+          }
+        }
+      },
+      "close": 94.82,
+      "price_band": "OPT",
+      "daily_amount_yuan": 2556884625.9692063,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "美的集团",
+      "sessions": 2887,
+      "open_sessions": 2834,
+      "quote_basis": "tushare_pro",
+      "listing": "2013-09-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=000333.SZ",
+          "retrieved": "2026-11-23T17:00:38.742681+00:00",
+          "cache_sha": "f2d0824b9319f61f2443c4405243812ab89b47ac1fef89db90e9537f40354fe0"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=000333.SZ",
+          "retrieved": "2026-11-23T17:00:40.231882+00:00",
+          "cache_sha": "a71ce28592cb07c2b77988aee72e9529088704a9dedf2c3f16cade4876c24af6"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=000333.SZ",
+          "retrieved": "2026-11-23T17:00:50.285449+00:00",
+          "cache_sha": "ad16ff53bcb0f4b30a261bf1adbb732c85bce6d536e8d1b09047a5081c591cba"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=000333.SZ",
+          "retrieved": "2026-11-23T17:00:51.678326+00:00",
+          "cache_sha": "75213fcd9719c2a7f165b96757d9bc19e3934e13f1db6096842a297aed971d01"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=000333.SZ",
+          "retrieved": "2026-11-23T17:00:53.170947+00:00",
+          "cache_sha": "ae6747cec4bd2dfbf8456c20b50a79f53dc6517ba5c19a4f97ace9b4d7616d9f"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "cd40dd126589329c324d8c07b807d0ac2e78d3d100127e3a9d0d271af7d56914",
+            "retrieved": "2026-11-23T23:42:24.704100+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000858",
+        "name": "五粮液",
+        "r": 0.5275224888236926,
+        "n": 2589
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "000858",
+        "name": "五粮液",
+        "r": 0.5275224888236926,
+        "n": 2589
+      }
+    },
+    {
+      "code": "600660",
+      "name": "福耀玻璃",
+      "bucket": "制造",
+      "subsector": "汽车玻璃",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.3043028007518197,
+          "t1": {
+            "net": 1.9217331555555557,
+            "dd": -0.40330519418144894,
+            "rr": 4.7649600929537215,
+            "weight": 0.44586892212248447,
+            "flat": 0.5512674990541052,
+            "trades": 43,
+            "commission": 11119.84,
+            "tax": 16637.24,
+            "slippage": 8023.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.2667382149275048,
+          "t1": {
+            "net": 0.030106266666666714,
+            "dd": -0.21606312013434215,
+            "rr": 0.13934014582381046,
+            "weight": 0.38547517481462223,
+            "flat": 0.6116751269035533,
+            "trades": 23,
+            "commission": 2583.21,
+            "tax": 3061.97,
+            "slippage": 2116.0
+          }
+        }
+      },
+      "close": 57.9,
+      "price_band": "OPT",
+      "daily_amount_yuan": 746930026.8571428,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "福耀玻璃",
+      "sessions": 2887,
+      "open_sessions": 2887,
+      "quote_basis": "tushare_pro",
+      "listing": "1993-06-10",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600660.SH",
+          "retrieved": "2026-11-23T16:52:24.710343+00:00",
+          "cache_sha": "a0d5df05c8406fc0f4ddb12cf00b0c37469c97241062d0c7ad20ea29131607db"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600660.SH",
+          "retrieved": "2026-11-23T17:00:55.050301+00:00",
+          "cache_sha": "ddcadab8644908b23dd906d06ea215f3880324dfa86017f1f2579457386e4229"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600660.SH",
+          "retrieved": "2026-11-23T17:01:04.272980+00:00",
+          "cache_sha": "021edbbde34a21aaaa07d5841501e255c75df333ebfd205a2ec50e480fe17cb1"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600660.SH",
+          "retrieved": "2026-11-23T17:02:52.902926+00:00",
+          "cache_sha": "7281dbdfefe867d007acb02e3a901f62efddcdf500e7e1aa18844159f376ed88"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600660.SH",
+          "retrieved": "2026-11-23T17:03:02.635024+00:00",
+          "cache_sha": "6b815b99b82a92bffef071c4d8cd053f85c0d8bfdce84af66576750c7c9869c5"
+        }
+      ],
+      "rights": {
+        "total": 2,
+        "examined": [
+          {
+            "title": "关于全部行使境外上市外资股（H股）超额配股权后股票上市交易及股份变动的公告",
+            "published": "2015-04-29",
+            "source": "https://static.cninfo.com.cn/finalpage/2015-04-29/1200933220.PDF"
+          },
+          {
+            "title": "关于全部行使境外上市外资股（H股）超额配股权、稳定价格行动及稳定价格期结束的公告",
+            "published": "2015-04-24",
+            "source": "https://static.cninfo.com.cn/finalpage/2015-04-24/1200900123.PDF"
+          }
+        ],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "30e43cdc1324d27e7ae97c650125a9e52392910543b8d8059271ffd6f070d8a9",
+            "retrieved": "2026-11-23T23:42:24.591068+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.4131565210901996,
+        "n": 2589
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.4131565210901996,
+        "n": 2589
+      }
+    },
+    {
+      "code": "600031",
+      "name": "三一重工",
+      "bucket": "制造",
+      "subsector": "工程机械",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.3477967649557766,
+          "t1": {
+            "net": 0.9930721777777778,
+            "dd": -0.3762427670236108,
+            "rr": 2.639445232751699,
+            "weight": 0.418157696219163,
+            "flat": 0.5796443435489973,
+            "trades": 48,
+            "commission": 9159.61,
+            "tax": 14374.91,
+            "slippage": 297.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.3233004024676098,
+          "t1": {
+            "net": -0.1879398888888889,
+            "dd": -0.29131062784900785,
+            "rr": -0.6451528743616657,
+            "weight": 0.2909829191986388,
+            "flat": 0.7081218274111675,
+            "trades": 20,
+            "commission": 2140.25,
+            "tax": 2545.7,
+            "slippage": 0.0
+          }
+        }
+      },
+      "close": 19.1,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1519144698.2579365,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "三一重工",
+      "sessions": 2887,
+      "open_sessions": 2886,
+      "quote_basis": "tushare_pro",
+      "listing": "2003-07-03",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600031.SH",
+          "retrieved": "2026-11-23T17:01:09.372664+00:00",
+          "cache_sha": "ceebc988d5dafcebabb53e04976cb68017c20cabc578189e70608c69ed34bb31"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600031.SH",
+          "retrieved": "2026-11-23T17:01:10.771244+00:00",
+          "cache_sha": "e5dd30068deac03ecb4436cd01f467e5dad6e8f4efb1c86cd398b12346f8bd69"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600031.SH",
+          "retrieved": "2026-11-23T17:01:24.981662+00:00",
+          "cache_sha": "138b891e6658412b8f9942aa5aa988935f0ccf08c94842e32c0c474fe9303ee4"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600031.SH",
+          "retrieved": "2026-11-23T17:01:26.439139+00:00",
+          "cache_sha": "056f8d1fd80aa67a53d393de09d291899ed0e2132c3b0478d174c61d533511a4"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600031.SH",
+          "retrieved": "2026-11-23T17:01:29.075231+00:00",
+          "cache_sha": "3ec8e54c7cce3054253f094653155d2460286fa0f983e26ebd7de27a881fed96"
+        }
+      ],
+      "rights": {
+        "total": 1,
+        "examined": [
+          {
+            "title": "三一重工股份有限公司关于部分行使超额配股权、稳定价格行动及稳定价格期间结束的公告",
+            "published": "2025-11-25",
+            "source": "https://static.cninfo.com.cn/finalpage/2025-11-25/1224823201.PDF"
+          }
+        ],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "c3006142279530b1863084e33071f94c0ffea2efb55bdc9174abba39af948633",
+            "retrieved": "2026-11-23T23:42:24.591068+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.4458635534099562,
+        "n": 2589
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "300059",
+        "name": "东方财富",
+        "r": 0.4515159653250706,
+        "n": 2637
+      }
+    },
+    {
+      "code": "601100",
+      "name": "恒立液压",
+      "bucket": "制造",
+      "subsector": "液压件",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.44282767562022063,
+          "t1": {
+            "net": 2.818538577777778,
+            "dd": -0.4163843294132813,
+            "rr": 6.769079378537908,
+            "weight": 0.4604338408556005,
+            "flat": 0.5384033295497541,
+            "trades": 48,
+            "commission": 14866.05,
+            "tax": 20788.99,
+            "slippage": 10237.72
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.43216378920339654,
+          "t1": {
+            "net": -0.03828077777777783,
+            "dd": -0.38902048031665193,
+            "rr": -0.09840298831212776,
+            "weight": 0.321143108188929,
+            "flat": 0.676818950930626,
+            "trades": 22,
+            "commission": 2634.53,
+            "tax": 2867.82,
+            "slippage": 1854.0
+          }
+        }
+      },
+      "close": 88.82,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1051260612.5912699,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "恒立液压",
+      "sessions": 2887,
+      "open_sessions": 2848,
+      "quote_basis": "tushare_pro",
+      "listing": "2011-10-28",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=601100.SH",
+          "retrieved": "2026-11-23T17:01:31.169242+00:00",
+          "cache_sha": "617d41466a160da2a07d3a94f657c0348bee93d195be510b2e52f551ed9bbdc9"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=601100.SH",
+          "retrieved": "2026-11-23T17:01:32.573301+00:00",
+          "cache_sha": "f96aec62712f319546a4d8b17a9aa3b84057360f4eb1dbe03d0305135172a5e4"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=601100.SH",
+          "retrieved": "2026-11-23T17:01:41.660572+00:00",
+          "cache_sha": "1db904998517521c05761eac69be3553db703771049aacc84cd3bd44d54a46dd"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=601100.SH",
+          "retrieved": "2026-11-23T17:01:44.064816+00:00",
+          "cache_sha": "201fd2d41877c0f9b06b10a786f9ca315a50c8bdb93d9dd55a7bd14e7014586d"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=601100.SH",
+          "retrieved": "2026-11-23T17:01:46.000726+00:00",
+          "cache_sha": "15fc1eb3605b755590c2b426608067c9ee8cfbddf73858a6ce64864868ed7136"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "ea60bf8ddee57df54cc4fc7e2ad5bfa4e898646c38216f1c030912d9bd7d0313",
+            "retrieved": "2026-11-23T23:42:24.903818+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "600031",
+        "name": "三一重工",
+        "r": 0.5026302396320772,
+        "n": 2643
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "600031",
+        "name": "三一重工",
+        "r": 0.5026302396320772,
+        "n": 2643
+      }
+    },
+    {
+      "code": "601766",
+      "name": "中国中车",
+      "bucket": "制造",
+      "subsector": "轨交装备",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2632,
+          "annual_volatility": 0.26144413667251115,
+          "t1": {
+            "net": -0.17061320000000002,
+            "dd": -0.5155129898573497,
+            "rr": -0.3309581006818301,
+            "weight": 0.29753876594374573,
+            "flat": 0.7010972379871359,
+            "trades": 39,
+            "commission": 3510.88,
+            "tax": 5912.06,
+            "slippage": 0.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.24859431196058432,
+          "t1": {
+            "net": 0.21906335555555545,
+            "dd": -0.25564242266422577,
+            "rr": 0.8569131573412008,
+            "weight": 0.3874818987353358,
+            "flat": 0.6099830795262268,
+            "trades": 21,
+            "commission": 2516.37,
+            "tax": 3503.12,
+            "slippage": 0.0
+          }
+        }
+      },
+      "close": 6.73,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1006577754.5833334,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "中国中车",
+      "sessions": 2887,
+      "open_sessions": 2849,
+      "quote_basis": "tushare_pro",
+      "listing": "2008-08-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=601766.SH",
+          "retrieved": "2026-11-23T17:01:48.353842+00:00",
+          "cache_sha": "ff020cd9300ff517a9109751872080171d6c9502eea6d2dc1544e0764acd4715"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=601766.SH",
+          "retrieved": "2026-11-23T17:01:50.888299+00:00",
+          "cache_sha": "647452fe17842ae4856938722297296d11697a70478970cd31849aec62f07cf1"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=601766.SH",
+          "retrieved": "2026-11-23T17:01:59.843690+00:00",
+          "cache_sha": "706d24d05d212d44e839049f826a51a032f14f8545c17373ebc4ba31391ae460"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=601766.SH",
+          "retrieved": "2026-11-23T17:02:01.233262+00:00",
+          "cache_sha": "e4e4ae9f23d26378b3dcdc1d1c2b88591fc0614f101745b2cfd28decf5cb8f8a"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=601766.SH",
+          "retrieved": "2026-11-23T17:02:03.148079+00:00",
+          "cache_sha": "85972403fecd0b9992d6c91e13d25121505b4759f1a08bc653540fa958defaaa"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "5a66e27c86793b0a01e38eb336335e0f868469bb9692f50abf00d63b2e9b69b3",
+            "retrieved": "2026-11-23T23:42:24.908896+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.4985936151879723,
+        "n": 2632
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.4985936151879723,
+        "n": 2632
+      }
+    },
+    {
+      "code": "000651",
+      "name": "格力电器",
+      "bucket": "制造",
+      "subsector": "空调",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [
+        "UNVERIFIED_ACTIONS_OR_TAPE"
+      ],
+      "tape_issues": [
+        "000651 2016-07-07 除权参考价/披露日缺失",
+        "000651 2016-09-02 参考价变动缺已核实的权益事件",
+        "000651 2020-11-12 权益记录与交易所参考价不符",
+        "000651 2021-08-23 权益记录与交易所参考价不符",
+        "000651 2022-04-08 权益记录与交易所参考价不符",
+        "000651 2022-08-05 权益记录与交易所参考价不符",
+        "000651 2024-08-28 权益记录与交易所参考价不符"
+      ],
+      "risk": {},
+      "close": 40.86,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1646359952.2232935,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "格力电器",
+      "sessions": 2887,
+      "open_sessions": 2730,
+      "quote_basis": "tushare_pro",
+      "listing": "1996-11-18",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=000651.SZ",
+          "retrieved": "2026-11-23T17:02:05.023646+00:00",
+          "cache_sha": "b65fb83c35282fe2ca7cdb009986401c8baec425689be37b60c63b963a601faf"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=000651.SZ",
+          "retrieved": "2026-11-23T17:02:06.356134+00:00",
+          "cache_sha": "cfb9d8682ca59638f5b1a1a8ccb15bdd88766060e6b0c302f07a62ccda03a8f3"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=000651.SZ",
+          "retrieved": "2026-11-23T17:02:12.152892+00:00",
+          "cache_sha": "12a87a514d7c4b8eed1fbb705453095f874bcc656152018a4aa18e93c210d061"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=000651.SZ",
+          "retrieved": "2026-11-23T17:02:13.995732+00:00",
+          "cache_sha": "c014131efae712f6227accac4f7d3193dd02dbaf17ce610d0875596bb2c18156"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=000651.SZ",
+          "retrieved": "2026-11-23T17:02:15.413317+00:00",
+          "cache_sha": "e679c3d915bd9ad8b988cb945b9f13e9688913d79725704c4810045855bc7dd2"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "d1e9a20c67d3d29c334d84c32888f9114cf20a18dbcf914eae460b3d60d3954c",
+            "retrieved": "2026-11-23T23:42:24.964762+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.699392629701845,
+        "n": 2437
+      },
+      "correlation_conflicts": [
+        {
+          "code": "000333",
+          "name": "美的集团",
+          "r": 0.699392629701845,
+          "n": 2437
+        }
+      ],
+      "missing_pairs": [],
+      "status": "BLOCKED",
+      "highest_in_result_pool": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.699392629701845,
+        "n": 2437
+      }
+    },
+    {
+      "code": "600690",
+      "name": "海尔智家",
+      "bucket": "制造",
+      "subsector": "家电出海",
+      "batch": "1",
+      "group": "7",
+      "macro_bucket": "高端制造与出海",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [
+        "UNVERIFIED_ACTIONS_OR_TAPE"
+      ],
+      "tape_issues": [
+        "600690 2026-08-21 权益记录与交易所参考价不符"
+      ],
+      "risk": {},
+      "close": 23.02,
+      "price_band": "OPT",
+      "daily_amount_yuan": 996673654.4365079,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "海尔智家",
+      "sessions": 2887,
+      "open_sessions": 2810,
+      "quote_basis": "tushare_pro",
+      "listing": "1993-11-19",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600690.SH",
+          "retrieved": "2026-11-23T16:52:25.892945+00:00",
+          "cache_sha": "a3a068fc5ab8a25e531ac06f3c6d98c4375e0f5a14292754002b1fb265c5091b"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600690.SH",
+          "retrieved": "2026-11-23T17:02:16.898482+00:00",
+          "cache_sha": "0301f75087232be04f516fa9109fe8fa0e0a1e5c3985f153f571282d00d04c87"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600690.SH",
+          "retrieved": "2026-11-23T17:02:28.156951+00:00",
+          "cache_sha": "6203980ecf9ca130b80a8a462621ffb10c0808e57ff34a3f5333c25bdc4f4825"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600690.SH",
+          "retrieved": "2026-11-23T17:02:29.514334+00:00",
+          "cache_sha": "d4604fd489e2dea9e5a911abd19dc9ad734a8ce782b1bef3a3a3c73b28205819"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600690.SH",
+          "retrieved": "2026-11-23T17:02:31.336220+00:00",
+          "cache_sha": "310d4534ac6f595b185d0f3e2c86ae09a3f62b0cd5ecd57d823416188d2467ba"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "67577926e50bb134eeaf29e747a82857846063f8e83157ec75a01176119eed52",
+            "retrieved": "2026-11-23T23:42:24.963755+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.6946668278678734,
+        "n": 2565
+      },
+      "correlation_conflicts": [
+        {
+          "code": "000333",
+          "name": "美的集团",
+          "r": 0.6946668278678734,
+          "n": 2565
+        }
+      ],
+      "missing_pairs": [],
+      "status": "BLOCKED",
+      "highest_in_result_pool": {
+        "code": "000333",
+        "name": "美的集团",
+        "r": 0.6946668278678734,
+        "n": 2565
+      }
+    },
+    {
+      "code": "600150",
+      "name": "中国船舶",
+      "bucket": "制造",
+      "subsector": "军工造船",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2495,
+          "annual_volatility": 0.40480058649806844,
+          "t1": {
+            "net": -0.4436914444444444,
+            "dd": -0.7272267382485482,
+            "rr": -0.6101143166339431,
+            "weight": 0.3354859393769794,
+            "flat": 0.6632614453272796,
+            "trades": 52,
+            "commission": 4947.34,
+            "tax": 8501.51,
+            "slippage": 2735.0
+          }
+        },
+        "W5": {
+          "n": 1166,
+          "annual_volatility": 0.3621564858672327,
+          "t1": {
+            "net": -0.2807112444444444,
+            "dd": -0.40245961193679103,
+            "rr": -0.6974892290273638,
+            "weight": 0.37796277211907564,
+            "flat": 0.6209813874788495,
+            "trades": 26,
+            "commission": 2695.64,
+            "tax": 3641.42,
+            "slippage": 2453.0
+          }
+        }
+      },
+      "close": 34.5,
+      "price_band": "OPT",
+      "daily_amount_yuan": 3358270387.904762,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "中国船舶",
+      "sessions": 2887,
+      "open_sessions": 2746,
+      "quote_basis": "tushare_pro",
+      "listing": "1998-05-20",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600150.SH",
+          "retrieved": "2026-11-23T17:02:33.573779+00:00",
+          "cache_sha": "d5f8e08be958309325b0230da50a7e6b2d5cad7158ea24a5ac650a0f67567f56"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600150.SH",
+          "retrieved": "2026-11-23T17:02:34.863054+00:00",
+          "cache_sha": "6e4f3d2079e5021a73196a389eaaafd9e49a66732bc86325cf99e735596eb48d"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600150.SH",
+          "retrieved": "2026-11-23T17:02:44.082727+00:00",
+          "cache_sha": "1294b9a99a9e5264927f13c6abd7aac06d88be0866f2619aa88f23e44e5fca55"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600150.SH",
+          "retrieved": "2026-11-23T17:02:46.383767+00:00",
+          "cache_sha": "4a200fb981fefb118aa762d28856b02df785238750d9d1f1f873dd63b73dc53e"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600150.SH",
+          "retrieved": "2026-11-23T17:02:47.811459+00:00",
+          "cache_sha": "ff88534194092481f3dfa8a4c6fe66c4360f9264d593f23b88163609f582a543"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "4531d3dfadf87baac3e84a1efecee42d26c5baba3121080e7ef2fc88a51c213b",
+            "retrieved": "2026-11-23T23:42:25.246950+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "merger_review": {
+        "code": "600150",
+        "listing": "2025-09-16",
+        "source": "https://static.cninfo.com.cn/finalpage/2025-09-12/1224653312.PDF"
+      },
+      "highest_at_decision": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.39524195173612725,
+        "n": 2495
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "601985",
+        "name": "中国核电",
+        "r": 0.39524195173612725,
+        "n": 2495
+      }
+    },
+    {
+      "code": "300059",
+      "name": "东方财富",
+      "bucket": "金融",
+      "subsector": "互联网券商",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2637,
+          "annual_volatility": 0.44642284133012755,
+          "t1": {
+            "net": -0.19050217777777778,
+            "dd": -0.5711234453787386,
+            "rr": -0.33355692069592224,
+            "weight": 0.32468502833521107,
+            "flat": 0.674233825198638,
+            "trades": 42,
+            "commission": 3641.2,
+            "tax": 6756.98,
+            "slippage": 1413.2
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.42152559996720723,
+          "t1": {
+            "net": -0.17833762222222227,
+            "dd": -0.36439404444444445,
+            "rr": -0.48940871823005777,
+            "weight": 0.18380520919852494,
+            "flat": 0.8155668358714044,
+            "trades": 14,
+            "commission": 1255.18,
+            "tax": 1977.75,
+            "slippage": 383.0
+          }
+        }
+      },
+      "close": 18.41,
+      "price_band": "OPT",
+      "daily_amount_yuan": 5822615344.705992,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "东方财富",
+      "sessions": 2887,
+      "open_sessions": 2831,
+      "quote_basis": "tushare_pro",
+      "listing": "2010-03-19",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=300059.SZ",
+          "retrieved": "2026-11-23T16:52:28.061366+00:00",
+          "cache_sha": "0d5a1e833c69a755e0c771dbe5697dc344b58e29719067d14c727b5be4c557ab"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=300059.SZ",
+          "retrieved": "2026-11-23T17:02:49.708336+00:00",
+          "cache_sha": "0d1a66527a3060cf63b50edbce68fba8e892cebf6d10cde7601efef93995d930"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=300059.SZ",
+          "retrieved": "2026-11-23T17:02:57.875739+00:00",
+          "cache_sha": "75d429e1e7d4478d0f5b5b6cc3332d39b46a4f72c8c0fbdeb16c2af3a3636b13"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=300059.SZ",
+          "retrieved": "2026-11-23T17:02:59.135187+00:00",
+          "cache_sha": "34429a52bf4cd92e05d266814630e9584bc5545891b5a54b8fe8e1c3476228c6"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=300059.SZ",
+          "retrieved": "2026-11-23T17:03:00.776284+00:00",
+          "cache_sha": "366443e7c44259c91204833ef9128ae8d1b8482b0d99911d67ceb6599a72e306"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "e5ebe4f3fdbc1be84fd2b17f62a025c3e91efb6f63af44f90676984518b564aa",
+            "retrieved": "2026-11-23T23:42:25.299440+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002230",
+        "name": "科大讯飞",
+        "r": 0.4927504706321585,
+        "n": 2593
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "002230",
+        "name": "科大讯飞",
+        "r": 0.4927504706321585,
+        "n": 2593
+      }
+    },
+    {
+      "code": "601601",
+      "name": "中国太保",
+      "bucket": "金融",
+      "subsector": "保险",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.3290490565175936,
+          "t1": {
+            "net": 0.6519612666666668,
+            "dd": -0.4127146758472079,
+            "rr": 1.5796900493745247,
+            "weight": 0.41755688674904873,
+            "flat": 0.5785092697692017,
+            "trades": 45,
+            "commission": 6470.73,
+            "tax": 11070.7,
+            "slippage": 7537.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.3359339302382616,
+          "t1": {
+            "net": 0.3332812666666667,
+            "dd": -0.28217868929277257,
+            "rr": 1.1811000593346472,
+            "weight": 0.3882987110281659,
+            "flat": 0.6074450084602369,
+            "trades": 19,
+            "commission": 2357.07,
+            "tax": 3168.36,
+            "slippage": 2623.0
+          }
+        }
+      },
+      "close": 32.98,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1514013114.1031747,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "中国太保",
+      "sessions": 2887,
+      "open_sessions": 2887,
+      "quote_basis": "tushare_pro",
+      "listing": "2007-12-25",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=601601.SH",
+          "retrieved": "2026-11-23T17:03:04.846457+00:00",
+          "cache_sha": "fe17f8273d626dad59f80eed4b8095376f2482402b9bbfd2f528420a76ffd0d8"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=601601.SH",
+          "retrieved": "2026-11-23T17:03:06.070403+00:00",
+          "cache_sha": "ce978f52b0a668a7d966a6b37a5e6776fd9787621eb27c969344252002c44c59"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=601601.SH",
+          "retrieved": "2026-11-23T17:03:13.824905+00:00",
+          "cache_sha": "2aec3f1205710f54b20d00d165014f8e6a1f4959f2da0a75addf1e2fa835e287"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=601601.SH",
+          "retrieved": "2026-11-23T17:05:01.226109+00:00",
+          "cache_sha": "b5b37bf68d5434afdf5d27509fcc4f0d28c4aeea4e7380980e0fda7546f0dcbd"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=601601.SH",
+          "retrieved": "2026-11-23T17:05:03.110677+00:00",
+          "cache_sha": "f3f2ff0fcba280339b56360f1a2c6399f6a9d514965da3f0cf849d62cb765268"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "b0ea5a38386b66747aaa82ef155348110f5c3bfc7f73c9442e1131665368e528",
+            "retrieved": "2026-11-23T23:42:25.356812+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "600036",
+        "name": "招商银行",
+        "r": 0.6266981965109925,
+        "n": 2643
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "SELECTED",
+      "highest_in_result_pool": {
+        "code": "600036",
+        "name": "招商银行",
+        "r": 0.6266981965109925,
+        "n": 2643
+      }
+    },
+    {
+      "code": "603259",
+      "name": "药明康德",
+      "bucket": "医药",
+      "subsector": "医药研发外包",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2073,
+          "annual_volatility": 0.47381400809981294,
+          "t1": {
+            "net": 0.9161031777777777,
+            "dd": -0.4866140202515804,
+            "rr": 1.8826074458441426,
+            "weight": 0.32862277404927853,
+            "flat": 0.6689368142262581,
+            "trades": 34,
+            "commission": 5977.55,
+            "tax": 9606.17,
+            "slippage": 4835.6
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.4508806159091226,
+          "t1": {
+            "net": 0.06994535555555559,
+            "dd": -0.3718171568152493,
+            "rr": 0.18811761177096636,
+            "weight": 0.40233611262282903,
+            "flat": 0.5947546531302876,
+            "trades": 18,
+            "commission": 1793.2,
+            "tax": 2181.32,
+            "slippage": 1441.0
+          }
+        }
+      },
+      "close": 140.8,
+      "price_band": "GOOD",
+      "daily_amount_yuan": 5440469753.7420635,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "药明康德",
+      "sessions": 2074,
+      "open_sessions": 2074,
+      "quote_basis": "tushare_pro",
+      "listing": "2018-05-08",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=603259.SH",
+          "retrieved": "2026-11-23T17:03:16.987227+00:00",
+          "cache_sha": "f7e761c459bb99dd024aaa24da9d4979ed41b36e7f81f748ed3290bae805566c"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=603259.SH",
+          "retrieved": "2026-11-23T17:03:18.216007+00:00",
+          "cache_sha": "23623640f1ade2d49c3cf8cbc7b2cd68ed235cf5a87ad5501762be58f3903ff4"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=603259.SH",
+          "retrieved": "2026-11-23T17:03:22.291001+00:00",
+          "cache_sha": "9586e19b76d2afeb2dc8a2688cdccf25075b3b7cafdb39e5179dbc21bba68848"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=603259.SH",
+          "retrieved": "2026-11-23T17:03:23.586156+00:00",
+          "cache_sha": "a1c6a7c6971acc080b4ebd47277cd578766df642f3bfd31a3bea0faa25585646"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=603259.SH",
+          "retrieved": "2026-11-23T17:03:24.647549+00:00",
+          "cache_sha": "0b595776ea7a0e934350404c6570312b7260be8bdeb21bf775c0a40bdf69b681"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "1270ca6903fc662251ff34049d8e658115665501fc9042ae4e71e41d3e041c06",
+            "retrieved": "2026-11-23T23:42:25.191608+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "600276",
+        "name": "恒瑞医药",
+        "r": 0.48779025968931294,
+        "n": 2073
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "600276",
+        "name": "恒瑞医药",
+        "r": 0.48779025968931294,
+        "n": 2073
+      }
+    },
+    {
+      "code": "601688",
+      "name": "华泰证券",
+      "bucket": "金融",
+      "subsector": "券商",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [
+        "REJECT_CORRELATION"
+      ],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2643,
+          "annual_volatility": 0.3209409863185529,
+          "t1": {
+            "net": -0.3969032888888889,
+            "dd": -0.6294949493852449,
+            "rr": -0.6305106804693169,
+            "weight": 0.3099212469652693,
+            "flat": 0.6863412788497919,
+            "trades": 46,
+            "commission": 3761.84,
+            "tax": 6647.64,
+            "slippage": 0.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.28651097104666207,
+          "t1": {
+            "net": -0.053168511111111094,
+            "dd": -0.23911806666666668,
+            "rr": -0.22235254680788552,
+            "weight": 0.3152094184753378,
+            "flat": 0.6818950930626058,
+            "trades": 20,
+            "commission": 1969.12,
+            "tax": 2711.71,
+            "slippage": 0.0
+          }
+        }
+      },
+      "close": 17.54,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1682497702.5952382,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "华泰证券",
+      "sessions": 2887,
+      "open_sessions": 2887,
+      "quote_basis": "tushare_pro",
+      "listing": "2010-02-26",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=601688.SH",
+          "retrieved": "2026-11-23T17:03:26.334946+00:00",
+          "cache_sha": "93b6a525b643b2af728b943f97398ac544eccc052e1e9d8be7c3b43c7f27922f"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=601688.SH",
+          "retrieved": "2026-11-23T17:03:27.745776+00:00",
+          "cache_sha": "a93f2b73e2fd6704eb1f66930d573dd2fb6cb8109d731b029289cf4a9e35f5d1"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=601688.SH",
+          "retrieved": "2026-11-23T17:03:33.482334+00:00",
+          "cache_sha": "bc7101a6714d513f1d5b6c7c5407819815b09369ac3c6014de2e6a33cb57b0ec"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=601688.SH",
+          "retrieved": "2026-11-23T17:05:05.880373+00:00",
+          "cache_sha": "0df671e7b46e88215631c08d5d84e28c7e4e68ed67f77dd794fe0e6769d2badb"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=601688.SH",
+          "retrieved": "2026-11-23T17:05:07.575876+00:00",
+          "cache_sha": "61a9a978271736326c77346b0a3f80691a3549750c756134f3a273b18a018730"
+        }
+      ],
+      "rights": {
+        "total": 4,
+        "examined": [
+          {
+            "title": "华泰证券股份有限公司关于公司符合配股条件的说明",
+            "published": "2022-12-31",
+            "source": "https://static.cninfo.com.cn/finalpage/2022-12-31/1215496550.PDF"
+          },
+          {
+            "title": "华泰证券股份有限公司配股募集资金使用可行性分析报告",
+            "published": "2022-12-31",
+            "source": "https://static.cninfo.com.cn/finalpage/2022-12-31/1215496547.PDF"
+          },
+          {
+            "title": "华泰证券股份有限公司独立董事关于本次配股及中期股东回报规划相关事项的独立意见",
+            "published": "2022-12-31",
+            "source": "https://static.cninfo.com.cn/finalpage/2022-12-31/1215496541.PDF"
+          },
+          {
+            "title": "华泰证券股份有限公司配股公开发行证券预案",
+            "published": "2022-12-31",
+            "source": "https://static.cninfo.com.cn/finalpage/2022-12-31/1215496540.PDF"
+          }
+        ],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "4896d491a7374c2949380e0474da1970dd32c9ffe4963350a3d28d00e60105b5",
+            "retrieved": "2026-11-23T23:42:25.478043+08:00"
+          }
+        ],
+        "verified_cancellations": [
+          {
+            "title": "华泰证券股份有限公司配股公开发行证券预案",
+            "published": "2022-12-31",
+            "source": "https://static.cninfo.com.cn/finalpage/2022-12-31/1215496540.PDF",
+            "termination": "https://static.cninfo.com.cn/finalpage/2023-10-31/1218204071.PDF"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "300059",
+        "name": "东方财富",
+        "r": 0.7097176580377078,
+        "n": 2637
+      },
+      "correlation_conflicts": [
+        {
+          "code": "300059",
+          "name": "东方财富",
+          "r": 0.7097176580377078,
+          "n": 2637
+        }
+      ],
+      "missing_pairs": [],
+      "status": "REJECTED",
+      "highest_in_result_pool": {
+        "code": "300059",
+        "name": "东方财富",
+        "r": 0.7097176580377078,
+        "n": 2637
+      }
+    },
+    {
+      "code": "600893",
+      "name": "航发动力",
+      "bucket": "制造",
+      "subsector": "航空发动机军工",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2609,
+          "annual_volatility": 0.3989089425584646,
+          "t1": {
+            "net": -0.6557751111111111,
+            "dd": -0.6996734444444445,
+            "rr": -0.9372588259824702,
+            "weight": 0.26983069543155186,
+            "flat": 0.7279606507756338,
+            "trades": 50,
+            "commission": 2917.64,
+            "tax": 5078.96,
+            "slippage": 2423.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.3578603394808746,
+          "t1": {
+            "net": -0.3582421555555556,
+            "dd": -0.4407364444444445,
+            "rr": -0.8128262594828656,
+            "weight": 0.26659027286194314,
+            "flat": 0.7318104906937394,
+            "trades": 24,
+            "commission": 1892.04,
+            "tax": 2562.93,
+            "slippage": 1790.0
+          }
+        }
+      },
+      "close": 31.85,
+      "price_band": "OPT",
+      "daily_amount_yuan": 1590504584.2619047,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "航发动力",
+      "sessions": 2887,
+      "open_sessions": 2852,
+      "quote_basis": "tushare_pro",
+      "listing": "1996-04-08",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=600893.SH",
+          "retrieved": "2026-11-23T16:52:29.118198+00:00",
+          "cache_sha": "3b83bedff611fbb6b1a68f9a5005dc18c633cd12c678163eab6748103f00161e"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=600893.SH",
+          "retrieved": "2026-11-23T17:03:36.701046+00:00",
+          "cache_sha": "4899372cd4691cd0eb92b584acf4cc78df0543f096ea47d73b75f114546700f5"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=600893.SH",
+          "retrieved": "2026-11-23T17:03:43.664781+00:00",
+          "cache_sha": "f6f763faaead82d7d8204bf6c00656bac428a450a7f3cd3cd76844b9b727cb45"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=600893.SH",
+          "retrieved": "2026-11-23T17:03:45.438688+00:00",
+          "cache_sha": "6a3c1cde4b037e2476b59c9b93afe61b41c4e28d81c034583aa81126dbc14ffd"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=600893.SH",
+          "retrieved": "2026-11-23T17:03:47.868226+00:00",
+          "cache_sha": "4de19afe850e1eef1ef095c4b8dd486d703fe05e690a28a9835d9d21d148278c"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "d59986908a5e81bd98b08a48961d517ef70e020879586a96a3a77727f76d7dd7",
+            "retrieved": "2026-11-23T23:42:25.518083+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "002049",
+        "name": "紫光国微",
+        "r": 0.46409959234080767,
+        "n": 2433
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "002049",
+        "name": "紫光国微",
+        "r": 0.46409959234080767,
+        "n": 2433
+      }
+    },
+    {
+      "code": "000538",
+      "name": "云南白药",
+      "bucket": "医药",
+      "subsector": "中药与医药零售",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 2474,
+          "annual_volatility": 0.27487249772242167,
+          "t1": {
+            "net": 0.10024437777777773,
+            "dd": -0.5155056591290221,
+            "rr": 0.19445834590282993,
+            "weight": 0.3891643257345583,
+            "flat": 0.604994324631101,
+            "trades": 45,
+            "commission": 6162.17,
+            "tax": 10212.06,
+            "slippage": 4775.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.2026551683965656,
+          "t1": {
+            "net": -0.3379083777777778,
+            "dd": -0.4288122221133269,
+            "rr": -0.7880101367271082,
+            "weight": 0.3154941357455599,
+            "flat": 0.6776649746192893,
+            "trades": 29,
+            "commission": 2237.64,
+            "tax": 3131.23,
+            "slippage": 1646.0
+          }
+        }
+      },
+      "close": 56.4,
+      "price_band": "OPT",
+      "daily_amount_yuan": 466910077.84515876,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "云南白药",
+      "sessions": 2887,
+      "open_sessions": 2723,
+      "quote_basis": "tushare_pro",
+      "listing": "1993-12-15",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=000538.SZ",
+          "retrieved": "2026-11-23T17:03:49.680417+00:00",
+          "cache_sha": "aeaeefff1bcba6961c76c98fc3384bc94e6b795f864e75a5f93d8e3908a12b5c"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=000538.SZ",
+          "retrieved": "2026-11-23T17:03:50.956099+00:00",
+          "cache_sha": "f696137e7f393a81f6aef627b295c553ab9d502ac58f883eecc551efbcde4cc5"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=000538.SZ",
+          "retrieved": "2026-11-23T17:03:58.772676+00:00",
+          "cache_sha": "b5262cf0e97db2c05ffa2f4f958a88e4e91c24066b68de5487fc9a8cbe698775"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=000538.SZ",
+          "retrieved": "2026-11-23T17:04:00.268430+00:00",
+          "cache_sha": "9a977e60cb8d8fd86338f00ab7352c5d315b480099b5b03d305ee56887f35fd6"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=000538.SZ",
+          "retrieved": "2026-11-23T17:04:01.650585+00:00",
+          "cache_sha": "e602dc86909ae21101b26d7a6bd59eba9238326821082d036dbccc39a54b855b"
+        }
+      ],
+      "rights": {
+        "total": 1,
+        "examined": [
+          {
+            "title": "关于拟认配红塔证券股份有限公司配股的关联交易公告",
+            "published": "2020-04-29",
+            "source": "https://static.cninfo.com.cn/finalpage/2020-04-29/1207660269.PDF"
+          }
+        ],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "b86dad7cb97559ba601d2470db911105d116ea219327f5944cbc6091839442e3",
+            "retrieved": "2026-11-23T23:42:25.477042+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "000858",
+        "name": "五粮液",
+        "r": 0.49870603999736995,
+        "n": 2474
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "000858",
+        "name": "五粮液",
+        "r": 0.49870603999736995,
+        "n": 2474
+      }
+    },
+    {
+      "code": "300760",
+      "name": "迈瑞医疗",
+      "bucket": "医药",
+      "subsector": "医疗器械",
+      "batch": "1",
+      "group": "8",
+      "macro_bucket": "医药军工与顺周期金融",
+      "quota": "3",
+      "substitute_reason": "",
+      "gate_failures": [],
+      "tape_issues": [],
+      "risk": {
+        "W1": {
+          "n": 1965,
+          "annual_volatility": 0.36584092650625544,
+          "t1": {
+            "net": 0.024382600000000032,
+            "dd": -0.6106121312973767,
+            "rr": 0.039931404487811205,
+            "weight": 0.22039279543235174,
+            "flat": 0.7737419598940598,
+            "trades": 33,
+            "commission": 4852.21,
+            "tax": 8341.62,
+            "slippage": 3939.0
+          }
+        },
+        "W5": {
+          "n": 1182,
+          "annual_volatility": 0.31098408047538506,
+          "t1": {
+            "net": -0.3230704888888889,
+            "dd": -0.47230548806828676,
+            "rr": -0.6840286574061125,
+            "weight": 0.21597007353599088,
+            "flat": 0.7715736040609137,
+            "trades": 21,
+            "commission": 1788.35,
+            "tax": 2634.37,
+            "slippage": 1430.0
+          }
+        }
+      },
+      "close": 183.81,
+      "price_band": "GOOD",
+      "daily_amount_yuan": 1472365422.8730953,
+      "amount_start": "2025-11-07",
+      "amount_end": "2026-11-20",
+      "amount_sessions": 252,
+      "risk_warning": false,
+      "risk_flag": "0",
+      "listed": true,
+      "provider_name": "迈瑞医疗",
+      "sessions": 1966,
+      "open_sessions": 1966,
+      "quote_basis": "tushare_pro",
+      "listing": "2018-10-16",
+      "delisting": "",
+      "receipts": [
+        {
+          "source": "tushare_pro:stock_basic?ts_code=300760.SZ",
+          "retrieved": "2026-11-23T16:52:31.823747+00:00",
+          "cache_sha": "bb1cd0e1ccdb64d3770f88b40917e8813ce5aea88a83de313f2145e150378c67"
+        },
+        {
+          "source": "tushare_pro:namechange?ts_code=300760.SZ",
+          "retrieved": "2026-11-23T16:52:33.025847+00:00",
+          "cache_sha": "7e3e0b3e1a34d9193abd88aa2c9fbeb9803ace93f54aecda880b931070026f22"
+        },
+        {
+          "source": "tushare_pro:daily?ts_code=300760.SZ",
+          "retrieved": "2026-11-23T16:52:39.541759+00:00",
+          "cache_sha": "0ac70088d1b248358fc88c6654c9d4088218b61d5cfda284d47209246572f32d"
+        },
+        {
+          "source": "tushare_pro:suspend_d?ts_code=300760.SZ",
+          "retrieved": "2026-11-23T16:52:41.300216+00:00",
+          "cache_sha": "cfd287e1d451022b1952d4ff9f8382adbf209e1b8207651e392d19dd490e9b7a"
+        },
+        {
+          "source": "tushare_pro:dividend?ts_code=300760.SZ",
+          "retrieved": "2026-11-23T16:52:42.756431+00:00",
+          "cache_sha": "dfd4d12b67268e94dc5b10222bf3076bc163d1f2d62f7a2b7b5acdc13ede6ff6"
+        }
+      ],
+      "rights": {
+        "total": 0,
+        "examined": [],
+        "executed": [],
+        "unresolved": [],
+        "receipts": [
+          {
+            "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+            "cache_sha": "fa2566adc3d56a5aa734a12a5b6cdd4e5774be431ca96bb035619caf0dad15c0",
+            "retrieved": "2026-11-23T23:42:25.597559+08:00"
+          }
+        ],
+        "documented": []
+      },
+      "highest_at_decision": {
+        "code": "600276",
+        "name": "恒瑞医药",
+        "r": 0.4798798700319481,
+        "n": 1965
+      },
+      "correlation_conflicts": [],
+      "missing_pairs": [],
+      "status": "RESERVE",
+      "highest_in_result_pool": {
+        "code": "600276",
+        "name": "恒瑞医药",
+        "r": 0.4798798700319481,
+        "n": 1965
+      }
+    },
+    {
+      "code": "600030",
+      "name": "中信证券",
+      "bucket": "金融",
+      "subsector": "券商",
+      "batch": "1",
+      "group": "0",
+      "macro_bucket": "配股门禁对照",
+      "quota": "0",
+      "substitute_reason": "",
+      "gate_failures": [
+        "REJECT_PAID_RIGHTS",
+        "PRIMARY_TAPE_UNAVAILABLE"
+      ],
+      "tape_issues": [],
+      "risk": {},
+      "rights": {
+        "error": "cninfo-a-rights:column=sse&isHLtitle=true&pageSize=30&seDate=2015-01-01~2026-11-20&searchkey=%E9%85%8D%E8%82%A1&stock=600030%2Cgssh0600030&tabName=fulltext 三次失败：600030 配股公告数与索引总数不一致",
+        "documented": [
+          {
+            "code": "600030",
+            "ex_date": "2022-01-27",
+            "listing_date": "2022-02-15",
+            "subscription_price": "14.43",
+            "source": "https://static.cninfo.com.cn/finalpage/2022-02-10/1212332253.PDF"
+          }
+        ]
+      },
+      "status": "REJECTED"
+    }
+  ],
+  "ready_to_apply": true
+}

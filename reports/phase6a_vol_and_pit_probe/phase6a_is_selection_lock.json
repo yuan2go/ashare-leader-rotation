@@ -1,0 +1,112 @@
+{
+  "beats_e4m_on_is_calmar_and_sharpe": false,
+  "candidates": [
+    {
+      "beats_e4m_on_is_calmar_and_sharpe": false,
+      "calmar": 0.4203333388093228,
+      "key": "V4_E4_TV15_IDX20",
+      "max_dd_pct": -26.48825854163952,
+      "qualified": true,
+      "sharpe": 0.7971660922633028
+    },
+    {
+      "beats_e4m_on_is_calmar_and_sharpe": false,
+      "calmar": 0.41021568481045556,
+      "key": "V5_E4_M200_TV15_CAP",
+      "max_dd_pct": -24.29748734413564,
+      "qualified": true,
+      "sharpe": 0.8552103010358713
+    },
+    {
+      "beats_e4m_on_is_calmar_and_sharpe": false,
+      "calmar": 0.36741390853627054,
+      "key": "V2_E4_TV20_ETF20",
+      "max_dd_pct": -27.229729300707106,
+      "qualified": true,
+      "sharpe": 0.7228899743977674
+    },
+    {
+      "beats_e4m_on_is_calmar_and_sharpe": false,
+      "calmar": 0.3569530321648743,
+      "key": "V3_E4_TV15_ETF60",
+      "max_dd_pct": -25.867605013534856,
+      "qualified": true,
+      "sharpe": 0.7414898791446192
+    },
+    {
+      "beats_e4m_on_is_calmar_and_sharpe": false,
+      "calmar": 0.3504098478252669,
+      "key": "V1_E4_TV15_ETF20",
+      "max_dd_pct": -26.253873097956635,
+      "qualified": true,
+      "sharpe": 0.7276841457803005
+    }
+  ],
+  "capital": 450000,
+  "created_utc": "2026-11-25T09:01:28.024282+00:00",
+  "declared_models": {
+    "V1_E4_TV15_ETF20": [
+      0.15,
+      20,
+      0.2
+    ],
+    "V2_E4_TV20_ETF20": [
+      0.2,
+      20,
+      0.2
+    ],
+    "V3_E4_TV15_ETF60": [
+      0.15,
+      60,
+      0.2
+    ],
+    "V4_E4_TV15_IDX20": [
+      0.15,
+      20,
+      0.2
+    ],
+    "V5_E4_M200_TV15_CAP": [
+      0.15,
+      20,
+      0.4
+    ],
+    "V6_B1_TV15_DEF20": [
+      0.15,
+      20,
+      0.5
+    ]
+  },
+  "e4": {
+    "calmar": 0.3821029913426862,
+    "max_dd_pct": -27.72109578788211,
+    "sharpe": 0.678414766576448
+  },
+  "e4m": {
+    "calmar": 0.4613134664386241,
+    "max_dd_pct": -24.696025807153845,
+    "sharpe": 0.8098888253208276
+  },
+  "filters": {
+    "also_beat_exact_e4": true,
+    "max_dd_pct_strict_min": -27.72,
+    "sharpe_strict_min": 0.6784
+  },
+  "pool": "ETF5",
+  "rebalance_band": 0.05,
+  "scenario": "2bp",
+  "selected": [
+    "V4_E4_TV15_IDX20",
+    "V5_E4_M200_TV15_CAP"
+  ],
+  "sort": [
+    "calmar_desc",
+    "sharpe_desc",
+    "key_asc"
+  ],
+  "span": [
+    "2016-01-04",
+    "2023-01-20"
+  ],
+  "stock_pool": "PIT300_ex688",
+  "window": "IS"
+}

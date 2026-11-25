@@ -1,0 +1,20 @@
+{
+  "api": "bak_basic",
+  "params": {
+    "trade_date": "20261120"
+  },
+  "fields": "ts_code,trade_date,name,industry",
+  "retrieved_at": "2026-11-25T10:41:23.715954+08:00",
+  "label": "industry_20261120",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:41:25 GMT",
+  "provider_code": 0,
+  "num_rows": 5584,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "industry_20261120.json.gz",
+  "raw_sha256": "1ec61bcc5006b4591ec6d5b5bde20cbf9760d270bb98b04427f3535058789020",
+  "file_sha256": "38c1d474ee6878e139f292162f7b38697ad2cc5a66ba864732330dd9a6c7ed43",
+  "completed_at": "2026-11-25T10:41:26.346768+08:00"
+}

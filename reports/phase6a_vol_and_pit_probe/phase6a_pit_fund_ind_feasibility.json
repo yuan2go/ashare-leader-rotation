@@ -1,0 +1,4148 @@
+{
+  "case_studies": {
+    "bank": {
+      "fcff": {
+        "coverage_pct": 19.565217391304348,
+        "non_null": 18,
+        "requested": true,
+        "returned": true,
+        "rows": 92
+      },
+      "n_cashflow_act": {
+        "coverage_pct": 100.0,
+        "non_null": 67,
+        "requested": true,
+        "returned": true,
+        "rows": 67
+      },
+      "profit_dedt": {
+        "coverage_pct": 96.73913043478261,
+        "non_null": 89,
+        "requested": true,
+        "returned": true,
+        "rows": 92
+      },
+      "roe_dt": {
+        "coverage_pct": 96.73913043478261,
+        "non_null": 89,
+        "requested": true,
+        "returned": true,
+        "rows": 92
+      }
+    },
+    "delisted": {
+      "cashflow": {
+        "first_period": "20131231",
+        "first_version_quarters": 12,
+        "last_period": "20161231",
+        "rows": 13
+      },
+      "fina_indicator": {
+        "first_period": "20131231",
+        "first_version_quarters": 0,
+        "last_period": "20161231",
+        "rows": 26
+      },
+      "income": {
+        "first_period": "20131231",
+        "first_version_quarters": 12,
+        "last_period": "20161231",
+        "rows": 13
+      }
+    },
+    "growth": {
+      "quarter_growth_versions_since_2023": [
+        {
+          "ann_date": "20230427",
+          "end_date": "20230331",
+          "q_gr_yoy": -18.7255,
+          "q_netprofit_yoy": -18.5678,
+          "q_profit_yoy": -18.5678,
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20230427",
+          "end_date": "20230331",
+          "q_gr_yoy": -18.7255,
+          "q_netprofit_yoy": -18.5678,
+          "q_profit_yoy": -18.5678,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20230825",
+          "end_date": "20230630",
+          "q_gr_yoy": -4.8456,
+          "q_netprofit_yoy": -45.0716,
+          "q_profit_yoy": -45.0716,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20231021",
+          "end_date": "20230930",
+          "q_gr_yoy": -16.3837,
+          "q_netprofit_yoy": -53.1442,
+          "q_profit_yoy": -53.1442,
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20231021",
+          "end_date": "20230930",
+          "q_gr_yoy": -16.3837,
+          "q_netprofit_yoy": -53.1442,
+          "q_profit_yoy": -53.1442,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20240423",
+          "end_date": "20231231",
+          "q_gr_yoy": 12.7771,
+          "q_netprofit_yoy": 83.3534,
+          "q_profit_yoy": 83.3534,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20240423",
+          "end_date": "20240331",
+          "q_gr_yoy": 85.4068,
+          "q_netprofit_yoy": 200.9608,
+          "q_profit_yoy": 200.9608,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20240829",
+          "end_date": "20240630",
+          "q_gr_yoy": 129.2279,
+          "q_netprofit_yoy": 199.4524,
+          "q_profit_yoy": 199.4524,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20241025",
+          "end_date": "20240930",
+          "q_gr_yoy": 207.1156,
+          "q_netprofit_yoy": 453.0725,
+          "q_profit_yoy": 453.0725,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20250423",
+          "end_date": "20241231",
+          "q_gr_yoy": 247.9656,
+          "q_netprofit_yoy": 360.4914,
+          "q_profit_yoy": 360.4914,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20250423",
+          "end_date": "20250331",
+          "q_gr_yoy": 264.1319,
+          "q_netprofit_yoy": 384.5391,
+          "q_profit_yoy": 384.5391,
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20250423",
+          "end_date": "20250331",
+          "q_gr_yoy": 264.1319,
+          "q_netprofit_yoy": 384.5391,
+          "q_profit_yoy": 384.5391,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20250826",
+          "end_date": "20250630",
+          "q_gr_yoy": 295.3945,
+          "q_netprofit_yoy": 338.3577,
+          "q_profit_yoy": 338.3577,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20251030",
+          "end_date": "20250930",
+          "q_gr_yoy": 152.527,
+          "q_netprofit_yoy": 205.379,
+          "q_profit_yoy": 205.379,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20260424",
+          "end_date": "20251231",
+          "q_gr_yoy": 137.0912,
+          "q_netprofit_yoy": 168.9201,
+          "q_profit_yoy": 170.7119,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20260424",
+          "end_date": "20260331",
+          "q_gr_yoy": 105.7595,
+          "q_netprofit_yoy": 76.7998,
+          "q_profit_yoy": 76.4166,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20260825",
+          "end_date": "20260630",
+          "q_gr_yoy": 96.8992,
+          "q_netprofit_yoy": 100.397,
+          "q_profit_yoy": 102.2188,
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20260825",
+          "end_date": "20260630",
+          "q_gr_yoy": 96.8992,
+          "q_netprofit_yoy": 100.397,
+          "q_profit_yoy": 102.2188,
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20261030",
+          "end_date": "20260930",
+          "q_gr_yoy": 80.3038,
+          "q_netprofit_yoy": 61.15,
+          "q_profit_yoy": 63.5801,
+          "update_flag": "0"
+        }
+      ],
+      "update_flag_distribution": {
+        "0": 38,
+        "1": 47
+      }
+    },
+    "property_2020_2023": {
+      "earliest_negative_operating_cashflow_strict_first_version": {
+        "end_date": "20200630",
+        "f_ann_date": "20200814",
+        "n_cashflow_act": -3901474088.27,
+        "report_type": "1",
+        "update_flag": "0"
+      },
+      "earliest_negative_parent_income_strict_first_version": {
+        "end_date": "20211231",
+        "f_ann_date": "20220430",
+        "n_income_attr_p": -4955398170.29,
+        "report_type": "1",
+        "update_flag": "0"
+      },
+      "earliest_negative_profit_dedt_nominal_provider_date_unverified_version": {
+        "ann_date": "20220430",
+        "end_date": "20211231",
+        "profit_dedt": -4935087544.53,
+        "report_type": null,
+        "update_flag": "1"
+      },
+      "operating_cashflow_all_observed_versions": [
+        {
+          "ann_date": "20200428",
+          "end_date": "20200331",
+          "f_ann_date": "20200428",
+          "n_cashflow_act": -4917614717.08,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20200814",
+          "end_date": "20200630",
+          "f_ann_date": "20200814",
+          "n_cashflow_act": -3901474088.27,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20200814",
+          "end_date": "20200630",
+          "f_ann_date": "20200814",
+          "n_cashflow_act": -3901474088.27,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20201024",
+          "end_date": "20200930",
+          "f_ann_date": "20201024",
+          "n_cashflow_act": -7616576331.34,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20210428",
+          "end_date": "20201231",
+          "f_ann_date": "20210428",
+          "n_cashflow_act": 1366658579.83,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20210428",
+          "end_date": "20201231",
+          "f_ann_date": "20210428",
+          "n_cashflow_act": 1366658579.83,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20210430",
+          "end_date": "20210331",
+          "f_ann_date": "20210430",
+          "n_cashflow_act": -5007313612.92,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20210820",
+          "end_date": "20210630",
+          "f_ann_date": "20210820",
+          "n_cashflow_act": 1247235857.44,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20211029",
+          "end_date": "20210930",
+          "f_ann_date": "20211029",
+          "n_cashflow_act": 6249717262.19,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20220430",
+          "end_date": "20211231",
+          "f_ann_date": "20220430",
+          "n_cashflow_act": 16915150922.31,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20220430",
+          "end_date": "20211231",
+          "f_ann_date": "20220430",
+          "n_cashflow_act": 16915150922.31,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20220430",
+          "end_date": "20220331",
+          "f_ann_date": "20220430",
+          "n_cashflow_act": 2269970299.57,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20220430",
+          "end_date": "20220331",
+          "f_ann_date": "20220430",
+          "n_cashflow_act": 2269970299.57,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20220830",
+          "end_date": "20220630",
+          "f_ann_date": "20220830",
+          "n_cashflow_act": 3999699246.27,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20221031",
+          "end_date": "20220930",
+          "f_ann_date": "20221031",
+          "n_cashflow_act": 2307798554.53,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20230429",
+          "end_date": "20221231",
+          "f_ann_date": "20230429",
+          "n_cashflow_act": 2244836499.08,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20230429",
+          "end_date": "20221231",
+          "f_ann_date": "20230429",
+          "n_cashflow_act": 2244836499.08,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20230429",
+          "end_date": "20230331",
+          "f_ann_date": "20230429",
+          "n_cashflow_act": -384357294.35,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20230429",
+          "end_date": "20230331",
+          "f_ann_date": "20230429",
+          "n_cashflow_act": -384357294.35,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20230830",
+          "end_date": "20230630",
+          "f_ann_date": "20230830",
+          "n_cashflow_act": -483957700.56,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20231031",
+          "end_date": "20230930",
+          "f_ann_date": "20231031",
+          "n_cashflow_act": -1064492112.61,
+          "report_type": "1",
+          "update_flag": "0"
+        },
+        {
+          "ann_date": "20231031",
+          "end_date": "20230930",
+          "f_ann_date": "20231031",
+          "n_cashflow_act": -1064492112.61,
+          "report_type": "1",
+          "update_flag": "1"
+        },
+        {
+          "ann_date": "20240429",
+          "end_date": "20231231",
+          "f_ann_date": "20240429",
+          "n_cashflow_act": -1482614272.91,
+          "report_type": "1",
+          "update_flag": "1"
+        }
+      ]
+    }
+  },
+  "collection_budget": {
+    "components": {
+      "cashflow": {
+        "http_requests": 667,
+        "mode": "per_stock_fallback",
+        "pages_per_unit_assumed": 1,
+        "raw_gzip_bytes": 788060,
+        "units": 667,
+        "unpacked_response_bytes": 3477738
+      },
+      "fina_indicator": {
+        "http_requests": 51,
+        "mode": "vip_by_period",
+        "pages_per_unit_assumed": 1,
+        "raw_gzip_bytes": 11288646,
+        "units": 51,
+        "unpacked_response_bytes": 39755112
+      },
+      "income": {
+        "http_requests": 667,
+        "mode": "per_stock_fallback",
+        "pages_per_unit_assumed": 1,
+        "raw_gzip_bytes": 1037185,
+        "units": 667,
+        "unpacked_response_bytes": 5282140
+      },
+      "industry": {
+        "classifications": 2,
+        "http_requests": 66,
+        "include_separate_history_call": true,
+        "l1_codes_assumed": 32,
+        "pages_per_partition_assumed": 1,
+        "raw_gzip_bytes": 97402,
+        "sw2014_sw2021_distinct_l1_codes": 32,
+        "unpacked_response_bytes": 671735
+      }
+    },
+    "components_without_size": [],
+    "conditional_plan_http_requests": 1451,
+    "conditional_plan_seconds_at_1_25s": 1813.75,
+    "excludes_retries_and_pagination_not_observed": true,
+    "first_period": "20140331",
+    "interval_seconds": 1.25,
+    "last_period": "20260930",
+    "mode_if_all_vip_accessible_financial_only": {
+      "http_requests": 153,
+      "seconds": 191.25
+    },
+    "quarterly_periods": 51,
+    "raw_gzip_bytes_for_sized_components": 13211293,
+    "stock_count": 667,
+    "technical_blockers": [
+      "delisted_wuhan_membership_exit_unverified"
+    ],
+    "unpacked_bytes_for_sized_components": 49186725,
+    "verified_full_pit_http_requests": null
+  },
+  "dates": [
+    "20140101",
+    "20261120"
+  ],
+  "effective_receipts": {
+    "SW2014": "17_SW2014.receipt.json",
+    "SW2021": "16_SW2021.receipt.json",
+    "cashflow_002146_SZ": "09_cashflow_002146_SZ.receipt.json",
+    "cashflow_300502_SZ": "15_cashflow_300502_SZ.receipt.json",
+    "cashflow_600005_SH": "12_cashflow_600005_SH.receipt.json",
+    "cashflow_601398_SH": "24_retry_cashflow_601398_SH.receipt.json",
+    "cashflow_vip": "03_cashflow_vip.receipt.json",
+    "fina_indicator_002146_SZ": "07_fina_indicator_002146_SZ.receipt.json",
+    "fina_indicator_300502_SZ": "13_fina_indicator_300502_SZ.receipt.json",
+    "fina_indicator_600005_SH": "10_fina_indicator_600005_SH.receipt.json",
+    "fina_indicator_601398_SH": "25_retry_fina_indicator_601398_SH.receipt.json",
+    "fina_indicator_vip": "01_fina_indicator_vip.receipt.json",
+    "history_bank": "21_history_bank.receipt.json",
+    "history_delisted": "23_history_delisted.receipt.json",
+    "history_property": "22_history_property.receipt.json",
+    "income_002146_SZ": "08_income_002146_SZ.receipt.json",
+    "income_300502_SZ": "14_income_300502_SZ.receipt.json",
+    "income_600005_SH": "11_income_600005_SH.receipt.json",
+    "income_601398_SH": "05_income_601398_SH.receipt.json",
+    "income_vip": "02_income_vip.receipt.json",
+    "member_bank": "18_member_bank.receipt.json",
+    "member_delisted": "20_member_delisted.receipt.json",
+    "member_property": "19_member_property.receipt.json"
+  },
+  "elapsed_seconds": 95.64,
+  "finance": {
+    "002146.SZ": {
+      "cashflow": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140318",
+            "20261027"
+          ],
+          "f_ann_date": [
+            "20140318",
+            "20261027"
+          ]
+        },
+        "comp_type_distribution": {
+          "1": 66
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 14,
+        "consolidated_mixed_flag_pct": 26.923076923076923,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 66
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 66,
+            "requested": true,
+            "returned": true,
+            "rows": 66
+          }
+        },
+        "duplicate_extra_rows": 14,
+        "duplicate_key_groups": 14,
+        "first_period": "20131231",
+        "first_version_periods": [
+          "20131231",
+          "20140331",
+          "20140630",
+          "20140930",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20160331",
+          "20160930",
+          "20170331",
+          "20170930",
+          "20180331",
+          "20180630",
+          "20190930",
+          "20191231",
+          "20200630",
+          "20201231",
+          "20211231",
+          "20220331",
+          "20221231",
+          "20230331",
+          "20230930",
+          "20240630",
+          "20250331",
+          "20250930",
+          "20260630",
+          "20260930"
+        ],
+        "first_version_quarters": 27,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 66,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 51,
+        "report_type_distribution": {
+          "1": 66
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20260930"
+        ],
+        "rows": 66,
+        "update_flag_distribution": {
+          "0": 28,
+          "1": 38
+        }
+      },
+      "fina_indicator": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140318",
+            "20261027"
+          ],
+          "f_ann_date": []
+        },
+        "comp_type_distribution": {
+          "None": 91
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 0,
+        "consolidated_mixed_flag_pct": 0.0,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "f_ann_date": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 91
+          },
+          "fcff": {
+            "coverage_pct": 98.9010989010989,
+            "non_null": 90,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 91
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 91
+          },
+          "profit_dedt": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "report_type": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 91
+          },
+          "roe_dt": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 91
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 91,
+            "requested": true,
+            "returned": true,
+            "rows": 91
+          }
+        },
+        "duplicate_extra_rows": 39,
+        "duplicate_key_groups": 39,
+        "first_period": "20131231",
+        "first_version_periods": [],
+        "first_version_quarters": 0,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 91,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 51,
+        "report_type_distribution": {
+          "None": 91
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20260930"
+        ],
+        "rows": 91,
+        "update_flag_distribution": {
+          "0": 40,
+          "1": 51
+        }
+      },
+      "income": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140318",
+            "20261027"
+          ],
+          "f_ann_date": [
+            "20140318",
+            "20261027"
+          ]
+        },
+        "comp_type_distribution": {
+          "1": 73
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 21,
+        "consolidated_mixed_flag_pct": 40.38461538461539,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 73
+          },
+          "total_revenue": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 73,
+            "requested": true,
+            "returned": true,
+            "rows": 73
+          }
+        },
+        "duplicate_extra_rows": 21,
+        "duplicate_key_groups": 21,
+        "first_period": "20131231",
+        "first_version_periods": [
+          "20131231",
+          "20140331",
+          "20140630",
+          "20140930",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231",
+          "20170331",
+          "20170630",
+          "20170930",
+          "20171231",
+          "20180331",
+          "20180630",
+          "20180930",
+          "20190331",
+          "20190630",
+          "20190930",
+          "20191231",
+          "20200331",
+          "20200630",
+          "20200930",
+          "20201231",
+          "20210930",
+          "20211231",
+          "20220331",
+          "20230930",
+          "20250930",
+          "20260630",
+          "20260930"
+        ],
+        "first_version_quarters": 34,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 73,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 51,
+        "report_type_distribution": {
+          "1": 73
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20260930"
+        ],
+        "rows": 73,
+        "update_flag_distribution": {
+          "0": 35,
+          "1": 38
+        }
+      }
+    },
+    "300502.SZ": {
+      "cashflow": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140625",
+            "20261030"
+          ],
+          "f_ann_date": [
+            "20140625",
+            "20261030"
+          ]
+        },
+        "comp_type_distribution": {
+          "1": 65
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 14,
+        "consolidated_mixed_flag_pct": 27.45098039215686,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 65
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 65,
+            "requested": true,
+            "returned": true,
+            "rows": 65
+          }
+        },
+        "duplicate_extra_rows": 14,
+        "duplicate_key_groups": 14,
+        "first_period": "20111231",
+        "first_version_periods": [
+          "20111231",
+          "20121231",
+          "20131231",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231",
+          "20170331",
+          "20170630",
+          "20170930",
+          "20171231",
+          "20180331",
+          "20180630",
+          "20190930",
+          "20191231",
+          "20200630",
+          "20201231",
+          "20211231",
+          "20220630",
+          "20220930",
+          "20221231",
+          "20230331",
+          "20240930",
+          "20250331",
+          "20250930",
+          "20251231",
+          "20260630",
+          "20260930"
+        ],
+        "first_version_quarters": 30,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 65,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 48,
+        "report_type_distribution": {
+          "1": 65
+        },
+        "reported_quarter_span": [
+          "20141231",
+          "20260930"
+        ],
+        "rows": 65,
+        "update_flag_distribution": {
+          "0": 33,
+          "1": 32
+        }
+      },
+      "fina_indicator": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140625",
+            "20261030"
+          ],
+          "f_ann_date": []
+        },
+        "comp_type_distribution": {
+          "None": 85
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 0,
+        "consolidated_mixed_flag_pct": 0.0,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 85,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 85,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "f_ann_date": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 85
+          },
+          "fcff": {
+            "coverage_pct": 95.29411764705883,
+            "non_null": 81,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 85
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 85
+          },
+          "profit_dedt": {
+            "coverage_pct": 100.0,
+            "non_null": 85,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 88.23529411764706,
+            "non_null": 75,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 88.23529411764706,
+            "non_null": 75,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 88.23529411764706,
+            "non_null": 75,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "report_type": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 85
+          },
+          "roe_dt": {
+            "coverage_pct": 100.0,
+            "non_null": 85,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 85
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 85,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 85,
+            "requested": true,
+            "returned": true,
+            "rows": 85
+          }
+        },
+        "duplicate_extra_rows": 37,
+        "duplicate_key_groups": 37,
+        "first_period": "20111231",
+        "first_version_periods": [],
+        "first_version_quarters": 0,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 85,
+        "missing_quarters_inside_span": [
+          "20150331",
+          "20150630",
+          "20150930"
+        ],
+        "possible_truncation": false,
+        "quarters": 45,
+        "report_type_distribution": {
+          "None": 85
+        },
+        "reported_quarter_span": [
+          "20141231",
+          "20260930"
+        ],
+        "rows": 85,
+        "update_flag_distribution": {
+          "0": 38,
+          "1": 47
+        }
+      },
+      "income": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140625",
+            "20261030"
+          ],
+          "f_ann_date": [
+            "20140625",
+            "20261030"
+          ]
+        },
+        "comp_type_distribution": {
+          "1": 67
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 16,
+        "consolidated_mixed_flag_pct": 31.372549019607842,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "total_revenue": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          }
+        },
+        "duplicate_extra_rows": 16,
+        "duplicate_key_groups": 16,
+        "first_period": "20111231",
+        "first_version_periods": [
+          "20111231",
+          "20121231",
+          "20131231",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231",
+          "20170331",
+          "20170630",
+          "20170930",
+          "20171231",
+          "20180331",
+          "20180630",
+          "20180930",
+          "20181231",
+          "20190331",
+          "20190630",
+          "20190930",
+          "20191231",
+          "20200331",
+          "20200630",
+          "20200930",
+          "20201231",
+          "20211231",
+          "20220630",
+          "20221231",
+          "20230930",
+          "20250630",
+          "20251231",
+          "20260630",
+          "20260930"
+        ],
+        "first_version_quarters": 33,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 67,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 48,
+        "report_type_distribution": {
+          "1": 67
+        },
+        "reported_quarter_span": [
+          "20141231",
+          "20260930"
+        ],
+        "rows": 67,
+        "update_flag_distribution": {
+          "0": 36,
+          "1": 31
+        }
+      }
+    },
+    "600005.SH": {
+      "cashflow": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140429",
+            "20170428"
+          ],
+          "f_ann_date": [
+            "20140429",
+            "20170428"
+          ]
+        },
+        "comp_type_distribution": {
+          "1": 13
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 0,
+        "consolidated_mixed_flag_pct": 0.0,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          }
+        },
+        "duplicate_extra_rows": 0,
+        "duplicate_key_groups": 0,
+        "first_period": "20131231",
+        "first_version_periods": [
+          "20131231",
+          "20140331",
+          "20140630",
+          "20140930",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231"
+        ],
+        "first_version_quarters": 12,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20161231",
+        "matching_code_rows": 13,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 12,
+        "report_type_distribution": {
+          "1": 13
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20161231"
+        ],
+        "rows": 13,
+        "update_flag_distribution": {
+          "0": 13
+        }
+      },
+      "fina_indicator": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140429",
+            "20170428"
+          ],
+          "f_ann_date": []
+        },
+        "comp_type_distribution": {
+          "None": 26
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 0,
+        "consolidated_mixed_flag_pct": 0.0,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "f_ann_date": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 26
+          },
+          "fcff": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 26
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 26
+          },
+          "profit_dedt": {
+            "coverage_pct": 92.3076923076923,
+            "non_null": 24,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "report_type": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 26
+          },
+          "roe_dt": {
+            "coverage_pct": 92.3076923076923,
+            "non_null": 24,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 26
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 26,
+            "requested": true,
+            "returned": true,
+            "rows": 26
+          }
+        },
+        "duplicate_extra_rows": 13,
+        "duplicate_key_groups": 13,
+        "first_period": "20131231",
+        "first_version_periods": [],
+        "first_version_quarters": 0,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20161231",
+        "matching_code_rows": 26,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 12,
+        "report_type_distribution": {
+          "None": 26
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20161231"
+        ],
+        "rows": 26,
+        "update_flag_distribution": {
+          "0": 13,
+          "1": 13
+        }
+      },
+      "income": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140429",
+            "20170428"
+          ],
+          "f_ann_date": [
+            "20140429",
+            "20170428"
+          ]
+        },
+        "comp_type_distribution": {
+          "1": 13
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 0,
+        "consolidated_mixed_flag_pct": 0.0,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 13
+          },
+          "total_revenue": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 13,
+            "requested": true,
+            "returned": true,
+            "rows": 13
+          }
+        },
+        "duplicate_extra_rows": 0,
+        "duplicate_key_groups": 0,
+        "first_period": "20131231",
+        "first_version_periods": [
+          "20131231",
+          "20140331",
+          "20140630",
+          "20140930",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231"
+        ],
+        "first_version_quarters": 12,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20161231",
+        "matching_code_rows": 13,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 12,
+        "report_type_distribution": {
+          "1": 13
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20161231"
+        ],
+        "rows": 13,
+        "update_flag_distribution": {
+          "0": 13
+        }
+      }
+    },
+    "601398.SH": {
+      "cashflow": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140328",
+            "20261031"
+          ],
+          "f_ann_date": [
+            "20140328",
+            "20261031"
+          ]
+        },
+        "comp_type_distribution": {
+          "2": 67
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 15,
+        "consolidated_mixed_flag_pct": 28.846153846153847,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 67
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 67,
+            "requested": true,
+            "returned": true,
+            "rows": 67
+          }
+        },
+        "duplicate_extra_rows": 15,
+        "duplicate_key_groups": 15,
+        "first_period": "20131231",
+        "first_version_periods": [
+          "20131231",
+          "20140331",
+          "20140630",
+          "20140930",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231",
+          "20170331",
+          "20170630",
+          "20170930",
+          "20171231",
+          "20180331",
+          "20180630",
+          "20180930",
+          "20181231",
+          "20190331",
+          "20190630",
+          "20191231",
+          "20200630",
+          "20200930",
+          "20201231",
+          "20210331",
+          "20210930",
+          "20211231",
+          "20220331",
+          "20220630",
+          "20220930",
+          "20221231",
+          "20230331",
+          "20230630",
+          "20230930",
+          "20231231",
+          "20240630",
+          "20240930",
+          "20241231",
+          "20250331",
+          "20250630",
+          "20250930",
+          "20251231",
+          "20260331",
+          "20260630",
+          "20260930"
+        ],
+        "first_version_quarters": 47,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 67,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 51,
+        "report_type_distribution": {
+          "1": 67
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20260930"
+        ],
+        "rows": 67,
+        "update_flag_distribution": {
+          "0": 48,
+          "1": 19
+        }
+      },
+      "fina_indicator": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140328",
+            "20261031"
+          ],
+          "f_ann_date": []
+        },
+        "comp_type_distribution": {
+          "None": 92
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 0,
+        "consolidated_mixed_flag_pct": 0.0,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 92,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 92,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "f_ann_date": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 92
+          },
+          "fcff": {
+            "coverage_pct": 19.565217391304348,
+            "non_null": 18,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 92
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 92
+          },
+          "profit_dedt": {
+            "coverage_pct": 96.73913043478261,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 95.65217391304348,
+            "non_null": 88,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 92,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 100.0,
+            "non_null": 92,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "report_type": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 92
+          },
+          "roe_dt": {
+            "coverage_pct": 96.73913043478261,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "total_revenue": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 92
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 92,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 92,
+            "requested": true,
+            "returned": true,
+            "rows": 92
+          }
+        },
+        "duplicate_extra_rows": 40,
+        "duplicate_key_groups": 40,
+        "first_period": "20131231",
+        "first_version_periods": [],
+        "first_version_quarters": 0,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 92,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 51,
+        "report_type_distribution": {
+          "None": 92
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20260930"
+        ],
+        "rows": 92,
+        "update_flag_distribution": {
+          "0": 41,
+          "1": 51
+        }
+      },
+      "income": {
+        "actual_and_nominal_announce_differ": 0,
+        "announcement_span": {
+          "ann_date": [
+            "20140328",
+            "20261031"
+          ],
+          "f_ann_date": [
+            "20140328",
+            "20261031"
+          ]
+        },
+        "comp_type_distribution": {
+          "2": 89
+        },
+        "conflict_at_first_date": [],
+        "consolidated_groups_with_flags_0_and_1": 37,
+        "consolidated_mixed_flag_pct": 71.15384615384616,
+        "coverage": {
+          "ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "end_date": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "f_ann_date": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "fcff": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "n_cashflow_act": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "n_income_attr_p": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "profit_dedt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "q_gr_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "q_netprofit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "q_profit_yoy": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "report_type": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "roe_dt": {
+            "coverage_pct": 0.0,
+            "non_null": 0,
+            "requested": false,
+            "returned": false,
+            "rows": 89
+          },
+          "total_revenue": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "ts_code": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          },
+          "update_flag": {
+            "coverage_pct": 100.0,
+            "non_null": 89,
+            "requested": true,
+            "returned": true,
+            "rows": 89
+          }
+        },
+        "duplicate_extra_rows": 37,
+        "duplicate_key_groups": 37,
+        "first_period": "20131231",
+        "first_version_periods": [
+          "20131231",
+          "20140331",
+          "20140630",
+          "20140930",
+          "20141231",
+          "20150331",
+          "20150630",
+          "20150930",
+          "20151231",
+          "20160331",
+          "20160630",
+          "20160930",
+          "20161231",
+          "20170331",
+          "20170630",
+          "20170930",
+          "20171231",
+          "20180331",
+          "20180630",
+          "20180930",
+          "20181231",
+          "20190331",
+          "20190630",
+          "20190930",
+          "20191231",
+          "20200331",
+          "20200630",
+          "20200930",
+          "20201231",
+          "20210331",
+          "20211231",
+          "20220331",
+          "20221231",
+          "20230331",
+          "20230630",
+          "20260630",
+          "20260930"
+        ],
+        "first_version_quarters": 36,
+        "first_version_rows_published_after_freeze": 0,
+        "last_period": "20260930",
+        "matching_code_rows": 89,
+        "missing_quarters_inside_span": [],
+        "possible_truncation": false,
+        "quarters": 51,
+        "report_type_distribution": {
+          "1": 89
+        },
+        "reported_quarter_span": [
+          "20140331",
+          "20260930"
+        ],
+        "rows": 89,
+        "update_flag_distribution": {
+          "0": 37,
+          "1": 52
+        }
+      }
+    }
+  },
+  "http_budget": 25,
+  "http_requests": 25,
+  "industry": {
+    "classification": {
+      "SW2014": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": [
+          "801010.SI",
+          "801020.SI",
+          "801030.SI",
+          "801040.SI",
+          "801050.SI",
+          "801080.SI",
+          "801110.SI",
+          "801120.SI",
+          "801130.SI",
+          "801140.SI",
+          "801150.SI",
+          "801160.SI",
+          "801170.SI",
+          "801180.SI",
+          "801200.SI",
+          "801210.SI",
+          "801230.SI",
+          "801710.SI",
+          "801720.SI",
+          "801730.SI",
+          "801740.SI",
+          "801750.SI",
+          "801760.SI",
+          "801770.SI",
+          "801780.SI",
+          "801790.SI",
+          "801880.SI",
+          "801890.SI"
+        ],
+        "rows": 28,
+        "sample_31_l1_proven": null
+      },
+      "SW2021": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": [
+          "801010.SI",
+          "801030.SI",
+          "801040.SI",
+          "801050.SI",
+          "801080.SI",
+          "801110.SI",
+          "801120.SI",
+          "801130.SI",
+          "801140.SI",
+          "801150.SI",
+          "801160.SI",
+          "801170.SI",
+          "801180.SI",
+          "801200.SI",
+          "801210.SI",
+          "801230.SI",
+          "801710.SI",
+          "801720.SI",
+          "801730.SI",
+          "801740.SI",
+          "801750.SI",
+          "801760.SI",
+          "801770.SI",
+          "801780.SI",
+          "801790.SI",
+          "801880.SI",
+          "801890.SI",
+          "801950.SI",
+          "801960.SI",
+          "801970.SI",
+          "801980.SI"
+        ],
+        "rows": 31,
+        "sample_31_l1_proven": true
+      }
+    },
+    "membership": {
+      "history_bank": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": 0,
+        "contains_delisted_wuhan": false,
+        "fields_present": {
+          "in_date": true,
+          "is_new": true,
+          "out_date": true
+        },
+        "includes_observed_2015_interval": false,
+        "interval_end_span": [],
+        "interval_start_span": [],
+        "invalid_interval": 0,
+        "is_new_distribution": {},
+        "possible_truncation": false,
+        "rows": 0,
+        "valid_exit": 0,
+        "valid_start": 0
+      },
+      "history_delisted": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": 0,
+        "contains_delisted_wuhan": false,
+        "fields_present": {
+          "in_date": true,
+          "is_new": true,
+          "out_date": true
+        },
+        "includes_observed_2015_interval": false,
+        "interval_end_span": [],
+        "interval_start_span": [],
+        "invalid_interval": 0,
+        "is_new_distribution": {},
+        "possible_truncation": false,
+        "rows": 0,
+        "valid_exit": 0,
+        "valid_start": 0
+      },
+      "history_property": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": 129,
+        "contains_delisted_wuhan": false,
+        "fields_present": {
+          "in_date": true,
+          "is_new": true,
+          "out_date": true
+        },
+        "includes_observed_2015_interval": true,
+        "interval_end_span": [
+          "20010427",
+          "20260630"
+        ],
+        "interval_start_span": [
+          "19880101",
+          "20230704"
+        ],
+        "invalid_interval": 0,
+        "is_new_distribution": {
+          "N": 129
+        },
+        "possible_truncation": false,
+        "rows": 129,
+        "valid_exit": 129,
+        "valid_start": 129
+      },
+      "member_bank": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": 42,
+        "contains_delisted_wuhan": false,
+        "fields_present": {
+          "in_date": true,
+          "is_new": true,
+          "out_date": true
+        },
+        "includes_observed_2015_interval": true,
+        "interval_end_span": [],
+        "interval_start_span": [
+          "19910403",
+          "20211210"
+        ],
+        "invalid_interval": 0,
+        "is_new_distribution": {
+          "Y": 42
+        },
+        "possible_truncation": false,
+        "rows": 42,
+        "valid_exit": 0,
+        "valid_start": 42
+      },
+      "member_delisted": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": 1,
+        "contains_delisted_wuhan": true,
+        "fields_present": {
+          "in_date": true,
+          "is_new": true,
+          "out_date": true
+        },
+        "includes_observed_2015_interval": true,
+        "interval_end_span": [],
+        "interval_start_span": [
+          "19990803",
+          "19990803"
+        ],
+        "invalid_interval": 0,
+        "is_new_distribution": {
+          "Y": 1
+        },
+        "possible_truncation": false,
+        "rows": 1,
+        "valid_exit": 0,
+        "valid_start": 1
+      },
+      "member_property": {
+        "access": {
+          "error": null,
+          "http_status": 200,
+          "message": "",
+          "minimum_points_disclosed": null,
+          "points_or_permission_rejected": false,
+          "provider_code": 0,
+          "transport_error": null
+        },
+        "codes": 115,
+        "contains_delisted_wuhan": false,
+        "fields_present": {
+          "in_date": true,
+          "is_new": true,
+          "out_date": true
+        },
+        "includes_observed_2015_interval": true,
+        "interval_end_span": [],
+        "interval_start_span": [
+          "19891101",
+          "20260701"
+        ],
+        "invalid_interval": 0,
+        "is_new_distribution": {
+          "Y": 115
+        },
+        "possible_truncation": false,
+        "rows": 115,
+        "valid_exit": 0,
+        "valid_start": 115
+      }
+    }
+  },
+  "phase6b_blockers": [
+    "delisted_wuhan_membership_exit_unverified",
+    "fina_indicator_actual_announcement_and_type_keys_unverified",
+    "income_strict_first_version_incomplete",
+    "cashflow_strict_first_version_incomplete"
+  ],
+  "pit_contract": {
+    "alternative_sources": [
+      "巨潮资讯或沪深交易所原始公告及修订档案",
+      "具备历史生效区间、退市保存及可审计版本的授权申万行业档案"
+    ],
+    "income_cashflow": [
+      "筛 report_type=1、update_flag=0，且 f_ann_date 完整并不早于 end_date。",
+      "按 ts_code/end_date 取最早 f_ann_date。最早日期存在字段冲突时隔离。同日版本真伪以原财报复核。",
+      "以实际公告日 f_ann_date 为可见日期。接口只有日期时，从公告日之后首个交易日开盘起使用。",
+      "在 2026-11-20 后公告的记录对冻结研究不可见。仅有 update_flag=1 的记录须补原始公告。",
+      "0/1 共存和不同报表类型分别统计。混合标志比例是版本线索，不能单独证明历史重述。"
+    ],
+    "indicator": [
+      "以原始披露报告和可验证版本计算季同比、扣非与 ROE。本轮 fina_indicator 字段投影未向接口请求 f_ann_date 或 report_type。用原始公告核验其版本和首发时间后才入 PIT。",
+      "银行/非银分别按历史行业及财报 comp_type 分类。银行用同业扣非 ROE、净息差、资产质量及资本约束。非银按券商/保险子业检查盈利质量、杠杆和监管资本。经营现金流与 FCFF 不作为金融股统一硬阈值。",
+      "非金融可用扣非净利润、经营现金流和现金转化率，按报告版本计算 TTM。单季利润和收入由同版本累计值差分，历史同比基期按当时可见版本保留。"
+    ],
+    "industry": [
+      "保留 SW2014 与 SW2021 分类版本和启用日期，历史归属使用 in_date/out_date 区间。",
+      "规则上线前核对调入调出的有效日语义、申万版本切换和退市样本。仅有 is_new 或当期标签无法恢复历史。",
+      "权限、历史或页容量缺口使用申万历史分类公告/授权数据库补齐，分别验证数据来源与可见时点。"
+    ]
+  },
+  "results": {
+    "SW2014": {
+      "archived_sha256": "38e447dc323618adb605f3a155db95b325d3eae189177548aad8fe97fac19db1",
+      "captured_at_utc": "2026-11-25T09:07:21.569897+00:00",
+      "endpoint": "index_classify",
+      "error": null,
+      "fields_requested": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "fields_returned": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "gzip_bytes": 637,
+      "gzip_sha256": "0cceb88395b6ffadd8562a5523dd2280520a885bfc77127c6edddfa226420952",
+      "has_more": false,
+      "http_status": 200,
+      "number": 17,
+      "params": {
+        "level": "L1",
+        "src": "SW2014"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "17_SW2014.receipt.json",
+      "receipt_sha256": "cb19b798be9630f71a64f3e6bb7a559374f31da209b6d59d48ad024415bfdb3b",
+      "received_sha256": "38e447dc323618adb605f3a155db95b325d3eae189177548aad8fe97fac19db1",
+      "response_bytes": 2021,
+      "response_file": "17_SW2014.json.gz",
+      "row_count": 28,
+      "server_date": "Wed, 25 Nov 2026 09:07:20 GMT",
+      "tag": "SW2014",
+      "transport_error": null
+    },
+    "SW2021": {
+      "archived_sha256": "8536fe41f6b6a1f5150f84d9ccfab691f2cc761d0fc58923b65c024210296b2e",
+      "captured_at_utc": "2026-11-25T09:07:20.361025+00:00",
+      "endpoint": "index_classify",
+      "error": null,
+      "fields_requested": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "fields_returned": [
+        "index_code",
+        "industry_name",
+        "level",
+        "industry_code",
+        "is_pub",
+        "parent_code",
+        "src"
+      ],
+      "gzip_bytes": 685,
+      "gzip_sha256": "328791cd7caf57a63a69eb555642e4fe8453ec3e80e6d37dcbd227d9a988762b",
+      "has_more": false,
+      "http_status": 200,
+      "number": 16,
+      "params": {
+        "level": "L1",
+        "src": "SW2021"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "16_SW2021.receipt.json",
+      "receipt_sha256": "a8ba4714dd6257ae09681e21146550ba31f8139054e4a32e7328de63f96968f1",
+      "received_sha256": "8536fe41f6b6a1f5150f84d9ccfab691f2cc761d0fc58923b65c024210296b2e",
+      "response_bytes": 2194,
+      "response_file": "16_SW2021.json.gz",
+      "row_count": 31,
+      "server_date": "Wed, 25 Nov 2026 09:07:19 GMT",
+      "tag": "SW2021",
+      "transport_error": null
+    },
+    "cashflow_002146_SZ": {
+      "archived_sha256": "0c9c5a34f4bc335cc4616ffb1231e670e061abd68d22b6f39ab40a74eb959783",
+      "captured_at_utc": "2026-11-25T09:07:09.363579+00:00",
+      "endpoint": "cashflow",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "gzip_bytes": 1587,
+      "gzip_sha256": "e53bbada1a459ca91779d902e57ecb5a80428d37c98eca222f4883afa2547f90",
+      "has_more": false,
+      "http_status": 200,
+      "number": 9,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "002146.SZ"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "09_cashflow_002146_SZ.receipt.json",
+      "receipt_sha256": "2976cbab62edf88b6eb818331d92eab49df70702aa75fad3da4748b2bfea4da9",
+      "received_sha256": "0c9c5a34f4bc335cc4616ffb1231e670e061abd68d22b6f39ab40a74eb959783",
+      "response_bytes": 6627,
+      "response_file": "09_cashflow_002146_SZ.json.gz",
+      "row_count": 66,
+      "server_date": "Wed, 25 Nov 2026 09:07:08 GMT",
+      "tag": "cashflow_002146_SZ",
+      "transport_error": null
+    },
+    "cashflow_300502_SZ": {
+      "archived_sha256": "527bcba778c2873376f04b28142a329bbcb02295f48ef239265ff39a5ca0ce07",
+      "captured_at_utc": "2026-11-25T09:07:18.238065+00:00",
+      "endpoint": "cashflow",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "gzip_bytes": 1472,
+      "gzip_sha256": "0b21fce936aac4469fcd2e78cc1ba5efdb0bba050d0c409e7d2d17967a417a66",
+      "has_more": false,
+      "http_status": 200,
+      "number": 15,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "300502.SZ"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "15_cashflow_300502_SZ.receipt.json",
+      "receipt_sha256": "e85d1a1320785881623d8bb8f4561841a0708fc3a2d37062c83bf7d471f71c8a",
+      "received_sha256": "527bcba778c2873376f04b28142a329bbcb02295f48ef239265ff39a5ca0ce07",
+      "response_bytes": 6326,
+      "response_file": "15_cashflow_300502_SZ.json.gz",
+      "row_count": 65,
+      "server_date": "Wed, 25 Nov 2026 09:07:17 GMT",
+      "tag": "cashflow_300502_SZ",
+      "transport_error": null
+    },
+    "cashflow_600005_SH": {
+      "archived_sha256": "4bbd0bc52ca5cad42b8b767278384706eb8e1473048f1ae873530c903005b406",
+      "captured_at_utc": "2026-11-25T09:07:13.535817+00:00",
+      "endpoint": "cashflow",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "gzip_bytes": 528,
+      "gzip_sha256": "e5613dd9fab5b1987ac128feee5a62db51311f9b768d313c253f471fb1707c4b",
+      "has_more": false,
+      "http_status": 200,
+      "number": 12,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "600005.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "12_cashflow_600005_SH.receipt.json",
+      "receipt_sha256": "53c63b71c1f15683528757943735ea6d6bf48948eb404e61d7426fc298ba7006",
+      "received_sha256": "4bbd0bc52ca5cad42b8b767278384706eb8e1473048f1ae873530c903005b406",
+      "response_bytes": 1484,
+      "response_file": "12_cashflow_600005_SH.json.gz",
+      "row_count": 13,
+      "server_date": "Wed, 25 Nov 2026 09:07:12 GMT",
+      "tag": "cashflow_600005_SH",
+      "transport_error": null
+    },
+    "cashflow_601398_SH": {
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "captured_at_utc": "2026-11-25T09:07:04.507627+00:00",
+      "endpoint": "cashflow",
+      "error": "transport_or_http",
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "fields_returned": [],
+      "gzip_bytes": 20,
+      "gzip_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "has_more": null,
+      "http_status": null,
+      "number": 6,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "601398.SH"
+      },
+      "provider_code": null,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "06_cashflow_601398_SH.receipt.json",
+      "receipt_sha256": "85bebf385c5cd9e245b798ee36e5a10abb80282cd875591d48bcc32ece5dec57",
+      "received_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "response_bytes": 0,
+      "response_file": "06_cashflow_601398_SH.json.gz",
+      "row_count": 0,
+      "server_date": null,
+      "tag": "cashflow_601398_SH",
+      "transport_error": "RemoteDisconnected"
+    },
+    "cashflow_vip": {
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "captured_at_utc": "2026-11-25T09:06:59.846942+00:00",
+      "endpoint": "cashflow_vip",
+      "error": "transport_or_http",
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "fields_returned": [],
+      "gzip_bytes": 20,
+      "gzip_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "has_more": null,
+      "http_status": null,
+      "number": 3,
+      "params": {
+        "period": "20240930"
+      },
+      "provider_code": null,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "03_cashflow_vip.receipt.json",
+      "receipt_sha256": "68c1fa0065f575d8896420ffe7924ea89eb314810331d2e71158f39be16da6bd",
+      "received_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "response_bytes": 0,
+      "response_file": "03_cashflow_vip.json.gz",
+      "row_count": 0,
+      "server_date": null,
+      "tag": "cashflow_vip",
+      "transport_error": "RemoteDisconnected"
+    },
+    "fina_indicator_002146_SZ": {
+      "archived_sha256": "29335fd8eb1e1ea8e27c8db1794de99ca693487c0340b313f25e72efeb1201c5",
+      "captured_at_utc": "2026-11-25T09:07:05.979375+00:00",
+      "endpoint": "fina_indicator",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "gzip_bytes": 2598,
+      "gzip_sha256": "5e2a607c93054cc2113d163b793be61e6f97f17b0de54ba05cf93ac3725248dd",
+      "has_more": false,
+      "http_status": 200,
+      "number": 7,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "002146.SZ"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "07_fina_indicator_002146_SZ.receipt.json",
+      "receipt_sha256": "d97cf2958cd6197400e27ae29481c5ca4a0d7fa6dda2a24c7a65e2fb4d309622",
+      "received_sha256": "29335fd8eb1e1ea8e27c8db1794de99ca693487c0340b313f25e72efeb1201c5",
+      "response_bytes": 10425,
+      "response_file": "07_fina_indicator_002146_SZ.json.gz",
+      "row_count": 91,
+      "server_date": "Wed, 25 Nov 2026 09:07:05 GMT",
+      "tag": "fina_indicator_002146_SZ",
+      "transport_error": null
+    },
+    "fina_indicator_300502_SZ": {
+      "archived_sha256": "87d4a77c8bd534d81bd09ef0cd93dd662a3204d11c659358578a72ef944c61b3",
+      "captured_at_utc": "2026-11-25T09:07:15.834738+00:00",
+      "endpoint": "fina_indicator",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "gzip_bytes": 2236,
+      "gzip_sha256": "99f762306cd266fdee703a4425e378ff955aede67aa17ad84ac10452cbf381e5",
+      "has_more": false,
+      "http_status": 200,
+      "number": 13,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "300502.SZ"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "13_fina_indicator_300502_SZ.receipt.json",
+      "receipt_sha256": "adcceddae5b9630512e64ea1c2a2cc4ac132d0218ac42d0062b7f8900ce945e0",
+      "received_sha256": "87d4a77c8bd534d81bd09ef0cd93dd662a3204d11c659358578a72ef944c61b3",
+      "response_bytes": 9401,
+      "response_file": "13_fina_indicator_300502_SZ.json.gz",
+      "row_count": 85,
+      "server_date": "Wed, 25 Nov 2026 09:07:15 GMT",
+      "tag": "fina_indicator_300502_SZ",
+      "transport_error": null
+    },
+    "fina_indicator_600005_SH": {
+      "archived_sha256": "b8a3ae8a15a7e0746e6314f4ad08eaf8028654bcc30bd2c40652d85120374e51",
+      "captured_at_utc": "2026-11-25T09:07:10.555250+00:00",
+      "endpoint": "fina_indicator",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "gzip_bytes": 792,
+      "gzip_sha256": "0f3367db56b55ae529bcc8e300db82b6269a4caa898b24767074a67119066d49",
+      "has_more": false,
+      "http_status": 200,
+      "number": 10,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "600005.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "10_fina_indicator_600005_SH.receipt.json",
+      "receipt_sha256": "9b5a47382cf37eea66d0e8e82526fcd6e5bb3e9a12c7722543c59ecef2c6b0a7",
+      "received_sha256": "b8a3ae8a15a7e0746e6314f4ad08eaf8028654bcc30bd2c40652d85120374e51",
+      "response_bytes": 3108,
+      "response_file": "10_fina_indicator_600005_SH.json.gz",
+      "row_count": 26,
+      "server_date": "Wed, 25 Nov 2026 09:07:09 GMT",
+      "tag": "fina_indicator_600005_SH",
+      "transport_error": null
+    },
+    "fina_indicator_601398_SH": {
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "captured_at_utc": "2026-11-25T09:07:00.869725+00:00",
+      "endpoint": "fina_indicator",
+      "error": "transport_or_http",
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "fields_returned": [],
+      "gzip_bytes": 20,
+      "gzip_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "has_more": null,
+      "http_status": null,
+      "number": 4,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "601398.SH"
+      },
+      "provider_code": null,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "04_fina_indicator_601398_SH.receipt.json",
+      "receipt_sha256": "8367f8c553a28a485d261341e16d84e01e3897e3a8152611fe033484736e3bfa",
+      "received_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "response_bytes": 0,
+      "response_file": "04_fina_indicator_601398_SH.json.gz",
+      "row_count": 0,
+      "server_date": null,
+      "tag": "fina_indicator_601398_SH",
+      "transport_error": "RemoteDisconnected"
+    },
+    "fina_indicator_vip": {
+      "archived_sha256": "4667d44ad564dfd833ad39a7c084c7ff11f56fc33e53b734bb8d8a38220805a4",
+      "captured_at_utc": "2026-11-25T09:06:23.657520+00:00",
+      "endpoint": "fina_indicator_vip",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "gzip_bytes": 221346,
+      "gzip_sha256": "3a4d502a7793b96a10aba8a0aebcdf479dd471beeb0b6816a4ff5fb2a065f946",
+      "has_more": false,
+      "http_status": 200,
+      "number": 1,
+      "params": {
+        "period": "20240930"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "01_fina_indicator_vip.receipt.json",
+      "receipt_sha256": "001ae4b462765234428b577cf9de0a946dea75b20fd78c92a17b7d195a189825",
+      "received_sha256": "4667d44ad564dfd833ad39a7c084c7ff11f56fc33e53b734bb8d8a38220805a4",
+      "response_bytes": 779512,
+      "response_file": "01_fina_indicator_vip.json.gz",
+      "row_count": 7283,
+      "server_date": "Wed, 25 Nov 2026 09:06:16 GMT",
+      "tag": "fina_indicator_vip",
+      "transport_error": null
+    },
+    "history_bank": {
+      "archived_sha256": "67d6f35cb8908a540804ffda5e284eb8e8092fea325049745376322a2f89020a",
+      "captured_at_utc": "2026-11-25T09:07:27.519488+00:00",
+      "endpoint": "index_member_all",
+      "error": null,
+      "fields_requested": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "fields_returned": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "gzip_bytes": 139,
+      "gzip_sha256": "3ca0a8d4f7cc131b886445b739fcc4b3afbf033900fc7d1f8e0625f936c9bb9c",
+      "has_more": false,
+      "http_status": 200,
+      "number": 21,
+      "params": {
+        "is_new": "N",
+        "l1_code": "801780.SI"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "21_history_bank.receipt.json",
+      "receipt_sha256": "2aabc851e035b104cb87aac9089ce3757d731a0c781b7c53ffadbf2d4c19886b",
+      "received_sha256": "67d6f35cb8908a540804ffda5e284eb8e8092fea325049745376322a2f89020a",
+      "response_bytes": 208,
+      "response_file": "21_history_bank.json.gz",
+      "row_count": 0,
+      "server_date": "Wed, 25 Nov 2026 09:07:26 GMT",
+      "tag": "history_bank",
+      "transport_error": null
+    },
+    "history_delisted": {
+      "archived_sha256": "67d6f35cb8908a540804ffda5e284eb8e8092fea325049745376322a2f89020a",
+      "captured_at_utc": "2026-11-25T09:07:32.483367+00:00",
+      "endpoint": "index_member_all",
+      "error": null,
+      "fields_requested": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "fields_returned": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "gzip_bytes": 139,
+      "gzip_sha256": "3ca0a8d4f7cc131b886445b739fcc4b3afbf033900fc7d1f8e0625f936c9bb9c",
+      "has_more": false,
+      "http_status": 200,
+      "number": 23,
+      "params": {
+        "is_new": "N",
+        "ts_code": "600005.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "23_history_delisted.receipt.json",
+      "receipt_sha256": "2f85e7079744cc58943e0c9829bf47b530bf838850e29201f0ede01b06034931",
+      "received_sha256": "67d6f35cb8908a540804ffda5e284eb8e8092fea325049745376322a2f89020a",
+      "response_bytes": 208,
+      "response_file": "23_history_delisted.json.gz",
+      "row_count": 0,
+      "server_date": "Wed, 25 Nov 2026 09:07:31 GMT",
+      "tag": "history_delisted",
+      "transport_error": null
+    },
+    "history_property": {
+      "archived_sha256": "ece7fed43bf59732b42966f5528d9eb83347471fcfb47295f27c9e2d639fa23a",
+      "captured_at_utc": "2026-11-25T09:07:30.286475+00:00",
+      "endpoint": "index_member_all",
+      "error": null,
+      "fields_requested": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "fields_returned": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "gzip_bytes": 2721,
+      "gzip_sha256": "19764cc1069ca41f9d99d107d34ef18c583f96f4198545435c783b81d5b9d61a",
+      "has_more": false,
+      "http_status": 200,
+      "number": 22,
+      "params": {
+        "is_new": "N",
+        "l1_code": "801180.SI"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "22_history_property.receipt.json",
+      "receipt_sha256": "80cb0e72701774318fa8aea325295e6c060c00684023ebbce438f39ff26c9bc2",
+      "received_sha256": "ece7fed43bf59732b42966f5528d9eb83347471fcfb47295f27c9e2d639fa23a",
+      "response_bytes": 19256,
+      "response_file": "22_history_property.json.gz",
+      "row_count": 129,
+      "server_date": "Wed, 25 Nov 2026 09:07:29 GMT",
+      "tag": "history_property",
+      "transport_error": null
+    },
+    "income_002146_SZ": {
+      "archived_sha256": "839dd55ef6aa37bb89291be639f332a6cfd837874ad5dc94c84ddf756d79b081",
+      "captured_at_utc": "2026-11-25T09:07:07.164377+00:00",
+      "endpoint": "income",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "gzip_bytes": 2102,
+      "gzip_sha256": "a7b589c6c9b51e14c6f7e5922efd93b16713df9d9fc3dbcdf190eb99a2e6a479",
+      "has_more": false,
+      "http_status": 200,
+      "number": 8,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "002146.SZ"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "08_income_002146_SZ.receipt.json",
+      "receipt_sha256": "aaaa882d5c6a921292a3e946bed2c7006d77e80a7cd67c34f18996bd7a457ccc",
+      "received_sha256": "839dd55ef6aa37bb89291be639f332a6cfd837874ad5dc94c84ddf756d79b081",
+      "response_bytes": 9555,
+      "response_file": "08_income_002146_SZ.json.gz",
+      "row_count": 73,
+      "server_date": "Wed, 25 Nov 2026 09:07:06 GMT",
+      "tag": "income_002146_SZ",
+      "transport_error": null
+    },
+    "income_300502_SZ": {
+      "archived_sha256": "dcbe58ec81b713c019d011ed3e04e2bd656e9b150534af28eabbef7e870d46f1",
+      "captured_at_utc": "2026-11-25T09:07:16.925153+00:00",
+      "endpoint": "income",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "gzip_bytes": 1909,
+      "gzip_sha256": "14a5099232b9981f15c7839ffb17a2cb1ad319b03b254a21cc838ef1991e524c",
+      "has_more": false,
+      "http_status": 200,
+      "number": 14,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "300502.SZ"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "14_income_300502_SZ.receipt.json",
+      "receipt_sha256": "faa4bf1f1b30784a152238af55a91f3712f1f961f8de887d16fa4413a1272087",
+      "received_sha256": "dcbe58ec81b713c019d011ed3e04e2bd656e9b150534af28eabbef7e870d46f1",
+      "response_bytes": 8452,
+      "response_file": "14_income_300502_SZ.json.gz",
+      "row_count": 67,
+      "server_date": "Wed, 25 Nov 2026 09:07:16 GMT",
+      "tag": "income_300502_SZ",
+      "transport_error": null
+    },
+    "income_600005_SH": {
+      "archived_sha256": "af89aa7fd18a7332d88a69e3f15fc1295384c0eca728d3fac05eda76f21b9e81",
+      "captured_at_utc": "2026-11-25T09:07:12.165639+00:00",
+      "endpoint": "income",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "gzip_bytes": 646,
+      "gzip_sha256": "5260a7d27a09ef9f41b3f0be0ef061bbaaab7236b7d88754dc4445f0ff39028b",
+      "has_more": false,
+      "http_status": 200,
+      "number": 11,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "600005.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "11_income_600005_SH.receipt.json",
+      "receipt_sha256": "b8b6a7ac96b8a028c72ed25a7e65a98ca3eccaf05c9bc831d16e2bad3f0d1eae",
+      "received_sha256": "af89aa7fd18a7332d88a69e3f15fc1295384c0eca728d3fac05eda76f21b9e81",
+      "response_bytes": 1887,
+      "response_file": "11_income_600005_SH.json.gz",
+      "row_count": 13,
+      "server_date": "Wed, 25 Nov 2026 09:07:11 GMT",
+      "tag": "income_600005_SH",
+      "transport_error": null
+    },
+    "income_601398_SH": {
+      "archived_sha256": "11484a7dfe286812e8fab1f42286f5df0b0b1dee85fa326f02adf74a462d754d",
+      "captured_at_utc": "2026-11-25T09:07:03.102696+00:00",
+      "endpoint": "income",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "gzip_bytes": 1563,
+      "gzip_sha256": "15b4a8c1c0a0910e3fe2780dbd573c97ad7ed67bd830084dceae81171e836551",
+      "has_more": false,
+      "http_status": 200,
+      "number": 5,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "601398.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "05_income_601398_SH.receipt.json",
+      "receipt_sha256": "3662c109e2bbabbd5f42b428a31764dc82658439c2f2fb6a8273638bf8636fa3",
+      "received_sha256": "11484a7dfe286812e8fab1f42286f5df0b0b1dee85fa326f02adf74a462d754d",
+      "response_bytes": 11783,
+      "response_file": "05_income_601398_SH.json.gz",
+      "row_count": 89,
+      "server_date": "Wed, 25 Nov 2026 09:07:02 GMT",
+      "tag": "income_601398_SH",
+      "transport_error": null
+    },
+    "income_vip": {
+      "archived_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "captured_at_utc": "2026-11-25T09:06:43.916688+00:00",
+      "endpoint": "income_vip",
+      "error": "transport_or_http",
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "total_revenue",
+        "revenue",
+        "n_income_attr_p",
+        "operate_profit"
+      ],
+      "fields_returned": [],
+      "gzip_bytes": 20,
+      "gzip_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "has_more": null,
+      "http_status": null,
+      "number": 2,
+      "params": {
+        "period": "20240930"
+      },
+      "provider_code": null,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "02_income_vip.receipt.json",
+      "receipt_sha256": "7810734ff13ef1aafb66d255293e20daea8b16ad209e7a33fa28c4146ac5ab20",
+      "received_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "response_bytes": 0,
+      "response_file": "02_income_vip.json.gz",
+      "row_count": 0,
+      "server_date": null,
+      "tag": "income_vip",
+      "transport_error": "TimeoutError"
+    },
+    "member_bank": {
+      "archived_sha256": "60ab08a2314c337178017efd078ac0b39bc9acfe25e51ee834c1c248993ad2e2",
+      "captured_at_utc": "2026-11-25T09:07:22.626716+00:00",
+      "endpoint": "index_member_all",
+      "error": null,
+      "fields_requested": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "fields_returned": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "gzip_bytes": 934,
+      "gzip_sha256": "29940d98ff02ccc4f8ae3323ddbe9f622585d7905fc3a4fd8573e3491d2ee33e",
+      "has_more": false,
+      "http_status": 200,
+      "number": 18,
+      "params": {
+        "l1_code": "801780.SI"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "18_member_bank.receipt.json",
+      "receipt_sha256": "1d349c058fdf4e6a7741e7a874f445fbcbe53afc35bfbe27b28cc12ea6603f57",
+      "received_sha256": "60ab08a2314c337178017efd078ac0b39bc9acfe25e51ee834c1c248993ad2e2",
+      "response_bytes": 6008,
+      "response_file": "18_member_bank.json.gz",
+      "row_count": 42,
+      "server_date": "Wed, 25 Nov 2026 09:07:21 GMT",
+      "tag": "member_bank",
+      "transport_error": null
+    },
+    "member_delisted": {
+      "archived_sha256": "0b86b102edee331897175a4edef240f3a14907335541fd9f74a4c867de109f0f",
+      "captured_at_utc": "2026-11-25T09:07:25.939416+00:00",
+      "endpoint": "index_member_all",
+      "error": null,
+      "fields_requested": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "fields_returned": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "gzip_bytes": 238,
+      "gzip_sha256": "13e4f3bcb20503d7582e7d15b49da7bc9039782ecadb3b27d29178fe7bb19dca",
+      "has_more": false,
+      "http_status": 200,
+      "number": 20,
+      "params": {
+        "ts_code": "600005.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "20_member_delisted.receipt.json",
+      "receipt_sha256": "2cf4daef190eba10822354de4c50f54b3553d686afd0fad1d5d6e7626d3b4326",
+      "received_sha256": "0b86b102edee331897175a4edef240f3a14907335541fd9f74a4c867de109f0f",
+      "response_bytes": 341,
+      "response_file": "20_member_delisted.json.gz",
+      "row_count": 1,
+      "server_date": "Wed, 25 Nov 2026 09:07:25 GMT",
+      "tag": "member_delisted",
+      "transport_error": null
+    },
+    "member_property": {
+      "archived_sha256": "d21851fb117312e16031a3484d9b4aae75458eb5f67c984f9c09ab92a1c2f8c6",
+      "captured_at_utc": "2026-11-25T09:07:24.927178+00:00",
+      "endpoint": "index_member_all",
+      "error": null,
+      "fields_requested": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "fields_returned": [
+        "l1_code",
+        "l1_name",
+        "l2_code",
+        "l2_name",
+        "l3_code",
+        "l3_name",
+        "ts_code",
+        "name",
+        "in_date",
+        "out_date",
+        "is_new"
+      ],
+      "gzip_bytes": 2211,
+      "gzip_sha256": "e4409a66dd49d8559849098fdc5a765dcd7340012cb33fc2e3b1ba0fa2df70cd",
+      "has_more": false,
+      "http_status": 200,
+      "number": 19,
+      "params": {
+        "l1_code": "801180.SI"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "19_member_property.receipt.json",
+      "receipt_sha256": "9f61e49db95e6ed133c87be681552d380504aa9d41819682fd84465ece69f360",
+      "received_sha256": "d21851fb117312e16031a3484d9b4aae75458eb5f67c984f9c09ab92a1c2f8c6",
+      "response_bytes": 16248,
+      "response_file": "19_member_property.json.gz",
+      "row_count": 115,
+      "server_date": "Wed, 25 Nov 2026 09:07:24 GMT",
+      "tag": "member_property",
+      "transport_error": null
+    },
+    "retry_cashflow_601398_SH": {
+      "archived_sha256": "944db34f967dfa2c0ce830222d13e2be599ee1e7f70fe289e392dbd6e56d3f4f",
+      "captured_at_utc": "2026-11-25T09:08:38.655889+00:00",
+      "endpoint": "cashflow",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "f_ann_date",
+        "end_date",
+        "report_type",
+        "update_flag",
+        "comp_type",
+        "n_cashflow_act",
+        "free_cashflow"
+      ],
+      "gzip_bytes": 1139,
+      "gzip_sha256": "a2d1ca8a6009dd9262af043395fbb5b6602733f439e12988a8066e8fb65e68a4",
+      "has_more": false,
+      "http_status": 200,
+      "number": 24,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "601398.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "24_retry_cashflow_601398_SH.receipt.json",
+      "receipt_sha256": "199f9431570d5486a7d40547a480edc150d0d5c1436481ea3b7f760f9db0bf10",
+      "received_sha256": "944db34f967dfa2c0ce830222d13e2be599ee1e7f70fe289e392dbd6e56d3f4f",
+      "response_bytes": 6419,
+      "response_file": "24_retry_cashflow_601398_SH.json.gz",
+      "row_count": 67,
+      "server_date": "Wed, 25 Nov 2026 09:08:37 GMT",
+      "tag": "retry_cashflow_601398_SH",
+      "transport_error": null
+    },
+    "retry_fina_indicator_601398_SH": {
+      "archived_sha256": "be782e6dd9386b16ea70cc7f8ba8c38528fc6d48d83d12af253bcaaaebf18d13",
+      "captured_at_utc": "2026-11-25T09:08:44.876782+00:00",
+      "endpoint": "fina_indicator",
+      "error": null,
+      "fields_requested": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "fields_returned": [
+        "ts_code",
+        "ann_date",
+        "end_date",
+        "update_flag",
+        "profit_dedt",
+        "roe_dt",
+        "q_profit_yoy",
+        "q_netprofit_yoy",
+        "q_gr_yoy",
+        "fcff"
+      ],
+      "gzip_bytes": 2063,
+      "gzip_sha256": "9e4795416a350b063c396184b696a05284a3be939479f6f7c3cd65a5c3ea999d",
+      "has_more": false,
+      "http_status": 200,
+      "number": 25,
+      "params": {
+        "end_date": "20261120",
+        "start_date": "20140101",
+        "ts_code": "601398.SH"
+      },
+      "provider_code": 0,
+      "provider_message": null,
+      "quarantined_secret_echo": false,
+      "receipt_file": "25_retry_fina_indicator_601398_SH.receipt.json",
+      "receipt_sha256": "24267c17d441a8107050675bd2a7aa3d83e6cb193617134c41fef82350912911",
+      "received_sha256": "be782e6dd9386b16ea70cc7f8ba8c38528fc6d48d83d12af253bcaaaebf18d13",
+      "response_bytes": 9492,
+      "response_file": "25_retry_fina_indicator_601398_SH.json.gz",
+      "row_count": 92,
+      "server_date": "Wed, 25 Nov 2026 09:08:44 GMT",
+      "tag": "retry_fina_indicator_601398_SH",
+      "transport_error": null
+    }
+  },
+  "sample_codes": [
+    "601398.SH",
+    "002146.SZ",
+    "600005.SH",
+    "300502.SZ"
+  ],
+  "vip_access": {
+    "cashflow_vip": {
+      "error": "transport_or_http",
+      "has_more": null,
+      "http_status": null,
+      "message": "",
+      "minimum_points_disclosed": null,
+      "points_or_permission_rejected": false,
+      "possible_truncation": false,
+      "provider_code": null,
+      "rows": 0,
+      "transport_error": "RemoteDisconnected",
+      "unique_codes": 0
+    },
+    "fina_indicator_vip": {
+      "error": null,
+      "has_more": false,
+      "http_status": 200,
+      "message": "",
+      "minimum_points_disclosed": null,
+      "points_or_permission_rejected": false,
+      "possible_truncation": false,
+      "provider_code": 0,
+      "rows": 7283,
+      "transport_error": null,
+      "unique_codes": 6100
+    },
+    "income_vip": {
+      "error": "transport_or_http",
+      "has_more": null,
+      "http_status": null,
+      "message": "",
+      "minimum_points_disclosed": null,
+      "points_or_permission_rejected": false,
+      "possible_truncation": false,
+      "provider_code": null,
+      "rows": 0,
+      "transport_error": "TimeoutError",
+      "unique_codes": 0
+    }
+  },
+  "vip_test_period": "20240930"
+}

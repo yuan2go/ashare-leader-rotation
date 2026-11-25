@@ -1,0 +1,42 @@
+[
+  {
+    "ts_code": "600989.SH",
+    "ex_date": "20240724",
+    "record_date": "20240723",
+    "pay_date": "20240724",
+    "disclosure_date": "20240718",
+    "notice_id": "2024-040",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2024-07-18/1220664181.PDF",
+    "allocation_source_url": "https://static.cninfo.com.cn/finalpage/2024-07-18/1220664182.PDF",
+    "total_shares": 7333360000,
+    "declared_reference_cash_per_share": "0.28",
+    "classes": [
+      {"holder_class": "中小股东", "shares": 2172889937, "cash_per_share": "0.3158", "cash_total": "686198642.10"},
+      {"holder_class": "大股东", "shares": 5160470063, "cash_per_share": "0.2650", "cash_total": "1367524566.70"}
+    ]
+  },
+  {
+    "ts_code": "601088.SH",
+    "ex_date": "20170710",
+    "record_date": "20170707",
+    "pay_date": "20170710",
+    "disclosure_date": "20170703",
+    "notice_id": "临2017-031",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2017-07-03/1203675941.PDF",
+    "year_end_cash_per_share": "0.460",
+    "special_cash_per_share": "2.510",
+    "combined_cash_per_share": "2.970"
+  },
+  {
+    "ts_code": "601966.SH",
+    "ex_date": "20250710",
+    "record_date": "20250709",
+    "pay_date": "20250710",
+    "disclosure_date": "20250703",
+    "notice_id": "2025-044",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2025-07-03/1224067624.PDF",
+    "2024_q4_cash_per_share": "0.014",
+    "2025_q1_cash_per_share": "0.070",
+    "combined_cash_per_share": "0.084"
+  }
+]

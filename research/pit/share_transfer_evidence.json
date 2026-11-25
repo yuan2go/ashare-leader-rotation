@@ -1,0 +1,38 @@
+[
+  {
+    "ts_code": "002131.SZ",
+    "source_row_sha256": "5e284d36bb428640b115b76289b772a9aa43c0e50d9257a61a1ad69bc9778b70",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2017-12-08/1204199768.PDF",
+    "notice_id": "2017-119",
+    "disclosure_date": "20171208",
+    "record_date": "20171213",
+    "excluded_holders": ["徐佳亮", "徐晓峰", "迹象信息技术（上海）有限公司"],
+    "eligibility": "登记日收市后在册且不属于公告列明的除外股东",
+    "transferred_shares": 21993909,
+    "eligible_shares": 5517863487,
+    "shares_before": 5589458472,
+    "shares_after": 5589458472,
+    "possible_credit_dates": ["20171215", "20171218"],
+    "allocation": "按登记持股比例计算，先取整数，剩余股份按小数余数降序分配",
+    "tradable_from": "实际到账后的下一交易日"
+  },
+  {
+    "ts_code": "600485.SH",
+    "source_row_sha256": "ccd76b73ff9d4ed63d2cccd72c44628cc17846273c498d098bdf2d3a81facc99",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2018-06-26/1205090955.PDF",
+    "notice_id": "临2018-056",
+    "disclosure_date": "20180626",
+    "record_date": "20170926",
+    "record_notice_date": "20170926",
+    "record_notice_url": "https://static.cninfo.com.cn/finalpage/2017-09-26/1203999695.PDF",
+    "excluded_holders": ["实施公告所列的2014年重大资产重组股份认购方"],
+    "eligibility": "登记日收市后在册且不属于公告列明的认购方",
+    "transferred_shares": 181294782,
+    "per_ten_shares": "1.61",
+    "shares_before": 2923742782,
+    "shares_after": 2923742782,
+    "possible_credit_dates": ["20180702"],
+    "allocation": "每十股获赠1.61股，按小数余数降序分配剩余股份",
+    "tradable_from": "到账后次日满足流通条件，交易另须股票已复牌"
+  }
+]

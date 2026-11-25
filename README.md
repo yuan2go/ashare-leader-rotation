@@ -8,7 +8,7 @@ v4.0 导入基线含 16 股与 7 只 ETF。当前签发工作区含 50 股，49 
 50/50 BASE 的趋势袖子有 2 个槽，防御袖子有 3 个。防御在完整自然月的最后一个已公告周信号日换仓。BIWEEKLY 是趋势袖子对照。W_Bear 按 policy 的 2021-03-01 至 2023-11-19，跨实验比较须核对首末交易日与实际会话数。
 P1 验收表含 11 个容差锚点（收益与回撤各容许 0.05 个百分点）；44 组影子账本逐日逐笔精确对账。离线 HTML 属于旧研究的签发身份，复核历史实验时保留原快照。
 无参 `node tests/parity.cjs` 以 --parity-only 启动 Python 合成回归。指定包文件时，JS 读取该包并核对准备结果、信号、逐日账本和成交。
-CI 在 Python 3.11 / Node 24 上运行全量发现。缺真实行情的干净检出需配置本仓库 Actions 的 `stage2-inputs` 归档，指定仓库变量 `STAGE2_FIXTURE_RUN_ID` 和包 `stage2-inputs.zip` 的 `STAGE2_FIXTURE_SHA256`。包内文件使用仓库相对路径，清单见 CI 的 Restore signed test inputs。缺包、缺文件或摘要不符均使验收失败。
+公开 CI 在 Python 3.11 / Node 24 上核对冻结文件并运行合成对账与无网采集测试。签发回归使用本仓库 Actions 的 `stage2-inputs` 归档，配置 `STAGE2_FIXTURE_RUN_ID` 和包 `stage2-inputs.zip` 的 `STAGE2_FIXTURE_SHA256` 后执行全量发现，也可手动选择 `signed_replay`。包内文件使用仓库相对路径，清单见 CI 的 Restore signed test inputs。签发回归启用时，缺包、缺文件或摘要不符均使验收失败。
 例行 manifest 只哈希实际消费的文件，完整缓存取证另用 `python -B -X utf8 scripts/cache_forensics.py --full-cache`。历史 600428 插件状态见 `archive/legacy_research/README.md`。
 
 

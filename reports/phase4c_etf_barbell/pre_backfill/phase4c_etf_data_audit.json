@@ -1,0 +1,613 @@
+{
+  "status": "blocked",
+  "http_requests": 0,
+  "freeze_date": "2026-11-20",
+  "etf_price_basis": "unadjusted_price_only_conservative_no_dividends",
+  "price_basis_evidence": "BaoStock adjustflag=3 and hash-verified local market quote cache",
+  "existing_etf_action_files": [],
+  "action_file_candidates": [
+    "data/verified/etf_scales.csv",
+    "data/verified/etf_actions.csv",
+    "data/verified/etf_dividends.csv",
+    "data/verified/etf_adj_factor.csv"
+  ],
+  "unseen_action_classification": "anomaly_scan_cannot_establish_the_absence_or_type_of_corporate_actions",
+  "radar_usable_rule": "published <= freeze_date; affects shares availability, not close-price completeness",
+  "alternate_etf_files": [
+    {
+      "path": "data/verified/etf.csv",
+      "columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source"
+      ],
+      "rows": 1,
+      "has_ohlc": false
+    },
+    {
+      "path": "data/fetch_cache/baseline-2026-11-23/verified/etf.csv",
+      "columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source"
+      ],
+      "rows": 1,
+      "has_ohlc": false
+    },
+    {
+      "path": "data/fetch_cache/batch1-before/data/etf.csv",
+      "columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "rows": 11466,
+      "has_ohlc": false
+    },
+    {
+      "path": "data/fetch_cache/pre-step-a-2026-11-23/data/etf.csv",
+      "columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source"
+      ],
+      "rows": 11466,
+      "has_ohlc": false
+    }
+  ],
+  "pools": {
+    "ETF4": [
+      "510050",
+      "510300",
+      "510500",
+      "159915"
+    ],
+    "ETF5": [
+      "510050",
+      "510300",
+      "510500",
+      "159915",
+      "588000"
+    ],
+    "duplicate_CSI300_excluded": [
+      "159919",
+      "510330"
+    ]
+  },
+  "close_jump_threshold_pct": 22,
+  "opening_gap_threshold_pct": 22,
+  "effective_etf_backtest_end": null,
+  "price_ohlc_missing_funds": 7,
+  "findings": [
+    {
+      "code": "510050",
+      "retained_pool": "ETF4_and_ETF5",
+      "raw_path": "data/fetch_cache/5923543d3023ba2a8df6884c52ffe5d3c6ac2dbe98106f1e1f2fc6ed8d676d2c.json",
+      "raw_sha256": "309cd88fd1790b687911579283b5240a3455b73ea6c336d63d3ca2eb9407f87c",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sh.510050#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2015-01-05",
+      "raw_last": "2026-11-20",
+      "raw_rows": 2887,
+      "open_day_close_rows": 2887,
+      "close_first": "2015-01-05",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [],
+      "fold_or_split_status": "no_close_jump_over_22pct",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-01-02",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1668,
+      "radar_usable": 1667,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    },
+    {
+      "code": "510300",
+      "retained_pool": "ETF4_and_ETF5",
+      "raw_path": "data/fetch_cache/007a7566dcb14e7d0804edf6b11d76714d21c816772512ee9b9843bdd94f84c0.json",
+      "raw_sha256": "a910377e6eb6899d6248e7e60a43b8758403a322df3a1d0161c4fda2ab640a14",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sh.510300#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2015-01-05",
+      "raw_last": "2026-11-20",
+      "raw_rows": 2887,
+      "open_day_close_rows": 2887,
+      "close_first": "2015-01-05",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [],
+      "fold_or_split_status": "no_close_jump_over_22pct",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-01-02",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1668,
+      "radar_usable": 1667,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    },
+    {
+      "code": "510500",
+      "retained_pool": "ETF4_and_ETF5",
+      "raw_path": "data/fetch_cache/f5832696990b72f4ad0e9bf07fe481f59245a18b20ac0f6d5dbecab087a13c2d.json",
+      "raw_sha256": "89f8bfb8c1fd21fdc8b4852041638efe8e5858a8e6c1a4cc02ac1d842b5131f0",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sh.510500#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2015-01-05",
+      "raw_last": "2026-11-20",
+      "raw_rows": 2887,
+      "open_day_close_rows": 2885,
+      "close_first": "2015-01-05",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [
+        "2015-04-13",
+        "2015-04-14"
+      ],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [
+        {
+          "previous_open_session": "2015-04-10",
+          "date": "2015-04-15",
+          "prior_close": 2.243,
+          "intervening_unavailable": [
+            "2015-04-13",
+            "2015-04-14"
+          ],
+          "close": 7.818,
+          "change_pct": 248.5510477039679
+        }
+      ],
+      "fold_or_split_status": "suspected_unreconciled",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-01-02",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1668,
+      "radar_usable": 1667,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    },
+    {
+      "code": "159915",
+      "retained_pool": "ETF4_and_ETF5",
+      "raw_path": "data/fetch_cache/8ca679e48ded1e9085e1c41af431872b18194002d45b2f2b485e4aa2a37779a1.json",
+      "raw_sha256": "ee6aace9a021d8cd8ca7362661e604b756aecdba385be57809206246a3cd5f57",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sz.159915#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2015-01-05",
+      "raw_last": "2026-11-20",
+      "raw_rows": 2887,
+      "open_day_close_rows": 2886,
+      "close_first": "2015-01-05",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [
+        "2021-02-08"
+      ],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [],
+      "fold_or_split_status": "no_close_jump_over_22pct",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-01-02",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1667,
+      "radar_usable": 1666,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    },
+    {
+      "code": "588000",
+      "retained_pool": "ETF5_only",
+      "raw_path": "data/fetch_cache/c8b990919bc840f332948f9f81def11f98bfb63238527e6e09fd5115be5b4354.json",
+      "raw_sha256": "cf121790331b761ad334b1fb71cb9bde4f9508e860580ad8d0c79b2920ad9899",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sh.588000#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2020-11-16",
+      "raw_last": "2026-11-20",
+      "raw_rows": 1459,
+      "open_day_close_rows": 1459,
+      "close_first": "2020-11-16",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [],
+      "fold_or_split_status": "no_close_jump_over_22pct",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-11-16",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1459,
+      "radar_usable": 1458,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    },
+    {
+      "code": "159919",
+      "retained_pool": "duplicate_CSI300_excluded",
+      "raw_path": "data/fetch_cache/2525d5b838cbf3229886ac7027e28ed44277d7a92f5e7826e0d8d1d6a13aa44a.json",
+      "raw_sha256": "c53bbfbbc621215d1c97c106c8550dfaea3bc81ddd62bbcf815d22a9e77c00c4",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sz.159919#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2015-01-05",
+      "raw_last": "2026-11-20",
+      "raw_rows": 2887,
+      "open_day_close_rows": 2886,
+      "close_first": "2015-01-05",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [
+        "2019-01-11"
+      ],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [],
+      "fold_or_split_status": "no_close_jump_over_22pct",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-01-02",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1668,
+      "radar_usable": 1667,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    },
+    {
+      "code": "510330",
+      "retained_pool": "duplicate_CSI300_excluded",
+      "raw_path": "data/fetch_cache/ece26a4331e93aca26bc9bbd57cb2ff9c25e3f3f7b19eb46f663d5d60bf84f65.json",
+      "raw_sha256": "262be8427579e7266a62a0210cc053eb8381f26091abcd1da78af93fe0c3c7be",
+      "source": "https://www.baostock.com/baostock/index.php/Python_API?fields=date%2Ccode%2Cclose%2Camount%2Ctradestatus%2Cadjustflag&start_date=2015-01-05&end_date=2026-11-20&frequency=d&adjustflag=3&code=sh.510330#query_history_k_data_plus",
+      "raw_columns": [
+        "adjustflag",
+        "amount",
+        "close",
+        "code",
+        "date",
+        "tradestatus"
+      ],
+      "raw_first": "2015-01-05",
+      "raw_last": "2026-11-20",
+      "raw_rows": 2887,
+      "open_day_close_rows": 2887,
+      "close_first": "2015-01-05",
+      "close_last": "2026-11-20",
+      "complete_ohlc_rows": 0,
+      "last_complete_ohlc": null,
+      "complete_ohlc_on_freeze": false,
+      "suspended_dates": [],
+      "missing_ohlc_columns": [
+        "open",
+        "high",
+        "low"
+      ],
+      "quote_adjustflag": "3",
+      "adj_factor_in_cache": false,
+      "comparable_open_gap_pairs": 0,
+      "opening_gap_anomalies": [],
+      "close_jump_anomalies": [],
+      "fold_or_split_status": "no_close_jump_over_22pct",
+      "radar_path": "data/etf.csv",
+      "radar_columns": [
+        "date",
+        "code",
+        "published",
+        "shares",
+        "price",
+        "amount",
+        "share_scale",
+        "shares_source",
+        "source",
+        "published_basis",
+        "published_at"
+      ],
+      "radar_first": "2020-01-02",
+      "radar_last": "2026-11-20",
+      "radar_rows": 1668,
+      "radar_usable": 1667,
+      "radar_last_usable": "2026-11-19",
+      "radar_rows_after_freeze_publication": [
+        {
+          "date": "2026-11-20",
+          "published": "2026-11-23",
+          "published_basis": "exchange_t1_convention"
+        }
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "code": "510050",
+      "reason": "no_complete_trade_ohlc"
+    },
+    {
+      "code": "510300",
+      "reason": "no_complete_trade_ohlc"
+    },
+    {
+      "code": "510500",
+      "reason": "no_complete_trade_ohlc"
+    },
+    {
+      "code": "510500",
+      "reason": "unreconciled_raw_price_discontinuity"
+    },
+    {
+      "code": "159915",
+      "reason": "no_complete_trade_ohlc"
+    },
+    {
+      "code": "588000",
+      "reason": "no_complete_trade_ohlc"
+    },
+    {
+      "code": "159919",
+      "reason": "no_complete_trade_ohlc"
+    },
+    {
+      "code": "510330",
+      "reason": "no_complete_trade_ohlc"
+    }
+  ],
+  "input_sha256": {
+    "data/calendar.csv": "d6e8ce1ffd88a6b9a9c1f40ee81dd97cd0d4fbfa874d6ce3f15a5fe4d3e7ad06",
+    "data/etf.csv": "4c43000138c0774b1e3f431e0d04bb15496c17e0ed103152cf2c98c75e2c2426",
+    "data/fetch_cache/007a7566dcb14e7d0804edf6b11d76714d21c816772512ee9b9843bdd94f84c0.json": "a910377e6eb6899d6248e7e60a43b8758403a322df3a1d0161c4fda2ab640a14",
+    "data/fetch_cache/2525d5b838cbf3229886ac7027e28ed44277d7a92f5e7826e0d8d1d6a13aa44a.json": "c53bbfbbc621215d1c97c106c8550dfaea3bc81ddd62bbcf815d22a9e77c00c4",
+    "data/fetch_cache/5923543d3023ba2a8df6884c52ffe5d3c6ac2dbe98106f1e1f2fc6ed8d676d2c.json": "309cd88fd1790b687911579283b5240a3455b73ea6c336d63d3ca2eb9407f87c",
+    "data/fetch_cache/8ca679e48ded1e9085e1c41af431872b18194002d45b2f2b485e4aa2a37779a1.json": "ee6aace9a021d8cd8ca7362661e604b756aecdba385be57809206246a3cd5f57",
+    "data/fetch_cache/baseline-2026-11-23/verified/etf.csv": "078b4e71d6155d689c8c2ee43b9c7e1283ac69a58a7757ce54041fa3c8f47696",
+    "data/fetch_cache/batch1-before/data/etf.csv": "4c43000138c0774b1e3f431e0d04bb15496c17e0ed103152cf2c98c75e2c2426",
+    "data/fetch_cache/c8b990919bc840f332948f9f81def11f98bfb63238527e6e09fd5115be5b4354.json": "cf121790331b761ad334b1fb71cb9bde4f9508e860580ad8d0c79b2920ad9899",
+    "data/fetch_cache/ece26a4331e93aca26bc9bbd57cb2ff9c25e3f3f7b19eb46f663d5d60bf84f65.json": "262be8427579e7266a62a0210cc053eb8381f26091abcd1da78af93fe0c3c7be",
+    "data/fetch_cache/f5832696990b72f4ad0e9bf07fe481f59245a18b20ac0f6d5dbecab087a13c2d.json": "89f8bfb8c1fd21fdc8b4852041638efe8e5858a8e6c1a4cc02ac1d842b5131f0",
+    "data/fetch_cache/pre-step-a-2026-11-23/data/etf.csv": "3b9c7b195c98a6a39d95fb8eb81bf882072509a1d97eef18182572dc5a7be31d",
+    "data/fetch_provenance.json": "35cc59e4884d8f57dd20745560d2afb391b06fd591c632c792db3aadfbf378fd",
+    "data/verified/etf.csv": "078b4e71d6155d689c8c2ee43b9c7e1283ac69a58a7757ce54041fa3c8f47696",
+    "reports/phase4a_research/phase4a_manifest.json": "ed7eb5f05dff6ff92606667ce3349985dc5a5c33a45a0feee6135b1cb362ed6a"
+  }
+}

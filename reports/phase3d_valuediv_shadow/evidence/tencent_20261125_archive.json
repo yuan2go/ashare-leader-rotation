@@ -1,0 +1,3602 @@
+[
+ {
+  "code": "000001.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000001",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000001.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.428763+08:00",
+  "raw_sha256": "98c86aa1501cf33cb6879b9ce4c422798993ac05b5677656805a724ed12b8562",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000002.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000002",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000002.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.498813+08:00",
+  "raw_sha256": "1bea57c7731e5ed70e9299c03c369119202c0a008b3ad56f3217f3b11f7d4fef",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000063.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000063",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000063.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.615081+08:00",
+  "raw_sha256": "54ba94b2d92c5a977c003e9e86597471dc97cd6c3dd3ef0e7119db219a516af9",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000100.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000100",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000100.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.498813+08:00",
+  "raw_sha256": "210728e5df81950b182465e3cfa27ec3fc5489435fd37a103bdf36d5d15319c2",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000157.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000157",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000157.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.615610+08:00",
+  "raw_sha256": "1e67efe931aa1fa1c91295dee462ea468ea0a969682d0023e837abd5868ddb8b",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000166.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000166",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000166.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.755934+08:00",
+  "raw_sha256": "d04df73128461ce237b1b799a30337111064ae9f9c3db03697b1c23da2751bfa",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000301.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000301",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000301.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.897923+08:00",
+  "raw_sha256": "ed952b4cc5679dd07968e21fecf53d9916505be014ac45745485050b32953ad7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000333.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000333",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000333.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:54.964538+08:00",
+  "raw_sha256": "36da52cb04e5697f80dca0ffe312ec7759bd2452b39a3991e045f8741b806787",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000338.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000338",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000338.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.073155+08:00",
+  "raw_sha256": "461e34c37e00e55d53bd10596d98104c7db6aa22475194b3580b60ad5bbaaa9a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000408.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000408",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000408.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.017827+08:00",
+  "raw_sha256": "0e9763b68fb15e1966bbb9e40acfb50ceb885eeea7d3c1831996a8ed10feff91",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000425.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000425",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000425.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:54 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.075856+08:00",
+  "raw_sha256": "b1adda5c0f9ca41728c6a94a35fbf5accf1c3c0dbb78bd8418e2e3c107e3b2e7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000538.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000538",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000538.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.208940+08:00",
+  "raw_sha256": "f7b162f817877f4f2309361bc756a60b3a0f5a4be48990cacb4bc5947181c7ac",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000568.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000568",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000568.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.331049+08:00",
+  "raw_sha256": "2bb4e9ea1c1ab986ee4933188f4f4ba21ee94b1286e0d442bfb89501b87d645d",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000596.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000596",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000596.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.406718+08:00",
+  "raw_sha256": "40baa2c9217e08218410ae2539d84b9617718cb360232767cd1dbb97638dee44",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000617.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000617",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000617.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.472302+08:00",
+  "raw_sha256": "88d5617057cd856dc6350b6bd459ae1ad23a2527229b399556e03673ae7394c0",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000625.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000625",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000625.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.528971+08:00",
+  "raw_sha256": "834e307baa7ad4d590ab0d9bc52a7606b41fbfce45448729bced1c309afb8838",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000630.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000630",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000630.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.529981+08:00",
+  "raw_sha256": "921c3147e18c151e9c06577012c4f5db277174dc638806b4ae5005d76ee0a674",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000651.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000651",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000651.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.654475+08:00",
+  "raw_sha256": "94de1f7ecf10cd740b168932a7a7c323409281bbe3cabde6c425332476ebdb08",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000657.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000657",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000657.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.724623+08:00",
+  "raw_sha256": "849525433cb37000fdcacc1bcccdb8359828b67cd4373309a820d8a5abe675ac",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000708.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000708",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000708.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.850265+08:00",
+  "raw_sha256": "dcc8a901f4f5f7101431e9a4b64246af29a1a7685cf14376b0f93cb28baf90a8",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000725.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000725",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000725.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.010286+08:00",
+  "raw_sha256": "19aa97fc3e0fb947a601af82517690d0dd353e4fc64fdaa2a96ae10faa18f0fc",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000768.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000768",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000768.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:55.947653+08:00",
+  "raw_sha256": "06759ed4fdf0bb170309f61d487a1005d15245e1cf63c9cf5a9b55a3350d63bb",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000776.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000776",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000776.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.011906+08:00",
+  "raw_sha256": "ef706ff2934db87b6dbfb61a9623447ac7583b526281f3985c5f9b1fddc67f5f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000792.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000792",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000792.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:55 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.116902+08:00",
+  "raw_sha256": "56ae33b30a228cfaadc9b0868b3877008a8a1ba57ac3e7e158a90a230560424b",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000807.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000807",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000807.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.256244+08:00",
+  "raw_sha256": "6096ebad85e597aa4ce65e837820310f338f6f2c1c4e83972eafdbca0c37323a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000858.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000858",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000858.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.325406+08:00",
+  "raw_sha256": "4506bfdd40782f6010ac1dbc8cfc2dd7d42eddb65570bcde49bb3406ac5fdc84",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000895.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000895",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000895.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.388481+08:00",
+  "raw_sha256": "d00bd58a45249ea7a0cb352df34f45275367316eb589033dce5ac18baa97045b",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000938.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000938",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000938.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.448447+08:00",
+  "raw_sha256": "10f1242aee6fae0b92a32e6fa88cd5859363f5915df49cbf008af4f25640dce4",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000963.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000963",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000963.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.448447+08:00",
+  "raw_sha256": "1b5f0ce8b5cfca8e4dd95b8184d268163e3e8564af002cc8717a9c83fa50cf2d",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000975.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000975",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000975.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.583469+08:00",
+  "raw_sha256": "a4d8a687054e597f0dc2d56ec300f6b3d4ccbdc691f2d7f806aa2969a11604db",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000977.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000977",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000977.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.702826+08:00",
+  "raw_sha256": "1a3cea3f273455c4e007b8c829393b668d0df25592de51fb0e5252acca2bcbe1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000988.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000988",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000988.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.701820+08:00",
+  "raw_sha256": "942068d6f59334ae9c56c1c860ac5c7ec385fe50f5bb1a2bcafda03fc20e9d9f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "000999.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz000999",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/000999.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.844839+08:00",
+  "raw_sha256": "76682085d7937d55bfe5b7f73e4135a73394f3991eef4ea6ccb422b7f7312bc5",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "001280.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz001280",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/001280.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.910340+08:00",
+  "raw_sha256": "cc773c48274fc8ae00b4a116baaf2ffd1427b6ff7c1a4b383eed4cab33eec31e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "001391.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz001391",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/001391.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:56 GMT",
+  "retrieved_at": "2026-11-25T10:41:56.910340+08:00",
+  "raw_sha256": "b150439ca061f0510a324fa521422f7d38ea0c47166218d79fea2ede183fedd9",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "001965.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz001965",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/001965.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.105346+08:00",
+  "raw_sha256": "1e17d14aad6f981ab547f32bb6b93ef5f1478cc0de90d795f451fcaa1a7c66b1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "001979.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz001979",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/001979.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.178817+08:00",
+  "raw_sha256": "8e9cb5b60dc43d47d7934cf1931cd71c007629d252e5c772362a84e961bed95c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002001.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002001",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002001.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.255009+08:00",
+  "raw_sha256": "65ffa7e13bd27d3aceaed39357bc66b34d0ff5e8fcdc3f4968c3157a7854f2d9",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002027.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002027",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002027.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.325354+08:00",
+  "raw_sha256": "55d980eaef780a8fda797c6d93fa7e59f54e7b065161dd501346425c1cf2e5de",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002028.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002028",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002028.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.396792+08:00",
+  "raw_sha256": "084857ca0d5e7d93d156718461f5890f02d7d25e9ce2ef61d712e985604757c5",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002049.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002049",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002049.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.476472+08:00",
+  "raw_sha256": "6cf07d042cd8d84a22965597e0d6ab08cc8c4e12eb2f8b41a1befe5600fb4ae7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002050.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002050",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002050.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.554018+08:00",
+  "raw_sha256": "bae75b889205e0f239494b6f93dc13dff1ebde379730b1c323f82fd047c5fd22",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002074.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002074",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002074.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.638626+08:00",
+  "raw_sha256": "20537e9a3634bbae9cb9278c3f5fbb7ef156e17f27067a8a6170ff3d6edc6278",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002142.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002142",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002142.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.792048+08:00",
+  "raw_sha256": "83379e34f9fd71657c42d6972a809e26ec772c75692c1226bc629665249371d1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002179.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002179",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002179.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.792048+08:00",
+  "raw_sha256": "0a0a1f83f0330d42e3211ce2592b0fc24307887c1f81e577084616c67cdff957",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002202.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002202",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002202.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:57.790058+08:00",
+  "raw_sha256": "6a75f632a0efbadd70e4534b648f47bade05c07d09eb4effeba7af15be045f24",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002230.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002230",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002230.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.004767+08:00",
+  "raw_sha256": "c7dbe771ce0bc76d660dc9c62977b1f9d19cb62acf420b5f6658b06bd8ee6977",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002236.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002236",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002236.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:57 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.006773+08:00",
+  "raw_sha256": "e3b953ff48792483017b941137b42b9cd0d350a23462f50f8b3cfb891bf87fef",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002241.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002241",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002241.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.413935+08:00",
+  "raw_sha256": "10cfbaea0afb5cc77548d09c725f11b157ff91f40596fc78ce0958417f0041bc",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002294.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002294",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002294.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.281579+08:00",
+  "raw_sha256": "cf89302e113f5f470cdd4a2b5cbd428cb48220ba8d99717bceb699c1ba96a45e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002304.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002304",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002304.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.348011+08:00",
+  "raw_sha256": "19908b4f447bb52665dc5a8c925af657f957fc964232ab4ccf7b0e8dfc0d0e07",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002311.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002311",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002311.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.415786+08:00",
+  "raw_sha256": "b987da4446efdfe225767901fdde6560371b557ae47a3f80999cd9eb4531462f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002352.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002352",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002352.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.527311+08:00",
+  "raw_sha256": "08c42528fcd85e2330fcc8851212081b8ab2a6fcf86115d0bd64f0c918acc2a7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002353.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002353",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002353.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.594715+08:00",
+  "raw_sha256": "b574eceb4e6f384dd51e9c90aceaf772467d0e91a748e78731f328a919ae8f76",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002371.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002371",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002371.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.666693+08:00",
+  "raw_sha256": "c8499b6eeb28a7f552316fdb3a078c5deadf2b76479acc73ad0f78cb532488ec",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002384.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002384",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002384.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.861974+08:00",
+  "raw_sha256": "d4b86661052d25d2e09b4b54d7a8de6950c9266f581789e94183014e73134e14",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002415.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002415",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002415.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.989974+08:00",
+  "raw_sha256": "a7fe37d619f16ffab16e5f3fff1640cda21f27e6281cef7cdbf5d5fc7e7c580f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002422.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002422",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002422.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.793054+08:00",
+  "raw_sha256": "65634b30d69f4c527cdaec5617f8a7c8c31067b9ccdc472358cd613e2a125872",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002460.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002460",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002460.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.931621+08:00",
+  "raw_sha256": "32f6fa0f267fa927e5866f512a466a538ad90762f89e676edbd99536e18200a5",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002463.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002463",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002463.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:58 GMT",
+  "retrieved_at": "2026-11-25T10:41:58.992752+08:00",
+  "raw_sha256": "5ad54bae6075af68c4bc46c4e26b7a1dac086589837460beef1725d88f8d739e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002466.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002466",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002466.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.259142+08:00",
+  "raw_sha256": "49f11e254eafa2a997307327425fe2bb4e0dda37412e1c3b630385bb6bf6ac33",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002475.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002475",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002475.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.196540+08:00",
+  "raw_sha256": "fc585c73c1d87e5be2e2dafbc783ef61826c6cd13d66d1ab0721b94907a355d9",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002493.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002493",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002493.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.329651+08:00",
+  "raw_sha256": "080ea022e2e5d12ab97fc386a6f6e8e5f2644ae370579fcd1710b480edf8c3d1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002532.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002532",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002532.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.391445+08:00",
+  "raw_sha256": "287ee97a26ac4aafa6b28500dd7b1228867c41fda0402fc74b755894c81941f0",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002558.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002558",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002558.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.449883+08:00",
+  "raw_sha256": "cc04423dd6715cd05c7a031e65b053be34ea46a91bb5c45bf4e616337afb7df1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002594.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002594",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002594.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.526152+08:00",
+  "raw_sha256": "e953bfd0797ad83ba8b8a236b22aa2328da351ae05bcce50134786d2c6a47d9b",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002600.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002600",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002600.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.595154+08:00",
+  "raw_sha256": "35a704dab454d7f8b77a321e591fb3d5c3e6de5674fdae2196fb16397637e477",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002602.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002602",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002602.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.666171+08:00",
+  "raw_sha256": "d8a996e4b3fca0e100a753469d3db468dd4ee8ec3b91f5bfbababb307405fc4a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002625.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002625",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002625.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.734258+08:00",
+  "raw_sha256": "601a6ca8215be4770bd4a7c214dd60420bd36791e3fb4ab84e90c59348d26b47",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002648.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002648",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002648.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.802493+08:00",
+  "raw_sha256": "5497e9aa53d604db750111eb1a38509de023c747c0b8f283c2f2dc6a2e85114f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002709.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002709",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002709.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.869870+08:00",
+  "raw_sha256": "83d95a97c773a3cf2db5eebecb15d0ba254d72fc12e3f0ae88ece61afa569f25",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002714.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002714",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002714.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:41:59.932462+08:00",
+  "raw_sha256": "2d3c814c78e084c102d31e3fd671089595132025c349bfb7931dfde5c5f0792c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002736.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002736",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002736.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.006497+08:00",
+  "raw_sha256": "aa7ccc3764ee120c6550cda618f9be96e201bfc4a9e51347ab55f6c0491f7722",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002837.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002837",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002837.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:41:59 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.080693+08:00",
+  "raw_sha256": "f693673a7aae4803640561fd8a472dea8e26c45f6602d96ada42e4086570de8a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002916.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002916",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002916.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.162931+08:00",
+  "raw_sha256": "da82ac41e22e12d3cd3a16b611b352440a5c93149a08ca7eba9ef706058123d0",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002920.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002920",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002920.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.231360+08:00",
+  "raw_sha256": "8ea3fbaa9b9906485cd507764dfd9cbb2bc2781936713976f95304bf2a5d0560",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "002938.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz002938",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/002938.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.293949+08:00",
+  "raw_sha256": "169640bf785daa77e2227d7e67a4b66cbffd1a4d1e6abc2dc15f57b86719e050",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "003816.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz003816",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/003816.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.360900+08:00",
+  "raw_sha256": "972d0aa9a5898b29c26b224cf8a0910d32fb3bdb56dc03413ce319c4181b1770",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "300014.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300014",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300014.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.421755+08:00",
+  "raw_sha256": "e976059d4fcb2be6138e24e17027f9bf6d932aa711647659ee638e235861a35b",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300015.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300015",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300015.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.476103+08:00",
+  "raw_sha256": "4dd9f23071c1bd2d09862d46fef2eb3e54b681a921876cff134a3cd7d1b8ccee",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300033.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300033",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300033.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.541904+08:00",
+  "raw_sha256": "78ef9b9249ff00bc9990c731f58256f7cdd483e7c7183f65a26140da939bf106",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300059.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300059",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300059.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.618126+08:00",
+  "raw_sha256": "f969126465e169d45d7baf65de82c18fba5ff495f54123597b319f5a205b1bc9",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300122.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300122",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300122.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.681203+08:00",
+  "raw_sha256": "eec0ca87e7ad7bc5713e90bd61461f4a11489ea87717666f30d2d56e6c0264ec",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300124.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300124",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300124.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.743947+08:00",
+  "raw_sha256": "e07316cdffd2137e743eb5b6f61c7492169fabdf5059ec9861b5927355f15651",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300251.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300251",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300251.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.804822+08:00",
+  "raw_sha256": "ac4bbcdb6e1cd7da488994c1baef27c1b0e9e7b7ef7b46537f7244352248ddcf",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300274.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300274",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300274.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.882081+08:00",
+  "raw_sha256": "d991ee56b6421060ef03061cabc13e760aa90a55a6bd743c4d8e7ef51b91dc95",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300308.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300308",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300308.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.996029+08:00",
+  "raw_sha256": "3a29faa1fd8c68892a943252a8d8c7d1677ad05c7385572a3d247cf0a464cbeb",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300316.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300316",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300316.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:00 GMT",
+  "retrieved_at": "2026-11-25T10:42:00.995003+08:00",
+  "raw_sha256": "7360131865adec723d5e615131e6b7ddc075a76e449af2eb39ee037514f8fde8",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300394.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300394",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300394.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.122873+08:00",
+  "raw_sha256": "441fb1f64ac07eb4df40a1f36aeefda03463566c8596d4da890e9205e800d351",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300408.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300408",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300408.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.181945+08:00",
+  "raw_sha256": "e7c75d3a649c3b0d17ca27c452403806dfd4e714000654535a6dae2ce1bb7644",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300413.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300413",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300413.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.245531+08:00",
+  "raw_sha256": "19fef1fd9cb5a0bfeb3a8ea314645005a484e6b74161d982af374b7b6eb6cc13",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300418.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300418",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300418.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.434159+08:00",
+  "raw_sha256": "7fb9dfdb7770d73b89da9513a5e77af3ffb82dae10bf22347cb17c609da90916",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300433.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300433",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300433.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.370517+08:00",
+  "raw_sha256": "535f836e0cb98295cf41c6a52910b22182a2373a7fb167116cd1ba2812e54c02",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300442.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300442",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300442.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.493964+08:00",
+  "raw_sha256": "a27820c743b10f89c16c6fb79a190143e5383e5bb00ed449e6f6fdff4fe86f41",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300450.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300450",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300450.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.556644+08:00",
+  "raw_sha256": "6385bb9e383620298561b5411110467d07369f8bae9621a79105b6e78695d2ff",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300476.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300476",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300476.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.608256+08:00",
+  "raw_sha256": "767d61160b92a6b2cd6b25996df740732089b5abfa400ded0c996bf9a3449216",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300498.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300498",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300498.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.682815+08:00",
+  "raw_sha256": "0964ba50d6f427fed9baf948c94f4e3a939daa0f5ff5c67998368432f637cab4",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300502.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300502",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300502.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.776665+08:00",
+  "raw_sha256": "9b90502a4e5849f0d7f0ef4bc2bd51b7ca7fa0705040a5220de0b5642aeb59a5",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300628.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300628",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300628.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.839684+08:00",
+  "raw_sha256": "8244636174d870e11c870603db198844e214b6502a01d9be281c5123bdde7926",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300661.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300661",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300661.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.920257+08:00",
+  "raw_sha256": "dc3d6e7ea951e8b961cccd333897e13b729563d9a22dc0acf70b5e65930ba178",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300750.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300750",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300750.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:01.994620+08:00",
+  "raw_sha256": "ac1e2a3a482f1a229f5d085cee6eec4a32ea59468506a3d95e2b39a032f67277",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300760.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300760",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300760.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.065911+08:00",
+  "raw_sha256": "b7e28b2cb1211a8be2e646974111ee05f69b585047ae0f7e93abb9006263e3a0",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300803.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300803",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300803.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:01 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.141061+08:00",
+  "raw_sha256": "16c58b8b5fd1cce567c9ba9c8d4a7c65dd2764865f7af9e5de6d49219278779d",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300832.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300832",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300832.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.231812+08:00",
+  "raw_sha256": "b297e030bb91b325d17dcdd94e875dc707d68963fed28bbe20d96dd400ce5136",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300866.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300866",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300866.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.373289+08:00",
+  "raw_sha256": "db1aaddddc8d26aea183286d49037649c0093df4a0cb33a6c177c93f025bd0ee",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300896.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300896",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300896.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.538078+08:00",
+  "raw_sha256": "5f6f0abea453514289a9d2fb5f40613335f5db317fe21b06dc0901dba6138076",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "300999.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz300999",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/300999.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.469987+08:00",
+  "raw_sha256": "79f87d45b4e07a6b3647d84d2afd30b0b53d2ea32e31ca8d22b86df7f8382089",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "301165.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz301165",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/301165.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.600388+08:00",
+  "raw_sha256": "afbc782b68300c9083121e83df098bc98493052aa43a85af5e2dbb06f0a69d15",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "301236.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz301236",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/301236.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.704646+08:00",
+  "raw_sha256": "8726e06d411218ced02fe7a34ec4ac6bdc664be0530e47a20fab0e83e488faa4",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "301269.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz301269",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/301269.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.817732+08:00",
+  "raw_sha256": "d5a992e217ed6e5ffa86781acae1696f5c50b083801941cbaca5f38bd83122b4",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "301308.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz301308",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/301308.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.909678+08:00",
+  "raw_sha256": "7b9fccb24d5958c1b82125e16a9021770b486c153d26dc525a567e761e89c048",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "302132.SZ",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sz302132",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/302132.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:02.985539+08:00",
+  "raw_sha256": "ff60ef44a3ee4f4e3a1df8defd4dfd6817ae47928f85493fd6531655a0a630f2",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "600000.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600000",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600000.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.071329+08:00",
+  "raw_sha256": "a215b78a60db9dabd0f2c426a3368c616414201ceff62ebfd2649721aa4bc830",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600009.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600009",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600009.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:02 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.147828+08:00",
+  "raw_sha256": "ddd6a7f5685e6989e3acea5fe6dc96541255d6caacf0bddb5453a48b5f3196b7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600010.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600010",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600010.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.227207+08:00",
+  "raw_sha256": "db9cfd19eff787838ee6703b8d7fd4fd969af3463eabb62705be674e93043831",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600011.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600011",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600011.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.307659+08:00",
+  "raw_sha256": "53b18371034cb6d1183f9d398788138d6fe803e12e9c1bd4f29b5375162f72d3",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600015.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600015",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600015.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.390424+08:00",
+  "raw_sha256": "a54133d34250d708bbbf0032957365fba859e85ef918103c853e0219ec0b8d40",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600016.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600016",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600016.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.461879+08:00",
+  "raw_sha256": "c80be04296bc62806ca95d8493b588f3cf2b0d65acee25c4bef3625d4a109a49",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600018.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600018",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600018.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.536717+08:00",
+  "raw_sha256": "75f687108d34a2f10efe9798dceb3440017bf16979bb735b674a15b536f85e6c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600019.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600019",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600019.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.602027+08:00",
+  "raw_sha256": "8ccac9dfad904b510537514c55c488ec6c50f38110ef7385e7c5038e82dc3d12",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600023.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600023",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600023.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.677328+08:00",
+  "raw_sha256": "574a297fd4ab4798682b0b6ed11a0ae66a4860fba394473d8dc872378ea18d3c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600025.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600025",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600025.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.748360+08:00",
+  "raw_sha256": "b52481a949b646880027662ca08ae53127cbb5288a08a4d99b2d60c4cc2df87c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600026.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600026",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600026.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.817387+08:00",
+  "raw_sha256": "ad5245a460e7a1c3eccdc608edd6a74b1818382d1ba2d7bad0717603747b264f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600027.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600027",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600027.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.959694+08:00",
+  "raw_sha256": "048655a5233ec026f44d1c87305f032cfc2bf1a65844d5a373752ccdf97d7e0e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600028.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600028",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600028.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:03.992954+08:00",
+  "raw_sha256": "2f3ce5edf7317e1c294d4d1c8ebb93642f12c315ed29e6c4ecd0b65876ed068a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600029.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600029",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600029.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.139916+08:00",
+  "raw_sha256": "6cb448317560c0a76c5d2361cc240082272f586f1f9652485d0fa4e8d47d05d7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600030.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600030",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600030.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:03 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.141911+08:00",
+  "raw_sha256": "af452409aca74e47432c37b1764bc36eb9cabeed20a945414fabc667f7d64087",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600031.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600031",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600031.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.295224+08:00",
+  "raw_sha256": "67ad68b6db9dd4d8b7629c6519d327e82359d26fee5957b32065540d35788b97",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600036.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600036",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600036.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.505537+08:00",
+  "raw_sha256": "a6d1b0b4a7af5b357c315ddbdbf1e6109ad1805094f7da33226de62532ba805a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600039.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600039",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600039.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.424593+08:00",
+  "raw_sha256": "7ed79e0392a86a699611dab401c8b3f6bacfa5b3ecb3de54f234edabd8726497",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600048.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600048",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600048.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.587655+08:00",
+  "raw_sha256": "d3ac64722a41bafc311f6c9e9d2caa505a6d9b547ab9655597f376d454dfcd4c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600050.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600050",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600050.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.585646+08:00",
+  "raw_sha256": "2f868239e7b8a8907ee8ff8e4d65475998a538866060e4f3420cf6214cb1ee93",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600061.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600061",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600061.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:04.832818+08:00",
+  "raw_sha256": "f8e31c57b86acfdf7f69b819326b1ad043ac6fbff558adaa959cb0e09b6496ca",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600066.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600066",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600066.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.002622+08:00",
+  "raw_sha256": "ab644f1be6de55edbdde39007da36cc93956276d11bc1ef1aee3d2ac1e631683",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600085.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600085",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600085.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:04 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.113715+08:00",
+  "raw_sha256": "505cd880103b9743235e054ab107606417e7938cf5786bd2706be91b46657bcf",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600089.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600089",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600089.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.361548+08:00",
+  "raw_sha256": "c89277a8fb89edbf3954b407a589994a1e7a89387262d255fcb9d0b69f22815f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600104.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600104",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600104.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.236652+08:00",
+  "raw_sha256": "0a3a593c26d6e50f82dfb3d11648564cafcf32550886b7747656176f5eaf5759",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600111.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600111",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600111.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.471005+08:00",
+  "raw_sha256": "fd138a1118404656c4ad1db0f00aa0fa240eddf5c2dbd89d10686addd09ec709",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600115.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600115",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600115.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.448365+08:00",
+  "raw_sha256": "a6fd3fb6ed2aafb2ff7daea5e5a50ad5dc223d7cd04a966da8265c6a2920fe1a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600118.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600118",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600118.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.637902+08:00",
+  "raw_sha256": "c771776549ca1d0cb34d81be89146a6729c04995700a540a2696a46aaea24aec",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600150.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600150",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600150.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.708433+08:00",
+  "raw_sha256": "e31c956e7799add5ce8dd59c11ac44b684d389f2766f0f647fa0ff6c383fdf5e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600160.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600160",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600160.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.851874+08:00",
+  "raw_sha256": "49d126c8283cbee9b4656bca65b3a0c7e267d7686180dcb68f147c3466a7a014",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600176.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600176",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600176.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:05.934038+08:00",
+  "raw_sha256": "1dd78be7a1dd9fb45f48844c12e5e27c187a5fc15781b127129c4c5234680b90",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600183.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600183",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600183.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.031018+08:00",
+  "raw_sha256": "781839ce719d042df396c2dac3108bec7383c36e0bee4026c11d34fc13910cb1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600188.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600188",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600188.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.115058+08:00",
+  "raw_sha256": "1590ed9b020f957659f505a0cda09c89c6971c5cf05f21c784f821ca4449b435",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600196.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600196",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600196.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:05 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.211344+08:00",
+  "raw_sha256": "ffdbfc81d12eac115db5e24dbf5cdd675842bad1440d2845917bae4d7e9b0a21",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600219.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600219",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600219.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.284627+08:00",
+  "raw_sha256": "6b1de4131f9cf3e4902e03764c3ebfc82f934af44a34cab060bca27d277475c7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600221.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600221",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600221.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.403485+08:00",
+  "raw_sha256": "af8cf5b07674b6863157dcf5cd6c61e5230ebbcf180f18c88f2c872c15ed2357",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600233.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600233",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600233.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.499888+08:00",
+  "raw_sha256": "df0425c18c8cc8a1e21a3ef765259bbcf95b2ff256fb59be8aa6654260681460",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600276.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600276",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600276.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.660987+08:00",
+  "raw_sha256": "ab08641d90735f09f91b85f31af2d027383497bfa4547eb16476b9d9c76c6ef7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600309.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600309",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600309.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.578462+08:00",
+  "raw_sha256": "849a95a0ccef59c00efe52ca0d7efd1e09a2a0c0f539cd34178027c7e5031716",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600346.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600346",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600346.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.745317+08:00",
+  "raw_sha256": "adddd8fe321449593574782f6f80f7616f93c5c07a996d59969bcf0f3e37eb2d",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600362.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600362",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600362.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.881509+08:00",
+  "raw_sha256": "16d1d7da20551d12df21c66f6210aacb4a7fb94584d0dab12ebb7836b42cf7d8",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600372.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600372",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600372.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:06.881509+08:00",
+  "raw_sha256": "4606620da4c20e9f3a2ead2a8f3fdf1125a76c69f386c6c9bf9b1d6e56532eb6",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600406.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600406",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600406.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.078770+08:00",
+  "raw_sha256": "6d117f0b96ebbcacb3a4dbec2360c8f70111ec799314b35d9e54c37d9992bc79",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600415.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600415",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600415.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:06 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.154467+08:00",
+  "raw_sha256": "1bffbac3ef5f9bd1b9a89fe098117bc920b5a161c08ba7818cc9f4ba5526b8d6",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600426.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600426",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600426.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.396306+08:00",
+  "raw_sha256": "bc1f2555247c8043257515ee6523c2fefda0532a5686684f3ea924efcc1e6b1a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600436.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600436",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600436.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.488297+08:00",
+  "raw_sha256": "c3ebdfb0fe2b9dbd267067a0f103ed1ce61ea7afb4eb55a638b9de43e4415a9c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600438.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600438",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600438.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.632245+08:00",
+  "raw_sha256": "5001a4a29fd895fca5defe5a711eb6979c12255ad1a9fc00855acddd19f8d941",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600460.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600460",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600460.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.490318+08:00",
+  "raw_sha256": "1941e610f4f5278a6c1c0008ceff2d4d69214fc5861b0c67233d2ea000a655ba",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600482.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600482",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600482.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.631243+08:00",
+  "raw_sha256": "cde96c82c01208fd9b7724dfcdc0c1591b007043dd2dd4c2c6762f0c7d45a7db",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600489.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600489",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600489.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.776250+08:00",
+  "raw_sha256": "3b2af7a0bd970f99533d29a48ca32fcb72e7271c998b254641ce76eea62d85a7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600515.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600515",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600515.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:07.996891+08:00",
+  "raw_sha256": "75337f76a2dfa81f23832dae90f40f16e0f8b6c22df463ff75d2ad73c2b6e6c8",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600519.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600519",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600519.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.077497+08:00",
+  "raw_sha256": "d73c3a0658bc4f8e5841d00b1145074f42e8f60ab4b2c7d5f0bbe4cac9354574",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600522.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600522",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600522.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.137073+08:00",
+  "raw_sha256": "22bf4b6662c51395f1c6379f75c541394501e71fe87eef7cd01d5c9ad6d95398",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600547.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600547",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600547.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.147068+08:00",
+  "raw_sha256": "8e297a9818ad056ea819c36d4ae67994aca1a4d5c8ec6a28214eef7a227e3cb7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600549.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600549",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600549.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:07 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.147068+08:00",
+  "raw_sha256": "88ece2ca64396663ef29bcfd98ae09cf135caf47ef2d04a33eadbf0d959505e7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600570.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600570",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600570.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.483410+08:00",
+  "raw_sha256": "6573f206436d231531c0df483c32c3aefc508c1f0c9d6625397b99dbed5c71b5",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600584.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600584",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600584.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.562710+08:00",
+  "raw_sha256": "e8efb523f62b4c1e4086ec74066a74fcd93965dd09653397137438b7aadfa8c6",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600585.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600585",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600585.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.652849+08:00",
+  "raw_sha256": "336a7826c5b8c990008b55940cea1f436c57aa490902b16a17bf8e63c696d26b",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600588.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600588",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600588.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.829352+08:00",
+  "raw_sha256": "bb4130bb07c30ea484b45fafa3110b1bd084508e98ebad7019f6bd4e6edeab15",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600600.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600600",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600600.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.652849+08:00",
+  "raw_sha256": "e2862a77cb64e18ef0b93ea5590b29de45441db2666812645b921335f33dbec3",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600660.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600660",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600660.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:08.919247+08:00",
+  "raw_sha256": "c0ec837f1a90cf6180a11bbdabf635c344bc2bf76d732cc5b28152b5f4984cad",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600674.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600674",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600674.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:08 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.062592+08:00",
+  "raw_sha256": "2e309827ad65f50a0f97e249ba336b43ea31f4fd9cf7d5dc396c42859f60cc10",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600690.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600690",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600690.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.229151+08:00",
+  "raw_sha256": "faeaf9e67013983d3500ba01747a295323a323b19e4d709d9e34f8f640e81d10",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600741.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600741",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600741.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.146940+08:00",
+  "raw_sha256": "8790a2ae0e23d8bd783d9bbda7fba9bdac497138b623170525221e83132b6a86",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600760.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600760",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600760.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.298823+08:00",
+  "raw_sha256": "8f1b92b8adbfc6ae95cbcb1a2d85cf39f09b18fd33c70efa32e83c12bb0abad0",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600795.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600795",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600795.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.392458+08:00",
+  "raw_sha256": "4b61430a58714a07b36731e45ee3695ebe56b72f6938145ab3d63ada9cbd5831",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600803.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600803",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600803.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.510289+08:00",
+  "raw_sha256": "1a47bf379593b9843a4d2cbbf410ec702bb57c7069dd0bf9944fad9414b1408a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600809.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600809",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600809.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.631664+08:00",
+  "raw_sha256": "c3e506f53097ed111892f89c1456c3234edb0540723db333402b958f8ce4da42",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600845.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600845",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600845.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.740557+08:00",
+  "raw_sha256": "6b000955c14ebec1cab05315db939f7d2ec9356cbe404c9e095866e33ceac657",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600875.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600875",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600875.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.954431+08:00",
+  "raw_sha256": "a972d8e5d57b6ad42da15aa10de9d4100374c3bad7e183b0559c294f66cb5733",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600886.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600886",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600886.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:09.858125+08:00",
+  "raw_sha256": "b07c3ae228458187bbdef4c5c68111acfd40c312e802c0090a4efa53c1349703",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600887.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600887",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600887.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:09 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.026033+08:00",
+  "raw_sha256": "0cacff1331aa289fec3125d545b0d94c44d0ecc0c90908f6d1ee81c73ab7b1cd",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600893.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600893",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600893.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.110440+08:00",
+  "raw_sha256": "b5765bfe5d11c4d08cdd0aa229d6206f017aa76313f43d5dd87f00328032bb8d",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600900.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600900",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600900.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.187178+08:00",
+  "raw_sha256": "41f5ebe19d92a547316c9777d8f2a37a88ba125f9f69a55b935657b1228891eb",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600905.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600905",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600905.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.258708+08:00",
+  "raw_sha256": "2bc01a433450e3244d6bae44b50e3fd9c9252b3a524a34efce4deff13143935f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600918.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600918",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600918.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.326881+08:00",
+  "raw_sha256": "cff5ff068a53d6e580b5633be41ab191cd62d3bcd891e76715c6b5e5d8010063",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600919.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600919",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600919.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.406997+08:00",
+  "raw_sha256": "fe6b6a1878e4736256fdda021791dce5152a55c195191e14bef0f5af31781c30",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600926.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600926",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600926.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.471644+08:00",
+  "raw_sha256": "ef40996cf8456ab91b2974010e3c91032bdeead649b30f0b4e03aacddd020d6f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600930.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600930",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600930.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.557198+08:00",
+  "raw_sha256": "4cfed1be342a3092904df9407a6fc1e9586429f05080038c7841600ae33946e2",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600938.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600938",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600938.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.677983+08:00",
+  "raw_sha256": "d70938cbfaad7abe12a64cc6e8283daccb0c47aeae9b68fbd7b7dfc4d35d1588",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600941.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600941",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600941.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.938757+08:00",
+  "raw_sha256": "d94a05dde52c4e602defa4a2985f3ee6cf92cc17405deffa77bc2e13625074bd",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600958.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600958",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600958.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:10.798773+08:00",
+  "raw_sha256": "ecbb53d2cf4a4f3729e39153fcdab92cdbebe0e56ff301e22bd83e08318c8233",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600989.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600989",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600989.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:10 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.045307+08:00",
+  "raw_sha256": "5487bcbeefa7724a69f2deca1575ae4becc76cccfb88ef688db7f3980d59dc73",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "600999.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh600999",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/600999.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.166591+08:00",
+  "raw_sha256": "4c4383b0d5ffb7744cb70d4ac1d5dc40639ea6dd1bdc80919f4d4226cc4fc979",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601006.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601006",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601006.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.290382+08:00",
+  "raw_sha256": "d2d48ef07b0d89dcd5eb980673a6bd8c3dbe665cc262b41d1bbdafd212e944b8",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601009.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601009",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601009.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.449864+08:00",
+  "raw_sha256": "55a14930c32cd521d2d00861fd3a5b6c33a7d85643248d22c03e188b2c9f5a76",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601012.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601012",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601012.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.363006+08:00",
+  "raw_sha256": "f5844c01968fbde9d89131ca1cd005e3b4f083d788d82f350fefdd792087ba6a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601018.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601018",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601018.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.532609+08:00",
+  "raw_sha256": "baac9260b096d9644784f7edb39bbbe9c4ff007c309f37041b2a113d1b7fef5a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601021.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601021",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601021.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.639797+08:00",
+  "raw_sha256": "2668abd5b42d0f5246973b644f3f423df1771d43595d0c1fd74dda204f1c6572",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601058.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601058",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601058.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.840447+08:00",
+  "raw_sha256": "0ac768f91a55fbe1af9d92ccb7bd36c4f2bda408613f1fd97b27cb4cec1fb55c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601066.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601066",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601066.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.763470+08:00",
+  "raw_sha256": "02936327fee90aa7486dece9d356538948e17f111b6446f74622f09e0f175dec",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601077.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601077",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601077.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:11.948850+08:00",
+  "raw_sha256": "87b946e55aae4045d770859096ead5bbd10b23377b94067bfdadc60777d9fa3c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601088.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601088",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601088.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.034619+08:00",
+  "raw_sha256": "556fcf1df58b66992f14e018b7da603f7c8bad93184e366fe1dce983dff69d3a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601100.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601100",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601100.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:11 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.119089+08:00",
+  "raw_sha256": "5dfc1b396eb4ac0f660e8ae917469c7515024d332a9bfdad69b53af041b60bdf",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601111.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601111",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601111.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.209994+08:00",
+  "raw_sha256": "1812f9d6a9f969fa09f474480625590c74c812ffa823f284a5a807811a567c64",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601117.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601117",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601117.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.293815+08:00",
+  "raw_sha256": "955fb4a232be106fafed84c662fc7e9a3a40230170a64418e76220eeb35e3258",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601127.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601127",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601127.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.358143+08:00",
+  "raw_sha256": "a6dd1881196367ed4cc3ba122b6a16d14fb603918639d1826fa15d9feea58143",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601136.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601136",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601136.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.432153+08:00",
+  "raw_sha256": "4148d17d719f02f0bf9ae0f8ac2265733ac97069d678fb2dcb4bc4a9480da2a2",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601138.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601138",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601138.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.515136+08:00",
+  "raw_sha256": "40bf4ce2b54e234ce53b1540630da95b7c44031e9a32f4e903692157f2807dcf",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601166.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601166",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601166.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.589870+08:00",
+  "raw_sha256": "55e1c1bd090ee2170f35c113742072c1f0ab8eb419c00278ddc50fe21118958c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601169.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601169",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601169.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.673140+08:00",
+  "raw_sha256": "88d8ae1d7685619ccab74741a03e195c675dcac3345864c8b58e12cd0a557dc6",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601186.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601186",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601186.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.754829+08:00",
+  "raw_sha256": "f6a48ec25b3eb9ee0a17b9c3af2362ff7fb6ae9c024930c54ce80b7fbccfacfa",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601211.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601211",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601211.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.817800+08:00",
+  "raw_sha256": "b1e1473cca0989af3e4d4b5f9ea38f6b38e42597b44c63944c3063143c11b11e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601225.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601225",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601225.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.894696+08:00",
+  "raw_sha256": "2a8cfacab55464ea2755331c89d8c49c18a6d3aa664980b49a304b8e27cb8289",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601229.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601229",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601229.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:12.994904+08:00",
+  "raw_sha256": "3f35be4f1eb18cb6e18996fec3b46af51901f32bb80b03beb01c6f210cd531ec",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601238.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601238",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601238.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:12 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.082517+08:00",
+  "raw_sha256": "79702c33cb9ac357ba6542c6999e9aa4f38289e4096babf278cd954336a52af3",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601288.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601288",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601288.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.298861+08:00",
+  "raw_sha256": "6b3f8250a72e65c36ad54c0222e9a7947c03ee6102bdb80e974d9a44a92b1d5e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601318.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601318",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601318.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.300447+08:00",
+  "raw_sha256": "983596f6f8af7c623ca8b681307bd5287afc2fcb9233528647594bf91093b175",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601319.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601319",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601319.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.232319+08:00",
+  "raw_sha256": "a767e7004a642af61abfdf8c70e8dbb0ddb1d29aa461257ff18f08cfc8540185",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601328.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601328",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601328.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.448313+08:00",
+  "raw_sha256": "d9ad46ffa650bef97b8d918af3c3f5914be9aea56d5922acee20df58ee57d976",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601336.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601336",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601336.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.508482+08:00",
+  "raw_sha256": "6fe501a4e54469a29ffdb85ced154d7a077a64c8af1e4f2e0412f506eeb679ce",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601360.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601360",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601360.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.676105+08:00",
+  "raw_sha256": "3c668c50cf81b9a7fa8abc7741dc22354e7fba283a1bc26e4a8936691f285bfa",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601377.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601377",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601377.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.763314+08:00",
+  "raw_sha256": "df1f20d8fa59121c66d9673801340a71dfd0c0daca068e5df9533509eba06c1a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601390.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601390",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601390.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.895731+08:00",
+  "raw_sha256": "34546e1e8514d3851b54e6ac1fc2913727da24caa89be1d0a03d37bb4dacf618",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601398.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601398",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601398.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.764316+08:00",
+  "raw_sha256": "a8aafc2d7f309cf077fbc5a0208ad127826c7168874432c215be8e9f4d9826f7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601456.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601456",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601456.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:13.894717+08:00",
+  "raw_sha256": "97293e6c09337e1f8afa9a26d420b0e18e2c50f945e18118bd04bafe3cd9c706",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601600.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601600",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601600.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:13 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.029096+08:00",
+  "raw_sha256": "c4406f0c7bcb922734604ee068d2c10450eaada6731cccb0d198de73f6721746",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601601.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601601",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601601.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.389426+08:00",
+  "raw_sha256": "01dc93d9a88fb92918709e9b34c44d8d2a87fd0f493fb43324f92a27f7d2487a",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601607.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601607",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601607.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.244235+08:00",
+  "raw_sha256": "116d8d5ce365e348ce2f8dc1315f3497fa7654816c8326c9bf102b5dd08dc333",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601618.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601618",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601618.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.388584+08:00",
+  "raw_sha256": "eb78ee81d60e0d5a2dee8267022f93b6e232c9c4eb5c8513596d1d3671e7376f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601628.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601628",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601628.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.313301+08:00",
+  "raw_sha256": "24a02044580e51b50bc8a01b29743d77da669d75ca36de98fe081feb473a57fd",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601633.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601633",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601633.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.494231+08:00",
+  "raw_sha256": "b0a71b007df0860dec9bdb1d29f6e168876ebe8f9efc422f019d18846ce46330",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601658.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601658",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601658.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.612759+08:00",
+  "raw_sha256": "593cca96d6d9b7adb3ea175cfc50bb624dc390a76b75eac51b92b3fe2159b143",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601668.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601668",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601668.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.746387+08:00",
+  "raw_sha256": "08f85ba6d5fb11d43ddafadf7063fbfee88ded8e374e212816f7730d05827f38",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601669.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601669",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601669.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.814781+08:00",
+  "raw_sha256": "1df0529ec70951be518120010e5acf47438492722dbc4375d6cd6cab4bc32320",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601688.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601688",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601688.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.881391+08:00",
+  "raw_sha256": "001759b4ba8c6c08762375eaee3127a0404f0202157d6ab3c54a3967b0d1e082",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601689.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601689",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601689.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.882525+08:00",
+  "raw_sha256": "4769d2d18f6ea4826da6d734a1b5e3d0b00a381a60a98505aa25c03e8f119e35",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601698.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601698",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601698.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:14.999626+08:00",
+  "raw_sha256": "aace98c4fb82b8d2161c63d07339b8bcc49c929f7e6fa11f13a8204502a6e108",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601727.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601727",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601727.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:14 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.073672+08:00",
+  "raw_sha256": "a08352ca48fa2d70f2511d8b29f788876e6aec5a4e10e1eb1873d494e0458071",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601728.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601728",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601728.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.147125+08:00",
+  "raw_sha256": "50ccde59c1046ae621fe99038b5fa24ba7b19a8d4e7d5463dbb23fe10153fd00",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601766.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601766",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601766.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.365744+08:00",
+  "raw_sha256": "1af6b9dc91926b4a7ee3a63640c1ab0d801b0dd87d259ffcdbe9595a2adaf3f7",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601788.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601788",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601788.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.294663+08:00",
+  "raw_sha256": "3077d9648f3d6279da7b4a20857f6680ccee07017a0c81c6d23d403330d29ba9",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601800.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601800",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601800.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.364746+08:00",
+  "raw_sha256": "d0c7f76d88315358745106fd0493d61883f3613974e378ac482aacbdc0f44f03",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601816.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601816",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601816.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.466220+08:00",
+  "raw_sha256": "58964645468a161ac7eed3d267dd0de91de1c87698f798556bcdafe4c604438e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601818.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601818",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601818.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.542455+08:00",
+  "raw_sha256": "cff136a1775937e0d6268c9802976b850556cd1b109aef199a616ddf86a94ab6",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601825.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601825",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601825.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.618903+08:00",
+  "raw_sha256": "bef1c94f601d4813e599dc2517b311e4372de8a65e073575fde89a394decbda3",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601838.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601838",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601838.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.746127+08:00",
+  "raw_sha256": "b241d5154994bf7ce2c1f858472ef4025fffd39a0f643879a2311545d7489405",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601857.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601857",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601857.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.820786+08:00",
+  "raw_sha256": "83f97f29e257fd9224691c87cd1270d9a1a817b87001f9d7a3ec94eb7950acb3",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601868.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601868",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601868.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.889771+08:00",
+  "raw_sha256": "ba82095167592e839e99131a1c10a24b0570a658eb67d876b2578fd469cd4beb",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601872.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601872",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601872.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:15.889771+08:00",
+  "raw_sha256": "36f507e64f3cac01be8a96d92c1f18c4a7481e004a61f0607b7dace1ec49cedc",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601877.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601877",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601877.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:15 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.016141+08:00",
+  "raw_sha256": "db82736b5e955e0f379c7487a1d602cb9aa062dc0ea8be5efd0f12f1aee5d036",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601878.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601878",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601878.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.157946+08:00",
+  "raw_sha256": "a761b628084fa9acf2bc46c4554e149ea84987623a87c49982eb93950e0bc46e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601881.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601881",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601881.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.217594+08:00",
+  "raw_sha256": "03d5084c798d4dac70dbb0aa08c220f53d511aac9c71db45b063466f6ce08e87",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601888.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601888",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601888.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.285946+08:00",
+  "raw_sha256": "7f2f8651caf51d29e3a91eba73fa2061739accd8f286ac7b6bec98765adf1fa2",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601898.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601898",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601898.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.283013+08:00",
+  "raw_sha256": "4d32d44e8801375af7546b73794befd4b02aebb2b41461d01f08be8484cc7763",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601899.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601899",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601899.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.380030+08:00",
+  "raw_sha256": "c906a39922363a2f03908399dde81f781b48b6594d925a71f51d6f97f0a0c83e",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601901.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601901",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601901.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.480004+08:00",
+  "raw_sha256": "98266e203c3154d533fd12bb649ac21849db4c1d6f349ae0a6589141cd5aed2c",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601916.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601916",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601916.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.547009+08:00",
+  "raw_sha256": "23f31a881aeb260633ad33a7c9f07432660a6ea133d545e529cfcbdee8d452fb",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601919.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601919",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601919.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.743277+08:00",
+  "raw_sha256": "dfcfa3bcf28a744a61746f27072706bac986cda7aa93526d38483cc85bf5b7e8",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601939.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601939",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601939.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.860276+08:00",
+  "raw_sha256": "de12bbd58288e62b6386acc89f8e6ff59355675d91c71b9110f3a089a832301d",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601985.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601985",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601985.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.806787+08:00",
+  "raw_sha256": "b5216b248e5f9f961167d0aa45360e3c99ef8af8332caca1d13ed8626787ce1f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601988.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601988",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601988.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.987056+08:00",
+  "raw_sha256": "34af92f6e2005691eeaac861785fd2f8a974f43f120e63d7fc348fc394606739",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601995.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601995",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601995.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:16 GMT",
+  "retrieved_at": "2026-11-25T10:42:16.860276+08:00",
+  "raw_sha256": "043ea10ffbc60890381b5c4518958892682fe12dd8105efef3807563d8733af0",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "601998.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh601998",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/601998.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.097953+08:00",
+  "raw_sha256": "08d62cf16d16995f1c8ccc24e7ba75889dbd7bbfda08e475aac63f905ffbcd5f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603019.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603019",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603019.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.181409+08:00",
+  "raw_sha256": "0ec39c61c4500a40467c6f5ab56f4c07a6a60b98e60a125e36db49f44285f3bf",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603259.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603259",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603259.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.249049+08:00",
+  "raw_sha256": "b15c02d963d66460b640159416606d35d9d56b9f33d0937f678bcea23a062891",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603260.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603260",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603260.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.251047+08:00",
+  "raw_sha256": "b428c41adfbe3144e554ccf5f07e660425f0b69192da66137de34a7056f9d205",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603288.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603288",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603288.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.369786+08:00",
+  "raw_sha256": "22a4407214296cdc8eba0a8e8a3ca455574840218ecaff5faa487385f3812ded",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603296.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603296",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603296.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.565867+08:00",
+  "raw_sha256": "019f7c3dc86a839a52a18b49876358d922b15439d37cb7d83a9959ac7eb509d1",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603369.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603369",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603369.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.491214+08:00",
+  "raw_sha256": "c574ba612a3887760a1d5bb1237b54a7937d2b37be73126681346872af7a0428",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603392.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603392",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603392.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.644966+08:00",
+  "raw_sha256": "a18b4cf690b0dd5e0f59a9d2860abd52315d2bb5deaf28e94c27103bfc480a2f",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603501.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603501",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603501.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.646131+08:00",
+  "raw_sha256": "ecc03a19dc4febea31a2bac005fedf6608733b2531079ef347741fb7557382f4",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603799.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603799",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603799.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.786418+08:00",
+  "raw_sha256": "2c4106ad915d1372707d9603eade4d4158a00da884b94404c8326fb713d4b1ca",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603893.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603893",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603893.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.847848+08:00",
+  "raw_sha256": "79bd5a2d106fb66c56288bdb74f618143b93d1297bb169962aec99a22f0a1014",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603986.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603986",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603986.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.918528+08:00",
+  "raw_sha256": "2e1fa72375445ad33d45ce34ff2fc34274476ae391255ce3b92caed51bc502c9",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "603993.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh603993",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/603993.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.069728+08:00",
+  "raw_sha256": "2239b661fbc78caaa6fb478ab689a46b54d794c7cc9b8dab18395093d07d2d31",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "605117.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh605117",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/605117.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:17 GMT",
+  "retrieved_at": "2026-11-25T10:42:17.998991+08:00",
+  "raw_sha256": "fa9e1641c2bf49a5e1e14c1391ba765309003098be6db68d25592be5ce26bb33",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "605499.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh605499",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/605499.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.142028+08:00",
+  "raw_sha256": "7aec3f095b462c1782f91158e2e5afd722d8ade33c94a6cf9ce2609f102a9c40",
+  "samples": {
+   "20261123": 267,
+   "20261124": 267
+  }
+ },
+ {
+  "code": "688008.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688008",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688008.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.198172+08:00",
+  "raw_sha256": "30db9c91f1db1a4c5449b10bb6163b37d2dd6b20ef5b00460fb8909fec0bd230",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688009.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688009",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688009.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.265370+08:00",
+  "raw_sha256": "5f594f9248690babb29d0ace1ef4cf52cf3c4af5bb3e3e44e51d20794a7c917b",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688012.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688012",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688012.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.389143+08:00",
+  "raw_sha256": "38b80658b72537ef46399a2ec4ad553579fd472276e188c2c32ddc3033bd1d9b",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688036.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688036",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688036.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.461386+08:00",
+  "raw_sha256": "a6a3db9eee911468a8fd23434a855615874971bada8f486c8b302290d46f13d6",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688041.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688041",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688041.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.545529+08:00",
+  "raw_sha256": "7ffd6e4051f1273d74c45b7603e5e2497078306ebc3036adc595c7cdf473fc72",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688047.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688047",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688047.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.608324+08:00",
+  "raw_sha256": "5597c5d02f122761fb203bd0ec6708fb5a657876e66b97dc129cc89fb20c77fd",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688072.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688072",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688072.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.674370+08:00",
+  "raw_sha256": "3b6e0f68f61582738e71b50a5aa5dac512246f922e2bb449b9e74e08bdd3b58f",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688082.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688082",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688082.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.753498+08:00",
+  "raw_sha256": "7f365bc2d59b11aab95f3e587b06caf5e97205d25579f2ad71dce50818cdd904",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688111.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688111",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688111.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.821374+08:00",
+  "raw_sha256": "bb0e795a89412081b16275c8cdde7c041cb7c31b0e6a191902c51211a57a4b39",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688126.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688126",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688126.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:18.908986+08:00",
+  "raw_sha256": "9de9d5fdc25a5174df6a8e35a196503fd22073fd53b0fdeacef2eb0f7fc5cd59",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688183.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688183",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688183.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.099077+08:00",
+  "raw_sha256": "f18853a9f6d6cf587db69d8ccf367c72d970b721c5cd86ea24effd8a3662a383",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688223.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688223",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688223.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:18 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.036454+08:00",
+  "raw_sha256": "4f5c885ea307d152302c3d2f36c1bc1580c24028ca79e5dcee9ec2cf0ece01cf",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688256.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688256",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688256.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.160985+08:00",
+  "raw_sha256": "76b4c5340b6b6c52d2bcec241c7dd06eece2a3f8ce4558a8847e2cc3e71c4147",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688271.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688271",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688271.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.162004+08:00",
+  "raw_sha256": "e861b65b9495235cb525ff983168d38db79940e53bef16f89f6003ee88009bd7",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688303.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688303",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688303.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.286812+08:00",
+  "raw_sha256": "a46d1d5de6e32f66c11ff4d0be4ba38b8b3d750abc18de4b1cd56d0ba512eb4f",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688396.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688396",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688396.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.286812+08:00",
+  "raw_sha256": "cb55c1525a426f18bea959dcd66b1db3692a185ac0e7724623e3488de3b8ad7d",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688472.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688472",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688472.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.496814+08:00",
+  "raw_sha256": "c493fbeb392ce5801527acac6a3ce3da038e8d49510799cd66137a135c314972",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688506.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688506",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688506.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.531160+08:00",
+  "raw_sha256": "95bf8796aa44309505c9a2f3b77e11d0d3d9e96a9317e64f9d8f8d35973ce448",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688521.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688521",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688521.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.540163+08:00",
+  "raw_sha256": "12cf7665718a3f9b3819ff5bb26292aced206cbfae5a55e911b9a7ba94ec8736",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ },
+ {
+  "code": "688981.SH",
+  "url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code=sh688981",
+  "file": "data/fetch_cache/phase3d_20261125/tencent/688981.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:42:19 GMT",
+  "retrieved_at": "2026-11-25T10:42:19.573718+08:00",
+  "raw_sha256": "20fe991d9a9f338ba5b933e0183b48d370b1cb88072fe966c8942b683c99e214",
+  "samples": {
+   "20261123": 242,
+   "20261124": 242
+  }
+ }
+]

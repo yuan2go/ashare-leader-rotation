@@ -1,0 +1,20 @@
+{
+  "api": "stk_limit",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,pre_close,up_limit,down_limit",
+  "retrieved_at": "2026-11-25T10:40:23.735687+08:00",
+  "label": "stk_limit",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:27 GMT",
+  "provider_code": 0,
+  "num_rows": 5658,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "stk_limit.json.gz",
+  "raw_sha256": "6b1eb619861117788102ab8cdf9c9ac2999b7f661a495b3f7c310bfaf905954d",
+  "file_sha256": "1e572231eafa889c3effe6538969c2942c0c12022b123b11bfc279b11ed52500",
+  "completed_at": "2026-11-25T10:40:29.020177+08:00"
+}

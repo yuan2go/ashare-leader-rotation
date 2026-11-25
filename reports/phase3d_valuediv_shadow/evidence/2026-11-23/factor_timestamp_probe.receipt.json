@@ -1,0 +1,24 @@
+{
+  "api": "daily_basic",
+  "params": {
+    "ts_code": "000001.SZ",
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,pe_ttm,dv_ttm,update_time,publish_time",
+  "retrieved_at": "2026-11-25T10:45:11.914219+08:00",
+  "label": "factor_timestamp_probe",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:45:13 GMT",
+  "provider_code": 0,
+  "num_rows": 1,
+  "has_more": false,
+  "member_rows": 1,
+  "distinct_members": 1,
+  "selected_codes": [
+    "000001.SZ"
+  ],
+  "response_file": "factor_timestamp_probe.json.gz",
+  "raw_sha256": "27997d7c2379a5baf79d51411f4b72bd7ca0e1b6e69b678460c48a983842ceeb",
+  "file_sha256": "57575293132d8505695e996926503bbdad063806da61c294f5d4dd40b1b80f24",
+  "completed_at": "2026-11-25T10:45:13.636129+08:00"
+}

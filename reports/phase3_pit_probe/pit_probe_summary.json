@@ -1,0 +1,2164 @@
+{
+  "as_of": "20261124",
+  "freeze": "20261120",
+  "days": 2887,
+  "catalog": {
+    "L": {
+      "status": "成功",
+      "rows": 5581,
+      "unique": 5581,
+      "pagination_ok": true,
+      "listing": [
+        "19901219",
+        "20261123"
+      ],
+      "delisting": [
+        null,
+        null
+      ],
+      "missing_list_date": 0,
+      "missing_delist_date": 5581
+    },
+    "D": {
+      "status": "成功",
+      "rows": 344,
+      "unique": 344,
+      "pagination_ok": true,
+      "listing": [
+        "19901201",
+        "20230201"
+      ],
+      "delisting": [
+        "19990712",
+        "20261113"
+      ],
+      "missing_list_date": 0,
+      "missing_delist_date": 0
+    },
+    "P": {
+      "status": "成功",
+      "rows": 0,
+      "unique": 0,
+      "pagination_ok": true,
+      "listing": [
+        null,
+        null
+      ],
+      "delisting": [
+        null,
+        null
+      ],
+      "missing_list_date": 0,
+      "missing_delist_date": 0
+    }
+  },
+  "calls": [
+    {
+      "n": 1,
+      "api": "stock_basic",
+      "params": {
+        "list_status": "L"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 4.969,
+      "status": "成功",
+      "rows": 5581
+    },
+    {
+      "n": 2,
+      "api": "stock_basic",
+      "params": {
+        "list_status": "D"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.594,
+      "status": "成功",
+      "rows": 344
+    },
+    {
+      "n": 3,
+      "api": "stock_basic",
+      "params": {
+        "list_status": "P"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.859,
+      "status": "成功",
+      "rows": 0
+    },
+    {
+      "n": 4,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20150101",
+        "end_date": "20150630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 4.297,
+      "status": "成功",
+      "rows": 1800
+    },
+    {
+      "n": 5,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20151201",
+        "end_date": "20160630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.453,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 6,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20171201",
+        "end_date": "20180630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 4.218,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 7,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20191201",
+        "end_date": "20200630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.797,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 8,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20221201",
+        "end_date": "20230630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.25,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 9,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20261001",
+        "end_date": "20261124"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.703,
+      "status": "成功",
+      "rows": 300
+    },
+    {
+      "n": 10,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000906.SH",
+        "start_date": "20150101",
+        "end_date": "20150131"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.015,
+      "status": "成功",
+      "rows": 800
+    },
+    {
+      "n": 11,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000906.SH",
+        "start_date": "20160101",
+        "end_date": "20160131"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.641,
+      "status": "成功",
+      "rows": 800
+    },
+    {
+      "n": 12,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000906.SH",
+        "start_date": "20180601",
+        "end_date": "20180630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.985,
+      "status": "成功",
+      "rows": 800
+    },
+    {
+      "n": 13,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000906.SH",
+        "start_date": "20200601",
+        "end_date": "20200630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.907,
+      "status": "成功",
+      "rows": 800
+    },
+    {
+      "n": 14,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000906.SH",
+        "start_date": "20230101",
+        "end_date": "20230131"
+      },
+      "service_code": 0,
+      "has_more": null,
+      "seconds": 4.656,
+      "status": "成功",
+      "rows": 800
+    },
+    {
+      "n": 15,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000906.SH",
+        "start_date": "20261001",
+        "end_date": "20261124"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.0,
+      "status": "成功",
+      "rows": 800
+    },
+    {
+      "n": 16,
+      "api": "daily",
+      "params": {
+        "ts_code": "600005.SH",
+        "start_date": "20150105",
+        "end_date": "20170214"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.469,
+      "status": "成功",
+      "rows": 430
+    },
+    {
+      "n": 17,
+      "api": "adj_factor",
+      "params": {
+        "ts_code": "600005.SH",
+        "start_date": "20150105",
+        "end_date": "20170214"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.75,
+      "status": "成功",
+      "rows": 513
+    },
+    {
+      "n": 18,
+      "api": "daily_basic",
+      "params": {
+        "ts_code": "600005.SH",
+        "start_date": "20150105",
+        "end_date": "20170214"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.781,
+      "status": "成功",
+      "rows": 430
+    },
+    {
+      "n": 19,
+      "api": "dividend",
+      "params": {
+        "ts_code": "600005.SH"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.14,
+      "status": "成功",
+      "rows": 35
+    },
+    {
+      "n": 20,
+      "api": "stk_limit",
+      "params": {
+        "ts_code": "600005.SH",
+        "start_date": "20150105",
+        "end_date": "20170214"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.875,
+      "status": "成功",
+      "rows": 514
+    },
+    {
+      "n": 21,
+      "api": "suspend_d",
+      "params": {
+        "ts_code": "600005.SH",
+        "start_date": "20150105",
+        "end_date": "20170214"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.484,
+      "status": "成功",
+      "rows": 85
+    },
+    {
+      "n": 22,
+      "api": "daily",
+      "params": {
+        "ts_code": "600317.SH",
+        "start_date": "20150105",
+        "end_date": "20210129"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.093,
+      "status": "成功",
+      "rows": 1459
+    },
+    {
+      "n": 23,
+      "api": "adj_factor",
+      "params": {
+        "ts_code": "600317.SH",
+        "start_date": "20150105",
+        "end_date": "20210129"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.25,
+      "status": "成功",
+      "rows": 1481
+    },
+    {
+      "n": 24,
+      "api": "daily_basic",
+      "params": {
+        "ts_code": "600317.SH",
+        "start_date": "20150105",
+        "end_date": "20210129"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 4.766,
+      "status": "成功",
+      "rows": 1459
+    },
+    {
+      "n": 25,
+      "api": "dividend",
+      "params": {
+        "ts_code": "600317.SH"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 4.406,
+      "status": "成功",
+      "rows": 25
+    },
+    {
+      "n": 26,
+      "api": "stk_limit",
+      "params": {
+        "ts_code": "600317.SH",
+        "start_date": "20150105",
+        "end_date": "20210129"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.906,
+      "status": "成功",
+      "rows": 1481
+    },
+    {
+      "n": 27,
+      "api": "suspend_d",
+      "params": {
+        "ts_code": "600317.SH",
+        "start_date": "20150105",
+        "end_date": "20210129"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 1.641,
+      "status": "成功",
+      "rows": 25
+    },
+    {
+      "n": 28,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20161201",
+        "end_date": "20170630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.906,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 29,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20181201",
+        "end_date": "20190630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.188,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 30,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20201201",
+        "end_date": "20210630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.375,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 31,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20211201",
+        "end_date": "20220630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 3.062,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 32,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20231201",
+        "end_date": "20240630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.484,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 33,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20241201",
+        "end_date": "20250630"
+      },
+      "seconds": 5.078,
+      "status": "网络或响应失败",
+      "rows": null
+    },
+    {
+      "n": 34,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20251201",
+        "end_date": "20260630"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 2.968,
+      "status": "成功",
+      "rows": 2100
+    },
+    {
+      "n": 35,
+      "api": "index_weight",
+      "params": {
+        "index_code": "000300.SH",
+        "start_date": "20241201",
+        "end_date": "20241231"
+      },
+      "service_code": 0,
+      "has_more": false,
+      "seconds": 4.359,
+      "status": "成功",
+      "rows": 300
+    }
+  ],
+  "weights": {
+    "000300.SH": {
+      "201501": {
+        "call": 4,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20150130": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.06,
+            "valid": true
+          }
+        },
+        "latest": "20150130",
+        "has_more": false
+      },
+      "201506": {
+        "call": 4,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20150630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.995,
+            "valid": true
+          }
+        },
+        "latest": "20150630",
+        "has_more": false
+      },
+      "201512": {
+        "call": 5,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20151231": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.992,
+            "valid": true
+          }
+        },
+        "latest": "20151231",
+        "has_more": false
+      },
+      "201601": {
+        "call": 5,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20160129": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.002,
+            "valid": true
+          }
+        },
+        "latest": "20160129",
+        "has_more": false
+      },
+      "201606": {
+        "call": 5,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20160630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.0,
+            "valid": true
+          }
+        },
+        "latest": "20160630",
+        "has_more": false
+      },
+      "201712": {
+        "call": 6,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20171229": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.997,
+            "valid": true
+          }
+        },
+        "latest": "20171229",
+        "has_more": false
+      },
+      "201806": {
+        "call": 6,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20180629": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.001,
+            "valid": true
+          }
+        },
+        "latest": "20180629",
+        "has_more": false
+      },
+      "201912": {
+        "call": 7,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20191231": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.996,
+            "valid": true
+          }
+        },
+        "latest": "20191231",
+        "has_more": false
+      },
+      "202006": {
+        "call": 7,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20200630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.006,
+            "valid": true
+          }
+        },
+        "latest": "20200630",
+        "has_more": false
+      },
+      "202212": {
+        "call": 8,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20221230": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.998,
+            "valid": true
+          }
+        },
+        "latest": "20221230",
+        "has_more": false
+      },
+      "202301": {
+        "call": 8,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20230131": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.008,
+            "valid": true
+          }
+        },
+        "latest": "20230131",
+        "has_more": false
+      },
+      "202306": {
+        "call": 8,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20230630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.989,
+            "valid": true
+          }
+        },
+        "latest": "20230630",
+        "has_more": false
+      },
+      "202610": {
+        "call": 9,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20261030": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.99,
+            "valid": true
+          }
+        },
+        "latest": "20261030",
+        "has_more": false
+      },
+      "202611": {
+        "call": 9,
+        "status": "成功",
+        "rows": 0,
+        "snapshots": {},
+        "latest": null,
+        "has_more": false
+      },
+      "201612": {
+        "call": 28,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20161230": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.003,
+            "valid": true
+          }
+        },
+        "latest": "20161230",
+        "has_more": false
+      },
+      "201706": {
+        "call": 28,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20170630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.999,
+            "valid": true
+          }
+        },
+        "latest": "20170630",
+        "has_more": false
+      },
+      "201812": {
+        "call": 29,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20181228": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.0,
+            "valid": true
+          }
+        },
+        "latest": "20181228",
+        "has_more": false
+      },
+      "201906": {
+        "call": 29,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20190628": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.999,
+            "valid": true
+          }
+        },
+        "latest": "20190628",
+        "has_more": false
+      },
+      "202012": {
+        "call": 30,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20201231": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.006,
+            "valid": true
+          }
+        },
+        "latest": "20201231",
+        "has_more": false
+      },
+      "202106": {
+        "call": 30,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20210630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.993,
+            "valid": true
+          }
+        },
+        "latest": "20210630",
+        "has_more": false
+      },
+      "202112": {
+        "call": 31,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20211231": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.988,
+            "valid": true
+          }
+        },
+        "latest": "20211231",
+        "has_more": false
+      },
+      "202206": {
+        "call": 31,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20220630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.998,
+            "valid": true
+          }
+        },
+        "latest": "20220630",
+        "has_more": false
+      },
+      "202312": {
+        "call": 32,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20231229": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.01,
+            "valid": true
+          }
+        },
+        "latest": "20231229",
+        "has_more": false
+      },
+      "202406": {
+        "call": 32,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20240628": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.002,
+            "valid": true
+          }
+        },
+        "latest": "20240628",
+        "has_more": false
+      },
+      "202412": {
+        "call": 35,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20241231": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.005,
+            "valid": true
+          }
+        },
+        "latest": "20241231",
+        "has_more": false
+      },
+      "202506": {
+        "call": 33,
+        "status": "网络或响应失败",
+        "rows": null,
+        "snapshots": {},
+        "latest": null,
+        "has_more": null
+      },
+      "202512": {
+        "call": 34,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20251231": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 99.997,
+            "valid": true
+          }
+        },
+        "latest": "20251231",
+        "has_more": false
+      },
+      "202606": {
+        "call": 34,
+        "status": "成功",
+        "rows": 300,
+        "snapshots": {
+          "20260630": {
+            "rows": 300,
+            "unique": 300,
+            "weight_sum_pct": 100.008,
+            "valid": true
+          }
+        },
+        "latest": "20260630",
+        "has_more": false
+      }
+    },
+    "000906.SH": {
+      "201501": {
+        "call": 10,
+        "status": "成功",
+        "rows": 800,
+        "snapshots": {
+          "20150130": {
+            "rows": 800,
+            "unique": 800,
+            "weight_sum_pct": 99.91,
+            "valid": true
+          }
+        },
+        "latest": "20150130",
+        "has_more": false
+      },
+      "201601": {
+        "call": 11,
+        "status": "成功",
+        "rows": 800,
+        "snapshots": {
+          "20160129": {
+            "rows": 800,
+            "unique": 800,
+            "weight_sum_pct": 100.007,
+            "valid": true
+          }
+        },
+        "latest": "20160129",
+        "has_more": false
+      },
+      "201806": {
+        "call": 12,
+        "status": "成功",
+        "rows": 800,
+        "snapshots": {
+          "20180629": {
+            "rows": 800,
+            "unique": 800,
+            "weight_sum_pct": 100.005,
+            "valid": true
+          }
+        },
+        "latest": "20180629",
+        "has_more": false
+      },
+      "202006": {
+        "call": 13,
+        "status": "成功",
+        "rows": 800,
+        "snapshots": {
+          "20200630": {
+            "rows": 800,
+            "unique": 800,
+            "weight_sum_pct": 100.006,
+            "valid": true
+          }
+        },
+        "latest": "20200630",
+        "has_more": false
+      },
+      "202301": {
+        "call": 14,
+        "status": "成功",
+        "rows": 800,
+        "snapshots": {
+          "20230131": {
+            "rows": 800,
+            "unique": 800,
+            "weight_sum_pct": 100.002,
+            "valid": true
+          }
+        },
+        "latest": "20230131",
+        "has_more": null
+      },
+      "202610": {
+        "call": 15,
+        "status": "成功",
+        "rows": 800,
+        "snapshots": {
+          "20261030": {
+            "rows": 800,
+            "unique": 800,
+            "weight_sum_pct": 100.007,
+            "valid": true
+          }
+        },
+        "latest": "20261030",
+        "has_more": false
+      },
+      "202611": {
+        "call": 15,
+        "status": "成功",
+        "rows": 0,
+        "snapshots": {},
+        "latest": null,
+        "has_more": false
+      }
+    }
+  },
+  "weight_csv_measurements": [
+    [
+      1800,
+      61309
+    ],
+    [
+      2100,
+      73258
+    ],
+    [
+      2100,
+      73240
+    ],
+    [
+      2100,
+      73288
+    ],
+    [
+      2100,
+      73231
+    ],
+    [
+      300,
+      10475
+    ],
+    [
+      800,
+      27147
+    ],
+    [
+      800,
+      27918
+    ],
+    [
+      800,
+      27912
+    ],
+    [
+      800,
+      27905
+    ],
+    [
+      800,
+      27919
+    ],
+    [
+      800,
+      27928
+    ],
+    [
+      2100,
+      73274
+    ],
+    [
+      2100,
+      73274
+    ],
+    [
+      2100,
+      73267
+    ],
+    [
+      2100,
+      73276
+    ],
+    [
+      2100,
+      73309
+    ],
+    [
+      2100,
+      73301
+    ],
+    [
+      300,
+      10453
+    ]
+  ],
+  "latest_sampled": {
+    "000300.SH": "20261030",
+    "000906.SH": "20261030"
+  },
+  "pool": {
+    "valid_snapshots": 78,
+    "observed_months": [
+      "201501",
+      "201502",
+      "201503",
+      "201504",
+      "201505",
+      "201506",
+      "201512",
+      "201601",
+      "201602",
+      "201603",
+      "201604",
+      "201605",
+      "201606",
+      "201612",
+      "201701",
+      "201702",
+      "201703",
+      "201704",
+      "201705",
+      "201706",
+      "201712",
+      "201801",
+      "201802",
+      "201803",
+      "201804",
+      "201805",
+      "201806",
+      "201812",
+      "201901",
+      "201902",
+      "201903",
+      "201904",
+      "201905",
+      "201906",
+      "201912",
+      "202001",
+      "202002",
+      "202003",
+      "202004",
+      "202005",
+      "202006",
+      "202012",
+      "202101",
+      "202102",
+      "202103",
+      "202104",
+      "202105",
+      "202106",
+      "202112",
+      "202201",
+      "202202",
+      "202203",
+      "202204",
+      "202205",
+      "202206",
+      "202212",
+      "202301",
+      "202302",
+      "202303",
+      "202304",
+      "202305",
+      "202306",
+      "202312",
+      "202401",
+      "202402",
+      "202403",
+      "202404",
+      "202405",
+      "202406",
+      "202412",
+      "202512",
+      "202601",
+      "202602",
+      "202603",
+      "202604",
+      "202605",
+      "202606",
+      "202610"
+    ],
+    "confirmed_unique": 667,
+    "semiannual_observed": [
+      "201506",
+      "201512",
+      "201606",
+      "201612",
+      "201706",
+      "201712",
+      "201806",
+      "201812",
+      "201906",
+      "201912",
+      "202006",
+      "202012",
+      "202106",
+      "202112",
+      "202206",
+      "202212",
+      "202306",
+      "202312",
+      "202406",
+      "202412",
+      "202512",
+      "202606"
+    ],
+    "semiannual_missing": [
+      "202506"
+    ],
+    "early_delisted_intersection": 25,
+    "catalog_ceiling_conditional": 5481,
+    "interior_extra": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "scope": "所有通过数量、去重与权重和检验的查询日；以证券代码计",
+    "scenario_range": [
+      667,
+      697
+    ],
+    "scenario_assumptions": "每个缺测半年截面最多30个未见代码，其他未采月份无临时独有成分；非严格上界"
+  },
+  "samples": {
+    "600005.SH": {
+      "role": "早期成分且已退市",
+      "name": "武钢股份(退)",
+      "listed": "19990803",
+      "delisted": "20170214",
+      "window": [
+        "20150105",
+        "20170214"
+      ],
+      "shared_quote_day": null,
+      "interfaces": {
+        "daily": {
+          "rows": 430,
+          "returned": 430,
+          "dates": [
+            "20150105",
+            "20170123"
+          ],
+          "nulls": {
+            "open": 0,
+            "high": 0,
+            "low": 0,
+            "close": 0,
+            "pre_close": 0,
+            "vol": 0,
+            "amount": 0
+          },
+          "early_rows": 430,
+          "early_nulls": {
+            "open": 0,
+            "high": 0,
+            "low": 0,
+            "close": 0,
+            "pre_close": 0,
+            "vol": 0,
+            "amount": 0
+          },
+          "csv_bytes": 27867,
+          "csv_rows": 430
+        },
+        "adj_factor": {
+          "rows": 513,
+          "returned": 513,
+          "dates": [
+            "20150105",
+            "20170213"
+          ],
+          "nulls": {
+            "adj_factor": 0
+          },
+          "early_rows": 513,
+          "early_nulls": {
+            "adj_factor": 0
+          },
+          "csv_bytes": 13338,
+          "csv_rows": 513
+        },
+        "daily_basic": {
+          "rows": 430,
+          "returned": 430,
+          "dates": [
+            "20150105",
+            "20170123"
+          ],
+          "nulls": {
+            "close": 0,
+            "turnover_rate": 0,
+            "turnover_rate_f": 0,
+            "volume_ratio": 0,
+            "pe": 111,
+            "pe_ttm": 230,
+            "pb": 0,
+            "ps_ttm": 0,
+            "dv_ratio": 0,
+            "dv_ttm": 75,
+            "total_mv": 0,
+            "circ_mv": 0
+          },
+          "early_rows": 430,
+          "early_nulls": {
+            "close": 0,
+            "turnover_rate": 0,
+            "turnover_rate_f": 0,
+            "volume_ratio": 0,
+            "pe": 111,
+            "pe_ttm": 230,
+            "pb": 0,
+            "ps_ttm": 0,
+            "dv_ratio": 0,
+            "dv_ttm": 75,
+            "total_mv": 0,
+            "circ_mv": 0
+          },
+          "csv_bytes": 45251,
+          "csv_rows": 430
+        },
+        "dividend": {
+          "rows": 1,
+          "returned": 35,
+          "dates": [
+            "20150619",
+            "20150619"
+          ],
+          "nulls": {
+            "div_proc": 0,
+            "ex_date": 0,
+            "record_date": 0,
+            "pay_date": 0,
+            "imp_ann_date": 0,
+            "div_listdate": 1,
+            "cash_div_tax": 0,
+            "stk_bo_rate": 1,
+            "stk_co_rate": 1,
+            "ann_date": 0,
+            "end_date": 0
+          },
+          "early_rows": 1,
+          "early_nulls": {
+            "div_proc": 0,
+            "ex_date": 0,
+            "record_date": 0,
+            "pay_date": 0,
+            "imp_ann_date": 0,
+            "div_listdate": 1,
+            "cash_div_tax": 0,
+            "stk_bo_rate": 1,
+            "stk_co_rate": 1,
+            "ann_date": 0,
+            "end_date": 0
+          },
+          "csv_bytes": 79,
+          "csv_rows": 1,
+          "implemented": 1,
+          "cash_events": 1,
+          "bonus_events": 0,
+          "bad_announcement": 0,
+          "bad_pay": 0,
+          "bad_share": 0,
+          "implemented_undated": 0
+        },
+        "stk_limit": {
+          "rows": 514,
+          "returned": 514,
+          "dates": [
+            "20150105",
+            "20170214"
+          ],
+          "nulls": {
+            "pre_close": 0,
+            "up_limit": 0,
+            "down_limit": 0
+          },
+          "early_rows": 514,
+          "early_nulls": {
+            "pre_close": 0,
+            "up_limit": 0,
+            "down_limit": 0
+          },
+          "csv_bytes": 17260,
+          "csv_rows": 514
+        },
+        "suspend_d": {
+          "rows": 85,
+          "returned": 85,
+          "dates": [
+            "20160627",
+            "20170213"
+          ],
+          "nulls": {
+            "suspend_type": 0,
+            "suspend_timing": 85
+          },
+          "early_rows": 85,
+          "early_nulls": {
+            "suspend_type": 0,
+            "suspend_timing": 85
+          },
+          "csv_bytes": 1870,
+          "csv_rows": 85
+        }
+      },
+      "checks": {
+        "unexplained_sessions": 1,
+        "unexplained_range": [
+          "20170214",
+          "20170214"
+        ],
+        "quote_suspension_conflicts": 0,
+        "comparable_sessions": 514,
+        "open_days": 430,
+        "full_day_suspensions": 83,
+        "daily_basic_missing_on_open": 0,
+        "daily_basic_duplicates": 0,
+        "stk_limit_missing_on_open": 0,
+        "stk_limit_duplicates": 0,
+        "adj_factor_missing_on_open": 0,
+        "adj_factor_duplicates": 0,
+        "basic_close_mismatch": 0
+      }
+    },
+    "600317.SH": {
+      "role": "早期成分且已退市",
+      "name": "营口港(退)",
+      "listed": "20020131",
+      "delisted": "20210129",
+      "window": [
+        "20150105",
+        "20210129"
+      ],
+      "shared_quote_day": null,
+      "interfaces": {
+        "daily": {
+          "rows": 1459,
+          "returned": 1459,
+          "dates": [
+            "20150105",
+            "20210114"
+          ],
+          "nulls": {
+            "open": 0,
+            "high": 0,
+            "low": 0,
+            "close": 0,
+            "pre_close": 0,
+            "vol": 0,
+            "amount": 0
+          },
+          "early_rows": 974,
+          "early_nulls": {
+            "open": 0,
+            "high": 0,
+            "low": 0,
+            "close": 0,
+            "pre_close": 0,
+            "vol": 0,
+            "amount": 0
+          },
+          "csv_bytes": 91630,
+          "csv_rows": 1459
+        },
+        "adj_factor": {
+          "rows": 1481,
+          "returned": 1481,
+          "dates": [
+            "20150105",
+            "20210128"
+          ],
+          "nulls": {
+            "adj_factor": 0
+          },
+          "early_rows": 975,
+          "early_nulls": {
+            "adj_factor": 0
+          },
+          "csv_bytes": 39987,
+          "csv_rows": 1481
+        },
+        "daily_basic": {
+          "rows": 1459,
+          "returned": 1459,
+          "dates": [
+            "20150105",
+            "20210114"
+          ],
+          "nulls": {
+            "close": 0,
+            "turnover_rate": 0,
+            "turnover_rate_f": 0,
+            "volume_ratio": 0,
+            "pe": 0,
+            "pe_ttm": 0,
+            "pb": 0,
+            "ps_ttm": 0,
+            "dv_ratio": 0,
+            "dv_ttm": 78,
+            "total_mv": 0,
+            "circ_mv": 0
+          },
+          "early_rows": 974,
+          "early_nulls": {
+            "close": 0,
+            "turnover_rate": 0,
+            "turnover_rate_f": 0,
+            "volume_ratio": 0,
+            "pe": 0,
+            "pe_ttm": 0,
+            "pb": 0,
+            "ps_ttm": 0,
+            "dv_ratio": 0,
+            "dv_ttm": 63,
+            "total_mv": 0,
+            "circ_mv": 0
+          },
+          "csv_bytes": 162211,
+          "csv_rows": 1459
+        },
+        "dividend": {
+          "rows": 6,
+          "returned": 25,
+          "dates": [
+            "20150715",
+            "20200731"
+          ],
+          "nulls": {
+            "div_proc": 0,
+            "ex_date": 0,
+            "record_date": 0,
+            "pay_date": 0,
+            "imp_ann_date": 0,
+            "div_listdate": 6,
+            "cash_div_tax": 0,
+            "stk_bo_rate": 6,
+            "stk_co_rate": 6,
+            "ann_date": 0,
+            "end_date": 0
+          },
+          "early_rows": 4,
+          "early_nulls": {
+            "div_proc": 0,
+            "ex_date": 0,
+            "record_date": 0,
+            "pay_date": 0,
+            "imp_ann_date": 0,
+            "div_listdate": 4,
+            "cash_div_tax": 0,
+            "stk_bo_rate": 4,
+            "stk_co_rate": 4,
+            "ann_date": 0,
+            "end_date": 0
+          },
+          "csv_bytes": 478,
+          "csv_rows": 6,
+          "implemented": 6,
+          "cash_events": 6,
+          "bonus_events": 0,
+          "bad_announcement": 0,
+          "bad_pay": 0,
+          "bad_share": 0,
+          "implemented_undated": 0
+        },
+        "stk_limit": {
+          "rows": 1481,
+          "returned": 1481,
+          "dates": [
+            "20150105",
+            "20210128"
+          ],
+          "nulls": {
+            "pre_close": 21,
+            "up_limit": 0,
+            "down_limit": 0
+          },
+          "early_rows": 975,
+          "early_nulls": {
+            "pre_close": 0,
+            "up_limit": 0,
+            "down_limit": 0
+          },
+          "csv_bytes": 49868,
+          "csv_rows": 1481
+        },
+        "suspend_d": {
+          "rows": 25,
+          "returned": 25,
+          "dates": [
+            "20170613",
+            "20210128"
+          ],
+          "nulls": {
+            "suspend_type": 0,
+            "suspend_timing": 25
+          },
+          "early_rows": 2,
+          "early_nulls": {
+            "suspend_type": 0,
+            "suspend_timing": 2
+          },
+          "csv_bytes": 550,
+          "csv_rows": 25
+        }
+      },
+      "checks": {
+        "unexplained_sessions": 1,
+        "unexplained_range": [
+          "20210129",
+          "20210129"
+        ],
+        "quote_suspension_conflicts": 0,
+        "comparable_sessions": 1482,
+        "open_days": 1459,
+        "full_day_suspensions": 22,
+        "daily_basic_missing_on_open": 0,
+        "daily_basic_duplicates": 0,
+        "stk_limit_missing_on_open": 0,
+        "stk_limit_duplicates": 0,
+        "adj_factor_missing_on_open": 0,
+        "adj_factor_duplicates": 0,
+        "basic_close_mismatch": 0
+      }
+    }
+  },
+  "integrity": {
+    "workspace_before": {
+      "files": 32030,
+      "bytes": 1558353155,
+      "sha256": "a1e29e0b58b394ac58e132cb9d11809e86af98579637d9de69f0297b3a8d9556"
+    },
+    "workspace_after": {
+      "files": 32030,
+      "bytes": 1558353155,
+      "sha256": "a1e29e0b58b394ac58e132cb9d11809e86af98579637d9de69f0297b3a8d9556"
+    },
+    "core_before": {
+      "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+      "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+      "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+      "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+      "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca",
+      "engine_integrity.json": "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0"
+    },
+    "core_after": {
+      "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+      "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+      "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+      "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+      "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca",
+      "engine_integrity.json": "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0"
+    },
+    "scope": "工作树所有原文件，排除 .git 和三个明确授权路径；内容、相对路径与 mtime_ns"
+  },
+  "resources": {
+    "latency_seconds": {
+      "stock_basic": {
+        "n": 3,
+        "p50": 3.594,
+        "p90": 4.969
+      },
+      "index_weight": {
+        "n": 19,
+        "p50": 3.062,
+        "p90": 4.359
+      },
+      "daily": {
+        "n": 2,
+        "p50": 2.2809999999999997,
+        "p90": 2.469
+      },
+      "adj_factor": {
+        "n": 2,
+        "p50": 3.0,
+        "p90": 3.75
+      },
+      "daily_basic": {
+        "n": 2,
+        "p50": 3.2735,
+        "p90": 4.766
+      },
+      "dividend": {
+        "n": 2,
+        "p50": 2.7729999999999997,
+        "p90": 4.406
+      },
+      "stk_limit": {
+        "n": 2,
+        "p50": 2.8905000000000003,
+        "p90": 2.906
+      },
+      "suspend_d": {
+        "n": 2,
+        "p50": 1.5625,
+        "p90": 1.641
+      }
+    },
+    "successful_p50_seconds": 2.8905000000000003,
+    "successful_p90_seconds": 4.406,
+    "throttled": 0,
+    "min_start_interval_seconds": 1.25,
+    "months": 143,
+    "csv_bytes_per_row": {
+      "daily": 63.26,
+      "adj_factor": 26.74,
+      "daily_basic": 109.83,
+      "dividend": 79.57,
+      "stk_limit": 33.65,
+      "suspend_d": 22.0
+    },
+    "fallback_bytes_if_unobserved": {
+      "daily": 85,
+      "adj_factor": 29,
+      "daily_basic": 120,
+      "dividend": 110,
+      "stk_limit": 43,
+      "suspend_d": 32
+    },
+    "event_rows_per_session": {
+      "dividend": 0.0035070140280561123,
+      "suspend_d": 0.05511022044088176
+    },
+    "scenarios": {
+      "行情复权估值分红": [
+        {
+          "symbols": 600,
+          "fraction": 0.7,
+          "requests": 2546,
+          "by_api": {
+            "stock_basic": 3,
+            "index_weight": 143,
+            "daily": 600,
+            "adj_factor": 600,
+            "daily_basic": 600,
+            "dividend": 600
+          },
+          "minutes": {
+            "p50": 120.8,
+            "p90": 164.5
+          },
+          "csv_MB": 244.1
+        },
+        {
+          "symbols": 667,
+          "fraction": 0.7,
+          "requests": 2814,
+          "by_api": {
+            "stock_basic": 3,
+            "index_weight": 143,
+            "daily": 667,
+            "adj_factor": 667,
+            "daily_basic": 667,
+            "dividend": 667
+          },
+          "minutes": {
+            "p50": 133.4,
+            "p90": 181.7
+          },
+          "csv_MB": 271.2
+        },
+        {
+          "symbols": 700,
+          "fraction": 1.0,
+          "requests": 2946,
+          "by_api": {
+            "stock_basic": 3,
+            "index_weight": 143,
+            "daily": 700,
+            "adj_factor": 700,
+            "daily_basic": 700,
+            "dividend": 700
+          },
+          "minutes": {
+            "p50": 139.6,
+            "p90": 190.2
+          },
+          "csv_MB": 405.9
+        }
+      ],
+      "六接口": [
+        {
+          "symbols": 600,
+          "fraction": 0.7,
+          "requests": 3746,
+          "by_api": {
+            "stock_basic": 3,
+            "index_weight": 143,
+            "daily": 600,
+            "adj_factor": 600,
+            "daily_basic": 600,
+            "dividend": 600,
+            "stk_limit": 600,
+            "suspend_d": 600
+          },
+          "minutes": {
+            "p50": 165.3,
+            "p90": 210.0
+          },
+          "csv_MB": 286.4
+        },
+        {
+          "symbols": 667,
+          "fraction": 0.7,
+          "requests": 4148,
+          "by_api": {
+            "stock_basic": 3,
+            "index_weight": 143,
+            "daily": 667,
+            "adj_factor": 667,
+            "daily_basic": 667,
+            "dividend": 667,
+            "stk_limit": 667,
+            "suspend_d": 667
+          },
+          "minutes": {
+            "p50": 182.9,
+            "p90": 232.3
+          },
+          "csv_MB": 318.2
+        },
+        {
+          "symbols": 700,
+          "fraction": 1.0,
+          "requests": 4346,
+          "by_api": {
+            "stock_basic": 3,
+            "index_weight": 143,
+            "daily": 700,
+            "adj_factor": 700,
+            "daily_basic": 700,
+            "dividend": 700,
+            "stk_limit": 700,
+            "suspend_d": 700
+          },
+          "minutes": {
+            "p50": 191.6,
+            "p90": 243.2
+          },
+          "csv_MB": 476.3
+        }
+      ]
+    },
+    "assumptions": "串行冷启动；每票每接口一次，另加 L/D/P 三表和每月一个 HS300 截面；按 70% / 100% 上市覆盖折算日频体积。一份未压缩 UTF-8 CSV，含指数、不含缓存、重试、修补及本地验收耗时。重试/拆页增加调用次数；若持续限流按 max(延迟, 60/获准每分钟调用数) 另加等待。"
+  },
+  "cache": {
+    "current_pool": 50,
+    "tushare": {
+      "daily": {
+        "files": 69,
+        "rows_before_dedup": 180695,
+        "nonempty_codes": 68,
+        "requested_codes": 68,
+        "current_pool": 50,
+        "outside_current": 18,
+        "dates": [
+          "20150105",
+          "20261120"
+        ],
+        "fields": [
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "trade_date",
+          "ts_code",
+          "vol"
+        ]
+      },
+      "namechange": {
+        "files": 38,
+        "rows_before_dedup": 84,
+        "nonempty_codes": 38,
+        "requested_codes": 38,
+        "current_pool": 20,
+        "outside_current": 18,
+        "dates": [
+          "19930610",
+          "20260813"
+        ],
+        "fields": [
+          "ann_date",
+          "end_date",
+          "name",
+          "start_date",
+          "ts_code"
+        ]
+      },
+      "daily_basic": {
+        "files": 50,
+        "rows_before_dedup": 133731,
+        "nonempty_codes": 50,
+        "requested_codes": 50,
+        "current_pool": 50,
+        "outside_current": 0,
+        "dates": [
+          "20150105",
+          "20261120"
+        ],
+        "fields": [
+          "circ_mv",
+          "close",
+          "dv_ratio",
+          "dv_ttm",
+          "pb",
+          "pe",
+          "pe_ttm",
+          "ps_ttm",
+          "total_mv",
+          "trade_date",
+          "ts_code",
+          "turnover_rate",
+          "turnover_rate_f",
+          "volume_ratio"
+        ]
+      },
+      "suspend_d": {
+        "files": 38,
+        "rows_before_dedup": 2965,
+        "nonempty_codes": 33,
+        "requested_codes": 38,
+        "current_pool": 16,
+        "outside_current": 17,
+        "dates": [
+          "20150105",
+          "20260115"
+        ],
+        "fields": [
+          "suspend_timing",
+          "suspend_type",
+          "trade_date",
+          "ts_code"
+        ]
+      },
+      "moneyflow": {
+        "files": 53,
+        "rows_before_dedup": 133700,
+        "nonempty_codes": 50,
+        "requested_codes": 50,
+        "current_pool": 50,
+        "outside_current": 0,
+        "dates": [
+          "20150105",
+          "20261120"
+        ],
+        "fields": [
+          "buy_elg_amount",
+          "buy_lg_amount",
+          "buy_md_amount",
+          "buy_sm_amount",
+          "net_mf_amount",
+          "sell_elg_amount",
+          "sell_lg_amount",
+          "sell_md_amount",
+          "sell_sm_amount",
+          "trade_date",
+          "ts_code"
+        ]
+      },
+      "stock_basic": {
+        "files": 38,
+        "rows_before_dedup": 38,
+        "nonempty_codes": 38,
+        "requested_codes": 38,
+        "current_pool": 20,
+        "outside_current": 18,
+        "dates": [
+          "19930610",
+          "20210610"
+        ],
+        "fields": [
+          "delist_date",
+          "list_date",
+          "list_status",
+          "market",
+          "symbol",
+          "ts_code"
+        ]
+      },
+      "dividend": {
+        "files": 38,
+        "rows_before_dedup": 2371,
+        "nonempty_codes": 38,
+        "requested_codes": 38,
+        "current_pool": 20,
+        "outside_current": 18,
+        "dates": [
+          "19930628",
+          "20261109"
+        ],
+        "fields": [
+          "cash_div_tax",
+          "div_listdate",
+          "div_proc",
+          "ex_date",
+          "imp_ann_date",
+          "pay_date",
+          "record_date",
+          "stk_bo_rate",
+          "stk_co_rate",
+          "ts_code"
+        ]
+      }
+    },
+    "legacy_frames": {
+      "其他来源": 2211,
+      "BaoStock": 623
+    },
+    "baostock_request_codes": {
+      "query_history_k_data_plus": 80,
+      "query_dividend_data": 43,
+      "query_stock_basic": 89,
+      "query_trade_dates": 0
+    },
+    "signed_stock_tape": "data/stocks.csv",
+    "signed_factors": "data/research/factors/daily_basic.csv"
+  },
+  "archived_audit": {
+    "source": "既有 results/data_audit.json，本次未重跑",
+    "stock_issues": 0,
+    "etf_issues": 0,
+    "production_replay": true,
+    "stocks": 50,
+    "stock_rows": 136476,
+    "etf_coverage": [
+      {
+        "code": "159915",
+        "rows": 1667,
+        "first": "2020-01-02",
+        "last": "2026-11-20",
+        "usable": 1666,
+        "last_usable_observation": "2026-11-19"
+      },
+      {
+        "code": "159919",
+        "rows": 1668,
+        "first": "2020-01-02",
+        "last": "2026-11-20",
+        "usable": 1667,
+        "last_usable_observation": "2026-11-19"
+      },
+      {
+        "code": "510050",
+        "rows": 1668,
+        "first": "2020-01-02",
+        "last": "2026-11-20",
+        "usable": 1667,
+        "last_usable_observation": "2026-11-19"
+      },
+      {
+        "code": "510300",
+        "rows": 1668,
+        "first": "2020-01-02",
+        "last": "2026-11-20",
+        "usable": 1667,
+        "last_usable_observation": "2026-11-19"
+      },
+      {
+        "code": "510330",
+        "rows": 1668,
+        "first": "2020-01-02",
+        "last": "2026-11-20",
+        "usable": 1667,
+        "last_usable_observation": "2026-11-19"
+      },
+      {
+        "code": "510500",
+        "rows": 1668,
+        "first": "2020-01-02",
+        "last": "2026-11-20",
+        "usable": 1667,
+        "last_usable_observation": "2026-11-19"
+      },
+      {
+        "code": "588000",
+        "rows": 1459,
+        "first": "2020-11-16",
+        "last": "2026-11-20",
+        "usable": 1458,
+        "last_usable_observation": "2026-11-19"
+      }
+    ]
+  },
+  "factor_mapping": [
+    [
+      "ValueDiv 截面",
+      "daily_basic.pe_ttm、dv_ttm；close 与当日未复权 close 核对。",
+      "周信号 t 收盘只取前一市场日有观测且 t 开市的代码。正 PE 取倒数，其余 EP 得分为零；股息率缺失或负值按零，截面并列取中秩，两项各半。整行缺失则不入截面。保留供应商原始空值。"
+    ],
+    [
+      "估值附加列",
+      "pe、pb、dv_ratio、total_mv、circ_mv 均取自 daily_basic；市值单位万元。",
+      "F3 无需这五列。turnover_rate_f/turnover_rate 用于 F2，moneyflow 和 amount 用于 F4；BASE 两袖子不消费 F2/F4。历史财务修订的首发版本和发布时间仍需存证。"
+    ],
+    [
+      "趋势与成交",
+      "daily 的 OHLC 原价、pre_close、vol×100 股、amount×1000 元；stk_limit 的 up_limit、down_limit。",
+      "引擎从已核验权益日的前收/当日参考价递推复权，adj_factor 仅作对照。252 个有效开市日、完整周、20D/60D 回归及波动率仓位要在同一交易日历上计算；扩池需保留入池前预热。"
+    ],
+    [
+      "停牌与价格界",
+      "suspend_d.suspend_type、suspend_timing；全日 S 与交易日历逐日对齐。",
+      "临停、复牌与全日停牌分别处理。限价空值须核实无限价规则；ST 名称历史、首次上市与复牌例外、除权日分位精度均需证据。冻结输入的 Tushare 来源白名单仅含 daily/dividend/namechange/stock_basic/suspend_d，且限 60、00、30 开头代码；stk_limit 来源和 688 等代码不能直接签入。"
+    ],
+    [
+      "权益账本",
+      "div_proc=实施，imp_ann_date→实施公告，ex_date→除权，pay_date→现金到账，div_listdate→红股上市；cash_div_tax、stk_bo_rate+stk_co_rate。",
+      "ann_date 为方案公告。须核查实施公告早于除权日，以及派息/上市日、差异化分红参考价和配股等特殊权益。冻结 inputs.py 明确拒绝期内退市且无摘牌清算协议的证券。"
+    ],
+    [
+      "历史入池与行业",
+      "index_weight 提供 trade_date、con_code、weight；stock_basic 提供证券生命周期。",
+      "缺调样公告时间、正式生效日和两截面之间的临时替换。月末观察最多从可证披露后的信号起使用，不能回填当月。现有宏观桶依赖人工配置；新增标的需历史行业映射、适用整手与撮合制度。"
+    ]
+  ],
+  "sample_permissions": {
+    "daily": "通，有记录",
+    "adj_factor": "通，有记录",
+    "daily_basic": "通，有记录",
+    "dividend": "通，有记录",
+    "stk_limit": "通，有记录",
+    "suspend_d": "通，有记录"
+  },
+  "credential_check": {
+    "matches": 0,
+    "files": 3,
+    "scope": "实际有效本地凭据与私有端点，UTF-8/UTF-16LE/BE"
+  }
+}

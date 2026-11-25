@@ -1,0 +1,295 @@
+{
+  "status": "verified",
+  "http_requests": 0,
+  "frozen_before": {
+    "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+    "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+    "engine_integrity.json": "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0",
+    "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+    "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+    "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca"
+  },
+  "input_sha256": {
+    "core/__init__.py": "820fd4881a5554d19798edc63f0de2d0f15932755961b3de039de342b59d10be",
+    "core/calendar.py": "9d51aedda7f9ff23b4796eee94b05fe7abe804ccb237c707373d25dd0bc006f0",
+    "core/calibration.py": "71ba70d7a1e91417f75e6c64ecebab230c2d09090d60b7c46bfb9455b8a56c09",
+    "core/factor_court.py": "6ef3253ce2ffada341abab1296331130c52f2a0a59a451c13614be4b09632426",
+    "core/integrity.py": "fff51ed2a1649b8ccd852197e827bb4e03d9b05843429a18e3a935435c9db6e5",
+    "core/manifest.py": "7ccca385985b0f46c875c9eaa4ca86ddefb31c95c43bf9102bb0cb25ca2c4914",
+    "core/metrics.py": "f3fb2657eb1b313dc4db1a753d512661bbbd49714f3051da13068879de8ce85b",
+    "core/publication.py": "61dfada9cf916664f1ead8dff16b05ef4016331ac2a86bb6266aef97c7338e9c",
+    "core/research_ledger.py": "34f51e138b35a0377f994e1bf008cbbd7d1fcd8c355f86127f1bcf3a42fab610",
+    "core/research_support.py": "3ae7198bbae1135edec1b7dcd12c14f49eae8a9658c1e5a3fb5773face3d6503",
+    "data/calendar.csv": "d6e8ce1ffd88a6b9a9c1f40ee81dd97cd0d4fbfa874d6ce3f15a5fe4d3e7ad06",
+    "data/index.csv": "0152ca75482f601dc7508294e7418cb4f54072be06e277af36178ffeb09914f8",
+    "data/pit_csi300/compiled/pit_corporate_actions_compiled.json": "5beb1f2f30fefdf4d77321288c655d91ecad228b6ff8bf7ffeea4fe1fcbbe658",
+    "data/pit_csi300/compiled/pit_manifest.json": "464e9172fce255ec3037193af2c77d0124d594770f789e0cb3b5d107c7d05a8e",
+    "data/pit_csi300/compiled/pit_membership_monthly.csv": "024c2f752825fbb033a6aaad2c2676b562e496b2cff51de107458aa9d26f3eaf",
+    "data/pit_csi300/compiled/pit_panel_snapshot.npz": "4598640b122cd5c8a607b1ab5e9238cfac6ba23b62797641686c304c2c71ff46",
+    "data/pit_csi300/compiled/pit_universe_catalog.csv": "f0c280ca7455d6f40b5561805b63e2b2b7bc1abcd3363f59a714206aeb252994",
+    "data/pit_csi300/compiled/reconciliation_audit.csv": "e51f78dddf0c15ee1a068f6bc94e806d99ca5bac28ffae3fa966bf17cfc4a11e",
+    "data/pit_csi300/raw/per_stock/daily_basic/000792.SZ.csv": "2969a5c077219b4d28ad6c45e92577b203faca0f05c14cc82c9506ef8ad9acac",
+    "data/pit_csi300/raw/per_stock/daily_basic/000959.SZ.csv": "0ebc0ea5cd731c12295b2b11fea48679db88eea90eafb1da58e4813bd9cdd085",
+    "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+    "engine_integrity.json": "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0",
+    "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+    "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+    "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca",
+    "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+    "reports/phase3_pit_verdict/pit_delisting_and_traps.csv": "d200368008d6c4607555ba90e265f36cc97d283000c59d2da48c589484149f6a",
+    "reports/phase3_pit_verdict/pit_dyn50_vs_hindsight50.csv": "6fc5cbad8310905380fe1fd28a7c68398bb79a736c436446b49465becae47066",
+    "reports/phase3_pit_verdict/pit_factor_court.csv": "52e7c38527c71b016274d3d5dd5cc65977ed4932991fb2995a25a7415ae6c0bf",
+    "reports/phase3_pit_verdict/pit_portfolio_summary.csv": "206d7b414fe75dbf129fd6d2365e15010a63173efb6c43785b571bf43d9c2ede",
+    "reports/phase3_pit_verdict/pit_sensitivity.csv": "4daf97a8f1457293c0c432fba75ed17625c339fcd22d62d51310087be3f394ab",
+    "reports/phase3_pit_verdict/pit_timing_placebo_mc.csv": "987ee2b8d6604feb85841285ad8b892c6e648ba91812316415a919c447f6ec14",
+    "reports/phase3_pit_verdict/pit_verdict_manifest.json": "6de11593157c855b1f728bbebb71deb3a8add1d2264ff01cb1f15e7d30783a9a",
+    "reports/phase3_pit_verdict/pit_verdict_report.md": "2087666fa5ee294db0d9f82072a64b3dcc62ce880ec9804ad55cde89f19b6574",
+    "reports/phase3_pit_verdict/pit_yearly_returns.csv": "748d708dc4fa71d87bfa6cbd8e3ce40b320e88723cd43f79070bdda2c88453fd",
+    "reports/phase3_pit_verdict/pre_fractional/nav_sha256.json": "bb4231695932d65054f0dc737d8a1315aa123ed0a36239f8ac1e1ed58511e58a",
+    "reports/phase3_pit_verdict/pre_fractional/pit_delisting_and_traps.csv": "88a69ac455437c66e66684330aedd4eeaf6f2a0c599d73a4a68be336fb211d2f",
+    "reports/phase3_pit_verdict/pre_fractional/pit_portfolio_summary.csv": "8a7d6d07c194f011a2744676a749c7232421ae95f8c0c4f630ed24c8b39147e2",
+    "reports/phase3_pit_verdict/pre_fractional/pit_verdict_manifest.json": "60d3c8315036912a32d03b4998dc59ae9c8b90b775c77018a4d0dc20bd700834",
+    "reports/phase3_pit_verdict/pre_fractional/pit_verdict_report.md": "ed9eab41bc38c56cd64ac08adc571f51c9672188acb45338d90f8e5b50acc0a1",
+    "reports/phase3_pit_verdict/pre_fractional/pit_yearly_returns.csv": "405303f7d4adcfe2e561e9d13621106649619c3e430b0dd8c5d73f26a82b5688",
+    "research/pit/pit_backtest_engine.py": "7149ce9098f44c09b42c427324b3412a6729781a71a92a7e7e2f571f7ecdfa65",
+    "research/pit/pit_dataset.py": "c639f562b84f602ae852a94c67e388e2b93490383d4b3a20aafb852683fb513f",
+    "results/data_audit.json": "b2f0fc4d32b28a469e7cd418de403185fa4cd1ba80debcaebc2ecbfe1b2ea6cb",
+    "scripts/run_phase3_pit_verdict.py": "491d60d40767289e9999b08c988c7dfc347ed56f37a7fcab04859a9420a825ba",
+    "scripts/run_phase4a_research.py": "baedf70643fc1b952cb08eb7f714e5d05915b206e15212d735909cac78fc065d",
+    "tests/golden_books.cjs": "f96fc138210bcaec84b9f168422a133ba065b18652afc97f2cac8493ae0f321d",
+    "tests/parity.cjs": "34bb13d2bf398e8c9d3dd301403bb3b4d0e85e23720c1453f7b44ca56d4e94ff",
+    "tests/test_core_ledger.py": "2c7b39bf8f0211bf59d851ef1119fbd847f2eb82ad7ec84c385351f2aa5f7d33",
+    "tests/test_engine.py": "8ec8c5898ca8dbc11d6b1a412fdcd49cbf8b971da91177884ffd6d0b5e991a3a",
+    "tests/test_factor_lab.py": "0451d313dbd17e49c207255498a393f22342294da3208eb9fea6ca7a12bdb304",
+    "tests/test_fetch.py": "7a62ce3da5337fc0e1e078a6f122f0b2aaa9bd6fadffbac981f8ca8f629fe780",
+    "tests/test_golden_masters.py": "e42346040bb13b73a220f858d6945d6afaf6ee664188e545c9d9d32b99061270",
+    "tests/test_phase2b.py": "2013d59105735c9eea216b2491149dd58b8daa9d691c804f1fef2b43d6b57e91",
+    "tests/test_pit_backtest.py": "85b3ac4c3a3e9ddf08194b9875d8a26439b2e1b9cda3b56397f66b1d599dbc90",
+    "tests/test_pit_dataset.py": "c7b7083af98019a5f3a682663964e5cfcceddef2170269101cc655c49bbe18e4",
+    "tests/test_silent_pass_guards.py": "f3e0931678aabcba347b4121ecf1d581ae4ee0893caeb993a605417961c78690",
+    "tests/test_valuediv_shadow.py": "e4ce7268a539bf2a2c2c80d08240bc77493a7059ca67ffbb088c87ab175191eb",
+    "tests/ui.cjs": "b14a513ff940b6e74f04b419e210494ab14f6b7b9e676e2b86103bab9e4accd6"
+  },
+  "output_sha256": {
+    "reports/phase4a_research/phase4a_defense_ablation.csv": "e0d3914c5f8c4066499ebc239ece925306c84f76414e90ea41d4658dece206f5",
+    "reports/phase4a_research/phase4a_defense_trap_audit.csv": "d70c096c705d405ad75742d3a1666cba35e8c3de4fa2a932975a03d69ab363db",
+    "reports/phase4a_research/phase4a_is_selection_lock.json": "94378b4aa150704e4ff3f534ae3e233892df020128ed047e1d0bb3109cecde44",
+    "reports/phase4a_research/phase4a_offensive_factor_court.csv": "ae58ecff946c3faa24cfce481ed548b6a3448a06db850fae44f16f2f0b708753",
+    "reports/phase4a_research/phase4a_report.md": "0360ddc882d73dafd23fb6ec22a00708076567566485dc91f1e9f66c54c1cba4"
+  },
+  "windows": {
+    "W1": [
+      "2016-01-04",
+      "2026-11-20"
+    ],
+    "IS": [
+      "2016-01-04",
+      "2023-01-20"
+    ],
+    "OOS": [
+      "2023-01-21",
+      "2026-11-20"
+    ],
+    "W_Bear": [
+      "2021-03-01",
+      "2023-11-19"
+    ]
+  },
+  "field_audit": {
+    "pb": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1694280
+    },
+    "pe_ttm": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1523729
+    },
+    "dv_ttm": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1399862
+    },
+    "turnover_rate_f": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1698666
+    },
+    "circ_mv": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1698669
+    },
+    "amount": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1698669
+    },
+    "vol": {
+      "source": "pit_panel_snapshot.npz",
+      "finite": 1698669
+    }
+  },
+  "snapshot": {
+    "first": "2015-01-05",
+    "last": "2026-11-20",
+    "securities": 667,
+    "sessions": 2887,
+    "months": 142,
+    "delisted": 26
+  },
+  "step3_nonbenchmark_daily_paths": 88,
+  "lock_sha256": "94378b4aa150704e4ff3f534ae3e233892df020128ed047e1d0bb3109cecde44",
+  "fractional_w1_trade_fees": [
+    {
+      "capital": 450000,
+      "model": "PIT300_ex688_EW",
+      "trades": 38301,
+      "min_fee_trades": 38301,
+      "commission_rmb": 191505.0,
+      "stamp_rmb": 1592.17
+    },
+    {
+      "capital": 450000,
+      "model": "PIT300_EW",
+      "trades": 39373,
+      "min_fee_trades": 39373,
+      "commission_rmb": 196865.0,
+      "stamp_rmb": 1601.59
+    },
+    {
+      "capital": 2000000,
+      "model": "PIT300_ex688_EW",
+      "trades": 38309,
+      "min_fee_trades": 38309,
+      "commission_rmb": 191545.0,
+      "stamp_rmb": 8610.05
+    },
+    {
+      "capital": 2000000,
+      "model": "PIT300_EW",
+      "trades": 39379,
+      "min_fee_trades": 39379,
+      "commission_rmb": 196895.0,
+      "stamp_rmb": 8694.33
+    }
+  ],
+  "fractional_capital_comparison": {
+    "PIT300_EW/W1": {
+      "daily_return_corr": 0.9975834403976436,
+      "final_difference_pp": -38.68001716666667
+    },
+    "PIT300_EW/IS": {
+      "daily_return_corr": 0.9982035220234864,
+      "final_difference_pp": -24.67368688888889
+    },
+    "PIT300_EW/OOS": {
+      "daily_return_corr": 0.9983266129040148,
+      "final_difference_pp": -12.838363888888892
+    },
+    "PIT300_EW/W_Bear": {
+      "daily_return_corr": 0.9977914238964046,
+      "final_difference_pp": -7.72069127777778
+    },
+    "PIT300_ex688_EW/W1": {
+      "daily_return_corr": 0.9977590754230329,
+      "final_difference_pp": -37.55959599999999
+    },
+    "PIT300_ex688_EW/IS": {
+      "daily_return_corr": 0.9982506555696286,
+      "final_difference_pp": -24.63629622222222
+    },
+    "PIT300_ex688_EW/OOS": {
+      "daily_return_corr": 0.9984524425181773,
+      "final_difference_pp": -11.98991044444444
+    },
+    "PIT300_ex688_EW/W_Bear": {
+      "daily_return_corr": 0.9980030889576561,
+      "final_difference_pp": -7.433636000000011
+    }
+  },
+  "rows": {
+    "defense": 336,
+    "trap_audit": 2352,
+    "court": 400
+  },
+  "historical_production_audit": {
+    "stock_issues": 0,
+    "etf_issues": 0,
+    "production_replay": true
+  },
+  "historical_etf_coverage": [
+    {
+      "code": "159915",
+      "first": "2020-01-02",
+      "last": "2026-11-20",
+      "rows": 1667,
+      "usable": 1666,
+      "last_usable_observation": "2026-11-19"
+    },
+    {
+      "code": "159919",
+      "first": "2020-01-02",
+      "last": "2026-11-20",
+      "rows": 1668,
+      "usable": 1667,
+      "last_usable_observation": "2026-11-19"
+    },
+    {
+      "code": "510050",
+      "first": "2020-01-02",
+      "last": "2026-11-20",
+      "rows": 1668,
+      "usable": 1667,
+      "last_usable_observation": "2026-11-19"
+    },
+    {
+      "code": "510300",
+      "first": "2020-01-02",
+      "last": "2026-11-20",
+      "rows": 1668,
+      "usable": 1667,
+      "last_usable_observation": "2026-11-19"
+    },
+    {
+      "code": "510330",
+      "first": "2020-01-02",
+      "last": "2026-11-20",
+      "rows": 1668,
+      "usable": 1667,
+      "last_usable_observation": "2026-11-19"
+    },
+    {
+      "code": "510500",
+      "first": "2020-01-02",
+      "last": "2026-11-20",
+      "rows": 1668,
+      "usable": 1667,
+      "last_usable_observation": "2026-11-19"
+    },
+    {
+      "code": "588000",
+      "first": "2020-11-16",
+      "last": "2026-11-20",
+      "rows": 1459,
+      "usable": 1458,
+      "last_usable_observation": "2026-11-19"
+    }
+  ],
+  "tests": {
+    "python": "3.11.18 (main, Nov 11 2026, 00:17:57) [MSC v.1944 64 bit (AMD64)]",
+    "passed": 103,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "node": "v24.22.3",
+    "node_suites": [
+      "parity.cjs",
+      "ui.cjs",
+      "golden_books.cjs"
+    ]
+  },
+  "frozen_after": {
+    "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+    "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+    "engine_integrity.json": "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0",
+    "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+    "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+    "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca"
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "ranking": [
+    {
+      "variant": "M200_HYST_HALF",
+      "worst_calmar": 0.9697711981217836,
+      "mean_calmar": 1.018762496338549,
+      "calmar_by_cell": {
+        "50/2bp": 0.9697711981217836,
+        "50/T+2": 1.0607173506612004,
+        "49/2bp": 0.9856249194894794,
+        "49/T+2": 1.0589365170817329
+      },
+      "dd_improvement_pp_by_cell": {
+        "50/2bp": 4.26777970861205,
+        "50/T+2": 5.992028323169961,
+        "49/2bp": 4.33613795435701,
+        "49/T+2": 6.200681908376858
+      },
+      "min_core_dd_improvement_pp": 4.26777970861205,
+      "dd_pass": true,
+      "seven_bp_pass": true,
+      "seven_bp_by_pool": {
+        "50": {
+          "calmar": 0.9197941765960387,
+          "base_delta_calmar": 0.05244637042267819,
+          "base_delta_dd_pp": 4.291778640804601
+        },
+        "49": {
+          "calmar": 0.9230488595046432,
+          "base_delta_calmar": 0.047327518373023736,
+          "base_delta_dd_pp": 4.452183970802935
+        }
+      },
+      "admitted": true
+    },
+    {
+      "variant": "M200_HALF",
+      "worst_calmar": 0.9292424750580982,
+      "mean_calmar": 0.9868296523873219,
+      "calmar_by_cell": {
+        "50/2bp": 0.9300323327573964,
+        "50/T+2": 1.0455671559457185,
+        "49/2bp": 0.9292424750580982,
+        "49/T+2": 1.0424766457880743
+      },
+      "dd_improvement_pp_by_cell": {
+        "50/2bp": 4.138588879118622,
+        "50/T+2": 6.017473798299079,
+        "49/2bp": 4.182414544430657,
+        "49/T+2": 6.261175945810891
+      },
+      "min_core_dd_improvement_pp": 4.138588879118622,
+      "dd_pass": true,
+      "seven_bp_pass": true,
+      "seven_bp_by_pool": {
+        "50": {
+          "calmar": 0.8808734171873793,
+          "base_delta_calmar": 0.013525611014018835,
+          "base_delta_dd_pp": 4.22305039043891
+        },
+        "49": {
+          "calmar": 0.8819256806179128,
+          "base_delta_calmar": 0.006204339486293287,
+          "base_delta_dd_pp": 4.367642200649101
+        }
+      },
+      "admitted": true
+    },
+    {
+      "variant": "BASE",
+      "worst_calmar": 0.9035069603127254,
+      "mean_calmar": 0.9135401381504427,
+      "calmar_by_cell": {
+        "50/2bp": 0.9217339379105511,
+        "50/T+2": 0.9035069603127254,
+        "49/2bp": 0.9224298181188563,
+        "49/T+2": 0.906489836259638
+      },
+      "dd_improvement_pp_by_cell": {
+        "50/2bp": 0.0,
+        "50/T+2": 0.0,
+        "49/2bp": 0.0,
+        "49/T+2": 0.0
+      },
+      "min_core_dd_improvement_pp": 0.0,
+      "dd_pass": false,
+      "seven_bp_pass": true,
+      "seven_bp_by_pool": {
+        "50": {
+          "calmar": 0.8673478061733605,
+          "base_delta_calmar": 0.0,
+          "base_delta_dd_pp": 0.0
+        },
+        "49": {
+          "calmar": 0.8757213411316195,
+          "base_delta_calmar": 0.0,
+          "base_delta_dd_pp": 0.0
+        }
+      },
+      "admitted": false
+    },
+    {
+      "variant": "DD10_BRAKE_HALF",
+      "worst_calmar": 0.8796952095748913,
+      "mean_calmar": 0.9180404884448107,
+      "calmar_by_cell": {
+        "50/2bp": 0.8796952095748913,
+        "50/T+2": 0.9300216714110806,
+        "49/2bp": 0.9211225598277186,
+        "49/T+2": 0.9413225129655522
+      },
+      "dd_improvement_pp_by_cell": {
+        "50/2bp": 3.187609705092921,
+        "50/T+2": 4.543565775564119,
+        "49/2bp": 3.2718187482567593,
+        "49/T+2": 4.898000767341834
+      },
+      "min_core_dd_improvement_pp": 3.187609705092921,
+      "dd_pass": true,
+      "seven_bp_pass": false,
+      "seven_bp_by_pool": {
+        "50": {
+          "calmar": 0.838327155505109,
+          "base_delta_calmar": -0.029020650668251546,
+          "base_delta_dd_pp": 3.3096660260858783
+        },
+        "49": {
+          "calmar": 0.8635639258451778,
+          "base_delta_calmar": -0.012157415286441653,
+          "base_delta_dd_pp": 3.408405020183814
+        }
+      },
+      "admitted": false
+    },
+    {
+      "variant": "BREADTH30_HALF",
+      "worst_calmar": 0.7849024876290605,
+      "mean_calmar": 0.8626353302776748,
+      "calmar_by_cell": {
+        "50/2bp": 0.7849024876290605,
+        "50/T+2": 0.8739997100752189,
+        "49/2bp": 0.8493289395456194,
+        "49/T+2": 0.9423101838608002
+      },
+      "dd_improvement_pp_by_cell": {
+        "50/2bp": 1.4979854271210726,
+        "50/T+2": 3.517196527684362,
+        "49/2bp": 1.4667754416260124,
+        "49/T+2": 3.466639993143538
+      },
+      "min_core_dd_improvement_pp": 1.4667754416260124,
+      "dd_pass": false,
+      "seven_bp_pass": false,
+      "seven_bp_by_pool": {
+        "50": {
+          "calmar": 0.74500481333549,
+          "base_delta_calmar": -0.12234299283787053,
+          "base_delta_dd_pp": 1.5005353530237144
+        },
+        "49": {
+          "calmar": 0.8047221476786004,
+          "base_delta_calmar": -0.07099919345301908,
+          "base_delta_dd_pp": 1.6029641630340947
+        }
+      },
+      "admitted": false
+    },
+    {
+      "variant": "M200_ZERO",
+      "worst_calmar": 0.764927205211201,
+      "mean_calmar": 0.915742714923468,
+      "calmar_by_cell": {
+        "50/2bp": 0.8266870505924302,
+        "50/T+2": 1.0400382383388946,
+        "49/2bp": 0.764927205211201,
+        "49/T+2": 1.0313183655513463
+      },
+      "dd_improvement_pp_by_cell": {
+        "50/2bp": 3.8744353378807084,
+        "50/T+2": 7.639632206390946,
+        "49/2bp": 2.6815891013291946,
+        "49/T+2": 7.938396510414769
+      },
+      "min_core_dd_improvement_pp": 2.6815891013291946,
+      "dd_pass": true,
+      "seven_bp_pass": false,
+      "seven_bp_by_pool": {
+        "50": {
+          "calmar": 0.7864058393572299,
+          "base_delta_calmar": -0.08094196681613064,
+          "base_delta_dd_pp": 4.006831854235994
+        },
+        "49": {
+          "calmar": 0.74379649627682,
+          "base_delta_calmar": -0.1319248448547995,
+          "base_delta_dd_pp": 3.1581930105704537
+        }
+      },
+      "admitted": false
+    }
+  ],
+  "winner": "M200_HYST_HALF",
+  "used_window": "IS",
+  "sort_scenarios": [
+    "2bp",
+    "T+2"
+  ],
+  "stress_scenario": "7bp",
+  "locked_design_sha256": "cb5a42f52f71575796a4f2e2dd1431254c5d649b450d752c1058cd9ff06bcbbd",
+  "observation_runs_completed_at_lock": 0
+}

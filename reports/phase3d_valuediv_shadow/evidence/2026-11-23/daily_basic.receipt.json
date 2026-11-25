@@ -1,0 +1,20 @@
+{
+  "api": "daily_basic",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,close,pe_ttm,dv_ttm",
+  "retrieved_at": "2026-11-25T10:40:33.066081+08:00",
+  "label": "daily_basic",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:34 GMT",
+  "provider_code": 0,
+  "num_rows": 5570,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "daily_basic.json.gz",
+  "raw_sha256": "cb767630f4bb03194dd43e55c183634fafefaab5282e93fad024ed9b18386701",
+  "file_sha256": "89e15188f2bf802095782dd212a9f8513a18d49c7c2411b8d776260fd8fd0d7b",
+  "completed_at": "2026-11-25T10:40:36.783906+08:00"
+}

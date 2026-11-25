@@ -25,6 +25,7 @@ Thumbs.db
 /data/stocks.csv
 /data/etf.csv
 /data/fetch_cache/
+/data/pit_csi300/
 /data/fetch_warnings.log
 /data/fetch_provenance.json
 
