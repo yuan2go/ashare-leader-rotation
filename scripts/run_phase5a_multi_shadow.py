@@ -94,32 +94,43 @@ def tickets(book, latest, signals, calendar, calls):
     active = {ledger.DEF:signals.get("defense_due",False),
               ledger.E4M:any((signals.get("defense_due"),signals.get("attack_due"),m200.get("flip"))),
               ledger.C3:signals.get("core_due",False)}
+    labels = LABELS
+    v7a = book.profile=="v7a"
+    if v7a:
+        labels = {key:f"[{ledger.RISK_LABELS[key]}]" for key in (ledger.DEF,ledger.E4M,ledger.V5,ledger.C3)}
+        active[ledger.V5] = any((signals.get("defense_due"), signals.get("attack_due"),
+                                 signals.get("vol_monitor",{}).get("resize_due")))
     rows = []
     if latest and any(active.values()):
         entries = book.entries()
         proxy = ledger.Market(book.snapshot,book.cutoff,entries+[(following,proxy_parts(day,following,entries[-1][1]))])
-        books,attack = proxy.books(450000)
+        books,attack = proxy.books(450000,include_v5=v7a)
+        attacks = attack if v7a else {ledger.E4M:attack}
     else:
-        books, attack, proxy = {},None,None
-    for model in LABELS:
+        books, attacks, proxy = {},{},None
+    for model in labels:
         future = calls["month_start_core"] if model==ledger.C3 else calls["weekly_defense"]
-        if model==ledger.E4M:
+        if model in (ledger.E4M,ledger.V5):
             upcoming = [x for x in (future,calls["month_end_etf"]) if x]
             future = min(upcoming,default=None)
-        common = dict(account=model,risk=LABELS[model],role_tag=ledger.ROLES[model],provenance_mode=status,
+        common = dict(account=model,risk=labels[model],role_tag=ledger.ROLES[model],provenance_mode=status,
                       opening_day=following,next_signal_day=future,m200_state=m200.get("state"),
                       m200_deviation_pct=m200.get("deviation_pct"))
+        if v7a:
+            common["as_of"] = latest["day"] if latest else None
         if not active[model]:
             rows.append(dict(**common,state="NO_ACTION_DUE"))
             continue
         b = books[model]
-        raw = ledger.fills_for(proxy,model,b,attack if model==ledger.E4M else None,following)
+        raw = ledger.fills_for(proxy,model,b,attacks.get(model),following)
         attack_signals = [i for i in proxy.attack if i < len(proxy.days)-1]
         selected_etfs = {proxy.etf.codes[j] for j in proxy.attack[max(attack_signals)]} if attack_signals else set()
         orders = []
         for asset,code,side,qty,px,units,_,_,_,_,signal,reason,kind,_ in sorted(raw,key=lambda r:r[2]!="sell"):
             if asset=="etf":
-                weight = m200["attack_cap_pct"] if code in selected_etfs else 0
+                cap = (signals["vol_monitor"]["effective_attack_cap_pct"] if model==ledger.V5
+                       else m200["attack_cap_pct"])
+                weight = cap if code in selected_etfs else 0
             else:
                 weight = 0 if kind=="exit" else (100/5 if model==ledger.C3 else 50/3)
             orders.append(dict(**common,state="PROXY_ORDER",signal_day=signal,code=code,name=proxy.names.get(code,code),
@@ -127,7 +138,7 @@ def tickets(book, latest, signals, calendar, calls):
                                estimated_cash_rmb=int(b["cash"][-1])/100,reason=reason))
         rows.extend(orders or [dict(**common,state="SIGNAL_DUE_NO_PROXY_FILL",signal_day=day,
                                    estimated_cash_rmb=int(b["cash"][-1])/100)])
-    csv_file(out/"next_open_order_ticket.csv",TICKET_FIELDS,rows)
+    csv_file(out/"next_open_order_ticket.csv",(*TICKET_FIELDS,"as_of") if v7a else TICKET_FIELDS,rows)
     headline = f"# 次日开盘影子指令单 · {following or '待日历确认'}"
     md = [headline,"",f"收盘观察日 {day}，来源 {status or '尚无正式会话'}。","",
           "按收盘价加减 2bp 估算股数和现金。实际开盘须重新检验停牌、限价与可成交数量。"]
@@ -135,7 +146,14 @@ def tickets(book, latest, signals, calendar, calls):
         state = "弱" if m200["state"]=="weak" else "强"
         md.extend(["",f"M200_HYST_HALF 为{state}市，沪深 300 收盘 {m200['close']:.3f}，"
                        f"MA200 {m200['ma200']:.3f}，偏离 {m200['deviation_pct']:+.2f}%。"])
-    for model,label in LABELS.items():
+    if "vol_monitor" in signals:
+        vol = signals["vol_monitor"]
+        monitor_code = vol["target_etf_code"] or vol["reference_etf_code"] or "待选"
+        sigma = vol["etf_vol20_ann_pct"]
+        shown_sigma = f"{sigma:.2f}%" if sigma is not None else "待足额样本"
+        md.extend(["",f"V5 · ETF {monitor_code}，20 日年化波动率 {shown_sigma}，"
+                      f"有效进攻目标上限 {vol['effective_attack_cap_pct']:.2f}%。"])
+    for model,label in labels.items():
         relevant = [row for row in rows if row["account"]==model]
         md.extend(["",f"## {model} {label}","",
                    f"下一个预定信号日 {relevant[0]['next_signal_day'] or '待后续日历'}。"])
@@ -168,20 +186,7 @@ def export_snapshot(book):
     calls = next_signals(cal,last or book.cutoff)
     rows = db.execute("SELECT d.*,s.provenance_mode FROM daily d JOIN sessions s USING(day) ORDER BY day,capital,account").fetchall()
     lookup = {(r["day"],r["capital"],r["account"]):r["nav_cents"] for r in rows}
-    peaks, dd, prior_pnl, comparison = {},{},{},[]
-    for r in rows:
-        nav, cap, account, day = r["nav_cents"],r["capital"],r["account"],r["day"]
-        k = cap,account
-        peaks[k] = max(peaks.get(k,cap*100),nav)
-        dd[k] = min(dd.get(k,0),100*(nav/peaks[k]-1))
-        previous_stock, previous_etf = prior_pnl.get(k,(0,0))
-        prior_pnl[k] = r["stock_pnl_cents"], r["etf_pnl_cents"]
-        comparison.append(dict(r, return_pct=100*(nav/(cap*100)-1),drawdown_pct=100*(nav/peaks[k]-1),
-                               max_drawdown_pct=dd[k],cash_pct=100*r["cash_cents"]/nav,
-                               excess_ew_pp=(nav-lookup[(day,cap,ledger.EW)])/cap,
-                               excess_csi300_pp=(nav-lookup[(day,cap,ledger.IDX)])/cap,
-                               stock_daily_pnl_cents=r["stock_pnl_cents"]-previous_stock,
-                               etf_daily_pnl_cents=r["etf_pnl_cents"]-previous_etf))
+    comparison = comparison_rows(rows)
     fields = [r["name"] for r in db.execute("PRAGMA table_info(daily)")]
     csv_file(out/"daily_comparison.csv",(*fields,"provenance_mode","return_pct","drawdown_pct","max_drawdown_pct",
                                        "cash_pct","excess_ew_pp","excess_csi300_pp",
@@ -204,9 +209,30 @@ def export_snapshot(book):
                  latest_provenance_mode=latest["provenance_mode"] if latest else None,
                  m200=signals.get("m200"),next_signals=calls,accounts=[r for r in comparison if r["day"]==last],
                  total_fills=db.execute("SELECT COUNT(*) FROM fills").fetchone()[0])
+    if book.profile=="v7a":
+        state["vol_monitor"] = signals.get("vol_monitor")
     tickets(book,latest,signals,cal,calls)
     fs.write(out/"shadow_status.json",state)
     return state
+
+
+def comparison_rows(rows):
+    lookup = {(r["day"],r["capital"],r["account"]):r["nav_cents"] for r in rows}
+    peaks, dd, prior_pnl, comparison = {},{},{},[]
+    for r in rows:
+        nav, cap, account, day = r["nav_cents"],r["capital"],r["account"],r["day"]
+        k = cap,account
+        peaks[k] = max(peaks.get(k,cap*100),nav)
+        dd[k] = min(dd.get(k,0),100*(nav/peaks[k]-1))
+        previous_stock, previous_etf = prior_pnl.get(k,(0,0))
+        prior_pnl[k] = r["stock_pnl_cents"], r["etf_pnl_cents"]
+        comparison.append(dict(r, return_pct=100*(nav/(cap*100)-1),drawdown_pct=100*(nav/peaks[k]-1),
+                               max_drawdown_pct=dd[k],cash_pct=100*r["cash_cents"]/nav,
+                               excess_ew_pp=(nav-lookup[(day,cap,ledger.EW)])/cap,
+                               excess_csi300_pp=(nav-lookup[(day,cap,ledger.IDX)])/cap,
+                               stock_daily_pnl_cents=r["stock_pnl_cents"]-previous_stock,
+                               etf_daily_pnl_cents=r["etf_pnl_cents"]-previous_etf))
+    return comparison
 
 
 def historical_parts(snapshot, i):
@@ -316,7 +342,7 @@ def parity_rows(db, stock_tape, fund_tape, model, cap, expected, attack=None):
                 fills=len(fills),max_nav_diff_cents=maximum,max_cash_diff_cents=maximum)
 
 
-def verify(out=fs.OUT, *, snapshot=None):
+def verify(out=fs.OUT, *, snapshot=None, profile="v5a"):
     with forbid_http() as network:
         before = protected()
         snapshot = snapshot or ledger.Snapshot()
@@ -330,11 +356,12 @@ def verify(out=fs.OUT, *, snapshot=None):
         proof = []
         with TemporaryDirectory() as tmp:
             work = Path(tmp)
+            v5_ticket_verified = False
             dbpath = work/"shadow.sqlite3"
             paths = [fs.publish(work/t.days[i],t.days[i],historical_parts(snapshot,i),references,fs.HISTORY)
                      for i in range(lo,hi+1)]
             def open_book():
-                return ledger.Ledger(dbpath,output=work,snapshot=snapshot,cutoff=cutoff,historical=True)
+                return ledger.Ledger(dbpath,output=work,snapshot=snapshot,cutoff=cutoff,historical=True,profile=profile)
             def blocked(callback, contains):
                 try:
                     callback()
@@ -349,14 +376,25 @@ def verify(out=fs.OUT, *, snapshot=None):
                 section.write_bytes(original+b" ")
                 blocked(lambda:book.append(paths[0]),"哈希不符")
                 section.write_bytes(original)
-                book.db.execute("""CREATE TRIGGER fail_account BEFORE INSERT ON daily
-                    WHEN NEW.account='C3' BEGIN SELECT RAISE(ABORT,'测试全日回滚'); END""")
+                fail_account = ledger.V5 if profile=="v7a" else ledger.C3
+                book.db.execute(f"""CREATE TRIGGER fail_account BEFORE INSERT ON daily
+                    WHEN NEW.account='{fail_account}' BEGIN SELECT RAISE(ABORT,'测试全日回滚'); END""")
                 blocked(lambda:book.append(paths[0]),"测试全日回滚")
                 for name in ("sessions","daily","fills","holdings","corporate_actions"):
                     fs.require(book.db.execute(f"SELECT COUNT(*) FROM {name}").fetchone()[0]==0,f"{name} 留下回滚残行")
                 book.db.execute("DROP TRIGGER fail_account")
                 for path in paths[:len(paths)//2]:
                     fs.require(book.append(path),"历史日包首次提交失败")
+                    if profile=="v7a" and path.parent.name=="2024-09-30":
+                        export(book)
+                        with (work/"next_open_order_ticket.csv").open(encoding="utf-8-sig",newline="") as file:
+                            orders = [r for r in csv.DictReader(file) if r["account"]==ledger.V5 and r["asset"]=="etf"]
+                        fs.require(orders and all(
+                            r["role_tag"]==ledger.ROLES[ledger.V5] and r["state"]=="PROXY_ORDER"
+                            and r["opening_day"]=="2024-10-08" and int(r["shares"])%100==0
+                            and float(r["target_weight_pct"])>0 for r in orders
+                        ),"V5 月末 ETF 整手试算、开盘日或风险水印失配")
+                        v5_ticket_verified = True
             with open_book() as book:
                 path = paths[len(paths)//2-1]
                 fs.require(not book.append(path),"重启后的重复请求产生写入")
@@ -380,6 +418,11 @@ def verify(out=fs.OUT, *, snapshot=None):
                 defense = {"VALUEDIV_LOWTURN":{i:phase4b.composite_order(t,i,mask) for i in f.month_start if i>=20}}
                 schedule = phase4b.schedule_for(models["C3"],f,defense,{})
                 etf_schedule = e.schedule(fs.ETF,ledger.ETF_MODEL.signal)
+                vol_triggers = {}
+                if profile=="v7a":
+                    study = ledger.phase6a.Study()
+                    signed = ledger.phase6a
+                    clock = study.clock(signed.V5,"ETF5","W1",ledger.CAPITALS[0],"2bp")
                 for cap in ledger.CAPITALS:
                     d = ledger.stock.replay(t,pool,models["DEF50"].model,window,cap,keep_fills=True,
                                             defense_signals=f.weekly,collect_sleeve_nav=True)
@@ -397,6 +440,22 @@ def verify(out=fs.OUT, *, snapshot=None):
                         proof.append(parity_rows(book.db,t,e,model,cap,expected,attack if model==ledger.E4M else None))
                     values = book.db.execute("SELECT stock_pnl_cents FROM daily WHERE account='E4M' AND capital=? ORDER BY day",(cap,))
                     np.testing.assert_array_equal([r[0] for r in values],d["sleeve_nav"][ledger.stock.DEF]-parked)
+                    if profile=="v7a":
+                        vol = signed.etf_book(e,study.schedules["ETF5"],window,cap//2,
+                                              reserve=np.maximum(0,parked-available),
+                                              slip=2,delay=0,model=signed.V5,clock=clock)
+                        combined_vol = dict(nav=d["nav"]-parked+vol["nav"],cash=d["cash"]-parked+vol["cash"],fills=d["fills"])
+                        proof.append(parity_rows(book.db,t,e,ledger.V5,cap,combined_vol,vol))
+                        values = book.db.execute("SELECT stock_pnl_cents FROM daily WHERE account='V5' AND capital=? ORDER BY day",(cap,))
+                        np.testing.assert_array_equal([r[0] for r in values],d["sleeve_nav"][ledger.stock.DEF]-parked)
+                        vol_triggers[cap] = len(vol["triggers"])
+                        expected_counts = np.zeros(hi-lo+1,dtype=int)
+                        for _, execution, _, _ in vol["triggers"]:
+                            expected_counts[execution-lo:] += 1
+                        monitors = [json.loads(r[0])["vol_monitor"] for r in
+                                    book.db.execute("SELECT signals FROM sessions ORDER BY day")]
+                        np.testing.assert_array_equal([row["scaling_trigger_count"] for row in monitors],expected_counts)
+                        np.testing.assert_array_equal([row["applied_attack_cap_pct"] for row in monitors],vol["targets"])
                 months_end = [t.days[i] for i in sorted(f.month_end) if lo<=i<=hi]
                 months_start = [t.days[i] for i in sorted(f.month_start) if lo<=i<=hi]
                 flips = [t.days[b] for a,b in zip(t.week_idx,t.week_idx[1:]) if lo<=b<=hi and t.weak[a]!=t.weak[b]]
@@ -404,7 +463,12 @@ def verify(out=fs.OUT, *, snapshot=None):
                 fs.require(hi-lo+1>=65 and len(months_end)>=2 and len(months_start)>=2 and flips,"验收区间不合格")
                 fs.require(actions.get("stock") and actions.get("etf"),"验收窗口未实际应计股票及 ETF 分红")
                 state = export(book)
-                fs.require(len(state["accounts"])==10,"验收产物账户数不足")
+                fs.require(len(state["accounts"])==(12 if profile=="v7a" else 10),"验收产物账户数不足")
+                if profile=="v7a":
+                    fs.require(hi-lo+1==73 and all(vol_triggers.values()) and v5_ticket_verified,
+                               "缺少 73 日窗口、V5 缩放或指令单证据")
+                    fs.require(not book.db.execute("SELECT 1 FROM fills WHERE asset='etf' AND stamp_cents<>0").fetchone(),
+                               "ETF 印花税非零")
         result = dict(status="verified",kind=fs.HISTORY,first=window[0],last=window[1],sessions=hi-lo+1,
                       window_reason="覆盖完整月初月末信号、M200 周频翻转和实际持仓的股票、ETF 分红",
                       batch_and_journal_share_signed_execution_kernels=True, source=source,
@@ -415,6 +479,10 @@ def verify(out=fs.OUT, *, snapshot=None):
                       checks=dict(restart=True,idempotent=True,section_tamper=True,changed_session=True,missing_day=True,
                                   rollback=True,core_order_ticket=True),
                       http_requests=network["attempts"])
+        if profile=="v7a":
+            result.update(market_http_requests=network["attempts"],v5_scaling_trigger_counts=vol_triggers)
+            result["checks"].update(v5_defense_exact=True,v5_targets_and_triggers_exact=True,etf_zero_stamp=True,
+                                    v5_etf_proxy_ticket=True)
         fs.require(result["http_requests"]==0 and protected()==before,"离线联网或签发资产变更")
         out.mkdir(parents=True,exist_ok=True)
         fs.write(out/"offline_acceptance.json",result)
@@ -430,8 +498,16 @@ def main():
     action.add_argument("--ingest-ready",action="store_true")
     action.add_argument("--status",action="store_true")
     action.add_argument("--healthcheck",action="store_true")
+    parser.add_argument("--continuation",action="store_true",help="keep Phase 5A signed assets read-only")
     args = parser.parse_args()
     out = fs.OUT
+    if args.continuation:
+        from scripts.run_phase7a_shadow import BRIDGE, output_root
+        out = output_root()/"legacy_v5a"
+        if args.status:
+            print(json.dumps(fs.load((out if (out/"shadow_status.json").is_file() else fs.OUT)/"shadow_status.json"),
+                             ensure_ascii=False))
+            return
     if args.verify_offline:
         result = verify(out)
         manifest_update(out,"protected_after_offline",offline_verify_http_requests=result["http_requests"])
@@ -439,14 +515,21 @@ def main():
         from tushare_client import local_settings
         result = dict(state="ok",protected_files=len(protected()),source_files=len(ledger.identity()),
                       tushare_configured=all(local_settings(fs.ROOT).values()),http_requests=0)
-        manifest = fs.load(out/"phase5a_manifest.json")
+        manifest = fs.load(fs.OUT/"phase5a_manifest.json")
         fs.require(manifest["protected_before"]==protected(),"受保护文件哈希不符")
-        if (out/"shadow_v5a.sqlite3").exists():
-            with ledger.Ledger(out/"shadow_v5a.sqlite3") as book:
-                result["sqlite_integrity"] = book.db.execute("PRAGMA integrity_check").fetchone()[0]
+        dbpath = out/"shadow_v5a.sqlite3"
+        if args.continuation and not dbpath.exists():
+            dbpath = fs.OUT/"shadow_v5a.sqlite3"
+        if dbpath.exists():
+            from contextlib import closing
+            with closing(ledger.sqlite3.connect(dbpath.resolve().as_uri()+"?mode=ro",uri=True)) as db:
+                result["sqlite_integrity"] = db.execute("PRAGMA integrity_check").fetchone()[0]
                 fs.require(result["sqlite_integrity"]=="ok","SQLite 完整性检查失败")
     else:
-        with ledger.Ledger(out/"shadow_v5a.sqlite3") as book:
+        with ledger.Ledger(out/"shadow_v5a.sqlite3",output=out) as book:
+            if args.continuation:
+                for day in BRIDGE:
+                    book.append(fs.OUT/"daypacks"/day/"session.json",evidence_root=fs.OUT)
             paths = args.input or (sorted((out/"daypacks").glob("*/session.json")) if args.ingest_ready else [])
             for path in paths:
                 try:

@@ -1,7 +1,7 @@
-"""Atomic Phase 5A journals driven by local packets and the signed replay kernels.
+"""Atomic shadow journals driven by local packets and the signed replay kernels.
 
 Each commit reconstructs the trading prefix from SQLite, warm-starts market
-features from the signed tape, and replays the five paths at both capital levels.
+features from the signed tape, and replays the profile at both capital levels.
 SQLite contains the normalized inputs as well as the materialized account rows.
 """
 import json
@@ -12,6 +12,7 @@ from collections import defaultdict
 from copy import copy
 from datetime import date
 from fractions import Fraction
+from functools import cached_property
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -22,12 +23,19 @@ from core.research_ledger import market_hysteresis
 from engine import rounded
 from research.pit import etf_ledger as etf, forward_session as fs, pit_backtest_engine as stock
 from scripts import run_phase4b_portfolio as phase4b, run_phase4c_etf_barbell as phase4c
+from scripts import run_phase6a_target_vol as phase6a
 from scripts.run_phase3_pit_verdict import index_book
 
 DEF, E4M, C3, EW, IDX = "DEF50", "E4M", "C3", "PIT300_ex688_EW_PROP", "CSI300_Index"
+V5 = "V5"
+V7A_OUT = fs.ROOT / "reports/phase7a_service_shadow"
 CAPITALS = (450000, 2000000)
 ROLES = {DEF:"is_locked_conservative", E4M:"is_locked_flagship", C3:"exploratory_observer_only",
-         EW:"benchmark_ew_prop", IDX:"benchmark_index"}
+         EW:"benchmark_ew_prop", IDX:"benchmark_index", V5:"is_locked_volcap"}
+RISK_LABELS = {
+    DEF:"LIVE CANDIDATE · 稳健", E4M:"LIVE CANDIDATE · 主力", V5:"LIVE CANDIDATE · 波动率增强",
+    C3:"OBSERVATION ONLY · 探索盘勿实盘重仓", EW:"BENCHMARK · 比例费率等权", IDX:"BENCHMARK · 沪深300指数",
+}
 ETF_MODEL = next(rule for rule in phase4c.BARBELLS if rule.key == E4M)
 PHASE4C = fs.ROOT / "reports/phase4c_etf_barbell"
 STOCKDIR = fs.ROOT / "data/pit_csi300/compiled"
@@ -56,7 +64,7 @@ CREATE TABLE IF NOT EXISTS corporate_actions(day TEXT, account TEXT, capital INT
 """
 
 
-def identity():
+def identity(profile="v5a"):
     verify_frozen_locks(fs.ROOT)
     signed = fs.load(PHASE4C / "phase4c_manifest.json")
     etf_signed = fs.load(ETFDIR / "pit_etf_manifest.json")
@@ -66,6 +74,10 @@ def identity():
                 **signed["input_sha256"]}
     paths = ("research/pit/multi_shadow_ledger.py", "research/pit/forward_session.py",
              "reports/phase4c_etf_barbell/phase4c_manifest.json")
+    if profile == "v7a":
+        phase6a_signed = fs.load(phase6a.MANIFEST)
+        required.update(phase6a_signed["source_sha256"])
+        paths += (phase6a.MANIFEST.relative_to(fs.ROOT).as_posix(),)
     result = {}
     for relative in (*required, *paths):
         result[relative] = fs.digest((fs.ROOT / relative).read_bytes())
@@ -257,7 +269,54 @@ class Market:
             if i >= n0-1:
                 self.attack[i] = etf.rank(self.etf.adjusted,etf_open,self.etf.age,range(len(fund_codes)),i,ETF_MODEL.signal)
 
-    def books(self, capital):
+    @cached_property
+    def vol_clock(self):
+        # Phase 6A samples the latest monthly selection at each weekly close.
+        # Include months before account inception for the initial weekly risk state.
+        phase6a.runtime()
+        selected = {
+            i: self.attack[i] if i in self.attack else etf.rank(
+                self.etf.adjusted, self.etf.opened, self.etf.age, range(len(self.etf.codes)), i, ETF_MODEL.signal
+            )
+            for i in sorted(self.ends) if i >= ETF_MODEL.signal.lag or i in self.attack
+        }
+        returns = phase6a.daily_returns(self.etf.adjusted)
+        clock, chosen = {}, ()
+        for i in sorted(set(selected) | self.etf.weeks):
+            chosen = selected.get(i, chosen)
+            if i in self.etf.weeks:
+                clock[i] = phase6a.coefficient(returns, i, list(chosen), phase6a.V5)
+        return clock, selected, returns
+
+    def vol_monitor(self, attack, clock, selections, returns):
+        i = len(self.days) - 1
+        last_month = max(self.attack, default=None)
+        selection = self.attack.get(last_month, ())
+        reference = selections.get(max(selections, default=None), ())
+        lookback = phase6a.VOL[phase6a.V5][1]
+        sample = returns[i-lookback+1:i+1, reference[0]] if reference else ()
+        sigma = float(np.std(sample, ddof=1)*math.sqrt(252)*100) if (
+            len(sample) == lookback and np.all(np.isfinite(sample))
+        ) else None
+        applied = float(attack["targets"][-1])
+        # The signed sleeve initializes at 50% before its first scheduled ETF.
+        current = next((float(weight) for weight in reversed(attack["targets"]) if weight > 0),50.0)
+        raw = phase6a.week_weight(self.etf, clock, i, phase6a.V5) / 100 if selection else None
+        distance = abs(raw-current) if raw is not None else None
+        triggered = bool(selection) and i in self.etf.weeks and phase6a.use_weight(current*100, raw*100)
+        due = i in self.attack or triggered
+        previous = attack["triggers"][-1] if attack["triggers"] else None
+        return dict(target_etf_code=self.etf.codes[selection[0]] if selection else None,
+                    reference_etf_code=self.etf.codes[reference[0]] if reference else None,
+                    etf_vol20_ann_pct=sigma, raw_attack_cap_pct=raw, applied_attack_cap_pct=applied,
+                    effective_attack_cap_pct=raw if due and selection else (0.0 if due else applied),
+                    distance_from_active_target_pp=distance,
+                    remaining_to_band_pp=max(0.0, phase6a.BAND_BP/100-distance) if distance is not None else None,
+                    rebalance_band_pp=phase6a.BAND_BP/100, resize_due=triggered,
+                    scaling_trigger_count=len(attack["triggers"]),
+                    last_trigger_signal_day=self.days[previous[0]] if previous else None)
+
+    def books(self, capital, *, include_v5=False):
         span = self.days[self.n0], self.days[-1]
         pool = SimpleNamespace(mask=self.mask,value=self.value)
         d = stock.replay(self.stock,pool,stock.Model(DEF,kv=3),span,capital,defense_signals=self.value,
@@ -276,7 +335,17 @@ class Market:
         combined = dict(nav=d["nav"]-parked+e["nav"], cash=d["cash"]-parked+e["cash"],
                         idle=d["idle"], fills=d["fills"], delist=d["delist"])
         fs.require(np.all(combined["cash"]>=0), "E4M 防御资金优先门禁")
-        return {DEF:d, E4M:combined, C3:c, EW:eq, IDX:index}, e
+        books = {DEF:d, E4M:combined, C3:c, EW:eq, IDX:index}
+        if not include_v5:
+            return books, e
+        clock, selected, returns = self.vol_clock
+        attack = phase6a.etf_book(self.etf, self.attack, span, capital//2,
+                                 reserve=np.maximum(0,parked-available),
+                                 slip=2,delay=0,model=phase6a.V5,clock=clock)
+        attack["monitor"] = self.vol_monitor(attack, clock, selected, returns)
+        books[V5] = dict(combined, nav=d["nav"]-parked+attack["nav"], cash=d["cash"]-parked+attack["cash"])
+        fs.require(np.all(books[V5]["cash"]>=0), "V5 防御资金优先门禁")
+        return books, {E4M:e, V5:attack}
 
     def signals(self):
         i = len(self.days)-1
@@ -300,9 +369,11 @@ def insert(db, table, values):
 
 
 class Ledger:
-    def __init__(self, path, *, output=fs.OUT, snapshot=None, cutoff=fs.FREEZE, historical=False):
+    def __init__(self, path, *, output=fs.OUT, snapshot=None, cutoff=fs.FREEZE, historical=False, profile="v5a"):
+        fs.require(profile in ("v5a","v7a"), "未知账本版本")
         self.path, self.output, self.cutoff, self.historical = Path(path), output, cutoff, historical
-        self.sources = identity()
+        self.profile = profile
+        self.sources = identity(profile)
         self.snapshot = Snapshot() if snapshot is None else snapshot
         fs.require(historical or self.snapshot.stock.days[-1] == cutoff == fs.FREEZE, "正式账本冻结日不符")
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -314,7 +385,14 @@ class Ledger:
             self.db.execute("BEGIN IMMEDIATE")
             actual = dict(self.db.execute("SELECT key,value FROM identity"))
             target = dict(self.sources, cutoff=cutoff, format=fs.FORMAT, kind=fs.HISTORY if historical else "forward")
-            fs.require(not actual or actual==target, "数据库来源、核心引擎或运行模式哈希失配")
+            if profile == "v7a":
+                target["profile"] = profile
+            legacy = {}
+            if actual and profile == "v5a" and not historical:
+                path = "research/pit/multi_shadow_ledger.py"
+                signed = fs.load(fs.OUT/"phase5a_manifest.json")["source_sha256"]
+                legacy = dict(target, **{path:signed[path]})
+            fs.require(not actual or actual in (target,legacy), "数据库来源、核心引擎或运行模式哈希失配")
             if not actual:
                 self.db.executemany("INSERT INTO identity VALUES (?,?)", target.items())
             self.db.commit()
@@ -331,8 +409,9 @@ class Ledger:
     def entries(self):
         return [(r["day"],json.loads(r["parts"])) for r in self.db.execute("SELECT day,parts FROM sessions ORDER BY day")]
 
-    def append(self, path):
-        packet, parts, signature = fs.read_packet(Path(path), self.output, historical=self.historical)
+    def append(self, path, *, evidence_root=None):
+        packet, parts, signature = fs.read_packet(
+            Path(path), evidence_root or self.output, historical=self.historical)
         day = packet["day"]
         with self.db:
             self.db.execute("BEGIN IMMEDIATE")
@@ -356,16 +435,20 @@ class Ledger:
                 fs.require(day==expected, f"正式首场应为 {expected}")
             if not self.historical:
                 # Recheck currently read source files immediately before a write.
-                fs.require(identity()==self.sources, "本进程打开数据库后来源已变化")
+                fs.require(identity(self.profile)==self.sources, "本进程打开数据库后来源已变化")
             entries.append((day,parts))
             market = Market(self.snapshot,self.cutoff,entries)
             insert(self.db,"sessions",(day,packet["kind"],packet["provenance_mode"],signature,
                    fs.encode({n:s["sha256"] for n,s in packet["sections"].items()}).decode(),
                    fs.encode(packet).decode(),fs.encode(parts).decode(),fs.encode(market.signals()).decode()))
             for capital in CAPITALS:
-                books, attack = market.books(capital)
+                books, attack = market.books(capital,include_v5=self.profile=="v7a")
+                attacks = attack if self.profile=="v7a" else {E4M:attack}
                 for model,book in books.items():
-                    self.post_account(market,model,capital,book,attack if model==E4M else None,last)
+                    self.post_account(market,model,capital,book,attacks.get(model),last)
+                if self.profile=="v7a" and capital==CAPITALS[0]:
+                    signals = dict(market.signals(),vol_monitor=attacks[V5]["monitor"])
+                    self.db.execute("UPDATE sessions SET signals=? WHERE day=?", (fs.encode(signals).decode(),day))
             return True
 
     def post_account(self, market, model, capital, book, attack, last):
@@ -455,11 +538,11 @@ class Ledger:
             fs.require(cash+receivable+marked==nav, f"{day} {model}/{capital} 账簿与持仓估值不平")
         stock_pnl = int(book["sleeve_nav"][stock.DEF][-1])-capital*100*(50 if model==DEF else 100)//100 if model in (DEF,C3) else 0
         etf_pnl = 0
-        if model==E4M:
+        if model in (E4M,V5):
             stock_pnl = db.execute("SELECT stock_pnl_cents FROM daily WHERE day=? AND account=? AND capital=?",
                                    (day,DEF,capital)).fetchone()[0]
             etf_pnl = int(attack["nav"][-1])-capital//2*100
-            fs.require(stock_pnl+etf_pnl==nav-capital*100,"E4M 袖子盈亏无法重构")
+            fs.require(stock_pnl+etf_pnl==nav-capital*100,f"{model} 袖子盈亏无法重构")
         if model==EW:
             stock_pnl = nav-capital*100
         insert(db,"daily",(day,model,capital,role,nav,cash,receivable,stock_pnl,etf_pnl,book.get("idle")))
@@ -486,9 +569,13 @@ def fills_for(market, model, book, attack, day):
     if attack is not None:
         previous_signal = {**{k:"month_end_etf" for k in market.attack}}
         weeks = market.etf.week_idx
-        for a,b in zip(weeks,weeks[1:]):
-            if market.etf.weak[a] != market.etf.weak[b]:
-                previous_signal.setdefault(b,"weekly_m200_resize")
+        if model==V5:
+            for signal, _, _, _ in attack["triggers"]:
+                previous_signal.setdefault(signal,"weekly_volcap_resize")
+        else:
+            for a,b in zip(weeks,weeks[1:]):
+                if market.etf.weak[a] != market.etf.weak[b]:
+                    previous_signal.setdefault(b,"weekly_m200_resize")
         for trade_day,j,side,qty,px,comm,tax,cash in attack["fills"]:
             if trade_day != day:
                 continue

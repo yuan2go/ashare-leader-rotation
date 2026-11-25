@@ -101,6 +101,12 @@ python run.py --confirm-seeds
 
 构建器将 `results/research/<六位代码>.json` 中版本为 1、代码吻合且 `asof` 等于冻结日、且声明的 input_sha256 与本批次输入一致的插件注入 `RAW.research`。插件的 `experiments` 按 `earnings_event_study` / `price_down_flow_in` 协议渲染。资金、轮动选股与撮合读取原输入表和冻结规则。
 
+### Phase 7A 影子账本 API
+
+本地 Python 3.11 安装 `backend/requirements-api.txt` 后，运行 `powershell.exe -NoProfile -File scripts/run_daily_shadow.ps1 -Action ServeApi`。服务默认监听 `127.0.0.1:8000`，含六线两档资金的只读账本、收盘风控和次日试算、签发研究及受控运维。[接口契约](docs/api_contract_v1.md)与 [OpenAPI 3.1](backend/openapi.json)供 Phase 7B 接入。
+
+`run_daily_shadow.ps1` 默认使用 `-Profile v7a`。离线入账用 `-Action Ingest`，73 日历史验收用 `-Action VerifyOffline`。Phase 5A 五线续跑使用 `-Profile v5a`，签发归档作为只读输入。
+
 ### 联网补齐真实数据与回放
 
 准备文件后，安装原包声明的采集依赖，再分别检查采集与正式回放的退出状态。以下使用已激活环境中的 `python`；Windows 未激活时用 `.\.venv\Scripts\python.exe` 替换：

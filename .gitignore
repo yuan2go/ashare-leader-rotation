@@ -42,3 +42,14 @@ Thumbs.db
 # Git ignore rules match paths. These result payloads exceed the 1 MiB staging limit.
 /results/research/pool50_barbell.json
 /results/research/pool50_topk_diag.json
+
+# Phase 7A runtime output. Keep the delivered ledger, exports and acceptance evidence.
+/reports/phase7a_service_shadow/ops/
+/reports/phase7a_service_shadow/legacy_v5a/
+/reports/phase7a_service_shadow/daypacks/
+/reports/phase7a_service_shadow/raw/
+/reports/phase7a_service_shadow/factor_staging/
+/reports/phase7a_service_shadow/collection_status/
+/reports/phase7a_service_shadow/*.sqlite3-journal
+/reports/phase7a_service_shadow/*.sqlite3-wal
+/reports/phase7a_service_shadow/*.sqlite3-shm

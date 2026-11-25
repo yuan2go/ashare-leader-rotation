@@ -1,0 +1,4430 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "A 股影子账本 API",
+    "description": "Phase 7A 六线影子账本、签发研究归档与本地运维接口",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "服务、运行时和冻结引擎",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/health/integrity": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "实时核对 Phase 7A 受保护文件",
+        "operationId": "getIntegrity",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegritySummary"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/shadow/overview": {
+      "get": {
+        "tags": [
+          "Shadow"
+        ],
+        "summary": "六条路径的最新影子账本",
+        "operationId": "getShadowOverview",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Overview"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/shadow/nav": {
+      "get": {
+        "tags": [
+          "Shadow"
+        ],
+        "summary": "逐日净值、现金、回撤和超额",
+        "operationId": "getShadowNav",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Account"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Account"
+            }
+          },
+          {
+            "name": "capital_rmb",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Capital"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Capital Rmb"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NavPoint"
+                  },
+                  "title": "Response Getshadownav"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/shadow/holdings": {
+      "get": {
+        "tags": [
+          "Shadow"
+        ],
+        "summary": "持仓和收盘权重",
+        "operationId": "getShadowHoldings",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Account"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Account"
+            }
+          },
+          {
+            "name": "capital_rmb",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Capital"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Capital Rmb"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 2000,
+              "minimum": 1,
+              "default": 200,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_Holding_"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/shadow/fills": {
+      "get": {
+        "tags": [
+          "Shadow"
+        ],
+        "summary": "成交、费用和滑点",
+        "operationId": "getShadowFills",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Account"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Account"
+            }
+          },
+          {
+            "name": "capital_rmb",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Capital"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Capital Rmb"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 2000,
+              "minimum": 1,
+              "default": 200,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_Fill_"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/shadow/corporate-actions": {
+      "get": {
+        "tags": [
+          "Shadow"
+        ],
+        "summary": "公司行动和应收、到账记录",
+        "operationId": "getShadowCorporateActions",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Account"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Account"
+            }
+          },
+          {
+            "name": "capital_rmb",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Capital"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Capital Rmb"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 2000,
+              "minimum": 1,
+              "default": 200,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_CorporateAction_"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/shadow/risk": {
+      "get": {
+        "tags": [
+          "Shadow"
+        ],
+        "summary": "M200、V5 波动率和下一信号日",
+        "operationId": "getShadowRisk",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RiskSnapshot"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/next-open": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "summary": "次日开盘影子指令试算",
+        "operationId": "getNextOpenTickets",
+        "parameters": [
+          {
+            "name": "account",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Account"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Account"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ticket"
+                  },
+                  "title": "Response Getnextopentickets"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/next-open.csv": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "summary": "下载指令单 CSV",
+        "operationId": "downloadNextOpenCsv",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tickets/next-open.md": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "summary": "下载指令单 Markdown",
+        "operationId": "downloadNextOpenMarkdown",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/research/portfolios": {
+      "get": {
+        "tags": [
+          "Research"
+        ],
+        "summary": "11 年签发组合与窗口比较",
+        "operationId": "getResearchPortfolios",
+        "parameters": [
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "4b",
+                    "4c",
+                    "6a"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Key"
+            }
+          },
+          {
+            "name": "pool",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Pool"
+            }
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "W1",
+                "IS",
+                "OOS",
+                "W_Bear"
+              ],
+              "type": "string",
+              "default": "W1",
+              "title": "Window"
+            }
+          },
+          {
+            "name": "capital_rmb",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Capital",
+              "default": "450000"
+            }
+          },
+          {
+            "name": "scenario",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "2bp",
+                "7bp",
+                "T+2"
+              ],
+              "type": "string",
+              "default": "2bp",
+              "title": "Scenario"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Portfolio"
+                  },
+                  "title": "Response Getresearchportfolios"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/research/yearly-returns": {
+      "get": {
+        "tags": [
+          "Research"
+        ],
+        "summary": "签发逐年收益",
+        "operationId": "getResearchYearlyReturns",
+        "parameters": [
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "4b",
+                    "4c",
+                    "6a"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Key"
+            }
+          },
+          {
+            "name": "pool",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Pool"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/YearReturn"
+                  },
+                  "title": "Response Getresearchyearlyreturns"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/research/drawdowns": {
+      "get": {
+        "tags": [
+          "Research"
+        ],
+        "summary": "回撤事件和恢复期",
+        "operationId": "getResearchDrawdowns",
+        "parameters": [
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "4b",
+                    "4c",
+                    "6a"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Key"
+            }
+          },
+          {
+            "name": "pool",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Pool"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "W1",
+                "IS",
+                "OOS",
+                "W_Bear",
+                "2026H2"
+              ],
+              "type": "string",
+              "default": "W1",
+              "title": "Scope"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Drawdown"
+                  },
+                  "title": "Response Getresearchdrawdowns"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/research/factor-court": {
+      "get": {
+        "tags": [
+          "Research"
+        ],
+        "summary": "Phase 4A 因子法庭",
+        "operationId": "getResearchFactorCourt",
+        "parameters": [
+          {
+            "name": "pool",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "PIT300",
+                "PIT300_ex688"
+              ],
+              "type": "string",
+              "default": "PIT300_ex688",
+              "title": "Pool"
+            }
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "IS",
+                "OOS"
+              ],
+              "type": "string",
+              "default": "IS",
+              "title": "Window"
+            }
+          },
+          {
+            "name": "factor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Factor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FactorCourt"
+                  },
+                  "title": "Response Getresearchfactorcourt"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/research/placebos": {
+      "get": {
+        "tags": [
+          "Research"
+        ],
+        "summary": "M200 与目标波动率置换检验",
+        "operationId": "getResearchPlacebos",
+        "parameters": [
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "4b",
+                    "4c",
+                    "6a"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "W1",
+                "IS",
+                "OOS",
+                "W_Bear"
+              ],
+              "type": "string",
+              "default": "OOS",
+              "title": "Window"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Key"
+            }
+          },
+          {
+            "name": "include_draws",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Include Draws"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Placebo"
+                  },
+                  "title": "Response Getresearchplacebos"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/research/coverage": {
+      "get": {
+        "tags": [
+          "Research"
+        ],
+        "summary": "签发 PIT 行情覆盖与验收范围",
+        "operationId": "getResearchCoverage",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResearchCoverage"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ops/collection-status": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "采集状态及原始更新时间",
+        "operationId": "getCollectionStatus",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CollectionStatus"
+                  },
+                  "type": "array",
+                  "title": "Response Getcollectionstatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ops/jobs": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "最近运维任务",
+        "operationId": "listJobs",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Job"
+                  },
+                  "title": "Response Listjobs"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "启动一个受控运维任务",
+        "operationId": "submitJob",
+        "parameters": [
+          {
+            "name": "x-shadow-ops",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Shadow-Ops"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/api/v1/ops/jobs/{job_id}": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "轮询运维任务",
+        "operationId": "getJob",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1/ops/jobs/{job_id}/logs": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "读取任务日志尾部",
+        "operationId": "getJobLog",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "max_bytes",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 262144,
+              "minimum": 256,
+              "default": 32768,
+              "title": "Max Bytes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobLog"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Account": {
+        "type": "string",
+        "enum": [
+          "DEF50",
+          "E4M",
+          "V5",
+          "C3",
+          "PIT300_ex688_EW_PROP",
+          "CSI300_Index"
+        ],
+        "title": "Account"
+      },
+      "Action": {
+        "type": "string",
+        "enum": [
+          "DailyAll",
+          "Collect",
+          "Ingest",
+          "VerifyOffline"
+        ],
+        "title": "Action"
+      },
+      "Capital": {
+        "type": "string",
+        "enum": [
+          "450000",
+          "2000000"
+        ],
+        "title": "Capital"
+      },
+      "CollectionStatus": {
+        "properties": {
+          "day": {
+            "type": "string",
+            "format": "date",
+            "title": "Day"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "provenance_mode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "factor_staging": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Factor Staging"
+          },
+          "market_http_requests": {
+            "type": "integer",
+            "title": "Market Http Requests"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          },
+          "source_profile": {
+            "type": "string",
+            "enum": [
+              "v5a",
+              "v7a"
+            ],
+            "title": "Source Profile"
+          }
+        },
+        "type": "object",
+        "required": [
+          "day",
+          "state",
+          "market_http_requests",
+          "updated_at",
+          "source_profile"
+        ],
+        "title": "CollectionStatus"
+      },
+      "CorporateAction": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "capital_rmb": {
+            "type": "integer",
+            "enum": [
+              450000,
+              2000000
+            ],
+            "title": "Capital Rmb"
+          },
+          "role_tag": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "risk_label": {
+            "type": "string",
+            "title": "Risk Label"
+          },
+          "day": {
+            "type": "string",
+            "format": "date",
+            "title": "Day"
+          },
+          "provenance_mode": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "asset": {
+            "type": "string",
+            "enum": [
+              "stock",
+              "etf",
+              "index"
+            ],
+            "title": "Asset"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "entry": {
+            "type": "string",
+            "title": "Entry"
+          },
+          "effective_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Effective Date"
+          },
+          "shares": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Shares"
+          },
+          "amount_cents": {
+            "type": "integer",
+            "title": "Amount Cents"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account",
+          "capital_rmb",
+          "role_tag",
+          "risk_label",
+          "day",
+          "provenance_mode",
+          "asset",
+          "code",
+          "event_id",
+          "entry",
+          "effective_date",
+          "shares",
+          "amount_cents"
+        ],
+        "title": "CorporateAction"
+      },
+      "Drawdown": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "pool": {
+            "type": "string",
+            "title": "Pool"
+          },
+          "selection_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selection Status"
+          },
+          "account": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Account"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "risk_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Risk Label"
+          },
+          "scope": {
+            "type": "string",
+            "title": "Scope"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank"
+          },
+          "peak_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peak Date"
+          },
+          "peak_origin": {
+            "type": "string",
+            "title": "Peak Origin"
+          },
+          "trough_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Trough Date"
+          },
+          "recovery_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recovery Date"
+          },
+          "recovered": {
+            "type": "boolean",
+            "title": "Recovered"
+          },
+          "drawdown_pct": {
+            "type": "number",
+            "title": "Drawdown Pct"
+          },
+          "peak_to_trough_sessions": {
+            "type": "integer",
+            "title": "Peak To Trough Sessions"
+          },
+          "recovery_sessions": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recovery Sessions"
+          },
+          "underwater_sessions": {
+            "type": "integer",
+            "title": "Underwater Sessions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "key",
+          "pool",
+          "scope",
+          "rank",
+          "peak_origin",
+          "trough_date",
+          "recovered",
+          "drawdown_pct",
+          "peak_to_trough_sessions",
+          "underwater_sessions"
+        ],
+        "title": "Drawdown"
+      },
+      "Error": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "Error"
+      },
+      "EtfCoverage": {
+        "properties": {
+          "first": {
+            "type": "string",
+            "format": "date",
+            "title": "First"
+          },
+          "last": {
+            "type": "string",
+            "format": "date",
+            "title": "Last"
+          },
+          "availability": {
+            "type": "string",
+            "title": "Availability"
+          },
+          "last_signal_observation": {
+            "type": "string",
+            "format": "date",
+            "title": "Last Signal Observation"
+          },
+          "rows": {
+            "type": "integer",
+            "title": "Rows"
+          }
+        },
+        "type": "object",
+        "required": [
+          "first",
+          "last",
+          "availability",
+          "last_signal_observation",
+          "rows"
+        ],
+        "title": "EtfCoverage"
+      },
+      "FactorCourt": {
+        "properties": {
+          "pool": {
+            "type": "string",
+            "title": "Pool"
+          },
+          "freq": {
+            "type": "string",
+            "title": "Freq"
+          },
+          "window": {
+            "type": "string",
+            "enum": [
+              "W1",
+              "IS",
+              "OOS",
+              "W_Bear"
+            ],
+            "title": "Window"
+          },
+          "horizon": {
+            "type": "string",
+            "title": "Horizon"
+          },
+          "factor": {
+            "type": "string",
+            "title": "Factor"
+          },
+          "weeks": {
+            "type": "integer",
+            "title": "Weeks"
+          },
+          "ic": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ic"
+          },
+          "icir": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Icir"
+          },
+          "ic_t_hac": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ic T Hac"
+          },
+          "positive_ic_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Positive Ic Pct"
+          },
+          "q1_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q1 Pct"
+          },
+          "q2_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q2 Pct"
+          },
+          "q3_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q3 Pct"
+          },
+          "q4_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q4 Pct"
+          },
+          "q5_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q5 Pct"
+          },
+          "q5_q1_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Q5 Q1 Pp"
+          },
+          "monotone_increasing": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Monotone Increasing"
+          },
+          "spread_t_hac": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spread T Hac"
+          },
+          "rank_autocorr": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rank Autocorr"
+          },
+          "top5_turnover_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top5 Turnover Pct"
+          },
+          "top5_excess_ew_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top5 Excess Ew Pp"
+          },
+          "top10_excess_ew_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Top10 Excess Ew Pp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "pool",
+          "freq",
+          "window",
+          "horizon",
+          "factor",
+          "weeks"
+        ],
+        "title": "FactorCourt"
+      },
+      "Fill": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "capital_rmb": {
+            "type": "integer",
+            "enum": [
+              450000,
+              2000000
+            ],
+            "title": "Capital Rmb"
+          },
+          "role_tag": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "risk_label": {
+            "type": "string",
+            "title": "Risk Label"
+          },
+          "day": {
+            "type": "string",
+            "format": "date",
+            "title": "Day"
+          },
+          "provenance_mode": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "seq": {
+            "type": "integer",
+            "title": "Seq"
+          },
+          "asset": {
+            "type": "string",
+            "enum": [
+              "stock",
+              "etf",
+              "index"
+            ],
+            "title": "Asset"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "side": {
+            "type": "string",
+            "enum": [
+              "buy",
+              "sell"
+            ],
+            "title": "Side"
+          },
+          "shares": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Shares"
+          },
+          "price_rmb": {
+            "type": "number",
+            "title": "Price Rmb"
+          },
+          "commission_cents": {
+            "type": "integer",
+            "title": "Commission Cents"
+          },
+          "stamp_cents": {
+            "type": "integer",
+            "title": "Stamp Cents"
+          },
+          "slippage_cents": {
+            "type": "integer",
+            "title": "Slippage Cents"
+          },
+          "cash_after_sleeve_cents": {
+            "type": "integer",
+            "title": "Cash After Sleeve Cents"
+          },
+          "signal_day": {
+            "type": "string",
+            "format": "date",
+            "title": "Signal Day"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "execution_kind": {
+            "type": "string",
+            "title": "Execution Kind"
+          },
+          "lot_idle_mean_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lot Idle Mean Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account",
+          "capital_rmb",
+          "role_tag",
+          "risk_label",
+          "day",
+          "provenance_mode",
+          "seq",
+          "asset",
+          "code",
+          "side",
+          "shares",
+          "price_rmb",
+          "commission_cents",
+          "stamp_cents",
+          "slippage_cents",
+          "cash_after_sleeve_cents",
+          "signal_day",
+          "reason",
+          "execution_kind",
+          "lot_idle_mean_pct"
+        ],
+        "title": "Fill"
+      },
+      "Health": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status"
+          },
+          "api_version": {
+            "type": "string",
+            "title": "Api Version"
+          },
+          "python_version": {
+            "type": "string",
+            "title": "Python Version"
+          },
+          "sqlite_version": {
+            "type": "string",
+            "title": "Sqlite Version"
+          },
+          "sqlite_readonly": {
+            "type": "boolean",
+            "title": "Sqlite Readonly"
+          },
+          "dependency_versions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Dependency Versions"
+          },
+          "latest_session": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Session"
+          },
+          "frozen_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Frozen Sha256"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "api_version",
+          "python_version",
+          "sqlite_version",
+          "sqlite_readonly",
+          "dependency_versions",
+          "latest_session",
+          "frozen_sha256"
+        ],
+        "title": "Health"
+      },
+      "Holding": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "capital_rmb": {
+            "type": "integer",
+            "enum": [
+              450000,
+              2000000
+            ],
+            "title": "Capital Rmb"
+          },
+          "role_tag": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "risk_label": {
+            "type": "string",
+            "title": "Risk Label"
+          },
+          "day": {
+            "type": "string",
+            "format": "date",
+            "title": "Day"
+          },
+          "asset": {
+            "type": "string",
+            "enum": [
+              "stock",
+              "etf",
+              "index"
+            ],
+            "title": "Asset"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "industry": {
+            "type": "string",
+            "title": "Industry"
+          },
+          "shares": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Shares"
+          },
+          "market_value_cents": {
+            "type": "integer",
+            "title": "Market Value Cents"
+          },
+          "market_weight_pct": {
+            "type": "number",
+            "title": "Market Weight Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account",
+          "capital_rmb",
+          "role_tag",
+          "risk_label",
+          "day",
+          "asset",
+          "code",
+          "name",
+          "industry",
+          "shares",
+          "market_value_cents",
+          "market_weight_pct"
+        ],
+        "title": "Holding"
+      },
+      "IntegritySummary": {
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "title": "Ok"
+          },
+          "checked_files": {
+            "type": "integer",
+            "title": "Checked Files"
+          },
+          "missing_files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Missing Files"
+          },
+          "changed_files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Changed Files"
+          },
+          "frozen_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Frozen Sha256"
+          }
+        },
+        "type": "object",
+        "required": [
+          "ok",
+          "checked_files",
+          "missing_files",
+          "changed_files",
+          "frozen_sha256"
+        ],
+        "title": "IntegritySummary"
+      },
+      "Job": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "request": {
+            "$ref": "#/components/schemas/JobRequest"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "interrupted"
+            ],
+            "title": "State"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "exit_code": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exit Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "request",
+          "state",
+          "created_at"
+        ],
+        "title": "Job"
+      },
+      "JobLog": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "truncated": {
+            "type": "boolean",
+            "title": "Truncated"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "truncated"
+        ],
+        "title": "JobLog"
+      },
+      "JobRequest": {
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/Action"
+          },
+          "day": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Day"
+          },
+          "allow_market_http": {
+            "type": "boolean",
+            "title": "Allow Market Http",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "action"
+        ],
+        "title": "JobRequest"
+      },
+      "M200": {
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "weak"
+            ],
+            "title": "State"
+          },
+          "weekly_as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "Weekly As Of"
+          },
+          "daily_state": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "weak"
+            ],
+            "title": "Daily State"
+          },
+          "flip": {
+            "type": "boolean",
+            "title": "Flip"
+          },
+          "close": {
+            "type": "number",
+            "title": "Close"
+          },
+          "ma200": {
+            "type": "number",
+            "title": "Ma200"
+          },
+          "deviation_pct": {
+            "type": "number",
+            "title": "Deviation Pct"
+          },
+          "attack_cap_pct": {
+            "type": "number",
+            "title": "Attack Cap Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "state",
+          "weekly_as_of",
+          "daily_state",
+          "flip",
+          "close",
+          "ma200",
+          "deviation_pct",
+          "attack_cap_pct"
+        ],
+        "title": "M200"
+      },
+      "NavPoint": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "capital_rmb": {
+            "type": "integer",
+            "enum": [
+              450000,
+              2000000
+            ],
+            "title": "Capital Rmb"
+          },
+          "role_tag": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "risk_label": {
+            "type": "string",
+            "title": "Risk Label"
+          },
+          "day": {
+            "type": "string",
+            "format": "date",
+            "title": "Day"
+          },
+          "provenance_mode": {
+            "$ref": "#/components/schemas/Provenance"
+          },
+          "nav_cents": {
+            "type": "integer",
+            "title": "Nav Cents"
+          },
+          "cash_cents": {
+            "type": "integer",
+            "title": "Cash Cents"
+          },
+          "receivable_cents": {
+            "type": "integer",
+            "title": "Receivable Cents"
+          },
+          "stock_pnl_cents": {
+            "type": "integer",
+            "title": "Stock Pnl Cents"
+          },
+          "etf_pnl_cents": {
+            "type": "integer",
+            "title": "Etf Pnl Cents"
+          },
+          "stock_daily_pnl_cents": {
+            "type": "integer",
+            "title": "Stock Daily Pnl Cents"
+          },
+          "etf_daily_pnl_cents": {
+            "type": "integer",
+            "title": "Etf Daily Pnl Cents"
+          },
+          "return_pct": {
+            "type": "number",
+            "title": "Return Pct"
+          },
+          "drawdown_pct": {
+            "type": "number",
+            "title": "Drawdown Pct"
+          },
+          "max_drawdown_pct": {
+            "type": "number",
+            "title": "Max Drawdown Pct"
+          },
+          "cash_pct": {
+            "type": "number",
+            "title": "Cash Pct"
+          },
+          "excess_ew_pp": {
+            "type": "number",
+            "title": "Excess Ew Pp"
+          },
+          "excess_csi300_pp": {
+            "type": "number",
+            "title": "Excess Csi300 Pp"
+          },
+          "lot_idle_mean_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lot Idle Mean Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account",
+          "capital_rmb",
+          "role_tag",
+          "risk_label",
+          "day",
+          "provenance_mode",
+          "nav_cents",
+          "cash_cents",
+          "receivable_cents",
+          "stock_pnl_cents",
+          "etf_pnl_cents",
+          "stock_daily_pnl_cents",
+          "etf_daily_pnl_cents",
+          "return_pct",
+          "drawdown_pct",
+          "max_drawdown_pct",
+          "cash_pct",
+          "excess_ew_pp",
+          "excess_csi300_pp",
+          "lot_idle_mean_pct"
+        ],
+        "title": "NavPoint"
+      },
+      "Overview": {
+        "properties": {
+          "latest_session": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Session"
+          },
+          "latest_provenance_mode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "m200": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/M200"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "vol_monitor": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/VolMonitor"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "next_signals": {
+            "$ref": "#/components/schemas/SignalDates"
+          },
+          "strict_live_sessions": {
+            "type": "integer",
+            "title": "Strict Live Sessions"
+          },
+          "catchup_sessions": {
+            "type": "integer",
+            "title": "Catchup Sessions"
+          },
+          "total_fills": {
+            "type": "integer",
+            "title": "Total Fills"
+          },
+          "accounts": {
+            "items": {
+              "$ref": "#/components/schemas/NavPoint"
+            },
+            "type": "array",
+            "title": "Accounts"
+          }
+        },
+        "type": "object",
+        "required": [
+          "latest_session",
+          "latest_provenance_mode",
+          "m200",
+          "vol_monitor",
+          "next_signals",
+          "strict_live_sessions",
+          "catchup_sessions",
+          "total_fills",
+          "accounts"
+        ],
+        "title": "Overview"
+      },
+      "Page_CorporateAction_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CorporateAction"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "offset",
+          "limit",
+          "has_more"
+        ],
+        "title": "Page[CorporateAction]"
+      },
+      "Page_Fill_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Fill"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "offset",
+          "limit",
+          "has_more"
+        ],
+        "title": "Page[Fill]"
+      },
+      "Page_Holding_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Holding"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "offset",
+          "limit",
+          "has_more"
+        ],
+        "title": "Page[Holding]"
+      },
+      "Placebo": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "window": {
+            "type": "string",
+            "enum": [
+              "W1",
+              "IS",
+              "OOS",
+              "W_Bear"
+            ],
+            "title": "Window"
+          },
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "metric": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "sharpe",
+                  "calmar",
+                  "max_dd_pct"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metric"
+          },
+          "metric_unit": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "ratio",
+                  "pct"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metric Unit"
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Method"
+          },
+          "timing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timing"
+          },
+          "actual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actual"
+          },
+          "inverse": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inverse"
+          },
+          "permutation_median": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Permutation Median"
+          },
+          "p_upper": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P Upper"
+          },
+          "max_dd_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Dd Pct"
+          },
+          "sharpe": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sharpe"
+          },
+          "calmar": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calmar"
+          },
+          "draw": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Draw"
+          },
+          "seed": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "key",
+          "window",
+          "kind"
+        ],
+        "title": "Placebo"
+      },
+      "Portfolio": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "pool": {
+            "type": "string",
+            "title": "Pool"
+          },
+          "selection_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selection Status"
+          },
+          "account": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Account"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "risk_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Risk Label"
+          },
+          "window": {
+            "type": "string",
+            "enum": [
+              "W1",
+              "IS",
+              "OOS",
+              "W_Bear"
+            ],
+            "title": "Window"
+          },
+          "scenario": {
+            "type": "string",
+            "enum": [
+              "2bp",
+              "7bp",
+              "T+2"
+            ],
+            "title": "Scenario"
+          },
+          "capital_rmb": {
+            "type": "integer",
+            "title": "Capital Rmb"
+          },
+          "first": {
+            "type": "string",
+            "format": "date",
+            "title": "First"
+          },
+          "last": {
+            "type": "string",
+            "format": "date",
+            "title": "Last"
+          },
+          "sessions": {
+            "type": "integer",
+            "title": "Sessions"
+          },
+          "net_return_pct": {
+            "type": "number",
+            "title": "Net Return Pct"
+          },
+          "cagr_pct": {
+            "type": "number",
+            "title": "Cagr Pct"
+          },
+          "max_dd_pct": {
+            "type": "number",
+            "title": "Max Dd Pct"
+          },
+          "sharpe": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sharpe"
+          },
+          "calmar": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calmar"
+          },
+          "ann_oneway_turnover_pct_true": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ann Oneway Turnover Pct True"
+          },
+          "cash_mean_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cash Mean Pct"
+          },
+          "defense_net_rmb": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Defense Net Rmb"
+          },
+          "trend_net_rmb": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Trend Net Rmb"
+          },
+          "mean_attack_target_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Attack Target Pct"
+          },
+          "scaling_triggers": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scaling Triggers"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "key",
+          "pool",
+          "window",
+          "scenario",
+          "capital_rmb",
+          "first",
+          "last",
+          "sessions",
+          "net_return_pct",
+          "cagr_pct",
+          "max_dd_pct"
+        ],
+        "title": "Portfolio"
+      },
+      "Provenance": {
+        "type": "string",
+        "enum": [
+          "post_hoc_catchup",
+          "live_timely_verified",
+          "historical_validation"
+        ],
+        "title": "Provenance"
+      },
+      "ResearchCoverage": {
+        "properties": {
+          "stock_issues": {
+            "type": "integer",
+            "title": "Stock Issues"
+          },
+          "etf_issues": {
+            "type": "integer",
+            "title": "Etf Issues"
+          },
+          "stock_coverage": {
+            "$ref": "#/components/schemas/StockCoverage"
+          },
+          "etf_coverage": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EtfCoverage"
+            },
+            "type": "object",
+            "title": "Etf Coverage"
+          },
+          "production_replay_status": {
+            "type": "string",
+            "title": "Production Replay Status"
+          },
+          "phase6a_research_replay": {
+            "type": "boolean",
+            "title": "Phase6A Research Replay"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stock_issues",
+          "etf_issues",
+          "stock_coverage",
+          "etf_coverage",
+          "production_replay_status",
+          "phase6a_research_replay"
+        ],
+        "title": "ResearchCoverage"
+      },
+      "RiskSnapshot": {
+        "properties": {
+          "latest_session": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Session"
+          },
+          "latest_provenance_mode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "m200": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/M200"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "vol_monitor": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/VolMonitor"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "next_signals": {
+            "$ref": "#/components/schemas/SignalDates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "latest_session",
+          "latest_provenance_mode",
+          "m200",
+          "vol_monitor",
+          "next_signals"
+        ],
+        "title": "RiskSnapshot"
+      },
+      "Role": {
+        "type": "string",
+        "enum": [
+          "is_locked_conservative",
+          "is_locked_flagship",
+          "is_locked_volcap",
+          "exploratory_observer_only",
+          "benchmark_ew_prop",
+          "benchmark_index"
+        ],
+        "title": "Role"
+      },
+      "SignalDates": {
+        "properties": {
+          "weekly_defense": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weekly Defense"
+          },
+          "month_end_etf": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Month End Etf"
+          },
+          "month_start_core": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Month Start Core"
+          }
+        },
+        "type": "object",
+        "title": "SignalDates"
+      },
+      "StockCoverage": {
+        "properties": {
+          "first": {
+            "type": "string",
+            "format": "date",
+            "title": "First"
+          },
+          "last": {
+            "type": "string",
+            "format": "date",
+            "title": "Last"
+          },
+          "membership_rows": {
+            "type": "integer",
+            "title": "Membership Rows"
+          },
+          "months": {
+            "type": "integer",
+            "title": "Months"
+          },
+          "sessions": {
+            "type": "integer",
+            "title": "Sessions"
+          },
+          "validated_stocks": {
+            "type": "integer",
+            "title": "Validated Stocks"
+          }
+        },
+        "type": "object",
+        "required": [
+          "first",
+          "last",
+          "membership_rows",
+          "months",
+          "sessions",
+          "validated_stocks"
+        ],
+        "title": "StockCoverage"
+      },
+      "Ticket": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "capital_rmb": {
+            "type": "integer",
+            "enum": [
+              450000,
+              2000000
+            ],
+            "title": "Capital Rmb"
+          },
+          "role_tag": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "risk_label": {
+            "type": "string",
+            "title": "Risk Label"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "NO_ACTION_DUE",
+              "SIGNAL_DUE_NO_PROXY_FILL",
+              "PROXY_ORDER"
+            ],
+            "title": "State"
+          },
+          "provenance_mode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provenance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "signal_day": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Signal Day"
+          },
+          "opening_day": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Opening Day"
+          },
+          "next_signal_day": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Signal Day"
+          },
+          "m200_state": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "strong",
+                  "weak"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "M200 State"
+          },
+          "m200_deviation_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "M200 Deviation Pct"
+          },
+          "code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Code"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "asset": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "stock",
+                  "etf",
+                  "index"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Asset"
+          },
+          "side": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "buy",
+                  "sell"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Side"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "proxy_price_rmb": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proxy Price Rmb"
+          },
+          "shares": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Shares"
+          },
+          "target_weight_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Weight Pct"
+          },
+          "estimated_cash_rmb": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Estimated Cash Rmb"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account",
+          "capital_rmb",
+          "role_tag",
+          "risk_label",
+          "as_of",
+          "state",
+          "provenance_mode",
+          "signal_day",
+          "opening_day",
+          "next_signal_day",
+          "m200_state",
+          "m200_deviation_pct",
+          "code",
+          "name",
+          "asset",
+          "side",
+          "reason",
+          "proxy_price_rmb",
+          "shares",
+          "target_weight_pct",
+          "estimated_cash_rmb"
+        ],
+        "title": "Ticket"
+      },
+      "VolMonitor": {
+        "properties": {
+          "target_etf_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Etf Code"
+          },
+          "reference_etf_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reference Etf Code"
+          },
+          "etf_vol20_ann_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Etf Vol20 Ann Pct"
+          },
+          "raw_attack_cap_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Attack Cap Pct"
+          },
+          "applied_attack_cap_pct": {
+            "type": "number",
+            "title": "Applied Attack Cap Pct"
+          },
+          "effective_attack_cap_pct": {
+            "type": "number",
+            "title": "Effective Attack Cap Pct"
+          },
+          "distance_from_active_target_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Distance From Active Target Pp"
+          },
+          "remaining_to_band_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Remaining To Band Pp"
+          },
+          "rebalance_band_pp": {
+            "type": "number",
+            "title": "Rebalance Band Pp"
+          },
+          "resize_due": {
+            "type": "boolean",
+            "title": "Resize Due"
+          },
+          "scaling_trigger_count": {
+            "type": "integer",
+            "title": "Scaling Trigger Count"
+          },
+          "last_trigger_signal_day": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Trigger Signal Day"
+          }
+        },
+        "type": "object",
+        "required": [
+          "target_etf_code",
+          "reference_etf_code",
+          "etf_vol20_ann_pct",
+          "raw_attack_cap_pct",
+          "applied_attack_cap_pct",
+          "effective_attack_cap_pct",
+          "distance_from_active_target_pp",
+          "remaining_to_band_pp",
+          "rebalance_band_pp",
+          "resize_due",
+          "scaling_trigger_count",
+          "last_trigger_signal_day"
+        ],
+        "title": "VolMonitor"
+      },
+      "YearReturn": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "pool": {
+            "type": "string",
+            "title": "Pool"
+          },
+          "selection_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selection Status"
+          },
+          "account": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Account"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "risk_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Risk Label"
+          },
+          "year": {
+            "type": "integer",
+            "title": "Year"
+          },
+          "first": {
+            "type": "string",
+            "format": "date",
+            "title": "First"
+          },
+          "last": {
+            "type": "string",
+            "format": "date",
+            "title": "Last"
+          },
+          "sessions": {
+            "type": "integer",
+            "title": "Sessions"
+          },
+          "opening_nav_rmb": {
+            "type": "number",
+            "title": "Opening Nav Rmb"
+          },
+          "closing_nav_rmb": {
+            "type": "number",
+            "title": "Closing Nav Rmb"
+          },
+          "year_return_pct": {
+            "type": "number",
+            "title": "Year Return Pct"
+          },
+          "excess_vs_index_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Excess Vs Index Pp"
+          },
+          "excess_vs_ew_pp": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Excess Vs Ew Pp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "key",
+          "pool",
+          "year",
+          "first",
+          "last",
+          "sessions",
+          "opening_nav_rmb",
+          "closing_nav_rmb",
+          "year_return_pct"
+        ],
+        "title": "YearReturn"
+      }
+    }
+  }
+}
