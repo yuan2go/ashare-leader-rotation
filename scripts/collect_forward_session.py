@@ -39,10 +39,36 @@ def need(ok, message):
 
 
 class Collector:
-    def __init__(self, out, client, interval=1.0):
+    def __init__(self, out, client, interval=1.0, *, reuse_phase5a=False):
         self.out, self.client, self.interval = out, client, interval
         self.requests, self.last = 0, 0.0
         self.evidence = {}
+        self.reuse_phase5a = reuse_phase5a
+
+    def reuse_signed_valuation(self, day, target):
+        """Carry intact Phase 5A evidence into a separate writable profile."""
+        if not self.reuse_phase5a or target.exists():
+            return
+        relative = f"factor_staging/{day}.json"
+        source = fs.OUT/relative
+        if not source.is_file():
+            return
+        signed = fs.load(fs.OUT/"phase5a_manifest.json")["artifact_sha256"]
+        payload = source.read_bytes()
+        need(fs.digest(payload)==signed.get(relative),"Phase 5A 估值桥接文件哈希不符")
+        for reference in json.loads(payload)["receipts"]:
+            fs.proof(fs.OUT, reference)
+            ref = Path(reference["file"])
+            zipped = ref.with_name(ref.name.removesuffix(".receipt.json")+".json.gz")
+            for asset in (ref,zipped):
+                data = (fs.OUT/asset).read_bytes()
+                need(fs.digest(data)==signed.get(asset.as_posix()),"Phase 5A 估值桥接回执哈希不符")
+                dest = self.out/asset
+                if dest.exists():
+                    need(dest.read_bytes()==data,"估值桥接回执与工作目录冲突")
+                else:
+                    fs.atomic(dest,data)
+        fs.atomic(target,payload)
 
     def fetch(self, api, params, fields, folder):
         payload = dict(api_name=api, params=params, fields=",".join(fields), token=self.client._token)
@@ -107,6 +133,7 @@ class Collector:
 
     def valuation(self, day):
         path = self.out / "factor_staging" / (day + ".json")
+        self.reuse_signed_valuation(day,path)
         refs = None
         if path.exists():
             staged = fs.load(path)
@@ -148,12 +175,16 @@ def by_code(rows, day=None):
     return out
 
 
-def held(out):
-    path = out / "shadow_v5a.sqlite3"
-    if not path.exists():
-        return set()
-    with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as db:
-        return {c for c, in db.execute("SELECT DISTINCT code FROM holdings WHERE asset='stock' AND day=(SELECT MAX(day) FROM sessions)")}
+def held(out, *, reuse_phase5a=False):
+    from contextlib import closing
+    paths = [out/"shadow_v7a.sqlite3",out/"shadow_v5a.sqlite3"]
+    if reuse_phase5a:
+        paths.append(fs.OUT/"shadow_v5a.sqlite3")
+    for path in paths:
+        if path.is_file():
+            with closing(sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)) as db:
+                return {c for c, in db.execute("SELECT DISTINCT code FROM holdings WHERE asset='stock' AND day=(SELECT MAX(day) FROM sessions)")}
+    return set()
 
 
 def trade_calendar(collector, day):
@@ -279,6 +310,10 @@ def etf_data(c, day, previous, calendar, suspended):
 
 def collect(c, day, status):
     path = c.out / "daypacks" / day / "session.json"
+    original = fs.OUT / "daypacks" / day / "session.json"
+    if c.reuse_phase5a and not path.exists() and original.is_file():
+        packet, _, _ = fs.read_packet(original, fs.OUT)
+        return dict(state="already_collected",packet=str(original),provenance_mode=packet["provenance_mode"])
     if path.exists():
         packet, parts, _ = fs.read_packet(path, c.out)
         members = set(parts["membership"]["codes"])
@@ -299,7 +334,7 @@ def collect(c, day, status):
     members = {r["con_code"] for r in weights}
     need(len(members) == len(weights) == 300 and all(r["index_code"] == fs.INDEX and r["trade_date"] == compact(observed)
          and float(r["weight"]) > 0 for r in weights), "CSI300 月末成分尚未完备")
-    targets = members | held(c.out)
+    targets = members | held(c.out,reuse_phase5a=c.reuse_phase5a)
     query = {"trade_date": compact(day)}
     prior_query = {"trade_date": compact(previous)}
     today = by_code(c.get("daily", query, DAILY_FIELDS, day, "today_daily"), day)
@@ -425,11 +460,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", default=datetime.now(fs.CN).date().isoformat())
     parser.add_argument("--export-phase3d-v1", type=Path)
+    parser.add_argument("--profile",choices=("v5a","v7a","v5a-continuation"),default="v5a")
     args = parser.parse_args()
-    out = fs.OUT
+    if args.profile=="v5a":
+        out = fs.OUT
+    else:
+        from scripts.run_phase7a_shadow import output_root
+        out = output_root()
+        if args.profile=="v5a-continuation":
+            out /= "legacy_v5a"
     day = fs.iso(args.date)
     fs.require(day > fs.FREEZE, "前瞻采集日期须晚于冻结日")
-    c = Collector(out, TushareClient(fs.ROOT, offline=True))
+    c = Collector(out, TushareClient(fs.ROOT, offline=True), reuse_phase5a=args.profile!="v5a")
     status = dict(day=day)
     try:
         need(c.client.configured, "本地 Tushare 配置不可用")
@@ -442,7 +484,9 @@ def main():
     print(json.dumps(status, ensure_ascii=False))
     if args.export_phase3d_v1:
         fs.require("packet" in status, "尚无可导出的完整日包")
-        print(export_v1(Path(status["packet"]), out, args.export_phase3d_v1))
+        packet = Path(status["packet"])
+        fs.require(not args.export_phase3d_v1.resolve().is_relative_to(fs.OUT), "导出目录与 Phase 5A 签发目录冲突")
+        print(export_v1(packet, fs.OUT if packet.is_relative_to(fs.OUT) else out, args.export_phase3d_v1))
 
 
 if __name__ == "__main__":

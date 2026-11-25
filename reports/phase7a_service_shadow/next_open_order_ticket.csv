@@ -1,0 +1,5 @@
+﻿account,role_tag,risk,state,provenance_mode,signal_day,opening_day,next_signal_day,m200_state,m200_deviation_pct,code,name,asset,side,reason,proxy_price_rmb,shares,target_weight_pct,estimated_cash_rmb,as_of
+DEF50,is_locked_conservative,[LIVE CANDIDATE · 稳健],NO_ACTION_DUE,post_hoc_catchup,,2026-11-25,2026-11-27,weak,-13.70237288031757,,,,,,,,,,2026-11-24
+E4M,is_locked_flagship,[LIVE CANDIDATE · 主力],NO_ACTION_DUE,post_hoc_catchup,,2026-11-25,2026-11-27,weak,-13.70237288031757,,,,,,,,,,2026-11-24
+V5,is_locked_volcap,[LIVE CANDIDATE · 波动率增强],NO_ACTION_DUE,post_hoc_catchup,,2026-11-25,2026-11-27,weak,-13.70237288031757,,,,,,,,,,2026-11-24
+C3,exploratory_observer_only,[OBSERVATION ONLY · 探索盘勿实盘重仓],NO_ACTION_DUE,post_hoc_catchup,,2026-11-25,2026-12-01,weak,-13.70237288031757,,,,,,,,,,2026-11-24
