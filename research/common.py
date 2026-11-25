@@ -23,6 +23,7 @@ CODE = '600428'
 CHINA = timezone(timedelta(hours=8))
 DATA = ROOT / 'data' / 'research'
 OUTPUT = ROOT / 'results' / 'research' / f'{CODE}.json'
+PLUGIN_INPUTS = ('calendar', 'index', 'stocks', 'actions')
 
 
 def get_json(url, params, *, referer=None):
@@ -74,9 +75,8 @@ class Tape:
         self.name = self.data['universe'][CODE]['name']
         self.open_days = [day for day in self.days if self.opened(day)]
         self.states = scan(self.data)['states']
-        fields = ('calendar', 'index', 'stocks', 'actions')
         self.identity = {key: hashlib.sha256((ROOT / 'data' / f'{key}.csv').read_bytes()).hexdigest()
-                         for key in fields}
+                         for key in PLUGIN_INPUTS}
 
     def opened(self, day):
         return self.quotes.get(day, {}).get('opened', False)

@@ -26,6 +26,20 @@ const run=s=>vm.runInContext(s,context);
 const main=()=>node('main').innerHTML;
 async function verify(){
  run(scripts.map(x=>x[1]).join('\n'));
+ const rejected=run(`(() => {
+  const code='600001',date='2015-01-05',source='https://www.sse.com.cn/';
+  const q={code,date,status:'open',open:'10',high:'10',low:'10',close:'10',reference:'10',
+   volume:'100',limit:'bounded',upper:'11',lower:'9',actions_source:'tushare_pro:dividend?ts_code=600001.SH',
+   source:'tushare_pro:daily?ts_code=600001.SH'};
+  const input={policy:{...RAW.policy,freeze:date},crosscheck:[date],tables:{stocks:[q],actions:[],funds:[],etf:[],
+   universe:[{code,name:'测试',bucket:'红利'}],instruments:[{code,listing:'2014-01-01',source,delisting:''}],
+   calendar:[{date,source,week_end:'0'}],index:[{date,source,open:'100',close:'100'}]}};
+  const clean=prepare(input).errors;
+  q.source+='&token=offline-test';
+  return [clean,prepare(input).errors];
+ })()`);
+ assert.equal(rejected[0].length,0);
+ assert.ok(rejected[1].includes('600001 2015-01-05 行情或除权来源未通过'));
  await run('storeBundle()');
  const initialReady=run('ready(dataset())');
  assert.equal(run('Object.keys(dataset().universe).length'),run('RAW.tables.universe.length'));

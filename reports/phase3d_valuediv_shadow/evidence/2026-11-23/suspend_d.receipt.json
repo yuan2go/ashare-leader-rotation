@@ -1,0 +1,21 @@
+{
+  "api": "suspend_d",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,suspend_type,suspend_timing",
+  "retrieved_at": "2026-11-25T10:40:30.323479+08:00",
+  "label": "suspend_d",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:31 GMT",
+  "provider_code": 0,
+  "num_rows": 12,
+  "has_more": false,
+  "member_rows": 0,
+  "distinct_members": 0,
+  "selected_codes": [],
+  "response_file": "suspend_d.json.gz",
+  "raw_sha256": "d2142649fd252095bcba1502e37cfe6d050a5927f38c288b18a98636d24b1097",
+  "file_sha256": "144f3a48a3afd8f383d2ab92af3ef36398cf573c51a3f7679063ab1ae2fd35cc",
+  "completed_at": "2026-11-25T10:40:31.763403+08:00"
+}

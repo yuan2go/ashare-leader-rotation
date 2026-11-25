@@ -1,0 +1,20 @@
+{
+  "api": "stk_mins",
+  "params": {
+    "ts_code": "000001.SZ",
+    "freq": "60min",
+    "start_date": "2026-11-23 09:00:00",
+    "end_date": "2026-11-23 16:00:00"
+  },
+  "fields": "ts_code,trade_time,open,high,low,close",
+  "retrieved_at": "2026-11-25T10:45:09.742833+08:00",
+  "label": "hourly_probe_000001",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:45:10 GMT",
+  "provider_code": 403,
+  "category": "permission",
+  "response_file": "hourly_probe_000001.json.gz",
+  "raw_sha256": "573d2ca81538c59bed66327aa7907c064c809cb5e97b653b20f46152b318e90a",
+  "file_sha256": "ec58e48e4cb9a59236b1ff1046125e33c613aeabc5bc095cb68685a7c6b16f38",
+  "completed_at": "2026-11-25T10:45:10.609612+08:00"
+}

@@ -1,0 +1,20 @@
+{
+  "api": "adj_factor",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,adj_factor",
+  "retrieved_at": "2026-11-25T10:40:40.401121+08:00",
+  "label": "adj_factor",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:42 GMT",
+  "provider_code": 0,
+  "num_rows": 5586,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "adj_factor.json.gz",
+  "raw_sha256": "e346bccc14742636a64659cf7f043dda4a9aab46a375c0523d52b2420bd3c2fb",
+  "file_sha256": "b45e17d9b96f02e628a22bbce67d3f5d4770717ede506bbaf485f91881d285b8",
+  "completed_at": "2026-11-25T10:40:43.043343+08:00"
+}

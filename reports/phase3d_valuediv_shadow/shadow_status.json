@@ -1,0 +1,80 @@
+{
+  "status": "awaiting_first_forward_session",
+  "mode": "forward",
+  "observation_start_exclusive": "2026-11-20",
+  "observed_sessions": 0,
+  "last_session": null,
+  "fills": 0,
+  "accounts": [
+    {
+      "capital_rmb": 450000,
+      "model": "Defense50_Kv3",
+      "cash_cents": 45000000,
+      "nav_cents": 45000000,
+      "holdings": 0,
+      "estate_pnl_cents": null,
+      "idle_attempts": 0,
+      "net_return_pct": null
+    },
+    {
+      "capital_rmb": 450000,
+      "model": "PIT300_EW",
+      "cash_cents": 45000000,
+      "nav_cents": 45000000,
+      "holdings": 0,
+      "estate_pnl_cents": null,
+      "idle_attempts": 0,
+      "net_return_pct": null
+    },
+    {
+      "capital_rmb": 2000000,
+      "model": "Defense50_Kv3",
+      "cash_cents": 200000000,
+      "nav_cents": 200000000,
+      "holdings": 0,
+      "estate_pnl_cents": null,
+      "idle_attempts": 0,
+      "net_return_pct": null
+    },
+    {
+      "capital_rmb": 2000000,
+      "model": "PIT300_EW",
+      "cash_cents": 200000000,
+      "nav_cents": 200000000,
+      "holdings": 0,
+      "estate_pnl_cents": null,
+      "idle_attempts": 0,
+      "net_return_pct": null
+    }
+  ],
+  "rules": {
+    "version": 1,
+    "cutoff": "2026-11-20",
+    "capitals": [
+      450000,
+      2000000
+    ],
+    "models": [
+      "Defense50_Kv3",
+      "PIT300_EW"
+    ],
+    "slots": 3,
+    "budget_pct": 50,
+    "keep_rank": 5,
+    "slippage_bp": 2,
+    "affordability_margin_pct": 5,
+    "phase3c_sha256": "60d3c8315036912a32d03b4998dc59ae9c8b90b775c77018a4d0dc20bd700834",
+    "pit_manifest_sha256": "464e9172fce255ec3037193af2c77d0124d594770f789e0cb3b5d107c7d05a8e",
+    "frozen_sha256": {
+      "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+      "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+      "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+      "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+      "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca",
+      "engine_integrity.json": "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0"
+    },
+    "shadow_engine_sha256": "ecfa238d8719e40cd92c5407d1708e83859281906af5e46084c539366633b3dd"
+  },
+  "next_expected_session": "2026-11-23",
+  "missing_input": "等待首个交易日完整的已知时点数据包"
+}

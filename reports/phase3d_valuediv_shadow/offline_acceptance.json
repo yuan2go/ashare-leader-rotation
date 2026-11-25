@@ -1,0 +1,51 @@
+{
+  "kind": "historical_validation",
+  "first": "2024-06-17",
+  "last": "2024-08-09",
+  "price_and_factor_data": "实际历史签发快照",
+  "availability_clock": "验收模拟；不证明历史披露时点",
+  "post_freeze_observations": 0,
+  "restart_and_duplicate_verified": true,
+  "matched": "逐日权益、现金、逐笔数量价格费税与余额、期末地产盈亏及整手闲置",
+  "accounts": [
+    {
+      "capital": 450000,
+      "model": "Defense50_Kv3",
+      "sessions": 40,
+      "fills": 9,
+      "last_nav_cents": 45300858,
+      "net_estate_pnl_cents": 0,
+      "lot_idle_mean_pct": 0.8277682135548833
+    },
+    {
+      "capital": 450000,
+      "model": "PIT300_EW",
+      "sessions": 40,
+      "fills": 188,
+      "last_nav_cents": 44693070,
+      "net_estate_pnl_cents": -60466,
+      "lot_idle_mean_pct": 98.33796993487326
+    },
+    {
+      "capital": 2000000,
+      "model": "Defense50_Kv3",
+      "sessions": 40,
+      "fills": 9,
+      "last_nav_cents": 201335251,
+      "net_estate_pnl_cents": 0,
+      "lot_idle_mean_pct": 0.13712766342613944
+    },
+    {
+      "capital": 2000000,
+      "model": "PIT300_EW",
+      "sessions": 40,
+      "fills": 437,
+      "last_nav_cents": 192780761,
+      "net_estate_pnl_cents": -325972,
+      "lot_idle_mean_pct": 88.3757585624119
+    }
+  ],
+  "entitlement_rows": 426,
+  "pit_manifest_sha256": "464e9172fce255ec3037193af2c77d0124d594770f789e0cb3b5d107c7d05a8e",
+  "shadow_engine_sha256": "ecfa238d8719e40cd92c5407d1708e83859281906af5e46084c539366633b3dd"
+}

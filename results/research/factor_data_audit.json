@@ -1,0 +1,2685 @@
+{
+  "freeze": "2026-11-20",
+  "days": 2887,
+  "coverage": {
+    "daily_basic": {
+      "601398": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 25
+        }
+      },
+      "600900": {
+        "normal": 2768,
+        "coverage": 2768,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 34
+        }
+      },
+      "601088": {
+        "normal": 2813,
+        "coverage": 2813,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 33
+        }
+      },
+      "600938": {
+        "normal": 1112,
+        "coverage": 1112,
+        "first": "2022-04-21",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 57
+        }
+      },
+      "002714": {
+        "normal": 2862,
+        "coverage": 2862,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 515,
+          "dv_ttm": 159
+        }
+      },
+      "601919": {
+        "normal": 2744,
+        "coverage": 2744,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 316,
+          "dv_ttm": 1671
+        }
+      },
+      "600428": {
+        "normal": 2800,
+        "coverage": 2800,
+        "first": "2015-01-08",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 191,
+          "dv_ttm": 914
+        }
+      },
+      "600111": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 292
+        }
+      },
+      "601899": {
+        "normal": 2857,
+        "coverage": 2857,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 35
+        }
+      },
+      "600066": {
+        "normal": 2886,
+        "coverage": 2886,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 51
+        }
+      },
+      "600036": {
+        "normal": 2882,
+        "coverage": 2882,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 29
+        }
+      },
+      "002371": {
+        "normal": 2816,
+        "coverage": 2816,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 196
+        }
+      },
+      "300308": {
+        "normal": 2723,
+        "coverage": 2723,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 203,
+          "dv_ttm": 70
+        }
+      },
+      "600276": {
+        "normal": 2886,
+        "coverage": 2886,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 112
+        }
+      },
+      "300750": {
+        "normal": 2050,
+        "coverage": 2050,
+        "first": "2018-06-11",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 353
+        }
+      },
+      "600941": {
+        "normal": 1181,
+        "coverage": 1181,
+        "first": "2022-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 95
+        }
+      },
+      "601006": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 24
+        }
+      },
+      "601985": {
+        "normal": 2782,
+        "coverage": 2782,
+        "first": "2015-06-10",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 278
+        }
+      },
+      "600674": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 33
+        }
+      },
+      "600309": {
+        "normal": 2754,
+        "coverage": 2754,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 112
+        }
+      },
+      "600426": {
+        "normal": 2880,
+        "coverage": 2880,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 52
+        }
+      },
+      "600989": {
+        "normal": 1825,
+        "coverage": 1825,
+        "first": "2019-05-16",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 132
+        }
+      },
+      "002648": {
+        "normal": 2867,
+        "coverage": 2867,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 429,
+          "dv_ttm": 646
+        }
+      },
+      "600346": {
+        "normal": 2678,
+        "coverage": 2678,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 393,
+          "dv_ttm": 733
+        }
+      },
+      "000975": {
+        "normal": 2713,
+        "coverage": 2713,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 369
+        }
+      },
+      "601600": {
+        "normal": 2778,
+        "coverage": 2778,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 293,
+          "dv_ttm": 1748
+        }
+      },
+      "603993": {
+        "normal": 2868,
+        "coverage": 2868,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 88
+        }
+      },
+      "000408": {
+        "normal": 2825,
+        "coverage": 2825,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 385,
+          "dv_ttm": 1581
+        }
+      },
+      "600887": {
+        "normal": 2863,
+        "coverage": 2863,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 80
+        }
+      },
+      "000858": {
+        "normal": 2827,
+        "coverage": 2827,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 97
+        }
+      },
+      "603288": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 48
+        }
+      },
+      "002311": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 61
+        }
+      },
+      "600600": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 63
+        }
+      },
+      "600028": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 0
+        }
+      },
+      "603501": {
+        "normal": 2149,
+        "coverage": 2149,
+        "first": "2017-05-04",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 169,
+          "dv_ttm": 210
+        }
+      },
+      "603986": {
+        "normal": 2283,
+        "coverage": 2283,
+        "first": "2016-08-18",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 356
+        }
+      },
+      "600584": {
+        "normal": 2718,
+        "coverage": 2718,
+        "first": "2015-01-14",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 395,
+          "dv_ttm": 537
+        }
+      },
+      "002049": {
+        "normal": 2666,
+        "coverage": 2666,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 319
+        }
+      },
+      "300661": {
+        "normal": 2289,
+        "coverage": 2289,
+        "first": "2017-06-06",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 293
+        }
+      },
+      "601138": {
+        "normal": 2051,
+        "coverage": 2051,
+        "first": "2018-06-08",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 293
+        }
+      },
+      "002463": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 279,
+          "dv_ttm": 523
+        }
+      },
+      "000063": {
+        "normal": 2813,
+        "coverage": 2813,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 481,
+          "dv_ttm": 831
+        }
+      },
+      "002230": {
+        "normal": 2826,
+        "coverage": 2826,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 144
+        }
+      },
+      "002415": {
+        "normal": 2842,
+        "coverage": 2842,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 34
+        }
+      },
+      "000333": {
+        "normal": 2834,
+        "coverage": 2834,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 33
+        }
+      },
+      "600660": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 84
+        }
+      },
+      "600031": {
+        "normal": 2886,
+        "coverage": 2886,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 287,
+          "dv_ttm": 69
+        }
+      },
+      "600150": {
+        "normal": 2746,
+        "coverage": 2746,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 503,
+          "dv_ttm": 703
+        }
+      },
+      "300059": {
+        "normal": 2831,
+        "coverage": 2831,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 50
+        }
+      },
+      "601601": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "turnover_rate_f": 0,
+          "turnover_rate": 0,
+          "pe_ttm": 0,
+          "dv_ttm": 54
+        }
+      }
+    },
+    "moneyflow": {
+      "601398": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600900": {
+        "normal": 2768,
+        "coverage": 2768,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [
+          "2015-06-15"
+        ],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601088": {
+        "normal": 2813,
+        "coverage": 2807,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [
+          "2017-09-01",
+          "2017-09-04",
+          "2017-09-05",
+          "2017-09-06",
+          "2017-09-08",
+          "2017-09-13"
+        ],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600938": {
+        "normal": 1112,
+        "coverage": 1112,
+        "first": "2022-04-21",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002714": {
+        "normal": 2862,
+        "coverage": 2862,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601919": {
+        "normal": 2744,
+        "coverage": 2744,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600428": {
+        "normal": 2800,
+        "coverage": 2800,
+        "first": "2015-01-08",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600111": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601899": {
+        "normal": 2857,
+        "coverage": 2857,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600066": {
+        "normal": 2886,
+        "coverage": 2886,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600036": {
+        "normal": 2882,
+        "coverage": 2882,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002371": {
+        "normal": 2816,
+        "coverage": 2816,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "300308": {
+        "normal": 2723,
+        "coverage": 2723,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600276": {
+        "normal": 2886,
+        "coverage": 2886,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "300750": {
+        "normal": 2050,
+        "coverage": 2050,
+        "first": "2018-06-11",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600941": {
+        "normal": 1181,
+        "coverage": 1181,
+        "first": "2022-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601006": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601985": {
+        "normal": 2782,
+        "coverage": 2782,
+        "first": "2015-06-10",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600674": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600309": {
+        "normal": 2754,
+        "coverage": 2754,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600426": {
+        "normal": 2880,
+        "coverage": 2880,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600989": {
+        "normal": 1825,
+        "coverage": 1825,
+        "first": "2019-05-16",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002648": {
+        "normal": 2867,
+        "coverage": 2867,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600346": {
+        "normal": 2678,
+        "coverage": 2678,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "000975": {
+        "normal": 2713,
+        "coverage": 2713,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601600": {
+        "normal": 2778,
+        "coverage": 2778,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "603993": {
+        "normal": 2868,
+        "coverage": 2868,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "000408": {
+        "normal": 2825,
+        "coverage": 2825,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600887": {
+        "normal": 2863,
+        "coverage": 2863,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "000858": {
+        "normal": 2827,
+        "coverage": 2827,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "603288": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002311": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600600": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600028": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "603501": {
+        "normal": 2149,
+        "coverage": 2138,
+        "first": "2017-05-05",
+        "last": "2026-11-20",
+        "missing": [
+          "2017-05-04",
+          "2017-05-08",
+          "2017-05-09",
+          "2017-05-10",
+          "2017-05-11",
+          "2017-05-12",
+          "2017-05-15",
+          "2017-05-17",
+          "2017-05-18",
+          "2017-09-27",
+          "2017-09-28"
+        ],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "603986": {
+        "normal": 2283,
+        "coverage": 2268,
+        "first": "2016-09-06",
+        "last": "2026-11-20",
+        "missing": [
+          "2016-08-18",
+          "2016-08-19",
+          "2016-08-22",
+          "2016-08-23",
+          "2016-08-24",
+          "2016-08-25",
+          "2016-08-26",
+          "2016-08-29",
+          "2016-08-30",
+          "2016-08-31",
+          "2016-09-01",
+          "2016-09-02",
+          "2016-09-05",
+          "2016-09-07",
+          "2017-03-14"
+        ],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600584": {
+        "normal": 2718,
+        "coverage": 2718,
+        "first": "2015-01-14",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002049": {
+        "normal": 2666,
+        "coverage": 2666,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "300661": {
+        "normal": 2289,
+        "coverage": 2289,
+        "first": "2017-06-06",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601138": {
+        "normal": 2051,
+        "coverage": 2051,
+        "first": "2018-06-08",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002463": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "000063": {
+        "normal": 2813,
+        "coverage": 2813,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002230": {
+        "normal": 2826,
+        "coverage": 2826,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "002415": {
+        "normal": 2842,
+        "coverage": 2842,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "000333": {
+        "normal": 2834,
+        "coverage": 2834,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600660": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600031": {
+        "normal": 2886,
+        "coverage": 2886,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "600150": {
+        "normal": 2746,
+        "coverage": 2746,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "300059": {
+        "normal": 2831,
+        "coverage": 2831,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      },
+      "601601": {
+        "normal": 2887,
+        "coverage": 2887,
+        "first": "2015-01-05",
+        "last": "2026-11-20",
+        "missing": [],
+        "provider_suspensions": [],
+        "outside_calendar": [],
+        "mismatched_closes": [],
+        "null_fields": {
+          "buy_sm_amount": 0,
+          "sell_sm_amount": 0,
+          "buy_md_amount": 0,
+          "sell_md_amount": 0,
+          "buy_lg_amount": 0,
+          "sell_lg_amount": 0,
+          "buy_elg_amount": 0,
+          "sell_elg_amount": 0,
+          "net_mf_amount": 0
+        }
+      }
+    }
+  },
+  "units": {
+    "600900": {
+      "compared": 2768,
+      "single_side": 2711,
+      "both_sides": 0,
+      "buy_median": 0.9999999773695575,
+      "sell_median": 0.9999999760979796,
+      "combined_median": 1.9999999704031726,
+      "unit_verified": true
+    },
+    "002371": {
+      "compared": 2816,
+      "single_side": 2764,
+      "both_sides": 0,
+      "buy_median": 0.9999999422243826,
+      "sell_median": 0.9999999371216615,
+      "combined_median": 1.999999878370706,
+      "unit_verified": true
+    },
+    "600989": {
+      "compared": 1825,
+      "single_side": 1808,
+      "both_sides": 0,
+      "buy_median": 0.9999999691702015,
+      "sell_median": 0.9999999673004192,
+      "combined_median": 1.999999960403045,
+      "unit_verified": true
+    }
+  },
+  "requests": [
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601398.SH",
+      "retrieved": "2026-11-23T17:51:40.461857+00:00",
+      "cache_sha": "b5d0b8e4e0edcadeaa1747323fa68c453185e1bc995b9756c503e822e7684879"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601398.SH",
+      "retrieved": "2026-11-23T17:51:44.445864+00:00",
+      "cache_sha": "b5a646de5b28509b67cf4e54d1ef226ca9ac0bbd010f2704f437fa5eda75e21e"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601398.SH",
+      "retrieved": "2026-11-23T17:51:48.457687+00:00",
+      "cache_sha": "84587949f1d556e2b729416e5d1bc73072058c73efbd885504dfee9c7c64fee3"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600900.SH",
+      "retrieved": "2026-11-23T17:50:02.435971+00:00",
+      "cache_sha": "9019a74866240216c992cc1209a74fe13a4821c47c376cceb91375bdb87ea9b1"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600900.SH",
+      "retrieved": "2026-11-23T17:50:06.295449+00:00",
+      "cache_sha": "88ea715b8a934022ec9c7064c460742ffba8ee3c5b028727f22588fe34093eaf"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600900.SH",
+      "retrieved": "2026-11-23T16:22:21.211911+00:00",
+      "cache_sha": "1baa6b5025f7d00ecc1586e18649a6f3c283df259c57d9570b632995209c82b6"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601088.SH",
+      "retrieved": "2026-11-23T17:51:51.884894+00:00",
+      "cache_sha": "b96412e394a4b2824bb4a8ca100e2b6ed2bf9216ebc0bba677c681e921ff00a7"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601088.SH",
+      "retrieved": "2026-11-23T17:51:55.622151+00:00",
+      "cache_sha": "0bfec48b991ac44698c22ada1b795c996ad801293a77f59274cdf0cebf4a2f25"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601088.SH",
+      "retrieved": "2026-11-23T17:51:59.285035+00:00",
+      "cache_sha": "f882ff3c5ff71ca021d3695637359e923b9ce982df60d0c27825e4bd9d24a021"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600938.SH",
+      "retrieved": "2026-11-23T17:52:02.070599+00:00",
+      "cache_sha": "96f82f46fb54d2d7228d6680add62b9b0c9b6bbcb322ca6b52eeeef24a2be343"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600938.SH",
+      "retrieved": "2026-11-23T17:52:04.525065+00:00",
+      "cache_sha": "04503c0d110f7105203cb9c145ff2b04a1004d0180f2ab34c6d9bcb60c788ec1"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600938.SH",
+      "retrieved": "2026-11-23T17:52:06.778507+00:00",
+      "cache_sha": "1e991aa5ed5fa29f9344c97bbac5996393d517c7c8fd79ca16e8027d828a0e9c"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002714.SZ",
+      "retrieved": "2026-11-23T17:52:13.198161+00:00",
+      "cache_sha": "353e4e64b10a95b410b4ae5ca69fdc8d6c95a723fbf439f15cfbcb26e296b082"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002714.SZ",
+      "retrieved": "2026-11-23T17:52:16.729810+00:00",
+      "cache_sha": "21b253b7c13915465551f03bef4a36f50b158a7feec2cb5b1d33ccbf302fc6b5"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002714.SZ",
+      "retrieved": "2026-11-23T17:52:21.001479+00:00",
+      "cache_sha": "ab91db2a4dc1dbb3996335f9c1eeea0f47e390df891be20b485a654cd4a0ff43"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601919.SH",
+      "retrieved": "2026-11-23T17:52:26.704694+00:00",
+      "cache_sha": "88a5629d08e69c0f254c5564b188fdd946c9ac0c0b067c8fd6984eb4321765c8"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601919.SH",
+      "retrieved": "2026-11-23T17:52:32.148788+00:00",
+      "cache_sha": "fdd344ed84d377b81a9e8e9f61189f26bdb872d7a34d625e0f9a22af13fdc84d"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601919.SH",
+      "retrieved": "2026-11-23T17:52:37.849114+00:00",
+      "cache_sha": "785cd24368f994d6f040535d7fd845258c2c1946985b956d3b0df0dea561a2e2"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600428.SH",
+      "retrieved": "2026-11-23T17:52:44.022687+00:00",
+      "cache_sha": "7caa009639747e61a292cd7019aab90788dde20dd2b401782e606393c9a68a2b"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600428.SH",
+      "retrieved": "2026-11-23T17:52:49.360582+00:00",
+      "cache_sha": "2abb0ab3d70902da5e53306b88bcd85c5d2a46257a63f216083bbf8292f19f2e"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600428.SH",
+      "retrieved": "2026-11-23T17:52:56.778931+00:00",
+      "cache_sha": "b4a72effca0efb1f72171ec2a9e1ccf87d52b83cbfdfac15c6a5d56abdeead60"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600111.SH",
+      "retrieved": "2026-11-23T17:53:01.628352+00:00",
+      "cache_sha": "ff3d29c9b669ddcb9bbc68cec52f65e6ce6fefa3ce326d00f80583a985cd4acd"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600111.SH",
+      "retrieved": "2026-11-23T17:53:05.326934+00:00",
+      "cache_sha": "9fb64ded5ee2c049721be20e625433ac8206874159cf9aeaa14f5a8cbb573365"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600111.SH",
+      "retrieved": "2026-11-23T17:53:08.692353+00:00",
+      "cache_sha": "85578dd403edc2b5431b00fa673a27a25f544b77b69c76ae08902c919d22c969"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601899.SH",
+      "retrieved": "2026-11-23T17:53:12.039091+00:00",
+      "cache_sha": "3a1899a7f2d4c170d95ee96f2c4e5489d9dba60671854ba399a832a99b4260f4"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601899.SH",
+      "retrieved": "2026-11-23T17:53:34.945997+00:00",
+      "cache_sha": "fe9d40b654734e2dd6adf4df10e5668a1c00e912a5f99bee11789a0e27cd6717"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601899.SH",
+      "retrieved": "2026-11-23T17:53:45.576351+00:00",
+      "cache_sha": "466aa350023bf0959d765413bbe485cdfa9d59f42a63e0e30b2aefbd084ef8e4"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600066.SH",
+      "retrieved": "2026-11-23T17:53:56.090933+00:00",
+      "cache_sha": "baf7c2fb9f0355e6b3f7f16b5ca9e741ff3b5977d2a0645e3fc0da219503804b"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600066.SH",
+      "retrieved": "2026-11-23T17:54:06.030036+00:00",
+      "cache_sha": "1851ac841819e4db9142326249d6c066554ba581177482f73ff1406f2b524c22"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600066.SH",
+      "retrieved": "2026-11-23T17:54:11.036940+00:00",
+      "cache_sha": "e6808ff7be8475efa624416c25362e86e1ca639e71fc528d83a8a1dd170f5d6d"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600036.SH",
+      "retrieved": "2026-11-23T17:54:18.126282+00:00",
+      "cache_sha": "f744e88a757677a9662be00ebea6e520798b1b8c22177b2823eb21ceaddac88f"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600036.SH",
+      "retrieved": "2026-11-23T17:57:17.747006+00:00",
+      "cache_sha": "7d7bbd246643890fa2bc7f12892b78be4ceed3539487f8e90347077099febba2"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600036.SH",
+      "retrieved": "2026-11-23T17:57:23.279920+00:00",
+      "cache_sha": "09d1eed1c5cc22ef730c64a272b50e368e1fb51f36fb2ca49d8ad468164c0cfe"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T17:50:21.315067+00:00",
+      "cache_sha": "73f86681f86c92e0351919b66a6a5c5e7727cc3f41c7514de8353c78b4e6f69d"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T17:50:25.234482+00:00",
+      "cache_sha": "5d3dad766c484485b49bd6b6d375f63fbaabd1de0e7b7683b944f732cabd68be"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002371.SZ",
+      "retrieved": "2026-11-23T16:22:14.848222+00:00",
+      "cache_sha": "ddeda114b87cab6c737e018933ceae2fcd1a548ac70e7e0ccc32da93184805da"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=300308.SZ",
+      "retrieved": "2026-11-23T17:57:27.711695+00:00",
+      "cache_sha": "65abf016111a0d7f8405aa6c5ab6c664702294d8d49c097905992294b62777d1"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=300308.SZ",
+      "retrieved": "2026-11-23T17:57:31.707765+00:00",
+      "cache_sha": "c593ad410727add23f003e9a2982f7d7ff49a5186387d0e3acea873e4fa840bf"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=300308.SZ",
+      "retrieved": "2026-11-23T17:57:35.541116+00:00",
+      "cache_sha": "25c790377a0b4be8b9bb540f2425b33defbe347833f6402a0825542e321e7cc5"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600276.SH",
+      "retrieved": "2026-11-23T17:57:39.556973+00:00",
+      "cache_sha": "dcb651d5fea94598af5b419c8a1c30a1d12278cc105e4c0a42ac9e242c8888ec"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600276.SH",
+      "retrieved": "2026-11-23T17:57:45.085532+00:00",
+      "cache_sha": "1ff7b1492e388405299c1c95429315263b083797747d052444519e70a1fdf82b"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600276.SH",
+      "retrieved": "2026-11-23T17:57:49.579667+00:00",
+      "cache_sha": "ef360c5432c4157b5d93a03562f0c6aa30e7df44629416bd290a2579646eb6fe"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=300750.SZ",
+      "retrieved": "2026-11-23T17:57:53.289165+00:00",
+      "cache_sha": "0473d87fc5705fbd96174c16c6ec4cc5d9f559d549cda8769d3153e58d0f9b7c"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=300750.SZ",
+      "retrieved": "2026-11-23T17:57:56.303777+00:00",
+      "cache_sha": "8849eaef521bd33187702d7a85a39503fca2a6558212bdc1df96ccd23bf847f3"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=300750.SZ",
+      "retrieved": "2026-11-23T17:58:01.880670+00:00",
+      "cache_sha": "a01abd3e6ad1d3f9af8d74c0c799ce05bd6cd635410a2a7db44df62ef90837f7"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600941.SH",
+      "retrieved": "2026-11-23T17:58:04.196846+00:00",
+      "cache_sha": "b88ee887a04d61c6d4fe30f11b1d8bcdd6e2da93dc3f2a31cb49fe88e2dad6c2"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600941.SH",
+      "retrieved": "2026-11-23T17:58:06.321547+00:00",
+      "cache_sha": "4f5ae77a17579ce09b849114baece36f2c781aa58b18baa6f0ff3838ca4ae05e"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600941.SH",
+      "retrieved": "2026-11-23T17:58:08.857313+00:00",
+      "cache_sha": "9b3af634d26220b79395975235eb01ee96a7ac15d44421a22e417982fbbf71a2"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601006.SH",
+      "retrieved": "2026-11-23T17:58:12.531613+00:00",
+      "cache_sha": "bd7b15cd276391c11b700aa3210ff08b75ba9a0f4150300e1755f62c23b696fe"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601006.SH",
+      "retrieved": "2026-11-23T17:58:15.706656+00:00",
+      "cache_sha": "9f94ecc649cc9a3aa0c1296f895eac33bf8287d5c345c5a054b8df3b0a32b87c"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601006.SH",
+      "retrieved": "2026-11-23T17:58:23.559403+00:00",
+      "cache_sha": "11aadaa291d0100ee14ebed2f6216c0d44fc4e97e3a2483b8a0feff7fc546459"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601985.SH",
+      "retrieved": "2026-11-23T17:58:29.891905+00:00",
+      "cache_sha": "5b97f163ed113652e294d871aa465abd44216d061dd77f258e4409d3bca9eaa5"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601985.SH",
+      "retrieved": "2026-11-23T17:58:32.826737+00:00",
+      "cache_sha": "030280784ee6855633422b1a1954fdb3d4a88357d96aac3c6c647add58cf4744"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601985.SH",
+      "retrieved": "2026-11-23T17:58:37.189888+00:00",
+      "cache_sha": "6f0738025b3a571b3765be43661feb5d3633d28ee14a0be0bcb0c2a9c33356b1"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600674.SH",
+      "retrieved": "2026-11-23T17:58:41.709756+00:00",
+      "cache_sha": "d9c37ca9e4d356440bce5e736f0201474d1853a8a59f15631af6050e99ff8af4"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600674.SH",
+      "retrieved": "2026-11-23T17:58:45.099866+00:00",
+      "cache_sha": "6489114645df3e3805c80bcd15dbcb41f12d8b64aebf4ed232aa4b51f4c73e58"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600674.SH",
+      "retrieved": "2026-11-23T17:58:50.310768+00:00",
+      "cache_sha": "b91c6933f3e7c27b0988ac06ee73ffa638ae49fa280f1b27b6ba69c59b99305f"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600309.SH",
+      "retrieved": "2026-11-23T17:58:54.227859+00:00",
+      "cache_sha": "59ad43ef096e9b945743b529bf41acf0f9f66e9c5d16d81dcdd5f94556bbc6ba"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600309.SH",
+      "retrieved": "2026-11-23T17:58:57.954097+00:00",
+      "cache_sha": "e242f32407519e16bd2365e691143161657333016d2041b31eb7ba265c30cb57"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600309.SH",
+      "retrieved": "2026-11-23T17:59:29.437400+00:00",
+      "cache_sha": "c3ed80ce2fc1ad948aaaddf8b22cdd7b0f2e592774fef99d55913efc4cd5fa6e"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600426.SH",
+      "retrieved": "2026-11-23T17:59:33.080167+00:00",
+      "cache_sha": "557ebea1a107961d4913dbceca896d095b331076b229a98153a1221b60be8b1d"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600426.SH",
+      "retrieved": "2026-11-23T17:59:37.176163+00:00",
+      "cache_sha": "7e6f089a4d6b84b3297deefd2c784ce26c5ea2a052ed6bbb6076b9e28aec36d4"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600426.SH",
+      "retrieved": "2026-11-23T17:59:41.128487+00:00",
+      "cache_sha": "d3c5898869c6b684ff86c08664326041db35a6d2e73877dca9c459f1e73b7b7c"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600989.SH",
+      "retrieved": "2026-11-23T17:50:11.186699+00:00",
+      "cache_sha": "bb979eb1997a909551ab1660dff1cf390ac5bb6035dd1cf11b563359c64ba76f"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600989.SH",
+      "retrieved": "2026-11-23T17:50:14.703566+00:00",
+      "cache_sha": "b7ddee06ec0ea4adc8e352dec83a8d736481d63abe783ff2d4d7fb8da2f9c9f6"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600989.SH",
+      "retrieved": "2026-11-23T17:59:46.393967+00:00",
+      "cache_sha": "17c77da2e5da95faa8b3c1a3cb9b4f9b7ce282ffb427e0c78b998db0fbcc7203"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002648.SZ",
+      "retrieved": "2026-11-23T17:59:52.066402+00:00",
+      "cache_sha": "b55f5478ef26382763d55239e784f0061fe7fe54e23b1f77c15dfcf1dac6c331"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002648.SZ",
+      "retrieved": "2026-11-23T17:59:55.796294+00:00",
+      "cache_sha": "7006fd5ded6405794845a012d5858df16ee59ce22351f67c9e3f32d4c2270457"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002648.SZ",
+      "retrieved": "2026-11-23T18:00:01.353429+00:00",
+      "cache_sha": "8dff2132cd3ab68430f236293d4eb67f7968830da360884eb79c3af8867aaf4b"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600346.SH",
+      "retrieved": "2026-11-23T18:00:05.254480+00:00",
+      "cache_sha": "0ecf2a2da91faabda4f37bbdd1335361e6c5103b198b74d0c19934a11175df23"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600346.SH",
+      "retrieved": "2026-11-23T18:00:08.766126+00:00",
+      "cache_sha": "6ef6ed0458d6e8be2b5123fb54fe35cdb27430bb1581605c1618455860d23b4d"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600346.SH",
+      "retrieved": "2026-11-23T18:00:12.915008+00:00",
+      "cache_sha": "9f205c5b2bf2392ba3708c5c3b6db290fdc908de6ba1793fb37e0b8de7d3e556"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=000975.SZ",
+      "retrieved": "2026-11-23T18:00:16.747341+00:00",
+      "cache_sha": "010b5865b587fd5c69de5b8b95747f05d7d21ed9995f3647ba69fd4efd0b07b2"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=000975.SZ",
+      "retrieved": "2026-11-23T18:00:20.449993+00:00",
+      "cache_sha": "be11bfa2023e191b623099d081eda71dd8352a738a34291d4dd3ccbdcbd956eb"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=000975.SZ",
+      "retrieved": "2026-11-23T18:00:24.684902+00:00",
+      "cache_sha": "9aa0b391a9bb1aecb3b218df5418145fac0aca88d7121d89c3959882113dd908"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601600.SH",
+      "retrieved": "2026-11-23T18:00:28.944574+00:00",
+      "cache_sha": "9a3d2d3fb996fc7998f32fac2a95149655a39cacab6f15a25dcb98e2c904b938"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601600.SH",
+      "retrieved": "2026-11-23T18:00:33.518068+00:00",
+      "cache_sha": "9b800c272bfb744d4600cfbdb0fd1ded35040b4c94f6baabc1273e03767078f7"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601600.SH",
+      "retrieved": "2026-11-23T18:00:37.796614+00:00",
+      "cache_sha": "c982e0360868479d9b009a4fcdbe362decd258a968e68469cb9ecbae28ead46b"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=603993.SH",
+      "retrieved": "2026-11-23T18:00:42.341646+00:00",
+      "cache_sha": "fe48c3cdd716aa8ad73fafd1c350f83e0969cf5218a7859b1dc2a8ec06c7d349"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=603993.SH",
+      "retrieved": "2026-11-23T18:00:46.897436+00:00",
+      "cache_sha": "4ddd594d708e435d433c0aa1101a8ab7614920d2b6ca0270c023fa1a11389b8d"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=603993.SH",
+      "retrieved": "2026-11-23T18:00:51.784886+00:00",
+      "cache_sha": "53b579ebc24043cd1bd659ee41c7c317ed19886ed555511321bfef389e9365ec"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=000408.SZ",
+      "retrieved": "2026-11-23T18:00:57.611159+00:00",
+      "cache_sha": "e0415210f9683389c565253dedad21173769114bded97673fe4f030d62b4321a"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=000408.SZ",
+      "retrieved": "2026-11-23T18:01:03.327736+00:00",
+      "cache_sha": "82f63448db413b820ce6016076deeb38693ff354d6cc649024b650be4899900b"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=000408.SZ",
+      "retrieved": "2026-11-23T18:01:07.329909+00:00",
+      "cache_sha": "be3e886714cf8b483f7b093eb6e6b4dbecf8d8b036ff94a691df58dfd1b8e3b0"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600887.SH",
+      "retrieved": "2026-11-23T18:01:13.464991+00:00",
+      "cache_sha": "66b7aab5f1fdf45ddc2c1b666392cab326f7bd438e213b30436d2f4bf74b8b65"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600887.SH",
+      "retrieved": "2026-11-23T18:01:16.978872+00:00",
+      "cache_sha": "90c5d1a156c0e23877ff16e90d85d19b1be3b3c08d5044ec77a184e1a8f10e2a"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600887.SH",
+      "retrieved": "2026-11-23T18:01:23.046561+00:00",
+      "cache_sha": "037282d7d178b56ccca79e0f2d157fef66d493038c4d5f1007f6a6bdf35a071e"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=000858.SZ",
+      "retrieved": "2026-11-23T18:01:28.505336+00:00",
+      "cache_sha": "0035d404c1eb916200fc03cddccc0e7cbdf9ed5ec2e8c1e6771a28b332c3624d"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=000858.SZ",
+      "retrieved": "2026-11-23T18:01:33.365878+00:00",
+      "cache_sha": "92a513a5d014a591577110d6cf9d9dd0e457176085d087096a1f5fab593e16c1"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=000858.SZ",
+      "retrieved": "2026-11-23T18:01:38.684805+00:00",
+      "cache_sha": "7acc03f3e92972db837951d00d6153df4eaa561f837685ba04fc170a827f335a"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=603288.SH",
+      "retrieved": "2026-11-23T18:01:46.424090+00:00",
+      "cache_sha": "724149477f856ae929b1a577d569f71c263d848998511a72e61ac9464db43f7f"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=603288.SH",
+      "retrieved": "2026-11-23T18:01:50.436013+00:00",
+      "cache_sha": "841119e46ebae7dd4ebb030530adf87158ba2159b4766a2f36b7c1b8d5cf6f37"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=603288.SH",
+      "retrieved": "2026-11-23T18:01:55.347796+00:00",
+      "cache_sha": "9e584ac9540316f96aa61ffa4d4b8b684009df1e7e5241e64a29c4e6fa93ac7f"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002311.SZ",
+      "retrieved": "2026-11-23T18:02:01.808984+00:00",
+      "cache_sha": "ff819bc6d8d712bc7405457fb908e714766d4e1610b82179cb811962cbd34bc7"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002311.SZ",
+      "retrieved": "2026-11-23T18:02:08.382387+00:00",
+      "cache_sha": "571afe659bdfb95f56f905bb813dfaa477791c69c2f9271b1c62e28ce4015381"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002311.SZ",
+      "retrieved": "2026-11-23T18:02:14.429315+00:00",
+      "cache_sha": "3b80d095ace6b88096f0cad95e12941af54501d51594c91d17c08a2c0d978a77"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600600.SH",
+      "retrieved": "2026-11-23T18:02:23.029271+00:00",
+      "cache_sha": "6621c2f940b7b53d7ec87605982c11d21483e843effc765ab0cb466caf94a7dc"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600600.SH",
+      "retrieved": "2026-11-23T18:02:27.810636+00:00",
+      "cache_sha": "55e4f57d25617f2608e2dd429be2892ca253a6000bf5fe1ea4742c05d53934cd"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600600.SH",
+      "retrieved": "2026-11-23T18:02:32.784594+00:00",
+      "cache_sha": "4b730b62fe1aaebf148b70a26e543d9d56929762536f2b430ff83235203bc888"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600028.SH",
+      "retrieved": "2026-11-23T18:02:39.250981+00:00",
+      "cache_sha": "718b67d559313e12a1c656bb1cb1fe0b5d096714f21a2d452a52af7c1272b19c"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600028.SH",
+      "retrieved": "2026-11-23T18:02:42.893736+00:00",
+      "cache_sha": "4136384deddef06e88feda81794b6b0b75a96f36dccbd0a1cde87c7d564e558a"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600028.SH",
+      "retrieved": "2026-11-23T16:54:50.150568+00:00",
+      "cache_sha": "6e21034f161513ffc58cc62eed881fee9d2670c40c9ca92899ccaea87a063923"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=603501.SH",
+      "retrieved": "2026-11-23T18:02:47.248229+00:00",
+      "cache_sha": "4c63e8b4127455b3359f850e27a285cba00d17bba428eccc9112b705794a226b"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=603501.SH",
+      "retrieved": "2026-11-23T18:02:51.244357+00:00",
+      "cache_sha": "70b6b1cfa71abaac64a01c2eedf7a28a5da03a0ad21c92b31be4b8434ee00d7f"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=603501.SH",
+      "retrieved": "2026-11-23T16:55:39.931156+00:00",
+      "cache_sha": "c30ceca683c94d79c77844ac3b960905f8844a31daa0db5f5b95d9b7e7e6a3ae"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=603986.SH",
+      "retrieved": "2026-11-23T18:02:57.697536+00:00",
+      "cache_sha": "c27931025a9a7df1b8de9cd1068a93078b38e236cf762f86dbc37e365b157e42"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=603986.SH",
+      "retrieved": "2026-11-23T18:03:02.832248+00:00",
+      "cache_sha": "f3e29379cfdfac06f1f7562becfa0eea6150851ea7efeed55726624308ecb77f"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=603986.SH",
+      "retrieved": "2026-11-23T16:55:57.189833+00:00",
+      "cache_sha": "e175203694f8dda785dbd68a53b957db35b14f2bae1a54bf56887efe1b6f0fa2"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600584.SH",
+      "retrieved": "2026-11-23T18:03:08.759817+00:00",
+      "cache_sha": "0cd14e1bfcabc2bc0ce2c261ace9d39799cec84caf01ad0b874e641560426518"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600584.SH",
+      "retrieved": "2026-11-23T18:03:12.723960+00:00",
+      "cache_sha": "fecd20d25f07af7a37bb9c1ed82bd92c7b31fbbea50863923794715de44f7df1"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600584.SH",
+      "retrieved": "2026-11-23T16:56:13.783206+00:00",
+      "cache_sha": "38f42674cddfeae9e7846b59259b1042b3f1d2729615907c41e0c4a0a6b6efe5"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002049.SZ",
+      "retrieved": "2026-11-23T18:03:19.741585+00:00",
+      "cache_sha": "b1354af08dac1ed298e1daf7e53ea776a0d1981d18bc8f0f7cdebdc94181a6c1"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002049.SZ",
+      "retrieved": "2026-11-23T18:03:24.447386+00:00",
+      "cache_sha": "30097aa0caf1e8454c6d205ab3e9be77c4f38860989a516d265e40a13571d7a8"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002049.SZ",
+      "retrieved": "2026-11-23T16:56:31.247640+00:00",
+      "cache_sha": "4ca7ac8a96e386fa3433c33c3706492bd16e3d3c763f78959e3e8fab368dffa7"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=300661.SZ",
+      "retrieved": "2026-11-23T18:03:29.426160+00:00",
+      "cache_sha": "1d880a3421cb317175485ec53e5538358e8fc4a4d8ce070429504b6cbd4b4d3f"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=300661.SZ",
+      "retrieved": "2026-11-23T18:03:33.471552+00:00",
+      "cache_sha": "43830d1b893c8a39edb3d744929b4f08225187e79e8ee7470e25b54a097928d7"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=300661.SZ",
+      "retrieved": "2026-11-23T16:56:48.371829+00:00",
+      "cache_sha": "ae3724f9e806e79ccb5de61e36f69d4546e7e675a82b66c51ab9408edffca70e"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601138.SH",
+      "retrieved": "2026-11-23T18:03:41.473590+00:00",
+      "cache_sha": "470ce0eeea5dc08aee6cc2ed3fcb0187561ebd98c5bbb787edbf70a4194bf9d8"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601138.SH",
+      "retrieved": "2026-11-23T18:03:46.711145+00:00",
+      "cache_sha": "31c7f1584391f5835919e932fb5721149785dddac593676ecb5abf95df2dd32e"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601138.SH",
+      "retrieved": "2026-11-23T16:57:47.717015+00:00",
+      "cache_sha": "557fbafffe49271dfd59c3ae605381ea31aa2e0e9892c83fa0b171dda3355781"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002463.SZ",
+      "retrieved": "2026-11-23T18:03:52.225466+00:00",
+      "cache_sha": "f120892805288c1aee8e20e656a95e51ee85d045abd368185d44617832a59243"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002463.SZ",
+      "retrieved": "2026-11-23T18:03:58.472643+00:00",
+      "cache_sha": "514fc8f004873e218832fb80269a3551057df3d78d6bf6778cc32f3fc7097199"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002463.SZ",
+      "retrieved": "2026-11-23T16:58:05.640072+00:00",
+      "cache_sha": "f8d1106d511cf04284b36267bff71abfab7069416b9cd599e7be1aea8a19d2de"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=000063.SZ",
+      "retrieved": "2026-11-23T18:04:05.849224+00:00",
+      "cache_sha": "ee1df8543d5148cd8136dfb9c8cfcb359050d9670e2ba798f5eff2245005586d"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=000063.SZ",
+      "retrieved": "2026-11-23T18:04:11.219260+00:00",
+      "cache_sha": "6c88c00494ac28c171f50a8d2cf6aa2352c8c0ff6c41c7332c0b8b3bcb058293"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=000063.SZ",
+      "retrieved": "2026-11-23T16:58:25.229062+00:00",
+      "cache_sha": "a3650eb9e7d6b97dc69afde598f9446a953037752b06c238d3444d6e7829e327"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002230.SZ",
+      "retrieved": "2026-11-23T18:04:17.292114+00:00",
+      "cache_sha": "c34964ef57c524b9bd07d618a1206ac8c747196ce5bd23689b4700307305c643"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002230.SZ",
+      "retrieved": "2026-11-23T18:04:23.216780+00:00",
+      "cache_sha": "a39241358c1011cdf9e2a91a19cdbee5da31e0af956899823e58e0c9da650cff"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002230.SZ",
+      "retrieved": "2026-11-23T16:58:47.405228+00:00",
+      "cache_sha": "84e8abdc18551427b4ea23dd995b9a04720bd7c94eb31f105b1ca77a1fa20614"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=002415.SZ",
+      "retrieved": "2026-11-23T18:04:27.783960+00:00",
+      "cache_sha": "425a6896a4713c4f301031768e3b4f6c98543d01552756ad7393ac294c098bdf"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=002415.SZ",
+      "retrieved": "2026-11-23T18:04:31.586965+00:00",
+      "cache_sha": "770b431f026c88453b887094773033083e85bb5f903d36bbb1623f54829aa9a6"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=002415.SZ",
+      "retrieved": "2026-11-23T16:59:11.389293+00:00",
+      "cache_sha": "1184687f1af61e1c0207aa007cb89815190e461e9a0402b146add1050e008744"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=000333.SZ",
+      "retrieved": "2026-11-23T18:04:36.139050+00:00",
+      "cache_sha": "0287691eb733c7d5e58be442d441cbef2084676b68ecdd8d90a0d651ad079bc8"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=000333.SZ",
+      "retrieved": "2026-11-23T18:04:40.768791+00:00",
+      "cache_sha": "05f8572a83a81a846c4e6b4857b03de61592958bf9acd29ac711c31c70148b65"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=000333.SZ",
+      "retrieved": "2026-11-23T17:00:50.285449+00:00",
+      "cache_sha": "ad16ff53bcb0f4b30a261bf1adbb732c85bce6d536e8d1b09047a5081c591cba"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600660.SH",
+      "retrieved": "2026-11-23T18:04:47.071053+00:00",
+      "cache_sha": "9a173ce67b515593600740f5756506cf4dc248751ab1978afb70ca9d61b941de"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600660.SH",
+      "retrieved": "2026-11-23T18:04:51.944253+00:00",
+      "cache_sha": "bb96b1c68f5d0ac70b4ba239dcac31d54fa4417e3c5be6339372ceff6f9ad9f3"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600660.SH",
+      "retrieved": "2026-11-23T17:01:04.272980+00:00",
+      "cache_sha": "021edbbde34a21aaaa07d5841501e255c75df333ebfd205a2ec50e480fe17cb1"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600031.SH",
+      "retrieved": "2026-11-23T18:04:56.671663+00:00",
+      "cache_sha": "6aa87590cc75f31fbb7dee5f3b381e0f8e40f9f096551d422e91d32192e7cc82"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600031.SH",
+      "retrieved": "2026-11-23T18:05:00.438691+00:00",
+      "cache_sha": "b84aceeb1246ed7fba6952fe5396a98049c0e6bcee6cab947118998c285b16f0"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600031.SH",
+      "retrieved": "2026-11-23T17:01:24.981662+00:00",
+      "cache_sha": "138b891e6658412b8f9942aa5aa988935f0ccf08c94842e32c0c474fe9303ee4"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=600150.SH",
+      "retrieved": "2026-11-23T18:05:04.979768+00:00",
+      "cache_sha": "82977a3d59408a495866ca6bd0ce36b5d5d867b3ca073ac4ca013044b3433835"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=600150.SH",
+      "retrieved": "2026-11-23T18:05:09.048253+00:00",
+      "cache_sha": "4a4fdaef2cfe898ca8327627959ff233fb06d91fe1ab67615e790a8c315218fc"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=600150.SH",
+      "retrieved": "2026-11-23T17:02:44.082727+00:00",
+      "cache_sha": "1294b9a99a9e5264927f13c6abd7aac06d88be0866f2619aa88f23e44e5fca55"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=300059.SZ",
+      "retrieved": "2026-11-23T18:05:14.443970+00:00",
+      "cache_sha": "39e85e56655f8fce67ed01e91b71edae4521cac9a2e67480adac8a1e1f4f7308"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=300059.SZ",
+      "retrieved": "2026-11-23T18:05:18.819485+00:00",
+      "cache_sha": "1471a73de73e5ec98b3ebf3bb99604324bfa78b6e45b0c877b3c4f6eccdeaa60"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=300059.SZ",
+      "retrieved": "2026-11-23T17:02:57.875739+00:00",
+      "cache_sha": "75d429e1e7d4478d0f5b5b6cc3332d39b46a4f72c8c0fbdeb16c2af3a3636b13"
+    },
+    {
+      "source": "tushare_pro:daily_basic?ts_code=601601.SH",
+      "retrieved": "2026-11-23T18:05:23.206726+00:00",
+      "cache_sha": "3fcfdc53e73895d5aa2a549270af11d511180a9f20bd54a1906a428336faedfe"
+    },
+    {
+      "source": "tushare_pro:moneyflow?ts_code=601601.SH",
+      "retrieved": "2026-11-23T18:05:26.678304+00:00",
+      "cache_sha": "a6703f7e681e3c918df3f6128de7a5a502c0a9985cda3e1856cd862deeaedd4a"
+    },
+    {
+      "source": "tushare_pro:daily?ts_code=601601.SH",
+      "retrieved": "2026-11-23T17:03:13.824905+00:00",
+      "cache_sha": "2aec3f1205710f54b20d00d165014f8e6a1f4959f2da0a75addf1e2fa835e287"
+    }
+  ],
+  "factor_sha256": {
+    "daily_basic": "20a6a00c614f91f78aba9d433e9a2d22c08497b751a658e219903602d450ead3",
+    "moneyflow": "311ca66d5e13fb1f1eeddb375cfba1724df328f787256f733f4e2137aa5b165d",
+    "daily_amount": "fb829dd5279d44304d61af47d53d1d70e379322f1f8bc40cd13a394d6d8947f6"
+  },
+  "errors": {},
+  "unit_verified": true
+}

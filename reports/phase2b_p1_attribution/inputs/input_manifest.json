@@ -1,0 +1,525 @@
+{
+  "python": "3.11.18",
+  "strategy": "Barbell_50_50_Kt2",
+  "capital": 450000,
+  "universe": 50,
+  "frozen_dates": [
+    "2015-01-05",
+    "2026-11-20"
+  ],
+  "sessions": 2887,
+  "continuous_replay": [
+    "2016-01-04",
+    "2026-11-20"
+  ],
+  "sleeve_names": {
+    "Trend": "trend",
+    "ValueDiv": "defense"
+  },
+  "sleeve_slots": {
+    "trend": 2,
+    "defense": 3
+  },
+  "cases": {
+    "2bp": [
+      0.0,
+      0,
+      2
+    ],
+    "T+2": [
+      0.0,
+      1,
+      2
+    ]
+  },
+  "price_basis": "Fills, fees and NAV exported from integer cents; adj_close is the frozen scan mark times its contemporaneous corporate-action factor on open sessions.",
+  "comparison_basis": "Recomputed independent window summaries exactly match the historical 50-stock barbell JSON in both scenarios.",
+  "comparison": {
+    "W1": {
+      "2bp": {
+        "start": "2016-01-04",
+        "end": "2026-11-20",
+        "days": 2643,
+        "trades": 1281,
+        "net": 12.789782466666667,
+        "dd": -0.28234530114939826,
+        "friction_cents": 26278271,
+        "lot_idle": {
+          "mean": 0.009911385028095276,
+          "peak": 0.09769926291217484,
+          "n": 354
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.10077121856504512,
+          "peak": 0.5574333062438332,
+          "n": 2643
+        },
+        "auction_cash": {
+          "mean": 0.09586513778004109,
+          "peak": 0.5469818769423255,
+          "n": 454
+        },
+        "yearly": {
+          "2016": {
+            "turnover": 4.379784501817726,
+            "trades": 75
+          },
+          "2017": {
+            "turnover": 8.323591058790692,
+            "trades": 128
+          },
+          "2018": {
+            "turnover": 5.690460777350563,
+            "trades": 106
+          },
+          "2019": {
+            "turnover": 8.063834003593882,
+            "trades": 128
+          },
+          "2020": {
+            "turnover": 7.699534059299564,
+            "trades": 123
+          },
+          "2021": {
+            "turnover": 6.393722544822602,
+            "trades": 132
+          },
+          "2022": {
+            "turnover": 6.8454134591281015,
+            "trades": 113
+          },
+          "2023": {
+            "turnover": 7.765307274107828,
+            "trades": 123
+          },
+          "2024": {
+            "turnover": 6.920255796161302,
+            "trades": 125
+          },
+          "2025": {
+            "turnover": 6.630775081667136,
+            "trades": 117
+          },
+          "2026": {
+            "turnover": 6.936518329518841,
+            "trades": 111
+          }
+        },
+        "filters": {}
+      },
+      "T+2": {
+        "start": "2016-01-04",
+        "end": "2026-11-20",
+        "days": 2643,
+        "trades": 1291,
+        "net": 12.634330511111111,
+        "dd": -0.297267408650816,
+        "friction_cents": 26594533,
+        "lot_idle": {
+          "mean": 0.009577338618005358,
+          "peak": 0.133356242242501,
+          "n": 364
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.10917125289244671,
+          "peak": 1.0,
+          "n": 2643
+        },
+        "auction_cash": {
+          "mean": 0.1038600459669903,
+          "peak": 0.5665165939117809,
+          "n": 446
+        },
+        "yearly": {
+          "2016": {
+            "turnover": 4.345906969232681,
+            "trades": 72
+          },
+          "2017": {
+            "turnover": 9.652946573927958,
+            "trades": 137
+          },
+          "2018": {
+            "turnover": 6.970678417290409,
+            "trades": 109
+          },
+          "2019": {
+            "turnover": 8.018322402002125,
+            "trades": 130
+          },
+          "2020": {
+            "turnover": 7.642871586807609,
+            "trades": 124
+          },
+          "2021": {
+            "turnover": 6.358308072363544,
+            "trades": 128
+          },
+          "2022": {
+            "turnover": 6.721906157026561,
+            "trades": 113
+          },
+          "2023": {
+            "turnover": 7.789704842317148,
+            "trades": 123
+          },
+          "2024": {
+            "turnover": 6.888597733689721,
+            "trades": 123
+          },
+          "2025": {
+            "turnover": 6.628737634038017,
+            "trades": 118
+          },
+          "2026": {
+            "turnover": 6.890419803346751,
+            "trades": 114
+          }
+        },
+        "filters": {}
+      }
+    },
+    "W_Bear": {
+      "2bp": {
+        "start": "2021-03-01",
+        "end": "2023-11-17",
+        "days": 662,
+        "trades": 311,
+        "net": 0.5464095777777778,
+        "dd": -0.2652144777953289,
+        "friction_cents": 1988721,
+        "lot_idle": {
+          "mean": 0.02284921378759819,
+          "peak": 0.24448123419416454,
+          "n": 92
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.1034684854460918,
+          "peak": 0.2734465240963378,
+          "n": 662
+        },
+        "auction_cash": {
+          "mean": 0.10430532153525125,
+          "peak": 0.2664620865781849,
+          "n": 110
+        },
+        "yearly": {
+          "2021": {
+            "turnover": 5.106588073771281,
+            "trades": 98
+          },
+          "2022": {
+            "turnover": 6.539301579801709,
+            "trades": 108
+          },
+          "2023": {
+            "turnover": 7.367009622872662,
+            "trades": 105
+          }
+        },
+        "filters": {}
+      },
+      "T+2": {
+        "start": "2021-03-01",
+        "end": "2023-11-17",
+        "days": 662,
+        "trades": 304,
+        "net": 0.3685426444444444,
+        "dd": -0.2783626769164962,
+        "friction_cents": 1892249,
+        "lot_idle": {
+          "mean": 0.02451830934699738,
+          "peak": 0.23856411414072531,
+          "n": 92
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.10732366381041715,
+          "peak": 1.0,
+          "n": 662
+        },
+        "auction_cash": {
+          "mean": 0.10600572518830109,
+          "peak": 0.2741125554741563,
+          "n": 107
+        },
+        "yearly": {
+          "2021": {
+            "turnover": 5.059342672346268,
+            "trades": 94
+          },
+          "2022": {
+            "turnover": 6.399598331035477,
+            "trades": 105
+          },
+          "2023": {
+            "turnover": 7.379075956069897,
+            "trades": 105
+          }
+        },
+        "filters": {}
+      }
+    },
+    "2026": {
+      "2bp": {
+        "start": "2026-01-05",
+        "end": "2026-11-20",
+        "days": 213,
+        "trades": 108,
+        "net": 0.07442157777777769,
+        "dd": -0.10438586482296897,
+        "friction_cents": 470638,
+        "lot_idle": {
+          "mean": 0.039966591972738906,
+          "peak": 0.36068368347182583,
+          "n": 36
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.09890861034834685,
+          "peak": 0.2754677784223538,
+          "n": 213
+        },
+        "auction_cash": {
+          "mean": 0.0892269161033997,
+          "peak": 0.27154679677685023,
+          "n": 40
+        },
+        "yearly": {
+          "2026": {
+            "turnover": 7.245566862610272,
+            "trades": 108
+          }
+        },
+        "filters": {
+          "AffordabilitySkip": 3
+        }
+      },
+      "T+2": {
+        "start": "2026-01-05",
+        "end": "2026-11-20",
+        "days": 213,
+        "trades": 105,
+        "net": 0.11236335555555566,
+        "dd": -0.08937054092328711,
+        "friction_cents": 474927,
+        "lot_idle": {
+          "mean": 0.0415587586556194,
+          "peak": 0.37620349871319847,
+          "n": 36
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.11280382395645026,
+          "peak": 1.0,
+          "n": 213
+        },
+        "auction_cash": {
+          "mean": 0.09827957811819753,
+          "peak": 0.27338060867478525,
+          "n": 40
+        },
+        "yearly": {
+          "2026": {
+            "turnover": 7.129478250800343,
+            "trades": 105
+          }
+        },
+        "filters": {
+          "AffordabilitySkip": 3
+        }
+      }
+    },
+    "OOS": {
+      "2bp": {
+        "start": "2023-01-30",
+        "end": "2026-11-20",
+        "days": 926,
+        "trades": 435,
+        "net": 1.7572142666666668,
+        "dd": -0.1107732824999712,
+        "friction_cents": 3254540,
+        "lot_idle": {
+          "mean": 0.0214963013086987,
+          "peak": 0.2794575985808056,
+          "n": 127
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.09525955954584084,
+          "peak": 0.37254312590781613,
+          "n": 926
+        },
+        "auction_cash": {
+          "mean": 0.09490612848291846,
+          "peak": 0.3720364403922802,
+          "n": 158
+        },
+        "yearly": {
+          "2023": {
+            "turnover": 7.047512009136809,
+            "trades": 97
+          },
+          "2024": {
+            "turnover": 6.975287570027093,
+            "trades": 119
+          },
+          "2025": {
+            "turnover": 6.507265008637902,
+            "trades": 113
+          },
+          "2026": {
+            "turnover": 6.83779071752178,
+            "trades": 106
+          }
+        },
+        "filters": {}
+      },
+      "T+2": {
+        "start": "2023-01-30",
+        "end": "2026-11-20",
+        "days": 926,
+        "trades": 432,
+        "net": 1.802356911111111,
+        "dd": -0.11087631596509673,
+        "friction_cents": 3220467,
+        "lot_idle": {
+          "mean": 0.02212394236531102,
+          "peak": 0.29180293864303936,
+          "n": 127
+        },
+        "zero_lot": 0,
+        "cash": {
+          "mean": 0.10103988466141736,
+          "peak": 1.0,
+          "n": 926
+        },
+        "auction_cash": {
+          "mean": 0.10103587310506457,
+          "peak": 0.34529653634396207,
+          "n": 159
+        },
+        "yearly": {
+          "2023": {
+            "turnover": 7.020115410522747,
+            "trades": 98
+          },
+          "2024": {
+            "turnover": 6.963981719722791,
+            "trades": 117
+          },
+          "2025": {
+            "turnover": 6.514363711614702,
+            "trades": 109
+          },
+          "2026": {
+            "turnover": 6.790242090130293,
+            "trades": 108
+          }
+        },
+        "filters": {}
+      }
+    }
+  },
+  "w1_prefix_cut": "2023-01-20",
+  "w1_prefix_rows": {
+    "2bp": 1717,
+    "T+2": 1717
+  },
+  "snapshot": {
+    "production": {
+      "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+      "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945",
+      "policy.json": "3dc3639a1b498c2e1620a9d5eecb18da477357293005f75826dcdd8bd717f55a",
+      "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
+      "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca",
+      "universe.csv": "2061c09e4aa8c6ed2afd2538fbcfc3ec393b8e000fcb41ab656ed88d67db9a5f",
+      "results/data_audit.json": "b2f0fc4d32b28a469e7cd418de403185fa4cd1ba80debcaebc2ecbfe1b2ea6cb",
+      "results/rotation_v4_0_validation.md": "092fcd8405981e4c4a53620d91d9fd1c1c6a1ae0996eda27c7d404056f7ee3a6",
+      "rotation_quant_lab_v4_0_offline.html": "b90f0cb6e2b892b1d08aa1a6be32e3139e0206acb6c1f2c7511492bbf1265cd9",
+      "results/rotation_research.json": "d76b2b975c3bdcecfe16d34eed329473225f2b22af87f3cab9c7fb5bc5515256"
+    },
+    "factors": {
+      "daily_basic": "20a6a00c614f91f78aba9d433e9a2d22c08497b751a658e219903602d450ead3",
+      "moneyflow": "311ca66d5e13fb1f1eeddb375cfba1724df328f787256f733f4e2137aa5b165d",
+      "daily_amount": "fb829dd5279d44304d61af47d53d1d70e379322f1f8bc40cd13a394d6d8947f6"
+    }
+  },
+  "validated_input_sha256": {
+    "universe": "2061c09e4aa8c6ed2afd2538fbcfc3ec393b8e000fcb41ab656ed88d67db9a5f",
+    "funds": "a24d23cf2c787d31153cf217027ddd84301632b93a237e47d1982b2d2d72733b",
+    "instruments": "4795d44fb1d69f07a487bc0952371419fbc4f59f7f284e7113dbdad1b138c265",
+    "calendar": "d6e8ce1ffd88a6b9a9c1f40ee81dd97cd0d4fbfa874d6ce3f15a5fe4d3e7ad06",
+    "stocks": "f86b024ba014d83b6f4a1ada9159a52378a89d80e17fc97b1cf643e2d88fb05c",
+    "actions": "0d34a11921346e0867b3c8927301e9a80b9a6287883eca726a20d6f3a0a69278",
+    "index": "0152ca75482f601dc7508294e7418cb4f54072be06e277af36178ffeb09914f8",
+    "etf": "4c43000138c0774b1e3f431e0d04bb15496c17e0ed103152cf2c98c75e2c2426"
+  },
+  "sources_sha256": {
+    "scripts\\audit_kt2_turnover_t2_attribution.py": "176d7e465d4dbce7ef51700beb08c40c0386200810e6b0a5a6b67c6b0b78cebd",
+    "research\\exp_50_pool_barbell.py": "29a0e8ebe68f6e00cc600ca3b7c6b4fe00e09c7383cd8cd659bbeb8c89c6c239",
+    "research\\exp_50_pool_topk_diag.py": "54deb8ebd0379ba58669df7f677c6833c36ed3e73fe55354cfc237d111f69f26",
+    "results\\research\\pool50_barbell.json": "0483c651f2cc340603abddc0a5f76276771f112f59e788d11771afe17e4d4ec3",
+    "research\\universe_50_final_config.json": "c6e25faecde4757838c60ccf0489321433dedabe35429e49094f4f7032f02c47",
+    "results\\research\\universe_50_final_screening.json": "1f45594ac2f4377999ffef4c387adbfb80fca66336f569b427157e91e1351d79"
+  },
+  "exported_sha256": {
+    "frozen_daily_bars/000063.csv": "e99908877d171529f00b8f86fb486fa7351136952e65512398a1def9bcde01a5",
+    "frozen_daily_bars/000333.csv": "fed6a4f3b2e039ec4b303b67485651e1544e7a9cdd57a440f699b1d700dee8a6",
+    "frozen_daily_bars/000408.csv": "f798f5397f781943083d904f8d41ead6ba6732a4917f7412019b16de77546e86",
+    "frozen_daily_bars/000858.csv": "e2071e04a2667c5f98ec062a5eedc67ace6b7a1e215a8e78688adfd589b33284",
+    "frozen_daily_bars/000975.csv": "bc740e3c16ce849454db42325e44049191ea22295dd5e5cbe33b215a277c00f8",
+    "frozen_daily_bars/002049.csv": "6c0add62280609466d7b96b5b9f24f81809a962b67e320bd94f66b9a4d3c0e9e",
+    "frozen_daily_bars/002230.csv": "c2e895d07d57086c175214c1cc4d3fb8cb12aab33b40471c0437aeb2c1857377",
+    "frozen_daily_bars/002311.csv": "555bea1966fd5e9c423a71ad22b4b61bdce44d14917f0a4472ffdcb49990467d",
+    "frozen_daily_bars/002371.csv": "9c9413fa65b71f2dcb201c796198378b21a351051e58d84c3089da7930ad6fa4",
+    "frozen_daily_bars/002415.csv": "3063f081ae8e7aebc3e578f213b328cddfbdb6860c065bbe3ed0c95b642650f2",
+    "frozen_daily_bars/002463.csv": "a59dda5764981a8f09f2f6412297a39f7414bd0a023590585f6535e4c36770ea",
+    "frozen_daily_bars/002648.csv": "0db02107330405e414fb0eb6996699f5a916275cf560c9deb29c3d188289ce5e",
+    "frozen_daily_bars/002714.csv": "80e316aeff83297c0ef6c84f4ea259e6849eeaf88b26c3a243004aa0190589a7",
+    "frozen_daily_bars/300059.csv": "02a34bcccaa957c2044c5729d8d82d043ffddfaa43ee0e0ae578d2bbbdd52f6d",
+    "frozen_daily_bars/300308.csv": "4e99850dffc5fc343463e1bf964ae89ef346abdfd410e96e41ee99643b47a206",
+    "frozen_daily_bars/300661.csv": "63b8c074bbac4649305338b234f8cf4684c5c92f9b5b250a435f3903c08b33aa",
+    "frozen_daily_bars/300750.csv": "1d0222d03fcbc313226867aa95f0abb4413eb58dccdb882a9ee9fc5ee3c1e7fe",
+    "frozen_daily_bars/600028.csv": "952c585a586002b99058cce23a77bd8b11033d01222233ceb4008bf47c7299dd",
+    "frozen_daily_bars/600031.csv": "8f20074e1cc024f655128fd5647837da30a745f5a7e10769ab6909d97824d1d9",
+    "frozen_daily_bars/600036.csv": "2d228468c3e7982deec333cc8578bc55901e70c6d32c8f488324da66e667d193",
+    "frozen_daily_bars/600066.csv": "ed171dd4c538954d6820a7c1670fcf3a903333356ecaccc4f297e5c4b5e48eca",
+    "frozen_daily_bars/600111.csv": "008e212a888916c08a4a3b4fd1564ed19321754cd31d90ba9dfc6160cd26b3bb",
+    "frozen_daily_bars/600150.csv": "361b0597501d365b88799c425f13e052da19a052ef11c5a983411aa4fb7d6268",
+    "frozen_daily_bars/600276.csv": "2d117b0f0e5100fcf4d6a15e2c5bc6b3901071143cfbb41f5b81dbf39ae3491c",
+    "frozen_daily_bars/600309.csv": "583bcb2ab829262701f483dcdfd9fdbdfa8b0ed81e2176f23a27016186ff60e4",
+    "frozen_daily_bars/600346.csv": "0b3cbe0033c6dae78abdba20c7cf85eedaac4f1f1b69f2ef170f4cd03c83d674",
+    "frozen_daily_bars/600426.csv": "8c04062c95f7e70b3eb5c8c127567e1d333c838a93eb56dbf758c30f97a89ce2",
+    "frozen_daily_bars/600428.csv": "ea811ce6de5748314688961ee871a75c10a433722477808536fa3f22d11d7809",
+    "frozen_daily_bars/600584.csv": "896bbc6764a2f1a53c8237a513f4fa90cc97c29890ca2d89798a4e4e1fc2872f",
+    "frozen_daily_bars/600600.csv": "1291aae1d08d2fcbdd8a812ce387dfe5fb3168254c3f230e4cc2216165261b76",
+    "frozen_daily_bars/600660.csv": "21621380ad279814bac77aef1ff0bb78b3641237987c4f9740f5c4f3b8a3840f",
+    "frozen_daily_bars/600674.csv": "f1e0fc2a6229f2633ac4bc87121a780f251772cc9a2bcb123f4de100a36069f3",
+    "frozen_daily_bars/600887.csv": "cbd93e8342a34d0c56d63b3715b7f017fcd835454efd29f2553a4f7cf9ab9ba6",
+    "frozen_daily_bars/600900.csv": "c189b73712e604bdffbc103f1486ffe0529f4c46d4129080e4be9253037bd576",
+    "frozen_daily_bars/600938.csv": "2af79652d119e0d5ff2367137679282d4f7faeae5088a205188e6a0485543fd5",
+    "frozen_daily_bars/600941.csv": "101acb1ec2dfcb9fc9a869febc886d8edf9153a885d953c372cf47c330873a46",
+    "frozen_daily_bars/600989.csv": "c802c983bfccdcd33d2dc987dabe08bc00a15a89393da374ac3cda26b3c2e6b2",
+    "frozen_daily_bars/601006.csv": "81c3207487f3da426c503a78294bec4b569e0289f70462f86ad3d27e360c70b7",
+    "frozen_daily_bars/601088.csv": "e8993d33a494fc30f98dc601e97aa48421ce4aff7f31867c47728c2f3b2c35d0",
+    "frozen_daily_bars/601138.csv": "4fad083c269047d3a1fd70db83009ac202610d5cb27eee25e9fdbb69079fffcb",
+    "frozen_daily_bars/601398.csv": "7044506dc3555ab1e2218e6638646bbbba5662acb31627012bfedb1bcc5ae50f",
+    "frozen_daily_bars/601600.csv": "47c5a0b93299c6cdbd76d42a076d2937f4a7b434df0b3586a21675305030b116",
+    "frozen_daily_bars/601601.csv": "efbae5389fb1b860788aef45fb472b837d1f119f20b060efd4671bc2f44ae603",
+    "frozen_daily_bars/601899.csv": "873933d15f5806e83ab0855faca2481d9c98ee50848389a6bb8f92b3c933189b",
+    "frozen_daily_bars/601919.csv": "acffc90715351fb13f50ac37d07ad2cbef53e2311b4ec140e615e9a3217e018c",
+    "frozen_daily_bars/601985.csv": "abb3a667a164a1b010ab03aff1a9ba6019c89e4bec08b9de49a6e49fc63012d4",
+    "frozen_daily_bars/603288.csv": "52601f3c3a2b8d78554b4e7e87a7c85e446ea5b90b495955b6d65609254df6b8",
+    "frozen_daily_bars/603501.csv": "909f71217ba87021721864453b70029df5b31b6afae46f35dbf753bfd4ae80de",
+    "frozen_daily_bars/603986.csv": "97cc075265eee50762c5726a2a1026eff4ac8e1605d9d7059e8f2293621832e6",
+    "frozen_daily_bars/603993.csv": "05c38899072cb583b39979dfd87664ade2862b209426edc20028cdbac2013ae1",
+    "kt2_50_50_2bp_nav.csv": "7f655f51f3bb680de08136a7240d05f64ae19e2ca4872b13fc9cab8b20bf0133",
+    "kt2_50_50_2bp_trades.csv": "b0dff08e8dc1a1186d71cde71622ae6e8b5182243af72b95b2108bd55d413eb8",
+    "kt2_50_50_t2_nav.csv": "230acb5fcd77bc1315085797732f8b77284da5347ffb928f983b0c4885a2b367",
+    "kt2_50_50_t2_trades.csv": "20fadd0a54d8cfc7315ef68777d0e5635b90d8e2261b5e6faab264ac2901af86"
+  }
+}

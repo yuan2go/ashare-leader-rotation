@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import subprocess
 import tempfile
+import unittest
 import sys
 from math import sin
 
@@ -97,7 +98,7 @@ def auction():
     return [portable(d),dict(ranks=ranks,states=states),result]
 
 
-def tests(parity_only=False):
+def tests(parity_only=False, *, save_report=False):
     raw=sample()
     action=raw['tables']['actions'][0]
     action.update(cash_per_share='.6',ref_cash_per_share='.4',ref_bonus_per_share='.15')
@@ -174,10 +175,17 @@ def tests(parity_only=False):
     proof=json.loads(out)
     proof['prefix']=p
     proof['schema_scope']='synthetic only'
-    (ROOT/'results'/'synthetic_verification.json').write_text(
-        json.dumps(proof,ensure_ascii=False,indent=2),encoding='utf8',newline='\n')
+    if save_report:
+        (ROOT/'results'/'synthetic_verification.json').write_text(
+            json.dumps(proof,ensure_ascii=False,indent=2),encoding='utf8',newline='\n')
     print(out.strip())
 
 
+class SyntheticReplayTests(unittest.TestCase):
+    def test_engine_and_offline_ui(self):
+        tests()
+
+
 if __name__=='__main__':
-    tests('--parity-only' in sys.argv)
+    parity_only = '--parity-only' in sys.argv
+    tests(parity_only, save_report=not parity_only)

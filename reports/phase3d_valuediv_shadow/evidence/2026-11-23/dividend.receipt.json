@@ -1,0 +1,23 @@
+{
+  "api": "dividend",
+  "params": {
+    "ex_date": "20261123"
+  },
+  "fields": "ts_code,div_proc,ann_date,record_date,ex_date,pay_date,imp_ann_date,div_listdate,cash_div_tax,stk_bo_rate,stk_co_rate",
+  "retrieved_at": "2026-11-25T10:40:38.086602+08:00",
+  "label": "dividend",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:39 GMT",
+  "provider_code": 0,
+  "num_rows": 9,
+  "has_more": false,
+  "member_rows": 1,
+  "distinct_members": 1,
+  "selected_codes": [
+    "301308.SZ"
+  ],
+  "response_file": "dividend.json.gz",
+  "raw_sha256": "a40bad0f09442dc65cdcc4fe1fec26c85a79b20fa69e9364827f7f6bfeeb0bd7",
+  "file_sha256": "ee74c45670458858ce1740e898f87af527602600143623e58d4fc9a174646ba2",
+  "completed_at": "2026-11-25T10:40:39.098352+08:00"
+}

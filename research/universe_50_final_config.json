@@ -1,0 +1,346 @@
+{
+  "exclude": {
+    "600011": "红利避险盾定位错配，W1 与 W5 T1 均深亏",
+    "600760": "W1 与 W5 T1 均亏损，前期 W5 回撤核心拖累"
+  },
+  "protocol_substitutes": {
+    "600150": "600893"
+  },
+  "cancelled_rights_proposals": {
+    "601688": {
+      "proposal": "https://static.cninfo.com.cn/finalpage/2022-12-31/1215496540.PDF",
+      "termination": "https://static.cninfo.com.cn/finalpage/2023-10-31/1218204071.PDF"
+    }
+  },
+  "screen_only": [
+    {
+      "code": "600030",
+      "name": "中信证券",
+      "bucket": "金融",
+      "subsector": "券商"
+    }
+  ],
+  "groups": [
+    {
+      "group": 1,
+      "label": "红利避险盾",
+      "target": 8,
+      "members": [
+        "601398",
+        "600900",
+        "601088",
+        "600941",
+        "601006",
+        "601985",
+        "600674"
+      ],
+      "candidates": [
+        {
+          "code": "600028",
+          "name": "中国石化",
+          "bucket": "红利",
+          "subsector": "炼化零售"
+        },
+        {
+          "code": "600795",
+          "name": "国电电力",
+          "bucket": "红利",
+          "subsector": "综合电力"
+        },
+        {
+          "code": "600905",
+          "name": "三峡能源",
+          "bucket": "红利",
+          "subsector": "新能源运营"
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "label": "上游能源化工",
+      "target": 6,
+      "members": [
+        "600938",
+        "600309",
+        "600426",
+        "600989",
+        "002648",
+        "600346"
+      ],
+      "candidates": []
+    },
+    {
+      "group": 3,
+      "label": "贵金属与有色",
+      "target": 6,
+      "members": [
+        "600111",
+        "601899",
+        "000975",
+        "601600",
+        "603993",
+        "000408"
+      ],
+      "candidates": []
+    },
+    {
+      "group": 4,
+      "label": "农业与必选消费",
+      "target": 6,
+      "members": [
+        "002714",
+        "600887",
+        "000858",
+        "603288",
+        "002311",
+        "600600"
+      ],
+      "candidates": []
+    },
+    {
+      "group": 5,
+      "label": "硬科技半导体",
+      "target": 6,
+      "members": [
+        "002371"
+      ],
+      "candidates": [
+        {
+          "code": "603501",
+          "name": "豪威集团",
+          "bucket": "科技成长",
+          "subsector": "半导体图像传感器"
+        },
+        {
+          "code": "603986",
+          "name": "兆易创新",
+          "bucket": "科技成长",
+          "subsector": "半导体存储设计"
+        },
+        {
+          "code": "600584",
+          "name": "长电科技",
+          "bucket": "科技成长",
+          "subsector": "半导体封测"
+        },
+        {
+          "code": "002049",
+          "name": "紫光国微",
+          "bucket": "科技成长",
+          "subsector": "半导体安全芯片"
+        },
+        {
+          "code": "300661",
+          "name": "圣邦股份",
+          "bucket": "科技成长",
+          "subsector": "半导体模拟芯片"
+        },
+        {
+          "code": "300223",
+          "name": "北京君正",
+          "bucket": "科技成长",
+          "subsector": "半导体存储及计算"
+        },
+        {
+          "code": "002409",
+          "name": "雅克科技",
+          "bucket": "科技成长",
+          "subsector": "半导体材料"
+        },
+        {
+          "code": "300782",
+          "name": "卓胜微",
+          "bucket": "科技成长",
+          "subsector": "半导体射频芯片"
+        }
+      ]
+    },
+    {
+      "group": 6,
+      "label": "AI 算力与数字基建",
+      "target": 6,
+      "members": [
+        "300308"
+      ],
+      "candidates": [
+        {
+          "code": "601138",
+          "name": "工业富联",
+          "bucket": "科技成长",
+          "subsector": "云计算设备"
+        },
+        {
+          "code": "002463",
+          "name": "沪电股份",
+          "bucket": "科技成长",
+          "subsector": "算力PCB"
+        },
+        {
+          "code": "000063",
+          "name": "中兴通讯",
+          "bucket": "科技成长",
+          "subsector": "通信设备"
+        },
+        {
+          "code": "002230",
+          "name": "科大讯飞",
+          "bucket": "科技成长",
+          "subsector": "AI应用"
+        },
+        {
+          "code": "002415",
+          "name": "海康威视",
+          "bucket": "科技成长",
+          "subsector": "智能感知"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "bucket": "科技成长",
+          "subsector": "数字基础设施"
+        },
+        {
+          "code": "002916",
+          "name": "深南电路",
+          "bucket": "科技成长",
+          "subsector": "高端印制电路板"
+        },
+        {
+          "code": "002384",
+          "name": "东山精密",
+          "bucket": "科技成长",
+          "subsector": "精密电子制造"
+        },
+        {
+          "code": "300502",
+          "name": "新易盛",
+          "bucket": "科技成长",
+          "subsector": "光模块"
+        },
+        {
+          "code": "000977",
+          "name": "浪潮信息",
+          "bucket": "科技成长",
+          "subsector": "服务器"
+        }
+      ]
+    },
+    {
+      "group": 7,
+      "label": "高端制造与出海",
+      "target": 7,
+      "members": [
+        "600066",
+        "600428",
+        "601919",
+        "300750"
+      ],
+      "candidates": [
+        {
+          "code": "000333",
+          "name": "美的集团",
+          "bucket": "制造",
+          "subsector": "家电与工业自动化"
+        },
+        {
+          "code": "600660",
+          "name": "福耀玻璃",
+          "bucket": "制造",
+          "subsector": "汽车玻璃"
+        },
+        {
+          "code": "600031",
+          "name": "三一重工",
+          "bucket": "制造",
+          "subsector": "工程机械"
+        },
+        {
+          "code": "601100",
+          "name": "恒立液压",
+          "bucket": "制造",
+          "subsector": "液压件"
+        },
+        {
+          "code": "601766",
+          "name": "中国中车",
+          "bucket": "制造",
+          "subsector": "轨交装备"
+        },
+        {
+          "code": "000651",
+          "name": "格力电器",
+          "bucket": "制造",
+          "subsector": "空调"
+        },
+        {
+          "code": "600690",
+          "name": "海尔智家",
+          "bucket": "制造",
+          "subsector": "家电出海"
+        }
+      ]
+    },
+    {
+      "group": 8,
+      "label": "医药军工与顺周期金融",
+      "target": 5,
+      "members": [
+        "600036",
+        "600276"
+      ],
+      "candidates": [
+        {
+          "code": "600150",
+          "name": "中国船舶",
+          "bucket": "制造",
+          "subsector": "军工造船"
+        },
+        {
+          "code": "300059",
+          "name": "东方财富",
+          "bucket": "金融",
+          "subsector": "互联网券商"
+        },
+        {
+          "code": "601601",
+          "name": "中国太保",
+          "bucket": "金融",
+          "subsector": "保险"
+        },
+        {
+          "code": "603259",
+          "name": "药明康德",
+          "bucket": "医药",
+          "subsector": "医药研发外包"
+        },
+        {
+          "code": "601688",
+          "name": "华泰证券",
+          "bucket": "金融",
+          "subsector": "券商"
+        },
+        {
+          "code": "600893",
+          "name": "航发动力",
+          "bucket": "制造",
+          "subsector": "航空发动机军工"
+        },
+        {
+          "code": "000538",
+          "name": "云南白药",
+          "bucket": "医药",
+          "subsector": "中药与医药零售"
+        },
+        {
+          "code": "300760",
+          "name": "迈瑞医疗",
+          "bucket": "医药",
+          "subsector": "医疗器械"
+        }
+      ]
+    }
+  ],
+  "locked_candidates": {
+    "1": "600028"
+  }
+}

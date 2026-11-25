@@ -1,0 +1,20 @@
+{
+  "api": "stk_premarket",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,up_limit,down_limit",
+  "retrieved_at": "2026-11-25T10:41:27.649277+08:00",
+  "label": "stk_premarket",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:41:30 GMT",
+  "provider_code": 0,
+  "num_rows": 5839,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "stk_premarket.json.gz",
+  "raw_sha256": "3b9a6051a26958fff8cf315a214b312e90d345af42ecd068058401953a6ec86b",
+  "file_sha256": "6c4d3bd1d5efa04effcba116ec25bf8db3cb12e520732eaa742a38c6917e5487",
+  "completed_at": "2026-11-25T10:41:30.831580+08:00"
+}

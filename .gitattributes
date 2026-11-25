@@ -8,3 +8,8 @@ offline/engine.js -text
 historical_calendar_crosscheck.json -text
 results/** -text
 docs/archive/** -text
+archive/phase3c_v1/pit_backtest_engine.py -text
+reports/phase3_pit_verdict/pre_fractional/** -text
+reports/phase3d_valuediv_shadow/evidence/** -text
+reports/phase3d_valuediv_shadow/shadow_status.json -text
+reports/phase6a_vol_and_pit_probe/phase6a_report.md -text

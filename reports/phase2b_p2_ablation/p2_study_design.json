@@ -1,0 +1,77 @@
+{
+  "base": "Barbell_50_50_Kt2",
+  "variants": {
+    "BASE": [
+      "none",
+      50
+    ],
+    "M200_HALF": [
+      "ma200_raw",
+      25
+    ],
+    "M200_HYST_HALF": [
+      "ma200_hysteresis",
+      25
+    ],
+    "M200_ZERO": [
+      "ma200_raw",
+      0
+    ],
+    "BREADTH30_HALF": [
+      "breadth_le_30",
+      25
+    ],
+    "DD10_BRAKE_HALF": [
+      "own_dd10_release5",
+      25
+    ]
+  },
+  "no_trim_db3": true,
+  "defensive_budget_pct": 50,
+  "defensive_schedule": "P1 archived month-end weekly signal",
+  "volatility_cap": "P1 absolute NAV cap, bounded by nominal per-name cap",
+  "trend_schedule": "frozen weekly, daily hard gate exits remain active",
+  "capital": 450000,
+  "windows": {
+    "W1": [
+      "2016-01-04",
+      "2026-11-20"
+    ],
+    "IS": [
+      "2016-01-04",
+      "2023-01-20"
+    ],
+    "OOS": [
+      "2023-01-21",
+      "2026-11-20"
+    ],
+    "W_Bear": [
+      "2021-03-01",
+      "2023-11-19"
+    ],
+    "W5": [
+      "2022-01-01",
+      "2026-11-20"
+    ],
+    "2026": [
+      "2026-01-01",
+      "2026-11-20"
+    ]
+  },
+  "scenarios": [
+    "2bp",
+    "7bp",
+    "T+2"
+  ],
+  "is_rank": [
+    "worst_calmar",
+    "mean_calmar"
+  ],
+  "core_scenarios": [
+    "2bp",
+    "T+2"
+  ],
+  "is_dd_min_pp_each_core_cell": 2.5,
+  "seven_bp_gate": "Each pool: Calmar and max DD at least P1 BASE",
+  "selection_uses_IS_only": true
+}

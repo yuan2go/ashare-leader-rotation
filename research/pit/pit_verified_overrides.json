@@ -1,0 +1,87 @@
+[
+  {
+    "ts_code": "600079.SH",
+    "event_date": "20201023",
+    "override_type": "VERIFIED_BASIC_CLOSE_1CENT_OVERRIDE",
+    "notice_id": "LOCAL-PRICE-600079.SH-20201023",
+    "source_url": "./raw/per_stock/daily/600079.SH.csv",
+    "verified_terms": {
+      "daily_close": "31.06",
+      "daily_basic_close": "31.05",
+      "next_open": "20201026",
+      "next_daily_pre_close": "31.06",
+      "next_limit_pre_close": "31.06",
+      "unchanged_adj_factor": "13.3706"
+    },
+    "reason": "主表收盘与次开市日两份参考价一致，两日复权因子相同；副表低一分。编号标识本地行情核验。",
+    "raw_file": "raw/per_stock/daily_basic/600079.SH.csv",
+    "raw_row_sha256": "3320919880512259d89228704f5b3e9213f72a824e102937c7221a37f0057529",
+    "raw_file_sha256": "70ef2cb4884a50ede04e2fbd4f7dd3ce8635b5b6e20b56916e49635c254ebddc"
+  },
+  {
+    "ts_code": "600989.SH",
+    "event_date": "20240724",
+    "override_type": "VERIFIED_DIFFERENTIATED_DIVIDEND",
+    "notice_id": "2024-040",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2024-07-18/1220664181.PDF",
+    "verified_terms": {
+      "ref_cash_per_share": "0.28",
+      "holder_cash_per_share": "0.3158",
+      "large_holder_cash_per_share": "0.2650",
+      "imp_ann_date": "20240718",
+      "pay_date": "20240724"
+    },
+    "reason": "差异化分红公告分别规定除息参考价折算和实际股东派现。",
+    "raw_file": "raw/per_stock/dividend/600989.SH.csv",
+    "raw_row_sha256": "dd1037f19742cc78b397f59850f1a13620fb22f779f3371e5ac5c321490afb78",
+    "additional_raw_row_sha256": [
+      "5265535e8310ecd238af77cd1c1e1026a9bb45f80a17245f790e5b13a96a483c"
+    ],
+    "raw_file_sha256": "ed8c747aca78d092bdf0e5036e46dd48c28cecf52a165fb3f196b854d37eb6f0"
+  },
+  {
+    "ts_code": "601088.SH",
+    "event_date": "20170710",
+    "override_type": "RECONCILED_SUSPENDED_EX_BY_RESUME_AND_ADJ",
+    "notice_id": "临2017-031",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2017-07-03/1203675941.PDF",
+    "verified_terms": {
+      "ref_cash_per_share": "2.970",
+      "holder_cash_per_share": "2.970",
+      "ordinary_cash": "0.460",
+      "special_cash": "2.510",
+      "resume_date": "20170901",
+      "imp_ann_date": "20170703",
+      "pay_date": "20170710"
+    },
+    "reason": "实施公告的合计数已含特别派息，复牌首日参考价与除息日复权跳变共同验证。",
+    "raw_file": "raw/per_stock/dividend/601088.SH.csv",
+    "raw_row_sha256": "205007f90b202470aa1c005441d07470c2515992bb2d50a3d1f04bdc763dbf40",
+    "additional_raw_row_sha256": [
+      "44b594fa0cc1643306104191f2431e0624fb8aabfe82f45d6938eaaf26821232"
+    ],
+    "raw_file_sha256": "8b974a4e3177ccfc760418558d2b430a0ff19e64d5f864b2aa71d35a9fc034d4"
+  },
+  {
+    "ts_code": "601966.SH",
+    "event_date": "20250710",
+    "override_type": "VERIFIED_EX_EVENT_BY_DISCLOSURE",
+    "notice_id": "2025-044",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2025-07-03/1224067624.PDF",
+    "verified_terms": {
+      "ref_cash_per_share": "0.084",
+      "holder_cash_per_share": "0.084",
+      "q4_cash": "0.014",
+      "q1_cash": "0.070",
+      "imp_ann_date": "20250703",
+      "pay_date": "20250710"
+    },
+    "reason": "同日实施的两个季度派现均适用，公告合计金额消除参考价容差平局。",
+    "raw_file": "raw/per_stock/dividend/601966.SH.csv",
+    "raw_row_sha256": "be0101e26e14af4d7e1a169252c8131e205fb5911e3ac88adf82f6f90a855c41",
+    "additional_raw_row_sha256": [
+      "198fb5afa7d095d26298cc0186f490712f2fd94c1ffe55c5f8be697ee15bdf19"
+    ],
+    "raw_file_sha256": "c3661c74b69926bc4ca2315d67cf42124f8671c64861fae0ab18b74b3ecc8c22"
+  }
+]

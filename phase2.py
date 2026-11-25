@@ -50,7 +50,8 @@ def slot_entry(d,signals,book):
                 budget=min(unit,cash_before)
                 # R2 only opens a new position. An inconsistent reconstruction cannot be
                 # used as evidence for attributing idle cash to lot size.
-                assert can_buy(price,budget,day)==shares, (day,code,unit,cash_before,shares)
+                if not (can_buy(price,budget,day)==shares):
+                    raise RuntimeError((day,code,unit,cash_before,shares))
                 slack=budget-spent
                 yield dict(date=day,code=code,price=price/100,shares=shares,slot=unit/100,
                            budget=budget/100,lot_idle=slack/100,lot_idle_rate=slack/unit,

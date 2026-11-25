@@ -56,6 +56,7 @@ function prepare(raw,end=raw.policy.freeze,test=false){
  function source(url,hosts,archive=null){
   if(test)return url==='fixture';
   if(archive!==null&&url===archive)return true;
+  if(hosts===MARKET_HOSTS&&typeof url==='string'&&/^tushare_pro:(?:daily|dividend|namechange|stock_basic|suspend_d)\?ts_code=(?:60[0-9]{4}\.SH|(?:00|30)[0-9]{4}\.SZ)(?![\s\S])/.test(url))return true;
   try{const u=new URL(url);return u.protocol==='https:'&&!u.username&&!u.password&&hosts.some(x=>u.hostname===x||u.hostname.endsWith('.'+x));}
   catch{return false;}
  }

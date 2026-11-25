@@ -1,0 +1,2140 @@
+[
+ {
+  "code": "000001.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000001&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000001.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.381981+08:00",
+  "raw_sha256": "3b6f2440425902fb7e2a86aaeddce6bcf67e3224b07f76ad25bf5eb70601022e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000002.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000002&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000002.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.409874+08:00",
+  "raw_sha256": "afd5f77a64422211e7b1f261eea9a20de04730cf38ceeb2ab4e291f06bb97026",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000063.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000063&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000063.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.184216+08:00",
+  "raw_sha256": "1c833122baa4dc6b12f1b5844f40212fee011bab6fd1bc1d934762a3e282a07e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000100.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000100&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000100.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.185284+08:00",
+  "raw_sha256": "d7531fdc01f20357c72b04c1d460eb730038f3817cef7962e15ef1464cd3c505",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000157.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000157&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000157.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.383515+08:00",
+  "raw_sha256": "39282def5a8124e208d0b045bf90ea0922901371bd9835ecde45cea1e78f6c6b",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000166.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000166&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000166.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.736524+08:00",
+  "raw_sha256": "3ae241fce15d3ad0d41c9f32198b9ea613beca4c3ca2233d25fa2061b36f8515",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000301.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000301&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000301.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:15.735056+08:00",
+  "raw_sha256": "c06cf774614736d26e758d412b8c0ebc2912fc88ec793103c8dfff99e8a3a7a2",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000333.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000333&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000333.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.033958+08:00",
+  "raw_sha256": "bc44c51f5c4cbfd5d984954ef6d7134906411fc87ba0dc64de84a028db1781f6",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000338.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000338&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000338.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.034957+08:00",
+  "raw_sha256": "66d22c9e3492c15569f02846d23dbc0ff9be40735184d72619d78444b0d3fb97",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000408.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000408&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000408.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:15 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.031959+08:00",
+  "raw_sha256": "ee210380d897359183ca1a7eda4fb6ba35825c86b4c4a279789548b7f8b07249",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000425.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000425&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000425.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:16 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.466931+08:00",
+  "raw_sha256": "e8e8e347a8296ee0ddc2869f605d7d3667db364bc91f8155e3be27c94c0bb9e8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000538.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000538&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000538.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:16 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.618019+08:00",
+  "raw_sha256": "68b6deee644dd37bd0193af339bd5d8c3d788ff7b79be6d0be90c16508ae47af",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000568.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000568&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000568.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:16 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.839199+08:00",
+  "raw_sha256": "919f9e9041db4f8ae0972c048aad0e54dfa3fa389c628f219928009442e674c7",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000596.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000596&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000596.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:16 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.929130+08:00",
+  "raw_sha256": "c7cd7a17c59398386e3ee12f22b56f590f8450ecade958571f7e0e938b73ac58",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000617.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000617&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000617.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:16 GMT",
+  "retrieved_at": "2026-11-25T10:46:16.928126+08:00",
+  "raw_sha256": "2036ef6d791d69bcf0e341209298c8d1358d1152ab2bf0ae405cb6722aa64ce0",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000625.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000625&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000625.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:16 GMT",
+  "retrieved_at": "2026-11-25T10:46:17.114193+08:00",
+  "raw_sha256": "982c5def32d8e82aac2338dc37054cbd39a75128fde28fddfaac244b71e35cb1",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000630.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000630&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000630.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:17 GMT",
+  "retrieved_at": "2026-11-25T10:46:17.278678+08:00",
+  "raw_sha256": "a09f4b3cccee8d842b96c5bf0b978bbd81d51bafff38da224b673987c42c2914",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000651.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000651&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000651.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:17 GMT",
+  "retrieved_at": "2026-11-25T10:46:17.909617+08:00",
+  "raw_sha256": "dcb130c13c9bf70fc3bd1d803df17076677e05859b9b5507f5f8d61529d332c5",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000657.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000657&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000657.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:17 GMT",
+  "retrieved_at": "2026-11-25T10:46:17.646219+08:00",
+  "raw_sha256": "2506eaf00158a0ed18e351463fb69e55a4f947093985df8655953da8d5abc4b8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000708.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000708&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000708.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:17 GMT",
+  "retrieved_at": "2026-11-25T10:46:17.908376+08:00",
+  "raw_sha256": "011f03c465ad5f34cf833fc727006fbadac4aa0a4cc17abddcef0f1f271488d8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000725.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000725&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000725.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:17 GMT",
+  "retrieved_at": "2026-11-25T10:46:17.644904+08:00",
+  "raw_sha256": "e21863775d1964091840e1a46dd8250f188b1c647b69d6992edae8542a586502",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000768.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000768&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000768.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:17 GMT",
+  "retrieved_at": "2026-11-25T10:46:18.101579+08:00",
+  "raw_sha256": "4201236cc1d5d3bf6b9c3f6f06d572b92374faeb521c03045dbd1c23f0f2f86a",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000776.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000776&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000776.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:18 GMT",
+  "retrieved_at": "2026-11-25T10:46:18.429174+08:00",
+  "raw_sha256": "9460acdcaadce72579c16e4c2732025c85165a1c072af2172cc0ff51335ec31b",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000792.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000792&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000792.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:18 GMT",
+  "retrieved_at": "2026-11-25T10:46:18.609489+08:00",
+  "raw_sha256": "97be541d836530be55e76a15fa21608670604a7d1bfefc82d95458925ba5a80a",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000807.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000807&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000807.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:18 GMT",
+  "retrieved_at": "2026-11-25T10:46:18.610492+08:00",
+  "raw_sha256": "2f0737dfa57c12b6e3f55f82397f4330c4f6393b6e91d9d1598e8fa7d697dd75",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000858.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000858&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000858.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:18 GMT",
+  "retrieved_at": "2026-11-25T10:46:18.815067+08:00",
+  "raw_sha256": "eff7ea908149e889cd0c670b9c07c54087cc63a7ac978b15269b444b4fe0227b",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000895.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000895&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000895.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:18 GMT",
+  "retrieved_at": "2026-11-25T10:46:18.816059+08:00",
+  "raw_sha256": "6c959634e27fdd9b1198333e31fb778f3b062a10ae034f429a76c8bdede36bd0",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000938.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000938&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000938.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:18 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.121686+08:00",
+  "raw_sha256": "c60a4606f51adab26d91fc74e68882d81dc12f64503b65561a98160fc8cc9390",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000963.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000963&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000963.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.292536+08:00",
+  "raw_sha256": "9856be1e7b6741addc38da4cfd4e880c720cc0691bef388dc45276a8732d3d0e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000975.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000975&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000975.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.467688+08:00",
+  "raw_sha256": "154c05a161e43cb7bd17e0d5c0e0c84cf46136d2100a8b3b94e23727287f691d",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000977.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000977&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000977.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.403068+08:00",
+  "raw_sha256": "ab674305c4004d38821823b4df6862d4ded6af02036cf5de4a029883b19b8aa5",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000988.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000988&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000988.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.467688+08:00",
+  "raw_sha256": "3d76d96630e085fa3c6af9d269faa9b8e804bd45bb471945aeb1cd5b0d9f4db0",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "000999.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000999&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/000999.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.696977+08:00",
+  "raw_sha256": "26a9903f5298702c5408091d5fc19edd57b86d491b06dcfb7eb42b742d5ca165",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "001280.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.001280&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/001280.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.797655+08:00",
+  "raw_sha256": "12d7197784761cf1fa9e9925a76379e84e4a8e01840bd1aa559a3ca5bb033bd4",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "001391.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.001391&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/001391.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.055511+08:00",
+  "raw_sha256": "31af3ffa97d1b87f0bf1817c662b485019ea2e9485be521edae110013c4a9677",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "001965.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.001965&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/001965.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:21.930586+08:00",
+  "raw_sha256": "22d46b2bad864e2dd717aebb5b49f2380951cc6b41ed83f6e60b9318bfcb868a",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "001979.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.001979&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/001979.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.056512+08:00",
+  "raw_sha256": "818fedb485c7ea77e2bca4272deab85877e95b91fb5bc68f2568ce2d37e00518",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002001.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002001&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002001.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:19 GMT",
+  "retrieved_at": "2026-11-25T10:46:19.971402+08:00",
+  "raw_sha256": "b1e469a34d7d2d98fc81de21a0594002ecdeb0452e36b8b73c535fb81bd9699a",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002027.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002027&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002027.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:20 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.350373+08:00",
+  "raw_sha256": "7b03305b9b16aa6e62c646fd272c11af7428886e2dd3b6494a3e8ea67640b7a2",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002028.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002028&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002028.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.383791+08:00",
+  "raw_sha256": "6c105dff8a1452b42bf5e8d0a4a7100205bf9bdc9b64b4efc005f32528b6c04c",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002049.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002049&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002049.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:20 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.691244+08:00",
+  "raw_sha256": "6180f501c573bdb7d07702c3958701c7dc43dee4a0425e20921558ab676acc54",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002050.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002050&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002050.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:20 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.597991+08:00",
+  "raw_sha256": "a0df4c57d6561296c7b19a0df4953391a31b0bfcf4acf30bb9d1465b4d21cdf4",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002074.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002074&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002074.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:20 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.814243+08:00",
+  "raw_sha256": "499fdac7431032d0a4fa58fe6472ae370bbe8989bfbb69f14a708a1202b18a0e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002142.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002142&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002142.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.898073+08:00",
+  "raw_sha256": "332a03b456935915031727c661a7f43b7f266460dd9d4f2497f1d29cd5a16736",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002179.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002179&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002179.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:20 GMT",
+  "retrieved_at": "2026-11-25T10:46:20.974310+08:00",
+  "raw_sha256": "974d3ce4361591d69e9da2a816e615d894e4906019831eca22265afdde474f8d",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002202.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002202&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002202.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:21.085092+08:00",
+  "raw_sha256": "48099e93200c0d2f7a2bda052bb68420663b14a1f19053b1c491885136ab6563",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002230.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002230&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002230.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:21.313149+08:00",
+  "raw_sha256": "111951c4dcc71b64d5a5e56034eb52cb167791e39c4a33d80b4366f3bd8660e9",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002236.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002236&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002236.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:21.439448+08:00",
+  "raw_sha256": "0ca3b0766e63bca7fb1bd4f1c5b85628d8c28149cee691c213eac158f4b9780d",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002241.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002241&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002241.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:21.652158+08:00",
+  "raw_sha256": "d3c10184072c9efe522a4642989cd741e642a008502455a550dc7cf43e3af4b3",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002294.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002294&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002294.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:21.800532+08:00",
+  "raw_sha256": "6dd8f1931fd20fb2fe7da0a760a54272a4489bd58085795274a3c9e46f5eedb5",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002304.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002304&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002304.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:21 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.015919+08:00",
+  "raw_sha256": "67a924fa12d9f1de061de8614fede087719f9743970dd6818bff482e6d79337f",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002311.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002311&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002311.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.187777+08:00",
+  "raw_sha256": "7be8f5eb8f1db05f6b49ca46afd27f214a1916706d433540a6230cdb6631325f",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002352.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002352&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002352.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.272311+08:00",
+  "raw_sha256": "38f033cf12268b5e1252c5dc70fb7fcf8d3b06ab94da9f90d21e1c8575d9f1fe",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002353.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002353&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002353.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.452016+08:00",
+  "raw_sha256": "0b8f52acd8ec8af9a318ad2be6eb78992f829297ec5a2d66405f6f5a8c5cae2b",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002371.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002371&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002371.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.453956+08:00",
+  "raw_sha256": "c66a53d104ebcb23a91ffd8b0650fdcb58656f19d2fb177c4127c6d98af14a2c",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002384.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002384&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002384.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.694656+08:00",
+  "raw_sha256": "ec413394d9e49bad34069e7900dea4484844087b13f3b3cb6d6ead05b01e856d",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002415.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002415&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002415.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.779354+08:00",
+  "raw_sha256": "0ef8501ab45e2204ac7ad8093cd46067603a875b61d0013032ae68c81984969f",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002422.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002422&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002422.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:22.966060+08:00",
+  "raw_sha256": "3bf593509d49875225536310180054c6aa782c9bc70f697fdb1b4cffed21ade7",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002460.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002460&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002460.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:23.054607+08:00",
+  "raw_sha256": "f0f9bbfb393148a7d4a987ee61f82ae75504f7f8718d4f9e647a6ef130456d75",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002463.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002463&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002463.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:22 GMT",
+  "retrieved_at": "2026-11-25T10:46:23.138361+08:00",
+  "raw_sha256": "31f38dfce228857c1afab1f473314c51f19f6283cf59adf6ec9256ad9c5d3761",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002466.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002466&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002466.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:23 GMT",
+  "retrieved_at": "2026-11-25T10:46:23.222496+08:00",
+  "raw_sha256": "e5a7a03535020bb597d89a11be61b350e908b15f995f90780be412c942c4d039",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002475.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002475&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002475.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:29 GMT",
+  "retrieved_at": "2026-11-25T10:46:29.275967+08:00",
+  "raw_sha256": "9c1d991ff997ef46ae5804047118664e2c5e92c6eebd5e44fa69c8c313e19366",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002493.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002493&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002493.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:29 GMT",
+  "retrieved_at": "2026-11-25T10:46:29.089926+08:00",
+  "raw_sha256": "9f1e766ea50b53e0354a4cec15b82ec3d1aea509d2bfde22452e0b03d5e6133c",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002532.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002558.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002558&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002558.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:29 GMT",
+  "retrieved_at": "2026-11-25T10:46:29.208578+08:00",
+  "raw_sha256": "59d4a6777e71bd0ba5b7f45350b8cade28f5e9ca52d3dfb013209a85873ce539",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002594.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002594&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002594.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:29 GMT",
+  "retrieved_at": "2026-11-25T10:46:29.088933+08:00",
+  "raw_sha256": "55f5fc2c386609f5739075775f19f37bfccbbf764f379ffed32670f642d79277",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "002600.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002602.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002625.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002648.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002709.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002714.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002736.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002837.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002916.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002920.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "002938.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.002938&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/002938.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:47 GMT",
+  "retrieved_at": "2026-11-25T10:46:47.435910+08:00",
+  "raw_sha256": "ea547b3202a5b068add1a96867f3f345cc206b47927cedf2563987dea6d923cc",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "003816.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300014.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300015.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300015&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300015.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:47 GMT",
+  "retrieved_at": "2026-11-25T10:46:47.390821+08:00",
+  "raw_sha256": "d7eeb8564234d275225324183696644ff479b34bb9ddeff6e8642703e16d5ee4",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300033.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300033&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300033.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:47 GMT",
+  "retrieved_at": "2026-11-25T10:46:47.375799+08:00",
+  "raw_sha256": "303fd0230e282f2a330cf6db48626e4563141435b70960aad1453715a7eee6e2",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300059.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300059&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300059.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:53 GMT",
+  "retrieved_at": "2026-11-25T10:46:53.542901+08:00",
+  "raw_sha256": "07819e70136943310e201c7ad706e996d16f40673dd6323182706dc53a306648",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300122.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300124.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300124&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300124.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:47 GMT",
+  "retrieved_at": "2026-11-25T10:46:47.940906+08:00",
+  "raw_sha256": "ac3b6b538311efcaa5d237047d27f2180e0a74df6ef507c90ee3f59eb83fd1d7",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300251.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300251&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300251.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:53 GMT",
+  "retrieved_at": "2026-11-25T10:46:53.757723+08:00",
+  "raw_sha256": "e80c0f22e6b35a4fab0cce6e918d1969362a8fe930c298afdb616622ed5f04ae",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300274.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300274&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300274.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:47 GMT",
+  "retrieved_at": "2026-11-25T10:46:47.993321+08:00",
+  "raw_sha256": "2d5ffc535d4af8b3efa0ffda972db0da5a39195d9c021e74a5075d351f6ef5a8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300308.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300308&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300308.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:53 GMT",
+  "retrieved_at": "2026-11-25T10:46:53.661298+08:00",
+  "raw_sha256": "c2910ebd55b1d181f6822185bfd5b8a1dc634d95c9b88462e6bddc2505ed84d5",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300316.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300316&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300316.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:53 GMT",
+  "retrieved_at": "2026-11-25T10:46:53.755737+08:00",
+  "raw_sha256": "c69cf1767f91a94c1871970eb36aa89edd04d179739954190772b8780ab1c98f",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300394.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300394&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300394.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:53 GMT",
+  "retrieved_at": "2026-11-25T10:46:53.951855+08:00",
+  "raw_sha256": "1aaca1aefdeb31974ac6b21ee06c50e7cf78431cbeb9355bb823fde945eca2a5",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300408.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300413.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300413&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300413.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:54 GMT",
+  "retrieved_at": "2026-11-25T10:46:54.297889+08:00",
+  "raw_sha256": "305b645cba9c071567a0b5af30807487fbbb1a0ea9cb1eb8a2c67aade84baf6a",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300418.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300418&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300418.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:54 GMT",
+  "retrieved_at": "2026-11-25T10:46:54.439929+08:00",
+  "raw_sha256": "ec58f65e289a313f1bf7ece05706499e42d5220198d3f4ab2d250b3ab80b25f6",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300433.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300442.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300442&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300442.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:54 GMT",
+  "retrieved_at": "2026-11-25T10:46:54.372134+08:00",
+  "raw_sha256": "51a5b5b2234711c9f747292aa83bfbdc8980ab6b7cb30dc7fd28e65e6debfecd",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300450.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300450&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300450.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:54 GMT",
+  "retrieved_at": "2026-11-25T10:46:54.677496+08:00",
+  "raw_sha256": "d174d4a43d188c876a56fff29a610b5a378fe34299b501430a7d1428e6382b99",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300476.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300476&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300476.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:54 GMT",
+  "retrieved_at": "2026-11-25T10:46:54.751485+08:00",
+  "raw_sha256": "9d4b09e486fd4c5eccd8af211f12954bd07c9e0c88d0d1bda0b9eb7c87d13057",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300498.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300498&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300498.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:54 GMT",
+  "retrieved_at": "2026-11-25T10:46:54.814747+08:00",
+  "raw_sha256": "ae059b3034db293085f79059c2d769473629114e65ed7be46b6cc6009041d76e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300502.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300502&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300502.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:55 GMT",
+  "retrieved_at": "2026-11-25T10:46:55.129863+08:00",
+  "raw_sha256": "68abde0592792341b2286a4d87cf91b675f43338ffc3193075b51c2e7a94aea0",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300628.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300628&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300628.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:55 GMT",
+  "retrieved_at": "2026-11-25T10:46:55.127861+08:00",
+  "raw_sha256": "ba4d2de4a6ad28cb0da341699d564525155a0648193cdc59489645d121fdd6d8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300661.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300661&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300661.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:55 GMT",
+  "retrieved_at": "2026-11-25T10:46:55.279706+08:00",
+  "raw_sha256": "bafff0717fe48b7c7a318faadac76a8c93f64704a1af98f5e921bfddf3cde7de",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300750.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300760.SZ",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.300760&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/300760.SZ.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:46:55 GMT",
+  "retrieved_at": "2026-11-25T10:46:55.641362+08:00",
+  "raw_sha256": "36030723a6e6e3d66cdf8defefceecb40d8195014471d474b64c6a4b2dfa6586",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "300803.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300832.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300866.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300896.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "300999.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "301165.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "301236.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "301269.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "301308.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "302132.SZ",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600000.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600009.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600010.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600010&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600010.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:13 GMT",
+  "retrieved_at": "2026-11-25T10:47:13.313104+08:00",
+  "raw_sha256": "7cc103bcc9a3e370b844d44ec66fac98791a9fbb71aba1f4013df9f2ec0524f5",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600011.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600011&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600011.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:17 GMT",
+  "retrieved_at": "2026-11-25T10:47:17.739525+08:00",
+  "raw_sha256": "a1ca08f16b1e74788ab409a4838d78f6d747270cea636aba93592120a010ab31",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600015.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600016.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600018.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600018&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600018.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:19 GMT",
+  "retrieved_at": "2026-11-25T10:47:19.944507+08:00",
+  "raw_sha256": "8a4fa7f3a3cdf8208e2e9ecb9c9130ab684c5df849b0898985225bdd3348d044",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600019.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600019&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600019.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:19 GMT",
+  "retrieved_at": "2026-11-25T10:47:19.532480+08:00",
+  "raw_sha256": "f968ea85a4fe449c17f7e7d486356e29946c5624cd8711ce0cb2b25bf49093f3",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600023.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600023&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600023.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:20 GMT",
+  "retrieved_at": "2026-11-25T10:47:20.779834+08:00",
+  "raw_sha256": "a3bd7745800be9f4dd6b6ee1c9245eadcf3ee1ceb8c08a6d8e7bcbbc069bad0e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600025.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600025&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600025.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:20 GMT",
+  "retrieved_at": "2026-11-25T10:47:20.581742+08:00",
+  "raw_sha256": "aa4614f2ec411973a97e8d703d474901d5c3e5ace58065e3e1426fce9272666c",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600026.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600026&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600026.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:20 GMT",
+  "retrieved_at": "2026-11-25T10:47:20.325036+08:00",
+  "raw_sha256": "50013618e37bd4c99253eda494a783dcb8d307208ecb851d34368d321deea153",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600027.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600027&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600027.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:20 GMT",
+  "retrieved_at": "2026-11-25T10:47:20.781835+08:00",
+  "raw_sha256": "6823a5c4fd1c1fcf59cec5c0d727420bf03ff380ffbcebcfb09ebfcff4044fa1",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600028.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600028&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600028.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:20 GMT",
+  "retrieved_at": "2026-11-25T10:47:20.780836+08:00",
+  "raw_sha256": "221b7d9087915b970d42e8e717861840093cfc5f87a2d585f82c626601e71963",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600029.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600030.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600031.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600036.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600039.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600048.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600050.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600061.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600066.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600085.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600089.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600104.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600104&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600104.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:38 GMT",
+  "retrieved_at": "2026-11-25T10:47:38.391409+08:00",
+  "raw_sha256": "b2112e30badcac8c6fad7f0f22dd8fd53bd0f04b0492905df3fb27bc287953f9",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600111.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600115.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600118.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600118&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600118.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:38 GMT",
+  "retrieved_at": "2026-11-25T10:47:38.140328+08:00",
+  "raw_sha256": "7d4e117ea451ba7af14f46e06766eefc9a31ce2e00ef630afb4a9b62ef010a65",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600150.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600150&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600150.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:39 GMT",
+  "retrieved_at": "2026-11-25T10:47:39.914901+08:00",
+  "raw_sha256": "7368aa43898a1cd8c8f3726aaf575bd8d63a3136a62748e2d4dade5485032673",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600160.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600160&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600160.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:39 GMT",
+  "retrieved_at": "2026-11-25T10:47:39.787912+08:00",
+  "raw_sha256": "357239a583069d95fd5b68715904b5ba2c3a7b4aca1a86ba9589f096bfbb53c9",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600176.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600176&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600176.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:39 GMT",
+  "retrieved_at": "2026-11-25T10:47:39.912907+08:00",
+  "raw_sha256": "6dbe8e76c9bd67b49253303026bee7097f8a82bd8c3a657d2c0fadf4ec474b82",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600183.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600183&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600183.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:46 GMT",
+  "retrieved_at": "2026-11-25T10:47:46.270552+08:00",
+  "raw_sha256": "9ea114c29e0ded6f3f0984e4f41cb4bb248727cbce30a16e1b7ad874de429f23",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600188.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600188&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600188.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:46 GMT",
+  "retrieved_at": "2026-11-25T10:47:46.359349+08:00",
+  "raw_sha256": "17a62e7b217b8daa6baf769d76daf34e13a1461c1fd29c24db711122b284d31c",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600196.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600219.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600219&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600219.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:44 GMT",
+  "retrieved_at": "2026-11-25T10:47:44.234490+08:00",
+  "raw_sha256": "5f415eb39f8eeaadaae9e2391ecc9960a3b6d909111057cd98ed5af2a444dffa",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600221.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600233.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600233&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600233.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:47:44 GMT",
+  "retrieved_at": "2026-11-25T10:47:44.889706+08:00",
+  "raw_sha256": "552ec42a75542ab26731bc30ab8e537788777bf7ea84305e7b76e8eb8d38733a",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600276.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600309.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600346.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600362.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600372.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600406.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600415.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600426.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600436.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600438.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600460.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600482.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600489.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600515.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600519.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600522.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600522&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600522.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:07 GMT",
+  "retrieved_at": "2026-11-25T10:48:08.059354+08:00",
+  "raw_sha256": "421083672913d42d073497f44757431da71e1faa6043415af9a5160f0f61d6ae",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600547.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600547&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600547.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:05 GMT",
+  "retrieved_at": "2026-11-25T10:48:05.136828+08:00",
+  "raw_sha256": "8414a9cd325896361a8ff67e6517669abbf3b4b355fa8a703d5ce946615b3bbd",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600549.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600549&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600549.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:10 GMT",
+  "retrieved_at": "2026-11-25T10:48:10.409277+08:00",
+  "raw_sha256": "73bffb2854cd765c22aa890e04a02f35d1ea6193a3db8c7a85641d06d2dc2cda",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600570.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600570&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600570.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:10 GMT",
+  "retrieved_at": "2026-11-25T10:48:10.799019+08:00",
+  "raw_sha256": "cf1c88b6538641743af1dcf0f1d72ba89585a77df831e4871ff9dc7069490253",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600584.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600584&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600584.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:11 GMT",
+  "retrieved_at": "2026-11-25T10:48:11.355224+08:00",
+  "raw_sha256": "eeeb181bc2e61d72b0fcc3865f93f1978a6c43fc6e3d456148cb14aa5cf452b6",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600585.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600585&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600585.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:07 GMT",
+  "retrieved_at": "2026-11-25T10:48:07.691353+08:00",
+  "raw_sha256": "f459a3cd6443a7b0bd5d73a2c0cc8bef320826cb75ebb11fbe92f6cdff808dfc",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600588.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600600.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600600&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600600.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:08 GMT",
+  "retrieved_at": "2026-11-25T10:48:08.466967+08:00",
+  "raw_sha256": "857c4363902ad02c00013d788f97922469ae6b595b913784266e40459fe45171",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600660.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600674.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600674&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600674.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:10 GMT",
+  "retrieved_at": "2026-11-25T10:48:10.893541+08:00",
+  "raw_sha256": "369ba9883c27fa69e27e8f9977615aee40cb7844bcebb2794498ed5058f7399e",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600690.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600690&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600690.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:11 GMT",
+  "retrieved_at": "2026-11-25T10:48:11.450104+08:00",
+  "raw_sha256": "0db0e38461414f3dd4ed1710a2d5c2eb426fe8cd5b08e7df0809d64e2b5d34e1",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600741.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600760.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600795.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600803.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600809.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600845.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600875.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600886.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600887.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600893.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600900.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600905.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600918.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600919.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600926.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600930.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600938.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600941.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600941&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600941.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:34 GMT",
+  "retrieved_at": "2026-11-25T10:48:34.229912+08:00",
+  "raw_sha256": "b14c64bb8e0441b37646e825b8a2f58404931e1ee756883ae71053b0a9e08c72",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600958.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.600958&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/600958.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:34 GMT",
+  "retrieved_at": "2026-11-25T10:48:34.164892+08:00",
+  "raw_sha256": "9eb6e453bbb52a5c3e2e7121f0212668fd8c2c1d4ceb4ff0d1a306e95cb289ea",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "600989.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "600999.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601006.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601009.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601012.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601018.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601021.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601058.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601066.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601077.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601088.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601100.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601111.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601117.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601127.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601136.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601136&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601136.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:48:58 GMT",
+  "retrieved_at": "2026-11-25T10:48:58.864574+08:00",
+  "raw_sha256": "55c6a710ea80c3adf9e52ca38c98e270552476914734168f8c27d0fb898532c6",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601138.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601166.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601169.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601186.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601211.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601225.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601229.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601238.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601288.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601318.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601319.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601328.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601336.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601360.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601377.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601390.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601398.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601456.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601600.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601601.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601607.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601618.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601628.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601633.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601658.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601668.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601669.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601688.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601689.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601698.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601727.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601728.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601766.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601788.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601800.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601816.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601818.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601825.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601838.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601857.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601868.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601872.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601872&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601872.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:47 GMT",
+  "retrieved_at": "2026-11-25T10:49:47.156058+08:00",
+  "raw_sha256": "2b769a87c7b9c3115f42f75cc8ab02517f54989b0bdc6400281748ca77212bbe",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601877.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601877&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601877.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:47 GMT",
+  "retrieved_at": "2026-11-25T10:49:47.216977+08:00",
+  "raw_sha256": "4dbbd58d1263ff9a607868e9406d274f34dca31d2e6f9635db4983db21f34437",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601878.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601878&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601878.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:47 GMT",
+  "retrieved_at": "2026-11-25T10:49:47.219745+08:00",
+  "raw_sha256": "5a1e94efaabe2c3a00cb2dccd60ee401cb225473b1d20ec18c824c3012404903",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601881.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601888.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601898.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601899.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601899&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601899.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:47 GMT",
+  "retrieved_at": "2026-11-25T10:49:47.727189+08:00",
+  "raw_sha256": "90b0f98e75f371eaa803cab465cdf30c0507f9e810f6b7d22fb3edb7528ccb3f",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601901.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601916.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601916&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601916.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:47 GMT",
+  "retrieved_at": "2026-11-25T10:49:47.927550+08:00",
+  "raw_sha256": "cdd73df76f733147e05a62e6ee100de9b4b3a5b2cfbbf4d728b9d5beaed51bc8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601919.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601919&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601919.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:47 GMT",
+  "retrieved_at": "2026-11-25T10:49:48.060613+08:00",
+  "raw_sha256": "a3797cff20989a0f0ee71326a2bf9bd81f9bc5b1fbb47e5261cf8c08e4e10179",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601939.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601939&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601939.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:48 GMT",
+  "retrieved_at": "2026-11-25T10:49:48.398047+08:00",
+  "raw_sha256": "363951d21a62c2bf65ee29cea27d882c056c96072bc2fec0e4baf246f1c1c0ee",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601985.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.601985&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/601985.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:49:48 GMT",
+  "retrieved_at": "2026-11-25T10:49:48.469328+08:00",
+  "raw_sha256": "bafd1d40b610c5e78b163e356275af75984625094149d9519f5ffa3b7dfa72f8",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "601988.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601995.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "601998.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603019.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603259.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603260.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603288.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603296.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603369.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603392.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603501.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603799.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603893.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603986.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "603993.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "605117.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "605499.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688008.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688009.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688009&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688009.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:13 GMT",
+  "retrieved_at": "2026-11-25T10:50:13.524700+08:00",
+  "raw_sha256": "af5ca175deb0510e6b7bbc01c541fe80debc37f8a539bbf66a2fe781fd429997",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688012.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688012&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688012.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:10 GMT",
+  "retrieved_at": "2026-11-25T10:50:10.240617+08:00",
+  "raw_sha256": "f89ebb91ae34d7389568a017f8e5f19df246dc0cc3efcc0d437593e0f00c966c",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688036.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688036&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688036.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:10 GMT",
+  "retrieved_at": "2026-11-25T10:50:10.955423+08:00",
+  "raw_sha256": "319108f0718d911e48213d2ebb2377378c2cb4c48c4cd7263278f938b36547e7",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688041.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688047.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688047&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688047.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:11 GMT",
+  "retrieved_at": "2026-11-25T10:50:12.045375+08:00",
+  "raw_sha256": "e30dda3b418111162bb293004139e806547913d879e8a936159ae869a4095d7d",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688072.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688072&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688072.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:10 GMT",
+  "retrieved_at": "2026-11-25T10:50:10.672616+08:00",
+  "raw_sha256": "e8bbf9f017f97b59f3f231807068de4ad18fcfe3ac2d681b02dcfa6c2848e628",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688082.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688082&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688082.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:12 GMT",
+  "retrieved_at": "2026-11-25T10:50:12.723161+08:00",
+  "raw_sha256": "7b74d868e12672a353e25e0687fad1d53744e8a205ff5b74263546c3fce0ef3b",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688111.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688111&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688111.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:11 GMT",
+  "retrieved_at": "2026-11-25T10:50:11.292860+08:00",
+  "raw_sha256": "fba029d8f58ac95ec5245e5116a8a14516b6ecfb8629a46d0c45a992b5c1e039",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688126.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688183.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688183&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688183.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:12 GMT",
+  "retrieved_at": "2026-11-25T10:50:12.438265+08:00",
+  "raw_sha256": "6aac51b968dd33c4961158a2088c772ea99b29c13e3d9a327da508b2428a624b",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688223.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688256.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688256&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688256.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:12 GMT",
+  "retrieved_at": "2026-11-25T10:50:13.111424+08:00",
+  "raw_sha256": "04d371400177f328ef4dcb374e3ed314134fd0243aebba15292a70ad9a6b9ea6",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688271.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688303.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688303&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688303.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:13 GMT",
+  "retrieved_at": "2026-11-25T10:50:13.844889+08:00",
+  "raw_sha256": "b8a515046fe8f094bf2e9a343be76a368147f0055119ca3aee6b469438c19979",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688396.SH",
+  "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688396&klt=60&fqt=0&beg=20261123&end=20261123&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+  "file": "data/fetch_cache/phase3d_20261125/eastmoney_ohlc/688396.SH.json.gz",
+  "http_date": "Wed, 25 Nov 2026 02:50:14 GMT",
+  "retrieved_at": "2026-11-25T10:50:14.168862+08:00",
+  "raw_sha256": "d715d8a029504c591f52f04df6fa036ced9c825aa09e10242cfe286fe184cda9",
+  "samples": {
+   "20261123": 4
+  }
+ },
+ {
+  "code": "688472.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688506.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688521.SH",
+  "error": "RemoteDisconnected"
+ },
+ {
+  "code": "688981.SH",
+  "error": "RemoteDisconnected"
+ }
+]

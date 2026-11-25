@@ -1,0 +1,20 @@
+{
+  "api": "stk_auction",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,price,vol,pre_close",
+  "retrieved_at": "2026-11-25T10:40:13.409584+08:00",
+  "label": "stk_auction",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:15 GMT",
+  "provider_code": 0,
+  "num_rows": 5574,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "stk_auction.json.gz",
+  "raw_sha256": "820985e3c52b9e9cf0e39bf60589220f7e4319a1872ee846c520621dd44169a0",
+  "file_sha256": "a6f47c67c24395f1841f57ac0627986fa22648aa38fac8db5c9bfd91c1c10ce6",
+  "completed_at": "2026-11-25T10:40:16.190840+08:00"
+}

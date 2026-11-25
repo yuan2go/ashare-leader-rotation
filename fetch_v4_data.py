@@ -18,8 +18,11 @@ from urllib.request import Request, urlopen
 from zipfile import BadZipFile
 from zoneinfo import ZoneInfo
 
+from core.integrity import (EVIDENCE_FILES, IntegrityError, fetch_receipt, table_hashes,
+                            verify_required_sha_manifest)
 from inputs import (ETF_LIVE, ETF_T1, MARKET_HOSTS, REF_COLUMNS, SCHEMAS, load, next_market_days,
                     official_etf_history, prepare, read_table, trusted)
+from tushare_client import TushareClient, TushareError, aligned_market, name_at, risk_flag, source_id, ts_code
 
 ROOT=Path(__file__).resolve().parent
 DATA=ROOT/'data'
@@ -74,6 +77,10 @@ def url_for(base,**params):
 
 def baourl(method,**params):
     return BS+('?' + urlencode(params) if params else '')+'#'+method
+
+
+def bao_identity(method,args):
+    return 'baostock:'+method+':'+json.dumps(args,sort_keys=True)
 
 
 def csv_rows(path):
@@ -133,9 +140,11 @@ class Provider:
     def warn(self,message):
         self.warnings.append(message)
 
+    def cache_path(self,identity):
+        return self.cache/(hashlib.sha256(identity.encode()).hexdigest()+'.json')
+
     def request(self,identity,source,load):
-        key=hashlib.sha256(identity.encode()).hexdigest()
-        path=self.cache/(key+'.json')
+        path=self.cache_path(identity)
         if path.exists():
             cached=json.loads(path.read_text(encoding='utf-8'))
             self.receipts[identity]=dict(source=source,cache_sha=sha(path),retrieved=cached['retrieved'])
@@ -188,9 +197,11 @@ class Provider:
             while result.error_code=='0' and result.next():
                 block.append(dict(zip(result.fields,result.get_row_data())))
             if result.error_code!='0':
+                if result.error_code in ('10001001','10002007'):
+                    self.clients.pop('baostock',None)
                 raise RuntimeError(result.error_code+' '+result.error_msg)
             return block
-        return self.request('baostock:'+method+':'+json.dumps(args,sort_keys=True),src,online)
+        return self.request(bao_identity(method,args),src,online)
 
     def ak(self,method,source,**args):
         def online():
@@ -208,6 +219,27 @@ class Provider:
     def close(self):
         if 'baostock' in self.clients:
             self.clients['baostock'].logout()
+
+
+def stock_history(provider,code,start,finish,*,amount=False,expected=None):
+    method='query_history_k_data_plus'
+    args=dict(code=venue(code)+'.'+code,start_date=start,end_date=finish,frequency='d',
+              adjustflag='3',fields=','.join(DAY_FIELDS+('amount',)))
+    starts=[args]
+    if expected:
+        starts.extend(dict(args,start_date=expected[i],end_date=expected[min(i+749,len(expected)-1)])
+                      for i in range(0,len(expected),750))
+    if not amount and not any(provider.cache_path(bao_identity(method,x)).is_file() for x in starts):
+        starts=[dict(x,fields=','.join(DAY_FIELDS)) for x in starts]
+    try:
+        result=provider.bao(method,**starts[0])
+    except ConnectionError:
+        if len(starts)<=1:
+            raise
+        result=[]
+    if expected and [r['date'] for r in result]!=expected:
+        return [r for batch in starts[1:] for r in provider.bao(method,**batch)]
+    return result
 
 
 def east_kline(provider,code,start,finish,exchange=None):
@@ -445,6 +477,9 @@ def normalize_stock(code,metadata,calendar,observations,actions,limits,source,ac
         base=dict(date=day,code=code,reference=ref,source=source,actions_source=actions_source)
         if t=='0':
             # Duplicate prior close published by the vendor is not an OHLC observation.
+            filed=limits.get((code,day),{})
+            if filed.get('reference') and trusted(filed.get('source',''),MARKET_HOSTS,False):
+                base['reference']=filed['reference']
             result.append(dict(base,status='suspended',open='',high='',low='',close='',volume=''))
             continue
         if t!='1' or r.get('adjustflag')!='3':
@@ -475,6 +510,91 @@ def normalize_stock(code,metadata,calendar,observations,actions,limits,source,ac
     if missing:
         warn(f'{code} 未收到 {len(missing)} 个市场日的行情/停牌标记；首缺 {missing[:6]}')
     return result
+
+
+def tushare_blockers(root, freeze):
+    from core.calibration import TABLES, validate_calibration
+    from inputs import read_table
+    report = root / 'results' / 'research' / 'tushare_baseline_check.json'
+    blockers = []
+    try:
+        calibration = json.loads(report.read_text(encoding='utf-8'))
+        if not calibration.get('stocks') or not calibration.get('slice_sha256'):
+            raise ValueError('缺逐股明细或输入切片签名，须重新签发校准回执')
+        tables = {name: read_table(root/'data'/f'{name}.csv', name) for name in TABLES}
+        validate_calibration(calibration, tables, freeze)
+    except (OSError, ValueError, RuntimeError, KeyError, TypeError, AttributeError, ArithmeticError, IndexError) as exc:
+        blockers.append(f'Tushare 报价、成交量或流动性校准未通过：{exc}')
+    if not trusted(source_id('daily', {'ts_code': '600000.SH'}), MARKET_HOSTS, False):
+        blockers.append('冻结输入协议拒绝 tushare_pro: 脱敏来源')
+    return blockers
+
+
+def tushare_stock(client, code, days, limits, reviewed):
+    market = aligned_market(client, code, days[0], days[-1], days)
+    params = {'ts_code': ts_code(code)}
+    daily_source, suspend_source, actions_source = (
+        source_id(api, params) for api in ('daily', 'suspend_d', 'dividend'))
+    if market['unknown_days'] or market['conflicting_days']:
+        raise ValueError(f'{code} Tushare 未解释行情缺口 {market["unknown_days"][:6]}，'
+                         f'成交与全天停牌冲突 {market["conflicting_days"][:6]}')
+    metadata = dict(code=code, listing=market['listing'], delisting=market['delisting'],
+                    source=source_id('stock_basic', params))
+    actions = {}
+    for item in client.dividends(code, max(days[0], metadata['listing']), days[-1]):
+        event = item['ex_date']
+        if event in reviewed:
+            continue
+        if (not item['announce_date'] or item['announce_date'] >= event or
+                not item['announce_date'] <= item['record_date'] <= event or
+                (dec(item['cash_per_share']) and item['pay_date'] < event) or
+                (dec(item['bonus_per_share']) and item['share_date'] < event)):
+            raise ValueError(f'{code} {event} 实施公告、登记日或到账日期缺证')
+        if event in actions and actions[event] != item:
+            raise ValueError(f'{code} {event} 同日多笔权益需公告核验')
+        actions[event] = item
+    actions.update(reviewed)
+    observations = []
+    for day in sorted(market['expected']):
+        risk = risk_flag(name_at(market['names'], day))
+        if day in market['suspensions']:
+            observations.append(dict(date=day, tradestatus='0', amount='0', isST=risk))
+        else:
+            bar = market['bars'][day]
+            observations.append(dict(bar, date=day, tradestatus='1', adjustflag='3',
+                                     isST=risk, preclose=bar['pre_close']))
+    issues = []
+    stocks = normalize_stock(code, metadata, days, observations, actions, limits,
+                             daily_source, actions_source, issues.append)
+    for row in stocks:
+        if row['status'] == 'suspended':
+            row['source'] = suspend_source
+    return metadata, stocks, actions, observations, name_at(market['names'], days[-1]), issues
+
+
+def approved_snapshot(root):
+    try:
+        audit = json.loads((root / 'results' / 'data_audit.json').read_text(encoding='utf-8'))
+        if not audit['approved'] or not audit['production_replay'] or audit['stock_issues'] != 0:
+            return None
+        required = ('stocks', 'actions', 'instruments', 'calendar')
+        verify_required_sha_manifest(table_hashes(root, required), audit.get('sha256'), required, 'archived stocks')
+        return audit
+    except (OSError, ValueError, KeyError, TypeError, IntegrityError):
+        return None
+
+
+def reusable_snapshot(root, audit):
+    try:
+        verify_required_sha_manifest(table_hashes(root, SCHEMAS), audit.get('sha256'), SCHEMAS, 'snapshot')
+        evidence = {name:sha(root / name) for name in EVIDENCE_FILES}
+        signed = audit.get('evidence_sha256')
+        verify_required_sha_manifest(evidence, signed, EVIDENCE_FILES, 'snapshot evidence')
+        if signed.keys() != evidence.keys():
+            return False  # Additional evidence requires a full validation of that snapshot.
+        return fetch_receipt(root) == audit.get('fetch')
+    except (OSError, IntegrityError):
+        return False
 
 
 def legacy_quotes(code,workspace,freeze):
@@ -516,7 +636,7 @@ def compare_backup(code,observations,old,warn):
     return set(conflicts)
 
 
-def market_index(provider,root,workspace,start,end,warn):
+def market_index(provider,root,start,end,warn):
     rows=[]
     cache=root/'verified'/'index.csv'
     if cache.exists():
@@ -719,42 +839,69 @@ def main():
     start=max(policy['start'],raw['crosscheck'][0])
     if not iso(finish) or finish<start:
         parser.error('截止日期无效')
+    freeze=policy['freeze']
+    tables=raw['tables']
+    configured_stocks={r['code'] for r in tables['universe']}
+    approved=approved_snapshot(ROOT)
+    protected_codes={r['code'] for r in approved['coverage']} if approved else {policy['reference']}
+    if (approved and finish==freeze and approved['etf_issues']==0 and
+            reusable_snapshot(ROOT, approved)):
+        print(json.dumps(dict(reused_approved_snapshot=True, stocks=len(configured_stocks),
+                              stock_issues=0, etf_issues=0), ensure_ascii=False))
+        return 0
+    tushare=TushareClient(ROOT, offline=args.offline)
+    new_codes=configured_stocks-protected_codes
+    rights_file=DATA/'verified'/'paid_rights.csv'
+    paid_rights={r['code'] for r in csv_rows(rights_file)
+                 if policy['start']<=r['ex_date']<=freeze} if rights_file.is_file() else set()
+    if new_codes & paid_rights:
+        print('付费配股硬门禁 ' + ' '.join(sorted(new_codes & paid_rights)))
+        return 1
+    if tushare.configured and new_codes:
+        readiness=tushare_blockers(ROOT, freeze)
+        if readiness:
+            print('；'.join(readiness))
+            return 1
+    else:
+        new_codes=set()
     socket.setdefaulttimeout(8)
     source=Provider(not args.offline)
     log=source.warn
     dates=[]
     blockers=[]
     fixes=[]
-    # Verify the connection once. If the host cannot resolve the vendor, do not repeat per ticker.
-    try:
-        dates=[r['calendar_date'] for r in source.bao('query_trade_dates',start_date=start,
-            end_date=(date.fromisoformat(finish)+timedelta(days=8)).isoformat()) if r['is_trading_day']=='1']
-        if not dates:
-            raise ValueError('交易日历为空')
-    except (ConnectionError,ValueError) as e:
-        log(f'BaoStock 网关：{e}')
-        dates=[]
-    try:
-        calendar=market_calendar(raw['crosscheck'],dates,finish,policy['freeze'])
-    except ValueError as e:
-        log(str(e))
-        blockers.append(str(e))
-        calendar=market_calendar(raw['crosscheck'],[],policy['freeze'],policy['freeze'])
+    reuse_calendar=approved is not None and finish==freeze
+    if reuse_calendar:
+        calendar=tables['calendar']
+    else:
+        try:
+            dates=[r['calendar_date'] for r in source.bao('query_trade_dates',start_date=start,
+                end_date=(date.fromisoformat(finish)+timedelta(days=8)).isoformat()) if r['is_trading_day']=='1']
+            if not dates:
+                raise ValueError('交易日历为空')
+        except (ConnectionError,ValueError) as e:
+            log(f'BaoStock 网关：{e}')
+            dates=[]
+        try:
+            calendar=market_calendar(raw['crosscheck'],dates,finish,policy['freeze'])
+        except ValueError as e:
+            log(str(e))
+            blockers.append(str(e))
+            calendar=market_calendar(raw['crosscheck'],[],policy['freeze'],policy['freeze'])
     verified=DATA/'verified'
     workspace=ROOT.parent
-    tables=raw['tables']
     stage={k:{tuple(r[v] for v in keys):r for r in tables[k]} for k,keys in KEYS.items()}
-    freeze=policy['freeze']
-    reference=policy['reference']
+    for k in ('stocks','actions'):
+        stage[k]={key:r for key,r in stage[k].items() if key[0] in configured_stocks}
     protected_index={key:r for key,r in stage['index'].items() if key[0]<=freeze}
-    protected_stock={key:r for key,r in stage['stocks'].items() if key[0]==reference and key[1]<=freeze}
-    protected_actions={key:r for key,r in stage['actions'].items() if key[0]==reference and key[1]<=freeze}
+    protected_stock={key:r for key,r in stage['stocks'].items() if key[0] in protected_codes and key[1]<=freeze}
+    protected_actions={key:r for key,r in stage['actions'].items() if key[0] in protected_codes and key[1]<=freeze}
     def add(k,items):
         for row in items:
             stage[k][tuple(row[v] for v in KEYS[k])]=row
     add('calendar',calendar)
     file=verified/'stocks.csv'
-    manual={(r['code'],r['date']):r for r in csv_rows(file)} if file.exists() else {}
+    manual={(r['code'],r['date']):r for r in csv_rows(file) if r['code'] in configured_stocks} if file.exists() else {}
     reviewed_actions={}
     for k,path in (
             ('instruments',verified/'instruments.csv'),
@@ -762,13 +909,15 @@ def main():
             ('actions',DATA/'verified_actions_override.csv')):
         if path.exists():
             for r in read_table(path,k):
+                if k=='actions' and r['code'] not in configured_stocks:
+                    continue
                 if not trusted(r['source'],MARKET_HOSTS,False):
                     blockers.append(f'{r["code"]} 核验覆盖文件来源不合规 {path.name}')
                     continue
                 if k=='actions':
                     key=(r['code'],r['ex_date'])
                     if key in protected_actions and r!=protected_actions[key]:
-                        blockers.append(f'{key} 核验覆盖试图改动冻结牧原权益底稿')
+                        blockers.append(f'{key} 核验覆盖试图改动已验收权益底稿')
                         continue
                     if key in protected_actions:
                         continue
@@ -776,14 +925,39 @@ def main():
                     fixes.append(dict(code=r['code'],date=r['ex_date'],kind='公告核验权益覆盖',
                                       source=r['source'],announce_date=r['announce_date'],
                                       cash_per_share=r['cash_per_share'],bonus_per_share=r['bonus_per_share']))
-                add(k,[r])
+                if k!='instruments' or r['code'] not in protected_codes or (r['code'],) not in stage[k]:
+                    add(k,[r])
     days=[r['date'] for r in calendar]
     overrides=advisory_limits(verified/'stock_limits.csv')
-    archives={}
+    prior_fetch=approved.get('fetch',{}) if reuse_calendar else {}
+    archives={code:proof for code,proof in prior_fetch.get('archive',{}).items() if code in configured_stocks}
+    sourced=set()
+    for code in sorted(new_codes):
+        try:
+            meta,stocks,actions,_,_,issues=tushare_stock(
+                tushare,code,days,overrides,{d:r for (c,d),r in reviewed_actions.items() if c==code})
+        except TushareError as e:
+            log(f'{code} Tushare 不可用，回退 BaoStock：{e}')
+            continue
+        except (ValueError, KeyError, ArithmeticError) as e:
+            issues=[str(e)]
+        if issues:
+            blockers.extend(issues)
+            continue
+        for name in ('stocks','actions'):
+            stage[name]={key:r for key,r in stage[name].items() if key[0]!=code}
+        add('instruments',[meta])
+        add('stocks',stocks)
+        add('actions',actions.values())
+        sourced.add(code)
+    if blockers and new_codes:
+        source.close()
+        print('\n'.join(dict.fromkeys(blockers)))
+        return 1
     for row in tables['universe']+tables['funds']:
         code=row['code']
         full=venue(code)+'.'+code
-        if (code,) not in stage['instruments'] and (dates or args.offline):
+        if (code,) not in stage['instruments'] and (reuse_calendar or dates or args.offline):
             try:
                 base=source.bao('query_stock_basic',code=full)
                 named=next((x for x in base if x.get('code')==full and x.get('ipoDate')),None)
@@ -795,6 +969,8 @@ def main():
                     log(f'{code} BaoStock 上市资料：{e}')
     for row in tables['universe']:
         code=row['code']
+        if code in sourced or (approved and code in protected_codes and finish<=freeze):
+            continue
         stock=stage['instruments'].get((code,))
         if not stock:
             log(f'{code} 缺可核验上市日')
@@ -808,7 +984,8 @@ def main():
         rights_url=baourl('query_dividend_data',code=full,yearType='operate')
         all_actions=[]
         provider_data=[]
-        market_start=x0
+        market_start=max(x0,(date.fromisoformat(freeze)+timedelta(days=1)).isoformat()) if (
+            approved and code in protected_codes) else x0
         if backup:
             past=dict(fields=','.join(DAY_FIELDS),start_date=x0,end_date=freeze,
                       frequency='d',adjustflag='3',code=full)
@@ -823,10 +1000,11 @@ def main():
             except ConnectionError:
                 pass
             market_start=max(x0,(date.fromisoformat(freeze)+timedelta(days=1)).isoformat())
-        if market_start<=finish and (dates or args.offline):
+        if market_start<=finish and (reuse_calendar or dates or args.offline):
             try:
-                provider_data=source.bao('query_history_k_data_plus',fields=','.join(DAY_FIELDS),
-                    start_date=market_start,end_date=finish,frequency='d',adjustflag='3',code=full)
+                expected=[d for d in days if market_start<=d<=finish and
+                          (not stock['delisting'] or d<=stock['delisting'])]
+                provider_data=stock_history(source,code,market_start,finish,expected=expected)
                 for year in range(int(market_start[:4]),int(finish[:4])+1):
                     try:
                         all_actions+=source.bao('query_dividend_data',code=full,year=str(year),yearType='operate')
@@ -857,7 +1035,7 @@ def main():
             substitute,second_url=repair_open_ohlc(source,code,tape,log) if quote_src==source_url else ({},'')
             if substitute:
                 tape=[substitute.get(r['date'],r) for r in tape]
-            quote_days=[d for d in days if (market_start if backup and quote_src==source_url else start)<=d<=through]
+            quote_days=[d for d in days if (market_start if quote_src==source_url else start)<=d<=through]
             normalized=normalize_stock(code,stock,quote_days,tape,per_code,
                                        {} if quote_src!=source_url else overrides,quote_src,rights_src,log)
             for r in normalized:
@@ -886,26 +1064,29 @@ def main():
     for key,row in manual.items():
         if key in protected_stock:
             if row!=protected_stock[key]:
-                blockers.append(f'{key} 核验覆盖试图改动冻结牧原行情')
+                blockers.append(f'{key} 核验覆盖试图改动已验收行情')
             continue
         if row!=stage['stocks'].get(key):
             fixes.append(dict(code=key[0],date=key[1],kind='官方证据逐日覆盖',source=row['source']))
         add('stocks',[row])
     index_gaps=[d for d in days if (d,) not in stage['index']]
-    for row in market_index(source,DATA,workspace,min(index_gaps),finish,log) if index_gaps else []:
+    for row in market_index(source,DATA,min(index_gaps),finish,log) if index_gaps else []:
         previous=protected_index.get((row['date'],))
         if not previous:
             add('index',[row])
         elif any(dec(row[key])!=dec(previous[key]) for key in ('open','close')):
             blockers.append(f'{row["date"]} 沪深300比对有差异，保留冻结底稿')
-    etf_prices={}
+    reuse_etf=(reuse_calendar and approved['etf_issues']==0 and
+               all(sha(ROOT/name)==approved['sha256'][key]
+                   for name,key in (('funds.csv','funds'),('data/etf.csv','etf'))))
+    etf_prices=approved.get('fetch',{}).get('etf_prices',{}) if reuse_etf else {}
     lookahead=[r for r in raw['calendar_lookahead'] if r['date']>finish]
     if dates:
         next_date=next((d for d in dates if d>finish),None)
         if next_date:
             lookahead=[dict(date=next_date,source=baourl('query_trade_dates',start_date=start,
                 end_date=(date.fromisoformat(finish)+timedelta(days=8)).isoformat()))]
-    if not args.stocks_only:
+    if not args.stocks_only and not reuse_etf:
         etf,etf_prices=collect_etf(source,[x['code'] for x in tables['funds']],start,finish,
                                    days,next_market_days(calendar,lookahead),verified,log,fixes)
         add('etf',etf)
@@ -921,6 +1102,10 @@ def main():
     # Validate staged content before touching the prior CSVs. Coverage gaps may be
     # persisted for diagnosis; malformed values raising an exception leave all CSVs intact.
     audited=prepare({**raw,'tables':audit_tables,'calendar_lookahead':lookahead},finish)
+    if new_codes and audited['errors']:
+        for error in audited['errors']:
+            print(error)
+        return 1
     quote_tapes=defaultdict(list)
     action_tapes=defaultdict(dict)
     for row in output_rows['stocks']:
@@ -945,7 +1130,8 @@ def main():
     log_lines=source.warnings+audited['errors']+audited['etf_errors']
     (DATA/'fetch_warnings.log').write_text('\n'.join(dict.fromkeys(log_lines))+'\n',encoding='utf-8')
     (DATA/'fetch_provenance.json').write_text(json.dumps(dict(target=finish,dates=len(days),archive=archives,
-        network_attempted=not args.offline,receipts=source.receipts,blockers=blockers,
+        network_attempted=not args.offline,receipts={**prior_fetch.get('receipts',{}), **source.receipts, **tushare.receipts},
+        blockers=blockers,
         fixes=fixes,reference_conflicts=reference_conflicts,etf_prices=etf_prices,calendar_lookahead=lookahead),
         ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(dict(stock_issues=len(audited['errors']),etf_issues=len(audited['etf_errors']),

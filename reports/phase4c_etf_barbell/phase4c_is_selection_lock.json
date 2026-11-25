@@ -1,0 +1,129 @@
+{
+  "window": "IS",
+  "dates": [
+    "2016-01-04",
+    "2023-01-20"
+  ],
+  "pool": "ETF5",
+  "capital": 450000,
+  "scenario": "2bp",
+  "inputs_sha256": "33801184f8d9b5b44b8357804eb06c4ebd34c44709300a6df40eb63eba13de69",
+  "strict_min_cagr_pct": 5.699155924965904,
+  "min_max_dd_pct": -28,
+  "sort": [
+    "calmar_desc",
+    "sharpe_desc",
+    "key_asc"
+  ],
+  "selected": [
+    "E4M",
+    "E2O"
+  ],
+  "fallback": null,
+  "candidates": [
+    {
+      "key": "E1",
+      "model": "E1_Barbell_MOM20_m_BASE",
+      "cagr_pct": 5.0162396522942965,
+      "max_dd_pct": -24.16485121655565,
+      "sharpe": 0.3875156033585041,
+      "calmar": 0.207584131486711
+    },
+    {
+      "key": "E1M",
+      "model": "E1M_Barbell_MOM20_m_M200_HALF",
+      "cagr_pct": 7.446735055686227,
+      "max_dd_pct": -20.19406748095087,
+      "sharpe": 0.5769620006173654,
+      "calmar": 0.36875855063427687
+    },
+    {
+      "key": "E2",
+      "model": "E2_Barbell_MOM60_m_BASE",
+      "cagr_pct": 5.559080226779645,
+      "max_dd_pct": -28.6706778412102,
+      "sharpe": 0.4190413239862682,
+      "calmar": 0.1938942726631047
+    },
+    {
+      "key": "E2M",
+      "model": "E2M_Barbell_MOM60_m_M200_HALF",
+      "cagr_pct": 7.435050544388999,
+      "max_dd_pct": -25.462129549210054,
+      "sharpe": 0.5764072708235629,
+      "calmar": 0.29200426971434
+    },
+    {
+      "key": "E2O",
+      "model": "E2O_Barbell_MOM60_m_M200_OFF",
+      "cagr_pct": 9.350663353287093,
+      "max_dd_pct": -22.02797667420452,
+      "sharpe": 0.7623643779075534,
+      "calmar": 0.42449034205838
+    },
+    {
+      "key": "E3",
+      "model": "E3_Barbell_MOM120_m_BASE",
+      "cagr_pct": 6.9681166948297735,
+      "max_dd_pct": -31.49010070711986,
+      "sharpe": 0.49566101445464356,
+      "calmar": 0.22127959385199086
+    },
+    {
+      "key": "E3M",
+      "model": "E3M_Barbell_MOM120_m_M200_HALF",
+      "cagr_pct": 8.686651019738845,
+      "max_dd_pct": -26.774185268350838,
+      "sharpe": 0.6548758122454463,
+      "calmar": 0.3244412829998282
+    },
+    {
+      "key": "E4",
+      "model": "E4_Barbell_MOM240EX20_m_BASE",
+      "cagr_pct": 10.592313623846895,
+      "max_dd_pct": -27.72109578788211,
+      "sharpe": 0.678414766576448,
+      "calmar": 0.3821029913426862
+    },
+    {
+      "key": "E4M",
+      "model": "E4M_Barbell_MOM240EX20_m_M200_HALF",
+      "cagr_pct": 11.392609272355859,
+      "max_dd_pct": -24.696025807153845,
+      "sharpe": 0.8098888253208276,
+      "calmar": 0.4613134664386241
+    },
+    {
+      "key": "E5",
+      "model": "E5_Barbell_DUAL60_m_BASE",
+      "cagr_pct": 4.804592115264339,
+      "max_dd_pct": -24.99231536573827,
+      "sharpe": 0.40006332116322235,
+      "calmar": 0.19224277722787175
+    },
+    {
+      "key": "E5M",
+      "model": "E5M_Barbell_DUAL60_m_M200_HALF",
+      "cagr_pct": 6.317424732770838,
+      "max_dd_pct": -22.503099383017776,
+      "sharpe": 0.532487688550883,
+      "calmar": 0.28073576111646004
+    },
+    {
+      "key": "E6",
+      "model": "E6_Barbell_DUAL60_w_BASE",
+      "cagr_pct": 3.7415371517231844,
+      "max_dd_pct": -28.976188397127224,
+      "sharpe": 0.3296553669672498,
+      "calmar": 0.129124545314391
+    },
+    {
+      "key": "E7M",
+      "model": "E7M_Barbell_MOM60_m_Top2_M200_HALF",
+      "cagr_pct": 7.030225691964298,
+      "max_dd_pct": -25.119832172431224,
+      "sharpe": 0.5614138952949165,
+      "calmar": 0.2798675422553143
+    }
+  ]
+}

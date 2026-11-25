@@ -1,0 +1,20 @@
+{
+  "api": "daily_basic",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,close,pe_ttm,dv_ttm,update_time,publish_time",
+  "retrieved_at": "2026-11-25T10:50:02.825262+08:00",
+  "label": "factor_publication",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:50:04 GMT",
+  "provider_code": 0,
+  "num_rows": 5570,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "factor_publication.json.gz",
+  "raw_sha256": "5120207ba7ac75f0ccb6e75be62d3562e0269cd7c747210ef3864a49e2722ca6",
+  "file_sha256": "fa50e0c906dd0a02afa3292fe40a25693a4f48606775e5bbcf64a8864580c3c7",
+  "completed_at": "2026-11-25T10:50:06.069733+08:00"
+}

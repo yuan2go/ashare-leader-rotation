@@ -1,0 +1,23 @@
+{
+  "api": "trade_cal",
+  "params": {
+    "exchange": "SZSE",
+    "start_date": "20261030",
+    "end_date": "20261201"
+  },
+  "fields": "exchange,cal_date,is_open,pretrade_date",
+  "retrieved_at": "2026-11-25T10:41:32.133968+08:00",
+  "label": "trade_cal_sz",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:41:33 GMT",
+  "provider_code": 0,
+  "num_rows": 33,
+  "has_more": false,
+  "member_rows": 0,
+  "distinct_members": 0,
+  "selected_codes": [],
+  "response_file": "trade_cal_sz.json.gz",
+  "raw_sha256": "0b26e1812332a2ee0e95962fdea24e8da2a18613433c7b0daed8eb03fb17c8fb",
+  "file_sha256": "b92536c6e50466ba638983c0364f27ef0b4db871baeaa10d7d20dbfe3ad405c4",
+  "completed_at": "2026-11-25T10:41:33.576830+08:00"
+}

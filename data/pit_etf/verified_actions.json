@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "ts_code": "510500.SH",
+      "type": "split",
+      "record_date": "2022-08-26",
+      "ex_date": "2022-08-29",
+      "ann_date": "2022-08-23",
+      "result_ann_date": "2022-08-29",
+      "share_ratio": "1.1454",
+      "evidence_source": "user_verified_fund_announcements",
+      "announcements": [
+        {
+          "date": "2022-08-23",
+          "title_as_supplied": "关于中证500交易型开放式指数证券投资基金实施基金份额拆分并调整最小申购、赎回..."
+        },
+        {
+          "date": "2022-08-29",
+          "title_as_supplied": "关于中证500交易型开放式指数证券投资基金基金份额拆分结果的公告"
+        }
+      ]
+    }
+  ]
+}

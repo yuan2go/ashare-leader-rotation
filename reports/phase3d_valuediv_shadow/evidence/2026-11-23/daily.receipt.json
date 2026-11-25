@@ -1,0 +1,20 @@
+{
+  "api": "daily",
+  "params": {
+    "trade_date": "20261123"
+  },
+  "fields": "ts_code,trade_date,open,high,low,close,pre_close,vol,amount",
+  "retrieved_at": "2026-11-25T10:40:17.493119+08:00",
+  "label": "daily",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:21 GMT",
+  "provider_code": 0,
+  "num_rows": 5570,
+  "has_more": false,
+  "member_rows": 300,
+  "distinct_members": 300,
+  "response_file": "daily.json.gz",
+  "raw_sha256": "3fb108c399d2bc273844c3e583736ba59a5a8f80796242583d8187e1cbb11ada",
+  "file_sha256": "cbebd0c6a1d7e6cfb8bf5dd1f2b8128e4470a8c43c6a129d591c04d633186465",
+  "completed_at": "2026-11-25T10:40:22.423633+08:00"
+}

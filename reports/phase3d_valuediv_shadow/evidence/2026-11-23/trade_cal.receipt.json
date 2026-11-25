@@ -1,0 +1,23 @@
+{
+  "api": "trade_cal",
+  "params": {
+    "exchange": "SSE",
+    "start_date": "20261030",
+    "end_date": "20261201"
+  },
+  "fields": "exchange,cal_date,is_open,pretrade_date",
+  "retrieved_at": "2026-11-25T10:40:10.414345+08:00",
+  "label": "trade_cal",
+  "http_status": 200,
+  "http_date": "Wed, 25 Nov 2026 02:40:12 GMT",
+  "provider_code": 0,
+  "num_rows": 33,
+  "has_more": false,
+  "member_rows": 0,
+  "distinct_members": 0,
+  "selected_codes": [],
+  "response_file": "trade_cal.json.gz",
+  "raw_sha256": "8ef8bac8b9caea70e332dfcc3fa24093fcda3f7d15554a3637953065db9f93a8",
+  "file_sha256": "a0f1c4932196dfde2833f2ac118fb86eecc11fe07f341affdf69c791c366dbc3",
+  "completed_at": "2026-11-25T10:40:12.107205+08:00"
+}
