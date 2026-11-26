@@ -1,0 +1,27 @@
+{
+  "completed_at_utc": "2026-11-26T08:03:26.922250+00:00",
+  "placebo_rows": 1230,
+  "promotion": {
+    "X3_TOP2_ABSMOM_BOND_ANN": {
+      "oos_cagr_hurdle": 9.594129963091437,
+      "oos_calmar_hurdle": 0.9255463210924519,
+      "qualifies": true,
+      "w1_drawdown_improvement_pp": 6.548813523457017
+    },
+    "X3_TOP2_ABSMOM_BOND_CONT": {
+      "oos_cagr_hurdle": 9.594129963091437,
+      "oos_calmar_hurdle": 0.9255463210924519,
+      "qualifies": true,
+      "w1_drawdown_improvement_pp": 6.103324420307498
+    }
+  },
+  "selection": [
+    "X3_TOP2_ABSMOM_BOND_ANN",
+    "X3_TOP2_ABSMOM_BOND_CONT"
+  ],
+  "stage1_status": "verified",
+  "stage2_http_requests": 0,
+  "started_at_utc": "2026-11-26T08:00:30.711306+00:00",
+  "status": "verified",
+  "summary_rows": 616
+}

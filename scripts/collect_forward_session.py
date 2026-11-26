@@ -2,6 +2,7 @@
 import argparse
 import gzip
 import json
+import re
 import sqlite3
 import sys
 from datetime import date, datetime, timedelta, timezone
@@ -29,21 +30,30 @@ def iso(day):
     return date.fromisoformat(day).isoformat() if day else None
 
 
-class Pending(Invalid):
+class Pending(Exception):
     pass
 
 
 def need(ok, message):
     if not ok:
+        raise Invalid(message)
+
+
+def published(ok, message):
+    if not ok:
         raise Pending(message)
 
 
 class Collector:
-    def __init__(self, out, client, interval=1.0, *, reuse_phase5a=False):
+    def __init__(self, out, client, interval=1.0, *, reuse_phase5a=False,
+                 max_retries=2, retry_backoff=(2.0, 5.0)):
+        if not 0 <= max_retries <= len(retry_backoff) or any(delay < 0 for delay in retry_backoff):
+            raise ValueError("Invalid collector retry schedule")
         self.out, self.client, self.interval = out, client, interval
         self.requests, self.last = 0, 0.0
         self.evidence = {}
         self.reuse_phase5a = reuse_phase5a
+        self.retry_delays = retry_backoff[:max_retries]
 
     def reuse_signed_valuation(self, day, target):
         """Carry intact Phase 5A evidence into a separate writable profile."""
@@ -74,6 +84,30 @@ class Collector:
         payload = dict(api_name=api, params=params, fields=",".join(fields), token=self.client._token)
         request = Request(self.client._url, fs.encode(payload), method="POST",
                           headers={"Content-Type": "application/json", "Accept": "application/json"})
+        raw, status, error, reference = self.fetch_attempt(request, api, params, fields, folder)
+        for delay in self.retry_delays:
+            retryable = status in (429, 500, 502, 503, 504) or (error and status in (None, 200))
+            if not retryable:
+                break
+            sleep(delay)
+            raw, status, error, reference = self.fetch_attempt(request, api, params, fields, folder)
+        need(not error, f"{api}: 传输异常 {error}")
+        need(status == 200, f"{api}: HTTP {status or '无响应'}")
+        body = json.loads(raw)
+        need(body["code"] == 0, f"{api}: 供应商返回非零业务状态")
+        data = body["data"]
+        items = data["items"]
+        supplied_fields = data["fields"]
+        if items == [] and supplied_fields is None:
+            supplied_fields = []
+        need(isinstance(items, list) and isinstance(supplied_fields, list), f"{api}: 回包表结构不符")
+        columns = list(fields) if items == [] and not supplied_fields else supplied_fields
+        need(len(columns) == len(fields) and set(columns) == set(fields), f"{api}: 回包字段不符")
+        need(all(isinstance(row, list) for row in items), f"{api}: 回包行结构不符")
+        rows = [dict(zip(columns, row, strict=True)) for row in items]
+        return rows, reference, data.get("has_more") is True
+
+    def fetch_attempt(self, request, api, params, fields, folder):
         sleep(max(0, self.interval - (monotonic() - self.last)))
         self.last = monotonic()
         self.requests += 1
@@ -103,19 +137,8 @@ class Collector:
         receipt_path = base.with_suffix(".receipt.json")
         fs.write(receipt_path, receipt)
         reference = dict(file=receipt_path.relative_to(self.out).as_posix(), sha256=fs.digest(receipt_path.read_bytes()))
-        need(safe and status == 200 and not error, f"{api}: HTTP {status or error or '无响应'}")
-        try:
-            body = json.loads(raw)
-            need(body["code"] == 0, f"{api}: 供应商状态 {body['code']}")
-            data = body["data"]
-            columns = data["fields"] or (list(fields) if data["items"] == [] else [])
-            need(len(columns) == len(fields) and set(columns) == set(fields), f"{api}: 回包字段不符")
-            rows = [dict(zip(columns, row, strict=True)) for row in data["items"]]
-        except (KeyError, TypeError, ValueError) as exc:
-            if isinstance(exc, Pending):
-                raise
-            raise Pending(f"{api}: 供应商响应无法解析") from None
-        return rows, reference, data.get("has_more") is True
+        need(safe, f"{api}: 供应商响应包含敏感配置，已隔离")
+        return raw, status, error, reference
 
     def get(self, api, params, fields, day, tag=None):
         rows, ref, more = self.fetch(api, params, fields, day)
@@ -156,7 +179,7 @@ class Collector:
 
     def stage(self, day, members, open_codes):
         data, refs, receipts = self.valuation(day)
-        need(bool(data["rows"]) and members & open_codes <= data["rows"].keys(), "当日盘后估值未完整发布")
+        published(bool(data["rows"]) and members & open_codes <= data["rows"].keys(), "当日盘后估值未完整发布")
         path = self.out / "factor_staging" / (day + ".json")
         if not path.exists():
             fs.write(path, {**data, "receipts": refs, "source": "tushare_pro:daily_basic",
@@ -190,13 +213,14 @@ def held(out, *, reuse_phase5a=False):
 def trade_calendar(collector, day):
     first = date.fromisoformat(day).replace(day=1)
     start = (first - timedelta(days=1)).replace(day=1)
-    after_next = ((first + timedelta(days=32)).replace(day=1) + timedelta(days=32)).replace(day=1)
-    finish = after_next + timedelta(days=12)
+    next_month = (first + timedelta(days=32)).replace(day=1)
+    finish = next_month + timedelta(days=20)
     calendars = []
     for exchange in ("SSE", "SZSE"):
         rows = collector.get("trade_cal", dict(exchange=exchange, start_date=compact(start.isoformat()),
                                                end_date=compact(finish.isoformat())),
                              ("exchange", "cal_date", "is_open", "pretrade_date"), day)
+        published(rows, f"{exchange}: 日历尚未发布")
         dates = {iso(r["cal_date"]): int(r["is_open"]) for r in rows}
         need(len(dates) == len(rows) == (finish-start).days + 1
              and min(dates) == start.isoformat() and max(dates) == finish.isoformat(), f"{exchange}: 日历不完整")
@@ -215,6 +239,7 @@ def full_suspensions(rows):
 
 def delisting(c, code, day, previous):
     catalog = c.get("stock_basic", {"ts_code":code,"list_status":"D"}, CATALOG, day)
+    published(catalog, f"{code}: 持仓行情、停牌或退市资料尚未覆盖")
     need(len(catalog)==1 and catalog[0]["ts_code"]==code and catalog[0]["delist_date"]==compact(day),
          f"{code}: 缺交易日行情、停牌或退市资料")
     changes = c.get("namechange", {"ts_code":code}, ("ts_code","name","start_date","end_date","ann_date","change_reason"), day)
@@ -223,8 +248,9 @@ def delisting(c, code, day, previous):
     need(bool(notices), f"{code}: 缺可验证的提前退市公告")
     start = (date.fromisoformat(day)-timedelta(days=400)).isoformat()
     rows = c.get("daily",dict(ts_code=code,start_date=compact(start),end_date=compact(previous)),DAILY_FIELDS,day,"delist_daily")
-    need(bool(rows) and all(r["ts_code"]==code and compact(start)<=r["trade_date"]<=compact(previous) for r in rows),
-         f"{code}: 缺退市清算参考")
+    published(rows, f"{code}: 退市清算参考尚未发布")
+    need(all(r["ts_code"]==code and compact(start)<=r["trade_date"]<=compact(previous) for r in rows),
+         f"{code}: 退市清算参考行情越界")
     last = max(rows,key=lambda r:r["trade_date"])
     return dict(code=code,type="delist",id=f"{code}/{day}/delist",date=day,
                 announced=iso(min(r["ann_date"] for r in notices)),last_open=iso(last["trade_date"]),last_close=float(last["close"]))
@@ -266,11 +292,11 @@ def etf_data(c, day, previous, calendar, suspended):
     result, events = {}, []
     for code in fs.ETF:
         fields = dict(ts_code=code, start_date=compact(previous), end_date=compact(day))
-        bars = {iso(r["trade_date"]): r for r in c.get("fund_daily", fields, FUND_FIELDS["fund_daily"], day)}
-        adj = {iso(r["trade_date"]): float(r["adj_factor"]) for r in c.get("fund_adj", fields, FUND_FIELDS["fund_adj"], day)}
-        need(day in adj and previous in adj and previous in bars and (day in bars or code in suspended),
-             f"{code}: ETF 行情或复权未发布")
-        need(all(row["ts_code"] == code for row in bars.values()), "ETF 行情代码不符")
+        bars = fund_dates(c.get("fund_daily", fields, FUND_FIELDS["fund_daily"], day), code, previous, day)
+        factors = fund_dates(c.get("fund_adj", fields, FUND_FIELDS["fund_adj"], day), code, previous, day)
+        adj = {d: float(r["adj_factor"]) for d, r in factors.items()}
+        published(day in adj and previous in adj and previous in bars and (day in bars or code in suspended),
+                  f"{code}: ETF 行情或复权未发布")
         cash_rows = c.get("fund_div", dict(ts_code=code, ex_date=compact(day)), FUND_FIELDS["fund_div"], day)
         cash = {(float(r["div_cash"]), iso(r["imp_anndate"] or r["ann_date"]), iso(r["pay_date"]))
                 for r in cash_rows if r["div_proc"] == "实施" and r["ex_date"] == compact(day) and r["div_cash"]}
@@ -308,6 +334,16 @@ def etf_data(c, day, previous, calendar, suspended):
     return result, events
 
 
+def fund_dates(rows, code, previous, day):
+    indexed = {}
+    for row in rows:
+        when = iso(row["trade_date"])
+        need(row["ts_code"] == code and when in (previous, day) and when not in indexed,
+             f"{code}: ETF 回包代码、日期或重复行冲突")
+        indexed[when] = row
+    return indexed
+
+
 def collect(c, day, status):
     path = c.out / "daypacks" / day / "session.json"
     original = fs.OUT / "daypacks" / day / "session.json"
@@ -329,11 +365,12 @@ def collect(c, day, status):
         return dict(state="no_trading_session")
     previous, _, observed, effective = fs.calendar_cursor(day, calendar)
     if datetime.now(fs.CN) < fs.instant(day, 15):
-        return dict(state="pending_upstream_publication", reason="交易日尚未收盘")
+        raise Pending("交易日尚未收盘")
     weights = c.get("index_weight", dict(index_code=fs.INDEX, start_date=compact(observed), end_date=compact(observed)), WEIGHT, day)
     members = {r["con_code"] for r in weights}
-    need(len(members) == len(weights) == 300 and all(r["index_code"] == fs.INDEX and r["trade_date"] == compact(observed)
-         and float(r["weight"]) > 0 for r in weights), "CSI300 月末成分尚未完备")
+    need(len(members) == len(weights) <= 300 and all(r["index_code"] == fs.INDEX and r["trade_date"] == compact(observed)
+         and float(r["weight"]) > 0 for r in weights), "CSI300 月末成分回包冲突")
+    published(len(members) == 300, "CSI300 月末成分尚未完备")
     targets = members | held(c.out,reuse_phase5a=c.reuse_phase5a)
     query = {"trade_date": compact(day)}
     prior_query = {"trade_date": compact(previous)}
@@ -350,10 +387,10 @@ def collect(c, day, status):
     catalog = by_code(c.get("stock_basic", {"list_status": "L"}, CATALOG, day))
     snapshot_catalog = {r["ts_code"]: r for r in read_rows(fs.ROOT / "data/pit_csi300/compiled/pit_universe_catalog.csv")}
     opening, closing = {}, {}
-    need(members <= today.keys() | suspend, "股票日线和显式全日停牌尚未覆盖全部成分")
     need(not (targets & today.keys() & suspend), "股票日线与全日停牌标记冲突")
+    published(members <= today.keys() | suspend, "股票日线和显式全日停牌尚未覆盖全部成分")
     delisted = {code:delisting(c,code,day,previous) for code in sorted(targets-today.keys()-suspend)}
-    need(targets-delisted.keys() <= limits.keys(), "股票涨跌停表尚未覆盖全部成分与持仓")
+    published(targets-delisted.keys() <= limits.keys(), "股票涨跌停表尚未覆盖全部成分与持仓")
     if status.get("factor_staging") != "stored" and members & suspend:
         try:
             c.stage(day, members, today.keys())
@@ -389,7 +426,8 @@ def collect(c, day, status):
         elif catalog.get(code, {}).get("list_date") == compact(day):
             factors["no_row"][code] = "not_yet_listed"
     index = by_code(c.get("index_daily", {**query, "ts_code": fs.INDEX}, DAILY_FIELDS, day), day)
-    need(set(index) == {fs.INDEX}, "沪深 300 指数尚未发布")
+    need(index.keys() <= {fs.INDEX}, "沪深 300 指数回包代码冲突")
+    published(index, "沪深 300 指数尚未发布")
     stock_events = security_events(c, day, targets, prev_bars, today) + list(delisted.values())
     etfs, fund_events = etf_data(c, day, previous, calendar, suspend)
     parts = dict(calendar=dict(sessions=calendar), membership=dict(observed=observed, effective=effective,
@@ -456,38 +494,82 @@ def export_v1(path, out, dest):
     return result
 
 
+def collection_error(exc, client):
+    # Validation messages identify the rejected field or invariant. Built-in
+    # exceptions may embed upstream values, filesystem paths or raw payloads.
+    if isinstance(exc, Invalid):
+        reason = str(exc)
+    elif isinstance(exc, OSError):
+        reason = "本地文件、配置或传输操作失败"
+    else:
+        reason = "采集输入或供应商响应处理失败"
+    for name in ("_token", "_url"):
+        secret = getattr(client, name, None)
+        if isinstance(secret, str) and secret:
+            reason = reason.replace(secret, "[redacted]")
+    reason = re.sub(r"https?://\S+", "[redacted]", reason, flags=re.IGNORECASE)
+    return dict(state="collection_error", error_type=type(exc).__name__,
+                reason=" ".join(reason.split())[:300])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", default=datetime.now(fs.CN).date().isoformat())
     parser.add_argument("--export-phase3d-v1", type=Path)
     parser.add_argument("--profile",choices=("v5a","v7a","v5a-continuation"),default="v5a")
     args = parser.parse_args()
-    if args.profile=="v5a":
-        out = fs.OUT
-    else:
-        from scripts.run_phase7a_shadow import output_root
-        out = output_root()
-        if args.profile=="v5a-continuation":
-            out /= "legacy_v5a"
-    day = fs.iso(args.date)
-    fs.require(day > fs.FREEZE, "前瞻采集日期须晚于冻结日")
-    c = Collector(out, TushareClient(fs.ROOT, offline=True), reuse_phase5a=args.profile!="v5a")
-    status = dict(day=day)
+    out = day = client = c = exported = None
+    status = {}
+    code = 0
     try:
-        need(c.client.configured, "本地 Tushare 配置不可用")
+        if args.profile == "v5a":
+            out = fs.OUT
+        else:
+            from scripts.run_phase7a_shadow import output_root
+            out = output_root()
+            if args.profile == "v5a-continuation":
+                out /= "legacy_v5a"
+        day = fs.iso(args.date)
+        status["day"] = day
+        fs.require(day > fs.FREEZE, "前瞻采集日期须晚于冻结日")
+        client = TushareClient(fs.ROOT, offline=True)
+        need(client.configured, "本地 Tushare 配置不可用")
+        c = Collector(out, client, reuse_phase5a=args.profile!="v5a")
         status.update(collect(c, day, status))
-    except (Invalid, KeyError, TypeError, ValueError) as exc:
+        if args.export_phase3d_v1:
+            fs.require("packet" in status, "尚无可导出的完整日包")
+            packet = Path(status["packet"])
+            fs.require(not args.export_phase3d_v1.resolve().is_relative_to(fs.OUT), "导出目录与 Phase 5A 签发目录冲突")
+            exported = export_v1(packet, fs.OUT if packet.is_relative_to(fs.OUT) else out, args.export_phase3d_v1)
+    except Pending as exc:
         status.update(state="pending_upstream_publication", reason=str(exc))
-    status.update(http_requests=c.requests, updated_at=datetime.now(fs.CN).isoformat())
-    fs.write(out / "collection_status" / (day + ".json"), status)
-    fs.write(out / "last_collection_status.json", status)
+        code = 10
+    except Exception as exc:
+        status.update(collection_error(exc, client))
+        code = 1
+    status.update(http_requests=c.requests if c else 0, updated_at=datetime.now(fs.CN).isoformat())
+    if out is not None:
+        paths = [out / "last_collection_status.json"]
+        if day is not None:
+            paths.insert(0, out / "collection_status" / (day + ".json"))
+        try:
+            for path in paths:
+                fs.write(path, status)
+        except OSError as exc:
+            status.update(collection_error(exc, client), reason="无法写入采集状态")
+            code = 1
+            for path in paths:
+                try:
+                    fs.write(path, status)
+                except OSError:
+                    pass
+    if code == 1:
+        print(f"COLLECTION_ERROR (exit=1) [{status['error_type']}] {status['reason']}", file=sys.stderr)
     print(json.dumps(status, ensure_ascii=False))
-    if args.export_phase3d_v1:
-        fs.require("packet" in status, "尚无可导出的完整日包")
-        packet = Path(status["packet"])
-        fs.require(not args.export_phase3d_v1.resolve().is_relative_to(fs.OUT), "导出目录与 Phase 5A 签发目录冲突")
-        print(export_v1(packet, fs.OUT if packet.is_relative_to(fs.OUT) else out, args.export_phase3d_v1))
+    if exported:
+        print(exported)
+    return code
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

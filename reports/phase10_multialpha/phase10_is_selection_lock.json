@@ -1,0 +1,55 @@
+{
+  "candidates": [
+    {
+      "cagr_pct": -3.4598970489450154,
+      "calmar": -0.09477924569920286,
+      "key": "CH4_CORE_K10",
+      "max_dd_pct": -36.50479620744771,
+      "sharpe": -0.14827114973966626
+    },
+    {
+      "cagr_pct": -1.5115841025818644,
+      "calmar": -0.050023583473258984,
+      "key": "CH4_CORE_K15",
+      "max_dd_pct": -30.217429412867013,
+      "sharpe": -0.0231214940713217
+    },
+    {
+      "cagr_pct": -1.2645111774355455,
+      "calmar": -0.04547782640057904,
+      "key": "CH4_UDVR_FILTER_K10",
+      "max_dd_pct": -27.805004713669547,
+      "sharpe": -0.004086226306132679
+    },
+    {
+      "cagr_pct": -1.2956607778670692,
+      "calmar": -0.04562486362299757,
+      "key": "CH4_UDVR_BLEND_K10",
+      "max_dd_pct": -28.398129330823497,
+      "sharpe": -0.0030213797997353316
+    }
+  ],
+  "capital": 450000,
+  "dates": [
+    "2016-01-04",
+    "2023-01-20"
+  ],
+  "fixed_engines": {
+    "Engine1": "E4M_L3_REAL_FRICTION_NO_MMF_ANN",
+    "Engine4": "VPB_M60_FILTER"
+  },
+  "level": 3,
+  "locked_at_utc": "2026-11-26T08:04:33.520036+00:00",
+  "rank_by": [
+    "calmar_desc",
+    "sharpe_desc",
+    "key_asc"
+  ],
+  "selected": [
+    "CH4_UDVR_FILTER_K10"
+  ],
+  "window": "IS",
+  "xasset": "X3_TOP2_ABSMOM_BOND_ANN",
+  "xasset_lock_sha256": "2aa236f884e3c42d21c50d7a68d814343f472f3f329e39c7703b623477b4506d",
+  "xasset_lock_status": "locked"
+}

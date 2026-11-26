@@ -53,3 +53,14 @@ Thumbs.db
 /reports/phase7a_service_shadow/*.sqlite3-journal
 /reports/phase7a_service_shadow/*.sqlite3-wal
 /reports/phase7a_service_shadow/*.sqlite3-shm
+
+# Phase 8 transport archives and mutable cloud ledger copies.
+/deploy-runtime/
+/reports/phase8_cloud_deploy/*.tar.gz
+/reports/phase8_cloud_deploy/playwright-results/
+
+# Phase 9B local deployment and private provider receipts.
+/.docker_runtime/
+/.env.docker.local
+/data/pit_phase9b/raw/
+/data/pit_phase9b/.pit.lock

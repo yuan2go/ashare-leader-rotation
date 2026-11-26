@@ -16,22 +16,23 @@ import { categoryAxis, chartFrame, valueAxis } from "../utils/charts";
 import { cents, changeClass, decimal, integer, pct, pp, text } from "../utils/format";
 import { accountColor, accountLabel, accountOrder } from "../utils/labels";
 
-const measures = [["nav_cents", "净值"], ["return_pct", "收益"], ["drawdown_pct", "回撤"]] as const;
+const measures = [["nav_cents", "净值"], ["return_pct", "收益"], ["excess_ew_pp", "超额"], ["drawdown_pct", "回撤"]] as const;
 type Measure = typeof measures[number][0];
 
 function curve(points: Schema["NavPoint"][], measure: Measure, active: Schema["Account"]): ChartOption {
   const dates = [...new Set(points.map((point) => point.day))].sort();
   const lookup = new Map(points.map((point) => [`${point.account}/${point.day}`, point[measure]]));
+  const formatRate = measure === "excess_ew_pp" ? pp : pct;
   return {
     ...chartFrame,
     grid: {...chartFrame.grid, left: 9, right: 46, top: 16},
     xAxis: {...categoryAxis, boundaryGap: false, data: dates, axisLabel: {...categoryAxis.axisLabel, hideOverlap: true}},
     yAxis: {...valueAxis, scale: true, axisLabel: {
-      formatter: (value: number) => measure === "nav_cents" ? cents(value, 0) : pct(value),
+      formatter: (value: number) => measure === "nav_cents" ? cents(value, 0) : formatRate(value),
     }},
     tooltip: {...chartFrame.tooltip, valueFormatter: (value) => {
       const number = typeof value === "number" ? value : null;
-      return measure === "nav_cents" ? cents(number) : pct(number, true);
+      return measure === "nav_cents" ? cents(number) : formatRate(number, true);
     }},
     series: accountOrder.map((account) => ({
       name: accountLabel[account],
@@ -58,6 +59,24 @@ const comparison: Column<Schema["NavPoint"]>[] = [
   {title: "超额 · 等权", numeric: true, render: (row) => <span className={changeClass(row.excess_ew_pp)}>{pp(row.excess_ew_pp, true)}</span>},
   {title: "超额 · 沪深 300", numeric: true, render: (row) => <span className={changeClass(row.excess_csi300_pp)}>{pp(row.excess_csi300_pp, true)}</span>},
 ];
+
+function AccountComparison({rows}: {rows: Schema["NavPoint"][]}) {
+  if (!rows.length) return <Empty />;
+  const [name, risk, ...metrics] = comparison;
+  return <>
+    <div className="comparison-desktop">
+      <DataTable label="六线账户对照" rows={rows} columns={comparison} rowKey={(row) => row.account} />
+    </div>
+    <ul className="comparison-mobile" aria-label="六线账户对照">
+      {rows.map((row) => <li key={row.account} className="comparison-card">
+        <div className="comparison-card-heading">{name.render(row)}{risk.render(row)}</div>
+        <dl>{metrics.map(({title, render}) =>
+          <div key={title}><dt>{title}</dt><dd>{render(row)}</dd></div>,
+        )}</dl>
+      </li>)}
+    </ul>
+  </>;
+}
 
 function RiskMonitor({risk}: {risk?: Schema["RiskSnapshot"]}) {
   const m200 = risk?.m200;
@@ -108,7 +127,7 @@ function RiskMonitor({risk}: {risk?: Schema["RiskSnapshot"]}) {
 
 export default function DashboardPage() {
   const capital = useCapital();
-  const [account, setAccount] = useState<Schema["Account"]>("V5");
+  const [account, setAccount] = useState<Schema["Account"]>("E4M");
   const [measure, setMeasure] = useState<Measure>("nav_cents");
   const overview = useQuery(overviewQuery);
   const risk = useQuery({queryKey: ["shadow", "risk"], queryFn: ({signal}) => api.risk(signal)});
@@ -158,7 +177,7 @@ export default function DashboardPage() {
       </Panel>
     </div>
     <Panel title="六线账户对照" description="按最新入账交易日展示">
-      {overview.data && <DataTable label="六线账户对照" rows={rows} columns={comparison} rowKey={(row) => row.account} />}
+      {overview.data && <AccountComparison rows={rows} />}
     </Panel>
   </div>;
 }

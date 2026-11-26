@@ -1,0 +1,111 @@
+{
+  "capital_rmb": 450000,
+  "frozen_engine_sha256": {
+    "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+    "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945"
+  },
+  "market_http_requests": 0,
+  "matching_return_metric_paths": 404,
+  "pool": "ETF5",
+  "portfolio": "V5_E4_M200_TV15_CAP",
+  "prior_signature": {
+    "after": {
+      "files_verified": 438,
+      "original_phase7c": {
+        "files_verified": 434,
+        "manifest_sha256": "78567e4f2b29e6d764ee24fe66385bdd490e4c304cf7120881cb30aa02302db2"
+      },
+      "stratified_sha256": {
+        "reports/phase7c_m200_stratified/phase7c_m200_stratified_mc.csv": "cd27db3b30f5daba02a948e5fed340aa01ca918e32e708862758842dc71692eb",
+        "reports/phase7c_m200_stratified/phase7c_m200_stratified_verdict.json": "4eb77b65e83abc96244726d918ad518c56560db11c13ffc223db9369716ed772",
+        "reports/phase7c_m200_stratified/report.md": "bc6b0fb59ce21eaa4209593dd8b2951882ddcbd323eb935bb0be46034a77edf4",
+        "scripts/run_phase7c_v5_m200_stratified.py": "e2888abddf4757eea0586cbbb7d6a46c10d35f9f49eb74d889436e81696e659b"
+      }
+    },
+    "before": {
+      "files_verified": 438,
+      "original_phase7c": {
+        "files_verified": 434,
+        "manifest_sha256": "78567e4f2b29e6d764ee24fe66385bdd490e4c304cf7120881cb30aa02302db2"
+      },
+      "stratified_sha256": {
+        "reports/phase7c_m200_stratified/phase7c_m200_stratified_mc.csv": "cd27db3b30f5daba02a948e5fed340aa01ca918e32e708862758842dc71692eb",
+        "reports/phase7c_m200_stratified/phase7c_m200_stratified_verdict.json": "4eb77b65e83abc96244726d918ad518c56560db11c13ffc223db9369716ed772",
+        "reports/phase7c_m200_stratified/report.md": "bc6b0fb59ce21eaa4209593dd8b2951882ddcbd323eb935bb0be46034a77edf4",
+        "scripts/run_phase7c_v5_m200_stratified.py": "e2888abddf4757eea0586cbbb7d6a46c10d35f9f49eb74d889436e81696e659b"
+      }
+    }
+  },
+  "samples_sha256": "ac3880914abe7cf5e756cc04fc4b5f40a3850eb38133002eb79da9b58c4eda47",
+  "scenario": "2bp",
+  "windows": {
+    "IS": {
+      "draws": 200,
+      "exposure": {
+        "mean_effective_attack_target_pct": {
+          "actual": 28.9640108866194,
+          "mirror": 28.745060023146063,
+          "mirror_minus_actual_pp": -0.21895086347333503,
+          "permutation_mean": 28.82491522670284,
+          "permutation_mean_minus_actual_pp": -0.1390956599165598,
+          "permutation_median": 28.818205716728762,
+          "permutation_median_minus_actual_pp": -0.14580516989063597,
+          "permutation_p05": 28.66250157981125,
+          "permutation_p05_minus_actual_pp": -0.3015093068081498,
+          "permutation_p95": 29.00924990463467,
+          "permutation_p95_minus_actual_pp": 0.0452390180152733
+        },
+        "mean_realized_etf_weight_pct": {
+          "actual": 27.79462970775237,
+          "mirror": 27.366795630767204,
+          "mirror_minus_actual_pp": -0.4278340769851674,
+          "permutation_mean": 27.257589584202023,
+          "permutation_mean_minus_actual_pp": -0.5370401235503479,
+          "permutation_median": 27.217480008881413,
+          "permutation_median_minus_actual_pp": -0.5771496988709579,
+          "permutation_p05": 26.019826252981108,
+          "permutation_p05_minus_actual_pp": -1.7748034547712628,
+          "permutation_p95": 28.592874084519778,
+          "permutation_p95_minus_actual_pp": 0.798244376767407
+        }
+      },
+      "first": "2016-01-04",
+      "last": "2023-01-20",
+      "sessions": 1717
+    },
+    "OOS": {
+      "draws": 200,
+      "exposure": {
+        "mean_effective_attack_target_pct": {
+          "actual": 28.797869096841545,
+          "mirror": 28.6465746401601,
+          "mirror_minus_actual_pp": -0.1512944566814447,
+          "permutation_mean": 28.60048990853742,
+          "permutation_mean_minus_actual_pp": -0.19737918830412582,
+          "permutation_median": 28.603723812831188,
+          "permutation_median_minus_actual_pp": -0.19414528401035724,
+          "permutation_p05": 28.381827974194234,
+          "permutation_p05_minus_actual_pp": -0.41604112264731086,
+          "permutation_p95": 28.819145681383,
+          "permutation_p95_minus_actual_pp": 0.021276584541453758
+        },
+        "mean_realized_etf_weight_pct": {
+          "actual": 22.60437508660398,
+          "mirror": 22.925082957605344,
+          "mirror_minus_actual_pp": 0.320707871001364,
+          "permutation_mean": 22.687587358998307,
+          "permutation_mean_minus_actual_pp": 0.08321227239432716,
+          "permutation_median": 22.69559971367591,
+          "permutation_median_minus_actual_pp": 0.0912246270719308,
+          "permutation_p05": 21.65882606077359,
+          "permutation_p05_minus_actual_pp": -0.9455490258303918,
+          "permutation_p95": 23.67182956880303,
+          "permutation_p95_minus_actual_pp": 1.0674544821990501
+        }
+      },
+      "first": "2023-01-30",
+      "last": "2026-11-20",
+      "sessions": 926
+    }
+  }
+}

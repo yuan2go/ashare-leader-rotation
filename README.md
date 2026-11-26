@@ -8,7 +8,7 @@ v4.0 导入基线含 16 股与 7 只 ETF。当前签发工作区含 50 股，49 
 50/50 BASE 的趋势袖子有 2 个槽，防御袖子有 3 个。防御在完整自然月的最后一个已公告周信号日换仓。BIWEEKLY 是趋势袖子对照。W_Bear 按 policy 的 2021-03-01 至 2023-11-19，跨实验比较须核对首末交易日与实际会话数。
 P1 验收表含 11 个容差锚点（收益与回撤各容许 0.05 个百分点）；44 组影子账本逐日逐笔精确对账。离线 HTML 属于旧研究的签发身份，复核历史实验时保留原快照。
 无参 `node tests/parity.cjs` 以 --parity-only 启动 Python 合成回归。指定包文件时，JS 读取该包并核对准备结果、信号、逐日账本和成交。
-公开 CI 在 Python 3.11 / Node 24 上核对冻结文件并运行合成对账与无网采集测试。签发回归使用本仓库 Actions 的 `stage2-inputs` 归档，配置 `STAGE2_FIXTURE_RUN_ID` 和包 `stage2-inputs.zip` 的 `STAGE2_FIXTURE_SHA256` 后执行全量发现，也可手动选择 `signed_replay`。包内文件使用仓库相对路径，清单见 CI 的 Restore signed test inputs。签发回归启用时，缺包、缺文件或摘要不符均使验收失败。
+公开 CI 在 Python 3.11 / Node 24 上运行冻结核验、合成对账、无网采集、API 契约和前端构建。签发回归使用本仓库 Actions 的 `stage2-inputs` 归档，配置 `STAGE2_FIXTURE_RUN_ID` 和包 `stage2-inputs.zip` 的 `STAGE2_FIXTURE_SHA256` 后执行全量发现和签发账本 API 测试，也可手动选择 `signed_replay`。包内使用仓库相对路径，需涵盖 Restore signed test inputs 声明的文件和 Phase 7C 保护清单中的未入 Git 资产。签发回归启用时，缺包、缺文件或摘要不符均使验收失败。
 例行 manifest 只哈希实际消费的文件，完整缓存取证另用 `python -B -X utf8 scripts/cache_forensics.py --full-cache`。历史 600428 插件状态见 `archive/legacy_research/README.md`。
 
 
@@ -106,6 +106,10 @@ python run.py --confirm-seeds
 本地 Python 3.11 安装 `backend/requirements-api.txt` 后，运行 `powershell.exe -NoProfile -File scripts/run_daily_shadow.ps1 -Action ServeApi`。服务默认监听 `127.0.0.1:8000`，含六线两档资金的只读账本、收盘风控和次日试算、签发研究及受控运维。[接口契约](docs/api_contract_v1.md)与 [OpenAPI 3.1](backend/openapi.json)供 Phase 7B 接入。
 
 `run_daily_shadow.ps1` 默认使用 `-Profile v7a`。离线入账用 `-Action Ingest`，73 日历史验收用 `-Action VerifyOffline`。Phase 5A 五线续跑使用 `-Profile v5a`，签发归档作为只读输入。
+
+使用已有前端依赖时，先运行 `run_daily_shadow.ps1 -Action BuildFrontend`，再用 `-Action ServeApi` 从同一端口访问页面与 API。设置 `PHASE7A_API_READ_ONLY=1` 可禁用运维任务提交。驾驶舱默认聚焦 E4M，V5 治理标签取自 [Phase 7C 置换补验](reports/phase7c_hardening/phase7c_report.md)。
+
+Linux 和容器部署见 [Phase 8 云端部署手册](deploy/README.md)。部署前先恢复离线签发资产，并把运行账本放在独立可写目录。
 
 ### 联网补齐真实数据与回放
 

@@ -1,9 +1,14 @@
 """Export the checked-in OpenAPI 3.1 and the Phase 7B contract from FastAPI."""
 import argparse
 import json
+import sys
+from pathlib import Path
 
-from .app.config import ROOT
-from .app.main import app
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from backend.app.config import ROOT
+from backend.app.main import app
 
 INTRO = """# Phase 7A API v1 接口契约
 
@@ -84,7 +89,7 @@ def main():
     args = parser.parse_args()
     for path, data in contents().items():
         if args.check:
-            if not path.is_file() or path.read_text(encoding="utf-8")!=data:
+            if not path.is_file() or path.read_bytes() != data.encode("utf-8"):
                 parser.exit(1,f"Stale API contract: {path.relative_to(ROOT)}\n")
         else:
             path.write_text(data,encoding="utf-8",newline="\n")

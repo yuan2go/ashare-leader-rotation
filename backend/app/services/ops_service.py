@@ -1,6 +1,5 @@
 """Run an allowlisted job in a separate, lock-holding Python process."""
 import os
-import runpy
 import subprocess
 import sys
 from contextlib import contextmanager
@@ -135,13 +134,16 @@ def read_log(settings, job_id, max_bytes):
 
 
 def execute(request, *, export_v1=None):
+    environment = {
+        **os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1",
+    }
+
     def run(script, args):
-        previous = sys.argv
-        try:
-            sys.argv = [str(ROOT/"scripts"/script),*args]
-            runpy.run_path(sys.argv[0],run_name="__main__")
-        finally:
-            sys.argv = previous
+        return subprocess.run(
+            [sys.executable, "-B", "-X", "utf8", str(ROOT/"scripts"/script), *args],
+            cwd=ROOT, env=environment, stdin=subprocess.DEVNULL, check=False,
+        ).returncode
 
     if request.action in (Action.DAILY,Action.COLLECT):
         args = ["--profile","v7a"]
@@ -149,10 +151,15 @@ def execute(request, *, export_v1=None):
             args += ["--date",request.day.isoformat()]
         if export_v1:
             args += ["--export-phase3d-v1",export_v1]
-        run("collect_forward_session.py",args)
+        code = run("collect_forward_session.py",args)
+        if code != 0:
+            state = "PENDING_UPSTREAM_PUBLICATION" if code == 10 else "COLLECTION_ERROR"
+            print(f"{state} (exit={code})", flush=True)
+            return code
     if request.action in (Action.DAILY,Action.INGEST,Action.VERIFY):
         arg = "--verify-offline" if request.action==Action.VERIFY else "--ingest-ready"
-        run("run_phase7a_shadow.py",[arg])
+        return run("run_phase7a_shadow.py",[arg])
+    return 0
 
 
 def work(settings, job_id):
@@ -168,15 +175,12 @@ def work(settings, job_id):
         code = 1
         try:
             print(f"{job.started_at.isoformat()} {job.request.action}",flush=True)
-            execute(job.request)
-            code = 0
-        except SystemExit as exc:
-            code = exc.code if isinstance(exc.code,int) else int(exc.code is not None)
-            raise
+            code = execute(job.request)
         finally:
             job.state = "succeeded" if code==0 else "failed"
             job.exit_code,job.finished_at = code,now()
             save_job(settings,job)
+        return code
 
 
 def main():
@@ -192,7 +196,7 @@ def main():
     args = parser.parse_args()
     settings = Settings.from_env()
     if args.job_id:
-        work(settings,args.job_id)
+        return work(settings,args.job_id)
     else:
         request = JobRequest(action=args.action,day=args.date,
                              allow_market_http=args.action in (Action.DAILY,Action.COLLECT))
@@ -201,8 +205,8 @@ def main():
                 raise Busy("another shadow job is queued or running")
             with lock(settings.ops_lock):
                 # Hold both locks through a direct CLI invocation.
-                execute(request,export_v1=args.export_phase3d_v1)
+                return execute(request,export_v1=args.export_phase3d_v1)
 
 
 if __name__=="__main__":
-    main()
+    raise SystemExit(main())

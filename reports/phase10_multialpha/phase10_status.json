@@ -1,0 +1,57 @@
+{
+  "etf_coverage": {
+    "159915.SZ": {
+      "availability": "trade_date_close",
+      "first": "2015-01-05",
+      "last": "2026-11-20",
+      "rows": 2886
+    },
+    "510050.SH": {
+      "availability": "trade_date_close",
+      "first": "2015-01-05",
+      "last": "2026-11-20",
+      "rows": 2887
+    },
+    "510300.SH": {
+      "availability": "trade_date_close",
+      "first": "2015-01-05",
+      "last": "2026-11-20",
+      "rows": 2887
+    },
+    "510500.SH": {
+      "availability": "trade_date_close",
+      "first": "2015-01-05",
+      "last": "2026-11-20",
+      "rows": 2885
+    },
+    "588000.SH": {
+      "availability": "trade_date_close",
+      "first": "2020-11-16",
+      "last": "2026-11-20",
+      "rows": 1459
+    }
+  },
+  "etf_issues": 0,
+  "phase9b_stage2": "verified",
+  "placebo_draws_per_key_per_window": 200,
+  "placebo_tested_keys": [
+    "CH4_UDVR_FILTER_K10"
+  ],
+  "production_replay": "not_executed_v2_research_only",
+  "research_http_requests": 0,
+  "selected": [
+    "CH4_UDVR_FILTER_K10"
+  ],
+  "selection_lock_sha256": "07dff4887e99187bc9bd63396abf4ea363010bd5a17077b7f098badb0deb0e87",
+  "status": "verified",
+  "stock_coverage": {
+    "first": "2015-01-05",
+    "last": "2026-11-20",
+    "membership_rows": 42600,
+    "sessions": 2887,
+    "stocks": 667
+  },
+  "stock_issues": 0,
+  "vpb_verdict": "REJECT_ARCHIVE_ONLY",
+  "xasset": "X3_TOP2_ABSMOM_BOND_ANN"
+}

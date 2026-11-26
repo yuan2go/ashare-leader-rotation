@@ -13,3 +13,8 @@ reports/phase3_pit_verdict/pre_fractional/** -text
 reports/phase3d_valuediv_shadow/evidence/** -text
 reports/phase3d_valuediv_shadow/shadow_status.json -text
 reports/phase6a_vol_and_pit_probe/phase6a_report.md -text
+reports/phase8_cloud_deploy/phase8_manifest.json -text whitespace=cr-at-eol
+reports/phase9a_v2_engine/phase9a_protection_before.json -text whitespace=cr-at-eol
+reports/phase9a_v2_engine/phase9a_report.md -text whitespace=cr-at-eol
+reports/phase9b_xasset_and_docker/phase9b_report.md -text whitespace=cr-at-eol
+reports/phase10_multialpha/phase10_report.md -text whitespace=cr-at-eol
