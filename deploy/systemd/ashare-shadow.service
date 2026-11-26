@@ -1,0 +1,11 @@
+[Unit]
+Description=A-share shadow collection
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/ashare-leader-rotation
+ExecStart=/usr/bin/docker compose run --rm --no-deps worker DailyAll
+SuccessExitStatus=10

@@ -1,0 +1,89 @@
+services:
+  cockpit:
+    image: ashare-shadow-cockpit:phase10-local
+    build:
+      context: .
+      target: local
+      additional_contexts:
+        phase10_evidence: ${SHADOW_LOCAL_BUILD_INPUTS:?local wrapper must stage signed build inputs}
+    pull_policy: never
+    restart: unless-stopped
+    networks: [local_ingress]
+    ports:
+      - "127.0.0.1:8000:8000"
+    user: "0:0"
+    entrypoint: ["bash", "deploy/run_local_cockpit.sh"]
+    command: ["ServeApi", "--host", "0.0.0.0", "--port", "8000", "--python", "python"]
+    cap_drop: [ALL]
+    cap_add: [NET_ADMIN, SETUID, SETGID, SETPCAP]
+    sysctls:
+      net.ipv6.conf.all.disable_ipv6: "1"
+      net.ipv6.conf.default.disable_ipv6: "1"
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      PHASE7A_DIR: /data/shadow
+      PHASE7A_API_READ_ONLY: "${PHASE7A_API_READ_ONLY:-1}"
+      PHASE7A_HEALTH_PUBLIC: "${PHASE7A_HEALTH_PUBLIC:-1}"
+      PHASE7A_SQLITE_TIMEOUT_MS: "${PHASE7A_SQLITE_TIMEOUT_MS:-30000}"
+      PHASE7A_ALLOWED_HOSTS: "${PHASE7A_ALLOWED_HOSTS:-localhost,127.0.0.1,[::1]}"
+      PHASE7A_BASIC_AUTH_USER: "${PHASE7A_BASIC_AUTH_USER:-}"
+      PHASE7A_BASIC_AUTH_PASS: "${PHASE7A_BASIC_AUTH_PASS:-}"
+      PHASE7A_TRUST_PROXY_HEADERS: "${PHASE7A_TRUST_PROXY_HEADERS:-0}"
+      PHASE7A_UVICORN_FORWARDED_ALLOW_IPS: "${PHASE7A_UVICORN_FORWARDED_ALLOW_IPS:-}"
+      TUSHARE_TOKEN: ""
+      TUSHARE_HTTP_URL: ""
+    volumes:
+      - type: bind
+        source: ${SHADOW_RUNTIME_DIR:?local wrapper must supply the isolated run directory}
+        target: /data/shadow
+        bind:
+          create_host_path: false
+  shadow-daily:
+    image: ashare-shadow-cockpit:phase10-local
+    pull_policy: never
+    profiles: [jobs]
+    user: "10001:10001"
+    entrypoint: ["bash", "deploy/run_daily_shadow.sh"]
+    environment:
+      PYTHON_BIN: python
+      PHASE7A_DIR: /data/shadow
+      PHASE7A_SQLITE_WAL: "1"
+      TUSHARE_TOKEN: ""
+      TUSHARE_HTTP_URL: ""
+      SHADOW_NOTIFY_WEBHOOK_URL: ""
+      SHADOW_SMTP_HOST: ""
+    command: ["Healthcheck"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    healthcheck:
+      disable: true
+    network_mode: none
+    volumes:
+      - type: bind
+        source: ${SHADOW_RUNTIME_DIR:?local wrapper must supply the isolated run directory}
+        target: /data/shadow
+        bind:
+          create_host_path: false
+  shadow-volume-init:
+    image: ashare-shadow-cockpit:phase10-local
+    pull_policy: never
+    profiles: [jobs]
+    user: "0:0"
+    network_mode: none
+    entrypoint: ["python", "-B", "/app/deploy/local_docker.py", "--init-mounted-volume"]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, DAC_OVERRIDE, FOWNER]
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      PHASE9B_OPERATOR_GID: "${PHASE9B_OPERATOR_GID:-10001}"
+    healthcheck:
+      disable: true
+    volumes:
+      - type: bind
+        source: ${SHADOW_RUNTIME_DIR:?local wrapper must supply the isolated run directory}
+        target: /data/shadow
+        bind:
+          create_host_path: false
+networks:
+  local_ingress:
+    driver: bridge

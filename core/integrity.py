@@ -15,6 +15,7 @@ APPROVED_INPUT_PROTOCOL = {
     "inputs.py": "3d7368c679d4ed6935bbd0769cd0acf96f29b5a6bdbe9ba77d46de0878dc2c75",
     "offline/input.js": "ee9336ef3e41da02d0dd1e9045eeb6e623465d6ec1727d52123b38ebd3b2ffca",
 }
+APPROVED_ENGINE_LOCK_SHA256 = "441c57845c62484caeef7ef87b610371e3ab40d71b649bc2807be5adc70f18c0"
 EVIDENCE_FILES = ("data/verified_actions_override.csv", "data/verified/calendar_lookahead.csv")
 
 
@@ -56,10 +57,11 @@ def verify_required_sha_manifest(actual_map, expected_map, required_keys, label)
     return {key: actual_map[key] for key in sorted(keys)}
 
 
-def verify_frozen_locks(root, lock_path=None, include_protocol=True) -> dict:
+def verify_frozen_locks(root, lock_path=None, include_protocol=True, *, exact_lock_bytes=False) -> dict:
     root = Path(root)
     try:
-        lock = json.loads((root / (lock_path or "engine_integrity.json")).read_text(encoding="utf8"))
+        lock_bytes = (root / (lock_path or "engine_integrity.json")).read_bytes()
+        lock = json.loads(lock_bytes.decode("utf-8"))
         if not isinstance(lock, dict) or lock.keys() != APPROVED_V4.keys():
             raise IntegrityError("engine_integrity.json differs from the approved v4.0 key set")
         verify_required_sha_manifest(lock, APPROVED_V4, APPROVED_V4, "engine_integrity.json")
@@ -68,7 +70,34 @@ def verify_frozen_locks(root, lock_path=None, include_protocol=True) -> dict:
     except (OSError, ValueError) as exc:
         raise IntegrityError(f"Frozen file verification failed: {exc}") from exc
     verify_required_sha_manifest(actual, expected, expected, "v4.0")
+    if exact_lock_bytes and hashlib.sha256(lock_bytes).hexdigest() != APPROVED_ENGINE_LOCK_SHA256:
+        raise IntegrityError("engine_integrity.json differs from the approved bytes")
     return actual
+
+
+def inspect_protected_manifest(root, manifest_path):
+    """Validate the manifest structure and compare every declared protected file."""
+    try:
+        manifest = json.loads(manifest_path.read_bytes())
+        before = manifest.get("protected_before") if isinstance(manifest, dict) else None
+        if not isinstance(before, dict) or not before:
+            raise IntegrityError("protected_before must be a non-empty manifest")
+        if manifest.get("protected_after", before) != before:
+            raise IntegrityError("protected_after differs from protected_before")
+        actual, missing, changed = {}, [], []
+        for name, digest in sorted(before.items()):
+            if not isinstance(digest, str) or not re.fullmatch("[0-9a-f]{64}", digest):
+                raise IntegrityError(f"Invalid protected SHA-256 for {name}")
+            path = (root / name).resolve()
+            if not path.is_relative_to(root) or not path.is_file():
+                missing.append(name)
+                continue
+            actual[name] = sha256_file(path)
+            if actual[name] != digest:
+                changed.append(name)
+    except (OSError, ValueError) as exc:
+        raise IntegrityError("Could not read protected manifest or protected assets") from exc
+    return actual, missing, changed
 
 
 def table_hashes(root, names):

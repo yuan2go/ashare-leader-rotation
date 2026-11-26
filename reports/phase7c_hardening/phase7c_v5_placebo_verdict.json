@@ -1,0 +1,118 @@
+{
+  "block_weeks": 4,
+  "capital_rmb": 450000,
+  "checks": [
+    {
+      "metric": "sharpe",
+      "p_upper": 0.17412935323383086,
+      "passed": false,
+      "threshold": 0.05,
+      "window": "IS"
+    },
+    {
+      "actual": 1.202229605915919,
+      "inverse_mean_matched": 1.028513663189838,
+      "metric": "sharpe",
+      "passed": true,
+      "permutation_median": 1.0856495291722794,
+      "window": "OOS"
+    },
+    {
+      "actual": -6.948331437082944,
+      "metric": "max_dd_pct",
+      "passed": true,
+      "permutation_median": -9.985514044114957,
+      "window": "OOS"
+    }
+  ],
+  "default_focus_account": "E4M",
+  "draws": 200,
+  "failed_checks": [
+    {
+      "metric": "sharpe",
+      "p_upper": 0.17412935323383086,
+      "passed": false,
+      "threshold": 0.05,
+      "window": "IS"
+    }
+  ],
+  "governing_role": "v5_marginal_vol_cap",
+  "key": "V5_E4_M200_TV15_CAP",
+  "market_http_requests": 0,
+  "pool": "ETF5",
+  "scenario": "2bp",
+  "selection_coverage": {
+    "phase4b": {
+      "outside_historical_scope": [
+        "A2",
+        "A4"
+      ],
+      "tested": [
+        "B2",
+        "B4"
+      ]
+    },
+    "phase4c": {
+      "coverage_pct": 100,
+      "draws": {
+        "E2O": {
+          "IS": 200,
+          "OOS": 200
+        },
+        "E4M": {
+          "IS": 200,
+          "OOS": 200
+        }
+      },
+      "selected": [
+        "E4M",
+        "E2O"
+      ]
+    },
+    "phase6a_plus_7c": {
+      "coverage_pct": 100,
+      "draws": {
+        "V4_E4_TV15_IDX20": {
+          "IS": 200,
+          "OOS": 200
+        },
+        "V5_E4_M200_TV15_CAP": {
+          "IS": 200,
+          "OOS": 200
+        }
+      },
+      "selected": [
+        "V4_E4_TV15_IDX20",
+        "V5_E4_M200_TV15_CAP"
+      ]
+    }
+  },
+  "signed_regression": {
+    "IS": {
+      "first": "2016-01-04",
+      "joint_exact_match": true,
+      "last": "2023-01-20",
+      "max_abs_error": 0.0,
+      "metric_abs_errors": {
+        "calmar": 0.0,
+        "max_dd_pct": 0.0,
+        "sharpe": 0.0
+      },
+      "sessions": 1717
+    },
+    "OOS": {
+      "first": "2023-01-30",
+      "joint_exact_match": true,
+      "last": "2026-11-20",
+      "max_abs_error": 0.0,
+      "metric_abs_errors": {
+        "calmar": 0.0,
+        "max_dd_pct": 0.0,
+        "sharpe": 0.0
+      },
+      "sessions": 926
+    }
+  },
+  "v5_risk_label": "OBSERVATION · 波动率待验",
+  "verdict": "UNVERIFIED_OBSERVATION"
+}

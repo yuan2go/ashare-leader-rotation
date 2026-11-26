@@ -30,7 +30,10 @@ test("desktop shows all six accounts and switches to signed numbers for either c
   await expect(page.getByRole("status").filter({hasText:"API 正常"})).toBeVisible();
   await expect(page.getByLabel("账簿来源状态")).toContainText("历史补采");
   await expect(page.getByLabel("账簿来源状态")).toContainText("等待上游发布");
-  await expect(page.getByRole("region",{name:"六线账户对照"}).getByRole("row")).toHaveCount(7);
+  const table = page.getByRole("region",{name:"六线账户对照"});
+  await expect(table.getByRole("row")).toHaveCount(7);
+  await expect(table.getByText("OBSERVATION · 波动率待验")).toHaveClass(/risk-observer/);
+  await expect(page.getByRole("button",{name:"E4M",exact:true})).toHaveAttribute("aria-pressed","true");
   const chart = page.getByRole("img",{name:"六线净值曲线"});
   await expect(chart.locator("canvas").first()).toBeVisible();
   await expect(page.getByText("57.30%")).toBeVisible();
@@ -40,12 +43,14 @@ test("desktop shows all six accounts and switches to signed numbers for either c
     await page.screenshot({path:join(screenshots,"dashboard-desktop.png"),fullPage:true,animations:"disabled"});
   }
   const overview = await (await page.request.get("/api/v1/shadow/overview")).json() as Overview;
-  const v5 = overview.accounts.find((row) => row.account === "V5" && row.capital_rmb === 2000000);
-  expect(v5).toBeDefined();
+  const e4m = overview.accounts.find((row) => row.account === "E4M" && row.capital_rmb === 2000000);
+  expect(e4m).toBeDefined();
   const nav = new Intl.NumberFormat("zh-CN", {style:"currency",currency:"CNY",currencyDisplay:"narrowSymbol"})
-    .format((v5?.nav_cents ?? NaN) / 100);
+    .format((e4m?.nav_cents ?? NaN) / 100);
   await page.getByRole("button",{name:"¥200 万"}).click();
   await expect(page.locator(".kpi-value").first()).toHaveText(nav);
+  await page.getByRole("button",{name:"超额",exact:true}).click();
+  await expect(page.getByRole("img",{name:"六线超额曲线"})).toBeVisible();
   await page.getByRole("button",{name:"回撤",exact:true}).click();
   await expect(page.getByRole("img",{name:"六线回撤曲线"})).toBeVisible();
   expect(errors).toEqual([]);
@@ -86,7 +91,10 @@ test("routes, refreshes, CSV/Markdown downloads, audit tabs and archive tabs wor
   await page.getByRole("button",{name:"因子法庭",exact:true}).click();
   await expect(page.getByRole("img",{name:"五分组收益"})).toBeVisible();
   await page.getByRole("button",{name:"置换检验",exact:true}).click();
-  await expect(page.getByRole("region",{name:"置换检验档案"})).toBeVisible();
+  const placebos = page.getByRole("region",{name:"置换检验档案"});
+  await expect(placebos.getByText("phase7c_addendum").first()).toBeVisible();
+  await expect(placebos.getByText("波动率边际置换 · 固定 M200").first()).toBeVisible();
+  await expect(placebos.getByText("联合进攻仓位置换").first()).toBeVisible();
   await page.getByRole("button",{name:"数据覆盖",exact:true}).click();
   await expect(page.getByRole("region",{name:"ETF 覆盖明细"}).getByRole("row")).toHaveCount(6);
   expect((await page.goto("/ops"))?.status()).toBe(200);
@@ -96,6 +104,7 @@ test("routes, refreshes, CSV/Markdown downloads, audit tabs and archive tabs wor
   await expect(page.getByRole("button",{name:"提交任务"})).toBeDisabled();
   expect((await page.request.get("/api/v1/no-such-resource")).status()).toBe(404);
   expect((await page.request.get("/assets/missing.js")).status()).toBe(404);
+  expect((await page.request.get("/future/nested/route")).status()).toBe(200);
 });
 
 test("narrow viewport resizes the chart and keeps page-level scrolling in bounds", async ({page}) => {
@@ -103,6 +112,21 @@ test("narrow viewport resizes the chart and keeps page-level scrolling in bounds
   await page.goto("/");
   await expect(page.getByRole("img",{name:"六线净值曲线"}).locator("canvas").first()).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  const cards = page.getByRole("list",{name:"六线账户对照"}).getByRole("listitem");
+  await expect(cards).toHaveCount(6);
+  for (const card of await cards.all()) {
+    for (const metric of ["最新净值", "累计收益", "最大回撤", "超额 · 等权"]) {
+      const value = card.locator("dl > div").filter({has:page.getByText(metric,{exact:true})}).locator("dd");
+      await expect(value).toBeVisible();
+      await expect(value).not.toHaveText("");
+      expect(await value.evaluate((element) => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const bounds = range.getBoundingClientRect();
+        return bounds.left >= 0 && bounds.right <= window.innerWidth && element.scrollWidth <= element.clientWidth;
+      })).toBe(true);
+    }
+  }
   const screenshots = process.env.PHASE7B_SCREENSHOTS;
   if (screenshots) {
     await mkdir(screenshots,{recursive:true});

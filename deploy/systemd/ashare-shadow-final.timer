@@ -1,0 +1,9 @@
+[Unit]
+Description=A-share shadow collection final slot with pending notifications
+
+[Timer]
+OnCalendar=Mon..Fri *-*-* 22:00:00 Asia/Shanghai
+Unit=ashare-shadow-final.service
+
+[Install]
+WantedBy=timers.target

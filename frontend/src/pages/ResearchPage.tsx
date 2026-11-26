@@ -206,8 +206,22 @@ function placeboValue(row: Schema["Placebo"], field: "actual" | "inverse" | "per
   return row.metric_unit === "pct" ? pct(row[field]) : decimal(row[field], 4);
 }
 
+const placeboRoles: Record<string, string> = {
+  v5_marginal_vol_cap: "波动率边际置换 · 固定 M200",
+  v5_joint_attack_weight: "联合进攻仓位置换",
+  signed_m200: "签发 M200 状态置换",
+  M200_HYST_HALF: "M200 迟滞减半",
+  is_first: "样本内首选",
+  index_volatility: "指数波动率置换",
+  defense_volatility: "防御波动率置换",
+};
+
 const placeboColumns: Column<Schema["Placebo"]>[] = [
   {title: "组合 / 来源", render: (row) => <div className="cell-stack"><strong className="mono">{row.key}</strong><span className="muted">{row.source}</span></div>},
+  {title: "检验角色", render: (row) => {
+    const role = row.method === "phase4c_same_state_run_lengths" ? "signed_m200" : row.timing;
+    return role ? placeboRoles[role] ?? role : "—";
+  }},
   {title: "窗口 / 类型", render: (row) => `${row.window} · ${row.kind}`},
   {title: "检验方法", render: (row) => text(row.method ?? row.timing)},
   {title: "指标 / 样本", render: (row) => text(row.metric ?? (row.draw == null ? null : String(row.draw)))},

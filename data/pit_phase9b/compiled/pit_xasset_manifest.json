@@ -1,0 +1,548 @@
+{
+  "compiled_sha256": {
+    "pit_tr_index.csv": "fad19f53fe0fccad84d69489d0caff0378a5a076a7da603ce176881db2f8949c",
+    "pit_xasset_actions_compiled.json": "ed709321a6dda7c800ace9547fd8c320e6aa58a92463f4081cb7e58d14ab3f89",
+    "pit_xasset_etf_panel.npz": "5c0b406d0c46ecc58b8545c6695a172f9b3e532303217624ffb88a0e9a532a20",
+    "pit_xasset_reconciliation_audit.csv": "6e20a71d2db9cbc560e045ea17e810fb33fe027597c4d3758022f688a0fd8b76"
+  },
+  "completed_at_utc": "2026-11-26T08:15:02.193482+00:00",
+  "eligible_etfs": [
+    "518880.SH",
+    "511010.SH",
+    "510880.SH"
+  ],
+  "etfs": {
+    "510880.SH": {
+      "blockers": [],
+      "list_date": "20070118",
+      "reconstruction_error_bp": 0.14053898200897347,
+      "rows": 2887,
+      "status": "verified",
+      "units": {
+        "amount_rmb_per_unit": 1000,
+        "max_code_median_ratio": 0.09992992246232636,
+        "median_ratio": 0.09992992246232636,
+        "min_code_median_ratio": 0.09992992246232636,
+        "observations": 2887,
+        "vol_shares_per_unit": 100,
+        "vwap_in_range_fraction": 1.0
+      }
+    },
+    "511010.SH": {
+      "blockers": [],
+      "list_date": "20130325",
+      "reconstruction_error_bp": 0.1173169741739036,
+      "rows": 2887,
+      "status": "verified",
+      "units": {
+        "amount_rmb_per_unit": 1000,
+        "max_code_median_ratio": 0.10000042206434362,
+        "median_ratio": 0.10000042206434362,
+        "min_code_median_ratio": 0.10000042206434362,
+        "observations": 2887,
+        "vol_shares_per_unit": 100,
+        "vwap_in_range_fraction": 1.0
+      }
+    },
+    "513100.SH": {
+      "factor_rows": 2887,
+      "missing_adjustment": [],
+      "missing_daily": [
+        "20220113"
+      ],
+      "rows": 2886,
+      "status": "quarantined_pending_announcement_evidence",
+      "undocumented_factor_change_dates": [
+        "20220114"
+      ]
+    },
+    "518880.SH": {
+      "blockers": [],
+      "list_date": "20130729",
+      "reconstruction_error_bp": 0.0,
+      "rows": 2887,
+      "status": "verified",
+      "units": {
+        "amount_rmb_per_unit": 1000,
+        "max_code_median_ratio": 0.10000439601088647,
+        "median_ratio": 0.10000439601088647,
+        "min_code_median_ratio": 0.10000439601088647,
+        "observations": 2887,
+        "vol_shares_per_unit": 100,
+        "vwap_in_range_fraction": 1.0
+      }
+    }
+  },
+  "http_budget": 128,
+  "index": {
+    "annual_dividend_uplift": [
+      {
+        "annualized_excess_pct": 1.5694629212317888,
+        "elapsed_days": 360,
+        "first": "2015-01-05",
+        "last": "2015-12-31",
+        "linked_excess_pct": 1.546730341479341,
+        "linked_return_difference_pp": 1.5847281381117462,
+        "price_linked_return_pct": 2.456652954519245,
+        "tr_linked_return_pct": 4.041381092630991,
+        "within_expected_range": true,
+        "year": "2015"
+      },
+      {
+        "annualized_excess_pct": 2.281666298340425,
+        "elapsed_days": 365,
+        "first": "2015-12-31",
+        "last": "2016-12-30",
+        "linked_excess_pct": 2.2800869124789847,
+        "linked_return_difference_pp": 2.0228544859979714,
+        "price_linked_return_pct": -11.281693915840252,
+        "tr_linked_return_pct": -9.258839429842281,
+        "within_expected_range": true,
+        "year": "2016"
+      },
+      {
+        "annualized_excess_pct": 2.0404063049362797,
+        "elapsed_days": 364,
+        "first": "2016-12-30",
+        "last": "2017-12-29",
+        "linked_excess_pct": 2.033352878493555,
+        "linked_return_difference_pp": 2.476115516928812,
+        "price_linked_return_pct": 21.775002416860012,
+        "tr_linked_return_pct": 24.251117933788823,
+        "within_expected_range": true,
+        "year": "2017"
+      },
+      {
+        "annualized_excess_pct": 2.2470294053457107,
+        "elapsed_days": 364,
+        "first": "2017-12-29",
+        "last": "2018-12-28",
+        "linked_excess_pct": 2.2392539032185077,
+        "linked_return_difference_pp": 1.6725032595419798,
+        "price_linked_return_pct": -25.30979818152499,
+        "tr_linked_return_pct": -23.63729492198301,
+        "within_expected_range": true,
+        "year": "2018"
+      },
+      {
+        "annualized_excess_pct": 2.2733595239681663,
+        "elapsed_days": 368,
+        "first": "2018-12-28",
+        "last": "2019-12-31",
+        "linked_excess_pct": 2.2906704165615244,
+        "linked_return_difference_pp": 3.116906520212437,
+        "price_linked_return_pct": 36.06961951737997,
+        "tr_linked_return_pct": 39.18652603759241,
+        "within_expected_range": true,
+        "year": "2019"
+      },
+      {
+        "annualized_excess_pct": 2.103271410104843,
+        "elapsed_days": 366,
+        "first": "2019-12-31",
+        "last": "2020-12-31",
+        "linked_excess_pct": 2.1076354390959118,
+        "linked_return_difference_pp": 2.681138776102543,
+        "price_linked_return_pct": 27.210746525150252,
+        "tr_linked_return_pct": 29.891885301252795,
+        "within_expected_range": true,
+        "year": "2020"
+      },
+      {
+        "annualized_excess_pct": 1.7753697347674728,
+        "elapsed_days": 365,
+        "first": "2020-12-31",
+        "last": "2021-12-31",
+        "linked_excess_pct": 1.7741438441503776,
+        "linked_return_difference_pp": 1.6819112011277726,
+        "price_linked_return_pct": -5.198712794720695,
+        "tr_linked_return_pct": -3.516801593592922,
+        "within_expected_range": true,
+        "year": "2021"
+      },
+      {
+        "annualized_excess_pct": 2.2998429348741163,
+        "elapsed_days": 364,
+        "first": "2021-12-31",
+        "last": "2022-12-30",
+        "linked_excess_pct": 2.2918826392587466,
+        "linked_return_difference_pp": 1.7960844193113723,
+        "price_linked_return_pct": -21.63279268556808,
+        "tr_linked_return_pct": -19.836708266256707,
+        "within_expected_range": true,
+        "year": "2022"
+      },
+      {
+        "annualized_excess_pct": 2.539411252341148,
+        "elapsed_days": 364,
+        "first": "2022-12-30",
+        "last": "2023-12-29",
+        "linked_excess_pct": 2.530611545124839,
+        "linked_return_difference_pp": 2.242674681876433,
+        "price_linked_return_pct": -11.378153387591272,
+        "tr_linked_return_pct": -9.135478705714839,
+        "within_expected_range": true,
+        "year": "2023"
+      },
+      {
+        "annualized_excess_pct": 3.0773769119955117,
+        "elapsed_days": 368,
+        "first": "2023-12-29",
+        "last": "2024-12-31",
+        "linked_excess_pct": 3.1009023528445034,
+        "linked_return_difference_pp": 3.556216990195993,
+        "price_linked_return_pct": 14.683294910393418,
+        "tr_linked_return_pct": 18.239511900589413,
+        "within_expected_range": true,
+        "year": "2024"
+      },
+      {
+        "annualized_excess_pct": 2.823975192274584,
+        "elapsed_days": 365,
+        "first": "2024-12-31",
+        "last": "2025-12-31",
+        "linked_excess_pct": 2.8220152662326248,
+        "linked_return_difference_pp": 3.3204727329827266,
+        "price_linked_return_pct": 17.66317399889705,
+        "tr_linked_return_pct": 20.98364673187978,
+        "within_expected_range": true,
+        "year": "2025"
+      },
+      {
+        "annualized_excess_pct": 2.4202098352153314,
+        "elapsed_days": 324,
+        "first": "2025-12-31",
+        "last": "2026-11-20",
+        "linked_excess_pct": 2.143972163591057,
+        "linked_return_difference_pp": 1.8312306420757651,
+        "price_linked_return_pct": -14.587014086575634,
+        "tr_linked_return_pct": -12.755783444499869,
+        "within_expected_range": true,
+        "year": "2026"
+      }
+    ],
+    "blockers": [],
+    "close_only_tr_index": true,
+    "code": "H00300.CSI",
+    "direct_sessions": 2886,
+    "exact_reference_recovery": [
+      {
+        "available_by": "2021-05-12",
+        "close_source_date": "2021-05-12",
+        "close_source_field": "pre_close",
+        "date": "2021-05-11",
+        "exact_adjacent_pairs_verified": 2884,
+        "pre_close_source_date": "2021-05-10",
+        "pre_close_source_field": "close"
+      }
+    ],
+    "last_page": {
+      "expected_sessions": 213,
+      "missing_from_year_page": [],
+      "null_counts": {
+        "close": 0,
+        "high": 213,
+        "low": 213,
+        "open": 213,
+        "pre_close": 0
+      },
+      "returned_rows": 213,
+      "year": "2026"
+    },
+    "pages": {
+      "2015": {
+        "expected_sessions": 244,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 244,
+          "low": 244,
+          "open": 244,
+          "pre_close": 0
+        },
+        "returned_rows": 244,
+        "year": "2015"
+      },
+      "2016": {
+        "expected_sessions": 244,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 244,
+          "low": 244,
+          "open": 244,
+          "pre_close": 0
+        },
+        "returned_rows": 244,
+        "year": "2016"
+      },
+      "2017": {
+        "expected_sessions": 244,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 244,
+          "low": 244,
+          "open": 244,
+          "pre_close": 0
+        },
+        "returned_rows": 244,
+        "year": "2017"
+      },
+      "2018": {
+        "expected_sessions": 243,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 243,
+          "low": 243,
+          "open": 243,
+          "pre_close": 0
+        },
+        "returned_rows": 243,
+        "year": "2018"
+      },
+      "2019": {
+        "expected_sessions": 244,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 244,
+          "low": 244,
+          "open": 244,
+          "pre_close": 0
+        },
+        "returned_rows": 244,
+        "year": "2019"
+      },
+      "2020": {
+        "expected_sessions": 243,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 243,
+          "low": 243,
+          "open": 243,
+          "pre_close": 0
+        },
+        "returned_rows": 243,
+        "year": "2020"
+      },
+      "2021": {
+        "expected_sessions": 243,
+        "missing_from_year_page": [
+          "20210511"
+        ],
+        "null_counts": {
+          "close": 0,
+          "high": 171,
+          "low": 171,
+          "open": 171,
+          "pre_close": 0
+        },
+        "remaining_missing_dates": [
+          "20210511"
+        ],
+        "returned_rows": 242,
+        "year": "2021"
+      },
+      "2022": {
+        "expected_sessions": 242,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 1,
+          "low": 1,
+          "open": 1,
+          "pre_close": 0
+        },
+        "returned_rows": 242,
+        "year": "2022"
+      },
+      "2023": {
+        "expected_sessions": 242,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 213,
+          "low": 213,
+          "open": 213,
+          "pre_close": 0
+        },
+        "returned_rows": 242,
+        "year": "2023"
+      },
+      "2024": {
+        "expected_sessions": 242,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 242,
+          "low": 242,
+          "open": 242,
+          "pre_close": 0
+        },
+        "returned_rows": 242,
+        "year": "2024"
+      },
+      "2025": {
+        "expected_sessions": 243,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 243,
+          "low": 243,
+          "open": 243,
+          "pre_close": 0
+        },
+        "returned_rows": 243,
+        "year": "2025"
+      },
+      "2026": {
+        "expected_sessions": 213,
+        "missing_from_year_page": [],
+        "null_counts": {
+          "close": 0,
+          "high": 213,
+          "low": 213,
+          "open": 213,
+          "pre_close": 0
+        },
+        "returned_rows": 213,
+        "year": "2026"
+      }
+    },
+    "provider_intraday_fields_used": false,
+    "sessions": 2887,
+    "status": "verified"
+  },
+  "interval_seconds": 1.1,
+  "market_http_requests_cumulative": 128,
+  "phase8_manifest_sha256": "c9ed3b12e0fd01b37f0b0e178444ab12b55e8fdb64a345655cc97589cb0b55f4",
+  "receipt_sha256": {
+    "raw/fund_adj/510880.SH/20150101_20151231/0103.receipt.json": "d1d8e05fc3f510d73f6a0c8d101df820c09b799fd240276680c1e29ccd616d2d",
+    "raw/fund_adj/510880.SH/20160101_20161231/0106.receipt.json": "1a7d70d0ac60f1484afabc2cde78069c59f7f0ca2f40e2a5aa3f6c4232e2d642",
+    "raw/fund_adj/510880.SH/20170101_20171231/0108.receipt.json": "16f12371d8230d0b5d5ffe2596c5ba8eabbfa6051fa2423b763b59f6f562043f",
+    "raw/fund_adj/510880.SH/20180101_20181231/0110.receipt.json": "c147efb86ed2a6dbebc5dbfd13c10534011d38c3337a75241c5216aa9476336c",
+    "raw/fund_adj/510880.SH/20190101_20191231/0112.receipt.json": "fc41ecd6d19c783bcaacc9501fdfa2a81784da0d94692e18c771201f3cda221f",
+    "raw/fund_adj/510880.SH/20200101_20201231/0114.receipt.json": "26815f76c96076c9bc4f04efab61638a469ac9d6ffcb63f17de5ae61e6bcba5d",
+    "raw/fund_adj/510880.SH/20210101_20211231/0116.receipt.json": "884cd748922c8f872dfe1f18d6c0d0b9a379a17e22ad5c0f1eac5932ac94bedd",
+    "raw/fund_adj/510880.SH/20220101_20221231/0118.receipt.json": "fe6628a3e3afd97b2bea91617b08231b6e2927b9bfaf94f8f45f59060a32fd40",
+    "raw/fund_adj/510880.SH/20230101_20231231/0121.receipt.json": "78228da7db6102f9af3447f3e59c470353d7c3b24e0c2d68f6c4e0088fb1c7b1",
+    "raw/fund_adj/510880.SH/20240101_20241231/0123.receipt.json": "4393ff8e0aff670dda9f3f27184ad8cb5b50417a098fd063f07d9b281d56337c",
+    "raw/fund_adj/510880.SH/20250101_20251231/0125.receipt.json": "06b56b301dafbd7ec57eb8ab56ee3a80cefae1e8f23c5e076507169c45da65ee",
+    "raw/fund_adj/510880.SH/20260101_20261120/0127.receipt.json": "f84e6850acdb9fffb03d8265e34761ae54890715fdca40f8e1bb5954e0e682ad",
+    "raw/fund_adj/511010.SH/20150101_20151231/0021.receipt.json": "7da32026d49201447678f15d856d3af9745d1afdb22cd3882956c7aa41ca38ed",
+    "raw/fund_adj/511010.SH/20160101_20161231/0023.receipt.json": "8b8d17a056c73007e749e8383503ab8706fb5cb0c2b1ac32e7febcc61714f197",
+    "raw/fund_adj/511010.SH/20170101_20171231/0025.receipt.json": "2db55d98743f0c04b341c6f01759633efa8f0a3d75070fe52e9396e277d902c3",
+    "raw/fund_adj/511010.SH/20180101_20181231/0064.receipt.json": "bc7e7455def4b983a9be6a57b0f41f7f26696426ab9c4199eaf3ef7a8f531ae5",
+    "raw/fund_adj/511010.SH/20190101_20191231/0066.receipt.json": "5748ee483e0f997a36b441cfd8113a6bb538e5029553a21fbf2f341b679bae2b",
+    "raw/fund_adj/511010.SH/20200101_20201231/0068.receipt.json": "7b4aa9779604f8faff14259675636e7b617918c656d3f01da93bbc1f20018813",
+    "raw/fund_adj/511010.SH/20210101_20211231/0070.receipt.json": "a664b7bf868e62dac8207c35a75675115c65418a591766338077e4939600bd0c",
+    "raw/fund_adj/511010.SH/20220101_20221231/0072.receipt.json": "7e1ae9a4f63b88c4f564c34661617d5ca612e8ba84fc4a648f1f8bcf53cb071a",
+    "raw/fund_adj/511010.SH/20230101_20231231/0074.receipt.json": "f6f5ba49b3fc88df7d848cff2b55b83966456bd3a99ae70b8d989fa83de1ec07",
+    "raw/fund_adj/511010.SH/20240101_20241231/0076.receipt.json": "f1e026ab58c5afb09b42390d3336f22d1de2d13501069c05d8a6b7b233917bfc",
+    "raw/fund_adj/511010.SH/20250101_20251231/0078.receipt.json": "a2cb98953cba8b3ec18a4bbb0bfa11929dc0703b2a98607d353f2e549128e700",
+    "raw/fund_adj/511010.SH/20260101_20261120/0080.receipt.json": "75d27b246813016e12afea0c6a6ada0758b7c937a9dfc87b6848f84e2164cee5",
+    "raw/fund_adj/513100.SH/20150101_20151231/0030.receipt.json": "9fc7d516fc2c0df8d501d8007acc617d542f39588d8e1216946ae2a49a57e6f0",
+    "raw/fund_adj/513100.SH/20160101_20161231/0032.receipt.json": "03135dcb9e2b14dc94d97525d62404fa1d02f55b1070b873ca8d74860c9b7043",
+    "raw/fund_adj/513100.SH/20170101_20171231/0081.receipt.json": "0b9742b39bc5a86595bd7ff3111d026b5a787833b61324bb4fb2998ef6d50581",
+    "raw/fund_adj/513100.SH/20180101_20181231/0083.receipt.json": "062728528d7b6cede1e66b39f9b49dfd4868a42bf9451c7ba5791b5a6437d830",
+    "raw/fund_adj/513100.SH/20190101_20191231/0085.receipt.json": "c651d73d4075ea228d8a620f37110f75e7891b2b620d33464b4023df068df819",
+    "raw/fund_adj/513100.SH/20200101_20201231/0087.receipt.json": "3959f7daa4395bd7b94417b757677cfe3ddc13d7a9f696178ce0056350ea774a",
+    "raw/fund_adj/513100.SH/20210101_20211231/0089.receipt.json": "3419ff438801b27d4907aef5b8f43357a0ec0b8738471063323e13e810e6e129",
+    "raw/fund_adj/513100.SH/20220101_20221231/0091.receipt.json": "319e9b29677b3897b3ccce716db3591628ebc5e8519a188af1088ee7b3373071",
+    "raw/fund_adj/513100.SH/20230101_20231231/0093.receipt.json": "9badcab714561e85a5430a7aaeed953584a0140aa5c3065d23b35301d6a783b2",
+    "raw/fund_adj/513100.SH/20240101_20241231/0095.receipt.json": "7baba04cfd815b8aac8c1217fa45f260dc312a3eb4a78a2673313eefbfd8d826",
+    "raw/fund_adj/513100.SH/20250101_20251231/0098.receipt.json": "f8518e06053730930ac7edd02619042e908f97b86042a78899d24dd8c21b8be2",
+    "raw/fund_adj/513100.SH/20260101_20261120/0100.receipt.json": "e75db26b802d16bc1e6605c087a5e641aa53023dedb174e709b6b02ac6059517",
+    "raw/fund_adj/518880.SH/20150101_20151231/0039.receipt.json": "63c8fb2c9df92577be3c06502b0d62a31dadd73e9df2df8917ff6a1fe67efa85",
+    "raw/fund_adj/518880.SH/20160101_20161231/0041.receipt.json": "40a05cfda2921399ab4e25a46e50a5ec20b413fae60f2d5be9e3365468c1546f",
+    "raw/fund_adj/518880.SH/20170101_20171231/0043.receipt.json": "42a1a04deb8a2e1ffc225c9836fc68a3ab9d53ccef0d4ab8df886041399af83b",
+    "raw/fund_adj/518880.SH/20180101_20181231/0045.receipt.json": "0ca396abd4bbf1a7d3e9953d21f81f74d60789ebbb8ee1c14825421feb4656ce",
+    "raw/fund_adj/518880.SH/20190101_20191231/0047.receipt.json": "a4d051c6b8671645322575d7c2ebadb82ac4ee92f3730aba5658a804333175ee",
+    "raw/fund_adj/518880.SH/20200101_20201231/0049.receipt.json": "6ed9046fd1fa943cbf41f8cc69c1d9b0edaa99d830c081bbe66aea6e79c4af52",
+    "raw/fund_adj/518880.SH/20210101_20211231/0051.receipt.json": "397f5138f826d432ae051ac07fbebe4f51f0195b16c4bb3911bbe6585d4a51c4",
+    "raw/fund_adj/518880.SH/20220101_20221231/0053.receipt.json": "4c55b88a21a3a47940287bbddbc27fe0cf01bf491d7a010c9037fb871bd81fbf",
+    "raw/fund_adj/518880.SH/20230101_20231231/0056.receipt.json": "b7d8b9ad770f2f137a8c5e7928ca56d495b6d91caf5e63d4b8f36912e5692e5e",
+    "raw/fund_adj/518880.SH/20240101_20241231/0058.receipt.json": "3ffe17b32675ca32f568b13c7932c511ede78fc4f1d466fcfcae3c3862e78fe5",
+    "raw/fund_adj/518880.SH/20250101_20251231/0060.receipt.json": "6a96e8323c73d9abdbfab632774dbf5ec6f84e863d93a2e6daa0b4df3b3dbf2b",
+    "raw/fund_adj/518880.SH/20260101_20261120/0062.receipt.json": "4128d599d6974b513d04d4a62ad571fb1eacd515e85259711295d441d04630df",
+    "raw/fund_basic/510880.SH/all/0035.receipt.json": "e4977e61a00d0f704a193331dcb027dd80c4af8992de7c7cf326e3b82dcc35ab",
+    "raw/fund_basic/511010.SH/all/0018.receipt.json": "62a41f52d1de4397dc56bdfe8e2753235426d722b038d2f0477968255e33b09e",
+    "raw/fund_basic/513100.SH/all/0027.receipt.json": "0ff249a345c3b2e53f9d30440a2a49c304dd2c626e20ff4705052573689f1ad2",
+    "raw/fund_basic/518880.SH/all/0014.receipt.json": "e2f9c57ee3856c95375af18553929e971d2df76533c2e38e109373db53f52226",
+    "raw/fund_daily/510880.SH/20150101_20151231/0102.receipt.json": "f8e5a53dbcc31a17c50da18d1430605cdd49e830950f3d3e9e3d839903e5ea6e",
+    "raw/fund_daily/510880.SH/20160101_20161231/0105.receipt.json": "bf2cac5d16dd2ebc9a6bc701d79b9ddca27c667f4b6efc4e01ef181b4b76a253",
+    "raw/fund_daily/510880.SH/20170101_20171231/0107.receipt.json": "fcb58ea581d064ff1d6ec3766f708c6de200151da4e0312208061f55ae33cc40",
+    "raw/fund_daily/510880.SH/20180101_20181231/0109.receipt.json": "7ff8d80dc839d04bb415081764589023ad334d0131be378cf61b5f08173dbdb8",
+    "raw/fund_daily/510880.SH/20190101_20191231/0111.receipt.json": "13117f9527d31236e09ec3b8cf59f74c835d267233f9d9cdf0ee57a294a35de3",
+    "raw/fund_daily/510880.SH/20200101_20201231/0113.receipt.json": "7d6c790520fd68490b5185ece57d2143b31f8153bb24b902ea8ea2e13c911949",
+    "raw/fund_daily/510880.SH/20210101_20211231/0115.receipt.json": "8fe1ec5d773fe243246e15bcacf9a06f988280c90f6ab9061962c7186d4634b9",
+    "raw/fund_daily/510880.SH/20220101_20221231/0117.receipt.json": "b1e03b6664b14e6b0e14e2b87bd5c9138d9a70dd3e6285a1e399947d5a90fce1",
+    "raw/fund_daily/510880.SH/20230101_20231231/0119.receipt.json": "5116df0bc9ecd7e0faefb2e2f932a5df14cd3e7d7beaa1e72eb821a2100a291a",
+    "raw/fund_daily/510880.SH/20240101_20241231/0122.receipt.json": "07008d06d7b9bc5ef6d134c7e7d1270827d771ae98f1084923318664b24c7814",
+    "raw/fund_daily/510880.SH/20250101_20251231/0124.receipt.json": "f82b8e9773326db8882dfa05bf81f31be6525da2e7da9c9370de7a18a50c7be6",
+    "raw/fund_daily/510880.SH/20260101_20261120/0126.receipt.json": "b6ce28644615213420730447af4d84cb024e2c711cd409039257b81d2d541fff",
+    "raw/fund_daily/511010.SH/20150101_20151231/0020.receipt.json": "6197273802779b67ffa3f667d06c14600365889b05c3522bb2a0bee5be0d897a",
+    "raw/fund_daily/511010.SH/20160101_20161231/0022.receipt.json": "bd20cdbdc083373f8140acaff27bdefe4cf92f31f81531c29f11c5943349bdb2",
+    "raw/fund_daily/511010.SH/20170101_20171231/0024.receipt.json": "f64c06da7a57731dcabb38f9f10f24e87e7d6dfc163fea68b27f507c37e6a67f",
+    "raw/fund_daily/511010.SH/20180101_20181231/0063.receipt.json": "96bca6e12c87f6e552846fcceca1c025bbcb35a29e0362132bf9b9d436343c7d",
+    "raw/fund_daily/511010.SH/20190101_20191231/0065.receipt.json": "57eefde1a74e5afbbac4f168360220929c033d3afce6db5d2a5a1f38808f4faa",
+    "raw/fund_daily/511010.SH/20200101_20201231/0067.receipt.json": "43f25096b43583293b326a131a11f93ba3febc756ae2b99345f06659d9841673",
+    "raw/fund_daily/511010.SH/20210101_20211231/0069.receipt.json": "c97b404a55cacba5c69f1666e634bd0e777bd65a235584d1f7ddc0e2af1b1ffc",
+    "raw/fund_daily/511010.SH/20220101_20221231/0071.receipt.json": "b6d193e830ea42cc28574426936bbb9b71dfc931b8cafad3f3178ebe35851aa3",
+    "raw/fund_daily/511010.SH/20230101_20231231/0073.receipt.json": "d164d4ff6dd38c2e1ff15f5a85233546b140b97b7b0a81dd03f1ffdbf590e053",
+    "raw/fund_daily/511010.SH/20240101_20241231/0075.receipt.json": "88ae1309aecfee6b9be52d5638c1153d30db51da33206b1c1526b460543d3381",
+    "raw/fund_daily/511010.SH/20250101_20251231/0077.receipt.json": "56f9633d9702b0bac2e684aa3cd48760163e3300bdc16ca55c9367160e869e47",
+    "raw/fund_daily/511010.SH/20260101_20261120/0079.receipt.json": "d6b6b65615cdb8b832c71a7889b971168ecfe21b25d2309f82ade02a15b76d55",
+    "raw/fund_daily/513100.SH/20150101_20151231/0029.receipt.json": "f6c0b82393e1548b26d7872442095ad0ac3f87c550eb3376305591b016db991e",
+    "raw/fund_daily/513100.SH/20160101_20161231/0031.receipt.json": "d25f6af2c6f8c726ece2e63ec912ec6dbe7bf0a3ed325a2810b8aba444db6541",
+    "raw/fund_daily/513100.SH/20170101_20171231/0033.receipt.json": "69533ac714095ab9456f23706428d4a1e34c2d2ac2ff99235639a10449bf3e08",
+    "raw/fund_daily/513100.SH/20180101_20181231/0082.receipt.json": "0df57e8d5d68de98c7b9f57e63871d07d51a24508a2f40d1924d6d4f13724496",
+    "raw/fund_daily/513100.SH/20190101_20191231/0084.receipt.json": "b58861727878e33d9df515779faee11d25b079fd1211c8fc300dd4b72693779e",
+    "raw/fund_daily/513100.SH/20200101_20201231/0086.receipt.json": "4c4ad7b33ac8c246ea9b87e12190855019e29927c925adc2c4209fec83b7d3ac",
+    "raw/fund_daily/513100.SH/20210101_20211231/0088.receipt.json": "681fc48aa49c58c9270d96e91b611be7f92836f3db553e233206b232a2536ed9",
+    "raw/fund_daily/513100.SH/20220101_20221231/0090.receipt.json": "22bbcff5a3fe04e16919afdcc6b0827459c387cff0a75048482e4918f9f091f5",
+    "raw/fund_daily/513100.SH/20220113_20220113/0128.receipt.json": "a142241d24b9edff61e73f16009ec6e2ca23b8a6e82bdcf415290f4700577c70",
+    "raw/fund_daily/513100.SH/20230101_20231231/0092.receipt.json": "a2c9a3e13f1b95cf60cc3d2f13e25497087fcbb40924ed553ad99d2b135b13bc",
+    "raw/fund_daily/513100.SH/20240101_20241231/0094.receipt.json": "ca006253fabed5ac68388abfef8e6fa5064ee8dd363c54a245e912e186ac9d61",
+    "raw/fund_daily/513100.SH/20250101_20251231/0096.receipt.json": "8990f996768dd97cacaf49bcb14dcc328885d29270c9b55e478ee2c782e88239",
+    "raw/fund_daily/513100.SH/20260101_20261120/0099.receipt.json": "15c1a36cfe6261ba45b96d7bdd93d98abeb7a443c84c53ea6d7c8f727217943b",
+    "raw/fund_daily/518880.SH/20150101_20151231/0016.receipt.json": "5316f99ae9c461baf77ef231db2cb9c4f20e66a8d4016d42d60bd7fc0f001b58",
+    "raw/fund_daily/518880.SH/20160101_20161231/0040.receipt.json": "361e0c2f2ecbebdb9292d803b1d2fa9504f0157597cb3453ea9ff2b68d3aa407",
+    "raw/fund_daily/518880.SH/20170101_20171231/0042.receipt.json": "55d8bccb861aafbb7734de76e71e433578e1047a9c45d6c24dbea291c1cb559f",
+    "raw/fund_daily/518880.SH/20180101_20181231/0044.receipt.json": "192f26e9ae2a6b0fa434c9b9bdbace0de02bf5a9445298cf1253411170a4b4f0",
+    "raw/fund_daily/518880.SH/20190101_20191231/0046.receipt.json": "bf184d621284ec15a5e3ed39b3e26cfc166c1ec9aa88b81d20de3f69f3b110c3",
+    "raw/fund_daily/518880.SH/20200101_20201231/0048.receipt.json": "d6f2a06a0cd0b0cac0ac8c8d896e0640a05923513d31f218ac5dfd60389b0b01",
+    "raw/fund_daily/518880.SH/20210101_20211231/0050.receipt.json": "016a8ec78c4426cad1b60d83692b37f605f339b7ea8e007053085d4bc74967de",
+    "raw/fund_daily/518880.SH/20220101_20221231/0052.receipt.json": "3e5f881ba65c3d35280ac4fcad51ec4ae1aa8c3414c381ac0ad964b118fa174c",
+    "raw/fund_daily/518880.SH/20230101_20231231/0055.receipt.json": "4908117152fd551b9af551ffa6a862a7c94431547629927960d562a5cdb89a39",
+    "raw/fund_daily/518880.SH/20240101_20241231/0057.receipt.json": "0b41e792bd00acb7875a95ec999973770b117ec9aac7428e2ea81231b6789f25",
+    "raw/fund_daily/518880.SH/20250101_20251231/0059.receipt.json": "1b2e45989ad32bcc974df5f08d9afe197cd65a94572c9026838f5cf68688a05b",
+    "raw/fund_daily/518880.SH/20260101_20261120/0061.receipt.json": "dfc2b65641d591caba986dbb1150a80c9a86065e754e7741e12a0635a8e7d600",
+    "raw/fund_div/510880.SH/all/0101.receipt.json": "ec7a87eb280793af053510bd6ee934059bc26de3effcb3886aa460e219c7e183",
+    "raw/fund_div/511010.SH/all/0019.receipt.json": "a9ce31945efcba0f2193bd09738368f512a71a452281202bee7af162dafd60ae",
+    "raw/fund_div/513100.SH/all/0028.receipt.json": "67e970fe0903b15ab8ecfe006f16622166200b58981faff133eb08ed049f2deb",
+    "raw/fund_div/518880.SH/all/0015.receipt.json": "857a18dcba4946ac5ed6cd7961d8cc1835639b987d92cf04a13935b03deb97aa",
+    "raw/index_daily/H00300.CSI/20150101_20151231/0001.receipt.json": "a5e57cbd0203757439c760126388bf247fd130b4d8ccf02e017bbd21c474b1bc",
+    "raw/index_daily/H00300.CSI/20160101_20161231/0002.receipt.json": "ee5bcb70dde2a968f584242e1623a9e432fa5ce127a9f4d45c2d87efbb5bf978",
+    "raw/index_daily/H00300.CSI/20170101_20171231/0003.receipt.json": "d06775438c792b6d83cc2751fcfde8ccc76cd3a622c74fcb6bfe45f897b863ec",
+    "raw/index_daily/H00300.CSI/20180101_20181231/0004.receipt.json": "2f7e71136f1efe90621b705b3d7f842cd7478ac49a9ac2a1dd753fde7c314ecb",
+    "raw/index_daily/H00300.CSI/20190101_20191231/0005.receipt.json": "fb4814f2de0d2bdd137ea456d4d9d555d26af7a083f3e76026affb38d549a76c",
+    "raw/index_daily/H00300.CSI/20200101_20201231/0006.receipt.json": "0cfef7ea5cf6f7d26027bd63214c0e3ab2917a60392328927437d4e101b297ea",
+    "raw/index_daily/H00300.CSI/20210101_20211231/0007.receipt.json": "b369680799324ffd3591425823ffbdd1b45b6b1e0d99e3bfff81e8b3e206f9d2",
+    "raw/index_daily/H00300.CSI/20210510_20210512/0037.receipt.json": "f976fb649a57d7b30f3615b22442529ac7ec448e23b9dc3f55ba8ab3d197cc72",
+    "raw/index_daily/H00300.CSI/20210511_20210511/0008.receipt.json": "48e0f4ac62b445a9da1b84aa1f59290b10534e6282ebe3096c16cbc8705fd979",
+    "raw/index_daily/H00300.CSI/20220101_20221231/0009.receipt.json": "ea739b2d8fc3d94fcd3474ae4d96e2f4aa75759d13dce369c20d72350c12a725",
+    "raw/index_daily/H00300.CSI/20230101_20231231/0010.receipt.json": "d106c6b9db6e154f12565cf0906a28a68971948f51ee4e77713ab3bcaa196bf3",
+    "raw/index_daily/H00300.CSI/20240101_20241231/0011.receipt.json": "1d4d8c69457d05c05ada20a8d322229a6cf8aca24024d24458f1c7d02d601577",
+    "raw/index_daily/H00300.CSI/20250101_20251231/0012.receipt.json": "9a1cc8ea62bbcc2251f0a861f68927122976076b7b28e36866a9edb7b64e648c",
+    "raw/index_daily/H00300.CSI/20260101_20261120/0038.receipt.json": "24e84f03f2353d21c6d16753d496dbc61a0a4878daf6b5146c5fd575b44fe129"
+  },
+  "required_minimum_interval_seconds": 1.05,
+  "stage1_http_budget": 128,
+  "stage1_http_requests": 0,
+  "started_at_utc": "2026-11-26T08:15:00.811543+00:00",
+  "status": "verified"
+}

@@ -1,0 +1,4 @@
+numpy<3
+pandas<3
+tzdata>=2024.1
+-r ../backend/requirements-api.txt

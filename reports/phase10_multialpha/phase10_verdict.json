@@ -1,0 +1,37 @@
+{
+  "cases": {
+    "VPB_M60_FILTER": {
+      "bear_max_dd_pct": -29.668605082917853,
+      "conditions": {
+        "bear_drawdown": false,
+        "calmar": false,
+        "e4m_correlation": true,
+        "volume_sharpe_gain": true
+      },
+      "oos_calmar": 0.1940002830274533,
+      "oos_e4m_correlation": 0.4199304639899114,
+      "oos_novol_sharpe": -0.39734926925918784,
+      "oos_sharpe": 0.4097784926858068,
+      "oos_sharpe_delta": 0.8071277619449946,
+      "passed": false
+    },
+    "VPB_RAW": {
+      "bear_max_dd_pct": -56.728364444444445,
+      "conditions": {
+        "bear_drawdown": false,
+        "calmar": false,
+        "e4m_correlation": true,
+        "volume_sharpe_gain": true
+      },
+      "oos_calmar": -0.005063025719753053,
+      "oos_e4m_correlation": 0.4207426359149257,
+      "oos_novol_sharpe": -0.39734926925918784,
+      "oos_sharpe": 0.1074665127074097,
+      "oos_sharpe_delta": 0.5048157819665975,
+      "passed": false
+    }
+  },
+  "live_weight": 0,
+  "status": "REJECT_ARCHIVE_ONLY",
+  "weight_with_vpb_is_diagnostic": true
+}

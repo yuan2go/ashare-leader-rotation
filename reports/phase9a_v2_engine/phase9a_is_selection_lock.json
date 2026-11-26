@@ -1,0 +1,85 @@
+{
+  "candidates": [
+    {
+      "cagr_pct": 11.391051857724577,
+      "calmar": 0.4284109620260621,
+      "clock": "CONT",
+      "key": "E4M_L3_REAL_FRICTION_NO_MMF_CONT",
+      "max_dd_pct": -26.589076534954792,
+      "model": "E4M",
+      "qualified": true,
+      "sharpe": 0.7682152797963728
+    },
+    {
+      "cagr_pct": 11.88924878605766,
+      "calmar": 0.4474797632660068,
+      "clock": "ANN",
+      "key": "E4M_L3_REAL_FRICTION_NO_MMF_ANN",
+      "max_dd_pct": -26.56935522465187,
+      "model": "E4M",
+      "qualified": true,
+      "sharpe": 0.7889501187780849
+    },
+    {
+      "cagr_pct": 11.344222133985028,
+      "calmar": 0.42253912293101986,
+      "clock": "BAND10",
+      "key": "E4M_L3_REAL_FRICTION_NO_MMF_BAND10",
+      "max_dd_pct": -26.84774383799956,
+      "model": "E4M",
+      "qualified": true,
+      "sharpe": 0.7616225006616266
+    },
+    {
+      "cagr_pct": 10.010789031880286,
+      "calmar": 0.38239796072584953,
+      "clock": "CONT",
+      "key": "V5_L3_REAL_FRICTION_NO_MMF_CONT",
+      "max_dd_pct": -26.178981218619167,
+      "model": "V5",
+      "qualified": true,
+      "sharpe": 0.79283687470103
+    },
+    {
+      "cagr_pct": 10.430716931228744,
+      "calmar": 0.39789183806289163,
+      "clock": "ANN",
+      "key": "V5_L3_REAL_FRICTION_NO_MMF_ANN",
+      "max_dd_pct": -26.214955757851065,
+      "model": "V5",
+      "qualified": true,
+      "sharpe": 0.8197430584734273
+    },
+    {
+      "cagr_pct": 10.87255253528754,
+      "calmar": 0.41155747913525537,
+      "clock": "BAND10",
+      "key": "V5_L3_REAL_FRICTION_NO_MMF_BAND10",
+      "max_dd_pct": -26.418065729560837,
+      "model": "V5",
+      "qualified": true,
+      "sharpe": 0.8422675404894081
+    }
+  ],
+  "capital": 450000,
+  "def50_cagr_pct": 5.023248234085442,
+  "level": "L3_REAL_FRICTION_NO_MMF",
+  "locked_at_utc": "2026-11-26T05:35:12.436641+00:00",
+  "min_max_dd_pct": -28.0,
+  "phase": "9A",
+  "pool": "ETF5",
+  "rank_by": [
+    "calmar_desc",
+    "sharpe_desc",
+    "key_asc"
+  ],
+  "selected": [
+    "E4M_L3_REAL_FRICTION_NO_MMF_ANN",
+    "E4M_L3_REAL_FRICTION_NO_MMF_CONT"
+  ],
+  "sessions": 1717,
+  "start": "2016-01-04",
+  "stock_pool": "PIT300_ex688",
+  "stop": "2023-01-20",
+  "window": "IS"
+}

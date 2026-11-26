@@ -1,0 +1,189 @@
+{
+  "block_weeks": 4,
+  "capital_rmb": 450000,
+  "checks": [
+    {
+      "metric": "sharpe",
+      "p_upper": 0.208955223880597,
+      "passed": false,
+      "threshold": 0.05,
+      "window": "IS"
+    },
+    {
+      "actual": 1.202229605915919,
+      "inverse_mean_matched": 1.0135682206114387,
+      "metric": "sharpe",
+      "passed": true,
+      "permutation_median": 1.0978262761155362,
+      "window": "OOS"
+    },
+    {
+      "actual": -6.948331437082944,
+      "metric": "max_dd_pct",
+      "passed": true,
+      "permutation_median": -9.465429940001258,
+      "window": "OOS"
+    }
+  ],
+  "csv_sha256": "cd27db3b30f5daba02a948e5fed340aa01ca918e32e708862758842dc71692eb",
+  "default_focus_account": "E4M",
+  "draws": 200,
+  "exposure_audit": {
+    "IS": {
+      "actual_pct": 28.907189361665537,
+      "draw_median_pct": 28.907189361665537,
+      "inverse_pct": 28.907189361665537,
+      "max_abs_difference_pp": 0.0,
+      "state_target_mean_pct": {
+        "strong": 38.33830516116222,
+        "weak": 17.63585584519389
+      },
+      "state_weeks": {
+        "strong": 196,
+        "weak": 164
+      }
+    },
+    "OOS": {
+      "actual_pct": 28.674400532946947,
+      "draw_median_pct": 28.674400532946947,
+      "inverse_pct": 28.674400532946947,
+      "max_abs_difference_pp": 0.0,
+      "state_target_mean_pct": {
+        "strong": 35.05528436158039,
+        "weak": 20.166555428102352
+      },
+      "state_weeks": {
+        "strong": 112,
+        "weak": 84
+      }
+    }
+  },
+  "failed_checks": [
+    {
+      "metric": "sharpe",
+      "p_upper": 0.208955223880597,
+      "passed": false,
+      "threshold": 0.05,
+      "window": "IS"
+    }
+  ],
+  "frozen_engine_sha256": {
+    "engine.py": "090dc7f92ca6f90f4e76ad07a5606dfbbac7a044e87ab572215dce54d38bda80",
+    "offline/engine.js": "26094e36ba5c79a243cce72fa5604e723fd485f851da237360b6228bc05ef945"
+  },
+  "governing_role": "v5_marginal_vol_cap",
+  "key": "V5_E4_M200_TV15_CAP",
+  "market_http_requests": 0,
+  "method": "m200_state_stratified_circular_4_week_blocks",
+  "ordinary_inverse_in_scope": false,
+  "original_signature": {
+    "after": {
+      "files_verified": 434,
+      "manifest_sha256": "78567e4f2b29e6d764ee24fe66385bdd490e4c304cf7120881cb30aa02302db2"
+    },
+    "before": {
+      "files_verified": 434,
+      "manifest_sha256": "78567e4f2b29e6d764ee24fe66385bdd490e4c304cf7120881cb30aa02302db2"
+    }
+  },
+  "pool": "ETF5",
+  "prior_checks": [
+    {
+      "metric": "sharpe",
+      "p_upper": 0.17412935323383086,
+      "passed": false,
+      "threshold": 0.05,
+      "window": "IS"
+    },
+    {
+      "actual": 1.202229605915919,
+      "inverse_mean_matched": 1.028513663189838,
+      "metric": "sharpe",
+      "passed": true,
+      "permutation_median": 1.0856495291722794,
+      "window": "OOS"
+    },
+    {
+      "actual": -6.948331437082944,
+      "metric": "max_dd_pct",
+      "passed": true,
+      "permutation_median": -9.985514044114957,
+      "window": "OOS"
+    }
+  ],
+  "prior_verdict": "UNVERIFIED_OBSERVATION",
+  "same_verdict_as_signed_phase7c": true,
+  "scenario": "2bp",
+  "selection_coverage": {
+    "phase4b": {
+      "outside_historical_scope": [
+        "A2",
+        "A4"
+      ],
+      "tested": [
+        "B2",
+        "B4"
+      ]
+    },
+    "phase4c": {
+      "coverage_pct": 100,
+      "draws": {
+        "E2O": {
+          "IS": 200,
+          "OOS": 200
+        },
+        "E4M": {
+          "IS": 200,
+          "OOS": 200
+        }
+      },
+      "selected": [
+        "E4M",
+        "E2O"
+      ]
+    },
+    "phase6a_plus_7c": {
+      "coverage_pct": 100,
+      "draws": {
+        "V4_E4_TV15_IDX20": {
+          "IS": 200,
+          "OOS": 200
+        },
+        "V5_E4_M200_TV15_CAP": {
+          "IS": 200,
+          "OOS": 200
+        }
+      },
+      "selected": [
+        "V4_E4_TV15_IDX20",
+        "V5_E4_M200_TV15_CAP"
+      ]
+    }
+  },
+  "signed_regression": {
+    "IS": {
+      "first": "2016-01-04",
+      "last": "2023-01-20",
+      "phase6a_metric_abs_errors": {
+        "calmar": 0.0,
+        "max_dd_pct": 0.0,
+        "sharpe": 0.0
+      },
+      "phase7c_exact_match": true,
+      "sessions": 1717
+    },
+    "OOS": {
+      "first": "2023-01-30",
+      "last": "2026-11-20",
+      "phase6a_metric_abs_errors": {
+        "calmar": 0.0,
+        "max_dd_pct": 0.0,
+        "sharpe": 0.0
+      },
+      "phase7c_exact_match": true,
+      "sessions": 926
+    }
+  },
+  "v5_risk_label": "OBSERVATION · 波动率待验",
+  "verdict": "UNVERIFIED_OBSERVATION"
+}

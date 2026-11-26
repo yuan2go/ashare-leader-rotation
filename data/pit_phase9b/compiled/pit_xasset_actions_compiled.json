@@ -1,0 +1,398 @@
+{
+  "159915.SZ": [],
+  "510050.SH": [
+    {
+      "ann_date": "2016-11-11",
+      "div_cash": "0.053",
+      "ex_date": "2016-11-29",
+      "pay_date": "2016-12-02",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2017-11-10",
+      "div_cash": "0.054",
+      "ex_date": "2017-11-28",
+      "pay_date": "2017-12-01",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2018-11-12",
+      "div_cash": "0.049",
+      "ex_date": "2018-12-03",
+      "pay_date": "2018-12-06",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2019-11-15",
+      "div_cash": "0.047",
+      "ex_date": "2019-12-02",
+      "pay_date": "2019-12-05",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2020-11-11",
+      "div_cash": "0.051",
+      "ex_date": "2020-11-30",
+      "pay_date": "2020-12-03",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2021-11-22",
+      "div_cash": "0.041",
+      "ex_date": "2021-11-29",
+      "pay_date": "2021-12-02",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2022-11-24",
+      "div_cash": "0.037",
+      "ex_date": "2022-12-01",
+      "pay_date": "2022-12-06",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2023-11-20",
+      "div_cash": "0.039",
+      "ex_date": "2023-11-27",
+      "pay_date": "2023-11-30",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2024-11-25",
+      "div_cash": "0.055",
+      "ex_date": "2024-12-02",
+      "pay_date": "2024-12-05",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2025-12-10",
+      "div_cash": "0.08",
+      "ex_date": "2025-12-17",
+      "pay_date": "2025-12-22",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    }
+  ],
+  "510300.SH": [
+    {
+      "ann_date": "2015-01-14",
+      "div_cash": "0.035",
+      "ex_date": "2015-01-20",
+      "pay_date": "2015-01-23",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2016-01-14",
+      "div_cash": "0.051",
+      "ex_date": "2016-01-20",
+      "pay_date": "2016-01-25",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2017-01-17",
+      "div_cash": "0.055",
+      "ex_date": "2017-01-23",
+      "pay_date": "2017-01-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2018-01-17",
+      "div_cash": "0.046",
+      "ex_date": "2018-01-23",
+      "pay_date": "2018-01-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2019-01-10",
+      "div_cash": "0.059",
+      "ex_date": "2019-01-16",
+      "pay_date": "2019-01-21",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2019-12-05",
+      "div_cash": "0.062",
+      "ex_date": "2019-12-11",
+      "pay_date": "2019-12-16",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2021-01-11",
+      "div_cash": "0.072",
+      "ex_date": "2021-01-18",
+      "pay_date": "2021-01-21",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2022-01-12",
+      "div_cash": "0.075",
+      "ex_date": "2022-01-19",
+      "pay_date": "2022-01-24",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2023-01-09",
+      "div_cash": "0.064",
+      "ex_date": "2023-01-16",
+      "pay_date": "2023-01-19",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2024-01-11",
+      "div_cash": "0.069",
+      "ex_date": "2024-01-18",
+      "pay_date": "2024-01-23",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2025-06-11",
+      "div_cash": "0.088",
+      "ex_date": "2025-06-18",
+      "pay_date": "2025-06-27",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-01-12",
+      "div_cash": "0.123",
+      "ex_date": "2026-01-19",
+      "pay_date": "2026-01-27",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    }
+  ],
+  "510500.SH": [
+    {
+      "evidence": "fund_adj ratio independently checked against fund_daily pre_close",
+      "ex_date": "2015-04-15",
+      "ratio_denominator": "1.0",
+      "ratio_numerator": "0.2803",
+      "share_ratio": "0.2803",
+      "type": "split"
+    },
+    {
+      "ann_date": "2022-08-23",
+      "announcements": [
+        {
+          "date": "2022-08-23",
+          "title_as_supplied": "关于中证500交易型开放式指数证券投资基金实施基金份额拆分并调整最小申购、赎回..."
+        },
+        {
+          "date": "2022-08-29",
+          "title_as_supplied": "关于中证500交易型开放式指数证券投资基金基金份额拆分结果的公告"
+        }
+      ],
+      "evidence": "user-supplied announcement identity and terms cross-checked with Tushare",
+      "evidence_source": "user_verified_fund_announcements",
+      "ex_date": "2022-08-29",
+      "ratio_denominator": "1",
+      "ratio_numerator": "1.1454",
+      "record_date": "2022-08-26",
+      "result_ann_date": "2022-08-29",
+      "share_ratio": "1.1454",
+      "ts_code": "510500.SH",
+      "type": "split"
+    },
+    {
+      "ann_date": "2024-05-10",
+      "div_cash": "0.087",
+      "ex_date": "2024-05-17",
+      "pay_date": "2024-05-22",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2025-01-09",
+      "div_cash": "0.091",
+      "ex_date": "2025-01-16",
+      "pay_date": "2025-01-21",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-01-09",
+      "div_cash": "0.062",
+      "ex_date": "2026-01-16",
+      "pay_date": "2026-01-21",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-07-08",
+      "div_cash": "0.149",
+      "ex_date": "2026-07-15",
+      "pay_date": "2026-07-20",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    }
+  ],
+  "510880.SH": [
+    {
+      "ann_date": "2015-01-14",
+      "div_cash": "0.08",
+      "ex_date": "2015-01-20",
+      "pay_date": "2015-01-23",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2016-01-14",
+      "div_cash": "0.05",
+      "ex_date": "2016-01-20",
+      "pay_date": "2016-01-25",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2017-01-17",
+      "div_cash": "0.091",
+      "ex_date": "2017-01-23",
+      "pay_date": "2017-01-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2018-01-17",
+      "div_cash": "0.109",
+      "ex_date": "2018-01-23",
+      "pay_date": "2018-01-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2019-01-10",
+      "div_cash": "0.098",
+      "ex_date": "2019-01-16",
+      "pay_date": "2019-01-21",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2020-01-13",
+      "div_cash": "0.144",
+      "ex_date": "2020-01-17",
+      "pay_date": "2020-01-22",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2021-01-11",
+      "div_cash": "0.141",
+      "ex_date": "2021-01-18",
+      "pay_date": "2021-01-21",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2022-01-12",
+      "div_cash": "0.086",
+      "ex_date": "2022-01-17",
+      "pay_date": "2022-01-20",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2023-01-09",
+      "div_cash": "0.138",
+      "ex_date": "2023-01-16",
+      "pay_date": "2023-01-19",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2024-01-16",
+      "div_cash": "0.131",
+      "ex_date": "2024-01-23",
+      "pay_date": "2024-01-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2025-01-16",
+      "div_cash": "0.142",
+      "ex_date": "2025-01-21",
+      "pay_date": "2025-01-24",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-01-16",
+      "div_cash": "0.143",
+      "ex_date": "2026-01-21",
+      "pay_date": "2026-01-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    }
+  ],
+  "511010.SH": [
+    {
+      "ann_date": "2015-09-25",
+      "div_cash": "1.0",
+      "ex_date": "2015-10-09",
+      "pay_date": "2015-10-14",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2025-09-18",
+      "div_cash": "1.45",
+      "ex_date": "2025-09-23",
+      "pay_date": "2025-09-26",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2025-12-23",
+      "div_cash": "0.6542",
+      "ex_date": "2025-12-26",
+      "pay_date": "2025-12-31",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-03-20",
+      "div_cash": "0.5715",
+      "ex_date": "2026-03-25",
+      "pay_date": "2026-03-30",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-06-22",
+      "div_cash": "0.8144",
+      "ex_date": "2026-06-25",
+      "pay_date": "2026-06-30",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    },
+    {
+      "ann_date": "2026-09-15",
+      "div_cash": "0.6204",
+      "ex_date": "2026-09-18",
+      "pay_date": "2026-09-23",
+      "pay_date_fallback": false,
+      "type": "cash_dividend"
+    }
+  ],
+  "518880.SH": [],
+  "588000.SH": []
+}

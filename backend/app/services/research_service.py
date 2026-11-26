@@ -2,7 +2,7 @@ import csv
 import json
 from functools import lru_cache
 
-from research.pit.multi_shadow_ledger import RISK_LABELS
+from .governance import ADDENDUM, risk_label
 
 PHASES = {
     "4a":"phase4a_research",
@@ -38,6 +38,10 @@ def _load(path, mtime_ns, size):
 
 def _file(settings, phase, stem, suffix="csv"):
     path = settings.reports_dir/PHASES[phase]/f"phase{phase}_{stem}.{suffix}"
+    return _archive(path)
+
+
+def _archive(path):
     stat = path.stat()
     return _load(path,stat.st_mtime_ns,stat.st_size)
 
@@ -56,7 +60,7 @@ def _records(settings, datasets, *, phase=None, key=None, pool=None):
                 preferred_pool,preferred_keys = PRIMARY[source]
                 if data["pool"]!=preferred_pool or data["key"] not in preferred_keys:
                     continue
-            yield dict(data,source=f"phase{source}",account=account,risk_label=RISK_LABELS.get(account))
+            yield dict(data,source=f"phase{source}",account=account,risk_label=risk_label(settings, account))
 
 
 def portfolios(settings, *, window, capital, scenario, **filters):
@@ -86,16 +90,26 @@ def factor_court(settings, pool, window, factor):
 
 
 def placebos(settings, phase, window, key, include_draws):
-    result = []
-    for source,stem in PLACEBOS:
-        if phase is not None and source!=phase:
-            continue
-        for row in _file(settings,source,stem):
+    def filtered(source, rows):
+        for row in rows:
             if row["window"]!=window or key is not None and row["key"]!=key or not include_draws and row["kind"]=="draw":
                 continue
             metric = row["metric"]
             unit = "pct" if metric=="max_dd_pct" else "ratio" if metric else None
-            result.append(dict(row,source=f"phase{source}",metric_unit=unit))
+            # The v1 Placebo schema exposes timing, with roles used when the
+            # archive has no separate timing label for the row.
+            yield dict(row,source=source,metric_unit=unit,timing=row.get("timing") or row.get("role"))
+
+    result = []
+    if phase in (None, "6a"):
+        path = settings.reports_dir / ADDENDUM / "phase7c_v5_placebo_mc.csv"
+        try:
+            result.extend(filtered("phase7c_addendum", _archive(path)))
+        except FileNotFoundError:
+            pass
+    for source,stem in PLACEBOS:
+        if phase is None or source==phase:
+            result.extend(filtered(f"phase{source}", _file(settings,source,stem)))
     return result
 
 

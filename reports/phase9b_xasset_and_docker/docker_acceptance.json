@@ -1,0 +1,52 @@
+{
+  "address": null,
+  "checked_at_utc": "2026-11-26T06:42:28.260221+00:00",
+  "checks": {},
+  "docker_runtime_status": "daemon_unavailable",
+  "exit_code": 2,
+  "not_run": [
+    "multi_stage_build",
+    "container_health",
+    "spa_deep_links",
+    "api_and_governance",
+    "read_only_and_basic_auth",
+    "nonroot_wal_and_concurrent_read",
+    "healthy_listener"
+  ],
+  "prior_actions": {
+    "Smoke": {
+      "checks": {},
+      "exit_code": 2,
+      "status": "blocked"
+    },
+    "Status": {
+      "checks": {},
+      "exit_code": 2,
+      "status": "blocked"
+    },
+    "Up": {
+      "checks": {},
+      "exit_code": 2,
+      "status": "blocked"
+    }
+  },
+  "probes": {
+    "compose_version": {
+      "exit_code": 127,
+      "reason": "docker_cli_not_found"
+    },
+    "docker_info": {
+      "exit_code": 127,
+      "reason": "docker_cli_not_found"
+    },
+    "docker_version": {
+      "exit_code": 127,
+      "reason": "docker_cli_not_found"
+    }
+  },
+  "protected_count": 391,
+  "requested_action": "Smoke",
+  "signed_sqlite_after": "3f367e683e387eb7964fbd8ee8d84832454d7f7ef87e7e33fab3e585ca851a66",
+  "signed_sqlite_before": "3f367e683e387eb7964fbd8ee8d84832454d7f7ef87e7e33fab3e585ca851a66",
+  "status": "blocked"
+}

@@ -6,18 +6,24 @@ import { expect, it, vi } from "vitest";
 import App from "../src/App";
 import type { Schema } from "../src/api/client";
 
+const { chart } = vi.hoisted(() => ({chart: vi.fn()}));
 vi.mock("../src/components/EChartBox", () => ({
-  default: ({label}: {label: string}) => <div role="img" aria-label={label} />,
+  default: ({label, option}: {label: string; option: unknown}) => {
+    chart(option);
+    return <div role="img" aria-label={label} />;
+  },
 }));
 
 const point: Schema["NavPoint"] = {
-  account: "V5", capital_rmb: 450000, role_tag: "is_locked_volcap", risk_label: "LIVE CANDIDATE · 波动率增强",
+  account: "E4M", capital_rmb: 450000, role_tag: "is_locked_flagship", risk_label: "LIVE CANDIDATE · 主力",
   day: "2026-11-24", provenance_mode: "post_hoc_catchup", nav_cents: 65432123,
   cash_cents: 21171396, receivable_cents: 0, cash_pct: 83.12, lot_idle_mean_pct: null,
   stock_pnl_cents: 100, etf_pnl_cents: 200, stock_daily_pnl_cents: 3, etf_daily_pnl_cents: 4,
   return_pct: -7.12, drawdown_pct: -0.01, max_drawdown_pct: -11.04, excess_ew_pp: 0.87, excess_csi300_pp: -4.32,
 };
 const large: Schema["NavPoint"] = {...point, capital_rmb: 2000000, nav_cents: 209999999, return_pct: 3.45};
+const v5: Schema["NavPoint"] = {...point, account: "V5", role_tag: "is_locked_volcap",
+  risk_label: "OBSERVATION · 波动率待验"};
 const risk: Schema["RiskSnapshot"] = {
   latest_session: "2026-11-24", latest_provenance_mode: "post_hoc_catchup",
   m200: {state: "weak", daily_state: "weak", weekly_as_of: "2026-11-20", flip: false,
@@ -28,7 +34,7 @@ const risk: Schema["RiskSnapshot"] = {
     resize_due: false, scaling_trigger_count: 0, last_trigger_signal_day: null},
   next_signals: {weekly_defense: "2026-11-27", month_end_etf: "2026-11-30"},
 };
-const overview: Schema["Overview"] = {...risk, strict_live_sessions: 0, catchup_sessions: 2, total_fills: 578, accounts: [point,large]};
+const overview: Schema["Overview"] = {...risk, strict_live_sessions: 0, catchup_sessions: 2, total_fills: 578, accounts: [point,large,v5]};
 
 function mount(path: string) {
   return render(<QueryClientProvider client={new QueryClient({defaultOptions: {queries: {retry: false, staleTime: 60_000}}})}>
@@ -58,6 +64,7 @@ it("shows unchanged financial fields and moves the capital-specific request with
   const fetch = appFetch();
   mount("/");
   await screen.findByRole("heading",{name: "实盘影子驾驶舱"});
+  expect(screen.getByRole("button",{name: /^E4M$/})).toHaveAttribute("aria-pressed","true");
   const summary = screen.getByRole("main");
   const kpi = within(summary).getByText("累计收益",{selector: ".kpi-label span"}).closest(".kpi-card");
   if (!(kpi instanceof HTMLElement)) throw new Error("KPI card missing");
@@ -66,9 +73,21 @@ it("shows unchanged financial fields and moves the capital-specific request with
   expect(await screen.findByText("-9.01%")).toBeVisible();
   expect(screen.getByText("等待上游发布")).toBeVisible();
   expect(await screen.findByRole("img",{name: "六线净值曲线"})).toBeVisible();
+  const cards = within(screen.getByRole("list",{name:"六线账户对照"}));
+  expect(cards.getByText(v5.risk_label)).toHaveClass("risk-observer");
+  expect(cards.getByText(point.risk_label)).toHaveClass("risk-candidate");
+  for (const label of ["最新净值","累计收益","最大回撤","超额 · 等权"]) {
+    expect(cards.getAllByText(label)).toHaveLength(2);
+  }
   await userEvent.click(screen.getByRole("button",{name:"¥200 万"}));
   expect(await within(kpi).findByText("+3.45%")).toBeVisible();
   expect(fetch.mock.calls.some(([request]) => request.url.includes("capital_rmb=2000000"))).toBe(true);
+  await userEvent.click(screen.getByRole("button",{name:/^超额$/}));
+  expect(await screen.findByRole("img",{name:"六线超额曲线"})).toBeVisible();
+  const option = chart.mock.lastCall?.[0];
+  expect(option.series).toContainEqual(expect.objectContaining({name:"E4M", data:[large.excess_ew_pp]}));
+  expect(option.yAxis.axisLabel.formatter(large.excess_ew_pp)).toBe("0.87 pp");
+  expect(option.tooltip.valueFormatter(large.excess_ew_pp)).toBe("+0.87 pp");
   await userEvent.click(screen.getByRole("button",{name:"回撤"}));
   expect(await screen.findByRole("img",{name:"六线回撤曲线"})).toBeVisible();
 });
