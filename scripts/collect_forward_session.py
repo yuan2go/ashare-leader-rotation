@@ -278,9 +278,25 @@ def security_events(c, day, targets, prior, current):
             need(fs.digest((evidence / "301308_1225673795.pdf").read_bytes()) == item["pdf_sha256"]
                  and float(cash) == float(item["holder_cash"]), "江波龙差异化分红公告或条款不符")
             ref = float(item["ref_cash"])
-        out.append(dict(type="ex", id=f"{code}/{day}/{len(out)}", code=code, date=day,
-                        announced=iso(row["imp_ann_date"]), holder_cash=float(cash), ref_cash=ref,
-                        bonus=float(bonus + convert), pay_date=iso(pay), share_date=iso(share)))
+        event = dict(type="ex", id=f"{code}/{day}/{len(out)}", code=code, date=day,
+                     announced=iso(row["imp_ann_date"]), holder_cash=float(cash), ref_cash=ref,
+                     bonus=float(bonus + convert), pay_date=iso(pay), share_date=iso(share))
+        need(fs.CODE.fullmatch(code), "权益事件证券代码无效")
+        evidence = fs.ROOT / "data/verified/forward_dividends" / day / f"{code}.json"
+        if evidence.is_file():
+            notice = fs.load(evidence)
+            pdf = evidence.with_suffix(".pdf")
+            need(fs.digest(pdf.read_bytes()) == notice["announcement_sha256"] and
+                 (notice["ts_code"], notice["announcement_date"], notice["ex_date"], notice["record_date"],
+                  notice["pay_date"], notice["holder_cash"]) ==
+                 (code, event["announced"], day, iso(row["record_date"]), event["pay_date"], event["holder_cash"]) and
+                 event["announced"] < notice["record_date"] < day and
+                 event["bonus"] == 0 and 0 <= notice["ref_cash"] <= event["holder_cash"],
+                 f"{code}: 差异化分红公告或条款不符")
+            event["ref_cash"] = notice["ref_cash"]
+            event["reference_evidence"] = dict(source_url=notice["source_url"],
+                                               announcement_sha256=notice["announcement_sha256"])
+        out.append(event)
     for code in current.keys() & prior.keys() & targets:
         items = [event for event in out if event["code"] == code]
         expected = (float(prior[code]["close"]) - sum(e["ref_cash"] for e in items)) / (1 + sum(e["bonus"] for e in items))
