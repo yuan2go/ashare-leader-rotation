@@ -303,6 +303,9 @@ button, input, select, a { outline-offset: 4px; }
   .comparison-card dd { margin: 2px 0 0; font-size: 13px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 }
 @media (max-width: 470px) {
+  .sidebar { flex-wrap: wrap; }
+  .navigation { flex-basis: 100%; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .navigation a { min-width: 0; }
   .ticket-grid { grid-template-columns: minmax(0, 1fr); }
   .health-indicator { font-size: 0; gap: 0; }
   .health-indicator .status-dot { height: 8px; width: 8px; }
