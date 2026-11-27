@@ -1,7 +1,9 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('Up', 'Down', 'Rebuild', 'Status', 'Logs', 'Smoke')]
-    [string]$Action = 'Up'
+    [ValidateSet('Up', 'Start', 'Down', 'Rebuild', 'Status', 'Logs', 'Smoke')]
+    [string]$Action = 'Up',
+    [ValidateSet('ReadOnly', 'Interactive')]
+    [string]$Mode = 'ReadOnly'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -19,7 +21,7 @@ $exe, $prefix = $python
 # Resolve the repository explicitly so calls from other directories use the same Compose project.
 Push-Location -LiteralPath $repo
 try {
-    & $exe @prefix -B -X utf8 (Join-Path $repo 'deploy/local_docker.py') $Action
+    & $exe @prefix -B -X utf8 (Join-Path $repo 'deploy/local_docker.py') $Action --mode $Mode
     $code = $LASTEXITCODE
 } finally {
     Pop-Location

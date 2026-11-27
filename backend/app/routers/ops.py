@@ -60,9 +60,7 @@ def site_origin(request, settings):
     return str(request.base_url).rstrip("/")
 
 
-@router.post("/jobs",response_model=Job,status_code=202,operation_id="submitJob",summary="启动一个受控运维任务",
-             responses={403:{"model":Error},409:{"model":Error}}, dependencies=[Depends(require_writable)])
-def submit(payload: JobRequest, request: Request, x_shadow_ops: str=Header()):
+def validate_write_origin(request: Request, x_shadow_ops: str):
     settings = request.app.state.settings
     origin = request.headers.get("origin")
     referer = request.headers.get("referer")
@@ -72,6 +70,13 @@ def submit(payload: JobRequest, request: Request, x_shadow_ops: str=Header()):
     if (x_shadow_ops != "1" or request.headers.get("sec-fetch-site", "").lower() == "cross-site"
             or origin is not None and origin not in allowed):
         raise HTTPException(403,"operation origin or header not allowed")
+
+
+@router.post("/jobs",response_model=Job,status_code=202,operation_id="submitJob",summary="启动一个受控运维任务",
+             responses={403:{"model":Error},409:{"model":Error}}, dependencies=[Depends(require_writable)])
+def submit(payload: JobRequest, request: Request, x_shadow_ops: str=Header()):
+    validate_write_origin(request, x_shadow_ops)
+    settings = request.app.state.settings
     if settings.database!=settings.shadow_dir/"shadow_v7a.sqlite3":
         raise HTTPException(409,"operation requires the configured Phase 7A ledger path")
     return ops_service.submit(settings,payload)

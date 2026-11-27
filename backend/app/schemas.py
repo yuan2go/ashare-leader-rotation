@@ -345,6 +345,7 @@ class Health(BaseModel):
     python_version: str
     sqlite_version: str
     sqlite_readonly: bool
+    api_read_only: bool = False
     dependency_versions: dict[str, str]
     latest_session: date | None
     frozen_sha256: dict[str, str]

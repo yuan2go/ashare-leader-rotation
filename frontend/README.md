@@ -1,6 +1,6 @@
 # Phase 7B · 影子交易驾驶舱
 
-使用 Node 24.22.3、npm 10.9.4 和仓库的 Python 3.11.18 环境。前端依赖锁定在 `package-lock.json`，接口类型由签发的 `../backend/openapi.json` 生成。
+使用 Node 24.22.3、npm 10.9.4 和仓库的 Python 3.11.18 环境。前端依赖锁定在 `package-lock.json`，接口类型由 Phase 11 规范 `../backend/openapi_phase11.json` 生成。接口说明见 [Phase 11 API 契约](../docs/api_contract_phase11.md)。
 
 ## 本地运行
 

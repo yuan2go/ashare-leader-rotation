@@ -23,8 +23,9 @@ CMD ["bash", "deploy/run_daily_shadow.sh", "ServeApi", "--host", "0.0.0.0", "--p
 
 FROM runtime AS local
 USER root
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends iptables util-linux \
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get -o Acquire::Retries=3 update \
+    && apt-get -o Acquire::Retries=3 install -y --no-install-recommends iptables util-linux \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=phase10_evidence / /app/
 USER 10001:10001

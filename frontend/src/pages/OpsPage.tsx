@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { CircleCheck, Play, ShieldAlert, Terminal } from "lucide-react";
 import { useEffect, useState } from "react";
+import ReadOnlyNotice from "../components/ReadOnlyNotice";
 import type { FormEvent } from "react";
 import { api, errorMessage } from "../api/client";
 import type { Schema } from "../api/client";
@@ -69,6 +70,7 @@ function IntegrityPanel() {
 
 export default function OpsPage() {
   const client = useQueryClient();
+  const readOnly = useQuery(healthQuery).data?.api_read_only === true;
   const [action, setAction] = useState<Schema["Action"]>("Ingest");
   const [day, setDay] = useState("");
   const [allowHttp, setAllowHttp] = useState(false);
@@ -106,7 +108,7 @@ export default function OpsPage() {
 
   const online = onlineAction(action);
   const busy = submit.isPending || jobs.data?.some(activeJob) || activeJob(job.data);
-  const allowed = !busy && (!online || allowHttp);
+  const allowed = !readOnly && !busy && (!online || allowHttp);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -118,6 +120,7 @@ export default function OpsPage() {
     <PageHeading title="受控运维与系统完整性" description="查看采集状态、后台任务日志和冻结文件核对结果" />
     <div className="ops-grid">
       <Panel title="发起运维任务" description="任务由本地 API 排队执行">
+        {readOnly && <ReadOnlyNotice />}
         <form className="ops-form" onSubmit={onSubmit}>
           <Select label="任务类型" value={action} options={actionOptions} onChange={(value) => {
             setAction(value); setAllowHttp(false); submit.reset();

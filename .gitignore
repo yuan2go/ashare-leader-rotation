@@ -64,3 +64,5 @@ Thumbs.db
 /.env.docker.local
 /data/pit_phase9b/raw/
 /data/pit_phase9b/.pit.lock
+**/wallet/wallet_user.sqlite3
+**/wallet/wallet_user.sqlite3-*

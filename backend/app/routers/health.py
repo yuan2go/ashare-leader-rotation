@@ -21,7 +21,7 @@ def health(request: Request):
     with read_snapshot(settings.database) as db:
         day = db.execute("SELECT MAX(day) FROM sessions").fetchone()[0]
     return dict(status="ok",api_version=request.app.version,python_version=platform.python_version(),
-                sqlite_version=sqlite3.sqlite_version,sqlite_readonly=True,latest_session=day,
+                sqlite_version=sqlite3.sqlite_version,sqlite_readonly=True,api_read_only=settings.api_read_only,latest_session=day,
                 dependency_versions={name:version(name) for name in DEPENDENCIES},
                 frozen_sha256={name:hashes[name] for name in APPROVED_V4})
 

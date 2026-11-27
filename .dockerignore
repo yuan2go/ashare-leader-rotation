@@ -41,4 +41,6 @@ deploy-runtime
 data/pit_phase9b
 reports/phase9b_xasset_and_docker
 reports/phase10_multialpha
+reports/phase11_workbench
+**/wallet/
 **/*.tar.gz

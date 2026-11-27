@@ -5,9 +5,15 @@ from pydantic import BaseModel
 
 from ..schemas import Capital, Drawdown, FactorCourt, Placebo, Portfolio, ResearchCoverage, Scenario, Window, YearReturn
 from ..services import research_service as service
+from ..workbench_schemas import Multialpha
 
 router = APIRouter(prefix="/research",tags=["Research"])
 Phase = Literal["4b","4c","6a"]
+
+
+@router.get("/multialpha", response_model=Multialpha, operation_id="getMultialpha", summary="Phase 9–10 多引擎与跨资产")
+def multialpha(request: Request):
+    return service.multialpha(request.app.state.settings)
 
 
 class ArchiveFilter(BaseModel):

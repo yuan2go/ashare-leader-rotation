@@ -3,13 +3,13 @@ set -euo pipefail
 
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 action=Up
-if [[ ${1:-} == -Action || ${1:-} == --action ]]; then
-    [[ $# == 2 ]] || { printf '%s\n' 'Usage: deploy/run_local_docker.sh -Action Up|Down|Rebuild|Status|Logs|Smoke' >&2; exit 2; }
-    action=$2
-elif [[ $# == 1 ]]; then
-    action=$1
-elif [[ $# != 0 ]]; then
-    printf '%s\n' 'Usage: deploy/run_local_docker.sh -Action Up|Down|Rebuild|Status|Logs|Smoke' >&2
-    exit 2
-fi
-exec "${PYTHON_BIN:-python3.11}" -B -X utf8 "$repo/deploy/local_docker.py" "$action"
+mode=ReadOnly
+while (($#)); do
+    case "$1" in
+        -Action|--action) [[ $# -ge 2 ]] || exit 2; action=$2; shift 2 ;;
+        -Mode|--mode) [[ $# -ge 2 ]] || exit 2; mode=$2; shift 2 ;;
+        Up|Start|Down|Rebuild|Status|Logs|Smoke) action=$1; shift ;;
+        *) printf '%s\n' 'Usage: deploy/run_local_docker.sh -Action Up|Start|Down|Rebuild|Status|Logs|Smoke -Mode ReadOnly|Interactive' >&2; exit 2 ;;
+    esac
+done
+exec "${PYTHON_BIN:-python3.11}" -B -X utf8 "$repo/deploy/local_docker.py" "$action" --mode "$mode"

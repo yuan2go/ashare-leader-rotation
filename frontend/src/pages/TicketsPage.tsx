@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { CalendarDays, Download } from "lucide-react";
 import { useState } from "react";
+import SecurityCode from "../components/SecurityCode";
 import { api, errorMessage } from "../api/client";
 import type { Schema } from "../api/client";
 import RiskBadge from "../components/RiskBadge";
@@ -18,7 +19,7 @@ const stateLabel: Record<Schema["Ticket"]["state"], string> = {
 };
 
 const columns: Column<Schema["Ticket"]>[] = [
-  {title: "证券", render: (row) => <><strong>{text(row.name)}</strong> <span className="mono muted">{text(row.code)}</span></>},
+  {title: "证券", render: (row) => <SecurityCode code={row.code} name={row.name} />},
   {title: "资产", render: (row) => row.asset ? assetLabel[row.asset] : "—"},
   {title: "方向", render: (row) => row.side
     ? <span className={`badge ${row.side === "buy" ? "side-buy" : "side-sell"}`}>{sideLabel[row.side]}</span> : "—"},

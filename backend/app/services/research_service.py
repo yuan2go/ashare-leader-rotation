@@ -2,7 +2,48 @@ import csv
 import json
 from functools import lru_cache
 
+from core.integrity import IntegrityError
+from research.v2.audit import digest
+from research.v2.phase10_factors import NEW
+
 from .governance import ADDENDUM, risk_label
+
+
+@lru_cache(maxsize=24)
+def signed_archive(path, expected, _mtime):
+    if not expected or digest(path) != expected:
+        raise IntegrityError(f"Research artifact hash differs: {path.name}")
+    return _load(path, path.stat().st_mtime_ns, path.stat().st_size)
+
+
+def checked_archive(path, expected):
+    return signed_archive(path, expected, path.stat().st_mtime_ns)
+
+
+def multialpha(settings):
+    base = settings.reports_dir
+    ninth, cross, tenth = (base / p for p in ("phase9a_v2_engine", "phase9b_xasset_and_docker", "phase10_multialpha"))
+    manifest9 = json.loads((ninth / "phase9a_manifest.json").read_bytes())
+    manifest10 = json.loads((tenth / "phase10_manifest.json").read_bytes())
+    archived = manifest10["artifacts_sha256"]
+
+    def phase10(name):
+        return checked_archive(tenth / name, archived.get(name))
+
+    w9 = "phase9a_waterfall_summary.csv"
+    w9b = "phase9b_summary.csv"
+    court = phase10("phase10_factor_court.csv")
+    ablation = []
+    for row in checked_archive(ninth / w9, manifest9["artifact_sha256"].get(w9)):
+        cagr = float(row["cagr_pct"])
+        delta = float(row["delta_cagr_pp"] or cagr)
+        ablation.append(dict(row, waterfall_base_pct=min(cagr, cagr - delta),
+                             waterfall_gain_pp=max(0, delta), waterfall_loss_pp=max(0, -delta)))
+    return dict(phase9a=ablation,
+                phase9b=checked_archive(cross / w9b, manifest10["phase9b_stage2_artifact_sha256"].get(w9b)),
+                factor_court=[r for r in court if r["weighting"] == "Mainboard-VW" and r["factor"] in NEW],
+                vpb_verdict=phase10("phase10_verdict.json"), vpb_results=phase10("phase10_vpb_summary.csv"),
+                blends=phase10("phase10_blend_summary.csv"), correlations=phase10("phase10_corr_matrix.csv"))
 
 PHASES = {
     "4a":"phase4a_research",

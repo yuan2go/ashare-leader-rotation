@@ -111,6 +111,17 @@ python run.py --confirm-seeds
 
 Linux 和容器部署见 [Phase 8 云端部署手册](deploy/README.md)。部署前先恢复离线签发资产，并把运行账本放在独立可写目录。
 
+### 本机工作台自动更新
+
+Docker 交互模式启动后，工作台立即检查一次新日线，此后每 10 分钟检查一次。工作台停止时，更新循环一并停止。
+
+```powershell
+.\scripts\run_local_docker.ps1 -Action Up -Mode Interactive
+Get-Content .docker_runtime/shadow/ops/docker_refresh_status.json
+```
+
+程序按北京时间及账本收录的交易日历检查已收盘的日线。发现合格日包后，先在 Linux 临时目录离线核验和计算，再提交到独立运行账本。已打开的页面会定期检查账本日期并自动刷新。默认只读模式关闭自动更新和行情外连。最新一次检查保存在 `docker_refresh_status.json`，新交易日的策略和基准统计保存在同目录的 `docker_refresh_analysis.json`。
+
 ### 联网补齐真实数据与回放
 
 准备文件后，安装原包声明的采集依赖，再分别检查采集与正式回放的退出状态。以下使用已激活环境中的 `python`；Windows 未激活时用 `.\.venv\Scripts\python.exe` 替换：

@@ -1,12 +1,12 @@
 import { useIsFetching, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Activity, ArrowRight, ClipboardList, FlaskConical, Gauge, Layers3, RefreshCw, ShieldCheck } from "lucide-react";
-import { lazy, Suspense, useState } from "react";
+import { Activity, ArrowRight, ChartNoAxesCombined, ClipboardList, FlaskConical, Gauge, Layers3, Radar, RefreshCw, ShieldCheck, Wallet } from "lucide-react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import type { Schema } from "./api/client";
 import { collectionQuery, healthQuery, overviewQuery } from "./api/queries";
 import ProvenanceBanner from "./components/ProvenanceBanner";
 import { Loading, PageHeading, Segmented } from "./components/ui";
-import { CapitalContext } from "./state";
+import { CapitalContext, KlineContext } from "./state";
 import { text } from "./utils/format";
 
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
@@ -14,11 +14,18 @@ const TicketsPage = lazy(() => import("./pages/TicketsPage"));
 const HoldingsFillsPage = lazy(() => import("./pages/HoldingsFillsPage"));
 const ResearchPage = lazy(() => import("./pages/ResearchPage"));
 const OpsPage = lazy(() => import("./pages/OpsPage"));
+const UniversePage = lazy(() => import("./pages/UniversePage"));
+const RadarPage = lazy(() => import("./pages/RadarPage"));
+const WalletPage = lazy(() => import("./pages/WalletPage"));
+const StockKlineDrawer = lazy(() => import("./components/StockKlineDrawer"));
 
 const navigation = [
   {to: "/", title: "交易驾驶舱", icon: Gauge},
+  {to: "/universe", title: "股票池矩阵", icon: ChartNoAxesCombined},
+  {to: "/radar", title: "ETF 雷达与相关性", icon: Radar},
   {to: "/tickets", title: "开盘指令单", icon: ClipboardList},
   {to: "/portfolio", title: "持仓与成交", icon: Layers3},
+  {to: "/wallet", title: "实盘钱包对账", icon: Wallet},
   {to: "/research", title: "研究档案", icon: FlaskConical},
   {to: "/ops", title: "运维与完整性", icon: ShieldCheck},
 ] as const;
@@ -27,15 +34,26 @@ const capitals = [["450000", "¥45 万"], ["2000000", "¥200 万"]] as const;
 
 export default function App() {
   const [capital, setCapital] = useState<Schema["Capital"]>("450000");
+  const [security, setSecurity] = useState<string | null>(null);
   const {pathname} = useLocation();
   const client = useQueryClient();
   const fetching = useIsFetching();
   const health = useQuery(healthQuery);
   const overview = useQuery(overviewQuery);
   const collection = useQuery(collectionQuery);
+  const lastObservedSession = useRef<string | null>(null);
+  const observedSession = health.data?.latest_session;
+  useEffect(() => {
+    if (!observedSession) return;
+    const previous = lastObservedSession.current;
+    lastObservedSession.current = observedSession;
+    if (previous && previous !== observedSession) {
+      void client.invalidateQueries({predicate: ({queryKey}) => queryKey[0] !== "health"});
+    }
+  }, [client, observedSession]);
   const currentPage = navigation.find((item) => item.to === pathname);
   const healthStatus = health.isError ? "API 暂不可用" : health.data ? "API 正常" : "API 连接中";
-  return <CapitalContext.Provider value={capital}>
+  return <CapitalContext.Provider value={capital}><KlineContext.Provider value={setSecurity}>
     <a className="skip-link" href="#main-content">跳到主要内容</a>
     <div className="app-shell">
       <aside className="sidebar">
@@ -68,11 +86,14 @@ export default function App() {
             </button>
           </div>
         </header>
-        <main id="main-content" className="workspace-inner">
+        <main id="main-content" className={`workspace-inner ${security ? "workbench-drawer-open" : ""}`}>
           <ProvenanceBanner overview={overview.data} latest={collection.data?.[0]} />
           <Suspense fallback={<Loading />}>
             <Routes>
               <Route path="/" element={<DashboardPage />} />
+              <Route path="/universe" element={<UniversePage selected={security} />} />
+              <Route path="/radar" element={<RadarPage />} />
+              <Route path="/wallet" element={<WalletPage />} />
               <Route path="/tickets" element={<TicketsPage />} />
               <Route path="/portfolio" element={<HoldingsFillsPage />} />
               <Route path="/research" element={<ResearchPage />} />
@@ -82,7 +103,8 @@ export default function App() {
             </Routes>
           </Suspense>
         </main>
+        {security && <Suspense fallback={null}><StockKlineDrawer code={security} close={() => setSecurity(null)} /></Suspense>}
       </div>
     </div>
-  </CapitalContext.Provider>;
+  </KlineContext.Provider></CapitalContext.Provider>;
 }

@@ -1,4 +1,4 @@
-"""Export the checked-in OpenAPI 3.1 and the Phase 7B contract from FastAPI."""
+"""Export the live Phase 11 contract without overwriting the signed Phase 7B version."""
 import argparse
 import json
 import sys
@@ -10,9 +10,9 @@ if not __package__:
 from backend.app.config import ROOT
 from backend.app.main import app
 
-INTRO = """# Phase 7A API v1 接口契约
+INTRO = """# Phase 11 量化工作台 API v1 接口契约
 
-服务默认监听 `http://127.0.0.1:8000`，前缀为 `/api/v1`。Swagger UI 位于 `/docs`，同一份规范在线地址为 `/openapi.json`。本文件和 `backend/openapi.json` 由 `python -m backend.export_openapi` 生成。添加 `--check` 可检查签入文件是否与当前服务一致。
+服务默认监听 `http://127.0.0.1:8000`，前缀为 `/api/v1`。Swagger UI 位于 `/docs`，同一份规范在线地址为 `/openapi.json`。本文件和 `backend/openapi_phase11.json` 由 `python -m backend.export_openapi` 生成。添加 `--check` 可检查签入文件是否与当前服务一致。签发版 `backend/openapi.json` 与 `docs/api_contract_v1.md` 保留原始字节。
 
 ## 运行与 TypeScript 接入
 
@@ -22,7 +22,7 @@ $Py = 'data/fetch_cache/runtimes/batch1-py311/Scripts/python.exe'
 powershell.exe -NoProfile -File scripts/run_daily_shadow.ps1 -Action ServeApi
 ```
 
-在已安装 `openapi-typescript` 的 Phase 7B 项目中，使用 `openapi-typescript ../backend/openapi.json -o src/api/schema.ts` 生成类型。以 `paths` 的响应及参数类型绑定请求，以 `components.schemas` 复用实体类型。默认 CORS 允许 `http://localhost:5173` 和 `http://127.0.0.1:5173`。
+在前端目录运行 `npm run gen:types` 同步 Phase 11 TypeScript 类型。以 `paths` 的响应及参数类型绑定请求，以 `components.schemas` 复用实体类型。默认 CORS 允许 `http://localhost:5173` 和 `http://127.0.0.1:5173`。
 
 ## 接口
 
@@ -31,6 +31,13 @@ powershell.exe -NoProfile -File scripts/run_daily_shadow.ps1 -Action ServeApi
 """
 
 DETAILS = """
+## Phase 11 工作台
+
+- 股票池使用最近入账日的 PIT 成分和先前交易日的可见估值，涨跌幅及诊断因子均由后端返回。
+- K 线以请求日为复权基准，`as_of` 可回看历史截面。ETF 和指数各自显示行情可用日期。相关性按共同有效交易日估算，缺少观测或方差为零时返回空值。
+- 钱包单独保存于运行目录下的 `wallet/wallet_user.sqlite3`。写入及删除均要求 `X-Shadow-Ops: 1`。跟踪误差以相邻交易日配对主动收益的样本标准差年化，样本不足时返回空值。
+- `health.api_read_only` 标记钱包及运维操作可用性。本机默认只读，交互模式由启动脚本显式开启。
+
 ## 字段与取值
 
 - `_cents` 是人民币整数分，`_rmb` 是人民币元。`_pct` 是以 100 为满值的百分数，`_pp` 是百分点。净值、收益、最大回撤、超额和整手股数由服务端提供。置换摘要的 `actual`、`inverse` 和 `permutation_median` 由 `metric_unit` 区分比例与百分数。
@@ -78,8 +85,8 @@ def contents():
         for method, metadata in methods.items():
             table.append(f"| `{method.upper()}` | `{path}` | `{metadata['operationId']}` | {metadata['summary']} |")
     return {
-        ROOT/"backend/openapi.json":json.dumps(spec,ensure_ascii=False,indent=2)+"\n",
-        ROOT/"docs/api_contract_v1.md":INTRO+"\n".join(table)+"\n"+DETAILS,
+        ROOT/"backend/openapi_phase11.json":json.dumps(spec,ensure_ascii=False,indent=2)+"\n",
+        ROOT/"docs/api_contract_phase11.md":INTRO+"\n".join(table)+"\n"+DETAILS,
     }
 
 

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import SecurityCode from "../components/SecurityCode";
 import { api } from "../api/client";
 import type { QueryOf, Schema } from "../api/client";
 import RiskBadge from "../components/RiskBadge";
@@ -22,7 +23,7 @@ function accountCell(row: LedgerRow) {
 const identity = [
   {title: "交易日", render: (row: LedgerRow) => <span className="mono">{row.day}</span>},
   {title: "账户", render: accountCell},
-  {title: "证券代码", render: (row: LedgerRow) => <span className="mono">{row.code}</span>},
+  {title: "证券代码", render: (row: LedgerRow) => <SecurityCode code={row.code} />},
   {title: "资产", render: (row: LedgerRow) => assetLabel[row.asset]},
 ];
 

@@ -16,6 +16,7 @@ import subprocess
 import sys
 from tempfile import TemporaryDirectory
 from time import monotonic, sleep
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -24,16 +25,17 @@ from core.integrity import require_runtime_guard
 from research.v2.audit import digest, now, write_json
 from scripts.bundle_deploy_data import SIGNED_LEDGER, runtime_sources, safe_path
 from scripts.fetch_phase9b_macro_xasset import snapshot
+from tushare_client import local_settings
 
 ADDRESS = "http://127.0.0.1:8000/"
-ACCEPTANCE = ROOT / "reports/phase10_multialpha/docker_acceptance.json"
+ACCEPTANCE = ROOT / "reports/phase11_workbench/docker_acceptance.json"
 PROJECT = "ashare-phase9b-local"
 HEALTH = "/api/v1/health"
 OVERVIEW = "/api/v1/shadow/overview"
 DEFAULTS = dict(PHASE7A_ALLOWED_HOSTS="localhost,127.0.0.1,[::1]", PHASE7A_API_READ_ONLY="1",
                 PHASE7A_HEALTH_PUBLIC="1", PHASE7A_SQLITE_WAL="1", PHASE7A_TRUST_PROXY_HEADERS="0",
                 PHASE7A_UVICORN_FORWARDED_ALLOW_IPS="")
-PROTECTED_KEYS = (*DEFAULTS, "TUSHARE_TOKEN", "TUSHARE_HTTP_URL", "SHADOW_NOTIFY_WEBHOOK_URL",
+PROTECTED_KEYS = (*DEFAULTS, "TUSHARE_TOKEN", "TUSHARE_HTTP_URL", "PHASE11_MARKET_PORT", "PHASE11_AUTO_REFRESH", "SHADOW_NOTIFY_WEBHOOK_URL",
                   "SHADOW_SMTP_HOST", "SHADOW_SMTP_USER", "SHADOW_SMTP_PASS", "SHADOW_SMTP_FROM", "SHADOW_SMTP_TO")
 
 
@@ -156,7 +158,7 @@ def probe(command):
             continue
         try:
             result = subprocess.run([*command, *args], capture_output=True, encoding="utf-8", errors="replace",
-                                    timeout=15, env=env)
+                                    timeout=45 if key == "docker_info" else 15, env=env)
             evidence[key] = dict(exit_code=result.returncode)
             if result.returncode == 0:
                 evidence[key]["version"] = result.stdout.strip()
@@ -183,20 +185,31 @@ def stage_build_inputs(root, runtime):
     manifest = json.loads((runtime / "phase7a_manifest.json").read_bytes())
     prefixes = ("data/pit_csi300/compiled/", "reports/phase5a_multi_shadow/",
                 "reports/phase6a_vol_and_pit_probe/")
-    for name, expected in manifest["protected_before"].items():
-        if name.startswith(prefixes):
-            origin = safe_path(root, name)
-            check(digest(origin) == expected, f"构建证据哈希不符 {name}")
-            destination = safe_path(target, name)
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            no_link(destination)
-            if not destination.is_file() or digest(destination) != expected:
-                shutil.copyfile(origin, destination)
-            check(digest(destination) == expected, f"构建证据副本哈希不符 {name}")
+    files = {p: h for p, h in manifest["protected_before"].items() if p.startswith(prefixes)}
+    cross = root / "data/pit_phase9b/compiled/pit_xasset_manifest.json"
+    study = root / "reports/phase10_multialpha/phase10_manifest.json"
+    for source in (cross, study):
+        files[source.relative_to(root).as_posix()] = digest(source)
+    for name, expected in json.loads(cross.read_bytes())["compiled_sha256"].items():
+        files[f"data/pit_phase9b/compiled/{name}"] = expected
+    phase10 = json.loads(study.read_bytes())
+    files["reports/phase9b_xasset_and_docker/phase9b_summary.csv"] = phase10["phase9b_stage2_artifact_sha256"]["phase9b_summary.csv"]
+    for name in ("phase10_factor_court.csv", "phase10_verdict.json", "phase10_vpb_summary.csv",
+                 "phase10_blend_summary.csv", "phase10_corr_matrix.csv"):
+        files[f"reports/phase10_multialpha/{name}"] = phase10["artifacts_sha256"][name]
+    for name, expected in files.items():
+        origin = safe_path(root, name)
+        check(digest(origin) == expected, f"构建证据哈希不符 {name}")
+        destination = safe_path(target, name)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        no_link(destination)
+        if not destination.is_file() or digest(destination) != expected:
+            shutil.copyfile(origin, destination)
+        check(digest(destination) == expected, f"构建证据副本哈希不符 {name}")
     return target
 
 
-def mount_guard(config, target):
+def mount_guard(config, target, mode="ReadOnly"):
     services = config["services"]
     cockpit = services["cockpit"]
     ports = cockpit["ports"]
@@ -212,30 +225,40 @@ def mount_guard(config, target):
         entry = writable[0]
         check(entry["type"] == "bind" and entry["target"] == "/data/shadow"
               and Path(entry["source"]).resolve() == target, "拒绝挂载未核准的可写目录")
-    check(str(cockpit["environment"]["PHASE7A_API_READ_ONLY"]) == "1"
+    check(str(cockpit["environment"]["PHASE7A_API_READ_ONLY"]) == ("1" if mode == "ReadOnly" else "0")
           and str(cockpit["environment"]["PHASE7A_HEALTH_PUBLIC"]) == "1"
           and str(services["shadow-daily"]["environment"]["PHASE7A_SQLITE_WAL"]) == "1",
-          "本机只读、公开探活和隔离卷 WAL 必须开启")
+          "本机写入模式、公开探活或离线任务 WAL 配置不符")
+    if mode == "ReadOnly":
+        check(not any(cockpit["environment"].get(k) for k in ("TUSHARE_TOKEN", "TUSHARE_HTTP_URL", "PHASE11_MARKET_PORT")),
+              "只读容器不得获得行情凭据")
+    check(str(cockpit["environment"].get("PHASE11_AUTO_REFRESH", "0")) == ("1" if mode == "Interactive" else "0"),
+          "自动更新须与本机交互模式一致")
 
 
-def request(path, method="GET", credentials=None):
+def request(path, method="GET", credentials=None, payload=None, write=False, timeout=5):
     check(path.startswith("/") and not path.startswith("//"), "HTTP 探活仅接受本机路径")
     headers = {}
     if credentials:
         headers["Authorization"] = "Basic " + base64.b64encode(":".join(credentials).encode()).decode()
     body = None
+    if write:
+        headers["X-Shadow-Ops"] = "1"
     if method == "POST":
         headers["Content-Type"] = "application/json"
-        body = "{}"
-    with closing(HTTPConnection("127.0.0.1", 8000, timeout=5)) as connection:
+        body = json.dumps(payload or {})
+    with closing(HTTPConnection("127.0.0.1", 8000, timeout=timeout)) as connection:
         connection.request(method, path, body, headers)
         with connection.getresponse() as response:
             return response.status, response.headers.get("Content-Type", "").split(";")[0], response.read()
 
 
 class Docker:
-    def __init__(self, root, command, target, env_file):
+    def __init__(self, root, command, target, env_file, mode="ReadOnly"):
         self.root, self.command = root, command
+        self.mode = mode
+        self.target = target
+        self.market_port = None
         self.wsl = len(command) > 1
 
         def path_arg(path):
@@ -248,6 +271,19 @@ class Docker:
         self.env.update(DEFAULTS, SHADOW_RUNTIME_DIR=path_arg(target),
                         SHADOW_LOCAL_BUILD_INPUTS=path_arg(target.parent / "build_inputs"),
                         PHASE9B_OPERATOR_GID=str(os.getgid() if hasattr(os, "getgid") else 10001))
+        if mode == "Interactive":
+            self.env["PHASE7A_API_READ_ONLY"] = "0"
+            self.env["PHASE11_AUTO_REFRESH"] = "1"
+            settings = local_settings(root)
+            if all(settings.values()):
+                try:
+                    endpoint = urlsplit(settings["TUSHARE_HTTP_URL"])
+                    valid = endpoint.scheme == "https" and endpoint.hostname and not endpoint.username
+                    self.market_port = endpoint.port or 443
+                except ValueError:
+                    valid = False
+                check(valid, "Tushare 行情端点须使用 HTTPS")
+                self.env.update(settings, PHASE11_MARKET_PORT=str(self.market_port))
         # An ambient Compose file/project/profile cannot change the local deployment.
         for key in ("COMPOSE_FILE", "COMPOSE_PROJECT_NAME", "COMPOSE_PROFILES", "COMPOSE_ENV_FILES"):
             self.env.pop(key, None)
@@ -265,7 +301,7 @@ class Docker:
               and set(config["services"]["cockpit"]["networks"]) == {"local_ingress"}
               and config["services"]["cockpit"]["entrypoint"] == ["bash", "deploy/run_local_cockpit.sh"]
               and config["services"]["shadow-daily"]["network_mode"] == "none", "本机容器网络隔离配置不符")
-        mount_guard(config, target)
+        mount_guard(config, target, mode)
         env = config["services"]["cockpit"]["environment"]
         self.auth = (env.get("PHASE7A_BASIC_AUTH_USER", ""), env.get("PHASE7A_BASIC_AUTH_PASS", ""))
         check(bool(self.auth[0]) == bool(self.auth[1]), "Basic Auth 用户和密码须成对设置")
@@ -309,7 +345,12 @@ class Docker:
                                                  "iptables", "-S", "OUTPUT", capture=True).splitlines()
                             expected = ["-P OUTPUT DROP", "-A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT",
                                         "-A OUTPUT -d 127.0.0.1/32 -o lo -p tcp -m tcp --dport 8000 -j ACCEPT"]
+                            if self.market_port is not None:
+                                expected.extend([f"-A OUTPUT -d 127.0.0.11/32 -p {p} -m conntrack --ctorigdstport 53 -j ACCEPT"
+                                                 for p in ("udp", "tcp")])
+                                expected.append(f"-A OUTPUT -p tcp -m tcp --dport {self.market_port} -j ACCEPT")
                             check(rules == expected, "运行容器外连规则不符")
+                            check(json.loads(body)["api_read_only"] == (self.mode == "ReadOnly"), "API 运行模式不符")
                             disabled = self.compose("exec", "-T", "cockpit", "cat",
                                                     "/proc/sys/net/ipv6/conf/all/disable_ipv6", capture=True).strip()
                             process = self.compose("exec", "-T", "cockpit", "cat", "/proc/1/status", capture=True)
@@ -326,10 +367,11 @@ class Docker:
             sleep(2)
         raise RuntimeError("cockpit 未在 120 秒内通过容器与本机探活")
 
-    def up(self, no_cache=False):
-        args = ("--no-cache",) if no_cache else ()
-        self.compose("build", *args, "cockpit")
-        self.evidence["compose_build_exit_code"] = 0
+    def up(self, no_cache=False, build=True):
+        if build:
+            args = ("--no-cache",) if no_cache else ()
+            self.compose("build", *args, "cockpit")
+            self.evidence["compose_build_exit_code"] = 0
         self.compose("--profile", "jobs", "run", "--rm", "--no-deps", "shadow-volume-init")
         self.compose("up", "-d", "--no-build", "cockpit")
         self.evidence["compose_up_exit_code"] = 0
@@ -339,7 +381,8 @@ class Docker:
         self.wait_healthy()
         credentials = self.auth if self.auth[0] else None
         asset = None
-        for route in ("/", "/tickets", "/portfolio", "/research", "/ops"):
+        routes = ("/", "/tickets", "/portfolio", "/research", "/ops", "/universe", "/radar", "/wallet")
+        for route in routes:
             code, mime, body = request(route, credentials=credentials)
             check(code == 200 and mime == "text/html", f"SPA 深链失败 {route}")
             link = re.search(rb'<script\b[^>]*\bsrc=["\'](/[^"\']+)["\']', body)
@@ -350,7 +393,7 @@ class Docker:
         js = request(asset, credentials=credentials)
         check(js[:2] == (200, "text/javascript"), "JS 模块 MIME 不符")
         check(request("/api/v1/missing", credentials=credentials)[0] == 404, "API 未知路由未返回 404")
-        self.evidence["spa_deep_links"] = dict(status=200, js_content_type=js[1], missing_api_status=404)
+        self.evidence["spa_deep_links"] = dict(status=200, routes=routes, js_content_type=js[1], missing_api_status=404)
         code, _, body = request(OVERVIEW, credentials=credentials)
         check(code == 200, "驾驶舱概览请求失败")
         accounts = json.loads(body)["accounts"]
@@ -361,6 +404,9 @@ class Docker:
         check(code == 200 and any(row["source"] == "phase7c_addendum" and str(row["key"]).startswith("V5")
                                  for row in json.loads(body)), "缺少 Phase 7C V5 OOS 补验")
         self.evidence["core_api"] = dict(sqlite_readonly=True, accounts=12, v5_labels=len(v5), phase7c_addendum=True)
+        self.workbench_smoke(credentials)
+        if self.mode == "Interactive":
+            return
         check(request("/api/v1/ops/jobs", method="POST", credentials=credentials)[0] == 403, "只读运维端点未返回 403")
         self.evidence["readonly_post_status"] = 403
         temp_auth = ("phase9b_smoke", secrets.token_urlsafe(24))
@@ -386,6 +432,51 @@ class Docker:
         self.evidence["nonroot_volume"] = dict(healthcheck_exit_code=0, verify_offline_exit_code=0,
                                                concurrent_wal_probe_exit_code=0, expected_uid=10001)
 
+    def workbench_smoke(self, credentials):
+        def get(path):
+            code, _, body = request("/api/v1/" + path, credentials=credentials, timeout=60)
+            check(code == 200, f"工作台 API 请求失败 {path}")
+            return json.loads(body)
+
+        universe = get("market/universe")
+        kline = get("market/kline/600015.SH?limit=240")
+        radar = get("market/radar")
+        corr = get("market/correlation")
+        archive = get("research/multialpha")
+        check(260 <= len(universe["items"]) <= 300 and len(kline["bars"]) == 240
+              and len(radar["items"]) == 8 and any(row["code"] == "513100.SH" for row in radar["quarantined"])
+              and len(corr["matrix"]) == len(corr["codes"]) > 0
+              and all(len(row) == len(corr["codes"]) for row in corr["matrix"])
+              and archive["phase9b"] and archive["factor_court"] and archive["blends"]
+              and archive["vpb_verdict"]["status"] == "REJECT_ARCHIVE_ONLY", "工作台真实数据验收失配")
+        self.evidence["workbench_api"] = dict(universe=len(universe["items"]), as_of=universe["as_of"],
+                                             kline_bars=len(kline["bars"]), radar_etfs=len(radar["items"]),
+                                             correlation_dimension=len(corr["codes"]), phase9b=len(archive["phase9b"]),
+                                             factor_rows=len(archive["factor_court"]), vpb_status=archive["vpb_verdict"]["status"])
+        summary = get("wallet/summary")
+        days = {row["day"] for row in summary["points"]}
+        day = next((f"1990-01-{n:02d}" for n in range(1, 32) if f"1990-01-{n:02d}" not in days), None)
+        check(day is not None, "钱包验收缺少可用的临时日期")
+        payload = dict(day=day, cash_rmb=1234.56, positions=[dict(code="600015.SH", shares=100, avg_cost=5.)])
+        path = "/api/v1/wallet/snapshot"
+        if self.mode == "ReadOnly":
+            post = request(path, method="POST", credentials=credentials, payload=payload, write=True)[0]
+            delete = request(f"{path}/{day}", method="DELETE", credentials=credentials, write=True)[0]
+            check((post, delete) == (403, 403), "只读钱包必须拒绝写入和删除")
+            self.evidence["wallet"] = dict(post_status=post, delete_status=delete)
+            return
+        before = digest(self.target / SIGNED_LEDGER.name)
+        post = request(path, method="POST", credentials=credentials, payload=payload, write=True)[0]
+        check(post == 200, "交互钱包写入失败")
+        try:
+            check(any(point["day"] == day for point in get("wallet/summary")["points"]), "临时钱包快照未保存")
+        finally:
+            delete = request(f"{path}/{day}", method="DELETE", credentials=credentials, write=True)[0]
+        check(delete == 200 and all(point["day"] != day for point in get("wallet/summary")["points"])
+              and digest(self.target / SIGNED_LEDGER.name) == before, "交互钱包删除或影子库物理隔离检查失败")
+        self.evidence["wallet"] = dict(post_status=post, delete_status=delete, temporary_snapshot_cleaned=True,
+                                       shadow_sqlite_before=before, shadow_sqlite_after=before)
+
 
 def init_mount(mount):
     assert os.getuid() == 0 and mount == Path("/data/shadow")
@@ -400,6 +491,14 @@ def wal_probe(mount):
     assert os.getuid() == 10001 and mount == Path("/data/shadow")
     db = mount / SIGNED_LEDGER.name
     no_link(db)
+    with TemporaryDirectory(dir=mount) as scratch:
+        clone = Path(scratch) / "wal_probe.sqlite3"
+        with closing(sqlite3.connect(db.as_uri() + "?mode=ro", uri=True)) as source, closing(sqlite3.connect(clone)) as dest:
+            source.backup(dest)
+        probe_concurrent_wal(clone)
+
+
+def probe_concurrent_wal(db):
     with closing(sqlite3.connect(db)) as writer, closing(sqlite3.connect(db.as_uri() + "?mode=ro", uri=True)) as reader:
         assert writer.execute("PRAGMA journal_mode=WAL").fetchone()[0] == "wal"
         reader.execute("BEGIN")
@@ -424,7 +523,8 @@ def wal_probe(mount):
 def main(argv=None):
     require_runtime_guard()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", nargs="?", default="Up", choices=("Up", "Down", "Rebuild", "Status", "Logs", "Smoke"))
+    parser.add_argument("action", nargs="?", default="Up", choices=("Up", "Start", "Down", "Rebuild", "Status", "Logs", "Smoke"))
+    parser.add_argument("--mode", choices=("ReadOnly", "Interactive"), default="ReadOnly")
     internal = parser.add_mutually_exclusive_group()
     internal.add_argument("--init-mounted-volume", action="store_true", help=argparse.SUPPRESS)
     internal.add_argument("--probe-mounted-volume", action="store_true", help=argparse.SUPPRESS)
@@ -436,7 +536,7 @@ def main(argv=None):
     before, sources = snapshot()
     db_sha = before[SIGNED_LEDGER.as_posix()]
     report = dict(docker_runtime_status="daemon_unavailable" if not available else "daemon_available",
-                  probes=evidence, requested_action=args.action, address=None, checked_at_utc=now(),
+                  probes=evidence, requested_action=args.action, mode=args.mode, address=None, checked_at_utc=now(),
                   signed_sqlite_before=db_sha, checks={}, status="blocked")
     if not available:
         report["not_run"] = ["multi_stage_build", "container_health", "spa_deep_links", "api_and_governance",
@@ -447,12 +547,13 @@ def main(argv=None):
         if available:
             env = local_env(ROOT)
             dest = runtime_path(ROOT)
-            if args.action in ("Up", "Rebuild"):
+            if args.action in ("Up", "Start", "Rebuild"):
                 dest = copy_runtime(ROOT, db_sha)
-                stage_build_inputs(ROOT, dest)
-            docker = Docker(ROOT, command, dest, env)
-            if args.action in ("Up", "Rebuild"):
-                docker.up(no_cache=args.action == "Rebuild")
+                if args.action != "Start":
+                    stage_build_inputs(ROOT, dest)
+            docker = Docker(ROOT, command, dest, env, args.mode)
+            if args.action in ("Up", "Start", "Rebuild"):
+                docker.up(no_cache=args.action == "Rebuild", build=args.action != "Start")
             elif args.action == "Smoke":
                 docker.smoke()
             elif args.action == "Down":
@@ -463,7 +564,7 @@ def main(argv=None):
                 docker.compose("logs", "--tail", "100", "cockpit")
             code = 0
             report["status"] = "verified" if args.action == "Smoke" else "completed"
-            if args.action in ("Up", "Rebuild", "Smoke"):
+            if args.action in ("Up", "Start", "Rebuild", "Smoke"):
                 report["address"] = ADDRESS
         else:
             print("Docker CLI、Compose 或 Daemon 不可用，容器闭环未执行。", file=sys.stderr)
@@ -482,8 +583,9 @@ def main(argv=None):
                 report["market_http_requests"] = 0
         if ACCEPTANCE.is_file():
             previous = json.loads(ACCEPTANCE.read_bytes())
+            key = previous["mode"] + "/" + previous["requested_action"]
             report["prior_actions"] = {**previous.get("prior_actions", {}),
-                                      previous["requested_action"]: {k: previous.get(k) for k in ("status", "exit_code", "checks")}}
+                                      key: {k: previous.get(k) for k in ("status", "exit_code", "checks", "market_http_requests")}}
         ACCEPTANCE.parent.mkdir(exist_ok=True, parents=True)
         write_json(ACCEPTANCE, report)
     if report["address"]:
