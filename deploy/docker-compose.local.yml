@@ -1,6 +1,6 @@
 services:
   cockpit:
-    image: ashare-shadow-cockpit:phase10-local
+    image: ashare-shadow-cockpit:phase11-local
     build:
       context: .
       target: local
@@ -23,6 +23,7 @@ services:
     environment:
       PHASE7A_DIR: /data/shadow
       PHASE7A_API_READ_ONLY: "${PHASE7A_API_READ_ONLY:-1}"
+      PHASE11_AUTO_REFRESH: "${PHASE11_AUTO_REFRESH:-0}"
       PHASE7A_HEALTH_PUBLIC: "${PHASE7A_HEALTH_PUBLIC:-1}"
       PHASE7A_SQLITE_TIMEOUT_MS: "${PHASE7A_SQLITE_TIMEOUT_MS:-30000}"
       PHASE7A_ALLOWED_HOSTS: "${PHASE7A_ALLOWED_HOSTS:-localhost,127.0.0.1,[::1]}"
@@ -30,8 +31,9 @@ services:
       PHASE7A_BASIC_AUTH_PASS: "${PHASE7A_BASIC_AUTH_PASS:-}"
       PHASE7A_TRUST_PROXY_HEADERS: "${PHASE7A_TRUST_PROXY_HEADERS:-0}"
       PHASE7A_UVICORN_FORWARDED_ALLOW_IPS: "${PHASE7A_UVICORN_FORWARDED_ALLOW_IPS:-}"
-      TUSHARE_TOKEN: ""
-      TUSHARE_HTTP_URL: ""
+      PHASE11_MARKET_PORT: "${PHASE11_MARKET_PORT:-}"
+      TUSHARE_TOKEN: "${TUSHARE_TOKEN:-}"
+      TUSHARE_HTTP_URL: "${TUSHARE_HTTP_URL:-}"
     volumes:
       - type: bind
         source: ${SHADOW_RUNTIME_DIR:?local wrapper must supply the isolated run directory}
@@ -39,7 +41,7 @@ services:
         bind:
           create_host_path: false
   shadow-daily:
-    image: ashare-shadow-cockpit:phase10-local
+    image: ashare-shadow-cockpit:phase11-local
     pull_policy: never
     profiles: [jobs]
     user: "10001:10001"
@@ -65,7 +67,7 @@ services:
         bind:
           create_host_path: false
   shadow-volume-init:
-    image: ashare-shadow-cockpit:phase10-local
+    image: ashare-shadow-cockpit:phase11-local
     pull_policy: never
     profiles: [jobs]
     user: "0:0"

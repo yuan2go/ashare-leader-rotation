@@ -4,6 +4,7 @@ import { api } from "../api/client";
 import type { QueryOf, Schema } from "../api/client";
 import EChartBox from "../components/EChartBox";
 import type { ChartOption } from "../components/EChartBox";
+import MultialphaSection from "../components/MultialphaSection";
 import { DataTable, Empty, PageHeading, Panel, QueryNotice, Segmented, Select } from "../components/ui";
 import type { Column } from "../components/ui";
 import { useCapital } from "../state";
@@ -13,6 +14,7 @@ import { changeClass, decimal, integer, pct, pp, rmb, text } from "../utils/form
 const tabs = [
   ["portfolios", "组合比较"], ["yearly", "逐年收益"], ["drawdowns", "回撤事件"],
   ["factors", "因子法庭"], ["placebos", "置换检验"], ["coverage", "数据覆盖"],
+  ["multialpha", "Phase 9–10 多引擎与跨资产"],
 ] as const;
 const windows = [["W1", "W1 · 全期"], ["IS", "IS · 样本内"], ["OOS", "OOS · 样本外"], ["W_Bear", "W_Bear · 熊市"]] as const;
 const scenarios = [["2bp", "2 bp"], ["7bp", "7 bp"], ["T+2", "T+2"]] as const;
@@ -300,5 +302,6 @@ export default function ResearchPage() {
     {tab === "factors" && <FactorArchive />}
     {tab === "placebos" && <PlaceboArchive />}
     {tab === "coverage" && <CoverageArchive />}
+    {tab === "multialpha" && <MultialphaSection />}
   </div>;
 }

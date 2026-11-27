@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
-    "gen:types": "openapi-typescript ../backend/openapi.json -o src/api/schema.d.ts",
-    "check:types": "openapi-typescript ../backend/openapi.json -o src/api/schema.d.ts --check",
+    "gen:types": "openapi-typescript ../backend/openapi_phase11.json -o src/api/schema.d.ts",
+    "check:types": "openapi-typescript ../backend/openapi_phase11.json -o src/api/schema.d.ts --check",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",

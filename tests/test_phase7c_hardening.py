@@ -116,7 +116,7 @@ class OfflineContracts(unittest.TestCase):
 
     def test_openapi_and_documentation_exact_bytes(self):
         expected = json.dumps(create_app(self.settings).openapi(), ensure_ascii=False, indent=2) + "\n"
-        self.assertEqual((ROOT / "backend/openapi.json").read_bytes(), expected.encode("utf-8"))
+        self.assertEqual((ROOT / "backend/openapi_phase11.json").read_bytes(), expected.encode("utf-8"))
         for path, generated in contents().items():
             self.assertEqual(path.read_bytes(), generated.encode("utf-8"))
 

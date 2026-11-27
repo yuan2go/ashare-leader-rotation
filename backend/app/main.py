@@ -17,8 +17,9 @@ from starlette.exceptions import HTTPException
 from core.integrity import IntegrityError, require_runtime_guard
 
 from .config import Settings
-from .routers import health, ops, research, shadow, tickets
+from .routers import health, market, ops, research, shadow, tickets, wallet
 from .schemas import Error
+from .services.auto_refresh import lifespan
 from .services.ops_service import Busy
 
 VERSION = "1.0.0"
@@ -102,7 +103,7 @@ class BasicAuthMiddleware:
 
 def create_app(settings=None):
     require_runtime_guard()
-    app = FastAPI(title="A 股影子账本 API",version=VERSION,
+    app = FastAPI(title="A 股影子账本 API",version=VERSION,lifespan=lifespan,
                   description="Phase 7A 六线影子账本、签发研究归档与本地运维接口")
     app.state.settings = settings or Settings.from_env()
     settings = app.state.settings
@@ -113,7 +114,7 @@ def create_app(settings=None):
     if not settings.basic_auth_user:
         app.add_middleware(IPv6TrustedHostMiddleware, allowed_hosts=list(settings.allowed_hosts))
     app.add_middleware(CORSMiddleware,allow_origins=settings.cors_origins,
-                       allow_methods=["GET","POST"],allow_headers=["Content-Type","X-Shadow-Ops"],
+                       allow_methods=["GET","POST","DELETE"],allow_headers=["Content-Type","X-Shadow-Ops"],
                        expose_headers=["Content-Disposition"])
     if settings.basic_auth_user:
         app.add_middleware(BasicAuthMiddleware, settings=settings)
@@ -145,7 +146,7 @@ def create_app(settings=None):
         log.error("Failed %s (%s)",request.url.path,type(exc).__name__,exc_info=exc)
         return _error(500,"internal_error","unexpected backend error")
 
-    for module in (health,shadow,tickets,research,ops):
+    for module in (health,shadow,tickets,research,ops,market,wallet):
         app.include_router(module.router,prefix="/api/v1",
                            responses={422:{"model":Error},503:{"model":Error},500:{"model":Error}})
     dist = app.state.settings.frontend_dist

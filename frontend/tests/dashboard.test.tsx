@@ -5,6 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 import { expect, it, vi } from "vitest";
 import App from "../src/App";
 import type { Schema } from "../src/api/client";
+import "../src/pages/DashboardPage";
 
 const { chart } = vi.hoisted(() => ({chart: vi.fn()}));
 vi.mock("../src/components/EChartBox", () => ({

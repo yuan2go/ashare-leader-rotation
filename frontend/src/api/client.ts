@@ -83,4 +83,20 @@ export const api = {
     read(http.GET("/api/v1/ops/jobs/{job_id}", {params: {path: {job_id}}, signal})),
   jobLog: (job_id: string, signal?: AbortSignal) =>
     read(http.GET("/api/v1/ops/jobs/{job_id}/logs", {params: {path: {job_id}}, signal})),
+  universe: (query: QueryOf<"getMarketUniverse">, signal?: AbortSignal) =>
+    read(http.GET("/api/v1/market/universe", {params: {query}, signal})),
+  kline: (code: string, query: QueryOf<"getMarketKline">, signal?: AbortSignal) =>
+    read(http.GET("/api/v1/market/kline/{code}", {params: {path: {code}, query}, signal})),
+  radar: (signal?: AbortSignal) => read(http.GET("/api/v1/market/radar", {signal})),
+  correlation: (query: QueryOf<"getMarketCorrelation">, signal?: AbortSignal) =>
+    read(http.GET("/api/v1/market/correlation", {params: {query}, signal})),
+  wallet: (query: QueryOf<"getWalletSummary">, signal?: AbortSignal) =>
+    read(http.GET("/api/v1/wallet/summary", {params: {query}, signal})),
+  saveWallet: (body: Schema["WalletSnapshotInput"]) => read(http.POST("/api/v1/wallet/snapshot", {
+    params: {header: {"x-shadow-ops": "1"}}, body,
+  })),
+  deleteWallet: (day: string) => read(http.DELETE("/api/v1/wallet/snapshot/{day}", {
+    params: {path: {day}, header: {"x-shadow-ops": "1"}},
+  })),
+  multialpha: (signal?: AbortSignal) => read(http.GET("/api/v1/research/multialpha", {signal})),
 };
